@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  btn=new Button(this);
+  btn.setOnClickListener(this);
+  updateTime();
+  setContentView(btn);
+}
