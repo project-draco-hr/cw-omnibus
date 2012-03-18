@@ -1,0 +1,8 @@
+{
+  if (isChecked) {
+    cb.setText(R.string.checked);
+  }
+ else {
+    cb.setText(R.string.unchecked);
+  }
+}
