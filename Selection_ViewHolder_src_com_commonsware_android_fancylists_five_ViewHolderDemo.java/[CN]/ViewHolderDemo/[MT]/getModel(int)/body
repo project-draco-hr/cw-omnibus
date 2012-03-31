@@ -1,0 +1,3 @@
+{
+  return (((IconicAdapter)getListAdapter()).getItem(position));
+}

@@ -1,0 +1,3 @@
+{
+  super(DynamicDemo.this,R.layout.row,R.id.label,items);
+}

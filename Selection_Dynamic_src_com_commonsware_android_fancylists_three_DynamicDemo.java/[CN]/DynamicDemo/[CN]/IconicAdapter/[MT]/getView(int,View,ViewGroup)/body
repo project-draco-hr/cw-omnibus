@@ -1,0 +1,13 @@
+{
+  View row=super.getView(position,convertView,parent);
+  ImageView icon=(ImageView)row.findViewById(R.id.icon);
+  if (items[position].length() > 4) {
+    icon.setImageResource(R.drawable.delete);
+  }
+ else {
+    icon.setImageResource(R.drawable.ok);
+  }
+  TextView size=(TextView)row.findViewById(R.id.size);
+  size.setText(String.format(getString(R.string.size_template),items[position].length()));
+  return (row);
+}

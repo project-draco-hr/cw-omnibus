@@ -1,0 +1,16 @@
+{
+  View row=super.getView(position,convertView,parent);
+  ViewHolder holder=(ViewHolder)row.getTag();
+  if (holder == null) {
+    holder=new ViewHolder(row);
+    row.setTag(holder);
+  }
+  if (getModel(position).length() > 4) {
+    holder.icon.setImageResource(R.drawable.delete);
+  }
+ else {
+    holder.icon.setImageResource(R.drawable.ok);
+  }
+  holder.size.setText(String.format(getString(R.string.size_template),items[position].length()));
+  return (row);
+}

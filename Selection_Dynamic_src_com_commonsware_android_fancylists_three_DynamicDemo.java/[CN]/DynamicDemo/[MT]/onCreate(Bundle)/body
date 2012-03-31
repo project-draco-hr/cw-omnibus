@@ -1,0 +1,4 @@
+{
+  super.onCreate(icicle);
+  setListAdapter(new IconicAdapter());
+}
