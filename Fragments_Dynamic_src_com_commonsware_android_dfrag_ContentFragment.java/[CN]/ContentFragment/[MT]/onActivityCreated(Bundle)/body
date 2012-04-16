@@ -1,0 +1,4 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  Log.d(getClass().getSimpleName(),"onActivityCreated()");
+}

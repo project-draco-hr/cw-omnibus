@@ -1,0 +1,6 @@
+{
+  String _lat=lat.getText().toString();
+  String _lon=lon.getText().toString();
+  Uri uri=Uri.parse("geo:" + _lat + ","+ _lon);
+  startActivity(new Intent(Intent.ACTION_VIEW,uri));
+}

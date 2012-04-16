@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.other);
+  TextView tv=(TextView)findViewById(R.id.msg);
+  tv.setText(getIntent().getStringExtra(EXTRA_MESSAGE));
+}

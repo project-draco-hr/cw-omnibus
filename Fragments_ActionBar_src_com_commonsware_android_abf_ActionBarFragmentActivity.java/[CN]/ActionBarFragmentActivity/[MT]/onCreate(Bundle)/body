@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    getSupportFragmentManager().beginTransaction().add(android.R.id.content,new ActionBarFragment()).commit();
+  }
+}

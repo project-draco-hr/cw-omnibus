@@ -1,0 +1,4 @@
+{
+  super.onAttach(a);
+  Log.d(getClass().getSimpleName(),"onAttach()");
+}

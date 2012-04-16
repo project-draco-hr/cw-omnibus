@@ -1,0 +1,5 @@
+{
+  View result=inflater.inflate(R.layout.mainfrag,container);
+  result.findViewById(R.id.showOther).setOnClickListener(this);
+  return (result);
+}

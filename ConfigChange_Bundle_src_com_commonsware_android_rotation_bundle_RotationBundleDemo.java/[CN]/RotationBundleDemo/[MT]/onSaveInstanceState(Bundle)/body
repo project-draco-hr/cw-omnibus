@@ -1,0 +1,6 @@
+{
+  super.onSaveInstanceState(outState);
+  if (contact != null) {
+    outState.putString("contact",contact.toString());
+  }
+}

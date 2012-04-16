@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  viewButton=(Button)findViewById(R.id.view);
+  viewButton.setEnabled(contact != null);
+}

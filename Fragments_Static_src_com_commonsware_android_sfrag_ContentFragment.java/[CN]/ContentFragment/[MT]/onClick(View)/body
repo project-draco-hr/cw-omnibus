@@ -1,0 +1,3 @@
+{
+  ((StaticFragmentsDemoActivity)getActivity()).showOther(v);
+}

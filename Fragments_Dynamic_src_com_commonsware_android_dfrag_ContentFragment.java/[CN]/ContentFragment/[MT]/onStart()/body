@@ -1,0 +1,4 @@
+{
+  super.onStart();
+  Log.d(getClass().getSimpleName(),"onStart()");
+}
