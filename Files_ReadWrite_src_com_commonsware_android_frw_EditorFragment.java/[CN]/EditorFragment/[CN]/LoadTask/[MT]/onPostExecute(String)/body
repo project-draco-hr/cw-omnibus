@@ -1,0 +1,8 @@
+{
+  if (e == null) {
+    editor.setText(text);
+  }
+ else {
+    boom(e);
+  }
+}

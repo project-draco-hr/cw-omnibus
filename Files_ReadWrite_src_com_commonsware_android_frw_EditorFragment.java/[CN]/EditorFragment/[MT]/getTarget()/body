@@ -1,0 +1,10 @@
+{
+  File root=null;
+  if (external.isChecked()) {
+    root=getActivity().getExternalFilesDir(null);
+  }
+ else {
+    root=getActivity().getFilesDir();
+  }
+  return (new File(root,FILENAME));
+}

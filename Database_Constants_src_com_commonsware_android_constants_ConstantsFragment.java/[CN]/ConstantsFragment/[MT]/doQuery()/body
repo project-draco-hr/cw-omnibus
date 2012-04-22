@@ -1,0 +1,3 @@
+{
+  return (db.getReadableDatabase().rawQuery("SELECT _id, title, value " + "FROM constants ORDER BY title",null));
+}

@@ -1,0 +1,14 @@
+{
+  if (item.getItemId() == R.id.save) {
+    try {
+      save(editor.getText().toString(),getTarget());
+    }
+ catch (    Exception e) {
+      boom(e);
+    }
+  }
+ else   if (item.getItemId() == R.id.saveBackground) {
+    new SaveTask(editor.getText().toString(),getTarget()).execute();
+  }
+  return (super.onOptionsItemSelected(item));
+}

@@ -1,0 +1,8 @@
+{
+  FileOutputStream fos=new FileOutputStream(target);
+  OutputStreamWriter out=new OutputStreamWriter(fos);
+  out.write(text);
+  out.flush();
+  fos.getFD().sync();
+  out.close();
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    save(text,target);
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (null);
+}

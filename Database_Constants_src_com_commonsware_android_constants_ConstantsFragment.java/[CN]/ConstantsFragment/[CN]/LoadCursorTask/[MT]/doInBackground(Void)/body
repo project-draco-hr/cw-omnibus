@@ -1,0 +1,5 @@
+{
+  constantsCursor=doQuery();
+  constantsCursor.getCount();
+  return (null);
+}

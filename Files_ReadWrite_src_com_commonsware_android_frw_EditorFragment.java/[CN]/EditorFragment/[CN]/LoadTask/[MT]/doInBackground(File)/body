@@ -1,0 +1,10 @@
+{
+  String result="";
+  try {
+    result=load(args[0]);
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (result);
+}

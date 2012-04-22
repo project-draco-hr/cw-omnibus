@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  if (BuildConfig.DEBUG && Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+    StrictMode.setThreadPolicy(buildPolicy());
+  }
+}
