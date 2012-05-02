@@ -1,0 +1,17 @@
+{
+  try {
+    StringBuilder buf=new StringBuilder();
+    InputStream json=ctxt[0].getAssets().open("book/contents.json");
+    BufferedReader in=new BufferedReader(new InputStreamReader(json));
+    String str;
+    while ((str=in.readLine()) != null) {
+      buf.append(str);
+    }
+    in.close();
+    localContents=new BookContents(new JSONObject(buf.toString()));
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (null);
+}

@@ -1,0 +1,11 @@
+{
+  if (contents != null) {
+    ((EmPubLiteActivity)getActivity()).setupPager(contents);
+  }
+ else {
+    if (contents == null && contentsTask == null) {
+      contentsTask=new ContentsLoadTask();
+      executeAsyncTask(contentsTask,getActivity().getApplicationContext());
+    }
+  }
+}

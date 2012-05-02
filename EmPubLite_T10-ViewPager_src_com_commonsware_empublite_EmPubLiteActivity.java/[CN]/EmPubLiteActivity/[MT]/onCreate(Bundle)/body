@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  pager=(ViewPager)findViewById(R.id.pager);
+  adapter=new ContentsAdapter(this);
+  pager.setAdapter(adapter);
+  findViewById(R.id.progressBar1).setVisibility(View.GONE);
+  findViewById(R.id.pager).setVisibility(View.VISIBLE);
+}
