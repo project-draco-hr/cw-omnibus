@@ -1,0 +1,10 @@
+{
+  mgr=(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+  View result=inflater.inflate(R.layout.main,parent,false);
+  query=result.findViewById(R.id.query);
+  query.setOnClickListener(this);
+  start=result.findViewById(R.id.start);
+  start.setOnClickListener(this);
+  result.findViewById(R.id.view).setOnClickListener(this);
+  return (result);
+}

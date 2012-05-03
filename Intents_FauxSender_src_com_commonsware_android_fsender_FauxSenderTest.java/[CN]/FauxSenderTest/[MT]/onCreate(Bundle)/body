@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  sendIt(getString(R.string.test));
+  finish();
+}

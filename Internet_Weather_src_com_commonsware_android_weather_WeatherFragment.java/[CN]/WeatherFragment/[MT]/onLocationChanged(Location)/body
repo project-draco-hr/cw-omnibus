@@ -1,0 +1,4 @@
+{
+  FetchForecastTask task=new FetchForecastTask();
+  task.execute(location);
+}

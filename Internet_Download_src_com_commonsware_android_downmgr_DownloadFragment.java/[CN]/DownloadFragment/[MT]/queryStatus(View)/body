@@ -1,0 +1,16 @@
+{
+  Cursor c=mgr.query(new DownloadManager.Query().setFilterById(lastDownload));
+  if (c == null) {
+    Toast.makeText(getActivity(),R.string.download_not_found,Toast.LENGTH_LONG).show();
+  }
+ else {
+    c.moveToFirst();
+    Log.d(getClass().getName(),"COLUMN_ID: " + c.getLong(c.getColumnIndex(DownloadManager.COLUMN_ID)));
+    Log.d(getClass().getName(),"COLUMN_BYTES_DOWNLOADED_SO_FAR: " + c.getLong(c.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR)));
+    Log.d(getClass().getName(),"COLUMN_LAST_MODIFIED_TIMESTAMP: " + c.getLong(c.getColumnIndex(DownloadManager.COLUMN_LAST_MODIFIED_TIMESTAMP)));
+    Log.d(getClass().getName(),"COLUMN_LOCAL_URI: " + c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI)));
+    Log.d(getClass().getName(),"COLUMN_STATUS: " + c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS)));
+    Log.d(getClass().getName(),"COLUMN_REASON: " + c.getInt(c.getColumnIndex(DownloadManager.COLUMN_REASON)));
+    Toast.makeText(getActivity(),statusMessage(c),Toast.LENGTH_LONG).show();
+  }
+}

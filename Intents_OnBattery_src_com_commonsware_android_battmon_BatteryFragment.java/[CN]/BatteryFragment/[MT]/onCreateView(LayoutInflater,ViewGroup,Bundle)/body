@@ -1,0 +1,7 @@
+{
+  View result=inflater.inflate(R.layout.batt,parent,false);
+  bar=(ProgressBar)result.findViewById(R.id.bar);
+  status=(ImageView)result.findViewById(R.id.status);
+  level=(TextView)result.findViewById(R.id.level);
+  return (result);
+}

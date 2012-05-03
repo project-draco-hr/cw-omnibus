@@ -1,0 +1,6 @@
+{
+  View result=inflater.inflate(R.layout.main,parent,false);
+  result.findViewById(R.id.start).setOnClickListener(this);
+  result.findViewById(R.id.stop).setOnClickListener(this);
+  return (result);
+}

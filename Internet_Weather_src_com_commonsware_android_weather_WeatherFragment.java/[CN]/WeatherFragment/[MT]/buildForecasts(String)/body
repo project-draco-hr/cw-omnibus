@@ -1,0 +1,25 @@
+{
+  ArrayList<Forecast> forecasts=new ArrayList<Forecast>();
+  DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+  Document doc=builder.parse(new InputSource(new StringReader(raw)));
+  NodeList times=doc.getElementsByTagName("start-valid-time");
+  for (int i=0; i < times.getLength(); i++) {
+    Element time=(Element)times.item(i);
+    Forecast forecast=new Forecast();
+    forecasts.add(forecast);
+    forecast.setTime(time.getFirstChild().getNodeValue());
+  }
+  NodeList temps=doc.getElementsByTagName("value");
+  for (int i=0; i < temps.getLength(); i++) {
+    Element temp=(Element)temps.item(i);
+    Forecast forecast=forecasts.get(i);
+    forecast.setTemp(new Integer(temp.getFirstChild().getNodeValue()));
+  }
+  NodeList icons=doc.getElementsByTagName("icon-link");
+  for (int i=0; i < icons.getLength(); i++) {
+    Element icon=(Element)icons.item(i);
+    Forecast forecast=forecasts.get(i);
+    forecast.setIcon(icon.getFirstChild().getNodeValue());
+  }
+  return (forecasts);
+}

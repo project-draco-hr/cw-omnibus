@@ -1,0 +1,4 @@
+{
+  l.setItemChecked(position,true);
+  ((CountryListener)getActivity()).onCountrySelected(Country.EU.get(position));
+}

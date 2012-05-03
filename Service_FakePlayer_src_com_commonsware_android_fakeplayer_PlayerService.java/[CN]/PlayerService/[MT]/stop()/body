@@ -1,0 +1,6 @@
+{
+  if (isPlaying) {
+    Log.w(getClass().getName(),"Got to stop()!");
+    isPlaying=false;
+  }
+}

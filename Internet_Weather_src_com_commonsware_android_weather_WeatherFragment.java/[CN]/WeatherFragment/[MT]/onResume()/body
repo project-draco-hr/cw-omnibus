@@ -1,0 +1,4 @@
+{
+  super.onResume();
+  mgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,3600000,1000,this);
+}

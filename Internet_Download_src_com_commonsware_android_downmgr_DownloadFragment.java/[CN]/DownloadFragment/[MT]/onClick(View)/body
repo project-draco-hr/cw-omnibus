@@ -1,0 +1,11 @@
+{
+  if (v == query) {
+    queryStatus(v);
+  }
+ else   if (v == start) {
+    startDownload(v);
+  }
+ else {
+    ((DownloadDemo)getActivity()).viewLog();
+  }
+}

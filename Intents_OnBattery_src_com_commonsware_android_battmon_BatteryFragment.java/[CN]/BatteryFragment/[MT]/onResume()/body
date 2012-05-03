@@ -1,0 +1,5 @@
+{
+  super.onResume();
+  IntentFilter f=new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+  getActivity().registerReceiver(onBattery,f);
+}

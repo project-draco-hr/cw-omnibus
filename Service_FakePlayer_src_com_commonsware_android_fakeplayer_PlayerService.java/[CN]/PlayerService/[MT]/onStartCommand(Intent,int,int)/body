@@ -1,0 +1,6 @@
+{
+  String playlist=intent.getStringExtra(EXTRA_PLAYLIST);
+  boolean useShuffle=intent.getBooleanExtra(EXTRA_SHUFFLE,false);
+  play(playlist,useShuffle);
+  return (START_NOT_STICKY);
+}

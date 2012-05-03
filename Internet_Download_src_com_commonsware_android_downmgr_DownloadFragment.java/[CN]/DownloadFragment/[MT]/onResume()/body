@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  IntentFilter f=new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+  f.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
+  getActivity().registerReceiver(onEvent,f);
+}
