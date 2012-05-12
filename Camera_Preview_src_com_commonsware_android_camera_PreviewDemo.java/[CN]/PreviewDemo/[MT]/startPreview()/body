@@ -1,0 +1,6 @@
+{
+  if (cameraConfigured && camera != null) {
+    camera.startPreview();
+    inPreview=true;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.onResume();
+  camera=Camera.open();
+  startPreview();
+}

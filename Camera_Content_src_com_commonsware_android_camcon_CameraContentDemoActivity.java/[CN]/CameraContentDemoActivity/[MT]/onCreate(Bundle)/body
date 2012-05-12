@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  Intent i=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  File dir=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+  output=new File(dir,"CameraContentDemo.jpeg");
+  i.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(output));
+  startActivityForResult(i,CONTENT_REQUEST);
+}

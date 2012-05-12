@@ -1,0 +1,24 @@
+{
+  if (camera != null && previewHolder.getSurface() != null) {
+    try {
+      camera.setPreviewDisplay(previewHolder);
+    }
+ catch (    Throwable t) {
+      Log.e("PreviewDemo-surfaceCallback","Exception in setPreviewDisplay()",t);
+      Toast.makeText(PictureDemo.this,t.getMessage(),Toast.LENGTH_LONG).show();
+    }
+    if (!cameraConfigured) {
+      Camera.Parameters parameters=camera.getParameters();
+      Camera.Size size=getBestPreviewSize(width,height,parameters);
+      Camera.Size pictureSize=getSmallestPictureSize(parameters);
+      if (size != null && pictureSize != null) {
+        parameters.setPreviewSize(size.width,size.height);
+        parameters.setPictureSize(pictureSize.width,pictureSize.height);
+        parameters.setPictureFormat(ImageFormat.JPEG);
+        frame.setAspectRatio((double)size.width / size.height);
+        camera.setParameters(parameters);
+        cameraConfigured=true;
+      }
+    }
+  }
+}

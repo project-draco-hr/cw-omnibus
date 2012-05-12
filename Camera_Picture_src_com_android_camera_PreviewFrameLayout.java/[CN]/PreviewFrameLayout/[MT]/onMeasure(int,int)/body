@@ -1,0 +1,17 @@
+{
+  int previewWidth=MeasureSpec.getSize(widthSpec);
+  int previewHeight=MeasureSpec.getSize(heightSpec);
+  int hPadding=getPaddingLeft() + getPaddingRight();
+  int vPadding=getPaddingTop() + getPaddingBottom();
+  previewWidth-=hPadding;
+  previewHeight-=vPadding;
+  if (previewWidth > previewHeight * mAspectRatio) {
+    previewWidth=(int)(previewHeight * mAspectRatio + .5);
+  }
+ else {
+    previewHeight=(int)(previewWidth / mAspectRatio + .5);
+  }
+  previewWidth+=hPadding;
+  previewHeight+=vPadding;
+  super.onMeasure(MeasureSpec.makeMeasureSpec(previewWidth,MeasureSpec.EXACTLY),MeasureSpec.makeMeasureSpec(previewHeight,MeasureSpec.EXACTLY));
+}
