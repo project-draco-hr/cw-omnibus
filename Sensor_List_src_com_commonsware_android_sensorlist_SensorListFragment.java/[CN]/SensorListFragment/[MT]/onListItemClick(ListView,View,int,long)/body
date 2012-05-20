@@ -1,0 +1,3 @@
+{
+  mgr.registerListener(this,adapter.getItem(position),SensorManager.SENSOR_DELAY_NORMAL);
+}

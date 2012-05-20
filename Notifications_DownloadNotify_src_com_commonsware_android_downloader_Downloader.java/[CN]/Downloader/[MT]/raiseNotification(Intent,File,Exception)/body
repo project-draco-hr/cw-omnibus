@@ -1,0 +1,15 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setWhen(System.currentTimeMillis());
+  if (e == null) {
+    b.setContentTitle(getString(R.string.download_complete)).setContentText(getString(R.string.fun)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.download_complete));
+    Intent outbound=new Intent(Intent.ACTION_VIEW);
+    outbound.setDataAndType(Uri.fromFile(output),inbound.getType());
+    b.setContentIntent(PendingIntent.getActivity(this,0,outbound,0));
+  }
+ else {
+    b.setContentTitle(getString(R.string.exception)).setContentText(e.getMessage()).setSmallIcon(android.R.drawable.stat_notify_error).setTicker(getString(R.string.exception));
+  }
+  NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+  mgr.notify(NOTIFY_ID,b.getNotification());
+}

@@ -1,0 +1,7 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  setRetainInstance(true);
+  mgr=(SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);
+  adapter=new SensorListAdapter();
+  setListAdapter(adapter);
+}

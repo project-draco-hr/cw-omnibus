@@ -1,0 +1,4 @@
+{
+  Toast.makeText(getActivity(),items.get(i).getSnippet(),Toast.LENGTH_LONG).show();
+  return (true);
+}
