@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  if (prefs != null) {
+    pager.setKeepScreenOn(prefs.getBoolean(PREF_KEEP_SCREEN_ON,false));
+  }
+}

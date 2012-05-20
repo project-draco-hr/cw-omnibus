@@ -1,0 +1,22 @@
+{
+  File base=DownloadCheckService.getUpdateBaseDir(ctxt);
+  if (!base.exists()) {
+    return (null);
+  }
+  File[] updates=base.listFiles(new FileFilter(){
+    public boolean accept(    File f){
+      return f.isDirectory();
+    }
+  }
+);
+  Arrays.sort(updates,new Comparator<File>(){
+    @Override public int compare(    File lhs,    File rhs){
+      return (lhs.getName().compareTo(rhs.getName()));
+    }
+  }
+);
+  if (pruneOld && updates.length > 1) {
+    deleteDir(updates[0]);
+  }
+  return (updates[updates.length - 1]);
+}

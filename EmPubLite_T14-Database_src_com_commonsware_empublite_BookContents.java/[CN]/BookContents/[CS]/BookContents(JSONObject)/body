@@ -1,0 +1,4 @@
+{
+  this.raw=raw;
+  chapters=raw.optJSONArray("chapters");
+}

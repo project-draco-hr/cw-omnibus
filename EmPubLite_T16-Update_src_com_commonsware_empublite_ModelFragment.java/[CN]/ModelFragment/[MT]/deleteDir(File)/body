@@ -1,0 +1,12 @@
+{
+  if (dir.exists() && dir.isDirectory()) {
+    File[] children=dir.listFiles();
+    for (    File child : children) {
+      boolean ok=deleteDir(child);
+      if (!ok) {
+        return (false);
+      }
+    }
+  }
+  return (dir.delete());
+}

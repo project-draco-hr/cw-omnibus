@@ -1,0 +1,11 @@
+{
+  this.prefs=prefs;
+  adapter=new ContentsAdapter(this,contents);
+  pager.setAdapter(adapter);
+  findViewById(R.id.progressBar1).setVisibility(View.GONE);
+  findViewById(R.id.pager).setVisibility(View.VISIBLE);
+  if (prefs.getBoolean(PREF_SAVE_LAST_POSITION,false)) {
+    pager.setCurrentItem(prefs.getInt(PREF_LAST_POSITION,0));
+  }
+  pager.setKeepScreenOn(prefs.getBoolean(PREF_KEEP_SCREEN_ON,false));
+}

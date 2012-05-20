@@ -1,0 +1,6 @@
+{
+  if (singleton == null) {
+    singleton=new DatabaseHelper(ctxt.getApplicationContext());
+  }
+  return (singleton);
+}

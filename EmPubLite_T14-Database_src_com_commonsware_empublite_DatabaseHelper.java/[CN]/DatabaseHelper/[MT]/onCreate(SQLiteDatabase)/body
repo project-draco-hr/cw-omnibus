@@ -1,0 +1,10 @@
+{
+  try {
+    db.beginTransaction();
+    db.execSQL("CREATE TABLE notes (position INTEGER PRIMARY KEY, prose TEXT);");
+    db.setTransactionSuccessful();
+  }
+  finally {
+    db.endTransaction();
+  }
+}

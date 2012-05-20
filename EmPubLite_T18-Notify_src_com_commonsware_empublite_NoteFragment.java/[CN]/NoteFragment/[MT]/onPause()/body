@@ -1,0 +1,7 @@
+{
+  if (!isDeleted) {
+    int position=getArguments().getInt(KEY_POSITION,-1);
+    DatabaseHelper.getInstance(getActivity()).saveNoteAsync(position,editor.getText().toString());
+  }
+  super.onPause();
+}

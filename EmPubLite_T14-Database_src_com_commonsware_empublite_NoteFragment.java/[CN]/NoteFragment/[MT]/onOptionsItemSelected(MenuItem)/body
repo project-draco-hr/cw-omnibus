@@ -1,0 +1,10 @@
+{
+  if (item.getItemId() == R.id.delete) {
+    int position=getArguments().getInt(KEY_POSITION,-1);
+    isDeleted=true;
+    DatabaseHelper.getInstance(getActivity()).deleteNoteAsync(position);
+    ((NoteActivity)getActivity()).closeNotes();
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

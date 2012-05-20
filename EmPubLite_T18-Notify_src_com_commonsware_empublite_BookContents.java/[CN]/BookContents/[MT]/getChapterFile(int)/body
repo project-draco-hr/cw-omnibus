@@ -1,0 +1,7 @@
+{
+  JSONObject chapter=chapters.optJSONObject(position);
+  if (updateDir != null) {
+    return (Uri.fromFile(new File(updateDir,chapter.optString("file"))).toString());
+  }
+  return ("file:///android_asset/book/" + chapter.optString("file"));
+}

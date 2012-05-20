@@ -1,0 +1,24 @@
+{
+  File update=DownloadCheckService.getUpdateDir(getActivity(),true);
+  try {
+    StringBuilder buf=new StringBuilder();
+    InputStream json=null;
+    if (update != null && update.exists()) {
+      json=new FileInputStream(new File(update,"contents.json"));
+    }
+ else {
+      json=ctxt[0].getAssets().open("book/contents.json");
+    }
+    BufferedReader in=new BufferedReader(new InputStreamReader(json));
+    String str;
+    while ((str=in.readLine()) != null) {
+      buf.append(str);
+    }
+    in.close();
+    localContents=new BookContents(new JSONObject(buf.toString()),update);
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (null);
+}

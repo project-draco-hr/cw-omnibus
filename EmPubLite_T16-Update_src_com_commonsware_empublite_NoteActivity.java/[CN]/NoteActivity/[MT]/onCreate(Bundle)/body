@@ -1,0 +1,10 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    int position=getIntent().getIntExtra(EXTRA_POSITION,-1);
+    if (position >= 0) {
+      Fragment f=NoteFragment.newInstance(position);
+      getSupportFragmentManager().beginTransaction().add(android.R.id.content,f).commit();
+    }
+  }
+}

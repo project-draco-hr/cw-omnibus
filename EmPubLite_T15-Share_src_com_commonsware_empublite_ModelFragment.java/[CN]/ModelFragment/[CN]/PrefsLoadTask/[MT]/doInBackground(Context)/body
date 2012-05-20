@@ -1,0 +1,5 @@
+{
+  localPrefs=PreferenceManager.getDefaultSharedPreferences(ctxt[0]);
+  localPrefs.getAll();
+  return (null);
+}

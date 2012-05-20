@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    getSupportFragmentManager().beginTransaction().add(new ModelFragment(),MODEL).commit();
+  }
+  setContentView(R.layout.main);
+  pager=(ViewPager)findViewById(R.id.pager);
+}

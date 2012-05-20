@@ -1,0 +1,5 @@
+{
+  String[] args={params[0].toString()};
+  getWritableDatabase().execSQL("DELETE FROM notes WHERE position=?",args);
+  return (null);
+}
