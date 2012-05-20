@@ -1,0 +1,43 @@
+{
+  if (DEBUG)   Log.d(TAG,"[dispatchKeyEvent] event: " + event);
+  final int keyCode=event.getKeyCode();
+  if (keyCode == KeyEvent.KEYCODE_BACK) {
+    final int action=event.getAction();
+    if (mActionMode != null) {
+      if (action == KeyEvent.ACTION_UP) {
+        mActionMode.finish();
+      }
+      if (DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
+      return true;
+    }
+    if (wActionBar != null && wActionBar.hasExpandedActionView()) {
+      if (action == KeyEvent.ACTION_UP) {
+        wActionBar.collapseActionView();
+      }
+      if (DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
+      return true;
+    }
+  }
+  boolean result=false;
+  if (keyCode == KeyEvent.KEYCODE_MENU && isReservingOverflow()) {
+    if (event.getAction() == KeyEvent.ACTION_DOWN && event.isLongPress()) {
+      mMenuKeyIsLongPress=true;
+    }
+ else     if (event.getAction() == KeyEvent.ACTION_UP) {
+      if (!mMenuKeyIsLongPress) {
+        if (mActionMode == null && wActionBar != null) {
+          if (wActionBar.isOverflowMenuShowing()) {
+            wActionBar.hideOverflowMenu();
+          }
+ else {
+            wActionBar.showOverflowMenu();
+          }
+        }
+        result=true;
+      }
+      mMenuKeyIsLongPress=false;
+    }
+  }
+  if (DEBUG)   Log.d(TAG,"[dispatchKeyEvent] returning " + result);
+  return result;
+}

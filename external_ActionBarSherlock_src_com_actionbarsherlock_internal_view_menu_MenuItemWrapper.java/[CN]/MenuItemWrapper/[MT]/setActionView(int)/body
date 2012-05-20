@@ -1,0 +1,4 @@
+{
+  mNativeItem.setActionView(resId);
+  return this;
+}

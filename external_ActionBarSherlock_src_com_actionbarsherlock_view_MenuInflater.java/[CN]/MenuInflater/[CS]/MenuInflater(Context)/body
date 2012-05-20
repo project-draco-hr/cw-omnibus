@@ -1,0 +1,5 @@
+{
+  mContext=context;
+  mActionViewConstructorArguments=new Object[]{context};
+  mActionProviderConstructorArguments=mActionViewConstructorArguments;
+}

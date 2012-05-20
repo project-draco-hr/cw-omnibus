@@ -1,0 +1,14 @@
+{
+  if (mListener != null) {
+    if (mFragmentTransaction == null && mActivity instanceof SherlockFragmentActivity) {
+      mFragmentTransaction=((SherlockFragmentActivity)mActivity).getSupportFragmentManager().beginTransaction().disallowAddToBackStack();
+    }
+    mListener.onTabSelected(this,mFragmentTransaction);
+    if (mFragmentTransaction != null) {
+      if (!mFragmentTransaction.isEmpty()) {
+        mFragmentTransaction.commit();
+      }
+      mFragmentTransaction=null;
+    }
+  }
+}
