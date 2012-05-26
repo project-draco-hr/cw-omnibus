@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  format=(TextView)findViewById(R.id.format);
+  contents=(TextView)findViewById(R.id.contents);
+}

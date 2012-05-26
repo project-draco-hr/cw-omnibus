@@ -1,0 +1,4 @@
+{
+  format.setText(state.getString("format"));
+  contents.setText(state.getString("contents"));
+}

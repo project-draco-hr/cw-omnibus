@@ -1,0 +1,4 @@
+{
+  state.putString("format",format.getText().toString());
+  state.putString("contents",contents.getText().toString());
+}

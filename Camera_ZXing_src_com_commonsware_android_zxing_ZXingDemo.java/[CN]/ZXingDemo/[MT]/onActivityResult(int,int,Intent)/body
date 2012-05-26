@@ -1,0 +1,7 @@
+{
+  IntentResult scan=IntentIntegrator.parseActivityResult(request,result,i);
+  if (scan != null) {
+    format.setText(scan.getFormatName());
+    contents.setText(scan.getContents());
+  }
+}

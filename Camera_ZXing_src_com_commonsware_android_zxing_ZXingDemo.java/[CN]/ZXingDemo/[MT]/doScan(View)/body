@@ -1,0 +1,3 @@
+{
+  (new IntentIntegrator(this)).initiateScan();
+}
