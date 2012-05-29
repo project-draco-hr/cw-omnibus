@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  IntentFilter filter=new IntentFilter(NoticeService.BROADCAST);
+  filter.setPriority(2);
+  registerReceiver(onNotice,filter);
+}

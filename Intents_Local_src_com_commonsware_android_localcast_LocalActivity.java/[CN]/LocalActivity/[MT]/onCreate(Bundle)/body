@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  notice=(TextView)findViewById(R.id.notice);
+  startService(new Intent(this,NoticeService.class));
+}

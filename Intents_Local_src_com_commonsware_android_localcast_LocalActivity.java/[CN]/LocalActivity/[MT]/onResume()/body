@@ -1,0 +1,5 @@
+{
+  super.onResume();
+  IntentFilter filter=new IntentFilter(NoticeService.BROADCAST);
+  LocalBroadcastManager.getInstance(this).registerReceiver(onNotice,filter);
+}
