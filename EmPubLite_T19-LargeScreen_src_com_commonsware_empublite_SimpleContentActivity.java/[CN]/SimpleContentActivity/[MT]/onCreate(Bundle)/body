@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    String file=getIntent().getStringExtra(EXTRA_FILE);
+    Fragment f=SimpleContentFragment.newInstance(file);
+    getSupportFragmentManager().beginTransaction().add(android.R.id.content,f).commit();
+  }
+}

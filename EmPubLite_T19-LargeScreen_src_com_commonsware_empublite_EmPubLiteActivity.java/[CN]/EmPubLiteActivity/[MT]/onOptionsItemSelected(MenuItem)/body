@@ -1,0 +1,23 @@
+{
+switch (item.getItemId()) {
+case android.R.id.home:
+    pager.setCurrentItem(0,false);
+  return (true);
+case R.id.update:
+WakefulIntentService.sendWakefulWork(this,DownloadCheckService.class);
+return (true);
+case R.id.notes:
+showNotes();
+return (true);
+case R.id.about:
+showAbout();
+return (true);
+case R.id.help:
+showHelp();
+return (true);
+case R.id.settings:
+startActivity(new Intent(this,Preferences.class));
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

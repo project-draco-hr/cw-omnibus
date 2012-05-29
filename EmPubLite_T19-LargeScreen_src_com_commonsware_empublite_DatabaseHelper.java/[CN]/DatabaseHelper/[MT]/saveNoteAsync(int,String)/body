@@ -1,0 +1,3 @@
+{
+  ModelFragment.executeAsyncTask(new SaveNoteTask(position,note));
+}

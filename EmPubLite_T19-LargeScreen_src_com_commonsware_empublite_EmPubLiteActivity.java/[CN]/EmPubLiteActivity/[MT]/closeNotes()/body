@@ -1,0 +1,3 @@
+{
+  getSupportFragmentManager().popBackStackImmediate();
+}

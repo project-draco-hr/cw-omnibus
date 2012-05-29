@@ -1,0 +1,14 @@
+{
+  JSONObject json=new JSONObject(raw);
+  String version=json.names().getString(0);
+  File localCopy=new File(getUpdateBaseDir(this),version);
+  if (!localCopy.exists()) {
+    localCopy.mkdirs();
+    String url=json.getString(version);
+    DownloadManager mgr=(DownloadManager)getSystemService(DOWNLOAD_SERVICE);
+    DownloadManager.Request req=new DownloadManager.Request(Uri.parse(url));
+    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).mkdirs();
+    req.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE).setAllowedOverRoaming(false).setTitle(getString(R.string.update_title)).setDescription(getString(R.string.update_description)).setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,UPDATE_FILENAME);
+    mgr.enqueue(req);
+  }
+}

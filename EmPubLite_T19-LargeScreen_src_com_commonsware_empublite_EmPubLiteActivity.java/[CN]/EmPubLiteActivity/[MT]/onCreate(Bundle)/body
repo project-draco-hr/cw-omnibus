@@ -1,0 +1,19 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    model=new ModelFragment();
+    getSupportFragmentManager().beginTransaction().add(model,MODEL).commit();
+  }
+ else {
+    model=(ModelFragment)getSupportFragmentManager().findFragmentByTag(MODEL);
+  }
+  setContentView(R.layout.main);
+  pager=(ViewPager)findViewById(R.id.pager);
+  sidebar=findViewById(R.id.sidebar);
+  divider=findViewById(R.id.divider);
+  getSupportFragmentManager().addOnBackStackChangedListener(this);
+  if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+    openSidebar();
+  }
+  UpdateReceiver.scheduleAlarm(this);
+}

@@ -1,0 +1,8 @@
+{
+  unregisterReceiver(onUpdate);
+  if (prefs != null) {
+    int position=pager.getCurrentItem();
+    prefs.edit().putInt(PREF_LAST_POSITION,position).apply();
+  }
+  super.onPause();
+}
