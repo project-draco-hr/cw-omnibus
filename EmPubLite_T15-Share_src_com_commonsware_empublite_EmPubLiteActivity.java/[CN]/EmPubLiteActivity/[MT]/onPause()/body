@@ -1,18 +1,7 @@
 {
   if (prefs != null) {
     int position=pager.getCurrentItem();
-    final SharedPreferences.Editor editor=prefs.edit().putInt(PREF_LAST_POSITION,position);
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-      editor.apply();
-    }
- else {
-      new Thread(){
-        public void run(){
-          editor.commit();
-        }
-      }
-.start();
-    }
+    prefs.edit().putInt(PREF_LAST_POSITION,position).apply();
   }
   super.onPause();
 }
