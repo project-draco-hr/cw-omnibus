@@ -1,0 +1,6 @@
+{
+  if (titleField == null) {
+    titleField=(EditText)base.findViewById(R.id.title);
+  }
+  return (titleField);
+}

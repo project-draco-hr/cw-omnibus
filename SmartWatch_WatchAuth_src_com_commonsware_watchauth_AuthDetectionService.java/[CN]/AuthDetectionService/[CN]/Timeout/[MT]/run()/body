@@ -1,0 +1,11 @@
+{
+  SystemClock.sleep(timeoutSeconds * 1000);
+synchronized (AuthDetectionService.this) {
+    if (!isInterrupted()) {
+      DevicePolicyManager mgr=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
+      mgr.lockNow();
+      timeout=null;
+      stopSelf();
+    }
+  }
+}

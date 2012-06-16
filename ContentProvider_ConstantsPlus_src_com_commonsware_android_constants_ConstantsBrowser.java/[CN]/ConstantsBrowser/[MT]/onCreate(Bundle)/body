@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  constantsCursor=managedQuery(Provider.Constants.CONTENT_URI,PROJECTION,null,null,null);
+  ListAdapter adapter=new SimpleCursorAdapter(this,R.layout.row,constantsCursor,new String[]{Provider.Constants.TITLE,Provider.Constants.VALUE},new int[]{R.id.title,R.id.value});
+  setListAdapter(adapter);
+  registerForContextMenu(getListView());
+}

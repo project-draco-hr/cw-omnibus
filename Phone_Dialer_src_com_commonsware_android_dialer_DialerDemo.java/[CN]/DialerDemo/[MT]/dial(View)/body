@@ -1,0 +1,5 @@
+{
+  EditText number=(EditText)findViewById(R.id.number);
+  String toDial="tel:" + number.getText().toString();
+  startActivity(new Intent(Intent.ACTION_DIAL,Uri.parse(toDial)));
+}

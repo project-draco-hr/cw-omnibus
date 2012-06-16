@@ -1,0 +1,4 @@
+{
+  super.onResume();
+  myLocationManager.requestLocationUpdates(PROVIDER,10000,100.0f,onLocation);
+}

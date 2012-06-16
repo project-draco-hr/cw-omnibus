@@ -1,0 +1,12 @@
+{
+  final int w=AuthSmartWatch.getSupportedControlWidth(this);
+  final int h=AuthSmartWatch.getSupportedControlHeight(this);
+  for (  DeviceInfo device : RegistrationAdapter.getHostApplication(this,hostAppPackageName).getDevices()) {
+    for (    DisplayInfo display : device.getDisplays()) {
+      if (display.sizeEquals(w,h)) {
+        return (new AuthSmartWatch(hostAppPackageName,this));
+      }
+    }
+  }
+  throw new IllegalArgumentException("No properly-sized control for: " + hostAppPackageName);
+}

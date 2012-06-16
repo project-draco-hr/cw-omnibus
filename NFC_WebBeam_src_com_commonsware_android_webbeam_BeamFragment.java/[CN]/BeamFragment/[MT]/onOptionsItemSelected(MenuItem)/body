@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.beam) {
+    getContract().enablePush();
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

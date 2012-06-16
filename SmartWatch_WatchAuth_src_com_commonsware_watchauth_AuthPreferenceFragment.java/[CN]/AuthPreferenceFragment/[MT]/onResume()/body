@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  CheckBoxPreference pref=(CheckBoxPreference)findPreference(KEY_ENABLED);
+  pref.setChecked(mgr.isAdminActive(cn));
+  pref.setOnPreferenceChangeListener(this);
+}

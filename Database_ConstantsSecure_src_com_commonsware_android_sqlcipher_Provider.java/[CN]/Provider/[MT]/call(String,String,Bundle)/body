@@ -1,0 +1,6 @@
+{
+  if (SET_KEY_METHOD.equals(method) && arg != null) {
+    key=arg;
+  }
+  return (null);
+}

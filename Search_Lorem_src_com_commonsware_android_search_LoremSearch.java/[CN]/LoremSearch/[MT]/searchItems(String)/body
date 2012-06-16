@@ -1,0 +1,10 @@
+{
+  LoremSuggestionProvider.getBridge(this).saveRecentQuery(query,null);
+  List<String> results=new ArrayList<String>();
+  for (  String item : items) {
+    if (item.indexOf(query) > -1) {
+      results.add(item);
+    }
+  }
+  return (results);
+}

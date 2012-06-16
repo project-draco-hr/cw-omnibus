@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  cn=new ComponentName(getActivity(),AuthAdminReceiver.class);
+  mgr=(DevicePolicyManager)getActivity().getSystemService(Context.DEVICE_POLICY_SERVICE);
+  addPreferencesFromResource(R.xml.preferences);
+}

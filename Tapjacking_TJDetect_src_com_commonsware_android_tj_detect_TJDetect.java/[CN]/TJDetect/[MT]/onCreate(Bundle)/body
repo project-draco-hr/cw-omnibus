@@ -1,0 +1,22 @@
+{
+  super.onCreate(savedInstanceState);
+  ActivityManager am=(ActivityManager)getSystemService(ACTIVITY_SERVICE);
+  HashSet<CharSequence> runningPackages=new HashSet<CharSequence>();
+  for (  ActivityManager.RunningAppProcessInfo proc : am.getRunningAppProcesses()) {
+    for (    String pkgName : proc.pkgList) {
+      runningPackages.add(pkgName);
+    }
+  }
+  PackageManager mgr=getPackageManager();
+  ArrayList<CharSequence> scary=new ArrayList<CharSequence>();
+  for (  PackageInfo pkg : mgr.getInstalledPackages(PackageManager.GET_PERMISSIONS)) {
+    if (PackageManager.PERMISSION_GRANTED == mgr.checkPermission(android.Manifest.permission.SYSTEM_ALERT_WINDOW,pkg.packageName)) {
+      if (PackageManager.PERMISSION_GRANTED == mgr.checkPermission(android.Manifest.permission.INTERNET,pkg.packageName)) {
+        if (runningPackages.contains(pkg.packageName)) {
+          scary.add(mgr.getApplicationLabel(pkg.applicationInfo));
+        }
+      }
+    }
+  }
+  setListAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,scary));
+}

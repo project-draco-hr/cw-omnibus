@@ -1,0 +1,5 @@
+{
+  long duration=SystemClock.uptimeMillis() - startTime;
+  msg.setText("Done: " + String.valueOf(duration));
+  v.setEnabled(true);
+}

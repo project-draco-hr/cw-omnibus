@@ -1,0 +1,15 @@
+{
+  if (ACTION_CALL_FOR_PLUGINS.equals(i.getAction())) {
+    Intent registration=new Intent(ACTION_REGISTER_PLUGIN);
+    registration.setPackage(HOST_PACKAGE);
+    registration.putExtra(EXTRA_COMPONENT,new ComponentName(ctxt,getClass()));
+    ctxt.sendBroadcast(registration);
+  }
+ else   if (ACTION_CALL_FOR_CONTENT.equals(i.getAction())) {
+    RemoteViews rv=new RemoteViews(ctxt.getPackageName(),R.layout.plugin);
+    Intent update=new Intent(ACTION_DELIVER_CONTENT);
+    update.setPackage(HOST_PACKAGE);
+    update.putExtra(EXTRA_CONTENT,rv);
+    ctxt.sendBroadcast(update);
+  }
+}

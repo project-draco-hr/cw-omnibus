@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  cn=new ComponentName(this,AdminReceiver.class);
+  mgr=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
+}

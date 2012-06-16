@@ -1,0 +1,10 @@
+{
+  Location loc=myLocationManager.getLastKnownLocation(PROVIDER);
+  if (loc == null) {
+    return (null);
+  }
+  JSONObject json=new JSONObject();
+  json.put("lat",loc.getLatitude());
+  json.put("lon",loc.getLongitude());
+  return (json.toString());
+}

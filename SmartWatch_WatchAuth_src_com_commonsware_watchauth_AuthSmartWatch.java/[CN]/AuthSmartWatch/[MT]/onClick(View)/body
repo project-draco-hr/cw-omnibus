@@ -1,0 +1,7 @@
+{
+  if (v.getId() == R.id.confirm) {
+    Intent i=new Intent(v.getContext(),AuthDetectionService.class);
+    i.setAction(AuthDetectionService.CMD_VALIDATE);
+    v.getContext().startService(i);
+  }
+}

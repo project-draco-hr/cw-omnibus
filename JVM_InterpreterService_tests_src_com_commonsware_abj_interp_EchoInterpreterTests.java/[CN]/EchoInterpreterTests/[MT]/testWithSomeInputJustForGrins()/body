@@ -1,0 +1,7 @@
+{
+  Bundle input=new Bundle();
+  input.putString("this","is a value");
+  Bundle results=execServiceTest(input);
+  assertNotNull(results);
+  assertEquals(results.getString("this"),"is a value");
+}

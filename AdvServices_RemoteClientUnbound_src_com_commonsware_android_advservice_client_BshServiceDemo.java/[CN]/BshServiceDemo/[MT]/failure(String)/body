@@ -1,0 +1,4 @@
+{
+  AlertDialog.Builder builder=new AlertDialog.Builder(BshServiceDemo.this);
+  builder.setTitle("Exception!").setMessage(error).setPositiveButton("OK",null).show();
+}

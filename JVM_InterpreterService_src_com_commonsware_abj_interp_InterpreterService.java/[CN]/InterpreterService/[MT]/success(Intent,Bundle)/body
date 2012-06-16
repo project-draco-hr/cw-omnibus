@@ -1,0 +1,6 @@
+{
+  Intent data=new Intent();
+  data.putExtras(result);
+  data.putExtra(RESULT_CODE,SUCCESS);
+  send(intent,data);
+}

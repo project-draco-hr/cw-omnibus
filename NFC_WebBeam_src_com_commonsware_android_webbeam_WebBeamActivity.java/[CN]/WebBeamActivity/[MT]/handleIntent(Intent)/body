@@ -1,0 +1,8 @@
+{
+  if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(i.getAction())) {
+    Parcelable[] rawMsgs=i.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+    NdefMessage msg=(NdefMessage)rawMsgs[0];
+    String url=new String(msg.getRecords()[0].getPayload());
+    beamFragment.loadUrl(url);
+  }
+}

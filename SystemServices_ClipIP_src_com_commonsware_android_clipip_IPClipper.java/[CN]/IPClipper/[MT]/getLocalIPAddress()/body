@@ -1,0 +1,14 @@
+{
+  Enumeration<NetworkInterface> nics=NetworkInterface.getNetworkInterfaces();
+  while (nics.hasMoreElements()) {
+    NetworkInterface intf=nics.nextElement();
+    Enumeration<InetAddress> addrs=intf.getInetAddresses();
+    while (addrs.hasMoreElements()) {
+      InetAddress addr=addrs.nextElement();
+      if (!addr.isLoopbackAddress()) {
+        return (addr.getHostAddress().toString());
+      }
+    }
+  }
+  return (null);
+}

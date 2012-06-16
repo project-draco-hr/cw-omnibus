@@ -1,0 +1,6 @@
+{
+  Bundle input=new Bundle();
+  input.putString(InterpreterService.SCRIPT,";");
+  Bundle output=execServiceTest(input);
+  assert(output.size() == 1);
+}

@@ -1,0 +1,7 @@
+{
+  if (isFinishing()) {
+    nfc.disableForegroundDispatch(this);
+    inWriteMode=false;
+  }
+  super.onPause();
+}

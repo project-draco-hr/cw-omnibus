@@ -1,0 +1,4 @@
+{
+  i.setClass(ctxt,AuthExtensionService.class);
+  ctxt.startService(i);
+}

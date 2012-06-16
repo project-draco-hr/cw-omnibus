@@ -1,0 +1,3 @@
+{
+  return (new SearchRecentSuggestions(ctxt,AUTH,DATABASE_MODE_QUERIES));
+}

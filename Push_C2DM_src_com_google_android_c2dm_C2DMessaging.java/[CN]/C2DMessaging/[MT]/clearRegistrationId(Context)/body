@@ -1,0 +1,7 @@
+{
+  final SharedPreferences prefs=context.getSharedPreferences(PREFERENCE,Context.MODE_PRIVATE);
+  Editor editor=prefs.edit();
+  editor.putString("dm_registration","");
+  editor.putLong(LAST_REGISTRATION_CHANGE,System.currentTimeMillis());
+  editor.commit();
+}

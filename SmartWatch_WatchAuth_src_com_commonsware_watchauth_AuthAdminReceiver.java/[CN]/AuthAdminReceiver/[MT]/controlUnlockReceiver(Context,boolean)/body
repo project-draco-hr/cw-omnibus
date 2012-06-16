@@ -1,0 +1,5 @@
+{
+  PackageManager mgr=ctxt.getPackageManager();
+  int state=enabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+  mgr.setComponentEnabledSetting(new ComponentName(ctxt,UnlockReceiver.class),state,PackageManager.DONT_KILL_APP);
+}

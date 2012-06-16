@@ -1,0 +1,15 @@
+{
+  entries.clear();
+  try {
+    for (Iterator<String> i=json.keys(); i.hasNext(); ) {
+      String title=i.next();
+      String url=json.getString(title);
+      entries.add(new Entry(title,url));
+    }
+    tray.setAdapter(new EntryAdapter());
+  }
+ catch (  Exception ex) {
+    Log.e("QRCodeKeeper","Exception interpreting JSON",ex);
+    goBlooey(ex);
+  }
+}

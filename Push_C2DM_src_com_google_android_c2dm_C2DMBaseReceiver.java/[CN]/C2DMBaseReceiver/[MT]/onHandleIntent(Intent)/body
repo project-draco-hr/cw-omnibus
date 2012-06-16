@@ -1,0 +1,17 @@
+{
+  try {
+    Context context=getApplicationContext();
+    if (intent.getAction().equals(REGISTRATION_CALLBACK_INTENT)) {
+      handleRegistration(context,intent);
+    }
+ else     if (intent.getAction().equals(C2DM_INTENT)) {
+      onMessage(context,intent);
+    }
+ else     if (intent.getAction().equals(C2DM_RETRY)) {
+      C2DMessaging.register(context,senderId);
+    }
+  }
+  finally {
+    mWakeLock.release();
+  }
+}

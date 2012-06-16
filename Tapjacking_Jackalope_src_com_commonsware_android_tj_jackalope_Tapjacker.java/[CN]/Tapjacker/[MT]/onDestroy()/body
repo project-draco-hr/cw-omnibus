@@ -1,0 +1,4 @@
+{
+  mgr.removeView(v);
+  super.onDestroy();
+}

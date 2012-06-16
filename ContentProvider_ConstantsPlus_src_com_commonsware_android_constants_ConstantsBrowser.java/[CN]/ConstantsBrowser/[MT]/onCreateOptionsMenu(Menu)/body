@@ -1,0 +1,4 @@
+{
+  menu.add(Menu.NONE,ADD_ID,Menu.NONE,"Add").setIcon(R.drawable.add).setAlphabeticShortcut('a');
+  return (super.onCreateOptionsMenu(menu));
+}

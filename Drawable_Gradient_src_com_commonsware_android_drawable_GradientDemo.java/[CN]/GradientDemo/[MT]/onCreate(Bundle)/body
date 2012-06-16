@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  setListAdapter(new GradientAdapter(this));
+  getListView().setOnItemSelectedListener(listener);
+}

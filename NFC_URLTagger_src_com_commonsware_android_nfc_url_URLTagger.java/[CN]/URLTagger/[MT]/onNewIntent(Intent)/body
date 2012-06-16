@@ -1,0 +1,9 @@
+{
+  if (inWriteMode && NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
+    Tag tag=intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+    byte[] url=buildUrlBytes(getIntent().getStringExtra(Intent.EXTRA_TEXT));
+    NdefRecord record=new NdefRecord(NdefRecord.TNF_WELL_KNOWN,NdefRecord.RTD_URI,new byte[]{},url);
+    NdefMessage msg=new NdefMessage(new NdefRecord[]{record});
+    new WriteTask(this,msg,tag).execute();
+  }
+}

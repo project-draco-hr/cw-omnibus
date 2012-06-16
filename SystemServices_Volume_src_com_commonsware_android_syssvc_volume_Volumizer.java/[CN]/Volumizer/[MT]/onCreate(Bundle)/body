@@ -1,0 +1,15 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  mgr=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
+  alarm=(SeekBar)findViewById(R.id.alarm);
+  music=(SeekBar)findViewById(R.id.music);
+  ring=(SeekBar)findViewById(R.id.ring);
+  system=(SeekBar)findViewById(R.id.system);
+  voice=(SeekBar)findViewById(R.id.voice);
+  initBar(alarm,AudioManager.STREAM_ALARM);
+  initBar(music,AudioManager.STREAM_MUSIC);
+  initBar(ring,AudioManager.STREAM_RING);
+  initBar(system,AudioManager.STREAM_SYSTEM);
+  initBar(voice,AudioManager.STREAM_VOICE_CALL);
+}

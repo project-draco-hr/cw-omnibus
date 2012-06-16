@@ -1,0 +1,21 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  selection=(TextView)findViewById(R.id.selection);
+  try {
+    XmlPullParser xpp=getResources().getXml(R.xml.words);
+    while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
+      if (xpp.getEventType() == XmlPullParser.START_TAG) {
+        if (xpp.getName().equals("word")) {
+          items.add(xpp.getAttributeValue(0));
+        }
+      }
+      xpp.next();
+    }
+  }
+ catch (  Throwable t) {
+    Toast.makeText(this,"Request failed: " + t.toString(),4000).show();
+  }
+  setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
+  onNewIntent(getIntent());
+}

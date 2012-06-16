@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  thingToResize=findViewById(R.id.resize);
+  horizontal=(SeekBar)findViewById(R.id.horizontal);
+  vertical=(SeekBar)findViewById(R.id.vertical);
+  horizontal.setMax(144);
+  vertical.setMax(144);
+  horizontal.setOnSeekBarChangeListener(h);
+  vertical.setOnSeekBarChangeListener(v);
+}

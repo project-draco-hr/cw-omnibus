@@ -1,0 +1,15 @@
+{
+  Bundle result=new Bundle(input);
+  String script=input.getString(InterpreterService.SCRIPT);
+  if (script != null) {
+    SQLiteDatabase db=SQLiteDatabase.create(null);
+    Cursor c=db.rawQuery(script,null);
+    c.moveToFirst();
+    for (int i=0; i < c.getColumnCount(); i++) {
+      result.putString(c.getColumnName(i),c.getString(i));
+    }
+    c.close();
+    db.close();
+  }
+  return (result);
+}

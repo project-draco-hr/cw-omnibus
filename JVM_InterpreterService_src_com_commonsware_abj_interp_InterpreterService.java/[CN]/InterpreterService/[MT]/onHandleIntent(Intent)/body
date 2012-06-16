@@ -1,0 +1,30 @@
+{
+  String action=intent.getAction();
+  I_Interpreter interpreter=interpreters.get(action);
+  if (interpreter == null) {
+    try {
+      interpreter=(I_Interpreter)Class.forName(action).newInstance();
+      interpreters.put(action,interpreter);
+    }
+ catch (    Throwable t) {
+      Log.e("InterpreterService","Error creating interpreter",t);
+    }
+  }
+  if (interpreter == null) {
+    failure(intent,"Could not create interpreter: " + intent.getAction());
+  }
+ else {
+    try {
+      success(intent,interpreter.executeScript(intent.getBundleExtra(BUNDLE)));
+    }
+ catch (    Throwable t) {
+      Log.e("InterpreterService","Error executing script",t);
+      try {
+        failure(intent,t);
+      }
+ catch (      Throwable t2) {
+        Log.e("InterpreterService","Error returning exception to client",t2);
+      }
+    }
+  }
+}

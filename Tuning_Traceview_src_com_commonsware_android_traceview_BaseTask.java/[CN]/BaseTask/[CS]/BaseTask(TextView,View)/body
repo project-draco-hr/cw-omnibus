@@ -1,0 +1,5 @@
+{
+  this.msg=msg;
+  this.v=v;
+  msg.setText(R.string.wait);
+}

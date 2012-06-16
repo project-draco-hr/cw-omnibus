@@ -1,0 +1,3 @@
+{
+  Log.w("C2DMReceiver",intent.getStringExtra("payload"));
+}

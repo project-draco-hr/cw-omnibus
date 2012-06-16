@@ -1,0 +1,6 @@
+{
+  Bundle state=new Bundle();
+  state.putParcelable(SUPERSTATE,super.onSaveInstanceState());
+  state.putInt(COLOR,getColor());
+  return (state);
+}

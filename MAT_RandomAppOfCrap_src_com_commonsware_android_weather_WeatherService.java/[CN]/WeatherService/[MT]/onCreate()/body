@@ -1,0 +1,3 @@
+{
+  binder=new WeatherBinder(getString(R.string.url));
+}

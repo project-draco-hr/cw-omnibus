@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  latest_rx=(TextView)findViewById(R.id.latest_rx);
+  latest_tx=(TextView)findViewById(R.id.latest_tx);
+  previous_rx=(TextView)findViewById(R.id.previous_rx);
+  previous_tx=(TextView)findViewById(R.id.previous_tx);
+  delta_rx=(TextView)findViewById(R.id.delta_rx);
+  delta_tx=(TextView)findViewById(R.id.delta_tx);
+  takeSnapshot(null);
+}

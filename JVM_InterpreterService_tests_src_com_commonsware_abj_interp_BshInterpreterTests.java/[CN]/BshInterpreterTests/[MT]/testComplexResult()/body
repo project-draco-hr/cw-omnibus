@@ -1,0 +1,8 @@
+{
+  Bundle input=new Bundle();
+  input.putString(InterpreterService.SCRIPT,"_result.putInt(\"foo\", 1+2);");
+  Bundle output=execServiceTest(input);
+  assertNull(output.getString("error"));
+  assert(output.size() == 3);
+  assertEquals(output.getInt("foo"),3);
+}

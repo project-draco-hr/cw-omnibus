@@ -1,0 +1,10 @@
+{
+  if (mWakeLock == null) {
+    PowerManager pm=(PowerManager)context.getSystemService(Context.POWER_SERVICE);
+    mWakeLock=pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,WAKELOCK_KEY);
+  }
+  mWakeLock.acquire();
+  String receiver=context.getPackageName() + ".C2DMReceiver";
+  intent.setClassName(context,receiver);
+  context.startService(intent);
+}

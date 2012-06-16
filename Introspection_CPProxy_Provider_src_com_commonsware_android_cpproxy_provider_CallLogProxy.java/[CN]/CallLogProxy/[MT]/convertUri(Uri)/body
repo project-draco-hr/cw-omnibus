@@ -1,0 +1,7 @@
+{
+  long id=ContentUris.parseId(uri);
+  if (id >= 0) {
+    return (ContentUris.withAppendedId(CallLog.Calls.CONTENT_URI,id));
+  }
+  return (CallLog.Calls.CONTENT_URI);
+}

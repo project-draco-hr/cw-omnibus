@@ -1,0 +1,7 @@
+{
+  int sdk=new Integer(Build.VERSION.SDK).intValue();
+  if (sdk < Build.VERSION_CODES.HONEYCOMB) {
+    return (new CommitAsyncStrategy());
+  }
+  return (new ApplyStrategy());
+}

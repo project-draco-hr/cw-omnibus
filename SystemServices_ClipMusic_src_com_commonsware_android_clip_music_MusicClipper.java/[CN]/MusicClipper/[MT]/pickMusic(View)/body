@@ -1,0 +1,5 @@
+{
+  Intent i=new Intent(Intent.ACTION_GET_CONTENT);
+  i.setType("audio/*");
+  startActivityForResult(i,PICK_REQUEST);
+}

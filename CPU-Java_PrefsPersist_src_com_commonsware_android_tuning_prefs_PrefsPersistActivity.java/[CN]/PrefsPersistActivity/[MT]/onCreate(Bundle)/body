@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  int counter=prefs.getInt(KEY,0);
+  ((TextView)findViewById(R.id.value)).setText(String.valueOf(counter));
+  AbstractPrefsPersistStrategy.persist(prefs.edit().putInt(KEY,counter + 1));
+}

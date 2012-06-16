@@ -1,0 +1,4 @@
+{
+  File json=new File(ctxt.getFilesDir(),SYNC_LOCAL_FILE);
+  return (json.exists());
+}

@@ -1,0 +1,5 @@
+{
+  android.util.Log.d(getClass().getSimpleName(),url);
+  getWebView().stopLoading();
+  getWebView().loadUrl(url);
+}

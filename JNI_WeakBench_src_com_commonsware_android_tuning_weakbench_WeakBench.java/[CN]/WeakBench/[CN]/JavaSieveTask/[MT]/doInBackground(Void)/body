@@ -1,0 +1,12 @@
+{
+  start=SystemClock.uptimeMillis();
+  int n=9;
+  int m=(1 << n) * 10000;
+  boolean[] flags=new boolean[m + 1];
+  nsieve(m,flags);
+  m=(1 << n - 1) * 10000;
+  nsieve(m,flags);
+  m=(1 << n - 2) * 10000;
+  nsieve(m,flags);
+  return (null);
+}

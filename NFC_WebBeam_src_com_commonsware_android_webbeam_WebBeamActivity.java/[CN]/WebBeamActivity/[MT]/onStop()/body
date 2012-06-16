@@ -1,0 +1,4 @@
+{
+  disablePush();
+  super.onStop();
+}

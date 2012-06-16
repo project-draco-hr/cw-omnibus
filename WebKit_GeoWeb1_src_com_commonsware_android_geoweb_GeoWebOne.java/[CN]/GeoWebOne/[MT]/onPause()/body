@@ -1,0 +1,4 @@
+{
+  super.onPause();
+  myLocationManager.removeUpdates(onLocation);
+}

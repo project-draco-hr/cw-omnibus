@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+  setListAdapter(new ArrayAdapter<BooleanSetting>(this,android.R.layout.simple_list_item_multiple_choice,settings));
+  ContentResolver cr=getContentResolver();
+  for (int i=0; i < settings.size(); i++) {
+    BooleanSetting s=settings.get(i);
+    getListView().setItemChecked(i,s.isChecked(cr));
+  }
+}

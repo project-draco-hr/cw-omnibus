@@ -1,0 +1,5 @@
+{
+  this.listener=listener;
+  client=new DefaultHttpClient();
+  new FetchForecastTask().execute(loc);
+}

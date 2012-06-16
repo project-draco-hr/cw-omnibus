@@ -1,0 +1,19 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  TextView uri=(TextView)findViewById(R.id.uri);
+  if (Intent.ACTION_MAIN.equals(getIntent().getAction())) {
+    String intentUri=(new Intent("com.commonsware.android.MY_ACTION")).toUri(Intent.URI_INTENT_SCHEME).toString();
+    uri.setText(intentUri);
+    Log.w("URLHandler",intentUri);
+  }
+ else {
+    Uri data=getIntent().getData();
+    if (data == null) {
+      uri.setText("Got com.commonsware.android.MY_ACTION Intent");
+    }
+ else {
+      uri.setText(getIntent().getData().toString());
+    }
+  }
+}

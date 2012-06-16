@@ -1,0 +1,9 @@
+{
+  Bundle input=new Bundle();
+  input.putString(InterpreterService.SCRIPT,"SELECT 1+2 AS result, 'foo' AS other_result, 3*8 AS third_result;");
+  Bundle output=execServiceTest(input);
+  assert(output.size() == 4);
+  assertEquals(output.getString("result"),"3");
+  assertEquals(output.getString("other_result"),"foo");
+  assertEquals(output.getString("third_result"),"24");
+}

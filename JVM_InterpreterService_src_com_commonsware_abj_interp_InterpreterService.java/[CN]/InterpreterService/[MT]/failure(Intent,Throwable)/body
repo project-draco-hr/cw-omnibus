@@ -1,0 +1,7 @@
+{
+  Intent data=new Intent();
+  data.putExtra(ERROR,t.getMessage());
+  data.putExtra(TRACE,getStackTrace(t));
+  data.putExtra(RESULT_CODE,FAILURE);
+  send(intent,data);
+}

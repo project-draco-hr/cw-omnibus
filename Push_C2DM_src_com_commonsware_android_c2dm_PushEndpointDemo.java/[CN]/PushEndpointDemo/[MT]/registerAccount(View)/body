@@ -1,0 +1,4 @@
+{
+  EditText acct=(EditText)findViewById(R.id.account);
+  C2DMessaging.register(this,acct.getText().toString());
+}

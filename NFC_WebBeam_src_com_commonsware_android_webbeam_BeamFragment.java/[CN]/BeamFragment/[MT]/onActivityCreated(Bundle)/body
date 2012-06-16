@@ -1,0 +1,7 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  getWebView().setWebViewClient(new BeamClient());
+  getWebView().getSettings().setJavaScriptEnabled(true);
+  loadUrl("http://google.com");
+  setHasOptionsMenu(true);
+}

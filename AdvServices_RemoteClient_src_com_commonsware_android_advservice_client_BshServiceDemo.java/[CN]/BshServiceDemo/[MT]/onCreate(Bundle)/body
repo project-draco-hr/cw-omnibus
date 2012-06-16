@@ -1,0 +1,20 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  Button btn=(Button)findViewById(R.id.eval);
+  final EditText script=(EditText)findViewById(R.id.script);
+  btn.setOnClickListener(new View.OnClickListener(){
+    public void onClick(    View view){
+      String src=script.getText().toString();
+      try {
+        service.executeScript(src);
+      }
+ catch (      android.os.RemoteException e) {
+        AlertDialog.Builder builder=new AlertDialog.Builder(BshServiceDemo.this);
+        builder.setTitle("Exception!").setMessage(e.toString()).setPositiveButton("OK",null).show();
+      }
+    }
+  }
+);
+  bindService(new Intent("com.commonsware.android.advservice.IScript"),svcConn,Context.BIND_AUTO_CREATE);
+}

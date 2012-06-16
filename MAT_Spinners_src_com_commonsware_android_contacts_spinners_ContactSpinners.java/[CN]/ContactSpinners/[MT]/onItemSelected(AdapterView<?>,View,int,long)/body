@@ -1,0 +1,3 @@
+{
+  setListAdapter(listAdapters[position]);
+}

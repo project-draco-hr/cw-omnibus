@@ -1,0 +1,3 @@
+{
+  return (String.format("This is a string%1$s and also has %2$d hyphens in it"," -- that varies --",4));
+}

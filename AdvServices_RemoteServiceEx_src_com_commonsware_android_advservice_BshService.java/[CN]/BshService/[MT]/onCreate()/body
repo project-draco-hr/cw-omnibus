@@ -1,0 +1,10 @@
+{
+  super.onCreate();
+  new Thread(qProcessor).start();
+  try {
+    i.set("context",this);
+  }
+ catch (  bsh.EvalError e) {
+    Log.e("BshService","Error executing script",e);
+  }
+}

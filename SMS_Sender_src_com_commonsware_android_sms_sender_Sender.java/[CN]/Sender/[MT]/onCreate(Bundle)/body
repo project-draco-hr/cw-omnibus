@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  contacts=(Spinner)findViewById(R.id.spinner);
+  contacts.setAdapter(ContactsAdapterBridge.INSTANCE.buildPhonesAdapter(this));
+  means=(RadioGroup)findViewById(R.id.means);
+  msg=(EditText)findViewById(R.id.msg);
+}

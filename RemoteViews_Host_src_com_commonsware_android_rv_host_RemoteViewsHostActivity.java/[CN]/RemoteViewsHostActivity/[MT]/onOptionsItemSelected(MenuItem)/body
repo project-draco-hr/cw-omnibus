@@ -1,0 +1,7 @@
+{
+  if (R.id.refresh == item.getItemId()) {
+    refreshPlugin();
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

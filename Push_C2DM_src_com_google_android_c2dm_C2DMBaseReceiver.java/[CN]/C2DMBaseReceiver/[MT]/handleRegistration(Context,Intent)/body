@@ -1,0 +1,37 @@
+{
+  final String registrationId=intent.getStringExtra(EXTRA_REGISTRATION_ID);
+  String error=intent.getStringExtra(EXTRA_ERROR);
+  String removed=intent.getStringExtra(EXTRA_UNREGISTERED);
+  if (Log.isLoggable(TAG,Log.DEBUG)) {
+    Log.d(TAG,"dmControl: registrationId = " + registrationId + ", error = "+ error+ ", removed = "+ removed);
+  }
+  if (removed != null) {
+    C2DMessaging.clearRegistrationId(context);
+    onUnregistered(context);
+    return;
+  }
+ else   if (error != null) {
+    C2DMessaging.clearRegistrationId(context);
+    Log.e(TAG,"Registration error " + error);
+    onError(context,error);
+    if ("SERVICE_NOT_AVAILABLE".equals(error)) {
+      long backoffTimeMs=C2DMessaging.getBackoff(context);
+      Log.d(TAG,"Scheduling registration retry, backoff = " + backoffTimeMs);
+      Intent retryIntent=new Intent(C2DM_RETRY);
+      PendingIntent retryPIntent=PendingIntent.getBroadcast(context,0,retryIntent,0);
+      AlarmManager am=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+      am.set(AlarmManager.ELAPSED_REALTIME,backoffTimeMs,retryPIntent);
+      backoffTimeMs*=2;
+      C2DMessaging.setBackoff(context,backoffTimeMs);
+    }
+  }
+ else {
+    try {
+      onRegistered(context,registrationId);
+      C2DMessaging.setRegistrationId(context,registrationId);
+    }
+ catch (    IOException ex) {
+      Log.e(TAG,"Registration error " + ex.getMessage());
+    }
+  }
+}

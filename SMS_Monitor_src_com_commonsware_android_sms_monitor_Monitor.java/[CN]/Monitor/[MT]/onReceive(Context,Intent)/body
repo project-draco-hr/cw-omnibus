@@ -1,0 +1,10 @@
+{
+  Object[] rawMsgs=(Object[])intent.getExtras().get("pdus");
+  for (  Object raw : rawMsgs) {
+    SmsMessage msg=SmsMessage.createFromPdu((byte[])raw);
+    if (msg.getMessageBody().toUpperCase().contains("SEKRIT")) {
+      Log.w("SMS:" + msg.getOriginatingAddress(),msg.getMessageBody());
+      abortBroadcast();
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  map.getOverlays().add(sites);
+  map.invalidate();
+}

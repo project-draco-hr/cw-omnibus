@@ -1,0 +1,13 @@
+{
+  try {
+    if (isSecure) {
+      Settings.Secure.putInt(cr,key,(value ? 1 : 0));
+    }
+ else {
+      Settings.System.putInt(cr,key,(value ? 1 : 0));
+    }
+  }
+ catch (  Throwable t) {
+    Log.e("SettingsSetter","Exception in setChecked()",t);
+  }
+}

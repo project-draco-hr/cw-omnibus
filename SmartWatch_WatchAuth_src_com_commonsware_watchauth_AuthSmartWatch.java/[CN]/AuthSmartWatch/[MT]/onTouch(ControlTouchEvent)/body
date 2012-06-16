@@ -1,0 +1,8 @@
+{
+  if (event.getAction() == Control.Intents.TOUCH_ACTION_RELEASE) {
+    View match=findBestTouchMatch(content,event.getX(),event.getY());
+    if (match != content) {
+      match.performClick();
+    }
+  }
+}

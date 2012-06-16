@@ -1,0 +1,5 @@
+{
+  RelativeLayout.LayoutParams lp=(RelativeLayout.LayoutParams)dragImage.getLayoutParams();
+  lp.setMargins(x - xDragImageOffset - xDragTouchOffset,y - yDragImageOffset - yDragTouchOffset,0,0);
+  dragImage.setLayoutParams(lp);
+}

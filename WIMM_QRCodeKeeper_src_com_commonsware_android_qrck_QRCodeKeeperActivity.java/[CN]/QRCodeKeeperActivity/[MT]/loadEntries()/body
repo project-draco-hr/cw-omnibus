@@ -1,0 +1,3 @@
+{
+  new JSONLoadTask(this,this).execute(SyncService.SYNC_LOCAL_FILE);
+}

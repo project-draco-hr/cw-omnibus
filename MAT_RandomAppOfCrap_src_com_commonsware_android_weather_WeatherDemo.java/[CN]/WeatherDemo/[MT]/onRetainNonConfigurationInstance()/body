@@ -1,0 +1,4 @@
+{
+  isConfigurationChanging=true;
+  return (state);
+}

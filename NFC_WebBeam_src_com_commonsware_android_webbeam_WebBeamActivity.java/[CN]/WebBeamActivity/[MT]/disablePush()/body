@@ -1,0 +1,3 @@
+{
+  adapter.setNdefPushMessageCallback(null,this);
+}

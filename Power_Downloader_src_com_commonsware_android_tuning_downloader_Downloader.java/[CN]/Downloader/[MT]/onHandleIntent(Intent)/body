@@ -1,0 +1,34 @@
+{
+  Intent trepn=new Intent("com.quicinc.Trepn.UpdateAppState");
+  trepn.putExtra("com.quicinc.Trepn.UpdateAppState.Value",1337);
+  sendBroadcast(trepn);
+  HttpGet getMethod=new HttpGet(i.getData().toString());
+  int result=Activity.RESULT_CANCELED;
+  try {
+    ResponseHandler<byte[]> responseHandler=new ByteArrayResponseHandler();
+    byte[] responseBody=client.execute(getMethod,responseHandler);
+    File output=new File(Environment.getExternalStorageDirectory(),i.getData().getLastPathSegment());
+    if (output.exists()) {
+      output.delete();
+    }
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    fos.write(responseBody);
+    fos.close();
+    result=Activity.RESULT_OK;
+  }
+ catch (  IOException e2) {
+    Log.e(getClass().getName(),"Exception in download",e2);
+  }
+  Bundle extras=i.getExtras();
+  if (extras != null) {
+    Messenger messenger=(Messenger)extras.get(EXTRA_MESSENGER);
+    Message msg=Message.obtain();
+    msg.arg1=result;
+    try {
+      messenger.send(msg);
+    }
+ catch (    android.os.RemoteException e1) {
+      Log.w(getClass().getName(),"Exception sending message",e1);
+    }
+  }
+}

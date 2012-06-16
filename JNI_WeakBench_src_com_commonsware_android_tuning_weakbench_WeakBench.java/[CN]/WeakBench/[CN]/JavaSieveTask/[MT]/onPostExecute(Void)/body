@@ -1,0 +1,5 @@
+{
+  long delta=SystemClock.uptimeMillis() - start;
+  result.setText(String.valueOf(delta));
+  new JavaSpecTask().execute();
+}

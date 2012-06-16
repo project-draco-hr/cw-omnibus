@@ -1,0 +1,5 @@
+{
+  super.onCreate();
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  timeoutSeconds=Integer.parseInt(prefs.getString("timeout","60"));
+}

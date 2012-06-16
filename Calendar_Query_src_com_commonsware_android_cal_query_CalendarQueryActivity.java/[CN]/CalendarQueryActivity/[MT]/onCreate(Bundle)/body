@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  adapter=new SimpleCursorAdapter(this,R.layout.row,null,ROW_COLUMNS,ROW_IDS);
+  adapter.setViewBinder(this);
+  setListAdapter(adapter);
+  getLoaderManager().initLoader(0,null,this);
+}

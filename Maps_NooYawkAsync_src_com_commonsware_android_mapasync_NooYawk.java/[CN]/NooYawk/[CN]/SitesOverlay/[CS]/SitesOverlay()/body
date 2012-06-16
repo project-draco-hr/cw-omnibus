@@ -1,0 +1,9 @@
+{
+  super(null);
+  heart=getMarker(R.drawable.heart_full);
+  items.add(new CustomItem(getPoint(40.748963847316034,-73.96807193756104),"UN","United Nations",getMarker(R.drawable.blue_full_marker),heart));
+  items.add(new CustomItem(getPoint(40.76866299974387,-73.98268461227417),"Lincoln Center","Home of Jazz at Lincoln Center",getMarker(R.drawable.orange_full_marker),heart));
+  items.add(new CustomItem(getPoint(40.765136435316755,-73.97989511489868),"Carnegie Hall","Where you go with practice, practice, practice",getMarker(R.drawable.green_full_marker),heart));
+  items.add(new CustomItem(getPoint(40.70686417491799,-74.01572942733765),"The Downtown Club","Original home of the Heisman Trophy",getMarker(R.drawable.purple_full_marker),heart));
+  populate();
+}

@@ -1,0 +1,11 @@
+{
+  if (listener != null) {
+    if (json != null) {
+      listener.handleResult(json);
+    }
+    if (ex != null) {
+      listener.handleError(ex);
+      AppUtils.cleanup(ctxt);
+    }
+  }
+}

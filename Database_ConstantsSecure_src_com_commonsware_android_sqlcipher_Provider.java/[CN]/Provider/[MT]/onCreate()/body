@@ -1,0 +1,5 @@
+{
+  SQLiteDatabase.loadLibs(getContext());
+  db=(new DatabaseHelper(getContext()));
+  return ((db == null) ? false : true);
+}

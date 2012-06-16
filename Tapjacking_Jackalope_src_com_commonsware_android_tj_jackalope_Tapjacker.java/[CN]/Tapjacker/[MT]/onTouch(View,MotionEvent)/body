@@ -1,0 +1,4 @@
+{
+  Log.w("Tapjacker",String.valueOf(event.getX()) + ":" + String.valueOf(event.getY()));
+  return (false);
+}

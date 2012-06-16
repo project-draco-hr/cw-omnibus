@@ -1,0 +1,8 @@
+{
+  long start=SystemClock.uptimeMillis();
+  for (int i=0; i < 1000000; i++) {
+    binder.doSomething();
+  }
+  delta=SystemClock.uptimeMillis() - start;
+  return (null);
+}

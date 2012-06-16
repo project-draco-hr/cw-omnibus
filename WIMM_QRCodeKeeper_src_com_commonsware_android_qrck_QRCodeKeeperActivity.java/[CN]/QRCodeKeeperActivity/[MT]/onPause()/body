@@ -1,0 +1,6 @@
+{
+  if (!noCanDo) {
+    unregisterReceiver(statusReceiver);
+  }
+  super.onPause();
+}

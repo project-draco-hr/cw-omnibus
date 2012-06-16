@@ -1,0 +1,9 @@
+{
+switch (item.getItemId()) {
+case DELETE_ID:
+    AdapterView.AdapterContextMenuInfo info=(AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+  delete(info.id);
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

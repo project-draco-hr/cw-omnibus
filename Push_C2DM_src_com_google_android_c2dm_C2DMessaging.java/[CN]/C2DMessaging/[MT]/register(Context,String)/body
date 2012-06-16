@@ -1,0 +1,7 @@
+{
+  Intent registrationIntent=new Intent(REQUEST_REGISTRATION_INTENT);
+  registrationIntent.setPackage(GSF_PACKAGE);
+  registrationIntent.putExtra(EXTRA_APPLICATION_PENDING_INTENT,PendingIntent.getBroadcast(context,0,new Intent(),0));
+  registrationIntent.putExtra(EXTRA_SENDER,senderId);
+  context.startService(registrationIntent);
+}

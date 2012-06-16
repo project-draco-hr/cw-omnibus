@@ -1,0 +1,3 @@
+{
+  super("com.commonsware.android.contacts.spinners",ContactSpinners.class);
+}

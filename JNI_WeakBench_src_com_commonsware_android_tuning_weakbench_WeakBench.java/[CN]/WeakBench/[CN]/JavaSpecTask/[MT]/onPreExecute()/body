@@ -1,0 +1,4 @@
+{
+  result=(TextView)findViewById(R.id.spec_java);
+  result.setText("running...");
+}

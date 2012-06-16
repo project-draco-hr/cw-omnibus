@@ -1,0 +1,5 @@
+{
+  start=SystemClock.uptimeMillis();
+  specnative();
+  return (null);
+}

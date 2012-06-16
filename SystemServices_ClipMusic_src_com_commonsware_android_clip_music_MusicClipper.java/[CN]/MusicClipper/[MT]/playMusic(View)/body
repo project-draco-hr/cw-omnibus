@@ -1,0 +1,16 @@
+{
+  ClipData clip=clipboard.getPrimaryClip();
+  if (clip == null) {
+    Toast.makeText(this,"There is no clip!",Toast.LENGTH_LONG).show();
+  }
+ else {
+    ClipData.Item item=clip.getItemAt(0);
+    Uri song=item.getUri();
+    if (song != null && getContentResolver().getType(song).startsWith("audio/")) {
+      startActivity(new Intent(Intent.ACTION_VIEW,song));
+    }
+ else {
+      Toast.makeText(this,"There is no song!",Toast.LENGTH_LONG).show();
+    }
+  }
+}

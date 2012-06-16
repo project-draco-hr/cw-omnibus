@@ -1,0 +1,5 @@
+{
+  final SharedPreferences prefs=context.getSharedPreferences(PREFERENCE,Context.MODE_PRIVATE);
+  String registrationId=prefs.getString("dm_registration","");
+  return registrationId;
+}

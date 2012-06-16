@@ -1,0 +1,11 @@
+{
+switch (item.getItemId()) {
+case LOCAL_SEARCH_ID:
+    onSearchRequested();
+  return (true);
+case GLOBAL_SEARCH_ID:
+startSearch(null,false,null,true);
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  Toast.makeText(this,R.string.activated,Toast.LENGTH_LONG).show();
+  finish();
+}

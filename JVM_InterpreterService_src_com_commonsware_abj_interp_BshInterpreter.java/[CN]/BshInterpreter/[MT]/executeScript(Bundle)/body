@@ -1,0 +1,17 @@
+{
+  Interpreter i=new Interpreter();
+  Bundle output=new Bundle(input);
+  String script=input.getString(InterpreterService.SCRIPT);
+  if (script != null) {
+    try {
+      i.set(InterpreterService.BUNDLE,input);
+      i.set(InterpreterService.RESULT,output);
+      Object eval_result=i.eval(script);
+      output.putString("result",eval_result.toString());
+    }
+ catch (    Throwable t) {
+      output.putString("error",t.getMessage());
+    }
+  }
+  return (output);
+}

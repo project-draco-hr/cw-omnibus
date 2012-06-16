@@ -1,0 +1,5 @@
+{
+  Intent call=new Intent(ACTION_CALL_FOR_CONTENT);
+  call.setComponent(pluginCN);
+  sendBroadcast(call);
+}

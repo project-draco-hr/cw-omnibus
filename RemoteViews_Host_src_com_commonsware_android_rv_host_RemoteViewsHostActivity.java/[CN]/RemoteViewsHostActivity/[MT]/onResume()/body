@@ -1,0 +1,10 @@
+{
+  super.onResume();
+  IntentFilter pluginFilter=new IntentFilter();
+  pluginFilter.addAction(ACTION_REGISTER_PLUGIN);
+  pluginFilter.addAction(ACTION_DELIVER_CONTENT);
+  registerReceiver(plugin,pluginFilter,PERM_ACT_AS_PLUGIN,null);
+  if (pluginCN == null) {
+    sendBroadcast(new Intent(ACTION_CALL_FOR_PLUGINS));
+  }
+}

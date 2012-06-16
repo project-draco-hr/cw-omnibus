@@ -1,0 +1,13 @@
+{
+  View row=super.getView(position,convertView,parent);
+  ImageView qrCode=(ImageView)row.findViewById(R.id.qrCode);
+  try {
+    File image=new File(getFilesDir(),getItem(position).getFilename());
+    new ImageLoadTask(qrCode).execute(image.getAbsolutePath());
+  }
+ catch (  Exception ex) {
+    Log.e("QRCodeKeeper","Exception interpreting JSON",ex);
+    goBlooey(ex);
+  }
+  return (row);
+}

@@ -1,0 +1,16 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  TextView tv=(TextView)findViewById(R.id.custom);
+  Typeface face=Typeface.createFromAsset(getAssets(),"fonts/HandmadeTypewriter.ttf");
+  tv.setTypeface(face);
+  File font=new File(Environment.getExternalStorageDirectory(),"MgOpenCosmeticaBold.ttf");
+  if (font.exists()) {
+    tv=(TextView)findViewById(R.id.file);
+    face=Typeface.createFromFile(font);
+    tv.setTypeface(face);
+  }
+ else {
+    findViewById(R.id.filerow).setVisibility(View.GONE);
+  }
+}

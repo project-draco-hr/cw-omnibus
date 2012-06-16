@@ -1,0 +1,21 @@
+{
+  String broadcast=intent.getStringExtra(BROADCAST_ACTION);
+  Intent data=new Intent();
+  data.putExtra(PAYLOAD,result);
+  data.putExtra(RESULT_CODE,code);
+  if (broadcast == null) {
+    PendingIntent pi=(PendingIntent)intent.getParcelableExtra(PENDING_RESULT);
+    if (pi != null) {
+      try {
+        pi.send(this,Activity.RESULT_OK,data);
+      }
+ catch (      PendingIntent.CanceledException e) {
+      }
+    }
+  }
+ else {
+    data.setPackage(intent.getStringExtra(BROADCAST_PACKAGE));
+    data.setAction(broadcast);
+    sendBroadcast(data);
+  }
+}

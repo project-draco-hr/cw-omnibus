@@ -1,0 +1,14 @@
+{
+  try {
+    cb.success(i.eval(script).toString());
+  }
+ catch (  Throwable e) {
+    Log.e("BshService","Error executing script",e);
+    try {
+      cb.failure(e.getMessage());
+    }
+ catch (    Throwable t) {
+      Log.e("BshService","Error returning exception to client",t);
+    }
+  }
+}

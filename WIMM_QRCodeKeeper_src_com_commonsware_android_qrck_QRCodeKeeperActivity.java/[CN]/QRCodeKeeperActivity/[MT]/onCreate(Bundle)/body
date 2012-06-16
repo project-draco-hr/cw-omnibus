@@ -1,0 +1,28 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  tray=(AdapterViewTray)findViewById(android.R.id.list);
+  tray.setCanLoop(true);
+  NetworkService network=new NetworkService(this);
+  if (SyncService.iCanHasData(this)) {
+    loadEntries();
+  }
+ else {
+    noCanDo=true;
+  }
+  if (SyncService.isSyncNeeded(this,prefs)) {
+    if (network.isNetworkAvailable()) {
+      startService(new Intent(this,SyncService.class));
+    }
+ else {
+      network.requestNetworkConnection();
+    }
+  }
+  if (noCanDo) {
+    AlertDialog dlg=new AlertDialog(this);
+    dlg.setButton(getText(R.string.close),this);
+    dlg.setMessage(getText(R.string.no_can_do));
+    dlg.show();
+  }
+}

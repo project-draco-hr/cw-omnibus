@@ -1,0 +1,7 @@
+{
+  Bundle input=new Bundle();
+  input.putString(InterpreterService.SCRIPT,"this is invalid syntax");
+  Bundle output=execServiceTest(input);
+  assertNotNull(output.getString("error"));
+  assert(output.size() == 2);
+}

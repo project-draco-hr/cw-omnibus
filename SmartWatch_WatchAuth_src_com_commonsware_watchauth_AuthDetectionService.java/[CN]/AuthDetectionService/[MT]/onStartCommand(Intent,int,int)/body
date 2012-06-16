@@ -1,0 +1,14 @@
+{
+  if (CMD_UNLOCK.equals(intent.getAction())) {
+    timeout=new Timeout();
+    timeout.start();
+  }
+ else   if (CMD_VALIDATE.equals(intent.getAction())) {
+synchronized (this) {
+      if (timeout != null) {
+        timeout.interrupt();
+      }
+    }
+  }
+  return (START_REDELIVER_INTENT);
+}

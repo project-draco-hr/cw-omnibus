@@ -1,0 +1,12 @@
+{
+  Intent i=new Intent(getInterpreterName());
+  i.putExtra(InterpreterService.BUNDLE,input);
+  i.putExtra(InterpreterService.BROADCAST_ACTION,ACTION);
+  getContext().startService(i);
+  try {
+    latch.await(5000,TimeUnit.MILLISECONDS);
+  }
+ catch (  InterruptedException e) {
+  }
+  return (results);
+}

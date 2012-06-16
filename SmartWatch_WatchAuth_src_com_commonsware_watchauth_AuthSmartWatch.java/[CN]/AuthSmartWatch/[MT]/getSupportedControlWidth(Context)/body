@@ -1,0 +1,3 @@
+{
+  return context.getResources().getDimensionPixelSize(R.dimen.smart_watch_control_width);
+}

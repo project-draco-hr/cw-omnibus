@@ -1,0 +1,4 @@
+{
+  final SharedPreferences prefs=context.getSharedPreferences(PREFERENCE,Context.MODE_PRIVATE);
+  return prefs.getLong(BACKOFF,DEFAULT_BACKOFF);
+}

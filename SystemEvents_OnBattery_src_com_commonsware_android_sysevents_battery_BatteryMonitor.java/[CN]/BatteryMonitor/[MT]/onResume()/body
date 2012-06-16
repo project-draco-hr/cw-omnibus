@@ -1,0 +1,4 @@
+{
+  super.onResume();
+  registerReceiver(onBatteryChanged,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+}

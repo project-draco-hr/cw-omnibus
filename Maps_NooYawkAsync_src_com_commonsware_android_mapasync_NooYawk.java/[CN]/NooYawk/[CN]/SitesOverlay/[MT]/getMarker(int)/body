@@ -1,0 +1,6 @@
+{
+  Drawable marker=getResources().getDrawable(resource);
+  marker.setBounds(0,0,marker.getIntrinsicWidth(),marker.getIntrinsicHeight());
+  boundCenter(marker);
+  return (marker);
+}

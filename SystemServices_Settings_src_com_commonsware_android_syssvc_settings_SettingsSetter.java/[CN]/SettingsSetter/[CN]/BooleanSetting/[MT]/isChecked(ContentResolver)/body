@@ -1,0 +1,16 @@
+{
+  try {
+    int value=0;
+    if (isSecure) {
+      value=Settings.Secure.getInt(cr,key);
+    }
+ else {
+      value=Settings.System.getInt(cr,key);
+    }
+    return (value != 0);
+  }
+ catch (  Settings.SettingNotFoundException e) {
+    Log.e("SettingsSetter",e.getMessage());
+  }
+  return (false);
+}

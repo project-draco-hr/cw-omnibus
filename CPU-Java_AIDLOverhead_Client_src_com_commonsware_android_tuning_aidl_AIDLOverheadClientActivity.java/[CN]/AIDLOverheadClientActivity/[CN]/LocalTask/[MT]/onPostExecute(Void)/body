@@ -1,0 +1,5 @@
+{
+  out.setText(out.getText() + "\nLocal = " + String.valueOf(delta));
+  unbindService(svcConnLocal);
+  bindService(new Intent("com.commonsware.android.tuning.aidl2.TEST_SERVICE"),svcConn,BIND_AUTO_CREATE);
+}

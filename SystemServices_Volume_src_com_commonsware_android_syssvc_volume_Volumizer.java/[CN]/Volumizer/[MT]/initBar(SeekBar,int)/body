@@ -1,0 +1,14 @@
+{
+  bar.setMax(mgr.getStreamMaxVolume(stream));
+  bar.setProgress(mgr.getStreamVolume(stream));
+  bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+    public void onProgressChanged(    SeekBar bar,    int progress,    boolean fromUser){
+      mgr.setStreamVolume(stream,progress,AudioManager.FLAG_PLAY_SOUND);
+    }
+    public void onStartTrackingTouch(    SeekBar bar){
+    }
+    public void onStopTrackingTouch(    SeekBar bar){
+    }
+  }
+);
+}

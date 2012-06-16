@@ -1,0 +1,5 @@
+{
+  Drawable result=(isHeart ? heart : marker);
+  setState(result,stateBitset);
+  return (result);
+}

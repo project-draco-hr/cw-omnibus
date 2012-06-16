@@ -1,0 +1,10 @@
+{
+  if (listener != null) {
+    if (forecast != null) {
+      listener.updateForecast(forecast);
+    }
+    if (e != null) {
+      listener.handleError(e);
+    }
+  }
+}

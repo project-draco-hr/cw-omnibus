@@ -1,0 +1,12 @@
+{
+  super(marker);
+  this.marker=marker;
+  dragImage=(ImageView)findViewById(R.id.drag);
+  xDragImageOffset=dragImage.getDrawable().getIntrinsicWidth() / 2;
+  yDragImageOffset=dragImage.getDrawable().getIntrinsicHeight();
+  items.add(new OverlayItem(getPoint(40.748963847316034,-73.96807193756104),"UN","United Nations"));
+  items.add(new OverlayItem(getPoint(40.76866299974387,-73.98268461227417),"Lincoln Center","Home of Jazz at Lincoln Center"));
+  items.add(new OverlayItem(getPoint(40.765136435316755,-73.97989511489868),"Carnegie Hall","Where you go with practice, practice, practice"));
+  items.add(new OverlayItem(getPoint(40.70686417491799,-74.01572942733765),"The Downtown Club","Original home of the Heisman Trophy"));
+  populate();
+}

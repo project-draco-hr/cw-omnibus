@@ -1,0 +1,10 @@
+{
+  String result=i.getStringExtra(PAYLOAD);
+  int resultCode=i.getIntExtra(RESULT_CODE,-1);
+  if (resultCode == SUCCESS) {
+    success(result);
+  }
+ else {
+    failure(result);
+  }
+}

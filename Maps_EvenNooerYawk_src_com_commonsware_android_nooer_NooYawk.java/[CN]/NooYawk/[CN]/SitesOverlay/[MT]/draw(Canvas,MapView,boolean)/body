@@ -1,0 +1,4 @@
+{
+  super.draw(canvas,mapView,shadow);
+  boundCenterBottom(marker);
+}

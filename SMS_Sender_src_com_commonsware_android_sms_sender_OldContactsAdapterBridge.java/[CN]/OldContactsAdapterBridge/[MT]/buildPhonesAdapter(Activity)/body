@@ -1,0 +1,8 @@
+{
+  String[] PROJECTION=new String[]{Contacts.Phones._ID,Contacts.Phones.NAME,Contacts.Phones.NUMBER};
+  String[] ARGS={String.valueOf(Contacts.Phones.TYPE_MOBILE)};
+  Cursor c=a.managedQuery(Contacts.Phones.CONTENT_URI,PROJECTION,Contacts.Phones.TYPE + "=?",ARGS,Contacts.Phones.NAME);
+  SimpleCursorAdapter adapter=new SimpleCursorAdapter(a,android.R.layout.simple_spinner_item,c,new String[]{Contacts.Phones.NAME},new int[]{android.R.id.text1});
+  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  return (adapter);
+}

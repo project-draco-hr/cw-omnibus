@@ -1,0 +1,3 @@
+{
+  assertTrue(spinner.getAdapter().getCount() == 3);
+}

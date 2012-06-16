@@ -1,0 +1,5 @@
+{
+  super.onListItemClick(l,v,position,id);
+  BooleanSetting s=settings.get(position);
+  s.setChecked(getContentResolver(),l.isItemChecked(position));
+}

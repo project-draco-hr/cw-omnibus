@@ -1,0 +1,5 @@
+{
+  NdefRecord uriRecord=new NdefRecord(NdefRecord.TNF_MIME_MEDIA,MIME_TYPE.getBytes(Charset.forName("US-ASCII")),new byte[0],beamFragment.getUrl().getBytes(Charset.forName("US-ASCII")));
+  NdefMessage msg=new NdefMessage(new NdefRecord[]{uriRecord,NdefRecord.createApplicationRecord("com.commonsware.android.webbeam")});
+  return (msg);
+}

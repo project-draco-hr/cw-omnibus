@@ -1,0 +1,5 @@
+{
+  Bundle state=(Bundle)ss;
+  super.onRestoreInstanceState(state.getParcelable(SUPERSTATE));
+  setColor(state.getInt(COLOR));
+}

@@ -1,0 +1,9 @@
+{
+  super.setUp();
+  LayoutInflater inflater=LayoutInflater.from(getContext());
+  root=(ViewGroup)inflater.inflate(R.layout.main,null);
+  root.measure(480,320);
+  root.layout(0,0,480,320);
+  list=(ListView)root.findViewById(android.R.id.list);
+  spinner=(Spinner)root.findViewById(R.id.spinner);
+}

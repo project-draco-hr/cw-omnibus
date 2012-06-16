@@ -1,0 +1,9 @@
+{
+  if (path.equals(image.getTag())) {
+    image.setImageBitmap(bitmap);
+    image.invalidate();
+  }
+  if (ex != null) {
+    Log.e("ImageLoadTask","Exception loading image",ex);
+  }
+}

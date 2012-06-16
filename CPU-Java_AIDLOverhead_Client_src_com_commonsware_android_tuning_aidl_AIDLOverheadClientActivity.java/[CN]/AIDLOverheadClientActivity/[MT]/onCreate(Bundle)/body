@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  out=(TextView)findViewById(R.id.out);
+  bindService(new Intent(AIDLOverheadClientActivity.this,TestService.class),svcConnLocal,BIND_AUTO_CREATE);
+}

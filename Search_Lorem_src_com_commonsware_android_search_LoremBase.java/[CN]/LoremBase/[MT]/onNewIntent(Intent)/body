@@ -1,0 +1,9 @@
+{
+  ListAdapter adapter=makeMeAnAdapter(intent);
+  if (adapter == null) {
+    finish();
+  }
+ else {
+    setListAdapter(adapter);
+  }
+}

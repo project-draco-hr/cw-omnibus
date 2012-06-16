@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  if (!noCanDo) {
+    registerReceiver(statusReceiver,new IntentFilter(SyncService.ACTION_SYNC_STATUS));
+  }
+}

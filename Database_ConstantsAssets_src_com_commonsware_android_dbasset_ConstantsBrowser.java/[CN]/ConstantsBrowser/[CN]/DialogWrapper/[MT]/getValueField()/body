@@ -1,0 +1,6 @@
+{
+  if (valueField == null) {
+    valueField=(EditText)base.findViewById(R.id.value);
+  }
+  return (valueField);
+}

@@ -1,0 +1,12 @@
+{
+  ContentValues values=new ContentValues();
+  values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY,AuthPreferenceActivity.class.getName());
+  values.put(Registration.ExtensionColumns.CONFIGURATION_TEXT,ctxt.getString(R.string.configuration_text));
+  values.put(Registration.ExtensionColumns.NAME,ctxt.getString(R.string.extension_name));
+  values.put(Registration.ExtensionColumns.EXTENSION_KEY,AuthExtensionService.EXTENSION_KEY);
+  values.put(Registration.ExtensionColumns.HOST_APP_ICON_URI,ExtensionUtils.getUriString(ctxt,R.drawable.ic_launcher));
+  values.put(Registration.ExtensionColumns.EXTENSION_ICON_URI,ExtensionUtils.getUriString(ctxt,R.drawable.ic_extension));
+  values.put(Registration.ExtensionColumns.NOTIFICATION_API_VERSION,getRequiredNotificationApiVersion());
+  values.put(Registration.ExtensionColumns.PACKAGE_NAME,ctxt.getPackageName());
+  return (values);
+}

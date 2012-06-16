@@ -1,0 +1,8 @@
+{
+  StringBuilder result=new StringBuilder("This is a string");
+  result.append(" -- that varies --");
+  result.append(" and also has ");
+  result.append(String.valueOf(4));
+  result.append(" hyphens in it");
+  return (result.toString());
+}

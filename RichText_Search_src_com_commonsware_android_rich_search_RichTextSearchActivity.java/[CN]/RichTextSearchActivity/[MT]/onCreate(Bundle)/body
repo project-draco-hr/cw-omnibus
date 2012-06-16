@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  search=(EditText)findViewById(R.id.search);
+  search.setOnEditorActionListener(this);
+}

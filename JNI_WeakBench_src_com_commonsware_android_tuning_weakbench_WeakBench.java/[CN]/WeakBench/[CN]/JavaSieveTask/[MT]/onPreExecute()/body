@@ -1,0 +1,4 @@
+{
+  result=(TextView)findViewById(R.id.nsieve_java);
+  result.setText("running...");
+}

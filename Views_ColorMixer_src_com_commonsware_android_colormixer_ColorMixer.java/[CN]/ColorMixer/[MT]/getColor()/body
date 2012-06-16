@@ -1,0 +1,3 @@
+{
+  return (Color.argb(0xFF,red.getProgress(),green.getProgress(),blue.getProgress()));
+}

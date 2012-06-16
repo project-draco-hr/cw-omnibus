@@ -1,0 +1,4 @@
+{
+  super();
+  setupSuggestions(AUTH,DATABASE_MODE_QUERIES);
+}

@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  sendIt("This is a test of FauxSender");
+  finish();
+}

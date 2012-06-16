@@ -1,0 +1,14 @@
+{
+  long time=0;
+  String formattedTime=null;
+switch (columnIndex) {
+case 2:
+    time=cursor.getLong(columnIndex);
+  formattedTime=DateUtils.formatDateTime(this,time,DateUtils.FORMAT_ABBREV_RELATIVE);
+((TextView)view).setText(formattedTime);
+break;
+default :
+return (false);
+}
+return (true);
+}

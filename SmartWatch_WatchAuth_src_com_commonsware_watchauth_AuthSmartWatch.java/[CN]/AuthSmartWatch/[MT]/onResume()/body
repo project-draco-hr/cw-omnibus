@@ -1,0 +1,15 @@
+{
+  if (content == null) {
+    LinearLayout root=new LinearLayout(mContext);
+    root.setLayoutParams(new LayoutParams(width,height));
+    content=(ViewGroup)LayoutInflater.from(mContext).inflate(R.layout.main,root);
+    content.measure(width,height);
+    content.layout(0,0,content.getMeasuredWidth(),content.getMeasuredHeight());
+    content.findViewById(R.id.confirm).setOnClickListener(this);
+  }
+  Bitmap mBackground=Bitmap.createBitmap(width,height,BITMAP_CONFIG);
+  mBackground.setDensity(DisplayMetrics.DENSITY_DEFAULT);
+  Canvas canvas=new Canvas(mBackground);
+  content.draw(canvas);
+  showBitmap(mBackground);
+}

@@ -1,0 +1,11 @@
+{
+  Cursor c=(Cursor)contacts.getSelectedItem();
+  if (means.getCheckedRadioButtonId() == R.id.client) {
+    Intent sms=new Intent(Intent.ACTION_SENDTO,Uri.parse("smsto:" + c.getString(2)));
+    sms.putExtra("sms_body",msg.getText().toString());
+    startActivity(sms);
+  }
+ else {
+    SmsManager.getDefault().sendTextMessage(c.getString(2),null,msg.getText().toString(),null,null);
+  }
+}

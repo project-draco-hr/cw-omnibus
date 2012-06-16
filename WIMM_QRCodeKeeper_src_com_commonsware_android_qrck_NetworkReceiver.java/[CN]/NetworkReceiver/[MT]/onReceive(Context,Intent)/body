@@ -1,0 +1,6 @@
+{
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(context);
+  if (SyncService.isSyncNeeded(context,prefs)) {
+    context.startService(new Intent(context,SyncService.class));
+  }
+}

@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  bar=(ProgressBar)findViewById(R.id.bar);
+  status=(ImageView)findViewById(R.id.status);
+  level=(TextView)findViewById(R.id.level);
+}

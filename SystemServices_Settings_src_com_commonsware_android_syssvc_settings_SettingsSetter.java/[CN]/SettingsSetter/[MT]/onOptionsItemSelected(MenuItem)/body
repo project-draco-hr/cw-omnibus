@@ -1,0 +1,8 @@
+{
+  String activity=menuActivities.get(item.getItemId());
+  if (activity != null) {
+    startActivity(new Intent(activity));
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}
