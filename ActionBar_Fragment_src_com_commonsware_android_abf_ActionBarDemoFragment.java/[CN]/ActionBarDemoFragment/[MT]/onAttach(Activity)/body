@@ -1,5 +1,0 @@
-{
-  super.onAttach(a);
-  setHasOptionsMenu(true);
-  setRetainInstance(true);
-}
