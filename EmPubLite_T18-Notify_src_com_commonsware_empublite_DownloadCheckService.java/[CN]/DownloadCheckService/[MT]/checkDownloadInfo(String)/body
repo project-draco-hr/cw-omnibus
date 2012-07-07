@@ -3,7 +3,7 @@
   String version=json.names().getString(0);
   File localCopy=new File(getUpdateBaseDir(this),version);
   if (!localCopy.exists()) {
-    localCopy.mkdirs();
+    PreferenceManager.getDefaultSharedPreferences(this).edit().putString(PREF_PENDING_UPDATE,localCopy.getAbsolutePath()).commit();
     String url=json.getString(version);
     DownloadManager mgr=(DownloadManager)getSystemService(DOWNLOAD_SERVICE);
     DownloadManager.Request req=new DownloadManager.Request(Uri.parse(url));

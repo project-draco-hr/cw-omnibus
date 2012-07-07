@@ -1,10 +1,10 @@
 {
-  File update=DownloadCheckService.getUpdateDir(getActivity(),true);
+  String updateDir=prefs.getString(DownloadInstallService.PREF_UPDATE_DIR,null);
   try {
     StringBuilder buf=new StringBuilder();
     InputStream json=null;
-    if (update != null && update.exists()) {
-      json=new FileInputStream(new File(update,"contents.json"));
+    if (updateDir != null && new File(updateDir).exists()) {
+      json=new FileInputStream(new File(new File(updateDir),"contents.json"));
     }
  else {
       json=ctxt[0].getAssets().open("book/contents.json");
@@ -15,10 +15,22 @@
       buf.append(str);
     }
     in.close();
-    localContents=new BookContents(new JSONObject(buf.toString()),update);
+    if (updateDir != null && new File(updateDir).exists()) {
+      localContents=new BookContents(new JSONObject(buf.toString()),new File(updateDir));
+    }
+ else {
+      localContents=new BookContents(new JSONObject(buf.toString()));
+    }
   }
  catch (  Exception e) {
     this.e=e;
+  }
+  String prevUpdateDir=prefs.getString(DownloadInstallService.PREF_PREV_UPDATE,null);
+  if (prevUpdateDir != null) {
+    File toBeDeleted=new File(prevUpdateDir);
+    if (toBeDeleted.exists()) {
+      deleteDir(toBeDeleted);
+    }
   }
   return (null);
 }

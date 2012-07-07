@@ -1,0 +1,23 @@
+{
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  String prevUpdateDir=prefs.getString(PREF_UPDATE_DIR,null);
+  String pendingUpdateDir=prefs.getString(DownloadCheckService.PREF_PENDING_UPDATE,null);
+  if (pendingUpdateDir != null) {
+    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    File update=new File(root,DownloadCheckService.UPDATE_FILENAME);
+    try {
+      unzip(update,new File(pendingUpdateDir));
+      prefs.edit().putString(PREF_PREV_UPDATE,prevUpdateDir).putString(PREF_UPDATE_DIR,pendingUpdateDir).commit();
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception unzipping update",e);
+    }
+    update.delete();
+    Intent i=new Intent(ACTION_UPDATE_READY);
+    i.setPackage(getPackageName());
+    sendOrderedBroadcast(i,null);
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"null pendingUpdateDir");
+  }
+}

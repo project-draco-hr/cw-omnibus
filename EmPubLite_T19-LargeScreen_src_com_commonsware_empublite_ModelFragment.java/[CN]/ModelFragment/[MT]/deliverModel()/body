@@ -7,7 +7,7 @@
       prefsTask=new PrefsLoadTask();
       executeAsyncTask(prefsTask,getActivity().getApplicationContext());
     }
-    if (contents == null && contentsTask == null) {
+ else     if (contents == null && contentsTask == null) {
       updateBook();
     }
   }
