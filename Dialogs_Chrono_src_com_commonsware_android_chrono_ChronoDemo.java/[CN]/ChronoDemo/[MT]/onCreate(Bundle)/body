@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  dateAndTimeLabel=(TextView)findViewById(R.id.dateAndTime);
+  updateLabel();
+}

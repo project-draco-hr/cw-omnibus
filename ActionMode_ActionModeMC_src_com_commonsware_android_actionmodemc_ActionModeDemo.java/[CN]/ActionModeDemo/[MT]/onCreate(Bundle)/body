@@ -1,0 +1,12 @@
+{
+  super.onCreate(icicle);
+  initAdapter();
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+    getListView().setMultiChoiceModeListener(new HCMultiChoiceModeListener(this,getListView()));
+  }
+ else {
+    getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+    registerForContextMenu(getListView());
+  }
+}

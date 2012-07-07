@@ -1,0 +1,7 @@
+{
+  words=new ArrayList<String>();
+  for (  String s : items) {
+    words.add(s);
+  }
+  setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_checked,words));
+}

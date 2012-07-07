@@ -1,0 +1,4 @@
+{
+  Calendar then=new GregorianCalendar(year,monthOfYear,dayOfMonth);
+  Toast.makeText(this,then.getTime().toString(),Toast.LENGTH_LONG).show();
+}

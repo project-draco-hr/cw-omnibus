@@ -1,0 +1,4 @@
+{
+  Bitmap raw=BitmapFactory.decodeResource(getResources(),R.drawable.icon);
+  return (raw);
+}

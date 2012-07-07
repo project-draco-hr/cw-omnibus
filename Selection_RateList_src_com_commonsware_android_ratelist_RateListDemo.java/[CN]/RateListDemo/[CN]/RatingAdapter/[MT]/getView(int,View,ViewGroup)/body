@@ -1,0 +1,24 @@
+{
+  View row=super.getView(position,convertView,parent);
+  RatingBar bar=(RatingBar)row.getTag();
+  if (bar == null) {
+    bar=(RatingBar)row.findViewById(R.id.rate);
+    row.setTag(bar);
+    RatingBar.OnRatingBarChangeListener l=new RatingBar.OnRatingBarChangeListener(){
+      public void onRatingChanged(      RatingBar ratingBar,      float rating,      boolean fromTouch){
+        Integer myPosition=(Integer)ratingBar.getTag();
+        RowModel model=getModel(myPosition);
+        model.rating=rating;
+        LinearLayout parent=(LinearLayout)ratingBar.getParent();
+        TextView label=(TextView)parent.findViewById(R.id.label);
+        label.setText(model.toString());
+      }
+    }
+;
+    bar.setOnRatingBarChangeListener(l);
+  }
+  RowModel model=getModel(position);
+  bar.setTag(Integer.valueOf(position));
+  bar.setRating(model.rating);
+  return (row);
+}

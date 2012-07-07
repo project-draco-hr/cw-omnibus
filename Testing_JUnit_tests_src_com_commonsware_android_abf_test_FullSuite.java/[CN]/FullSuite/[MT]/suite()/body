@@ -1,0 +1,3 @@
+{
+  return (new TestSuiteBuilder(FullSuite.class).includeAllPackagesUnderHere().build());
+}

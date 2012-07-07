@@ -1,0 +1,3 @@
+{
+  new TimePickerDialog(ChronoDemo.this,t,dateAndTime.get(Calendar.HOUR_OF_DAY),dateAndTime.get(Calendar.MINUTE),true).show();
+}

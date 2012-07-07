@@ -1,0 +1,4 @@
+{
+  ArrayAdapter<String> adapter=(ArrayAdapter<String>)getListAdapter();
+  adapter.add(title.getText().toString());
+}

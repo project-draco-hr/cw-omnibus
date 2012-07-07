@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  ActionBarFragmentActivity activity=getActivity();
+  list=(ListView)activity.findViewById(android.R.id.list);
+}

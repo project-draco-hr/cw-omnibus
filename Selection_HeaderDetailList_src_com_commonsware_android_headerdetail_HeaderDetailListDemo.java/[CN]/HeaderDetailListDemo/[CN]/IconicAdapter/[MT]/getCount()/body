@@ -1,0 +1,7 @@
+{
+  int count=0;
+  for (  String[] batch : items) {
+    count+=1 + batch.length;
+  }
+  return (count);
+}

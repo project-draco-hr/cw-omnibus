@@ -1,0 +1,4 @@
+{
+  super.onDismiss(unused);
+  Toast.makeText(getActivity(),R.string.goodbye,Toast.LENGTH_LONG).show();
+}

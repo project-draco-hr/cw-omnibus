@@ -1,0 +1,4 @@
+{
+  assertTrue(field.getTop() == 6);
+  assertTrue(field.getLeft() > 0);
+}

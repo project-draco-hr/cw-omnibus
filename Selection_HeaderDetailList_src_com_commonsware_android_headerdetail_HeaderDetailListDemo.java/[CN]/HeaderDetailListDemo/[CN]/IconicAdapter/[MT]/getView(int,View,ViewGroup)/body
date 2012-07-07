@@ -1,0 +1,24 @@
+{
+  if (getItemViewType(position) == 0) {
+    return (getHeaderView(position,convertView,parent));
+  }
+  View row=convertView;
+  if (row == null) {
+    row=getLayoutInflater().inflate(R.layout.row,parent,false);
+  }
+  ViewHolder holder=(ViewHolder)row.getTag();
+  if (holder == null) {
+    holder=new ViewHolder(row);
+    row.setTag(holder);
+  }
+  String word=(String)getItem(position);
+  if (word.length() > 4) {
+    holder.icon.setImageResource(R.drawable.delete);
+  }
+ else {
+    holder.icon.setImageResource(R.drawable.ok);
+  }
+  holder.label.setText(word);
+  holder.size.setText(String.format(getString(R.string.size_template),word.length()));
+  return (row);
+}

@@ -1,0 +1,5 @@
+{
+  super.onResume();
+  root=findViewById(android.R.id.content);
+  everyFiveSeconds.run();
+}

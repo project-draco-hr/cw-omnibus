@@ -1,0 +1,8 @@
+{
+  View row=super.getView(position,convertView,parent);
+  TextView filter=(TextView)row.findViewById(android.R.id.text1);
+  TextView name=(TextView)row.findViewById(android.R.id.text2);
+  filter.setText(buildTitle(getItem(position)));
+  name.setText(names.get(position).getClassName());
+  return (row);
+}

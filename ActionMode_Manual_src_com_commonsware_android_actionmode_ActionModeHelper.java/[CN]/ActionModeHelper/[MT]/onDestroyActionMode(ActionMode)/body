@@ -1,0 +1,5 @@
+{
+  activeMode=null;
+  modeView.clearChoices();
+  modeView.requestLayout();
+}

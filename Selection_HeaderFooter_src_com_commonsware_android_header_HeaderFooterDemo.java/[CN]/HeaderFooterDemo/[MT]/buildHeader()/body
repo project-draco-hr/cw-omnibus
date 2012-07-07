@@ -1,0 +1,13 @@
+{
+  Button btn=new Button(this);
+  btn.setText("Randomize!");
+  btn.setOnClickListener(new View.OnClickListener(){
+    public void onClick(    View v){
+      List<String> list=Arrays.asList(items);
+      Collections.shuffle(list);
+      setListAdapter(new ArrayAdapter<String>(HeaderFooterDemo.this,android.R.layout.simple_list_item_1,list));
+    }
+  }
+);
+  return (btn);
+}

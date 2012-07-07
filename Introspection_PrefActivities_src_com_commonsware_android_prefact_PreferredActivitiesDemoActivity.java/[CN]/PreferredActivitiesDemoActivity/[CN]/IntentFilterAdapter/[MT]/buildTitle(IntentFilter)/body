@@ -1,0 +1,43 @@
+{
+  StringBuilder buf=new StringBuilder();
+  boolean first=true;
+  if (filter.countActions() > 0) {
+    for (    String action : in(filter.actionsIterator())) {
+      if (first) {
+        first=false;
+      }
+ else {
+        buf.append('/');
+      }
+      buf.append(action.replaceAll("android.intent.action.",""));
+    }
+  }
+  if (filter.countDataTypes() > 0) {
+    first=true;
+    for (    String type : in(filter.typesIterator())) {
+      if (first) {
+        buf.append(" : ");
+        first=false;
+      }
+ else {
+        buf.append('|');
+      }
+      buf.append(type);
+    }
+  }
+  if (filter.countDataSchemes() > 0) {
+    buf.append(" : ");
+    buf.append(filter.getDataScheme(0));
+    if (filter.countDataSchemes() > 1) {
+      buf.append(" (other schemes)");
+    }
+  }
+  if (filter.countDataPaths() > 0) {
+    buf.append(" : ");
+    buf.append(filter.getDataPath(0));
+    if (filter.countDataPaths() > 1) {
+      buf.append(" (other paths)");
+    }
+  }
+  return (buf.toString());
+}

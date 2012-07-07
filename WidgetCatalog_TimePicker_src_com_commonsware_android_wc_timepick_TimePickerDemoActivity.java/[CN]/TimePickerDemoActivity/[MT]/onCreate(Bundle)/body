@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  TimePicker picker=(TimePicker)findViewById(R.id.picker);
+  picker.setOnTimeChangedListener(this);
+}

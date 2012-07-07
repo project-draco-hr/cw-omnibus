@@ -1,0 +1,12 @@
+{
+  long runtime=(SystemClock.uptimeMillis() - startTime) / 1000;
+  txt.setText(String.valueOf(runtime) + " seconds since activity launched");
+  if (!areWeDeadYet) {
+    getListView().postDelayed(new Runnable(){
+      public void run(){
+        updateFooter(txt);
+      }
+    }
+,1000);
+  }
+}

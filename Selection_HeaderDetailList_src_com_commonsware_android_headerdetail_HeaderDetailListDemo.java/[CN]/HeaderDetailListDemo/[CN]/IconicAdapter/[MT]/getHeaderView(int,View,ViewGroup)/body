@@ -1,0 +1,10 @@
+{
+  View row=convertView;
+  if (row == null) {
+    row=getLayoutInflater().inflate(R.layout.header,parent,false);
+  }
+  Integer batchIndex=(Integer)getItem(position);
+  TextView label=(TextView)row.findViewById(R.id.label);
+  label.setText(String.format(getString(R.string.batch),1 + batchIndex.intValue()));
+  return (row);
+}

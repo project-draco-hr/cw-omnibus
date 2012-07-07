@@ -1,0 +1,16 @@
+{
+  int offset=position;
+  int batchIndex=0;
+  for (  String[] batch : items) {
+    if (offset == 0) {
+      return (Integer.valueOf(batchIndex));
+    }
+    offset--;
+    if (offset < batch.length) {
+      return (batch[offset]);
+    }
+    offset-=batch.length;
+    batchIndex++;
+  }
+  throw new IllegalArgumentException("Invalid position: " + String.valueOf(position));
+}

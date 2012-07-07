@@ -1,0 +1,5 @@
+{
+  this.icon=(ImageView)row.findViewById(R.id.icon);
+  this.label=(TextView)row.findViewById(R.id.label);
+  this.size=(TextView)row.findViewById(R.id.size);
+}

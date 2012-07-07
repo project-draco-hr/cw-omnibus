@@ -1,0 +1,3 @@
+{
+  dateAndTimeLabel.setText(DateUtils.formatDateTime(this,dateAndTime.getTimeInMillis(),DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_TIME));
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    mp=MediaPlayer.create(this,R.raw.clip);
+    mp.setOnCompletionListener(this);
+  }
+ catch (  Throwable t) {
+    goBlooey(t);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  new SampleDialogFragment().show(getSupportFragmentManager(),"sample");
+}

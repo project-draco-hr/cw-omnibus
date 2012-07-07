@@ -1,0 +1,8 @@
+{
+  super.onCreate(icicle);
+  ArrayList<RowModel> list=new ArrayList<RowModel>();
+  for (  String s : items) {
+    list.add(new RowModel(s));
+  }
+  setListAdapter(new RatingAdapter(list));
+}

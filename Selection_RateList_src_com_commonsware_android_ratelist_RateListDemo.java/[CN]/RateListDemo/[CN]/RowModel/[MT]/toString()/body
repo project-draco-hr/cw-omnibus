@@ -1,0 +1,6 @@
+{
+  if (rating >= 3.0) {
+    return (label.toUpperCase());
+  }
+  return (label);
+}

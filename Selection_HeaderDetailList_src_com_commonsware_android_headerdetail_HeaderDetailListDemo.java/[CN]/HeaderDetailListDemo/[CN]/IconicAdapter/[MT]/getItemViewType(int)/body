@@ -1,0 +1,6 @@
+{
+  if (getItem(position) instanceof Integer) {
+    return (0);
+  }
+  return (1);
+}

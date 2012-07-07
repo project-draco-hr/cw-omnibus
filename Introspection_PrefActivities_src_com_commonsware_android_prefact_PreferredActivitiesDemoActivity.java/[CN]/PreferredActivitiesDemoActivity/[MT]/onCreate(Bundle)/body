@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  PackageManager mgr=getPackageManager();
+  mgr.getPreferredActivities(filters,names,null);
+  setListAdapter(new IntentFilterAdapter());
+}

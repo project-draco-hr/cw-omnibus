@@ -1,0 +1,13 @@
+{
+class SingleUseIterable implements Iterable<T> {
+    private boolean used=false;
+    @Override public Iterator<T> iterator(){
+      if (used) {
+        throw new IllegalStateException("Already invoked");
+      }
+      used=true;
+      return iterator;
+    }
+  }
+  return new SingleUseIterable();
+}

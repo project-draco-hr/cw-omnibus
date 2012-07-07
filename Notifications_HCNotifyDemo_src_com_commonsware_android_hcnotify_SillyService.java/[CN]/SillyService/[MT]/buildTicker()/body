@@ -1,0 +1,5 @@
+{
+  RemoteViews ticker=new RemoteViews(this.getPackageName(),R.layout.ticker);
+  ticker.setTextViewText(R.id.ticker_text,getString(R.string.ticker));
+  return (ticker);
+}
