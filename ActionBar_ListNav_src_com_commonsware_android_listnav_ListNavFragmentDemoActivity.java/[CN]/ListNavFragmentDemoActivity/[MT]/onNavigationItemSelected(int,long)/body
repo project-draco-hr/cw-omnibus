@@ -1,0 +1,9 @@
+{
+  if (lastPosition > -1) {
+    models[lastPosition]=frag.getText();
+  }
+  lastPosition=itemPosition;
+  frag.setText(models[itemPosition]);
+  frag.setHint(labels[itemPosition]);
+  return (true);
+}
