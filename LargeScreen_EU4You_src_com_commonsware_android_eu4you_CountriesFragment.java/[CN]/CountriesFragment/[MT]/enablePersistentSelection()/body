@@ -1,7 +1,0 @@
-{
-  getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-  int position=getListView().getCheckedItemPosition();
-  if (position >= 0) {
-    ((CountryListener)getActivity()).onCountrySelected(Country.EU.get(position));
-  }
-}

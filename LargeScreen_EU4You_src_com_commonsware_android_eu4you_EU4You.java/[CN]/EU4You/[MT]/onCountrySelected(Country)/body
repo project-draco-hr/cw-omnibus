@@ -1,6 +1,6 @@
 {
   String url=getString(c.url);
-  if (details != null) {
+  if (details != null && details.isVisible()) {
     details.loadUrl(url);
   }
  else {
