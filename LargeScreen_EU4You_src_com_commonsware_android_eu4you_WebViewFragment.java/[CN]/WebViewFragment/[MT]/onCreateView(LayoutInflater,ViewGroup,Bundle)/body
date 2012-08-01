@@ -1,10 +1,8 @@
 {
   if (mWebView != null) {
-    ((ViewGroup)mWebView.getParent()).removeView(mWebView);
+    mWebView.destroy();
   }
- else {
-    mWebView=new WebView(getActivity());
-  }
+  mWebView=new WebView(getActivity());
   mIsWebViewAvailable=true;
   return mWebView;
 }
