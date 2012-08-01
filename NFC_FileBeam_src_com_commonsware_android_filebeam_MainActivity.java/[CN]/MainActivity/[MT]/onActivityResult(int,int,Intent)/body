@@ -1,0 +1,9 @@
+{
+  if (requestCode == 0 && resultCode == RESULT_OK) {
+    adapter.setBeamPushUris(new Uri[]{data.getData()},this);
+    Button btn=new Button(this);
+    btn.setText(R.string.over);
+    btn.setOnClickListener(this);
+    setContentView(btn);
+  }
+}
