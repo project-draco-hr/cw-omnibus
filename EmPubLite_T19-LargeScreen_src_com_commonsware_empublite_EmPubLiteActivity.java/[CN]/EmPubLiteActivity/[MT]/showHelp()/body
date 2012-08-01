@@ -1,8 +1,10 @@
 {
   if (sidebar != null) {
     openSidebar();
-    Fragment f=SimpleContentFragment.newInstance(FILE_HELP);
-    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.sidebar,f).commit();
+    if (help == null) {
+      help=SimpleContentFragment.newInstance(FILE_HELP);
+    }
+    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.sidebar,help).commit();
   }
  else {
     Intent i=new Intent(this,SimpleContentActivity.class);

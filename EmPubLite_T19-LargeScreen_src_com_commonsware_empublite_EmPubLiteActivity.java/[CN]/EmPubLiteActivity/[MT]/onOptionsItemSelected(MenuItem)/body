@@ -7,7 +7,9 @@ case R.id.update:
 WakefulIntentService.sendWakefulWork(this,DownloadCheckService.class);
 return (true);
 case R.id.notes:
-showNotes();
+Intent i=new Intent(this,NoteActivity.class);
+i.putExtra(NoteActivity.EXTRA_POSITION,pager.getCurrentItem());
+startActivity(i);
 return (true);
 case R.id.about:
 showAbout();

@@ -3,6 +3,6 @@
   if (p.weight == 0) {
     p.weight=3;
     sidebar.setLayoutParams(p);
-    divider.setVisibility(View.VISIBLE);
   }
+  divider.setVisibility(View.VISIBLE);
 }
