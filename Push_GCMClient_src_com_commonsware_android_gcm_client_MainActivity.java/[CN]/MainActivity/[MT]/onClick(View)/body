@@ -1,0 +1,12 @@
+{
+  GCMRegistrar.checkDevice(this);
+  GCMRegistrar.checkManifest(this);
+  final String regId=GCMRegistrar.getRegistrationId(this);
+  if (regId.length() == 0) {
+    GCMRegistrar.register(this,SENDER_ID);
+  }
+ else {
+    Log.d(getClass().getSimpleName(),"Existing registration: " + regId);
+    Toast.makeText(this,regId,Toast.LENGTH_LONG).show();
+  }
+}

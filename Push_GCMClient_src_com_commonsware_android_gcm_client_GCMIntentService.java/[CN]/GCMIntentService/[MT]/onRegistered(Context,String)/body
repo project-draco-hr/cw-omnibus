@@ -1,0 +1,4 @@
+{
+  Log.d(getClass().getSimpleName(),"onRegistered: " + regId);
+  Toast.makeText(this,regId,Toast.LENGTH_LONG).show();
+}
