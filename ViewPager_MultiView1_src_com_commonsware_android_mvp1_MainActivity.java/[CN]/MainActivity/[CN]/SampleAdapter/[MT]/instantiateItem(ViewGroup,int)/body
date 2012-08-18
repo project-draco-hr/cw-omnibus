@@ -1,0 +1,9 @@
+{
+  View page=getLayoutInflater().inflate(R.layout.page,container,false);
+  TextView tv=(TextView)page.findViewById(R.id.text);
+  int blue=position * 25;
+  tv.setText(String.format(getString(R.string.item),position + 1));
+  page.setBackgroundColor(Color.argb(255,0,0,blue));
+  container.addView(page);
+  return (page);
+}

@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  ViewPager pager=(ViewPager)findViewById(R.id.pager);
+  pager.setAdapter(new SampleAdapter());
+  pager.setOffscreenPageLimit(6);
+}
