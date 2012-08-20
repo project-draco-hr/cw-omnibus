@@ -1,0 +1,5 @@
+{
+  int blue=position * 25;
+  tv.setText(String.format(getString(R.string.item),position + 1));
+  tv.setBackgroundColor(Color.argb(255,0,0,blue));
+}

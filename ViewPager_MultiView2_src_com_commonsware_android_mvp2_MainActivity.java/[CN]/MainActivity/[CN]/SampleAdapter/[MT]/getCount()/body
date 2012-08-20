@@ -1,0 +1,3 @@
+{
+  return ((getRealCount() / 2) + 1);
+}

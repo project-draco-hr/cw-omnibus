@@ -1,0 +1,17 @@
+{
+  View page=getLayoutInflater().inflate(R.layout.page,container,false);
+  TextView tv=(TextView)page.findViewById(R.id.text);
+  position=position * 2;
+  populateTextView(tv,position);
+  position++;
+  tv=(TextView)page.findViewById(R.id.text2);
+  if (position < getRealCount()) {
+    populateTextView(tv,position);
+    tv.setVisibility(View.VISIBLE);
+  }
+ else {
+    tv.setVisibility(View.INVISIBLE);
+  }
+  container.addView(page);
+  return (page);
+}
