@@ -2,5 +2,7 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
   GCMRegistrar.checkDevice(this);
-  GCMRegistrar.checkManifest(this);
+  if (BuildConfig.DEBUG) {
+    GCMRegistrar.checkManifest(this);
+  }
 }
