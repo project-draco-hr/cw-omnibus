@@ -1,0 +1,3 @@
+{
+  return (TrivialFragment.newInstance(getSample(position).layoutId));
+}

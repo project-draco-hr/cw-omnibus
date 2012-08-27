@@ -1,0 +1,7 @@
+{
+  TrivialFragment frag=new TrivialFragment();
+  Bundle args=new Bundle();
+  args.putInt(KEY_LAYOUT_ID,layoutId);
+  frag.setArguments(args);
+  return (frag);
+}

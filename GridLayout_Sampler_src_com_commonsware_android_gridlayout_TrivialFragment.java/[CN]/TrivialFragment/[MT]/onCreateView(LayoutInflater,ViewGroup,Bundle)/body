@@ -1,0 +1,3 @@
+{
+  return (inflater.inflate(getArguments().getInt(KEY_LAYOUT_ID,-1),container,false));
+}
