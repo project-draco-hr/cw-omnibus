@@ -1,5 +1,5 @@
 {
-  NotificationCompat2.Builder b=new NotificationCompat2.Builder(this);
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
   b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setWhen(System.currentTimeMillis()).setContentTitle(getString(R.string.download_complete)).setContentText(getString(R.string.fun)).setContentIntent(buildPendingIntent(Settings.ACTION_SECURITY_SETTINGS)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.download_complete)).setPriority(Notification.PRIORITY_HIGH).addAction(android.R.drawable.ic_media_play,getString(R.string.play),buildPendingIntent(Settings.ACTION_SETTINGS));
   return (b);
 }
