@@ -1,4 +1,0 @@
-{
-  super.onResume();
-  countries.setPersistentSelection(details != null && details.isVisible());
-}
