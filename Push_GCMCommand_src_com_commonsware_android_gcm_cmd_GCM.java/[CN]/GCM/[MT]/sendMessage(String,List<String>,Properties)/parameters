@@ -1,0 +1,3 @@
+String apiKey
+List<String> devices
+Properties data
