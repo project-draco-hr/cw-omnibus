@@ -1,0 +1,3 @@
+{
+  Toast.makeText(this,"Expanding: " + adapter.getGroup(groupPosition).toString(),Toast.LENGTH_SHORT).show();
+}

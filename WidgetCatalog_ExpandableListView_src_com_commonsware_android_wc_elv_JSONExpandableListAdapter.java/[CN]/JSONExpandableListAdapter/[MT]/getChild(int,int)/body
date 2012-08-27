@@ -1,0 +1,10 @@
+{
+  try {
+    JSONArray children=getChildren(groupPosition);
+    return (children.get(childPosition));
+  }
+ catch (  JSONException e) {
+    Log.e(getClass().getSimpleName(),"Exception getting item from JSON array",e);
+  }
+  return (null);
+}

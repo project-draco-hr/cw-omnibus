@@ -1,0 +1,26 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  InputStream raw=getResources().openRawResource(R.raw.sample);
+  BufferedReader in=new BufferedReader(new InputStreamReader(raw));
+  String str;
+  StringBuffer buf=new StringBuffer();
+  try {
+    while ((str=in.readLine()) != null) {
+      buf.append(str);
+      buf.append('\n');
+    }
+    in.close();
+    JSONObject model=new JSONObject(buf.toString());
+    ExpandableListView elv=(ExpandableListView)findViewById(R.id.elv);
+    adapter=new JSONExpandableListAdapter(getLayoutInflater(),model);
+    elv.setAdapter(adapter);
+    elv.setOnChildClickListener(this);
+    elv.setOnGroupClickListener(this);
+    elv.setOnGroupExpandListener(this);
+    elv.setOnGroupCollapseListener(this);
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getName(),"Exception reading JSON",e);
+  }
+}

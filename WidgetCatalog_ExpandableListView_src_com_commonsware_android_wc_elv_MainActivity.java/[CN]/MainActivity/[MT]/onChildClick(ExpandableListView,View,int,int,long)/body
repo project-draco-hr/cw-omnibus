@@ -1,0 +1,4 @@
+{
+  Toast.makeText(this,adapter.getChild(groupPosition,childPosition).toString(),Toast.LENGTH_SHORT).show();
+  return (false);
+}

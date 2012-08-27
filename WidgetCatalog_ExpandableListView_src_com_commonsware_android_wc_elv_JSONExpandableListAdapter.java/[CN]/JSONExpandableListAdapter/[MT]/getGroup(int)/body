@@ -1,0 +1,8 @@
+{
+  @SuppressWarnings("rawtypes") Iterator i=model.keys();
+  while (groupPosition > 0) {
+    i.next();
+    groupPosition--;
+  }
+  return (i.next());
+}

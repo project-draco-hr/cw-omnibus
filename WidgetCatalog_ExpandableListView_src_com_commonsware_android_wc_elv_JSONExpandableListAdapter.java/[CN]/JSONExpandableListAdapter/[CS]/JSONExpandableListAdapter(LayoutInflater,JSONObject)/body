@@ -1,0 +1,4 @@
+{
+  this.inflater=inflater;
+  this.model=model;
+}
