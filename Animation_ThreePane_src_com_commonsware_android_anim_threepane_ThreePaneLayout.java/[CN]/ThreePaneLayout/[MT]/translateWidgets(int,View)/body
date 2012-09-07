@@ -1,0 +1,11 @@
+{
+  for (  final View v : views) {
+    v.setLayerType(View.LAYER_TYPE_HARDWARE,null);
+    v.animate().translationXBy(deltaX).setDuration(ANIM_DURATION).setListener(new AnimatorListenerAdapter(){
+      @Override public void onAnimationEnd(      Animator animation){
+        v.setLayerType(View.LAYER_TYPE_NONE,null);
+      }
+    }
+);
+  }
+}

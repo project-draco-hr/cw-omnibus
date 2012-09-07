@@ -1,6 +1,4 @@
 {
-  left.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
-  middle.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
-  right.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
+  translateWidgets(leftWidth,left,middle,right);
   ObjectAnimator.ofInt(this,"middleWidth",leftWidth,middleWidthNormal).setDuration(ANIM_DURATION).start();
 }
