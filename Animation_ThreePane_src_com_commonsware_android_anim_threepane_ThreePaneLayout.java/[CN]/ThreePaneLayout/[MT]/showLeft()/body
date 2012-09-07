@@ -1,0 +1,6 @@
+{
+  left.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
+  middle.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
+  right.animate().translationXBy(leftWidth).setDuration(ANIM_DURATION);
+  ObjectAnimator.ofInt(this,"middleWidth",leftWidth,middleWidthNormal).setDuration(ANIM_DURATION).start();
+}
