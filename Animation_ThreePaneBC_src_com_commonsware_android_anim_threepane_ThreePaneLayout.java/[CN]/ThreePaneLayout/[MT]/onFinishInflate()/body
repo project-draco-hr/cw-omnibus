@@ -1,0 +1,6 @@
+{
+  super.onFinishInflate();
+  left=getChildAt(0);
+  middle=getChildAt(1);
+  right=getChildAt(2);
+}

@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  root=(ThreePaneLayout)findViewById(R.id.root);
+  if (getSupportFragmentManager().findFragmentById(R.id.left) == null) {
+    getSupportFragmentManager().beginTransaction().add(R.id.left,SimpleListFragment.newInstance(items)).commit();
+  }
+}

@@ -1,0 +1,12 @@
+{
+  if (leftWidth == -1) {
+    leftWidth=left.getWidth();
+    middleWidthNormal=middle.getWidth();
+    resetWidget(left,leftWidth);
+    resetWidget(middle,middleWidthNormal);
+    resetWidget(right,middleWidthNormal);
+    requestLayout();
+  }
+  translateWidgets(-1 * leftWidth,left,middle,right);
+  ObjectAnimator.ofInt(this,"middleWidth",middleWidthNormal,leftWidth).setDuration(ANIM_DURATION).start();
+}
