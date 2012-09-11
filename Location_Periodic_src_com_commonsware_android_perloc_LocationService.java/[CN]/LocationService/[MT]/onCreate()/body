@@ -1,0 +1,7 @@
+{
+  super.onCreate();
+  executor.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);
+  mgr=(LocationManager)getSystemService(LOCATION_SERVICE);
+  mgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,this);
+  mgr.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,this);
+}
