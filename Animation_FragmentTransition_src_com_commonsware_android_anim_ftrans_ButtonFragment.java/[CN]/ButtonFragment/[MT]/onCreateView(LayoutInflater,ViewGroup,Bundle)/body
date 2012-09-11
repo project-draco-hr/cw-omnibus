@@ -1,0 +1,6 @@
+{
+  Button result=(Button)inflater.inflate(R.layout.button,container,false);
+  result.setText("Button #" + getArguments().getInt(KEY_INDEX));
+  result.setOnClickListener(this);
+  return (result);
+}

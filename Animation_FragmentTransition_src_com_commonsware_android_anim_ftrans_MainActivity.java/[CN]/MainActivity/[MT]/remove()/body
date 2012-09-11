@@ -1,0 +1,3 @@
+{
+  getFragmentManager().beginTransaction().remove(getFragmentManager().findFragmentById(android.R.id.content)).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+}

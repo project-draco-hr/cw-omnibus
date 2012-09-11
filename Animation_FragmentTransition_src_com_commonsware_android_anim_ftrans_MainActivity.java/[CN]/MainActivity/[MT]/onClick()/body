@@ -1,0 +1,8 @@
+{
+  if (count == 4) {
+    remove();
+  }
+ else {
+    getFragmentManager().beginTransaction().replace(android.R.id.content,ButtonFragment.newInstance(count++)).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+  }
+}
