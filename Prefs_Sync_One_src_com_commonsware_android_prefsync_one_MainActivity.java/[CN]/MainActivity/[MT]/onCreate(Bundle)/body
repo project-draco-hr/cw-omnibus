@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  btn=new Button(this);
+  setContentView(btn);
+  prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  prefs.registerOnSharedPreferenceChangeListener(this);
+  btn.setText(String.valueOf(prefs.getInt(KEY,0)));
+  btn.setOnClickListener(this);
+}

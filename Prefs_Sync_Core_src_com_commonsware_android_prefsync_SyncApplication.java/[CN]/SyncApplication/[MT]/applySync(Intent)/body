@@ -1,0 +1,33 @@
+{
+  if (!i.getStringExtra(EXTRA_SENDER).equals(getPackageName())) {
+    SharedPreferences.Editor editor=prefs.edit();
+    String key=i.getStringExtra(EXTRA_KEY);
+switch (i.getIntExtra(EXTRA_TYPE,-1)) {
+case TYPE_BOOLEAN:
+      editor.putBoolean(key,i.getBooleanExtra(EXTRA_VALUE,false));
+    break;
+case TYPE_FLOAT:
+  editor.putFloat(key,i.getFloatExtra(EXTRA_VALUE,0f));
+break;
+case TYPE_INT:
+editor.putInt(key,i.getIntExtra(EXTRA_VALUE,0));
+break;
+case TYPE_LONG:
+editor.putLong(key,i.getLongExtra(EXTRA_VALUE,0L));
+break;
+case TYPE_STRING:
+editor.putString(key,i.getStringExtra(EXTRA_VALUE));
+break;
+case TYPE_STRINGSET:
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+Set<String> setValue=new HashSet<String>();
+for (String s : i.getStringArrayExtra(EXTRA_VALUE)) {
+setValue.add(s);
+}
+editor.putStringSet(key,setValue);
+}
+break;
+}
+editor.apply();
+}
+}

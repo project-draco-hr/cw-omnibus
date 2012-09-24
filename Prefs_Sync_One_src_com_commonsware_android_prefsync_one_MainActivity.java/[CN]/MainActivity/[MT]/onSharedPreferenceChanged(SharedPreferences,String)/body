@@ -1,0 +1,3 @@
+{
+  btn.setText(String.valueOf(prefs.getInt(KEY,0)));
+}
