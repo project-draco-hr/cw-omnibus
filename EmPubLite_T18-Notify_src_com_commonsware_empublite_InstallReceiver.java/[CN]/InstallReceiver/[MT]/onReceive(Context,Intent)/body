@@ -4,5 +4,5 @@
   PendingIntent pi=PendingIntent.getActivity(ctxt,0,toLaunch,0);
   builder.setAutoCancel(true).setContentIntent(pi).setContentTitle(ctxt.getString(R.string.update_complete)).setContentText(ctxt.getString(R.string.update_desc)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(ctxt.getString(R.string.update_complete)).setWhen(System.currentTimeMillis());
   NotificationManager mgr=((NotificationManager)ctxt.getSystemService(Context.NOTIFICATION_SERVICE));
-  mgr.notify(NOTIFY_ID,builder.getNotification());
+  mgr.notify(NOTIFY_ID,builder.build());
 }

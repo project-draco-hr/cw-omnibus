@@ -11,5 +11,5 @@
     b.setContentTitle(getString(R.string.exception)).setContentText(e.getMessage()).setSmallIcon(android.R.drawable.stat_notify_error).setTicker(getString(R.string.exception));
   }
   NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-  mgr.notify(NOTIFY_ID,b.getNotification());
+  mgr.notify(NOTIFY_ID,b.build());
 }
