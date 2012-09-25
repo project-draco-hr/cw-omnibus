@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  ((ToggleButton)findViewById(R.id.record)).setOnCheckedChangeListener(this);
+}

@@ -1,0 +1,6 @@
+{
+  super.onResume();
+  recorder=new MediaRecorder();
+  recorder.setOnErrorListener(this);
+  recorder.setOnInfoListener(this);
+}
