@@ -1,0 +1,3 @@
+{
+  getSupportActionBar().setSelectedNavigationItem(position);
+}

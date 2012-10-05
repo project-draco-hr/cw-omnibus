@@ -1,0 +1,4 @@
+{
+  Integer position=(Integer)tab.getTag();
+  pager.setCurrentItem(position);
+}
