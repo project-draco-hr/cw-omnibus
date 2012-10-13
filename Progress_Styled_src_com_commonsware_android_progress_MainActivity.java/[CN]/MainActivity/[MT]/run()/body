@@ -1,0 +1,15 @@
+{
+  if (primary.getProgress() < 100) {
+    primary.incrementProgressBy(2);
+    secondary.incrementProgressBy(2);
+    if (secondary.getSecondaryProgress() == 100) {
+      secondary.setSecondaryProgress(10);
+    }
+ else {
+      secondary.incrementSecondaryProgressBy(10);
+    }
+  }
+ else {
+    executor.remove(this);
+  }
+}

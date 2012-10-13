@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  primary=(ProgressBar)findViewById(R.id.progressHS);
+  secondary=(ProgressBar)findViewById(R.id.progressHS2);
+  executor.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);
+  executor.scheduleAtFixedRate(this,0,PERIOD_SECONDS,TimeUnit.SECONDS);
+}

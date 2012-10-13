@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.refresh) {
+    refresh();
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

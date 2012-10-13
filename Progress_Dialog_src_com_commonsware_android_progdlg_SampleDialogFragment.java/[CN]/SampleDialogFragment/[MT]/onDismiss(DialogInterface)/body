@@ -1,0 +1,4 @@
+{
+  super.onDismiss(unused);
+  Log.d(getClass().getSimpleName(),"Goodbye!");
+}

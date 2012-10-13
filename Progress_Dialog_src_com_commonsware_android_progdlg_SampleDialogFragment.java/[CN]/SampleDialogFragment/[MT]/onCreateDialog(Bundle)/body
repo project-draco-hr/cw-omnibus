@@ -1,0 +1,7 @@
+{
+  ProgressDialog dlg=new ProgressDialog(getActivity());
+  dlg.setMessage(getActivity().getString(R.string.dlg_title));
+  dlg.setIndeterminate(true);
+  dlg.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+  return (dlg);
+}
