@@ -1,0 +1,8 @@
+{
+  getMenuInflater().inflate(R.menu.activity_main,menu);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+    menu.findItem(R.id.simple_beam).setEnabled(nfc.isNdefPushEnabled());
+    menu.findItem(R.id.file_beam).setEnabled(nfc.isNdefPushEnabled());
+  }
+  return (super.onCreateOptionsMenu(menu));
+}

@@ -1,0 +1,16 @@
+{
+switch (item.getItemId()) {
+case R.id.write_tag:
+    setUpWriteMode();
+  return (true);
+case R.id.simple_beam:
+enablePush();
+return (true);
+case R.id.file_beam:
+Intent i=new Intent(Intent.ACTION_GET_CONTENT);
+i.setType("*/*");
+startActivityForResult(i,0);
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

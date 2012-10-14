@@ -1,0 +1,3 @@
+{
+  return (new NdefMessage(new NdefRecord[]{buildNdefRecord(),NdefRecord.createApplicationRecord("com.commonsware.android.jimmyb")}));
+}

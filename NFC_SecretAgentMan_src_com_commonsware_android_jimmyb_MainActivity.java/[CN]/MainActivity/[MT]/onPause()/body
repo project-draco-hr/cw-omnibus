@@ -1,0 +1,6 @@
+{
+  if (isFinishing()) {
+    cleanUpWritingToTag();
+  }
+  super.onPause();
+}

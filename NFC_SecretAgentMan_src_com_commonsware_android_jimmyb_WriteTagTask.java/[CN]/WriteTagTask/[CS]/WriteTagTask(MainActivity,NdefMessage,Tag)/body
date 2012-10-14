@@ -1,0 +1,5 @@
+{
+  this.host=host;
+  this.msg=msg;
+  this.tag=tag;
+}

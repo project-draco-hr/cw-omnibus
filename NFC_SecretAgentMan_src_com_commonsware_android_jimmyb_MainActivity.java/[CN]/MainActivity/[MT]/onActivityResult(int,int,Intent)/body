@@ -1,0 +1,5 @@
+{
+  if (requestCode == 0 && resultCode == RESULT_OK) {
+    nfc.setBeamPushUris(new Uri[]{data.getData()},this);
+  }
+}

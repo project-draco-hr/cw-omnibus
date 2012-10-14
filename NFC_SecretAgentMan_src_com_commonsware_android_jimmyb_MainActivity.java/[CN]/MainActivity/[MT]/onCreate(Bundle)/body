@@ -1,0 +1,10 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  nfc=NfcAdapter.getDefaultAdapter(this);
+  secretMessage=(EditText)findViewById(R.id.secretMessage);
+  nfc.setOnNdefPushCompleteCallback(this,this);
+  if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent().getAction())) {
+    readFromTag(getIntent());
+  }
+}

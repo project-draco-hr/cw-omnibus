@@ -1,0 +1,5 @@
+{
+  Tag tag=i.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+  NdefMessage msg=new NdefMessage(new NdefRecord[]{buildNdefRecord()});
+  new WriteTagTask(this,msg,tag).execute();
+}

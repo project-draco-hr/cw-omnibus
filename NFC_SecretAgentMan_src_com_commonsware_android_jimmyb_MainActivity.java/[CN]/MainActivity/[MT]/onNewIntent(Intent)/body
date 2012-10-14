@@ -1,0 +1,8 @@
+{
+  if (inWriteMode && NfcAdapter.ACTION_TAG_DISCOVERED.equals(i.getAction())) {
+    writeToTag(i);
+  }
+ else   if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(i.getAction())) {
+    readFromTag(i);
+  }
+}

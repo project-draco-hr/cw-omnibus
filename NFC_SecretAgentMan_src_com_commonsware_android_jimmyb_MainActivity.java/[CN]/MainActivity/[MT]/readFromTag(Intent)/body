@@ -1,0 +1,10 @@
+{
+  Parcelable[] msgs=(Parcelable[])i.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+  if (msgs.length > 0) {
+    NdefMessage msg=(NdefMessage)msgs[0];
+    if (msg.getRecords().length > 0) {
+      NdefRecord rec=msg.getRecords()[0];
+      secretMessage.setText(new String(rec.getPayload(),US_ASCII));
+    }
+  }
+}

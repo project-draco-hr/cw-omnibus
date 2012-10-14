@@ -1,0 +1,6 @@
+{
+  host.cleanUpWritingToTag();
+  if (text != null) {
+    Toast.makeText(host,text,Toast.LENGTH_SHORT).show();
+  }
+}
