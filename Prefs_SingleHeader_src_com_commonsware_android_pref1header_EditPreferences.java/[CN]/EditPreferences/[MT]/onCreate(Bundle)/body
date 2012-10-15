@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  if (needResource || Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+    addPreferencesFromResource(R.xml.preferences);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  int res=getActivity().getResources().getIdentifier(getArguments().getString("resource"),"xml",getActivity().getPackageName());
+  addPreferencesFromResource(res);
+}

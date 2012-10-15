@@ -1,0 +1,8 @@
+{
+  if (onIsHidingHeaders() || !onIsMultiPane()) {
+    needResource=true;
+  }
+ else {
+    loadHeadersFromResource(R.xml.preference_headers,target);
+  }
+}
