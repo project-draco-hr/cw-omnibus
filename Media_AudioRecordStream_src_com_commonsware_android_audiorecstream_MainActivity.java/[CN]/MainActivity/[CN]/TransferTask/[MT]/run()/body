@@ -1,0 +1,16 @@
+{
+  byte[] buf=new byte[8192];
+  int len;
+  try {
+    while ((len=in.read(buf)) > 0) {
+      out.write(buf,0,len);
+    }
+    in.close();
+    out.flush();
+    out.getFD().sync();
+    out.close();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception transferring file",e);
+  }
+}

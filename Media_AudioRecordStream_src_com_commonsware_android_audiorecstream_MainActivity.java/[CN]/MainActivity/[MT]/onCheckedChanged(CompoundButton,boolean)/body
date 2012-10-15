@@ -1,0 +1,42 @@
+{
+  File recording=getOutputFile();
+  if (isChecked) {
+    if (recording.exists()) {
+      recording.delete();
+    }
+    recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+    recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+    recorder.setOutputFile(getStreamFd());
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD_MR1) {
+      recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+      recorder.setAudioEncodingBitRate(160 * 1024);
+    }
+ else {
+      recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+    }
+    recorder.setAudioChannels(2);
+    try {
+      recorder.prepare();
+      recorder.start();
+    }
+ catch (    Exception e) {
+      Log.e(getClass().getSimpleName(),"Exception in preparing recorder",e);
+      Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+    }
+  }
+ else {
+    try {
+      recorder.stop();
+    }
+ catch (    Exception e) {
+      Log.w(getClass().getSimpleName(),"Exception in stopping recorder",e);
+    }
+    recorder.reset();
+    if (recording.exists() && recording.length() > 0) {
+      Toast.makeText(this,R.string.recording_successful,Toast.LENGTH_LONG).show();
+    }
+ else {
+      Toast.makeText(this,R.string.recording_failed,Toast.LENGTH_LONG).show();
+    }
+  }
+}
