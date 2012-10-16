@@ -1,0 +1,6 @@
+{
+  loadClip();
+  play.setEnabled(true);
+  pause.setEnabled(false);
+  stop.setEnabled(false);
+}

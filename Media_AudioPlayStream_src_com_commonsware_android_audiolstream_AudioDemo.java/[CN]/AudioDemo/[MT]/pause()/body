@@ -1,0 +1,6 @@
+{
+  mp.pause();
+  play.setEnabled(true);
+  pause.setEnabled(false);
+  stop.setEnabled(true);
+}

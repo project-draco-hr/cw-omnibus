@@ -1,0 +1,9 @@
+{
+  String path=uri.toString();
+  for (  String extension : MIME_TYPES.keySet()) {
+    if (path.endsWith(extension)) {
+      return (MIME_TYPES.get(extension));
+    }
+  }
+  return (null);
+}

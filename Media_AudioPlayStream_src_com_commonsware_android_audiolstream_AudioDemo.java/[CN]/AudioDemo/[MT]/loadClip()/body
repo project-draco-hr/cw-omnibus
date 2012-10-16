@@ -1,0 +1,11 @@
+{
+  try {
+    mp=new MediaPlayer();
+    mp.setDataSource(this,PipeProvider.CONTENT_URI.buildUpon().appendPath("clip.ogg").build());
+    mp.setOnCompletionListener(this);
+    mp.prepare();
+  }
+ catch (  Exception e) {
+    goBlooey(e);
+  }
+}
