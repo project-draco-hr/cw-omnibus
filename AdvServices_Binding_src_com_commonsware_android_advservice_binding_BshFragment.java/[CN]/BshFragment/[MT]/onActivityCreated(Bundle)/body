@@ -1,0 +1,4 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  getActivity().getApplicationContext().bindService(new Intent(getActivity(),BshService.class),this,Context.BIND_AUTO_CREATE);
+}

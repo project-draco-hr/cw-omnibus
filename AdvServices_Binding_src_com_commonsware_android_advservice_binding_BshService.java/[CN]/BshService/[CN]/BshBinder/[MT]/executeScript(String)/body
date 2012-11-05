@@ -1,0 +1,8 @@
+{
+  try {
+    i.eval(script);
+  }
+ catch (  bsh.EvalError e) {
+    Log.e("BshService","Error executing script",e);
+  }
+}

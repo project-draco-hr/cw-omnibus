@@ -1,0 +1,8 @@
+{
+  try {
+    i.set("context",ctxt);
+  }
+ catch (  EvalError e) {
+    Log.e("BshService","Error executing script",e);
+  }
+}
