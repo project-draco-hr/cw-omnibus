@@ -1,0 +1,8 @@
+{
+switch (item.getItemId()) {
+case R.id.settings:
+    editPrefs();
+  return (true);
+}
+return (super.onOptionsItemSelected(item));
+}
