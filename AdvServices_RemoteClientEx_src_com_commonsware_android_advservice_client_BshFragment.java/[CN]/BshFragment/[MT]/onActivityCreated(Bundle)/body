@@ -1,0 +1,5 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  setRetainInstance(true);
+  getActivity().getApplicationContext().bindService(new Intent("com.commonsware.android.advservice.IScript"),this,Context.BIND_AUTO_CREATE);
+}
