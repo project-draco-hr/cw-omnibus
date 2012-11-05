@@ -1,0 +1,3 @@
+{
+  image.setImageResource(R.drawable.clip);
+}

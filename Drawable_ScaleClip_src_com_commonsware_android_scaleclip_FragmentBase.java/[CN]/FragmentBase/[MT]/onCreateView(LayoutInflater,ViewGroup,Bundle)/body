@@ -1,0 +1,10 @@
+{
+  setRetainInstance(true);
+  View result=inflater.inflate(R.layout.scaleclip,container,false);
+  SeekBar bar=((SeekBar)result.findViewById(R.id.level));
+  bar.setOnSeekBarChangeListener(this);
+  image=(ImageView)result.findViewById(R.id.image);
+  setImageBackground(image);
+  image.setImageLevel(bar.getProgress());
+  return (result);
+}
