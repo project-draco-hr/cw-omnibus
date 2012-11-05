@@ -17,7 +17,6 @@
       bottom=getHeight() - getPaddingBottom() - mDividerHeight;
     }
  else {
-      final LayoutParams lp=(LayoutParams)child.getLayoutParams();
       bottom=child.getBottom();
     }
     drawHorizontalDivider(canvas,bottom);

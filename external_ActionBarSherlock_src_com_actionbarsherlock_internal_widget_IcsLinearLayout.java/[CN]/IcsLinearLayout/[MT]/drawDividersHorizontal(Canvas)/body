@@ -17,7 +17,6 @@
       right=getWidth() - getPaddingRight() - mDividerWidth;
     }
  else {
-      final LayoutParams lp=(LayoutParams)child.getLayoutParams();
       right=child.getRight();
     }
     drawVerticalDivider(canvas,right);

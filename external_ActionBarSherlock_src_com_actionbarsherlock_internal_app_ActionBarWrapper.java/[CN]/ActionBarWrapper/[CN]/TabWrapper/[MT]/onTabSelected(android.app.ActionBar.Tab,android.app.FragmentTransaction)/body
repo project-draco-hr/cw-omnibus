@@ -1,7 +1,7 @@
 {
   if (mListener != null) {
-    if (mFragmentTransaction == null && mActivity instanceof SherlockFragmentActivity) {
-      mFragmentTransaction=((SherlockFragmentActivity)mActivity).getSupportFragmentManager().beginTransaction().disallowAddToBackStack();
+    if (mFragmentTransaction == null && mActivity instanceof FragmentActivity) {
+      mFragmentTransaction=((FragmentActivity)mActivity).getSupportFragmentManager().beginTransaction().disallowAddToBackStack();
     }
     mListener.onTabSelected(this,mFragmentTransaction);
     if (mFragmentTransaction != null) {

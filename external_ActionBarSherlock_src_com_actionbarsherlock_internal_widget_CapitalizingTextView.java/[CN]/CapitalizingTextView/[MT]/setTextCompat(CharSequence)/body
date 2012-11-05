@@ -1,7 +1,12 @@
 {
   if (SANS_ICE_CREAM && mAllCaps && text != null) {
     if (IS_GINGERBREAD) {
-      setText(text.toString().toUpperCase(Locale.ROOT));
+      try {
+        setText(text.toString().toUpperCase(Locale.ROOT));
+      }
+ catch (      NoSuchFieldError e) {
+        setText(text.toString().toUpperCase());
+      }
     }
  else {
       setText(text.toString().toUpperCase());

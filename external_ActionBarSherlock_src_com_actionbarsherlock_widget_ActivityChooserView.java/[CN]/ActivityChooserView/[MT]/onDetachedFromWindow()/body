@@ -2,7 +2,11 @@
   super.onDetachedFromWindow();
   ActivityChooserModel dataModel=mAdapter.getDataModel();
   if (dataModel != null) {
-    dataModel.unregisterObserver(mModelDataSetOberver);
+    try {
+      dataModel.unregisterObserver(mModelDataSetOberver);
+    }
+ catch (    IllegalStateException e) {
+    }
   }
   ViewTreeObserver viewTreeObserver=getViewTreeObserver();
   if (viewTreeObserver.isAlive()) {

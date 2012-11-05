@@ -26,5 +26,6 @@
   }
  else {
     mActivityChooserContent.setBackgroundDrawable(null);
+    mActivityChooserContent.setPadding(0,0,0,0);
   }
 }

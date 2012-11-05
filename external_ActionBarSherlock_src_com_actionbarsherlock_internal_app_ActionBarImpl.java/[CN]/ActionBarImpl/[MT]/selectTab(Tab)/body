@@ -4,8 +4,8 @@
     return;
   }
   FragmentTransaction trans=null;
-  if (mActivity instanceof SherlockFragmentActivity) {
-    trans=((SherlockFragmentActivity)mActivity).getSupportFragmentManager().beginTransaction().disallowAddToBackStack();
+  if (mActivity instanceof FragmentActivity) {
+    trans=((FragmentActivity)mActivity).getSupportFragmentManager().beginTransaction().disallowAddToBackStack();
   }
   if (mSelectedTab == tab) {
     if (mSelectedTab != null) {

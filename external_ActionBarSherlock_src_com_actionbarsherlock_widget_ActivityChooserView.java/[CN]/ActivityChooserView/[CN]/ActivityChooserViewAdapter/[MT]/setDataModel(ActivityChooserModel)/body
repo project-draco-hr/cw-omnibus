@@ -1,7 +1,11 @@
 {
   ActivityChooserModel oldDataModel=mAdapter.getDataModel();
   if (oldDataModel != null && isShown()) {
-    oldDataModel.unregisterObserver(mModelDataSetOberver);
+    try {
+      oldDataModel.unregisterObserver(mModelDataSetOberver);
+    }
+ catch (    IllegalStateException e) {
+    }
   }
   mDataModel=dataModel;
   if (dataModel != null && isShown()) {
