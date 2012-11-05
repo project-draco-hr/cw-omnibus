@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  Intent i=new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+  startActivityForResult(i,REQUEST_ID);
+}

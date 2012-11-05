@@ -1,0 +1,6 @@
+{
+  if (requestCode == REQUEST_ID && resultCode == RESULT_OK) {
+    Toast.makeText(this,"Recording finished!",Toast.LENGTH_LONG).show();
+  }
+  finish();
+}
