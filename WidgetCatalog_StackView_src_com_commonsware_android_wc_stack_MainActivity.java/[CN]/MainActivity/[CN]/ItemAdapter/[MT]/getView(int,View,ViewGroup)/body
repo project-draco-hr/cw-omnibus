@@ -1,0 +1,5 @@
+{
+  View result=super.getView(position,convertView,parent);
+  result.setBackgroundColor(0xFF330000 + (position * 0x0A0A));
+  return (result);
+}
