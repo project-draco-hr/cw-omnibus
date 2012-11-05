@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-  NotificationCompat.Builder normal=buildNormal(getString(R.string.sample));
+  NotificationCompat.Builder normal=buildNormal();
   NotificationCompat.InboxStyle big=new NotificationCompat.InboxStyle(normal);
   mgr.notify(NOTIFY_ID,big.setSummaryText(getString(R.string.summary)).addLine(getString(R.string.entry)).addLine(getString(R.string.another_entry)).addLine(getString(R.string.third_entry)).addLine(getString(R.string.yet_another_entry)).addLine(getString(R.string.low)).build());
   finish();
