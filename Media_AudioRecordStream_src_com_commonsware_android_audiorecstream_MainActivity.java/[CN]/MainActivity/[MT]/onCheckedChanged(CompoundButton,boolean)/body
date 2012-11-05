@@ -5,15 +5,9 @@
       recording.delete();
     }
     recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-    recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+    recorder.setOutputFormat(MediaRecorder.OutputFormat.RAW_AMR);
     recorder.setOutputFile(getStreamFd());
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD_MR1) {
-      recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-      recorder.setAudioEncodingBitRate(160 * 1024);
-    }
- else {
-      recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-    }
+    recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
     recorder.setAudioChannels(2);
     try {
       recorder.prepare();
