@@ -1,4 +1,4 @@
 {
-  root.removeCallbacks(everyFiveSeconds);
+  root.removeCallbacks(this);
   super.onPause();
 }

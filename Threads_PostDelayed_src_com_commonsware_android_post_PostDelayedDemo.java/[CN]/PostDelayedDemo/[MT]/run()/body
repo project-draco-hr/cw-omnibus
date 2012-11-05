@@ -1,0 +1,4 @@
+{
+  Toast.makeText(PostDelayedDemo.this,"Who-hoo!",Toast.LENGTH_SHORT).show();
+  root.postDelayed(this,PERIOD);
+}
