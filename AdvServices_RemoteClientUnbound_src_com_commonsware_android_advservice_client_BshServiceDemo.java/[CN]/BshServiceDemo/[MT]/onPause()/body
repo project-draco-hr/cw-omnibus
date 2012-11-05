@@ -1,4 +1,4 @@
 {
-  super.onDestroy();
+  super.onPause();
   unregisterReceiver(onBroadcast);
 }

@@ -1,6 +1,5 @@
 {
   super.onCreate();
-  new Thread(qProcessor).start();
   try {
     i.set("context",this);
   }

@@ -1,3 +1,0 @@
-{
-  q.add(new ExecuteScriptJob(script,cb));
-}

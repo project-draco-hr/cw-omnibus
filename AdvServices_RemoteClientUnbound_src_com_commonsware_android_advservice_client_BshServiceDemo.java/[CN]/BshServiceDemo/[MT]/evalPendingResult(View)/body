@@ -1,6 +1,6 @@
 {
   Intent i=new Intent("com.commonsware.android.advservice.IScript");
   i.putExtra(SCRIPT,script.getText().toString());
-  i.putExtra(PENDING_RESULT,createPendingResult(REQUEST_CODE,null,PendingIntent.FLAG_ONE_SHOT));
+  i.putExtra(PENDING_RESULT,createPendingResult(REQUEST_CODE,new Intent(),PendingIntent.FLAG_ONE_SHOT));
   startService(i);
 }

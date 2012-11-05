@@ -1,0 +1,4 @@
+{
+  super.onResume();
+  registerReceiver(onBroadcast,new IntentFilter(PRIVATE_ACTION));
+}

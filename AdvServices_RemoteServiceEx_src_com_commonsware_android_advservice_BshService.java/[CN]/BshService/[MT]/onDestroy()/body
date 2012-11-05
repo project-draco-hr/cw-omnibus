@@ -1,4 +1,4 @@
 {
+  executor.shutdown();
   super.onDestroy();
-  q.add(new KillJob());
 }
