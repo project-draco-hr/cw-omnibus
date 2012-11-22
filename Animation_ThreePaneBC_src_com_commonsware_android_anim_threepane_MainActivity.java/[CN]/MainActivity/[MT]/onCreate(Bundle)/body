@@ -5,4 +5,5 @@
   if (getSupportFragmentManager().findFragmentById(R.id.left) == null) {
     getSupportFragmentManager().beginTransaction().add(R.id.left,SimpleListFragment.newInstance(items)).commit();
   }
+  middleFragment=(SimpleListFragment)getSupportFragmentManager().findFragmentById(R.id.middle);
 }
