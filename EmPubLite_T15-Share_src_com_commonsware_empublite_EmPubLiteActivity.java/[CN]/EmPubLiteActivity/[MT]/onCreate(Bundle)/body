@@ -5,4 +5,5 @@
   }
   setContentView(R.layout.main);
   pager=(ViewPager)findViewById(R.id.pager);
+  getSupportActionBar().setHomeButtonEnabled(true);
 }

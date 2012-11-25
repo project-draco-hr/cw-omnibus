@@ -10,12 +10,13 @@
   help=(SimpleContentFragment)getSupportFragmentManager().findFragmentByTag(HELP);
   about=(SimpleContentFragment)getSupportFragmentManager().findFragmentByTag(ABOUT);
   setContentView(R.layout.main);
-  pager=(ViewPager)findViewById(R.id.pager);
   sidebar=findViewById(R.id.sidebar);
   divider=findViewById(R.id.divider);
   getSupportFragmentManager().addOnBackStackChangedListener(this);
   if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
     openSidebar();
   }
+  pager=(ViewPager)findViewById(R.id.pager);
+  getSupportActionBar().setHomeButtonEnabled(true);
   UpdateReceiver.scheduleAlarm(this);
 }

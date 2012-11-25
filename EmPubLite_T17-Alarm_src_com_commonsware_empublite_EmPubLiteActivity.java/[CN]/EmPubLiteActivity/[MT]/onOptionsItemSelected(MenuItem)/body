@@ -3,13 +3,13 @@ switch (item.getItemId()) {
 case android.R.id.home:
     pager.setCurrentItem(0,false);
   return (true);
-case R.id.update:
-WakefulIntentService.sendWakefulWork(this,DownloadCheckService.class);
-return (true);
 case R.id.notes:
 Intent i=new Intent(this,NoteActivity.class);
 i.putExtra(NoteActivity.EXTRA_POSITION,pager.getCurrentItem());
 startActivity(i);
+return (true);
+case R.id.update:
+WakefulIntentService.sendWakefulWork(this,DownloadCheckService.class);
 return (true);
 case R.id.about:
 i=new Intent(this,SimpleContentActivity.class);

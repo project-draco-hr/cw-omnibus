@@ -2,5 +2,5 @@
   Intent i=new Intent(Intent.ACTION_SEND);
   i.setType("text/plain");
   i.putExtra(Intent.EXTRA_TEXT,prose);
-  ctxt.startActivity(Intent.createChooser(i,ctxt.getString(R.string.share_title)));
+  startActivity(Intent.createChooser(i,getString(R.string.share_title)));
 }
