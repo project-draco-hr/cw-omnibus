@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  value=(TextView)findViewById(R.id.value);
+  SeekBar seekBar=(SeekBar)findViewById(R.id.seek_bar);
+  seekBar.setOnSeekBarChangeListener(this);
+}
