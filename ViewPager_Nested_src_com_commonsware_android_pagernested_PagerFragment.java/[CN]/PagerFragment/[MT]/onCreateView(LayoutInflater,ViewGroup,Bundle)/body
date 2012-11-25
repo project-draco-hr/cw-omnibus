@@ -1,0 +1,6 @@
+{
+  View result=inflater.inflate(R.layout.pager,container,false);
+  ViewPager pager=(ViewPager)result.findViewById(R.id.pager);
+  pager.setAdapter(buildAdapter());
+  return (result);
+}
