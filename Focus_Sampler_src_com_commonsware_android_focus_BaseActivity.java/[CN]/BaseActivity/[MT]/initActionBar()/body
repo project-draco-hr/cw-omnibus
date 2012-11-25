@@ -1,0 +1,3 @@
+{
+  getSupportActionBar().setHomeButtonEnabled(true);
+}

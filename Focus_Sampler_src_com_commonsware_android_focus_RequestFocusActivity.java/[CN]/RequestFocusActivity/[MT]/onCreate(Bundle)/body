@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.focusable_button);
+  initActionBar();
+  button=findViewById(R.id.button1);
+  button.requestFocus(View.FOCUS_RIGHT);
+  button.setOnClickListener(this);
+}

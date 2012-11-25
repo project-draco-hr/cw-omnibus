@@ -1,0 +1,16 @@
+{
+switch (item.getItemId()) {
+case android.R.id.home:
+    Intent i=new Intent(this,MainActivity.class);
+  i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+startActivity(i);
+return (true);
+case R.id.request_focus:
+startActivity(new Intent(this,RequestFocusActivity.class));
+return (true);
+case R.id.focus_order:
+startActivity(new Intent(this,FocusOrderActivity.class));
+return (true);
+}
+return super.onOptionsItemSelected(item);
+}
