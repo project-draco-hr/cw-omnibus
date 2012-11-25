@@ -1,0 +1,16 @@
+{
+  SQLiteDatabase.loadLibs(ctxt);
+  File dbFile=ctxt.getDatabasePath(DATABASE_NAME);
+  File legacyFile=ctxt.getDatabasePath(LEGACY_DATABASE_NAME);
+  if (!dbFile.exists() && legacyFile.exists()) {
+    SQLiteDatabase db=SQLiteDatabase.openOrCreateDatabase(legacyFile,"",null);
+    db.rawExecSQL(String.format("ATTACH DATABASE '%s' AS encrypted KEY '%s';",dbFile.getAbsolutePath(),PASSPHRASE));
+    db.rawExecSQL("SELECT sqlcipher_export('encrypted')");
+    db.rawExecSQL("DETACH DATABASE encrypted;");
+    int version=db.getVersion();
+    db.close();
+    db=SQLiteDatabase.openOrCreateDatabase(dbFile,PASSPHRASE,null);
+    db.setVersion(version);
+    legacyFile.delete();
+  }
+}

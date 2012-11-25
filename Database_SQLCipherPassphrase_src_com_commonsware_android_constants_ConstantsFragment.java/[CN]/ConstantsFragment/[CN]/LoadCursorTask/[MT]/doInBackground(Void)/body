@@ -1,0 +1,6 @@
+{
+  DatabaseHelper.encrypt(ctxt);
+  constantsCursor=doQuery();
+  constantsCursor.getCount();
+  return (null);
+}

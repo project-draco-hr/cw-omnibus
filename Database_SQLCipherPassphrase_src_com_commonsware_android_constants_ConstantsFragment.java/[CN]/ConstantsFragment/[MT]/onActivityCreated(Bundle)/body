@@ -1,0 +1,7 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  setHasOptionsMenu(true);
+  setRetainInstance(true);
+  db=new DatabaseHelper(getActivity());
+  new LoadCursorTask(getActivity().getApplicationContext()).execute();
+}
