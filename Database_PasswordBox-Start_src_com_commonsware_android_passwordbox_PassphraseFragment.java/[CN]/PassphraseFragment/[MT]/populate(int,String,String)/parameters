@@ -1,0 +1,3 @@
+int id
+String _title
+String _passphrase

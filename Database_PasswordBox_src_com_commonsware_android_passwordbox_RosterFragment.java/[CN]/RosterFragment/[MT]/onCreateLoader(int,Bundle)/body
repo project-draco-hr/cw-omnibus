@@ -1,0 +1,4 @@
+{
+  loader=DatabaseHelper.buildSelectAllLoader(getActivity());
+  return (loader);
+}

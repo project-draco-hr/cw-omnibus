@@ -1,0 +1,4 @@
+{
+  roster.savePassphrase(id,title,passphrase);
+  getSupportFragmentManager().popBackStack();
+}

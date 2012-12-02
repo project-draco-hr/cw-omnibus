@@ -1,0 +1,3 @@
+{
+  db.execSQL("CREATE TABLE roster (_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, passphrase TEXT);");
+}

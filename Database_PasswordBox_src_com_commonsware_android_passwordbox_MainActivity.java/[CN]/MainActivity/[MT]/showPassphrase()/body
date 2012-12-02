@@ -1,0 +1,20 @@
+{
+  boolean needsClear=false;
+  if (passphrase == null) {
+    passphrase=new PassphraseFragment();
+  }
+ else {
+    needsClear=true;
+  }
+  if (!passphrase.isVisible()) {
+    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.passphrase,passphrase).commit();
+  }
+  if (needsClear) {
+    findViewById(android.R.id.content).post(new Runnable(){
+      public void run(){
+        passphrase.clear();
+      }
+    }
+);
+  }
+}

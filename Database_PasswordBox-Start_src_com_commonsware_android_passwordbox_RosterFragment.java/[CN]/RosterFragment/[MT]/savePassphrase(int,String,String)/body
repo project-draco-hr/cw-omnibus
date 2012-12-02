@@ -1,0 +1,12 @@
+{
+  ContentValues values=new ContentValues(2);
+  values.put(DatabaseHelper.TITLE,title);
+  values.put(DatabaseHelper.PASSPHRASE,passphrase);
+  if (id == -1) {
+    loader.insert(DatabaseHelper.TABLE,DatabaseHelper.TITLE,values);
+  }
+ else {
+    String[] args={String.valueOf(id)};
+    loader.update(DatabaseHelper.TABLE,values,DatabaseHelper.ID + "=?",args);
+  }
+}

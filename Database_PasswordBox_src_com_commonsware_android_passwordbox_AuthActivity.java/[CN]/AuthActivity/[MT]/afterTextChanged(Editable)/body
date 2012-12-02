@@ -1,0 +1,4 @@
+{
+  boolean needsNoConfirm=confirm.getVisibility() == View.GONE;
+  ok.setEnabled(dbState != State.UNKNOWN && passphrase.getText().length() > 0 && (needsNoConfirm || passphrase.getText().toString().equals(confirm.getText().toString())));
+}

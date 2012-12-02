@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  passphrase=(PassphraseFragment)getSupportFragmentManager().findFragmentById(R.id.passphrase);
+  roster=(RosterFragment)getSupportFragmentManager().findFragmentById(R.id.roster);
+}

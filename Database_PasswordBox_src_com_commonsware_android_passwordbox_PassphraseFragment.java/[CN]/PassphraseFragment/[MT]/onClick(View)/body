@@ -1,0 +1,3 @@
+{
+  getActivityContract().savePassphrase(id,title.getText().toString(),passphrase.getText().toString());
+}

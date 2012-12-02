@@ -1,0 +1,3 @@
+{
+  return (new SQLiteCursorLoader(ctxt,this,"SELECT _id, title, passphrase FROM roster ORDER BY title",null));
+}

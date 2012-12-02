@@ -1,0 +1,3 @@
+{
+  return (new SQLCipherCursorLoader(ctxt,getDatabase(),"SELECT _id, title, passphrase FROM roster ORDER BY title",null));
+}

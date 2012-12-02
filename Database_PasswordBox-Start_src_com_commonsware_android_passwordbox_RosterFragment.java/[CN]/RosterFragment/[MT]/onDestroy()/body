@@ -1,0 +1,7 @@
+{
+  Cursor c=((CursorAdapter)getListAdapter()).getCursor();
+  if (c != null) {
+    c.close();
+  }
+  super.onDestroy();
+}

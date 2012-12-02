@@ -1,0 +1,11 @@
+{
+  int start=passphrase.getSelectionStart();
+  int end=passphrase.getSelectionEnd();
+  if (isChecked) {
+    passphrase.setTransformationMethod(null);
+  }
+ else {
+    passphrase.setTransformationMethod(new PasswordTransformationMethod());
+  }
+  passphrase.setSelection(start,end);
+}

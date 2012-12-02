@@ -1,0 +1,4 @@
+{
+  toggleShowPassphrase(passphrase,isChecked);
+  toggleShowPassphrase(confirm,isChecked);
+}

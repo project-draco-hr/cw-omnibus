@@ -1,0 +1,3 @@
+{
+  SQLCipherUtils.encrypt(ctxt,DATABASE_NAME,passphrase);
+}

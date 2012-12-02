@@ -1,0 +1,5 @@
+{
+  Cursor c=((CursorAdapter)getListAdapter()).getCursor();
+  c.moveToPosition(position);
+  getActivityContract().showPassphrase(c.getInt(DatabaseHelper.SELECT_ALL_ID),c.getString(DatabaseHelper.SELECT_ALL_TITLE),c.getString(DatabaseHelper.SELECT_ALL_PASSPHRASE));
+}
