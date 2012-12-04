@@ -1,0 +1,12 @@
+{
+  final int w=DemoExtension.getSupportedControlWidth(this);
+  final int h=DemoExtension.getSupportedControlHeight(this);
+  for (  DeviceInfo device : RegistrationAdapter.getHostApplication(this,hostAppPackageName).getDevices()) {
+    for (    DisplayInfo display : device.getDisplays()) {
+      if (display.sizeEquals(w,h)) {
+        return (new DemoExtension(hostAppPackageName,this));
+      }
+    }
+  }
+  throw new IllegalArgumentException("No properly-sized control for: " + hostAppPackageName);
+}

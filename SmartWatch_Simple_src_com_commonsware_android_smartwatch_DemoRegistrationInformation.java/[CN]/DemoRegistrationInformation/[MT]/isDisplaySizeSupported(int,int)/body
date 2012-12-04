@@ -1,0 +1,3 @@
+{
+  return ((width == DemoExtension.getSupportedControlWidth(ctxt)) && (height == DemoExtension.getSupportedControlHeight(ctxt)));
+}
