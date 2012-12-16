@@ -1,0 +1,17 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  SupportMapFragment mapFrag=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+  initListNav();
+  map=mapFrag.getMap();
+  if (map == null) {
+    Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();
+    finish();
+  }
+ else {
+    CameraUpdate center=CameraUpdateFactory.newLatLng(new LatLng(40.76793169992044,-73.98180484771729));
+    CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+    map.moveCamera(center);
+    map.animateCamera(zoom);
+  }
+}

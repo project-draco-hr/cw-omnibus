@@ -1,0 +1,6 @@
+{
+  if (mapLocationListener != null) {
+    mapLocationListener.onLocationChanged(location);
+    map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(),location.getLongitude())));
+  }
+}
