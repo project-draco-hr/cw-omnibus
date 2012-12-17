@@ -1,4 +1,6 @@
 {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
+  if (readyToGo()) {
+    setContentView(R.layout.activity_main);
+  }
 }
