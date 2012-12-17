@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  if (readyToGo()) {
+    setContentView(R.layout.activity_main);
+    ViewPager pager=(ViewPager)findViewById(R.id.pager);
+    pager.setAdapter(buildAdapter());
+  }
+}

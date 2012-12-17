@@ -1,0 +1,4 @@
+{
+  setHasOptionsMenu(true);
+  return (new FrameLayout(getActivity()));
+}

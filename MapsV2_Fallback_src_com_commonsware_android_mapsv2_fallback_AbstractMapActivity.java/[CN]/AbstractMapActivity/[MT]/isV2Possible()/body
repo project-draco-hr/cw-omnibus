@@ -1,0 +1,10 @@
+{
+  ActivityManager mgr=(ActivityManager)getSystemService(ACTIVITY_SERVICE);
+  if (mgr.getDeviceConfigurationInfo().reqGlEsVersion >= 0x20000) {
+    int status=GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+    if (status != ConnectionResult.SERVICE_INVALID) {
+      return (true);
+    }
+  }
+  return (false);
+}

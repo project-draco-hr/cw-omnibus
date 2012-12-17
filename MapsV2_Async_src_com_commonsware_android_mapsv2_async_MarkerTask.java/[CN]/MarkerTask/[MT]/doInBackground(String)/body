@@ -1,0 +1,22 @@
+{
+  try {
+    InputStream raw=assets.open(params[0]);
+    BufferedReader in=new BufferedReader(new InputStreamReader(raw));
+    String str;
+    StringBuilder buf=new StringBuilder();
+    while ((str=in.readLine()) != null) {
+      buf.append(str);
+    }
+    in.close();
+    JSONArray jsonArray=new JSONArray(buf.toString());
+    for (int i=0; i < jsonArray.length(); i++) {
+      JSONObject json=jsonArray.getJSONObject(i);
+      LatLng location=new LatLng(json.getDouble("lat"),json.getDouble("lon"));
+      markers.add(new MarkerOptions().position(location).title(json.getString("title")).snippet(json.getString("snippet")));
+    }
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (null);
+}

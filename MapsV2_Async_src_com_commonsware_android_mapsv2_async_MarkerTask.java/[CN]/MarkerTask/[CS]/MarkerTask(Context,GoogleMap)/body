@@ -1,0 +1,4 @@
+{
+  assets=ctxt.getAssets();
+  this.map=map;
+}

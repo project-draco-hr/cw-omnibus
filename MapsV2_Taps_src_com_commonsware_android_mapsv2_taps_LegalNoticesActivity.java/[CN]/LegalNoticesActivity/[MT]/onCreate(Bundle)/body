@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.legal);
+  TextView legal=(TextView)findViewById(R.id.legal);
+  legal.setText(GooglePlayServicesUtil.getOpenSourceSoftwareLicenseInfo(this));
+}

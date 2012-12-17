@@ -1,0 +1,4 @@
+{
+  LatLng position=marker.getPosition();
+  Log.d(getClass().getSimpleName(),String.format("Drag from %f:%f",position.latitude,position.longitude));
+}

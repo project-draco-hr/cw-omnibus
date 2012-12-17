@@ -1,0 +1,16 @@
+{
+  super.onCreate(savedInstanceState);
+  if (readyToGo()) {
+    setContentView(R.layout.activity_main);
+    SupportMapFragment mapFrag=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+    initListNav();
+    map=mapFrag.getMap();
+    CameraUpdate center=CameraUpdateFactory.newLatLng(new LatLng(40.76793169992044,-73.98180484771729));
+    CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+    map.moveCamera(center);
+    map.animateCamera(zoom);
+    new MarkerTask(this,map).execute("markers.json");
+    map.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
+    map.setOnInfoWindowClickListener(this);
+  }
+}
