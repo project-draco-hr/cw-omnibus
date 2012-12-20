@@ -1,3 +1,4 @@
 {
+  locMgr.removeUpdates(this);
   this.mapLocationListener=null;
 }

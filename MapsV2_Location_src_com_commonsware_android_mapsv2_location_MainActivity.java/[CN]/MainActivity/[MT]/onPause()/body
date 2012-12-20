@@ -1,4 +1,0 @@
-{
-  locMgr.removeUpdates(this);
-  super.onPause();
-}

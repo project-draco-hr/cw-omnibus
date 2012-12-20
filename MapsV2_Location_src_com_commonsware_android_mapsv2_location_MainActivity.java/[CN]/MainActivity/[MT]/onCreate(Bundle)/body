@@ -17,7 +17,8 @@
     addMarker(map,40.70686417491799,-74.01572942733765,R.string.downtown_club,R.string.heisman_trophy);
     map.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
     map.setOnInfoWindowClickListener(this);
-    map.setLocationSource(this);
     map.setMyLocationEnabled(true);
+    map.getUiSettings().setMyLocationButtonEnabled(false);
+    map.setLocationSource(this);
   }
 }
