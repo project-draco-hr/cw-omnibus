@@ -1,8 +1,0 @@
-{
-  for (  MarkerOptions marker : markers) {
-    map.addMarker(marker);
-  }
-  if (e != null) {
-    Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
-  }
-}
