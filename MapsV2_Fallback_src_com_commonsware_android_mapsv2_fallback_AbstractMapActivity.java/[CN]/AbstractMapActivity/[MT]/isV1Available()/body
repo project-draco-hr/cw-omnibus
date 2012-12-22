@@ -1,9 +1,0 @@
-{
-  try {
-    Class.forName("com.google.android.maps.MapActivity");
-    return (true);
-  }
- catch (  Exception e) {
-  }
-  return (false);
-}

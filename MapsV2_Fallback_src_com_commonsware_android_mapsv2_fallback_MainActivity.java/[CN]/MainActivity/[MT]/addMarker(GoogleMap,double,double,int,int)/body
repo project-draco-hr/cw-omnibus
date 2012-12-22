@@ -1,3 +1,0 @@
-{
-  map.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(getString(title)).snippet(getString(snippet)));
-}
