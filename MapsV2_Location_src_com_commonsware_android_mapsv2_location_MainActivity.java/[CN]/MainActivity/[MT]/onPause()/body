@@ -1,0 +1,5 @@
+{
+  map.setLocationSource(null);
+  locMgr.removeUpdates(this);
+  super.onPause();
+}

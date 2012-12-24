@@ -1,0 +1,5 @@
+{
+  super.onResume();
+  locMgr.requestLocationUpdates(0L,0.0f,crit,this,null);
+  map.setLocationSource(this);
+}
