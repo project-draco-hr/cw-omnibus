@@ -1,0 +1,21 @@
+{
+  int layout=R.layout.widget;
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+    int category=mgr.getAppWidgetOptions(appWidgetId).getInt(AppWidgetManager.OPTION_APPWIDGET_HOST_CATEGORY,-1);
+    layout=(category == AppWidgetProviderInfo.WIDGET_CATEGORY_KEYGUARD) ? R.layout.lockscreen : R.layout.widget;
+  }
+  RemoteViews updateViews=new RemoteViews(ctxt.getPackageName(),layout);
+  Intent i=new Intent(ctxt,AppWidget.class);
+  i.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,appWidgetId);
+  PendingIntent pi=PendingIntent.getBroadcast(ctxt,appWidgetId,i,PendingIntent.FLAG_UPDATE_CURRENT);
+  updateViews.setImageViewResource(R.id.left_die,IMAGES[(int)(Math.random() * 6)]);
+  updateViews.setOnClickPendingIntent(R.id.left_die,pi);
+  updateViews.setImageViewResource(R.id.right_die,IMAGES[(int)(Math.random() * 6)]);
+  updateViews.setOnClickPendingIntent(R.id.right_die,pi);
+  updateViews.setOnClickPendingIntent(R.id.background,pi);
+  if (layout == R.layout.lockscreen) {
+    updateViews.setImageViewResource(R.id.middle_die,IMAGES[(int)(Math.random() * 6)]);
+    updateViews.setOnClickPendingIntent(R.id.middle_die,pi);
+  }
+  mgr.updateAppWidget(appWidgetId,updateViews);
+}

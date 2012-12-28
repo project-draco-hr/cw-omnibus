@@ -1,0 +1,8 @@
+{
+  if (intent.getAction() == null) {
+    updateWidget(context,AppWidgetManager.getInstance(context),intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,-1));
+  }
+ else {
+    super.onReceive(context,intent);
+  }
+}

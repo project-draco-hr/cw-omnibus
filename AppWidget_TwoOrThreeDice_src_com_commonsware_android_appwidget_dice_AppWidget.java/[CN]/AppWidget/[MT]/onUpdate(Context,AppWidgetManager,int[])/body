@@ -1,0 +1,5 @@
+{
+  for (  int appWidgetId : appWidgetIds) {
+    updateWidget(ctxt,mgr,appWidgetId);
+  }
+}
