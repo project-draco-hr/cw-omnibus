@@ -1,0 +1,9 @@
+{
+  if (event == null || event.getAction() == KeyEvent.ACTION_UP) {
+    adapter.add(v.getText().toString());
+    v.setText("");
+    InputMethodManager imm=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+    imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+  }
+  return (true);
+}
