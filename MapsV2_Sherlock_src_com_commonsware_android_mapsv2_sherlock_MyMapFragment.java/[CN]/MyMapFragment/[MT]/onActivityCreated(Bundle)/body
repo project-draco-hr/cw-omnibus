@@ -1,0 +1,6 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  if (getMap() != null) {
+    Log.d(getClass().getSimpleName(),"Map ready for use!");
+  }
+}

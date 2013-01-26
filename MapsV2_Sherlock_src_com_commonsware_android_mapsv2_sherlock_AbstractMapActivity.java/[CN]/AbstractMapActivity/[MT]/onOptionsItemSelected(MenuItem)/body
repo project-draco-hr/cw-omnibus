@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.legal) {
+    startActivity(new Intent(this,LegalNoticesActivity.class));
+    return (true);
+  }
+  return super.onOptionsItemSelected(item);
+}
