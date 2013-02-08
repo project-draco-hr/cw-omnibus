@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(FileProvider.CONTENT_URI + "test.pdf"));
+  i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+  startActivity(i);
+  finish();
+}
