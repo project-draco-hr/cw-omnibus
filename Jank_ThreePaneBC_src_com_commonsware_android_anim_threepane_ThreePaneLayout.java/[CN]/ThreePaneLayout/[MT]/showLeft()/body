@@ -1,0 +1,4 @@
+{
+  translateWidgets(leftWidth,left,middle,right);
+  setMiddleWidth(middleWidthNormal);
+}
