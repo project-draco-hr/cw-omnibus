@@ -4,6 +4,6 @@
   if (word == null) {
     word="We did not get a word!";
   }
-  Toast.makeText(this,word,Toast.LENGTH_LONG).show();
+  Toast.makeText(this,String.format("#%d: %s",getIntent().getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,AppWidgetManager.INVALID_APPWIDGET_ID),word),Toast.LENGTH_LONG).show();
   finish();
 }
