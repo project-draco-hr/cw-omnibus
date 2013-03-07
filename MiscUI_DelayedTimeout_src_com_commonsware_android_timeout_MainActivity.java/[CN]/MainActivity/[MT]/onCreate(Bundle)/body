@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  content=findViewById(android.R.id.content);
+  content.setKeepScreenOn(true);
+  run();
+}

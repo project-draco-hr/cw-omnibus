@@ -1,0 +1,6 @@
+{
+  if ((SystemClock.uptimeMillis() - lastActivity) > TIMEOUT_PERIOD) {
+    content.setKeepScreenOn(false);
+  }
+  content.postDelayed(this,TIMEOUT_POLL_PERIOD);
+}

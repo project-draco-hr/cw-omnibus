@@ -1,0 +1,4 @@
+{
+  content.removeCallbacks(this);
+  super.onDestroy();
+}
