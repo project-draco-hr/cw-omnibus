@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  calendar=(CalendarView)findViewById(R.id.calendar);
+  calendar.setOnDateChangeListener(this);
+}
