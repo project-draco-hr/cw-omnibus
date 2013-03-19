@@ -1,0 +1,10 @@
+{
+  View result=inflater.inflate(R.layout.editor,container,false);
+  EditText editor=(EditText)result.findViewById(R.id.editor);
+  position=getArguments().getInt(KEY_POSITION,-1);
+  editor.setHint(getTitle(getActivity(),position));
+  if ((position % 2) == 0) {
+    setHasOptionsMenu(true);
+  }
+  return (result);
+}
