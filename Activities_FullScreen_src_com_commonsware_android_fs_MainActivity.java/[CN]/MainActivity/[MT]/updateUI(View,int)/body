@@ -1,0 +1,21 @@
+{
+  int flags=0;
+switch (screenStyle) {
+case R.id.normal:
+    flags=View.SYSTEM_UI_FLAG_VISIBLE;
+  break;
+case R.id.lowProfile:
+flags=View.SYSTEM_UI_FLAG_LOW_PROFILE;
+break;
+case R.id.hideNav:
+flags=View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+break;
+case R.id.hideStatusBar:
+flags=View.SYSTEM_UI_FLAG_FULLSCREEN;
+break;
+case R.id.fullScreen:
+flags=View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+break;
+}
+v.setSystemUiVisibility(flags);
+}
