@@ -5,7 +5,7 @@
   TextView body=(TextView)findViewById(R.id.body);
   TextView name=(TextView)findViewById(R.id.name);
   if (!TextUtils.isEmpty(addr.getText())) {
-    shortcut.putExtra(Intent.EXTRA_EMAIL,addr.getText().toString());
+    shortcut.putExtra(Intent.EXTRA_EMAIL,new String[]{addr.getText().toString()});
   }
   if (!TextUtils.isEmpty(subject.getText())) {
     shortcut.putExtra(Intent.EXTRA_SUBJECT,subject.getText().toString());
