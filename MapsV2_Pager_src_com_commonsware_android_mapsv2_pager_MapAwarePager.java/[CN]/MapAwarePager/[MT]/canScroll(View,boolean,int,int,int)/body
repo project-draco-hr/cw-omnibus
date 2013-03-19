@@ -1,0 +1,6 @@
+{
+  if (v instanceof SurfaceView || v instanceof PagerTabStrip) {
+    return (true);
+  }
+  return (super.canScroll(v,checkV,dx,x,y));
+}
