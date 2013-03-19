@@ -1,0 +1,14 @@
+{
+  View result=inflater.inflate(R.layout.main,parent,false);
+  result.findViewById(R.id.pick).setOnClickListener(this);
+  View v=result.findViewById(R.id.view);
+  v.setOnClickListener(this);
+  if (state != null) {
+    String contactUri=state.getString("contact");
+    if (contactUri != null) {
+      contact=Uri.parse(contactUri);
+    }
+  }
+  v.setEnabled(contact != null);
+  return (result);
+}
