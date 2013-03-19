@@ -1,0 +1,4 @@
+{
+  preso=new SimplePresentation(this,route.getPresentationDisplay());
+  preso.show();
+}

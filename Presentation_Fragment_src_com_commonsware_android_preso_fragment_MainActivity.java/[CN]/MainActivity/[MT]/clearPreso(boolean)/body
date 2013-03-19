@@ -1,0 +1,11 @@
+{
+  if (switchToInline) {
+    inline.setVisibility(View.VISIBLE);
+    prose.setText(R.string.primary);
+    getFragmentManager().beginTransaction().add(R.id.preso,buildPreso(null)).commit();
+  }
+  if (preso != null) {
+    preso.dismiss();
+    preso=null;
+  }
+}

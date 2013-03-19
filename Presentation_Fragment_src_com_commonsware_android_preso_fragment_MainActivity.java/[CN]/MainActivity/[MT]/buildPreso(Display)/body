@@ -1,0 +1,3 @@
+{
+  return (SamplePresentationFragment.newInstance(this,display,"http://commonsware.com"));
+}

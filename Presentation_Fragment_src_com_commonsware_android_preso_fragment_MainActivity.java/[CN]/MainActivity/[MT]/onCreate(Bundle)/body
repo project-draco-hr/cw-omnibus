@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  inline=findViewById(R.id.preso);
+  prose=(TextView)findViewById(R.id.prose);
+}

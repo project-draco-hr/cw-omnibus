@@ -1,0 +1,10 @@
+{
+  if (inline.getVisibility() == View.VISIBLE) {
+    inline.setVisibility(View.GONE);
+    prose.setText(R.string.secondary);
+    Fragment f=getFragmentManager().findFragmentById(R.id.preso);
+    getFragmentManager().beginTransaction().remove(f).commit();
+  }
+  preso=buildPreso(route.getPresentationDisplay());
+  preso.show(getFragmentManager(),"preso");
+}

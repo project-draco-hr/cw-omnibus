@@ -1,0 +1,8 @@
+{
+  SamplePresentationFragment frag=new SamplePresentationFragment();
+  frag.setDisplay(ctxt,display);
+  Bundle b=new Bundle();
+  b.putString(ARG_URL,url);
+  frag.setArguments(b);
+  return (frag);
+}

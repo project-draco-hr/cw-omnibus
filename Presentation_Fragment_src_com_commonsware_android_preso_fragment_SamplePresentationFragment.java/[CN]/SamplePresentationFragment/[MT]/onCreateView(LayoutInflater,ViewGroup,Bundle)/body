@@ -1,0 +1,5 @@
+{
+  View result=super.onCreateView(inflater,container,savedInstanceState);
+  getWebView().loadUrl(getArguments().getString(ARG_URL));
+  return (result);
+}

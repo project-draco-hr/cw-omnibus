@@ -1,0 +1,25 @@
+{
+  if (route == null) {
+    clearPreso();
+  }
+ else {
+    Display display=route.getPresentationDisplay();
+    if (route.isEnabled() && display != null) {
+      if (preso == null) {
+        showPreso(route);
+        Log.d(getClass().getSimpleName(),"enabled route");
+      }
+ else       if (preso.getDisplay().getDisplayId() != display.getDisplayId()) {
+        clearPreso();
+        showPreso(route);
+        Log.d(getClass().getSimpleName(),"switched route");
+      }
+ else {
+      }
+    }
+ else {
+      clearPreso();
+      Log.d(getClass().getSimpleName(),"disabled route");
+    }
+  }
+}
