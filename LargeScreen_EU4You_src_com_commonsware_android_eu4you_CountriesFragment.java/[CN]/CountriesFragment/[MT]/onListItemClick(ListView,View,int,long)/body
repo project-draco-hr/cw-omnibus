@@ -1,11 +1,10 @@
 {
-  CountryListener listener=(CountryListener)getActivity();
-  if (listener.isPersistentSelection()) {
+  if (getContract().isPersistentSelection()) {
     getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     l.setItemChecked(position,true);
   }
  else {
     getListView().setChoiceMode(ListView.CHOICE_MODE_NONE);
   }
-  listener.onCountrySelected(Country.EU.get(position));
+  getContract().onCountrySelected(Country.EU.get(position));
 }

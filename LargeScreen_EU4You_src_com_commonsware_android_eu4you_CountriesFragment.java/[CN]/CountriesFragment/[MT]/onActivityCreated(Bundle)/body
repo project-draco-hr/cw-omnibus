@@ -1,6 +1,5 @@
 {
   super.onActivityCreated(state);
-  setRetainInstance(true);
   setListAdapter(new CountryAdapter());
   if (state != null) {
     int position=state.getInt(STATE_CHECKED,-1);
