@@ -1,6 +1,0 @@
-{
-  if (!isScheduled) {
-    isScheduled=true;
-    executor.scheduleAtFixedRate(this,0,PERIOD_SECONDS,TimeUnit.SECONDS);
-  }
-}

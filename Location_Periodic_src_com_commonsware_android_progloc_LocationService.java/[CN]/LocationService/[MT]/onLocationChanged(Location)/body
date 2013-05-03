@@ -1,0 +1,7 @@
+{
+  Location bestLocation=getBestLocation(loc);
+  if (bestLocation != lastLocation) {
+    lastLocation=bestLocation;
+    Log.i(getClass().getSimpleName(),String.format("%s @ %d %f:%f (%f meters)",bestLocation.getProvider(),bestLocation.getTime(),bestLocation.getLatitude(),bestLocation.getLongitude(),bestLocation.getAccuracy()));
+  }
+}

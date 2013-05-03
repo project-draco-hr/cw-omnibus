@@ -1,0 +1,14 @@
+{
+  if (lastLocation == null) {
+    return (location);
+  }
+  Location older=(lastLocation.getTime() < location.getTime() ? lastLocation : location);
+  Location newer=(lastLocation == older ? location : lastLocation);
+  if (older.getAccuracy() <= newer.getAccuracy()) {
+    return (newer);
+  }
+  if (newer.distanceTo(older) < newer.getAccuracy()) {
+    return (older);
+  }
+  return (newer);
+}

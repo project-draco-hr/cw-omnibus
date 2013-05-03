@@ -1,5 +1,4 @@
 {
   mgr.removeUpdates(this);
-  executor.shutdown();
   super.onDestroy();
 }

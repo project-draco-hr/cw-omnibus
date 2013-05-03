@@ -1,9 +1,0 @@
-{
-  Location loc=getBestLocation();
-  if (loc == null) {
-    Log.wtf(getClass().getSimpleName(),"Got null for getBestLocation()");
-  }
- else {
-    Log.i(getClass().getSimpleName(),String.format("%s %f:%f (%f meters)",loc.getProvider(),loc.getLatitude(),loc.getLongitude(),loc.getAccuracy()));
-  }
-}
