@@ -1,0 +1,8 @@
+{
+  final TabView tabView=new TabView(getContext());
+  tabView.mIndex=index;
+  tabView.setFocusable(true);
+  tabView.setOnClickListener(mTabClickListener);
+  tabView.setText(text);
+  mTabLayout.addView(tabView,new LinearLayout.LayoutParams(0,FILL_PARENT,1));
+}

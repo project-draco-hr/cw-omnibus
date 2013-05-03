@@ -1,0 +1,17 @@
+{
+  mTabLayout.removeAllViews();
+  PagerAdapter adapter=mViewPager.getAdapter();
+  final int count=adapter.getCount();
+  for (int i=0; i < count; i++) {
+    CharSequence title=adapter.getPageTitle(i);
+    if (title == null) {
+      title=EMPTY_TITLE;
+    }
+    addTab(title,i);
+  }
+  if (mSelectedTabIndex > count) {
+    mSelectedTabIndex=count - 1;
+  }
+  setCurrentItem(mSelectedTabIndex);
+  requestLayout();
+}

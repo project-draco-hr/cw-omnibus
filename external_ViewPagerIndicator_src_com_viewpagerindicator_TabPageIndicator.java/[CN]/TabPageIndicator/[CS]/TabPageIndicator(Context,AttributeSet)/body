@@ -1,0 +1,6 @@
+{
+  super(context,attrs);
+  setHorizontalScrollBarEnabled(false);
+  mTabLayout=new LinearLayout(getContext());
+  addView(mTabLayout,new ViewGroup.LayoutParams(WRAP_CONTENT,FILL_PARENT));
+}

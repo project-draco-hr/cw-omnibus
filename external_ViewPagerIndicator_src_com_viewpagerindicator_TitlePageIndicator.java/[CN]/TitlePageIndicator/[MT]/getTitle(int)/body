@@ -1,0 +1,7 @@
+{
+  CharSequence title=mPagerAdapter.getPageTitle(i);
+  if (title == null) {
+    title=EMPTY_TITLE;
+  }
+  return title.toString();
+}
