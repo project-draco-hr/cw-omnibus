@@ -1,0 +1,3 @@
+{
+  return (details != null && details.isVisible());
+}

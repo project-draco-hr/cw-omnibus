@@ -1,0 +1,10 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  if (url == null && savedInstanceState != null) {
+    url=savedInstanceState.getString(STATE_URL);
+  }
+  if (url != null) {
+    loadUrl(url);
+    url=null;
+  }
+}

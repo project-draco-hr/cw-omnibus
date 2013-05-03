@@ -1,0 +1,6 @@
+{
+  super.onSaveInstanceState(state);
+  if (getView() != null) {
+    state.putInt(STATE_CHECKED,getListView().getCheckedItemPosition());
+  }
+}

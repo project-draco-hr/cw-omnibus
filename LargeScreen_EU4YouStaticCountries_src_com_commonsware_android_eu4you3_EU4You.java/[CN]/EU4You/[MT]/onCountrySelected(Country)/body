@@ -1,0 +1,11 @@
+{
+  String url=getString(c.url);
+  if (details != null && details.isVisible()) {
+    details.loadUrl(url);
+  }
+ else {
+    Intent i=new Intent(this,DetailsActivity.class);
+    i.putExtra(DetailsActivity.EXTRA_URL,url);
+    startActivity(i);
+  }
+}

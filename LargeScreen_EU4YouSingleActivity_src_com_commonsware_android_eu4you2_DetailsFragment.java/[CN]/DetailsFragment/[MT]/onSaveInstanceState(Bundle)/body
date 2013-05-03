@@ -1,0 +1,9 @@
+{
+  super.onSaveInstanceState(outState);
+  if (url == null) {
+    outState.putString(STATE_URL,getWebView().getUrl());
+  }
+ else {
+    outState.putString(STATE_URL,url);
+  }
+}

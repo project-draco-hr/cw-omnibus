@@ -1,0 +1,7 @@
+{
+  String url=getString(c.url);
+  details.loadUrl(url);
+  if (details.getId() != R.id.details) {
+    getSupportFragmentManager().beginTransaction().replace(R.id.mainfrag,details,TAG_DETAILS).addToBackStack(null).commit();
+  }
+}

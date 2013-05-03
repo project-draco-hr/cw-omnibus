@@ -1,0 +1,29 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  countries=(CountriesFragment)getSupportFragmentManager().findFragmentByTag(TAG_COUNTRIES);
+  details=(DetailsFragment)getSupportFragmentManager().findFragmentByTag(TAG_DETAILS);
+  if (countries == null) {
+    countries=new CountriesFragment();
+    getSupportFragmentManager().beginTransaction().add(R.id.mainfrag,countries,TAG_COUNTRIES).commit();
+  }
+  if (details == null) {
+    details=new DetailsFragment();
+    if (findViewById(R.id.details) != null) {
+      getSupportFragmentManager().beginTransaction().add(R.id.details,details,TAG_DETAILS).commit();
+    }
+  }
+ else {
+    if (details.getId() == R.id.mainfrag) {
+      if (findViewById(R.id.details) != null) {
+        getSupportFragmentManager().popBackStackImmediate();
+      }
+    }
+ else {
+      getSupportFragmentManager().beginTransaction().remove(details).commit();
+    }
+    if (findViewById(R.id.details) != null) {
+      getSupportFragmentManager().beginTransaction().add(R.id.details,details,TAG_DETAILS).commit();
+    }
+  }
+}
