@@ -1,4 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchInvalidateOptionsMenu]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchInvalidateOptionsMenu]");
   mActivity.getWindow().invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
+  if (mMenu != null)   mMenu.invalidate();
 }

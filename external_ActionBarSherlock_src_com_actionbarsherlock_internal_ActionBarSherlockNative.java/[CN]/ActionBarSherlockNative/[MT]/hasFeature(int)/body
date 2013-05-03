@@ -1,6 +1,6 @@
 {
-  if (DEBUG)   Log.d(TAG,"[hasFeature] feature: " + feature);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[hasFeature] feature: " + feature);
   final boolean result=mActivity.getWindow().hasFeature(feature);
-  if (DEBUG)   Log.d(TAG,"[hasFeature] returning " + result);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[hasFeature] returning " + result);
   return result;
 }

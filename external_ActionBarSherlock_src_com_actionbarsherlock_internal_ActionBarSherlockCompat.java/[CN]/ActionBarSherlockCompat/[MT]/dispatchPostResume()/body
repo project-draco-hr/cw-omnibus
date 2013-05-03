@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchPostResume]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchPostResume]");
   if (aActionBar != null) {
     aActionBar.setShowHideAnimationEnabled(true);
   }

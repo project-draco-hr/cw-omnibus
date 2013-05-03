@@ -1,10 +1,28 @@
 {
-  Uri.Builder uriBuilder=new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).query("").fragment("");
+  if (mSearchable == null) {
+    return null;
+  }
+  String authority=mSearchable.getSuggestAuthority();
+  if (authority == null) {
+    return null;
+  }
+  Uri.Builder uriBuilder=new Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(authority).query("").fragment("");
+  final String contentPath=mSearchable.getSuggestPath();
+  if (contentPath != null) {
+    uriBuilder.appendEncodedPath(contentPath);
+  }
   uriBuilder.appendPath(SearchManager.SUGGEST_URI_PATH_QUERY);
-  uriBuilder.appendPath(query);
+  String selection=mSearchable.getSuggestSelection();
+  String[] selArgs=null;
+  if (selection != null) {
+    selArgs=new String[]{query};
+  }
+ else {
+    uriBuilder.appendPath(query);
+  }
   if (limit > 0) {
-    uriBuilder.appendQueryParameter(SearchManager.SUGGEST_PARAMETER_LIMIT,String.valueOf(limit));
+    uriBuilder.appendQueryParameter("limit",String.valueOf(limit));
   }
   Uri uri=uriBuilder.build();
-  return mContext.getContentResolver().query(uri,null,null,null,null);
+  return mContext.getContentResolver().query(uri,null,selection,selArgs,null);
 }

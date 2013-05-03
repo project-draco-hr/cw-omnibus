@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchConfigurationChanged] newConfig: " + newConfig);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchConfigurationChanged] newConfig: " + newConfig);
   if (aActionBar != null) {
     aActionBar.onConfigurationChanged(newConfig);
   }

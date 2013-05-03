@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[callbackOptionsItemSelected] item: " + item.getTitleCondensed());
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[callbackOptionsItemSelected] item: " + item.getTitleCondensed());
   boolean result=false;
   if (mActivity instanceof OnMenuItemSelectedListener) {
     OnMenuItemSelectedListener listener=(OnMenuItemSelectedListener)mActivity;
@@ -9,6 +9,6 @@
     OnOptionsItemSelectedListener listener=(OnOptionsItemSelectedListener)mActivity;
     result=listener.onOptionsItemSelected(item);
   }
-  if (DEBUG)   Log.d(TAG,"[callbackOptionsItemSelected] returning " + result);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[callbackOptionsItemSelected] returning " + result);
   return result;
 }

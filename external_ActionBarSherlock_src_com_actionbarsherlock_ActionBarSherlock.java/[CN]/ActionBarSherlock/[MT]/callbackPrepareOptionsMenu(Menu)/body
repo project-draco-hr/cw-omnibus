@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[callbackPrepareOptionsMenu] menu: " + menu);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[callbackPrepareOptionsMenu] menu: " + menu);
   boolean result=true;
   if (mActivity instanceof OnPreparePanelListener) {
     OnPreparePanelListener listener=(OnPreparePanelListener)mActivity;
@@ -9,6 +9,6 @@
     OnPrepareOptionsMenuListener listener=(OnPrepareOptionsMenuListener)mActivity;
     result=listener.onPrepareOptionsMenu(menu);
   }
-  if (DEBUG)   Log.d(TAG,"[callbackPrepareOptionsMenu] returning " + result);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[callbackPrepareOptionsMenu] returning " + result);
   return result;
 }

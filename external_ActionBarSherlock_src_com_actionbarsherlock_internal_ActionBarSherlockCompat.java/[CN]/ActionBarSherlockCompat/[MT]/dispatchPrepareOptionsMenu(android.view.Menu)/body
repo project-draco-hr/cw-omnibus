@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchPrepareOptionsMenu] android.view.Menu: " + menu);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchPrepareOptionsMenu] android.view.Menu: " + menu);
   if (mActionMode != null) {
     return false;
   }
@@ -20,6 +20,6 @@
     return false;
   }
   boolean result=mMenu.bindNativeOverflow(menu,this,mNativeItemMap);
-  if (DEBUG)   Log.d(TAG,"[dispatchPrepareOptionsMenu] returning " + result);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchPrepareOptionsMenu] returning " + result);
   return result;
 }

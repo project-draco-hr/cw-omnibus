@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[setContentView] layoutResId: " + layoutResId);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[setContentView] layoutResId: " + layoutResId);
   if (mContentParent == null) {
     installDecor();
   }

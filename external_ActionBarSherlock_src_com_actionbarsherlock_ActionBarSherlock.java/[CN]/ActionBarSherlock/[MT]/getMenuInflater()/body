@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[getMenuInflater]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[getMenuInflater]");
   if (mMenuInflater == null) {
     if (getActionBar() != null) {
       mMenuInflater=new MenuInflater(getThemedContext(),mActivity);

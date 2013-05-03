@@ -9,7 +9,11 @@
   }
   mDataModel=dataModel;
   if (dataModel != null && isShown()) {
-    dataModel.registerObserver(mModelDataSetOberver);
+    try {
+      dataModel.registerObserver(mModelDataSetOberver);
+    }
+ catch (    IllegalStateException e) {
+    }
   }
   notifyDataSetChanged();
 }

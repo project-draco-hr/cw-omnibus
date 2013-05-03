@@ -11,7 +11,7 @@
   if (mLogo == null) {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
       if (context instanceof Activity) {
-        final int resId=loadLogoFromManifest((Activity)context);
+        final int resId=ResourcesCompat.loadLogoFromManifest((Activity)context);
         if (resId != 0) {
           mLogo=context.getResources().getDrawable(resId);
         }

@@ -1,0 +1,4 @@
+{
+  getSherlock().ensureActionBar();
+  return super.findViewById(id);
+}

@@ -1,0 +1,14 @@
+{
+  if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
+    return Toast.makeText(context,s,duration);
+  }
+  IcsToast toast=new IcsToast(context);
+  toast.setDuration(duration);
+  TextView view=new TextView(context);
+  view.setText(s);
+  view.setTextColor(0xffffffff);
+  view.setGravity(Gravity.CENTER);
+  view.setBackgroundResource(R.drawable.abs__toast_frame);
+  toast.setView(view);
+  return toast;
+}

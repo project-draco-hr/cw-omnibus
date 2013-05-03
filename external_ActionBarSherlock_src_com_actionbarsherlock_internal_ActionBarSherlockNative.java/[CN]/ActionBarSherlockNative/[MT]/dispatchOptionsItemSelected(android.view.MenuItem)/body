@@ -1,6 +1,16 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchOptionsItemSelected] item: " + item.getTitleCondensed());
-  final boolean result=callbackOptionsItemSelected(mMenu.findItem(item));
-  if (DEBUG)   Log.d(TAG,"[dispatchOptionsItemSelected] returning " + result);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchOptionsItemSelected] item: " + item.getTitleCondensed());
+  MenuItem wrapped;
+  if (mMenu == null) {
+    if (item.getItemId() != android.R.id.home) {
+      throw new IllegalStateException("Non-home action item clicked before onCreateOptionsMenu with ID " + item.getItemId());
+    }
+    wrapped=new MenuItemWrapper(item);
+  }
+ else {
+    wrapped=mMenu.findItem(item);
+  }
+  final boolean result=callbackOptionsItemSelected(wrapped);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchOptionsItemSelected] returning " + result);
   return result;
 }

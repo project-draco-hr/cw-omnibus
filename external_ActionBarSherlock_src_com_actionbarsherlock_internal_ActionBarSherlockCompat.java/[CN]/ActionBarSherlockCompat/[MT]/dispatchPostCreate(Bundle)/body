@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchOnPostCreate]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchOnPostCreate]");
   if (mIsDelegate) {
     mIsTitleReady=true;
   }

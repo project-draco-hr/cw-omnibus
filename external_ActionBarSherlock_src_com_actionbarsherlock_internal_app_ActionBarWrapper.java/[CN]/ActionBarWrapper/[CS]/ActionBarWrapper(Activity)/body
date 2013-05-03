@@ -3,5 +3,7 @@
   mActionBar=activity.getActionBar();
   if (mActionBar != null) {
     mActionBar.addOnMenuVisibilityListener(this);
+    int displayOptions=mActionBar.getDisplayOptions();
+    mActionBar.setHomeButtonEnabled((displayOptions & DISPLAY_HOME_AS_UP) != 0);
   }
 }

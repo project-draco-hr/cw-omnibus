@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[setContentView] view: " + view + ", params: "+ params);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[setContentView] view: " + view + ", params: "+ params);
   if (mContentParent == null) {
     installDecor();
   }

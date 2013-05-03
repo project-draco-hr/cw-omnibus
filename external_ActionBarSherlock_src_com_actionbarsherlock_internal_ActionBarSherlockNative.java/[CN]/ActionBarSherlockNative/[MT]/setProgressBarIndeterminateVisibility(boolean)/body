@@ -1,4 +1,4 @@
 {
-  if (DEBUG)   Log.d(TAG,"[setProgressBarIndeterminateVisibility] visible: " + visible);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[setProgressBarIndeterminateVisibility] visible: " + visible);
   mActivity.setProgressBarIndeterminateVisibility(visible);
 }

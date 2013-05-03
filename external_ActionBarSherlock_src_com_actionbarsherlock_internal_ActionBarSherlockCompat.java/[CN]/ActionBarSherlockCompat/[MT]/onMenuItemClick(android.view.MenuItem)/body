@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[mNativeItemListener.onMenuItemClick] item: " + item);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[mNativeItemListener.onMenuItemClick] item: " + item);
   final MenuItemImpl sherlockItem=mNativeItemMap.get(item);
   if (sherlockItem != null) {
     sherlockItem.invoke();

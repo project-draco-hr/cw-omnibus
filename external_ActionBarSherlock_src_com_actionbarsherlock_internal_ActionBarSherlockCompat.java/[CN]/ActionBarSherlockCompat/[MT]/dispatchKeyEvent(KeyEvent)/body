@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchKeyEvent] event: " + event);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchKeyEvent] event: " + event);
   final int keyCode=event.getKeyCode();
   if (keyCode == KeyEvent.KEYCODE_BACK) {
     final int action=event.getAction();
@@ -7,17 +7,17 @@
       if (action == KeyEvent.ACTION_UP) {
         mActionMode.finish();
       }
-      if (DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
+      if (BuildConfig.DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
       return true;
     }
     if (wActionBar != null && wActionBar.hasExpandedActionView()) {
       if (action == KeyEvent.ACTION_UP) {
         wActionBar.collapseActionView();
       }
-      if (DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
+      if (BuildConfig.DEBUG)       Log.d(TAG,"[dispatchKeyEvent] returning true");
       return true;
     }
   }
-  if (DEBUG)   Log.d(TAG,"[dispatchKeyEvent] returning false");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchKeyEvent] returning false");
   return false;
 }

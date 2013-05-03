@@ -17,6 +17,7 @@
       String contentDescription=mContext.getString(mDefaultActionButtonContentDescription,label);
       mDefaultActivityButton.setContentDescription(contentDescription);
     }
+    mAdapter.setShowDefaultActivity(false,false);
   }
  else {
     mDefaultActivityButton.setVisibility(View.GONE);

@@ -1,8 +1,8 @@
 {
-  if (DEBUG)   Log.d(TAG,"[onCreatePanelMenu] featureId: " + featureId + ", menu: "+ menu);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[onCreatePanelMenu] featureId: " + featureId + ", menu: "+ menu);
   if (featureId == Window.FEATURE_OPTIONS_PANEL) {
     boolean result=onCreateOptionsMenu(menu);
-    if (DEBUG)     Log.d(TAG,"[onCreatePanelMenu] activity create result: " + result);
+    if (BuildConfig.DEBUG)     Log.d(TAG,"[onCreatePanelMenu] activity create result: " + result);
     MenuInflater inflater=getSupportMenuInflater();
     boolean show=false;
     ArrayList<Fragment> newMenus=null;
@@ -28,9 +28,9 @@
       }
     }
     mCreatedMenus=newMenus;
-    if (DEBUG)     Log.d(TAG,"[onCreatePanelMenu] fragments create result: " + show);
+    if (BuildConfig.DEBUG)     Log.d(TAG,"[onCreatePanelMenu] fragments create result: " + show);
     result|=show;
-    if (DEBUG)     Log.d(TAG,"[onCreatePanelMenu] returning " + result);
+    if (BuildConfig.DEBUG)     Log.d(TAG,"[onCreatePanelMenu] returning " + result);
     return result;
   }
   return false;

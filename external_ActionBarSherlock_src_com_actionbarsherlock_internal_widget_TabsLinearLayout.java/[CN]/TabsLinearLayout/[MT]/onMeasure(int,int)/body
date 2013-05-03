@@ -1,0 +1,12 @@
+{
+  super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+  final int childCount=getChildCount();
+  if (childCount <= 2)   return;
+  final int mode=MeasureSpec.getMode(widthMeasureSpec);
+  if (mUseLargestChild && mode == MeasureSpec.UNSPECIFIED) {
+    final int orientation=getOrientation();
+    if (orientation == HORIZONTAL) {
+      useLargestChildHorizontal();
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[onMenuItemSelected] featureId: " + featureId + ", item: "+ item);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[onMenuItemSelected] featureId: " + featureId + ", item: "+ item);
   if (featureId == Window.FEATURE_OPTIONS_PANEL) {
     if (onOptionsItemSelected(item)) {
       return true;

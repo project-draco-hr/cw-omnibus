@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[startActionMode] callback: " + callback);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[startActionMode] callback: " + callback);
   if (mActionMode != null) {
     mActionMode.finish();
   }

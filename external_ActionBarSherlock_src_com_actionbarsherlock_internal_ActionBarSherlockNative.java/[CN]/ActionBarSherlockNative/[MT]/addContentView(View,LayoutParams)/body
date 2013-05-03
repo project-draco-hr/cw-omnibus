@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[addContentView] view: " + view + ", params: "+ params);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[addContentView] view: " + view + ", params: "+ params);
   mActivity.getWindow().addContentView(view,params);
   initActionBar();
 }

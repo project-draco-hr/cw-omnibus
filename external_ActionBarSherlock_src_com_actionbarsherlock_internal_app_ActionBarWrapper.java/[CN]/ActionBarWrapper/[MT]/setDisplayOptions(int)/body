@@ -1,3 +1,4 @@
 {
   mActionBar.setDisplayOptions(options);
+  mActionBar.setHomeButtonEnabled((options & DISPLAY_HOME_AS_UP) != 0);
 }

@@ -1,0 +1,15 @@
+{
+  if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
+    super.setText(s);
+    return;
+  }
+  if (getView() == null) {
+    return;
+  }
+  try {
+    ((TextView)getView()).setText(s);
+  }
+ catch (  ClassCastException e) {
+    Log.e(TAG,"This Toast was not created with IcsToast.makeText",e);
+  }
+}

@@ -9,6 +9,8 @@
   }
   mActionView.setContextView(mContextView);
   mContextDisplayMode=mActionView.isSplitActionBar() ? CONTEXT_DISPLAY_SPLIT : CONTEXT_DISPLAY_NORMAL;
-  setHomeButtonEnabled(mContext.getApplicationInfo().targetSdkVersion < 14);
+  boolean homeButtonEnabled=mContext.getApplicationInfo().targetSdkVersion < Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+  homeButtonEnabled|=(mActionView.getDisplayOptions() & ActionBar.DISPLAY_HOME_AS_UP) != 0;
+  setHomeButtonEnabled(homeButtonEnabled);
   setHasEmbeddedTabs(getResources_getBoolean(mContext,R.bool.abs__action_bar_embed_tabs));
 }

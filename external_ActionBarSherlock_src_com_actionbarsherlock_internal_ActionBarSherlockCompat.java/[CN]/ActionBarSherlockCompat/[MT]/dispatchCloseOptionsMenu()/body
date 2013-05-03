@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchCloseOptionsMenu]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchCloseOptionsMenu]");
   if (!isReservingOverflow()) {
     return false;
   }

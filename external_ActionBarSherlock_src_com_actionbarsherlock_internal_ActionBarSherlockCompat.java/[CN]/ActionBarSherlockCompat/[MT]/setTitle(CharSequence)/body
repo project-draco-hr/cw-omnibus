@@ -1,4 +1,4 @@
 {
-  if (DEBUG)   Log.d(TAG,"[setTitle] title: " + title);
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[setTitle] title: " + title);
   dispatchTitleChanged(title,0);
 }

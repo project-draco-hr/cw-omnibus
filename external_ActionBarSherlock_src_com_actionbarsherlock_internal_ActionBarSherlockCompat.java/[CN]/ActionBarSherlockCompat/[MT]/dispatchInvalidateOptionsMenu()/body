@@ -1,5 +1,5 @@
 {
-  if (DEBUG)   Log.d(TAG,"[dispatchInvalidateOptionsMenu]");
+  if (BuildConfig.DEBUG)   Log.d(TAG,"[dispatchInvalidateOptionsMenu]");
   Bundle savedActionViewStates=null;
   if (mMenu != null) {
     savedActionViewStates=new Bundle();

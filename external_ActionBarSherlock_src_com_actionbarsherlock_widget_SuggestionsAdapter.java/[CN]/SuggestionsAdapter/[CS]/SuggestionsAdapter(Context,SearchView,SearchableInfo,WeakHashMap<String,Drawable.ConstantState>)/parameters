@@ -1,4 +1,4 @@
 Context context
 SearchView searchView
-SearchableInfo mSearchable
+SearchableInfo searchable
 WeakHashMap<String,Drawable.ConstantState> outsideDrawablesCache
