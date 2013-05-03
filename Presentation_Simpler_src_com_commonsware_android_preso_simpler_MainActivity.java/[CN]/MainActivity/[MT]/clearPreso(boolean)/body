@@ -1,0 +1,6 @@
+{
+  if (preso != null) {
+    preso.dismiss();
+    preso=null;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  preso=new SimplerPresentation(this,display);
+  preso.show();
+}
