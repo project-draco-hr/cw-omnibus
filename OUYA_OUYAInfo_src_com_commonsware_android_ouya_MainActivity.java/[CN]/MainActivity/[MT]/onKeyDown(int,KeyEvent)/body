@@ -1,0 +1,5 @@
+{
+  int player=OuyaController.getPlayerNumByDeviceId(event.getDeviceId());
+  lastOnKeyDown.setText(String.format("%d: %s",player,convertKeyCode(keyCode)));
+  return (super.onKeyDown(keyCode,event));
+}

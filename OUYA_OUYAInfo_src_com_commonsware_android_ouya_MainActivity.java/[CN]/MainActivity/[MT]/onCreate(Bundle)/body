@@ -1,0 +1,31 @@
+{
+  super.onCreate(savedInstanceState);
+  OuyaController.init(this);
+  OuyaFacade.getInstance().init(getApplicationContext(),"not-a-UUID");
+  if (OuyaFacade.getInstance().isRunningOnOUYAHardware()) {
+    setContentView(R.layout.activity_main_ouya);
+  }
+ else {
+    setContentView(R.layout.activity_main);
+  }
+  Configuration cfg=getResources().getConfiguration();
+  DisplayMetrics dm=new DisplayMetrics();
+  TextView cfgText=(TextView)findViewById(R.id.configuration);
+  getWindowManager().getDefaultDisplay().getMetrics(dm);
+  String raw=cfg.toString() + "\n" + dm.toString();
+  cfgText.setText(raw.replaceAll(", ","\n").replaceAll(" ","\n").replaceAll("\\{","").replaceAll("\\}","").replaceAll("DisplayMetrics",""));
+  ConnectivityManager mgr=(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+  NetworkInfo networkInfo=mgr.getActiveNetworkInfo();
+  TextView networkText=(TextView)findViewById(R.id.connection_type);
+  if (networkInfo == null) {
+    networkText.setText("(no connection)");
+  }
+ else {
+    networkText.setText(networkInfo.toString().replaceAll(", ","\n"));
+  }
+  lastOnKeyDown=(TextView)findViewById(R.id.last_onkeydown);
+  LocationManager loc=(LocationManager)getSystemService(LOCATION_SERVICE);
+  for (  String provider : loc.getAllProviders()) {
+    Log.d(getClass().getSimpleName(),String.format("%s: %b",provider,loc.isProviderEnabled(provider)));
+  }
+}

@@ -1,0 +1,53 @@
+{
+  String result=Integer.toString(keyCode);
+switch (keyCode) {
+case OuyaController.BUTTON_O:
+case KeyEvent.KEYCODE_DPAD_CENTER:
+    result="BUTTON_O";
+  break;
+case OuyaController.BUTTON_A:
+case KeyEvent.KEYCODE_BACK:
+result="BUTTON_A";
+break;
+case OuyaController.BUTTON_Y:
+result="BUTTON_Y";
+break;
+case OuyaController.BUTTON_U:
+result="BUTTON_U";
+break;
+case OuyaController.BUTTON_L1:
+result="BUTTON_L1 (left bumper)";
+break;
+case OuyaController.BUTTON_L2:
+result="BUTTON_L2 (left trigger)";
+break;
+case OuyaController.BUTTON_R1:
+result="BUTTON_R1 (right bumper)";
+break;
+case OuyaController.BUTTON_R2:
+result="BUTTON_R2 (right trigger)";
+break;
+case OuyaController.BUTTON_MENU:
+result="BUTTON_MENU (short press, system button)";
+break;
+case OuyaController.BUTTON_DPAD_UP:
+result="BUTTON_DPAD_UP";
+break;
+case OuyaController.BUTTON_DPAD_RIGHT:
+result="BUTTON_DPAD_RIGHT";
+break;
+case OuyaController.BUTTON_DPAD_DOWN:
+result="BUTTON_DPAD_DOWN";
+break;
+case OuyaController.BUTTON_DPAD_LEFT:
+result="BUTTON_DPAD_LEFT";
+break;
+case OuyaController.BUTTON_R3:
+result="BUTTON_R3 (right joystick button)";
+break;
+case OuyaController.BUTTON_L3:
+result="BUTTON_L3 (left joystick button)";
+break;
+}
+return (result);
+}
