@@ -1,0 +1,4 @@
+{
+  chrono.stop();
+  super.onPause();
+}

@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  chrono=(ReverseChronometer)findViewById(R.id.chrono);
+  chrono.setOverallDuration(90);
+  chrono.setWarningDuration(10);
+}
