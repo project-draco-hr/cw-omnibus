@@ -1,0 +1,3 @@
+{
+  super(sensorsFragment.getActivity(),getRowResourceId(),sensorsFragment.getContract().getSensorList());
+}

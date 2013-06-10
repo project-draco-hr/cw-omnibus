@@ -1,0 +1,5 @@
+{
+  this.isXYZ=isXYZ;
+  adapter=new SensorLogAdapter(this);
+  setListAdapter(adapter);
+}

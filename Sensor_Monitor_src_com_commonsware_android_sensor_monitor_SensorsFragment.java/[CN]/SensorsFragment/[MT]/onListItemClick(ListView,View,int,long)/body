@@ -1,0 +1,4 @@
+{
+  l.setItemChecked(position,true);
+  getContract().onSensorSelected(adapter.getItem(position));
+}

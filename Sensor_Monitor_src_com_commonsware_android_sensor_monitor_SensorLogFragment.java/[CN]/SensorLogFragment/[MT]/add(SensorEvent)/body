@@ -1,0 +1,7 @@
+{
+  Float[] values=new Float[3];
+  values[0]=e.values[0];
+  values[1]=e.values[1];
+  values[2]=e.values[2];
+  adapter.add(values);
+}

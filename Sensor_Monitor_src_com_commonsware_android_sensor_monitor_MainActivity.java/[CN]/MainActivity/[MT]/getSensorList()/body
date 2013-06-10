@@ -1,0 +1,10 @@
+{
+  List<Sensor> result=new ArrayList<Sensor>(mgr.getSensorList(Sensor.TYPE_ALL));
+  Collections.sort(result,new Comparator<Sensor>(){
+    @Override public int compare(    final Sensor a,    final Sensor b){
+      return (a.toString().compareTo(b.toString()));
+    }
+  }
+);
+  return (result);
+}

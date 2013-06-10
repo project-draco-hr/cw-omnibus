@@ -1,0 +1,4 @@
+{
+  mgr.unregisterListener(this);
+  super.onPause();
+}
