@@ -1,0 +1,8 @@
+{
+  UiObject add=new UiObject(new UiSelector().text("Word"));
+  add.setText("snicklefritz");
+  getUiDevice().pressEnter();
+  UiScrollable words=new UiScrollable(new UiSelector().className("android.widget.ListView"));
+  words.setAsVerticalList();
+  assertNotNull("Could not find snicklefritz",words.getChildByText(new UiSelector().className("android.widget.TextView"),"snicklefritz"));
+}

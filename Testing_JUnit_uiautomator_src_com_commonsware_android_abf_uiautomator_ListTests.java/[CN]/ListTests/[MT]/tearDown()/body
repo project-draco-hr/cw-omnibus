@@ -1,0 +1,4 @@
+{
+  getUiDevice().pressBack();
+  getUiDevice().pressBack();
+}

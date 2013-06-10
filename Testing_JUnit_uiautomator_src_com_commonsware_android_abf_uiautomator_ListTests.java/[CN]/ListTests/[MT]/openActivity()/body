@@ -1,0 +1,13 @@
+{
+  getUiDevice().pressHome();
+  UiObject allAppsButton=new UiObject(new UiSelector().description("Apps"));
+  allAppsButton.clickAndWaitForNewWindow();
+  UiObject appsTab=new UiObject(new UiSelector().text("Apps"));
+  appsTab.click();
+  UiScrollable appViews=new UiScrollable(new UiSelector().scrollable(true));
+  appViews.setAsHorizontalList();
+  UiObject ourApp=appViews.getChildByText(new UiSelector().className("android.widget.TextView"),"Action Bar Fragment Demo");
+  ourApp.clickAndWaitForNewWindow();
+  UiObject appValidation=new UiObject(new UiSelector().packageName("com.commonsware.android.abf"));
+  assertTrue("Could not open test app",appValidation.exists());
+}
