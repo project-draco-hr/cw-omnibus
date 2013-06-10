@@ -1,0 +1,10 @@
+{
+  Location loc=client.getLastLocation();
+  if (loc == null) {
+    getWebView().postDelayed(this,1000);
+  }
+ else {
+    FetchForecastTask task=new FetchForecastTask();
+    task.execute(loc);
+  }
+}

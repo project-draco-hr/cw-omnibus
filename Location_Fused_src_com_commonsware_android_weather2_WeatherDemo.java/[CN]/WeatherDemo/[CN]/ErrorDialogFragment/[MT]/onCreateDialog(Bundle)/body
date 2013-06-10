@@ -1,0 +1,4 @@
+{
+  Bundle args=getArguments();
+  return GooglePlayServicesUtil.getErrorDialog(args.getInt(ARG_STATUS),getActivity(),0);
+}

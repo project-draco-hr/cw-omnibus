@@ -1,0 +1,16 @@
+{
+  boolean anyLuck=false;
+  if (result.hasResolution()) {
+    try {
+      result.startResolutionForResult(getActivity(),REQUEST_ID);
+      anyLuck=true;
+    }
+ catch (    IntentSender.SendIntentException e) {
+      Log.e(getClass().getSimpleName(),"Exception trying to startResolutionForResult()",e);
+    }
+  }
+  if (!anyLuck) {
+    Toast.makeText(getActivity(),R.string.no_fused,Toast.LENGTH_LONG).show();
+    getActivity().finish();
+  }
+}

@@ -1,0 +1,15 @@
+{
+  StringBuilder bufResult=new StringBuilder("<html><body><table>");
+  bufResult.append("<tr><th width=\"50%\">Time</th>" + "<th>Temperature</th><th>Forecast</th></tr>");
+  for (  Forecast forecast : forecasts) {
+    bufResult.append("<tr><td align=\"center\">");
+    bufResult.append(forecast.getTime());
+    bufResult.append("</td><td align=\"center\">");
+    bufResult.append(forecast.getTemp());
+    bufResult.append("</td><td><img src=\"");
+    bufResult.append(forecast.getIcon());
+    bufResult.append("\"></td></tr>");
+  }
+  bufResult.append("</table></body></html>");
+  return (bufResult.toString());
+}

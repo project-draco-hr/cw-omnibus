@@ -1,0 +1,12 @@
+{
+  String page=null;
+  try {
+    Location loc=locs[0];
+    String url=String.format(template,loc.getLatitude(),loc.getLongitude());
+    page=generatePage(buildForecasts(getForecastXML(url)));
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (page);
+}
