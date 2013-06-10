@@ -1,0 +1,4 @@
+{
+  getSupportMenuInflater().inflate(R.menu.actions,menu);
+  return (super.onCreateOptionsMenu(menu));
+}
