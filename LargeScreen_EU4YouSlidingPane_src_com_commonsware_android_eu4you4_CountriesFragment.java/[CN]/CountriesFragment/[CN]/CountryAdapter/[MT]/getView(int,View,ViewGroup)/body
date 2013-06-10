@@ -1,0 +1,13 @@
+{
+  CountryViewHolder wrapper=null;
+  if (convertView == null) {
+    convertView=LayoutInflater.from(getActivity()).inflate(R.layout.row,null);
+    wrapper=new CountryViewHolder(convertView);
+    convertView.setTag(wrapper);
+  }
+ else {
+    wrapper=(CountryViewHolder)convertView.getTag();
+  }
+  wrapper.populateFrom(getItem(position));
+  return (convertView);
+}

@@ -1,0 +1,4 @@
+{
+  details.loadUrl(getString(c.url));
+  panes.closePane();
+}

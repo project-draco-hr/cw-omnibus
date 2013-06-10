@@ -1,0 +1,9 @@
+{
+  super.onAttach(activity);
+  try {
+    contract=(T)activity;
+  }
+ catch (  ClassCastException e) {
+    throw new IllegalStateException(activity.getClass().getSimpleName() + " does not implement contract interface for " + getClass().getSimpleName(),e);
+  }
+}

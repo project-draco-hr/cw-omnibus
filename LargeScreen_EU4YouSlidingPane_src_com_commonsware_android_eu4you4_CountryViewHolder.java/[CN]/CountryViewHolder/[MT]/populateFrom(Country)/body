@@ -1,0 +1,4 @@
+{
+  getName().setText(nation.name);
+  getFlag().setImageResource(nation.flag);
+}
