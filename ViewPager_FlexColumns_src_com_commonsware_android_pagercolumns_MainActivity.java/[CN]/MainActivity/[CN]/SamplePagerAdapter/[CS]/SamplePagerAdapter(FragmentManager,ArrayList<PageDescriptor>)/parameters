@@ -1,0 +1,2 @@
+FragmentManager fragmentManager
+ArrayList<PageDescriptor> descriptors

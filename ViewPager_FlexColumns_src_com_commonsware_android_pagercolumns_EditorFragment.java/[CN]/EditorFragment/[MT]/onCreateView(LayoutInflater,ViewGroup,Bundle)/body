@@ -1,0 +1,6 @@
+{
+  View result=inflater.inflate(R.layout.editor,container,false);
+  EditText editor=(EditText)result.findViewById(R.id.editor);
+  editor.setHint(getArguments().getString(KEY_HINT));
+  return (result);
+}

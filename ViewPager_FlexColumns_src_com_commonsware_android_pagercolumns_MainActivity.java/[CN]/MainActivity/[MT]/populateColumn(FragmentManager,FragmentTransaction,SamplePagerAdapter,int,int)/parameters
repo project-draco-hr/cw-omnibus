@@ -1,0 +1,5 @@
+FragmentManager fm
+FragmentTransaction ft
+SamplePagerAdapter adapter
+int position
+int slot

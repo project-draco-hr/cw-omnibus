@@ -1,0 +1,11 @@
+{
+  EditorFragment f=adapter.getExistingFragment(position);
+  if (f == null) {
+    f=adapter.createFragment(buildTitle(position));
+  }
+ else {
+    fm.beginTransaction().remove(f).commit();
+    fm.executePendingTransactions();
+  }
+  ft.add(slot,f,buildTag(position));
+}
