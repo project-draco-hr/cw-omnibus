@@ -1,0 +1,3 @@
+{
+  getContract().showItem(((ItemsAdapter)getListAdapter()).getItem(position));
+}

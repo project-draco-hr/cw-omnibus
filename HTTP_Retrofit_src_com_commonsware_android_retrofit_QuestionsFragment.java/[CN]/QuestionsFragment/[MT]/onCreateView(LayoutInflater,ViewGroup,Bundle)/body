@@ -1,0 +1,8 @@
+{
+  View result=super.onCreateView(inflater,container,savedInstanceState);
+  setRetainInstance(true);
+  RestAdapter restAdapter=new RestAdapter.Builder().setServer("https://api.stackexchange.com").build();
+  StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+  so.questions("android",this);
+  return (result);
+}
