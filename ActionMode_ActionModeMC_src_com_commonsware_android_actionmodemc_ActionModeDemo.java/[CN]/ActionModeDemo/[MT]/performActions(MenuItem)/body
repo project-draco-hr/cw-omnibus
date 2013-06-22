@@ -7,7 +7,7 @@ case R.id.cap:
       if (checked.valueAt(i)) {
         int position=checked.keyAt(i);
         String word=words.get(position);
-        word=word.toUpperCase();
+        word=word.toUpperCase(Locale.ENGLISH);
         adapter.remove(words.get(position));
         adapter.insert(word,position);
       }
