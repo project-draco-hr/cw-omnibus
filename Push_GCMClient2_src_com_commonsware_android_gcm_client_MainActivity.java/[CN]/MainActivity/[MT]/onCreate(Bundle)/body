@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  GCMRegistrarCompat.checkDevice(this);
+  if (BuildConfig.DEBUG) {
+    GCMRegistrarCompat.checkManifest(this);
+  }
+}

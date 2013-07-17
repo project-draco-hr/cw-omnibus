@@ -1,0 +1,3 @@
+{
+  dumpEvent("onMessage",message);
+}

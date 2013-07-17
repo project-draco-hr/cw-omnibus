@@ -1,0 +1,4 @@
+{
+  intent.setClass(context,GCMIntentService.class);
+  WakefulIntentService.sendWakefulWork(context,intent);
+}

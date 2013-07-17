@@ -1,0 +1,13 @@
+{
+  GoogleCloudMessaging gcm=GoogleCloudMessaging.getInstance(this);
+  String messageType=gcm.getMessageType(i);
+  if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR.equals(messageType)) {
+    onError(i);
+  }
+ else   if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
+    onDeleted(i);
+  }
+ else {
+    onMessage(i);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    PackageInfo packageInfo=context.getPackageManager().getPackageInfo(context.getPackageName(),0);
+    return packageInfo.versionCode;
+  }
+ catch (  NameNotFoundException e) {
+    throw new RuntimeException("Coult not get package name: " + e);
+  }
+}

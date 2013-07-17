@@ -1,0 +1,19 @@
+{
+  PackageManager pm=context.getPackageManager();
+  String packageName=context.getPackageName();
+  Intent intent=new Intent(action);
+  intent.setPackage(packageName);
+  List<ResolveInfo> receivers=pm.queryBroadcastReceivers(intent,PackageManager.GET_INTENT_FILTERS);
+  if (receivers.isEmpty()) {
+    throw new IllegalStateException("No receivers for action " + action);
+  }
+  if (Log.isLoggable(TAG,Log.VERBOSE)) {
+    Log.v(TAG,"Found " + receivers.size() + " receivers for action "+ action);
+  }
+  for (  ResolveInfo receiver : receivers) {
+    String name=receiver.activityInfo.name;
+    if (!allowedReceivers.contains(name)) {
+      throw new IllegalStateException("Receiver " + name + " is not set with permission "+ PERMISSION_GCM_INTENTS);
+    }
+  }
+}

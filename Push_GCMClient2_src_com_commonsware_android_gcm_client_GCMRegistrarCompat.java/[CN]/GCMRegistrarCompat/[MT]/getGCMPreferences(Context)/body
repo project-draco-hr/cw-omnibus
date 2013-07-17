@@ -1,0 +1,3 @@
+{
+  return context.getSharedPreferences(PREFERENCES,Context.MODE_PRIVATE);
+}

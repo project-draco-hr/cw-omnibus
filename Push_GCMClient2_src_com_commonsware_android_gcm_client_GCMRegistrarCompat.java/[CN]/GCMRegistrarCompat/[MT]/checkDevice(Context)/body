@@ -1,0 +1,6 @@
+{
+  int version=Build.VERSION.SDK_INT;
+  if (version < 8) {
+    throw new UnsupportedOperationException("Device must be at least " + "API Level 8 (instead of " + version + ")");
+  }
+}

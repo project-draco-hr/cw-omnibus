@@ -1,0 +1,3 @@
+{
+  dumpEvent("onDeleted",message);
+}

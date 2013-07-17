@@ -1,0 +1,10 @@
+{
+  final String regId=GCMRegistrarCompat.getRegistrationId(this);
+  if (regId.length() == 0) {
+    new RegisterTask(this).execute(SENDER_ID);
+  }
+ else {
+    Log.d(getClass().getSimpleName(),"Existing registration: " + regId);
+    Toast.makeText(this,regId,Toast.LENGTH_LONG).show();
+  }
+}

@@ -1,0 +1,35 @@
+{
+  PackageManager packageManager=context.getPackageManager();
+  String packageName=context.getPackageName();
+  String permissionName=packageName + ".permission.C2D_MESSAGE";
+  try {
+    packageManager.getPermissionInfo(permissionName,PackageManager.GET_PERMISSIONS);
+  }
+ catch (  NameNotFoundException e) {
+    throw new IllegalStateException("Application does not define permission " + permissionName);
+  }
+  PackageInfo receiversInfo;
+  try {
+    receiversInfo=packageManager.getPackageInfo(packageName,PackageManager.GET_RECEIVERS);
+  }
+ catch (  NameNotFoundException e) {
+    throw new IllegalStateException("Could not get receivers for package " + packageName);
+  }
+  ActivityInfo[] receivers=receiversInfo.receivers;
+  if (receivers == null || receivers.length == 0) {
+    throw new IllegalStateException("No receiver for package " + packageName);
+  }
+  if (Log.isLoggable(TAG,Log.VERBOSE)) {
+    Log.v(TAG,"number of receivers for " + packageName + ": "+ receivers.length);
+  }
+  Set<String> allowedReceivers=new HashSet<String>();
+  for (  ActivityInfo receiver : receivers) {
+    if (PERMISSION_GCM_INTENTS.equals(receiver.permission)) {
+      allowedReceivers.add(receiver.name);
+    }
+  }
+  if (allowedReceivers.isEmpty()) {
+    throw new IllegalStateException("No receiver allowed to receive " + PERMISSION_GCM_INTENTS);
+  }
+  checkReceiver(context,allowedReceivers,INTENT_FROM_GCM_MESSAGE);
+}

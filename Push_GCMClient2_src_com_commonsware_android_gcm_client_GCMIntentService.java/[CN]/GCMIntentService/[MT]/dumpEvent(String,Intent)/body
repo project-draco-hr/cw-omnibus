@@ -1,0 +1,6 @@
+{
+  Bundle extras=message.getExtras();
+  for (  String key : extras.keySet()) {
+    Log.d(getClass().getSimpleName(),String.format("%s: %s=%s",event,key,extras.getString(key)));
+  }
+}

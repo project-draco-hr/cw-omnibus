@@ -1,0 +1,13 @@
+{
+  GoogleCloudMessaging gcm=GoogleCloudMessaging.getInstance(context);
+  String regid=null;
+  try {
+    regid=gcm.register(params[0]);
+    setRegistrationId(context,regid);
+    sendRegistrationIdToServer(regid);
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+  return (regid);
+}
