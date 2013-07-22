@@ -1,4 +1,4 @@
 {
-  mgr.unregisterListener(this);
+  mgr.unregisterListener(log);
   super.onPause();
 }
