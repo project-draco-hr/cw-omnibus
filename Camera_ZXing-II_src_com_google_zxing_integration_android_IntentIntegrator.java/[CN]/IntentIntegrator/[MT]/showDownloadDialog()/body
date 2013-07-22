@@ -1,0 +1,25 @@
+{
+  AlertDialog.Builder downloadDialog=new AlertDialog.Builder(activity);
+  downloadDialog.setTitle(title);
+  downloadDialog.setMessage(message);
+  downloadDialog.setPositiveButton(buttonYes,new DialogInterface.OnClickListener(){
+    @Override public void onClick(    DialogInterface dialogInterface,    int i){
+      String packageName=targetApplications.get(0);
+      Uri uri=Uri.parse("market://details?id=" + packageName);
+      Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+      try {
+        activity.startActivity(intent);
+      }
+ catch (      ActivityNotFoundException anfe) {
+        Log.w(TAG,"Google Play is not installed; cannot install " + packageName);
+      }
+    }
+  }
+);
+  downloadDialog.setNegativeButton(buttonNo,new DialogInterface.OnClickListener(){
+    @Override public void onClick(    DialogInterface dialogInterface,    int i){
+    }
+  }
+);
+  return downloadDialog.show();
+}

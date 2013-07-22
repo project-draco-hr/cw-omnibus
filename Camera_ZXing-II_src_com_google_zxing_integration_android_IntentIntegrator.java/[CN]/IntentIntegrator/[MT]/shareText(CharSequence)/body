@@ -1,0 +1,3 @@
+{
+  return shareText(text,"TEXT_TYPE");
+}
