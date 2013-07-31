@@ -1,0 +1,6 @@
+{
+  Uri video=Uri.fromFile(new File(uri));
+  Intent i=new Intent(Intent.ACTION_VIEW);
+  i.setDataAndType(video,mimeType);
+  startActivity(i);
+}

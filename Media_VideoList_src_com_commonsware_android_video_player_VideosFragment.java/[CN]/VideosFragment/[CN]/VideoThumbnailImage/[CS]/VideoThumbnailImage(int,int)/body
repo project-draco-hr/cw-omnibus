@@ -1,0 +1,4 @@
+{
+  this.videoId=videoId;
+  this.thumbnailKind=thumbnailKind;
+}
