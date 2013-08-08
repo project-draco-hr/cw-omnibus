@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  lastClip=(TextView)findViewById(R.id.last_clip);
+  cm=(ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+  cm.addPrimaryClipChangedListener(this);
+}

@@ -1,0 +1,3 @@
+{
+  lastClip.setText(cm.getPrimaryClip().getItemAt(0).coerceToText(this));
+}

@@ -1,0 +1,4 @@
+{
+  cm.removePrimaryClipChangedListener(this);
+  super.onDestroy();
+}
