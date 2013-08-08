@@ -1,4 +1,4 @@
 {
   cm.removePrimaryClipChangedListener(this);
-  super.onDestroy();
+  super.onPause();
 }
