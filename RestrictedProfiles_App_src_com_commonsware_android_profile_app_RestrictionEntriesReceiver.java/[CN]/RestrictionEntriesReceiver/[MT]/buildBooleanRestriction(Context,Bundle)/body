@@ -1,0 +1,6 @@
+{
+  RestrictionEntry entry=new RestrictionEntry(RESTRICTION_BOOLEAN,current.getBoolean(RESTRICTION_BOOLEAN,false));
+  entry.setTitle(ctxt.getString(R.string.boolean_restriction_title));
+  entry.setDescription(ctxt.getString(R.string.boolean_restriction_desc));
+  return (entry);
+}

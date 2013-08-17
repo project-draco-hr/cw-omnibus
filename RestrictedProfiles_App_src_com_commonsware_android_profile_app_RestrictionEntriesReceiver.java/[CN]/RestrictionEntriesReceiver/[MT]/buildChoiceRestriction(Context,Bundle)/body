@@ -1,0 +1,7 @@
+{
+  RestrictionEntry entry=new RestrictionEntry(RESTRICTION_CHOICE,current.getString(RESTRICTION_CHOICE));
+  entry.setTitle(ctxt.getString(R.string.choice_restriction_title));
+  entry.setChoiceEntries(ctxt,R.array.display_values);
+  entry.setChoiceValues(ctxt,R.array.restriction_values);
+  return (entry);
+}

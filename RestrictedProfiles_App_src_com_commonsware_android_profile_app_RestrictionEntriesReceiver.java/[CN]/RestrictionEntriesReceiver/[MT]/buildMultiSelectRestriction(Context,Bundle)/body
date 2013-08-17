@@ -1,0 +1,7 @@
+{
+  RestrictionEntry entry=new RestrictionEntry(RESTRICTION_MULTI,current.getStringArray(RESTRICTION_MULTI));
+  entry.setTitle("A Multi-Select Restriction");
+  entry.setChoiceEntries(ctxt,R.array.display_values);
+  entry.setChoiceValues(ctxt,R.array.restriction_values);
+  return (entry);
+}

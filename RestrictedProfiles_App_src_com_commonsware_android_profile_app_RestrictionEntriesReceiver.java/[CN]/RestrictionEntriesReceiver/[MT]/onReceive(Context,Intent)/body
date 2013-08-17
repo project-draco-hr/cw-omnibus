@@ -1,0 +1,10 @@
+{
+  Bundle current=(Bundle)intent.getParcelableExtra(Intent.EXTRA_RESTRICTIONS_BUNDLE);
+  ArrayList<RestrictionEntry> restrictions=new ArrayList<RestrictionEntry>();
+  restrictions.add(buildBooleanRestriction(ctxt,current));
+  restrictions.add(buildChoiceRestriction(ctxt,current));
+  restrictions.add(buildMultiSelectRestriction(ctxt,current));
+  Bundle result=new Bundle();
+  result.putParcelableArrayList(Intent.EXTRA_RESTRICTIONS_LIST,restrictions);
+  setResultExtras(result);
+}

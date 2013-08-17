@@ -1,0 +1,7 @@
+{
+  super(getActivity(),android.R.layout.simple_list_item_1,new ArrayList<String>());
+  ArrayList<String> keys=new ArrayList<String>(restrictions.keySet());
+  Collections.sort(keys);
+  addAll(keys);
+  this.restrictions=restrictions;
+}
