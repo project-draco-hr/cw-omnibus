@@ -1,6 +1,16 @@
 {
   TextView row=(TextView)super.getView(position,convertView,parent);
-  int icon=restrictions.getBoolean(getItem(position)) ? R.drawable.ic_true : R.drawable.ic_false;
-  row.setCompoundDrawablesWithIntrinsicBounds(0,0,icon,0);
+  String key=getItem(position);
+  if (RestrictionEntriesReceiver.RESTRICTION_BOOLEAN.equals(key)) {
+    int icon=restrictions.getBoolean(key) ? R.drawable.ic_true : R.drawable.ic_false;
+    row.setCompoundDrawablesWithIntrinsicBounds(0,0,icon,0);
+  }
+ else   if (RestrictionEntriesReceiver.RESTRICTION_CHOICE.equals(key)) {
+    row.setText(String.format("%s (%s)",key,restrictions.getString(key)));
+  }
+ else {
+    String value=TextUtils.join(" | ",restrictions.getStringArray(key));
+    row.setText(String.format("%s (%s)",key,value));
+  }
   return (row);
 }
