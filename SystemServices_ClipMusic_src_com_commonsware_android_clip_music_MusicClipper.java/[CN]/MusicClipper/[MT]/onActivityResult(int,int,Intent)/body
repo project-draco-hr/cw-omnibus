@@ -2,7 +2,13 @@
   if (requestCode == PICK_REQUEST) {
     if (resultCode == RESULT_OK) {
       ClipData clip=ClipData.newUri(getContentResolver(),"Some music",data.getData());
-      clipboard.setPrimaryClip(clip);
+      try {
+        clipboard.setPrimaryClip(clip);
+      }
+ catch (      Exception e) {
+        Log.e(getClass().getSimpleName(),"Exception clipping Uri",e);
+        Toast.makeText(this,"Exception: " + e.getMessage(),Toast.LENGTH_SHORT).show();
+      }
     }
   }
 }
