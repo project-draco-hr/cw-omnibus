@@ -1,0 +1,12 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  findViewById(android.R.id.content).post(new Runnable(){
+    public void run(){
+      if (getSupportFragmentManager().findFragmentById(R.id.fragment) == null) {
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment,new ActionBarFragment()).commit();
+      }
+    }
+  }
+);
+}
