@@ -1,0 +1,6 @@
+{
+  TextView row=(TextView)super.getView(position,convertView,parent);
+  int icon=restrictions.getBoolean(getItem(position)) ? R.drawable.ic_true : R.drawable.ic_false;
+  row.setCompoundDrawablesWithIntrinsicBounds(0,0,icon,0);
+  return (row);
+}
