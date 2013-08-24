@@ -1,4 +1,0 @@
-{
-  Cursor c=(Cursor)((CursorAdapter)getListAdapter()).getItem(position);
-  getContract().onVideoSelected(c.getString(c.getColumnIndex(MediaStore.Video.Media.DATA)),c.getString(c.getColumnIndex(MediaStore.Video.Media.MIME_TYPE)));
-}

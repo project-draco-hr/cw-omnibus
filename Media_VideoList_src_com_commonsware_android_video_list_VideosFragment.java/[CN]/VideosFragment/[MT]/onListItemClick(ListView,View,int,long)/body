@@ -1,0 +1,7 @@
+{
+  CursorAdapter adapter=(CursorAdapter)getListAdapter();
+  Cursor c=(Cursor)adapter.getItem(position);
+  int uriColumn=c.getColumnIndex(MediaStore.Video.Media.DATA);
+  int mimeTypeColumn=c.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
+  getContract().onVideoSelected(c.getString(uriColumn),c.getString(mimeTypeColumn));
+}
