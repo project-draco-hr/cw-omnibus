@@ -1,0 +1,17 @@
+{
+  super.onCreate(icicle);
+  File f=new File(getFilesDir(),"test.pdf");
+  if (!f.exists()) {
+    AssetManager assets=getResources().getAssets();
+    try {
+      copy(assets.open("test.pdf"),f);
+    }
+ catch (    IOException e) {
+      Log.e("FileProvider","Exception copying from assets",e);
+    }
+  }
+  Intent i=new Intent(Intent.ACTION_VIEW,FileProvider.getUriForFile(this,AUTHORITY,f));
+  i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+  startActivity(i);
+  finish();
+}
