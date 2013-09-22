@@ -1,0 +1,7 @@
+{
+  this.ctxt=ctxt;
+  this.inflater=inflater;
+  this.images=images;
+  iconWidth=ctxt.getResources().getDimensionPixelSize(R.dimen.icon_width);
+  iconHeight=ctxt.getResources().getDimensionPixelSize(R.dimen.icon_height);
+}

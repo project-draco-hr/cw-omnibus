@@ -1,0 +1,6 @@
+GoogleMap map
+double lat
+double lon
+int title
+int snippet
+String image

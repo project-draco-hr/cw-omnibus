@@ -1,0 +1,20 @@
+{
+  View popup=contentsCache.get(marker.getId());
+  if (popup == null) {
+    popup=inflater.inflate(R.layout.popup,null);
+    contentsCache.put(marker.getId(),popup);
+    TextView tv=(TextView)popup.findViewById(R.id.title);
+    tv.setText(marker.getTitle());
+    tv=(TextView)popup.findViewById(R.id.snippet);
+    tv.setText(marker.getSnippet());
+    Uri image=images.get(marker.getId());
+    ImageView icon=(ImageView)popup.findViewById(R.id.icon);
+    if (image == null) {
+      icon.setVisibility(View.GONE);
+    }
+ else {
+      Picasso.with(ctxt).load(image).resize(iconWidth,iconHeight).centerCrop().noFade().placeholder(R.drawable.placeholder).into(icon,new MarkerCallback(marker));
+    }
+  }
+  return (popup);
+}

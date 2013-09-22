@@ -1,0 +1,6 @@
+{
+  Marker marker=map.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(getString(title)).snippet(getString(snippet)));
+  if (image != null) {
+    images.put(marker.getId(),Uri.parse("http://misc.commonsware.com/mapsv2/" + image));
+  }
+}

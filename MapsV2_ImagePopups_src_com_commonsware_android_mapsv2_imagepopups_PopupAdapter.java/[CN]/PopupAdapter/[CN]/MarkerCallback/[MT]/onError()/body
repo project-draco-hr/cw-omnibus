@@ -1,0 +1,3 @@
+{
+  Log.e(getClass().getSimpleName(),"Error loading thumbnail!");
+}
