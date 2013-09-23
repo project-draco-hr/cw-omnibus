@@ -1,0 +1,25 @@
+{
+  CertificateFactory cf=null;
+  try {
+    cf=CertificateFactory.getInstance("X509");
+  }
+ catch (  CertificateException e) {
+    Log.e(getClass().getSimpleName(),"Exception getting CertificateFactory",e);
+    return;
+  }
+  X509Certificate c=null;
+  ByteArrayInputStream bin=new ByteArrayInputStream(raw);
+  try {
+    c=(X509Certificate)cf.generateCertificate(bin);
+  }
+ catch (  CertificateException e) {
+    Log.e(getClass().getSimpleName(),"Exception getting X509Certificate",e);
+    return;
+  }
+  TextView tv=(TextView)getView().findViewById(R.id.subject);
+  tv.setText(c.getSubjectDN().toString());
+  tv=(TextView)getView().findViewById(R.id.issuer);
+  tv.setText(c.getIssuerDN().toString());
+  tv=(TextView)getView().findViewById(R.id.valid);
+  tv.setText(fmt.format(c.getNotBefore()) + " to " + fmt.format(c.getNotAfter()));
+}

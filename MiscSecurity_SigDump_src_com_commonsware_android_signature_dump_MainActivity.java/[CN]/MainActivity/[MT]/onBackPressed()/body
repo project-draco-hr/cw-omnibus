@@ -1,0 +1,8 @@
+{
+  if (panes.isOpen()) {
+    super.onBackPressed();
+  }
+ else {
+    panes.openPane();
+  }
+}

@@ -1,0 +1,10 @@
+{
+  List<PackageInfo> result=mgr.getInstalledPackages(PackageManager.GET_SIGNATURES);
+  Collections.sort(result,new Comparator<PackageInfo>(){
+    @Override public int compare(    final PackageInfo a,    final PackageInfo b){
+      return (a.packageName.compareTo(b.packageName));
+    }
+  }
+);
+  return (result);
+}

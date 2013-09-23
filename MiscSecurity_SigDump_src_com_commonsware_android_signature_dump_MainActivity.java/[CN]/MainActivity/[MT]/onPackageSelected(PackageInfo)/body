@@ -1,0 +1,8 @@
+{
+  Signature[] signatures=pkgInfo.signatures;
+  byte[] raw=signatures[0].toByteArray();
+  sigDisplay.show(raw);
+  panes.closePane();
+  File output=new File(getExternalFilesDir(null),pkgInfo.packageName.replace('.','_') + ".bin");
+  new WriteThread(output,raw).start();
+}

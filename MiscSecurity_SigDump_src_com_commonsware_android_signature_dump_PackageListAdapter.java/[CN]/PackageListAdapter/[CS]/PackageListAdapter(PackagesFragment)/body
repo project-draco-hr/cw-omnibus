@@ -1,0 +1,3 @@
+{
+  super(packagesFragment.getActivity(),getRowResourceId(),packagesFragment.getContract().getPackageList());
+}

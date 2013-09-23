@@ -1,0 +1,13 @@
+{
+  if (output.exists()) {
+    output.delete();
+  }
+  try {
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    fos.write(raw);
+    fos.close();
+  }
+ catch (  java.io.IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception in writing signature file",e);
+  }
+}
