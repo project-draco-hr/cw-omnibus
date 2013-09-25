@@ -1,0 +1,10 @@
+{
+  SomethingUseful binder=SomethingUseful.Stub.asInterface(arg1);
+  try {
+    binder.hi();
+  }
+ catch (  RemoteException e) {
+    Log.e(getClass().getSimpleName(),"Exception communicating with remote service",e);
+  }
+  unbindService(this);
+}

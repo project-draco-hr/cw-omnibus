@@ -1,0 +1,5 @@
+{
+  serviceIntent=buildServiceIntent();
+  command.setEnabled(serviceIntent != null);
+  binding.setEnabled(serviceIntent != null);
+}

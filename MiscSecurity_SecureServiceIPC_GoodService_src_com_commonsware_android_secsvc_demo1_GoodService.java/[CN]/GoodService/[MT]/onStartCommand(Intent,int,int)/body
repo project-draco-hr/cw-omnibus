@@ -1,0 +1,5 @@
+{
+  Log.d(getClass().getSimpleName(),"It's all good");
+  stopSelf();
+  return (START_NOT_STICKY);
+}

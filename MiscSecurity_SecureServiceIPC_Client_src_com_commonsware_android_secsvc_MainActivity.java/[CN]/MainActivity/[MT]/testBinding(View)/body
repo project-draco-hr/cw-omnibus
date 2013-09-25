@@ -1,0 +1,3 @@
+{
+  bindService(serviceIntent,this,BIND_AUTO_CREATE);
+}
