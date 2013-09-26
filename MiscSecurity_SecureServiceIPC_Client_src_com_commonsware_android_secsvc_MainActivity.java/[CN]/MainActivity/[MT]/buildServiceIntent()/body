@@ -7,6 +7,7 @@
         if (validate(info.serviceInfo.packageName,R.raw.valid_signature)) {
           result=new Intent(INTENT_SERVICE);
           result.setComponent(new ComponentName(info.serviceInfo.packageName,info.serviceInfo.name));
+          break;
         }
       }
  catch (      Exception e) {
