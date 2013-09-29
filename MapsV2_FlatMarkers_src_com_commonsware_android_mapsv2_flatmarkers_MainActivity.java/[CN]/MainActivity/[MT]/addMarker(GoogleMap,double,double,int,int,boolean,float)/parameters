@@ -1,0 +1,7 @@
+GoogleMap map
+double lat
+double lon
+int title
+int snippet
+boolean flat
+float rotation
