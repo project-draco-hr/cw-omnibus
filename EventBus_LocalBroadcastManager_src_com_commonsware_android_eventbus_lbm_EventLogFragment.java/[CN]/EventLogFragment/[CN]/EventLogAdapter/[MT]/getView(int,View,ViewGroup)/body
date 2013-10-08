@@ -1,0 +1,7 @@
+{
+  TextView row=(TextView)super.getView(position,convertView,parent);
+  Intent event=getItem(position);
+  Date date=new Date(event.getLongExtra(EXTRA_TIME,0));
+  row.setText(String.format("%s = %x",fmt.format(date),event.getIntExtra(EXTRA_RANDOM,-1)));
+  return (row);
+}

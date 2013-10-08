@@ -1,0 +1,4 @@
+{
+  bus.unregister(this);
+  super.onDestroy();
+}

@@ -1,0 +1,4 @@
+{
+  ScheduledService.bus.unregister(this);
+  super.onPause();
+}

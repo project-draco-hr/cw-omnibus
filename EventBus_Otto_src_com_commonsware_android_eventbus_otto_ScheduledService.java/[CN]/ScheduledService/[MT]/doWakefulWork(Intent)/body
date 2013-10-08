@@ -1,0 +1,3 @@
+{
+  bus.post(new RandomEvent(rng.nextInt()));
+}
