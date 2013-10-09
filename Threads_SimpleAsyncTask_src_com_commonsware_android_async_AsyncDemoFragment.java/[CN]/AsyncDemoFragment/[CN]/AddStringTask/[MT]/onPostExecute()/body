@@ -1,0 +1,6 @@
+{
+  for (  String item : items) {
+    adapter.add(item);
+  }
+  Toast.makeText(getActivity(),R.string.done,Toast.LENGTH_SHORT).show();
+}

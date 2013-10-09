@@ -1,0 +1,7 @@
+{
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    return (this);
+  }
+  return (SimpleAsyncTask)(super.execute());
+}

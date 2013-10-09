@@ -1,0 +1,11 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  setRetainInstance(true);
+  if (model == null) {
+    model=new ArrayList<String>();
+    new AddStringTask().execute();
+  }
+  adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,model);
+  getListView().setScrollbarFadingEnabled(false);
+  setListAdapter(adapter);
+}
