@@ -1,5 +1,4 @@
 {
-  this.key=key;
   this.title=ctxt.getString(title);
   this.snippet=ctxt.getString(snippet);
   this.lat=lat;

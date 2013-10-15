@@ -1,6 +1,10 @@
 {
-  for (  Model model : models.values()) {
-    LatLng position=new LatLng(model.getLatitude(),model.getLongitude());
-    map.addMarker(new MarkerOptions().position(position).title(model.getTitle()).snippet(model.getKey()));
-  }
+  Model model=new Model(this,40.748963847316034,-73.96807193756104,R.string.un,R.string.united_nations);
+  models.put(addMarkerForModel(map,model).getId(),model);
+  model=new Model(this,40.76866299974387,-73.98268461227417,R.string.lincoln_center,R.string.lincoln_center_snippet);
+  models.put(addMarkerForModel(map,model).getId(),model);
+  model=new Model(this,40.765136435316755,-73.97989511489868,R.string.carnegie_hall,R.string.practice_x3);
+  models.put(addMarkerForModel(map,model).getId(),model);
+  model=new Model(this,40.70686417491799,-74.01572942733765,R.string.downtown_club,R.string.heisman_trophy);
+  models.put(addMarkerForModel(map,model).getId(),model);
 }

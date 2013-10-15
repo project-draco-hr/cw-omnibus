@@ -1,5 +1,4 @@
 Context ctxt
-String key
 double lat
 double lon
 int title

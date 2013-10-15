@@ -1,0 +1,4 @@
+{
+  LatLng position=new LatLng(model.getLatitude(),model.getLongitude());
+  return (map.addMarker(new MarkerOptions().position(position).title(model.getTitle()).snippet(model.getSnippet())));
+}
