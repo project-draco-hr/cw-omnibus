@@ -1,0 +1,8 @@
+{
+  ensureViewsSetUp();
+  mRotationLayout.removeAllViews();
+  mRotationLayout.addView(contentView);
+  mContentView=contentView;
+  final View view=mRotationLayout.findViewById(R.id.text);
+  mTextView=view instanceof TextView ? (TextView)view : null;
+}

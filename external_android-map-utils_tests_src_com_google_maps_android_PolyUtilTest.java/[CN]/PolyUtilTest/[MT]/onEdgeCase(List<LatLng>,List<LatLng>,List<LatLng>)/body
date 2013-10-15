@@ -1,0 +1,4 @@
+{
+  onEdgeCase(true,poly,yes,no);
+  onEdgeCase(false,poly,yes,no);
+}

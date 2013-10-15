@@ -1,0 +1,3 @@
+{
+  return isLocationOnEdgeOrPath(point,polyline,false,geodesic,tolerance);
+}

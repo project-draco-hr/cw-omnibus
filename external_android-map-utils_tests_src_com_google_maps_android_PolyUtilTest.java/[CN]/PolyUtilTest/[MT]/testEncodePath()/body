@@ -1,0 +1,5 @@
+{
+  List<LatLng> path=PolyUtil.decode(TEST_LINE);
+  String encoded=PolyUtil.encode(path);
+  Assert.assertEquals(TEST_LINE,encoded);
+}

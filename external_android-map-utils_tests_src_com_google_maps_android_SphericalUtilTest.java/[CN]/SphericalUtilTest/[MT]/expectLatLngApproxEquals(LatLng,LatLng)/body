@@ -1,0 +1,5 @@
+{
+  expectNearNumber(actual.latitude,expected.latitude,1e-6);
+  double cosLat=Math.cos(Math.toRadians(actual.latitude));
+  expectNearNumber(cosLat * actual.longitude,cosLat * expected.longitude,1e-6);
+}

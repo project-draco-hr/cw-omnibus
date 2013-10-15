@@ -1,0 +1,7 @@
+{
+  final double x=point.x / mWorldWidth - 0.5;
+  final double lng=x * 360;
+  double y=.5 - (point.y / mWorldWidth);
+  final double lat=90 - Math.toDegrees(Math.atan(Math.exp(-y * 2 * Math.PI)) * 2);
+  return new LatLng(lat,lng);
+}

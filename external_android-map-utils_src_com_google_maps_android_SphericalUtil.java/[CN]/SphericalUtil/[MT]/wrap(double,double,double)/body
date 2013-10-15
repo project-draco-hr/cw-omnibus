@@ -1,0 +1,3 @@
+{
+  return (n >= min && n < max) ? n : (mod(n - min,max - min) + min);
+}

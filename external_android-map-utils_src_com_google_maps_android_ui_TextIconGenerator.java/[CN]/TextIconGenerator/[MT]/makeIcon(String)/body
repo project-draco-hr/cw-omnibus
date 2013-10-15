@@ -1,0 +1,7 @@
+{
+  ensureViewsSetUp();
+  if (mTextView != null) {
+    mTextView.setText(text);
+  }
+  return makeIcon();
+}

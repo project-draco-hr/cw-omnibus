@@ -1,0 +1,25 @@
+{
+  if ((lng3 >= 0 && lng3 >= lng2) || (lng3 < 0 && lng3 < lng2)) {
+    return false;
+  }
+  if (lat3 <= -PI / 2) {
+    return false;
+  }
+  if (lat1 <= -PI / 2 || lat2 <= -PI / 2 || lat1 >= PI / 2 || lat2 >= PI / 2) {
+    return false;
+  }
+  if (lng2 <= -PI) {
+    return false;
+  }
+  double linearLat=(lat1 * (lng2 - lng3) + lat2 * lng3) / lng2;
+  if (lat1 >= 0 && lat2 >= 0 && lat3 < linearLat) {
+    return false;
+  }
+  if (lat1 <= 0 && lat2 <= 0 && lat3 >= linearLat) {
+    return true;
+  }
+  if (lat3 >= PI / 2) {
+    return true;
+  }
+  return geodesic ? tan(lat3) >= tanLatGC(lat1,lat2,lng2,lng3) : mercator(lat3) >= mercatorLatRhumb(lat1,lat2,lng2,lng3);
+}

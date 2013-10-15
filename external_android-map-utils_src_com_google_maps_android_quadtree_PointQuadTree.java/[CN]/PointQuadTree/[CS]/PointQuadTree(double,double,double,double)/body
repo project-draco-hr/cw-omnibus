@@ -1,0 +1,3 @@
+{
+  this(new Bounds(minX,maxX,minY,maxY));
+}

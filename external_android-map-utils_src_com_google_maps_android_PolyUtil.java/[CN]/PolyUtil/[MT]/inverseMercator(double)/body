@@ -1,0 +1,3 @@
+{
+  return 2 * atan(exp(y)) - PI / 2;
+}

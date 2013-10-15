@@ -1,0 +1,4 @@
+{
+  Collection<Item> items=searchAll();
+  assertEquals(0,items.size());
+}

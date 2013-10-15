@@ -1,0 +1,18 @@
+{
+switch (style) {
+default :
+case STYLE_DEFAULT:
+case STYLE_WHITE:
+    return R.drawable.bubble_white;
+case STYLE_RED:
+  return R.drawable.bubble_red;
+case STYLE_BLUE:
+return R.drawable.bubble_blue;
+case STYLE_GREEN:
+return R.drawable.bubble_green;
+case STYLE_PURPLE:
+return R.drawable.bubble_purple;
+case STYLE_ORANGE:
+return R.drawable.bubble_orange;
+}
+}

@@ -1,0 +1,16 @@
+{
+  expectNearNumber(SphericalUtil.computeHeading(up,down),-180,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(down,up),0,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(front,up),0,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(right,up),0,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(back,up),0,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(down,up),0,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(front,down),-180,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(right,down),-180,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(back,down),-180,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(left,down),-180,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(right,front),-90,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(left,front),90,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(front,right),90,1e-6);
+  expectNearNumber(SphericalUtil.computeHeading(back,right),-90,1e-6);
+}

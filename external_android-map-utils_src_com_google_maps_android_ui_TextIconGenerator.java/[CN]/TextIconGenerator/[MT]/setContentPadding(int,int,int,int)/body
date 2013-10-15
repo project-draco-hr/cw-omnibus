@@ -1,0 +1,4 @@
+{
+  ensureViewsSetUp();
+  mContentView.setPadding(left,top,right,bottom);
+}

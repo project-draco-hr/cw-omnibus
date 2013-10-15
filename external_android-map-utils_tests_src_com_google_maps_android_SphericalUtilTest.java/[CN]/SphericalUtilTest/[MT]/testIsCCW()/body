@@ -1,0 +1,8 @@
+{
+  expectEq(1,SphericalUtil.isCCW(right,up,front));
+  expectEq(1,SphericalUtil.isCCW(up,front,right));
+  expectEq(1,SphericalUtil.isCCW(front,right,up));
+  expectEq(-1,SphericalUtil.isCCW(front,up,right));
+  expectEq(-1,SphericalUtil.isCCW(up,right,front));
+  expectEq(-1,SphericalUtil.isCCW(right,front,up));
+}

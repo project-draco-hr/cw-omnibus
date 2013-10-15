@@ -1,0 +1,3 @@
+{
+  expectNearNumber(SphericalUtil.computeDistanceBetween(up,down),Math.PI * EARTH_RADIUS,1e-6);
+}

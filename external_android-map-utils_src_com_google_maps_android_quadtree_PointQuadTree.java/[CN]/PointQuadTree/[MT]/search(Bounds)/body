@@ -1,0 +1,5 @@
+{
+  final List<T> results=new ArrayList<T>();
+  search(searchBounds,results);
+  return results;
+}

@@ -1,0 +1,3 @@
+{
+  mTree=new PointQuadTree<Item>(0,1,0,1);
+}

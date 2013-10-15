@@ -1,0 +1,8 @@
+{
+  mChildren=new PointQuadTree[]{new PointQuadTree(mBounds.minX,mBounds.midX,mBounds.minY,mBounds.midY,mDepth + 1),new PointQuadTree(mBounds.midX,mBounds.maxX,mBounds.minY,mBounds.midY,mDepth + 1),new PointQuadTree(mBounds.minX,mBounds.midX,mBounds.midY,mBounds.maxY,mDepth + 1),new PointQuadTree(mBounds.midX,mBounds.maxX,mBounds.midY,mBounds.maxY,mDepth + 1)};
+  List<T> items=mItems;
+  mItems=null;
+  for (  T item : items) {
+    add(item);
+  }
+}

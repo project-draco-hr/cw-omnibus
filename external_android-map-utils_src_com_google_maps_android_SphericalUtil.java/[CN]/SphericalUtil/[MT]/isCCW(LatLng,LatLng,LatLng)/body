@@ -1,0 +1,16 @@
+{
+  LatLng[] points=new LatLng[]{a,b,c};
+  double[][] pointsR3=new double[3][];
+  for (int i=0; i < 3; ++i) {
+    LatLng latLng=points[i];
+    double lat=toRadians(latLng.latitude);
+    double lng=toRadians(latLng.longitude);
+    double[] r3=new double[3];
+    r3[0]=cos(lat) * cos(lng);
+    r3[1]=cos(lat) * sin(lng);
+    r3[2]=sin(lat);
+    pointsR3[i]=r3;
+  }
+  double det=pointsR3[0][0] * pointsR3[1][1] * pointsR3[2][2] + pointsR3[1][0] * pointsR3[2][1] * pointsR3[0][2] + pointsR3[2][0] * pointsR3[0][1] * pointsR3[1][2] - pointsR3[0][0] * pointsR3[2][1] * pointsR3[1][2] - pointsR3[1][0] * pointsR3[0][1] * pointsR3[2][2] - pointsR3[2][0] * pointsR3[1][1] * pointsR3[0][2];
+  return det > 0 ? 1 : -1;
+}

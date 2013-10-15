@@ -1,0 +1,16 @@
+{
+  if (!this.mBounds.contains(x,y)) {
+    return false;
+  }
+  if (mChildren != null) {
+    for (    PointQuadTree<T> quad : mChildren) {
+      if (quad.remove(x,y,item)) {
+        return true;
+      }
+    }
+    return false;
+  }
+ else {
+    return mItems.remove(item);
+  }
+}

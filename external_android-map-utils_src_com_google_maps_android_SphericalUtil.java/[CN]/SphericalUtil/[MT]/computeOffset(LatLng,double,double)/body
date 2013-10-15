@@ -1,0 +1,13 @@
+{
+  distance/=EARTH_RADIUS;
+  heading=toRadians(heading);
+  double fromLat=toRadians(from.latitude);
+  double fromLng=toRadians(from.longitude);
+  double cosDistance=cos(distance);
+  double sinDistance=sin(distance);
+  double sinFromLat=sin(fromLat);
+  double cosFromLat=cos(fromLat);
+  double sinLat=cosDistance * sinFromLat + sinDistance * cosFromLat * cos(heading);
+  double dLng=atan2(sinDistance * cosFromLat * sin(heading),cosDistance - sinFromLat * sinLat);
+  return new LatLng(toDegrees(asin(sinLat)),toDegrees(fromLng + dLng));
+}

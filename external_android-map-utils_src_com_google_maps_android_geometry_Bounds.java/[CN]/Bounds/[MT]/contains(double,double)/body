@@ -1,0 +1,3 @@
+{
+  return minX <= x && x < maxX && minY <= y && y < maxY;
+}

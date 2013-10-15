@@ -1,0 +1,8 @@
+{
+  this.minX=minX;
+  this.minY=minY;
+  this.maxX=maxX;
+  this.maxY=maxY;
+  midX=(minX + maxX) / 2;
+  midY=(minY + minY) / 2;
+}

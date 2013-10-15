@@ -1,0 +1,3 @@
+{
+  return minX < this.maxX && this.minX < maxX && minY < this.maxY && this.minY < maxY;
+}

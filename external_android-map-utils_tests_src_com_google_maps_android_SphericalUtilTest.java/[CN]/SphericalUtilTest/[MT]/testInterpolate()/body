@@ -1,0 +1,19 @@
+{
+  expectLatLngApproxEquals(up,SphericalUtil.interpolate(up,up,1 / 2.0));
+  expectLatLngApproxEquals(down,SphericalUtil.interpolate(down,down,1 / 2.0));
+  expectLatLngApproxEquals(left,SphericalUtil.interpolate(left,left,1 / 2.0));
+  expectLatLngApproxEquals(new LatLng(1,0),SphericalUtil.interpolate(front,up,1 / 90.0));
+  expectLatLngApproxEquals(new LatLng(1,0),SphericalUtil.interpolate(up,front,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(89,0),SphericalUtil.interpolate(front,up,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(89,0),SphericalUtil.interpolate(up,front,1 / 90.0));
+  expectLatLngApproxEquals(new LatLng(-1,0),SphericalUtil.interpolate(front,down,1 / 90.0));
+  expectLatLngApproxEquals(new LatLng(-1,0),SphericalUtil.interpolate(down,front,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(-89,0),SphericalUtil.interpolate(front,down,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(-89,0),SphericalUtil.interpolate(down,front,1 / 90.0));
+  expectLatLngApproxEquals(new LatLng(0,-91),SphericalUtil.interpolate(left,back,1 / 90.0));
+  expectLatLngApproxEquals(new LatLng(0,-91),SphericalUtil.interpolate(back,left,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(0,-179),SphericalUtil.interpolate(left,back,89 / 90.0));
+  expectLatLngApproxEquals(new LatLng(0,-179),SphericalUtil.interpolate(back,left,1 / 90.0));
+  expectLatLngApproxEquals(up,SphericalUtil.interpolate(new LatLng(45,0),new LatLng(45,180),1 / 2.0));
+  expectLatLngApproxEquals(down,SphericalUtil.interpolate(new LatLng(-45,0),new LatLng(-45,180),1 / 2.0));
+}

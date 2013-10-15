@@ -1,0 +1,3 @@
+{
+  return (mercator(lat1) * (lng2 - lng3) + mercator(lat2) * lng3) / lng2;
+}

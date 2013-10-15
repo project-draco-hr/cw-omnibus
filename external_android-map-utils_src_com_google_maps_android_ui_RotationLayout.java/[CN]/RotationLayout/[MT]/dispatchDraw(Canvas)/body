@@ -1,0 +1,18 @@
+{
+  if (mRotation == 0) {
+    super.dispatchDraw(canvas);
+    return;
+  }
+  if (mRotation == 1) {
+    canvas.translate(getWidth(),0);
+    canvas.rotate(90);
+  }
+ else   if (mRotation == 2) {
+    canvas.rotate(180,getWidth() / 2,getHeight() / 2);
+  }
+ else {
+    canvas.translate(0,getHeight());
+    canvas.rotate(270);
+  }
+  super.dispatchDraw(canvas);
+}

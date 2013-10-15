@@ -1,0 +1,21 @@
+{
+  if (!this.mBounds.contains(x,y)) {
+    return false;
+  }
+  if (this.mChildren != null) {
+    for (    PointQuadTree<T> quad : mChildren) {
+      if (quad.insert(x,y,item)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  if (mItems == null) {
+    mItems=new ArrayList<T>();
+  }
+  mItems.add(item);
+  if (mItems.size() > MAX_ELEMENTS && mDepth < MAX_DEPTH) {
+    split();
+  }
+  return true;
+}

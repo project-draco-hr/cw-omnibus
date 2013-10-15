@@ -1,0 +1,4 @@
+{
+  expectNearNumber(SphericalUtil.computeArea(Arrays.asList(right,up,front,down,right)),Math.PI * EARTH_RADIUS * EARTH_RADIUS,.4);
+  expectNearNumber(SphericalUtil.computeArea(Arrays.asList(right,down,front,up,right)),Math.PI * EARTH_RADIUS * EARTH_RADIUS,.4);
+}

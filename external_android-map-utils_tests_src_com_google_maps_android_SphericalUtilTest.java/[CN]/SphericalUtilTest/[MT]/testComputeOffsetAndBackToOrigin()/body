@@ -1,0 +1,21 @@
+{
+  LatLng start=new LatLng(40,40);
+  double distance=1e5;
+  double heading=15;
+  LatLng end;
+  end=SphericalUtil.computeOffset(start,distance,heading);
+  expectLatLngApproxEquals(start,SphericalUtil.computeOffsetOrigin(end,distance,heading));
+  heading=-37;
+  end=SphericalUtil.computeOffset(start,distance,heading);
+  expectLatLngApproxEquals(start,SphericalUtil.computeOffsetOrigin(end,distance,heading));
+  distance=3.8e+7;
+  end=SphericalUtil.computeOffset(start,distance,heading);
+  expectLatLngApproxEquals(start,SphericalUtil.computeOffsetOrigin(end,distance,heading));
+  start=new LatLng(-21,-73);
+  end=SphericalUtil.computeOffset(start,distance,heading);
+  expectLatLngApproxEquals(start,SphericalUtil.computeOffsetOrigin(end,distance,heading));
+  start=SphericalUtil.computeOffsetOrigin(new LatLng(0,90),Math.PI * EARTH_RADIUS / 2,90);
+  expectLatLngApproxEquals(new LatLng(0,90),SphericalUtil.computeOffset(start,Math.PI * EARTH_RADIUS / 2,90));
+  start=SphericalUtil.computeOffsetOrigin(new LatLng(90,0),Math.PI * EARTH_RADIUS / 4,0);
+  expectLatLngApproxEquals(new LatLng(90,0),SphericalUtil.computeOffset(start,Math.PI * EARTH_RADIUS / 4,0));
+}

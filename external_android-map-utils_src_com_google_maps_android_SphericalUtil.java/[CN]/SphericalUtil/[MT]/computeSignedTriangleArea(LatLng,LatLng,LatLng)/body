@@ -1,0 +1,3 @@
+{
+  return computeTriangleArea(a,b,c) * isCCW(a,b,c);
+}

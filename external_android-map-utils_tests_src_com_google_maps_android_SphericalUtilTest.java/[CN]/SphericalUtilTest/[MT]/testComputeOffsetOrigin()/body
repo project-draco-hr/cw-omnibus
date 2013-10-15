@@ -1,0 +1,9 @@
+{
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffsetOrigin(front,0,0));
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffsetOrigin(new LatLng(0,45),Math.PI * EARTH_RADIUS / 4,90));
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffsetOrigin(new LatLng(0,-45),Math.PI * EARTH_RADIUS / 4,-90));
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffsetOrigin(new LatLng(45,0),Math.PI * EARTH_RADIUS / 4,0));
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffsetOrigin(new LatLng(-45,0),Math.PI * EARTH_RADIUS / 4,180));
+  expectEq(null,SphericalUtil.computeOffsetOrigin(new LatLng(80,0),Math.PI * EARTH_RADIUS / 4,180));
+  expectEq(null,SphericalUtil.computeOffsetOrigin(new LatLng(80,0),Math.PI * EARTH_RADIUS / 4,90));
+}

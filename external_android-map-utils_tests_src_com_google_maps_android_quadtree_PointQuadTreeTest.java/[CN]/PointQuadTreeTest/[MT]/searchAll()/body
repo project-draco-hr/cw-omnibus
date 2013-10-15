@@ -1,0 +1,3 @@
+{
+  return mTree.search(new Bounds(0,1,0,1));
+}

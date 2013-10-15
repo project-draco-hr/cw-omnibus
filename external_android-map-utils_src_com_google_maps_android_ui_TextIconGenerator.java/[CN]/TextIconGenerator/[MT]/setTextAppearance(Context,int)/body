@@ -1,0 +1,6 @@
+{
+  ensureViewsSetUp();
+  if (mTextView != null) {
+    mTextView.setTextAppearance(context,resid);
+  }
+}

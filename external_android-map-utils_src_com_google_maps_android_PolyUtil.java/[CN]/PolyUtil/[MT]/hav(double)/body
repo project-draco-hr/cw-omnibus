@@ -1,0 +1,4 @@
+{
+  double sinHalf=sin(x * 0.5);
+  return sinHalf * sinHalf;
+}

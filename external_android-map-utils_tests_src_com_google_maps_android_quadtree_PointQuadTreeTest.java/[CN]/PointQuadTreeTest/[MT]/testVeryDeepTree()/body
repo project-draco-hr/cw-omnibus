@@ -1,0 +1,8 @@
+{
+  for (int i=0; i < 3000; i++) {
+    mTree.add(new Item(0,0));
+  }
+  assertEquals(3000,searchAll().size());
+  assertEquals(3000,mTree.search(new Bounds(0,.1,0,.1)).size());
+  assertEquals(0,mTree.search(new Bounds(.1,1,.1,1)).size());
+}

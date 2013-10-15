@@ -1,0 +1,4 @@
+{
+  Point point=item.getPoint();
+  insert(point.x,point.y,item);
+}

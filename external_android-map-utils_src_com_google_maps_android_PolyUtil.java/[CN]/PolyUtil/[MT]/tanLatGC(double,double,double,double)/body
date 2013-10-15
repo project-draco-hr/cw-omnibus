@@ -1,0 +1,3 @@
+{
+  return (tan(lat1) * sin(lng2 - lng3) + tan(lat2) * sin(lng3)) / sin(lng2);
+}

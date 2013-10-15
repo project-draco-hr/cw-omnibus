@@ -1,0 +1,3 @@
+{
+  return isLocationOnPath(point,polyline,geodesic,DEFAULT_TOLERANCE);
+}

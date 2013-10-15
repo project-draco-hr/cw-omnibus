@@ -1,0 +1,4 @@
+LatLng point
+List<LatLng> polyline
+boolean geodesic
+double tolerance

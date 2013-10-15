@@ -1,0 +1,26 @@
+{
+  final int size=polygon.size();
+  if (size == 0) {
+    return false;
+  }
+  double lat3=toRadians(point.latitude);
+  double lng3=toRadians(point.longitude);
+  LatLng prev=polygon.get(size - 1);
+  double lat1=toRadians(prev.latitude);
+  double lng1=toRadians(prev.longitude);
+  int nIntersect=0;
+  for (  LatLng point2 : polygon) {
+    double dLng3=wrap(lng3 - lng1,-PI,PI);
+    if (lat3 == lat1 && dLng3 == 0) {
+      return true;
+    }
+    double lat2=toRadians(point2.latitude);
+    double lng2=toRadians(point2.longitude);
+    if (intersects(lat1,lat2,wrap(lng2 - lng1,-PI,PI),lat3,dLng3,geodesic)) {
+      ++nIntersect;
+    }
+    lat1=lat2;
+    lng1=lng2;
+  }
+  return (nIntersect & 1) != 0;
+}

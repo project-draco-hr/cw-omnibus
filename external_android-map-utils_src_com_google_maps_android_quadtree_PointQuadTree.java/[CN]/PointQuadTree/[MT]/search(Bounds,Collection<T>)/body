@@ -1,0 +1,17 @@
+{
+  if (!mBounds.intersects(searchBounds)) {
+    return;
+  }
+  if (this.mChildren != null) {
+    for (    PointQuadTree<T> quad : mChildren) {
+      quad.search(searchBounds,results);
+    }
+  }
+ else   if (mItems != null) {
+    for (    T item : mItems) {
+      if (searchBounds.contains(item.getPoint())) {
+        results.add(item);
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  Point point=item.getPoint();
+  return remove(point.x,point.y,item);
+}

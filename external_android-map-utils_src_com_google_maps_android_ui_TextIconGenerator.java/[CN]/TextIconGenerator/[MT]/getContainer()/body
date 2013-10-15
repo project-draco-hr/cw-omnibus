@@ -1,0 +1,4 @@
+{
+  ensureViewsSetUp();
+  return mContainer;
+}

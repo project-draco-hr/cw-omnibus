@@ -1,0 +1,3 @@
+{
+  return isLocationOnEdge(point,polygon,geodesic,DEFAULT_TOLERANCE);
+}

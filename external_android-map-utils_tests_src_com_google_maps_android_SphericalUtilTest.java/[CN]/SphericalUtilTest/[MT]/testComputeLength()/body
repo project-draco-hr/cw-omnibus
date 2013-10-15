@@ -1,0 +1,9 @@
+{
+  List<LatLng> latLngs;
+  expectNearNumber(SphericalUtil.computeLength(Collections.<LatLng>emptyList()),0,1e-6);
+  expectNearNumber(SphericalUtil.computeLength(Arrays.asList(new LatLng(0,0))),0,1e-6);
+  latLngs=Arrays.asList(new LatLng(0,0),new LatLng(0.1,0.1));
+  expectNearNumber(SphericalUtil.computeLength(latLngs),Math.toRadians(0.1) * Math.sqrt(2) * EARTH_RADIUS,1);
+  latLngs=Arrays.asList(new LatLng(0,0),new LatLng(90,0),new LatLng(0,90));
+  expectNearNumber(SphericalUtil.computeLength(latLngs),Math.PI * EARTH_RADIUS,1e-6);
+}

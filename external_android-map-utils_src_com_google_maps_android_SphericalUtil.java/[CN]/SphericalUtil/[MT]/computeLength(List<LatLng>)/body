@@ -1,0 +1,7 @@
+{
+  double length=0;
+  for (int i=0, I=path.size() - 1; i < I; ++i) {
+    length+=computeDistanceBetween(path.get(i),path.get(i + 1));
+  }
+  return length;
+}

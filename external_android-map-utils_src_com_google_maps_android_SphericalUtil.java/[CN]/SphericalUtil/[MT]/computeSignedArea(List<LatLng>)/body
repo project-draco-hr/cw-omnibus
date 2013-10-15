@@ -1,0 +1,8 @@
+{
+  LatLng origin=loop.get(0);
+  double total=0;
+  for (int i=1, I=loop.size() - 1; i < I; ++i) {
+    total+=computeSignedTriangleArea(origin,loop.get(i),loop.get(i + 1));
+  }
+  return total * EARTH_RADIUS * EARTH_RADIUS;
+}

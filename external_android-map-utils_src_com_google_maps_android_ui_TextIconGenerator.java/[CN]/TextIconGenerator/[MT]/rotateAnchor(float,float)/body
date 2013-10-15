@@ -1,0 +1,13 @@
+{
+switch (mRotation) {
+case 0:
+    return u;
+case 1:
+  return 1 - v;
+case 2:
+return 1 - u;
+case 3:
+return v;
+}
+throw new IllegalStateException();
+}

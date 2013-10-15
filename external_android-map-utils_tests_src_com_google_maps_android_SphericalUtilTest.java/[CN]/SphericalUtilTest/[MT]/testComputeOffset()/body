@@ -1,0 +1,16 @@
+{
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffset(front,0,0));
+  expectLatLngApproxEquals(up,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS / 2,0));
+  expectLatLngApproxEquals(down,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS / 2,180));
+  expectLatLngApproxEquals(left,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS / 2,-90));
+  expectLatLngApproxEquals(right,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS / 2,90));
+  expectLatLngApproxEquals(back,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS,0));
+  expectLatLngApproxEquals(back,SphericalUtil.computeOffset(front,Math.PI * EARTH_RADIUS,90));
+  expectLatLngApproxEquals(left,SphericalUtil.computeOffset(left,0,0));
+  expectLatLngApproxEquals(up,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS / 2,0));
+  expectLatLngApproxEquals(down,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS / 2,180));
+  expectLatLngApproxEquals(front,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS / 2,90));
+  expectLatLngApproxEquals(back,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS / 2,-90));
+  expectLatLngApproxEquals(right,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS,0));
+  expectLatLngApproxEquals(right,SphericalUtil.computeOffset(left,Math.PI * EARTH_RADIUS,90));
+}

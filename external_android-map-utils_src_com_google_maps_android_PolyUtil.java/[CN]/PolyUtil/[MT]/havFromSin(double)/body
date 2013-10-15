@@ -1,0 +1,4 @@
+{
+  double x2=x * x;
+  return x2 / (1 + sqrt(1 - x2)) * .5;
+}

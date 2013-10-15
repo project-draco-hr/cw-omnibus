@@ -1,0 +1,5 @@
+{
+  mTree.add(new Item(0,0));
+  mTree.add(new Item(0,0));
+  assertEquals(2,searchAll().size());
+}

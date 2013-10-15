@@ -1,0 +1,5 @@
+{
+  double a=sqrt(x * (1 - x));
+  double b=sqrt(y * (1 - y));
+  return 2 * (a + b - 2 * (a * y + b * x));
+}

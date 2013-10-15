@@ -1,0 +1,3 @@
+{
+  return hav(lat1 - lat2) + hav(dLng) * cos(lat1) * cos(lat2);
+}

@@ -1,0 +1,7 @@
+{
+  expectNearNumber(SphericalUtil.computeTriangleArea(right,up,front),Math.PI / 2,1e-6);
+  expectNearNumber(SphericalUtil.computeTriangleArea(front,up,right),Math.PI / 2,1e-6);
+  double area=SphericalUtil.computeTriangleArea(new LatLng(0,0),new LatLng(0,Math.toDegrees(1E-6)),new LatLng(Math.toDegrees(1E-6),0));
+  double expectedArea=1E-12 / 2;
+  Assert.assertTrue(Math.abs(expectedArea - area) < 1e-20);
+}

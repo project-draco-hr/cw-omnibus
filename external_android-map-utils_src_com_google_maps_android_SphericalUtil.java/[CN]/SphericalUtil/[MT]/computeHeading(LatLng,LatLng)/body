@@ -1,0 +1,9 @@
+{
+  double fromLat=toRadians(from.latitude);
+  double fromLng=toRadians(from.longitude);
+  double toLat=toRadians(to.latitude);
+  double toLng=toRadians(to.longitude);
+  double dLng=toLng - fromLng;
+  double heading=atan2(sin(dLng) * cos(toLat),cos(fromLat) * sin(toLat) - sin(fromLat) * cos(toLat) * cos(dLng));
+  return wrap(toDegrees(heading),-180,180);
+}

@@ -1,0 +1,30 @@
+{
+  ViewGroup container=getContainer();
+  int measureSpec=View.MeasureSpec.makeMeasureSpec(0,View.MeasureSpec.UNSPECIFIED);
+  container.measure(measureSpec,measureSpec);
+  int measuredWidth=container.getMeasuredWidth();
+  int measuredHeight=container.getMeasuredHeight();
+  container.layout(0,0,measuredWidth,measuredHeight);
+  if (mRotation == 1 || mRotation == 3) {
+    measuredHeight=container.getMeasuredWidth();
+    measuredWidth=container.getMeasuredHeight();
+  }
+  Bitmap r=Bitmap.createBitmap(measuredWidth,measuredHeight,Bitmap.Config.ARGB_8888);
+  r.eraseColor(Color.TRANSPARENT);
+  Canvas canvas=new Canvas(r);
+  if (mRotation == 0) {
+  }
+ else   if (mRotation == 1) {
+    canvas.translate(measuredWidth,0);
+    canvas.rotate(90);
+  }
+ else   if (mRotation == 2) {
+    canvas.rotate(180,measuredWidth / 2,measuredHeight / 2);
+  }
+ else {
+    canvas.translate(0,measuredHeight);
+    canvas.rotate(270);
+  }
+  container.draw(canvas);
+  return r;
+}

@@ -1,0 +1,6 @@
+{
+  final double x=latLng.longitude / 360 + .5;
+  final double siny=Math.sin(Math.toRadians(latLng.latitude));
+  final double y=0.5 * Math.log((1 + siny) / (1 - siny)) / -(2 * Math.PI) + .5;
+  return new Point(x * mWorldWidth,y * mWorldWidth);
+}

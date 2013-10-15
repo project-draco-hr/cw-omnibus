@@ -1,0 +1,5 @@
+{
+  List<LatLng> path=Arrays.asList(right,up,front,down,right);
+  List<LatLng> pathReversed=Arrays.asList(right,down,front,up,right);
+  expectEq(-SphericalUtil.computeSignedArea(path),SphericalUtil.computeSignedArea(pathReversed));
+}

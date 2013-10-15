@@ -1,0 +1,8 @@
+{
+  List<LatLng> latLngs=PolyUtil.decode(TEST_LINE);
+  int expectedLength=21;
+  Assert.assertEquals("Wrong length.",expectedLength,latLngs.size());
+  LatLng lastPoint=latLngs.get(expectedLength - 1);
+  expectNearNumber(37.76953,lastPoint.latitude,1e-6);
+  expectNearNumber(-122.41488,lastPoint.longitude,1e-6);
+}

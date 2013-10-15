@@ -1,0 +1,4 @@
+{
+  setBackground(mContext.getResources().getDrawable(getBackground(style)));
+  setTextAppearance(mContext,getTextStyle(style));
+}

@@ -1,0 +1,3 @@
+{
+  return bounds.minX >= minX && bounds.maxX <= maxX && bounds.minY >= minY && bounds.maxY <= maxY;
+}

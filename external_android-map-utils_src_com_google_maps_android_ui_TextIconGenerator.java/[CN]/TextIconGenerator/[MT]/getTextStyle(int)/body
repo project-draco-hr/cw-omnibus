@@ -1,0 +1,14 @@
+{
+switch (style) {
+default :
+case STYLE_DEFAULT:
+case STYLE_WHITE:
+    return R.style.Bubble_TextAppearance_Dark;
+case STYLE_RED:
+case STYLE_BLUE:
+case STYLE_GREEN:
+case STYLE_PURPLE:
+case STYLE_ORANGE:
+  return R.style.Bubble_TextAppearance_Light;
+}
+}

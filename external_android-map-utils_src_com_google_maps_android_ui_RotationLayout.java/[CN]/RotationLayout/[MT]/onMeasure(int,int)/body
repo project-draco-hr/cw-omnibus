@@ -1,0 +1,9 @@
+{
+  if (mRotation == 1 || mRotation == 3) {
+    super.onMeasure(heightMeasureSpec,widthMeasureSpec);
+    setMeasuredDimension(getMeasuredHeight(),getMeasuredWidth());
+  }
+ else {
+    super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+  }
+}

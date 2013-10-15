@@ -1,0 +1,17 @@
+{
+  Item item1=new Item(0,0);
+  mTree.add(item1);
+  Item item2=new Item(.1,.1);
+  mTree.add(item2);
+  Item item3=new Item(.2,.2);
+  mTree.add(item3);
+  Collection<Item> items=searchAll();
+  assertEquals(3,items.size());
+  assertTrue(items.contains(item1));
+  assertTrue(items.contains(item2));
+  assertTrue(items.contains(item3));
+  mTree.remove(item1);
+  mTree.remove(item2);
+  mTree.remove(item3);
+  assertEquals(0,searchAll().size());
+}

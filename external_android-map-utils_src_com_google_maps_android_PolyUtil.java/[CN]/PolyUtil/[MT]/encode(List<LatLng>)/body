@@ -1,0 +1,16 @@
+{
+  long lastLat=0;
+  long lastLng=0;
+  final StringBuffer result=new StringBuffer();
+  for (  final LatLng point : path) {
+    long lat=Math.round(point.latitude * 1e5);
+    long lng=Math.round(point.longitude * 1e5);
+    long dLat=lat - lastLat;
+    long dLng=lng - lastLng;
+    encode(dLat,result);
+    encode(dLng,result);
+    lastLat=lat;
+    lastLng=lng;
+  }
+  return result.toString();
+}

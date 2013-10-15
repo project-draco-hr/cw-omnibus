@@ -1,0 +1,5 @@
+LatLng point
+List<LatLng> poly
+boolean closed
+boolean geodesic
+double toleranceEarth

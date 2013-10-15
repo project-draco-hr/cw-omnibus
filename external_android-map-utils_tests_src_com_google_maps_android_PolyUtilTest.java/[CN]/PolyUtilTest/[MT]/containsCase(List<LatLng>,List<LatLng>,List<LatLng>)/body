@@ -1,0 +1,10 @@
+{
+  for (  LatLng point : yes) {
+    Assert.assertTrue(PolyUtil.containsLocation(point,poly,true));
+    Assert.assertTrue(PolyUtil.containsLocation(point,poly,false));
+  }
+  for (  LatLng point : no) {
+    Assert.assertFalse(PolyUtil.containsLocation(point,poly,true));
+    Assert.assertFalse(PolyUtil.containsLocation(point,poly,false));
+  }
+}

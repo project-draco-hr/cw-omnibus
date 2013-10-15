@@ -1,0 +1,6 @@
+{
+  mChildren=null;
+  if (mItems != null) {
+    mItems.clear();
+  }
+}

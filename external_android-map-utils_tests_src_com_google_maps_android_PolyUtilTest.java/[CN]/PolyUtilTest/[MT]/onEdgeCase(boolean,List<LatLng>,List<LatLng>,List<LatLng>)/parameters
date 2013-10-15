@@ -1,0 +1,4 @@
+boolean geodesic
+List<LatLng> poly
+List<LatLng> yes
+List<LatLng> no
