@@ -1,0 +1,20 @@
+{
+  int status=GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+  if (status == ConnectionResult.SUCCESS) {
+    if (getVersionFromPackageManager(this) >= 2) {
+      return (true);
+    }
+ else {
+      Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();
+      finish();
+    }
+  }
+ else   if (GooglePlayServicesUtil.isUserRecoverableError(status)) {
+    ErrorDialogFragment.newInstance(status).show(getSupportFragmentManager(),TAG_ERROR_DIALOG_FRAGMENT);
+  }
+ else {
+    Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();
+    finish();
+  }
+  return (false);
+}
