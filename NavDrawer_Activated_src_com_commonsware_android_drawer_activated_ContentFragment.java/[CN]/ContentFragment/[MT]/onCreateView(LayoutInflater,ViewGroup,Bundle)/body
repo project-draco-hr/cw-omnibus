@@ -1,0 +1,4 @@
+{
+  View result=inflater.inflate(R.layout.mainfrag,container,false);
+  return (result);
+}

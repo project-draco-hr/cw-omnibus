@@ -1,0 +1,9 @@
+{
+  if (position == 0) {
+    showLorem();
+  }
+ else {
+    showContent();
+  }
+  drawerLayout.closeDrawers();
+}

@@ -1,0 +1,9 @@
+{
+  if (lorem == null) {
+    lorem=new LoremFragment();
+  }
+  if (!lorem.isVisible()) {
+    getFragmentManager().popBackStack();
+    getFragmentManager().beginTransaction().replace(R.id.content,lorem).commit();
+  }
+}

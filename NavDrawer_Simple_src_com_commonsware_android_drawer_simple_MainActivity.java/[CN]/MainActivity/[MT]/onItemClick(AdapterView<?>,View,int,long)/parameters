@@ -1,0 +1,4 @@
+AdapterView<?> listView
+View row
+int position
+long id

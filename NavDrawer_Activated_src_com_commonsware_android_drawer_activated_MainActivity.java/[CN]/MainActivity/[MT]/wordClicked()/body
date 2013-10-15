@@ -1,0 +1,10 @@
+{
+  int toClear=drawer.getCheckedItemPosition();
+  if (toClear >= 0) {
+    drawer.setItemChecked(toClear,false);
+  }
+  if (stuff == null) {
+    stuff=new StuffFragment();
+  }
+  getFragmentManager().beginTransaction().replace(R.id.content,stuff).addToBackStack(null).commit();
+}

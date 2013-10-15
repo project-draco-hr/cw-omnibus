@@ -1,0 +1,3 @@
+{
+  getContract().wordClicked();
+}
