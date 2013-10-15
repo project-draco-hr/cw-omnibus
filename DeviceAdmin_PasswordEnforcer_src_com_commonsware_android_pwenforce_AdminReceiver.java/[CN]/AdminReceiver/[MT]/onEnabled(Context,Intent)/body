@@ -1,0 +1,6 @@
+{
+  ComponentName cn=new ComponentName(ctxt,AdminReceiver.class);
+  DevicePolicyManager mgr=(DevicePolicyManager)ctxt.getSystemService(Context.DEVICE_POLICY_SERVICE);
+  mgr.setPasswordQuality(cn,DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC);
+  onPasswordChanged(ctxt,intent);
+}

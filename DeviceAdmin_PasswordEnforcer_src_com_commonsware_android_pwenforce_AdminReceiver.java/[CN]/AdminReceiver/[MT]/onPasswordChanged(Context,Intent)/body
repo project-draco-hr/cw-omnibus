@@ -1,0 +1,11 @@
+{
+  DevicePolicyManager mgr=(DevicePolicyManager)ctxt.getSystemService(Context.DEVICE_POLICY_SERVICE);
+  int msgId;
+  if (mgr.isActivePasswordSufficient()) {
+    msgId=R.string.compliant;
+  }
+ else {
+    msgId=R.string.not_compliant;
+  }
+  Toast.makeText(ctxt,msgId,Toast.LENGTH_LONG).show();
+}

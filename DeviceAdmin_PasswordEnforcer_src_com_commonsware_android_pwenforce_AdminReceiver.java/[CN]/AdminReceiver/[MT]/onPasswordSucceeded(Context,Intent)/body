@@ -1,0 +1,3 @@
+{
+  Toast.makeText(ctxt,R.string.password_success,Toast.LENGTH_LONG).show();
+}
