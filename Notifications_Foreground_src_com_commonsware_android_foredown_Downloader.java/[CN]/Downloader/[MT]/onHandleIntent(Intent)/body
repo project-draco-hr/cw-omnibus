@@ -1,0 +1,38 @@
+{
+  try {
+    String filename=i.getData().getLastPathSegment();
+    startForeground(FOREGROUND_ID,buildForegroundNotification(filename));
+    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    root.mkdirs();
+    File output=new File(root,filename);
+    if (output.exists()) {
+      output.delete();
+    }
+    URL url=new URL(i.getData().toString());
+    HttpURLConnection c=(HttpURLConnection)url.openConnection();
+    c.setRequestMethod("GET");
+    c.setReadTimeout(15000);
+    c.connect();
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    BufferedOutputStream out=new BufferedOutputStream(fos);
+    try {
+      InputStream in=c.getInputStream();
+      byte[] buffer=new byte[8192];
+      int len=0;
+      while ((len=in.read(buffer)) > 0) {
+        out.write(buffer,0,len);
+      }
+      out.flush();
+    }
+  finally {
+      fos.getFD().sync();
+      out.close();
+    }
+    stopForeground(true);
+    raiseNotification(i,output,null);
+  }
+ catch (  IOException e2) {
+    stopForeground(true);
+    raiseNotification(i,null,e2);
+  }
+}
