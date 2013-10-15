@@ -1,0 +1,13 @@
+{
+  map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds,48));
+  Property<Marker,LatLng> property=Property.of(Marker.class,LatLng.class,"position");
+  ObjectAnimator animator=ObjectAnimator.ofObject(markerToAnimate,property,new LatLngEvaluator(),nextAnimationEnd);
+  animator.setDuration(2000);
+  animator.start();
+  if (nextAnimationEnd == LINCOLN_CENTER) {
+    nextAnimationEnd=PENN_STATION;
+  }
+ else {
+    nextAnimationEnd=LINCOLN_CENTER;
+  }
+}

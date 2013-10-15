@@ -1,0 +1,3 @@
+{
+  return (SphericalUtil.interpolate(startValue,endValue,fraction));
+}
