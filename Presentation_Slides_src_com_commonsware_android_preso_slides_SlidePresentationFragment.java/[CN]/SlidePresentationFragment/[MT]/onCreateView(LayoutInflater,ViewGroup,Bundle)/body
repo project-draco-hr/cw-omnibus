@@ -1,0 +1,5 @@
+{
+  slide=new ImageView(getActivity());
+  setSlideContent(getArguments().getInt(KEY_RESOURCE));
+  return (slide);
+}

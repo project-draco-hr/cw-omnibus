@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  TabPageIndicator tabs=(TabPageIndicator)findViewById(R.id.titles);
+  pager=(ViewPager)findViewById(R.id.pager);
+  adapter=new SlidesAdapter(this);
+  pager.setAdapter(adapter);
+  tabs.setViewPager(pager);
+  tabs.setOnPageChangeListener(this);
+  helper=new PresentationHelper(this,this);
+}

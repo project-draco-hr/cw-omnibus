@@ -1,0 +1,5 @@
+{
+  if (preso != null) {
+    preso.setSlideContent(adapter.getPageResource(position));
+  }
+}

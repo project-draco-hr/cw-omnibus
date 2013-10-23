@@ -1,0 +1,8 @@
+{
+  SlidePresentationFragment frag=new SlidePresentationFragment();
+  frag.setDisplay(ctxt,display);
+  Bundle b=new Bundle();
+  b.putInt(KEY_RESOURCE,initialResource);
+  frag.setArguments(b);
+  return (frag);
+}

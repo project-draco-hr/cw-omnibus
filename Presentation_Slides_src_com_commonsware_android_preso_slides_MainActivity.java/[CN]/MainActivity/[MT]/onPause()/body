@@ -1,0 +1,4 @@
+{
+  helper.onPause();
+  super.onPause();
+}
