@@ -1,0 +1,5 @@
+{
+  super.onSaveInstanceState(state);
+  state.putCharSequence(STATE_QUERY,sv.getQuery());
+  state.putStringArrayList(STATE_MODEL,words);
+}
