@@ -1,0 +1,15 @@
+{
+switch (item.getItemId()) {
+case R.id.add:
+    add();
+  return (true);
+case R.id.reset:
+initAdapter(null);
+return (true);
+case R.id.about:
+case android.R.id.home:
+Toast.makeText(this,"Action Bar Sample App",Toast.LENGTH_LONG).show();
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

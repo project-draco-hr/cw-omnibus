@@ -1,0 +1,3 @@
+{
+  getMenuInflater().inflate(R.menu.context,menu);
+}
