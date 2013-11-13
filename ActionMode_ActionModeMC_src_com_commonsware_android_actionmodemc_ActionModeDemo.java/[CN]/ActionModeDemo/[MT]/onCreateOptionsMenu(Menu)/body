@@ -1,5 +1,5 @@
 {
-  new MenuInflater(this).inflate(R.menu.option,menu);
+  getMenuInflater().inflate(R.menu.option,menu);
   EditText add=null;
   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
     View v=menu.findItem(R.id.add).getActionView();
