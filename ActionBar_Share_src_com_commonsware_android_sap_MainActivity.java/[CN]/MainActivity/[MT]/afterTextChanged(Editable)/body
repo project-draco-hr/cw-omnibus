@@ -1,4 +1,4 @@
 {
-  shareIntent.putExtra(Intent.EXTRA_TEXT,editor.getText());
+  shareIntent.putExtra(Intent.EXTRA_TEXT,s.toString());
   share.setShareIntent(shareIntent);
 }

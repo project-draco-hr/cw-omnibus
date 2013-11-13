@@ -1,5 +1,5 @@
 {
-  new MenuInflater(this).inflate(R.menu.actions,menu);
+  getSupportMenuInflater().inflate(R.menu.actions,menu);
   share=(ShareActionProvider)menu.findItem(R.id.share).getActionProvider();
   share.setOnShareTargetSelectedListener(this);
   return (super.onCreateOptionsMenu(menu));
