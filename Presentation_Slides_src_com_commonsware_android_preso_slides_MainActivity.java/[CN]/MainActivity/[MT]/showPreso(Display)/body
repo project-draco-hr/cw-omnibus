@@ -1,4 +1,5 @@
 {
-  preso=SlidePresentationFragment.newInstance(this,display,adapter.getPageResource(pager.getCurrentItem()));
+  int drawable=adapter.getPageResource(pager.getCurrentItem());
+  preso=SlidePresentationFragment.newInstance(this,display,drawable);
   preso.show(getFragmentManager(),"preso");
 }
