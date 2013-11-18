@@ -1,0 +1,6 @@
+{
+  if (First.class.getName().equals(fragmentName) || Second.class.getName().equals(fragmentName)) {
+    return (true);
+  }
+  return (false);
+}

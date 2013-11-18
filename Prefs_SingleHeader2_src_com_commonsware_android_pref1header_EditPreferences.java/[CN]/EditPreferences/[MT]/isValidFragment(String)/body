@@ -1,0 +1,3 @@
+{
+  return (StockPreferenceFragment.class.getName().equals(fragmentName));
+}
