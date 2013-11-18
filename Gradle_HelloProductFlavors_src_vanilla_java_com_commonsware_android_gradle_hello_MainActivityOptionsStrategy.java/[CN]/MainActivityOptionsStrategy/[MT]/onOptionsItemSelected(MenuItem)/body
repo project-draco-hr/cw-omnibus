@@ -1,0 +1,4 @@
+{
+  Log.d("HelloProductFlavors","vanilla!");
+  return (false);
+}

@@ -1,0 +1,4 @@
+{
+  Log.d("HelloProductFlavors","chocolate!");
+  return (false);
+}
