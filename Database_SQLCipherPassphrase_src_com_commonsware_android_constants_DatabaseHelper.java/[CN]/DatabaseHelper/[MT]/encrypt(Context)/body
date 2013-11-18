@@ -11,6 +11,7 @@
     db.close();
     db=SQLiteDatabase.openOrCreateDatabase(dbFile,PASSPHRASE,null);
     db.setVersion(version);
+    db.close();
     legacyFile.delete();
   }
 }

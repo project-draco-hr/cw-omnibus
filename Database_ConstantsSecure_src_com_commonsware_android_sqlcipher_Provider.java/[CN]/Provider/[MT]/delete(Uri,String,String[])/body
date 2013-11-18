@@ -1,5 +1,5 @@
 {
-  int count=db.getWritableDatabase(key).delete(TABLE,where,whereArgs);
+  int count=db.delete(TABLE,where,whereArgs);
   getContext().getContentResolver().notifyChange(url,null);
   return (count);
 }
