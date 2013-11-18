@@ -5,7 +5,18 @@ case Sensor.TYPE_GRAVITY:
 case Sensor.TYPE_GYROSCOPE:
 case Sensor.TYPE_LINEAR_ACCELERATION:
 case Sensor.TYPE_MAGNETIC_FIELD:
+case Sensor.TYPE_ROTATION_VECTOR:
     return (true);
+}
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+  if (s.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR || s.getType() == Sensor.TYPE_GYROSCOPE_UNCALIBRATED || s.getType() == Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED) {
+    return (true);
+  }
+}
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+  if (s.getType() == Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR) {
+    return (true);
+  }
 }
 return (false);
 }

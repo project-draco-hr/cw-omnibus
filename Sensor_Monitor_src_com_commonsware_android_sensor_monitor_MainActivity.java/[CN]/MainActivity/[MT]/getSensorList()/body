@@ -1,5 +1,11 @@
 {
-  List<Sensor> result=new ArrayList<Sensor>(mgr.getSensorList(Sensor.TYPE_ALL));
+  List<Sensor> unfiltered=new ArrayList<Sensor>(mgr.getSensorList(Sensor.TYPE_ALL));
+  List<Sensor> result=new ArrayList<Sensor>();
+  for (  Sensor s : unfiltered) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT || !isTriggerSensor(s)) {
+      result.add(s);
+    }
+  }
   Collections.sort(result,new Comparator<Sensor>(){
     @Override public int compare(    final Sensor a,    final Sensor b){
       return (a.toString().compareTo(b.toString()));

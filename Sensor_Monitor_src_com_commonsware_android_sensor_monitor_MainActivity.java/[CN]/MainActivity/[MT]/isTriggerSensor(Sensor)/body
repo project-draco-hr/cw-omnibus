@@ -1,0 +1,4 @@
+{
+  int[] triggers={Sensor.TYPE_SIGNIFICANT_MOTION,Sensor.TYPE_STEP_DETECTOR,Sensor.TYPE_STEP_COUNTER};
+  return (Arrays.binarySearch(triggers,s.getType()) >= 0);
+}
