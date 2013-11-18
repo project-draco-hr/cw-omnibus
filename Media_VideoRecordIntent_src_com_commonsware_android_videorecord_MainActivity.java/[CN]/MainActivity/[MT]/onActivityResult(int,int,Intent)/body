@@ -1,0 +1,7 @@
+{
+  if (requestCode == REQUEST_ID && resultCode == RESULT_OK) {
+    Intent view=new Intent(Intent.ACTION_VIEW).setDataAndType(result,"video/mp4");
+    startActivity(view);
+  }
+  finish();
+}

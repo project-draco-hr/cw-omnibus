@@ -1,0 +1,12 @@
+{
+  super.onCreate(savedInstanceState);
+  File video=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES),"sample.mp4");
+  if (video.exists()) {
+    video.delete();
+  }
+  Intent i=new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+  result=Uri.fromFile(video);
+  i.putExtra(MediaStore.EXTRA_OUTPUT,result);
+  i.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,1);
+  startActivityForResult(i,REQUEST_ID);
+}
