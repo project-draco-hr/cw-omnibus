@@ -1,0 +1,6 @@
+{
+  LayoutInflater inflater=getActivity().getLayoutInflater();
+  View addView=inflater.inflate(R.layout.add_edit,null);
+  AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+  builder.setTitle(R.string.add_title).setView(addView).setPositiveButton(R.string.ok,this).setNegativeButton(R.string.cancel,null).show();
+}
