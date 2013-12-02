@@ -1,4 +1,5 @@
 {
+  super.onRestoreInstanceState(state);
   String contactUri=state.getString("contact");
   if (contactUri != null) {
     contact=Uri.parse(contactUri);
