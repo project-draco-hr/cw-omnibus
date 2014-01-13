@@ -1,3 +1,4 @@
 {
-  return (db.getReadableDatabase().rawQuery("SELECT _id, title, value " + "FROM constants ORDER BY title",null));
+  String query=String.format("SELECT _id, %s, %s FROM %s ORDER BY %s",DatabaseHelper.TITLE,DatabaseHelper.VALUE,DatabaseHelper.TABLE,DatabaseHelper.TITLE);
+  return (db.getReadableDatabase().rawQuery(query,null));
 }
