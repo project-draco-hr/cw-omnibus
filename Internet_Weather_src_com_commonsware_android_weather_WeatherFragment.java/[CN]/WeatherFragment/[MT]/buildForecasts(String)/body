@@ -13,7 +13,7 @@
   for (int i=0; i < temps.getLength(); i++) {
     Element temp=(Element)temps.item(i);
     Forecast forecast=forecasts.get(i);
-    forecast.setTemp(new Integer(temp.getFirstChild().getNodeValue()));
+    forecast.setTemp(Integer.valueOf(temp.getFirstChild().getNodeValue()));
   }
   NodeList icons=doc.getElementsByTagName("icon-link");
   for (int i=0; i < icons.getLength(); i++) {
