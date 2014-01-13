@@ -1,0 +1,9 @@
+{
+  getActivity().runOnUiThread(new Runnable(){
+    @Override public void run(){
+      adapter.add(event);
+    }
+  }
+);
+  EventBus.getDefault().cancelEventDelivery(event);
+}
