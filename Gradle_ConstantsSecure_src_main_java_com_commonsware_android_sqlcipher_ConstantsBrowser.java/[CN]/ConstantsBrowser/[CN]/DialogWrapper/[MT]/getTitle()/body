@@ -1,0 +1,3 @@
+{
+  return (getTitleField().getText().toString());
+}

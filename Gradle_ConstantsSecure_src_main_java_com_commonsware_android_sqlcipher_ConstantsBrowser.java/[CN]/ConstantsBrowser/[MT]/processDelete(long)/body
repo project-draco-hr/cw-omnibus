@@ -1,0 +1,4 @@
+{
+  String[] args={String.valueOf(rowId)};
+  getContentResolver().delete(Provider.Constants.CONTENT_URI,Provider.Constants._ID + "=?",args);
+}

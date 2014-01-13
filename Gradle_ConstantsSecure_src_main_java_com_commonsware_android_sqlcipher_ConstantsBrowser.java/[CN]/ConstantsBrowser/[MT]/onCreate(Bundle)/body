@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  getContentResolver().call(Provider.Constants.CONTENT_URI,Provider.SET_KEY_METHOD,"sekrit",null);
+  adapter=new SimpleCursorAdapter(this,R.layout.row,null,new String[]{Provider.Constants.TITLE,Provider.Constants.VALUE},new int[]{R.id.title,R.id.value});
+  setListAdapter(adapter);
+  registerForContextMenu(getListView());
+  getLoaderManager().initLoader(0,null,this);
+}
