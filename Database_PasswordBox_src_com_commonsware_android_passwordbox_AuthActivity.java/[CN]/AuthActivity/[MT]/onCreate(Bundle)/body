@@ -2,6 +2,10 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.passphrase_setup);
   SQLiteDatabase.loadLibs(this);
+  if (DatabaseHelper.getDatabase() != null) {
+    startActivity(new Intent(this,MainActivity.class));
+    finish();
+  }
   dbState=DatabaseHelper.getDatabaseState(AuthActivity.this);
   passphrase=(EditText)findViewById(R.id.passphrase);
   confirm=(EditText)findViewById(R.id.confirm);
