@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  startService(new Intent(this,SillyService.class));
+  finish();
+}

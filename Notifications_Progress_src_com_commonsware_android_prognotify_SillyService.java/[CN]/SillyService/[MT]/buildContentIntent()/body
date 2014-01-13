@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent(Settings.ACTION_SETTINGS);
+  return (PendingIntent.getActivity(this,0,i,0));
+}
