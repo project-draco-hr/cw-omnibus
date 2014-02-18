@@ -1,4 +1,5 @@
 {
+  checkTainted();
   Cursor result=getContext().getContentResolver().query(convertUri(uri),projection,selection,selectionArgs,sortOrder);
   return (new CrossProcessCursorWrapper(result));
 }

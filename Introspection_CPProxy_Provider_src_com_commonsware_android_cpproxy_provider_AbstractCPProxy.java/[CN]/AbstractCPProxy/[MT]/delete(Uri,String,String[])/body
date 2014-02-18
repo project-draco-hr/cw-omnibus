@@ -1,3 +1,4 @@
 {
+  checkTainted();
   return (getContext().getContentResolver().delete(convertUri(uri),selection,selectionArgs));
 }

@@ -1,3 +1,4 @@
 {
+  checkTainted();
   return (getContext().getContentResolver().getType(convertUri(uri)));
 }

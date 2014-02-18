@@ -1,0 +1,5 @@
+{
+  if (tainted) {
+    throw new RuntimeException(getContext().getString(R.string.tainted_abort));
+  }
+}
