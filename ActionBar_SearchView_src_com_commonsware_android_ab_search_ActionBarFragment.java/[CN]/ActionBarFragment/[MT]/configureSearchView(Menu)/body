@@ -4,6 +4,7 @@
   sv.setOnQueryTextListener(this);
   sv.setOnCloseListener(this);
   sv.setSubmitButtonEnabled(false);
+  sv.setIconifiedByDefault(true);
   if (initialQuery != null) {
     sv.setIconified(false);
     search.expandActionView();
