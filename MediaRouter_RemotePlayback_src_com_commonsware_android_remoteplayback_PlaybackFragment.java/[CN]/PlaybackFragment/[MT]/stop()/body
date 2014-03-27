@@ -1,0 +1,6 @@
+{
+  logToTranscript(getActivity().getString(R.string.stop_requested));
+  StopCallback stopCB=new StopCallback();
+  client.stop(null,stopCB);
+  transcript.postDelayed(stopCB,1000);
+}

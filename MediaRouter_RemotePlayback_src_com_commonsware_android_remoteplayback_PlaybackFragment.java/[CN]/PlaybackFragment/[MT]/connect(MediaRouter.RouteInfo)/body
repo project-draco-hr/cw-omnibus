@@ -1,0 +1,25 @@
+{
+  client=new RemotePlaybackClient(getActivity().getApplication(),route);
+  if (client.isRemotePlaybackSupported()) {
+    logToTranscript(getActivity().getString(R.string.connected));
+    if (client.isSessionManagementSupported()) {
+      client.startSession(null,new SessionActionCallback(){
+        @Override public void onResult(        Bundle data,        String sessionId,        MediaSessionStatus sessionStatus){
+          logToTranscript(getActivity().getString(R.string.session_started));
+          getActivity().supportInvalidateOptionsMenu();
+        }
+        @Override public void onError(        String error,        int code,        Bundle data){
+          logToTranscript(getActivity().getString(R.string.session_failed));
+        }
+      }
+);
+    }
+ else {
+      getActivity().supportInvalidateOptionsMenu();
+    }
+  }
+ else {
+    logToTranscript(getActivity().getString(R.string.remote_playback_not_supported));
+    client=null;
+  }
+}

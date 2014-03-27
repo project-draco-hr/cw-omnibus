@@ -1,0 +1,7 @@
+{
+  getMenuInflater().inflate(R.menu.main,menu);
+  MenuItem item=menu.findItem(R.id.route_provider);
+  MediaRouteActionProvider provider=(MediaRouteActionProvider)MenuItemCompat.getActionProvider(item);
+  provider.setRouteSelector(selector);
+  return (true);
+}

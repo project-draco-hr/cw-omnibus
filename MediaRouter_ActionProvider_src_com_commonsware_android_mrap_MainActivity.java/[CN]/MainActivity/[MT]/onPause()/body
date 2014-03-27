@@ -1,0 +1,4 @@
+{
+  router.removeCallback(cb);
+  super.onPause();
+}

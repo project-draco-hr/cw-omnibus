@@ -1,0 +1,6 @@
+{
+  scroll=(ScrollView)inflater.inflate(R.layout.activity_main,container,false);
+  transcript=(TextView)scroll.findViewById(R.id.transcript);
+  logToTranscript("Started");
+  return (scroll);
+}

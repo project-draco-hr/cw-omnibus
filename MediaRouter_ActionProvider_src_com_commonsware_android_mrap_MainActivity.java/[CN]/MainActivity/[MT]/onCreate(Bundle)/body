@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  selectedRoute=(TextView)findViewById(R.id.selected_route);
+  router=MediaRouter.getInstance(this);
+  selector=new MediaRouteSelector.Builder().addControlCategory(MediaControlIntent.CATEGORY_LIVE_AUDIO).addControlCategory(MediaControlIntent.CATEGORY_LIVE_VIDEO).addControlCategory(MediaControlIntent.CATEGORY_REMOTE_PLAYBACK).build();
+}

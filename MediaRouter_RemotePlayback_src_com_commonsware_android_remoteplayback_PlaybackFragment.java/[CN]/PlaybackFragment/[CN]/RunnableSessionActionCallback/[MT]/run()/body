@@ -1,0 +1,3 @@
+{
+  transcript.removeCallbacks(this);
+}

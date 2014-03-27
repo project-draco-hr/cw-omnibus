@@ -1,0 +1,7 @@
+{
+  super.run();
+  isPlaying=false;
+  isPaused=false;
+  getActivity().supportInvalidateOptionsMenu();
+  logToTranscript(getActivity().getString(R.string.stopped));
+}
