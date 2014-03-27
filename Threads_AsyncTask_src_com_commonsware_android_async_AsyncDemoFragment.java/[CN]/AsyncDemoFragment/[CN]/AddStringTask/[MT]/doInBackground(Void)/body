@@ -1,7 +1,9 @@
 {
   for (  String item : items) {
-    publishProgress(item);
-    SystemClock.sleep(400);
+    if (!isCancelled()) {
+      publishProgress(item);
+      SystemClock.sleep(400);
+    }
   }
   return (null);
 }
