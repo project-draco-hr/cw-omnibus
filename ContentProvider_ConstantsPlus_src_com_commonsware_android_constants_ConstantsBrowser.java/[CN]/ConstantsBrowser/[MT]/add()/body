@@ -1,15 +1,5 @@
 {
-  LayoutInflater inflater=LayoutInflater.from(this);
-  View addView=inflater.inflate(R.layout.add_edit,null);
-  final DialogWrapper wrapper=new DialogWrapper(addView);
-  new AlertDialog.Builder(this).setTitle(R.string.add_title).setView(addView).setPositiveButton(R.string.ok,new DialogInterface.OnClickListener(){
-    public void onClick(    DialogInterface dialog,    int whichButton){
-      processAdd(wrapper);
-    }
-  }
-).setNegativeButton(R.string.cancel,new DialogInterface.OnClickListener(){
-    public void onClick(    DialogInterface dialog,    int whichButton){
-    }
-  }
-).show();
+  View addView=getLayoutInflater().inflate(R.layout.add_edit,null);
+  AlertDialog.Builder builder=new AlertDialog.Builder(this);
+  builder.setTitle(R.string.add_title).setView(addView).setPositiveButton(R.string.ok,this).setNegativeButton(R.string.cancel,null).show();
 }
