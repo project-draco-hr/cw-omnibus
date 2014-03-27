@@ -1,8 +1,3 @@
 {
-  if (lorem.isVisible()) {
-    drawer.setItemChecked(0,true);
-  }
- else   if (content != null && content.isVisible()) {
-    drawer.setItemChecked(1,true);
-  }
+  drawer.post(onNavChange);
 }

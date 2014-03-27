@@ -1,6 +1,0 @@
-{
-  int position=state.getInt(STATE_CHECKED,-1);
-  if (position > -1) {
-    drawer.setItemChecked(position,true);
-  }
-}
