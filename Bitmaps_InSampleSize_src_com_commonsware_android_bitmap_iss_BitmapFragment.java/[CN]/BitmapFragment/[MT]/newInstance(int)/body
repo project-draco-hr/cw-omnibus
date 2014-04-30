@@ -1,0 +1,7 @@
+{
+  BitmapFragment frag=new BitmapFragment();
+  Bundle args=new Bundle();
+  args.putInt(KEY_SAMPLE_SIZE,inSampleSize);
+  frag.setArguments(args);
+  return (frag);
+}
