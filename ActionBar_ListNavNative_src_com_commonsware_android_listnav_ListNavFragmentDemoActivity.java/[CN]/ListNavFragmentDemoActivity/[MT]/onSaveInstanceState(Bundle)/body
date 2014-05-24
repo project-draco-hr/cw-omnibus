@@ -1,0 +1,7 @@
+{
+  if (lastPosition > -1) {
+    models[lastPosition]=frag.getText();
+  }
+  state.putCharSequenceArray(KEY_MODELS,models);
+  state.putInt(KEY_POSITION,getActionBar().getSelectedNavigationIndex());
+}

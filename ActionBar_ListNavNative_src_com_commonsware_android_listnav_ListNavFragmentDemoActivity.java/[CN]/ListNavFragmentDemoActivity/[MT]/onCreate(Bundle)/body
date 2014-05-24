@@ -1,0 +1,25 @@
+{
+  super.onCreate(state);
+  frag=(EditorFragment)getFragmentManager().findFragmentById(android.R.id.content);
+  if (frag == null) {
+    frag=new EditorFragment();
+    getFragmentManager().beginTransaction().add(android.R.id.content,frag).commit();
+  }
+  if (state != null) {
+    models=state.getCharSequenceArray(KEY_MODELS);
+  }
+  ArrayAdapter<String> nav=null;
+  ActionBar bar=getActionBar();
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+    nav=new ArrayAdapter<String>(bar.getThemedContext(),android.R.layout.simple_spinner_item,labels);
+  }
+ else {
+    nav=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,labels);
+  }
+  nav.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  bar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+  bar.setListNavigationCallbacks(nav,this);
+  if (state != null) {
+    bar.setSelectedNavigationItem(state.getInt(KEY_POSITION));
+  }
+}
