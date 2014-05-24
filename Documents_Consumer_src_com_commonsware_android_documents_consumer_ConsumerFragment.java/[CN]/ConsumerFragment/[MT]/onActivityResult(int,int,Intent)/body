@@ -1,0 +1,28 @@
+{
+  if (resultCode == Activity.RESULT_OK) {
+    Uri uri=null;
+    if (resultData != null) {
+      uri=resultData.getData();
+      logToTranscript(uri.toString());
+      if (requestCode == REQUEST_OPEN) {
+        Cursor c=getActivity().getContentResolver().query(uri,null,null,null,null);
+        if (c != null && c.moveToFirst()) {
+          int displayNameColumn=c.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+          if (displayNameColumn >= 0) {
+            logToTranscript("Display name: " + c.getString(displayNameColumn));
+          }
+          int sizeColumn=c.getColumnIndex(OpenableColumns.SIZE);
+          if (sizeColumn < 0 || c.isNull(sizeColumn)) {
+            logToTranscript("Size not available");
+          }
+ else {
+            logToTranscript(String.format("Size: %d",c.getInt(sizeColumn)));
+          }
+        }
+ else {
+          logToTranscript("...no metadata available?");
+        }
+      }
+    }
+  }
+}

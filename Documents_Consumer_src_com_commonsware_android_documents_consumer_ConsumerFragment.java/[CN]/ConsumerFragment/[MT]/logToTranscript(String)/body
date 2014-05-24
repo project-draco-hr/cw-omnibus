@@ -1,0 +1,4 @@
+{
+  transcript.setText(transcript.getText().toString() + msg + "\n");
+  scroll.fullScroll(View.FOCUS_DOWN);
+}
