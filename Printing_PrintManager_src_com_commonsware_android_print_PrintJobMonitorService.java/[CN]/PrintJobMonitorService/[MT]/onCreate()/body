@@ -1,0 +1,5 @@
+{
+  super.onCreate();
+  mgr=(PrintManager)getSystemService(PRINT_SERVICE);
+  executor.scheduleAtFixedRate(this,POLL_PERIOD,POLL_PERIOD,TimeUnit.SECONDS);
+}

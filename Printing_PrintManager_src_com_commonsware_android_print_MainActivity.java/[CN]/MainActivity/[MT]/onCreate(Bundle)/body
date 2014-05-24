@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  prose=(EditText)findViewById(R.id.prose);
+  mgr=(PrintManager)getSystemService(PRINT_SERVICE);
+}

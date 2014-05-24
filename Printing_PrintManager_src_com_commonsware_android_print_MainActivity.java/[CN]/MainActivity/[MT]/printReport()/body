@@ -1,0 +1,5 @@
+{
+  Template tmpl=Mustache.compiler().compile(getString(R.string.report_body));
+  WebView print=prepPrintWebView(getString(R.string.tps_report));
+  print.loadData(tmpl.execute(new TpsReportContext(prose.getText().toString())),"text/html","UTF-8");
+}

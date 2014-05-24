@@ -1,0 +1,10 @@
+{
+  if (cancellationSignal.isCanceled()) {
+    callback.onLayoutCancelled();
+  }
+ else {
+    PrintDocumentInfo.Builder builder=new PrintDocumentInfo.Builder("CHANGE ME PLEASE");
+    builder.setContentType(PrintDocumentInfo.CONTENT_TYPE_DOCUMENT).setPageCount(PrintDocumentInfo.PAGE_COUNT_UNKNOWN).build();
+    callback.onLayoutFinished(builder.build(),!newAttributes.equals(oldAttributes));
+  }
+}

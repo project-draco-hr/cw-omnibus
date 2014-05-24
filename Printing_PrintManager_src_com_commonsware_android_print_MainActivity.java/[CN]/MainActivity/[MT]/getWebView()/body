@@ -1,0 +1,6 @@
+{
+  if (wv == null) {
+    wv=new WebView(this);
+  }
+  return (wv);
+}

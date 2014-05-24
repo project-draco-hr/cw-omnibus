@@ -1,0 +1,18 @@
+{
+switch (item.getItemId()) {
+case R.id.bitmap:
+    Intent i=new Intent(Intent.ACTION_GET_CONTENT).setType("image/*");
+  startActivityForResult(i,IMAGE_REQUEST_ID);
+return (true);
+case R.id.web:
+printWebPage();
+return (true);
+case R.id.report:
+printReport();
+return (true);
+case R.id.pdf:
+print("Test PDF",new PdfDocumentAdapter(getApplicationContext()),new PrintAttributes.Builder().build());
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

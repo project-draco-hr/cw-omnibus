@@ -1,0 +1,12 @@
+{
+  if (requestCode == IMAGE_REQUEST_ID && resultCode == Activity.RESULT_OK) {
+    try {
+      PrintHelper help=new PrintHelper(this);
+      help.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+      help.printBitmap("Photo!",data.getData());
+    }
+ catch (    FileNotFoundException e) {
+      Log.e(getClass().getSimpleName(),"Exception printing bitmap",e);
+    }
+  }
+}

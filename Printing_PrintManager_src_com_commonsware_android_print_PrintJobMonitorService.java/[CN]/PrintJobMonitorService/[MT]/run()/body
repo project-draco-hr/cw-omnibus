@@ -1,0 +1,11 @@
+{
+  for (  PrintJob job : mgr.getPrintJobs()) {
+    if (job.getInfo().getState() == PrintJobInfo.STATE_CREATED || job.isQueued() || job.isStarted()) {
+      lastPrintJobTime=SystemClock.elapsedRealtime();
+    }
+  }
+  long delta=SystemClock.elapsedRealtime() - lastPrintJobTime;
+  if (delta > POLL_PERIOD * 2) {
+    stopSelf();
+  }
+}

@@ -1,0 +1,10 @@
+{
+  WebView result=getWebView();
+  result.setWebViewClient(new WebViewClient(){
+    @Override public void onPageFinished(    WebView view,    String url){
+      print(name,view.createPrintDocumentAdapter(),new PrintAttributes.Builder().build());
+    }
+  }
+);
+  return (result);
+}
