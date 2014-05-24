@@ -1,0 +1,8 @@
+{
+  Log.d(getClass().getSimpleName(),"get-status");
+  MediaItemStatus.Builder statusBuilder=new MediaItemStatus.Builder(MediaItemStatus.PLAYBACK_STATE_PLAYING);
+  Bundle b=new Bundle();
+  b.putBundle(MediaControlIntent.EXTRA_ITEM_STATUS,statusBuilder.build().asBundle());
+  cb.onResult(b);
+  return (true);
+}

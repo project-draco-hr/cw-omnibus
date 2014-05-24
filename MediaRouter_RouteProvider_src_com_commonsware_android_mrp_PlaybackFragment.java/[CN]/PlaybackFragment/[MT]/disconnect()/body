@@ -1,0 +1,12 @@
+{
+  isPlaying=false;
+  isPaused=false;
+  if (client != null) {
+    logToTranscript(getActivity().getString(R.string.session_ending));
+    EndSessionCallback endCB=new EndSessionCallback();
+    if (client.isSessionManagementSupported()) {
+      client.endSession(null,endCB);
+    }
+    transcript.postDelayed(endCB,1000);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.onAttach(host);
+  router=MediaRouter.getInstance(host);
+  router.addProvider(new DemoRouteProvider(getActivity()));
+}

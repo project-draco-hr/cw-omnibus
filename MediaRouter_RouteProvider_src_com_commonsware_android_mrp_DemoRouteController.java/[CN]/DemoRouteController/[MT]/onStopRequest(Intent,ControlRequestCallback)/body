@@ -1,0 +1,5 @@
+{
+  Log.d(getClass().getSimpleName(),"stop");
+  cb.onResult(new Bundle());
+  return (true);
+}

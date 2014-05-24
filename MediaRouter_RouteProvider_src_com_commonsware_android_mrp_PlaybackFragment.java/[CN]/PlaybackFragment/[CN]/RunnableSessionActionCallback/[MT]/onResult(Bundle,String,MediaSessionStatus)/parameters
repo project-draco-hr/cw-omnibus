@@ -1,0 +1,3 @@
+Bundle data
+String sessionId
+MediaSessionStatus sessionStatus

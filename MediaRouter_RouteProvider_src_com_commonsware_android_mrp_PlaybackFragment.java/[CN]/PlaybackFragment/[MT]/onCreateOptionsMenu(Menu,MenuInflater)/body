@@ -1,0 +1,20 @@
+{
+  inflater.inflate(R.menu.main,menu);
+  if (client != null) {
+    if (isPlaying) {
+      menu.findItem(R.id.stop).setVisible(true);
+      if (isPaused) {
+        menu.findItem(R.id.play).setVisible(true);
+      }
+ else {
+        menu.findItem(R.id.pause).setVisible(true);
+      }
+    }
+ else {
+      menu.findItem(R.id.play).setVisible(true);
+    }
+  }
+  MenuItem item=menu.findItem(R.id.route_provider);
+  MediaRouteActionProvider provider=(MediaRouteActionProvider)MenuItemCompat.getActionProvider(item);
+  provider.setRouteSelector(selector);
+}

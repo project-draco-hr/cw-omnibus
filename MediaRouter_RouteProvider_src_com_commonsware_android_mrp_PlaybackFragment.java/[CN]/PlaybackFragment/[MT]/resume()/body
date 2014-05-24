@@ -1,0 +1,6 @@
+{
+  logToTranscript(getActivity().getString(R.string.resume_requested));
+  ResumeCallback resumeCB=new ResumeCallback();
+  client.resume(null,resumeCB);
+  transcript.postDelayed(resumeCB,1000);
+}

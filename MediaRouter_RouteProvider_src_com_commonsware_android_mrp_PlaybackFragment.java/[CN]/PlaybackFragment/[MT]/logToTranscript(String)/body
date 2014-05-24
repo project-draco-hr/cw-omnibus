@@ -1,0 +1,10 @@
+{
+  if (client != null) {
+    String sessionId=client.getSessionId();
+    if (sessionId != null) {
+      msg="(" + sessionId + ") "+ msg;
+    }
+  }
+  transcript.setText(transcript.getText().toString() + msg + "\n");
+  scroll.fullScroll(View.FOCUS_DOWN);
+}

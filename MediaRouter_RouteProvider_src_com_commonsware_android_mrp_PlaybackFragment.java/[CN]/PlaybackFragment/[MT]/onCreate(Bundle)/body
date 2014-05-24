@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setRetainInstance(true);
+  setHasOptionsMenu(true);
+  selector=new MediaRouteSelector.Builder().addControlCategory(MediaControlIntent.CATEGORY_REMOTE_PLAYBACK).build();
+}

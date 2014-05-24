@@ -1,0 +1,6 @@
+{
+  logToTranscript(getActivity().getString(R.string.pause_requested));
+  PauseCallback pauseCB=new PauseCallback();
+  client.pause(null,pauseCB);
+  transcript.postDelayed(pauseCB,1000);
+}

@@ -1,0 +1,8 @@
+{
+  client.release();
+  client=null;
+  if (getActivity() != null) {
+    getActivity().supportInvalidateOptionsMenu();
+    logToTranscript(getActivity().getString(R.string.session_ended));
+  }
+}

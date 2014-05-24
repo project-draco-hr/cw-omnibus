@@ -1,0 +1,5 @@
+{
+  Log.d(getClass().getSimpleName(),"resume");
+  cb.onResult(new Bundle());
+  return (true);
+}

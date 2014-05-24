@@ -1,0 +1,7 @@
+{
+  MediaRouteDescriptor.Builder mrdBuilder=new MediaRouteDescriptor.Builder(DEMO_ROUTE_ID,"Demo Route");
+  mrdBuilder.setDescription("The description of a demo route").addControlFilter(ifPlay).addControlFilter(ifControl).setPlaybackStream(AudioManager.STREAM_MUSIC).setPlaybackType(MediaRouter.RouteInfo.PLAYBACK_TYPE_REMOTE).setVolumeHandling(MediaRouter.RouteInfo.PLAYBACK_VOLUME_FIXED);
+  MediaRouteProviderDescriptor.Builder mrpdBuilder=new MediaRouteProviderDescriptor.Builder();
+  mrpdBuilder.addRoute(mrdBuilder.build());
+  setDescriptor(mrpdBuilder.build());
+}
