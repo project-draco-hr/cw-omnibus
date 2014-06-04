@@ -1,4 +1,0 @@
-{
-  super.onSaveInstanceState(state);
-  state.putInt(KEY_POSITION,pager.getCurrentItem());
-}

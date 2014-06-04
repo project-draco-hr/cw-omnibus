@@ -1,4 +1,0 @@
-{
-  super.onRestoreInstanceState(state);
-  pager.setCurrentItem(state.getInt(KEY_POSITION));
-}

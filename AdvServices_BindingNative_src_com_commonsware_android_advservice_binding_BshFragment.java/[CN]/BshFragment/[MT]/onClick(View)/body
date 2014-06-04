@@ -1,0 +1,5 @@
+{
+  EditText script=(EditText)getView().findViewById(R.id.script);
+  String src=script.getText().toString();
+  service.executeScript(src);
+}

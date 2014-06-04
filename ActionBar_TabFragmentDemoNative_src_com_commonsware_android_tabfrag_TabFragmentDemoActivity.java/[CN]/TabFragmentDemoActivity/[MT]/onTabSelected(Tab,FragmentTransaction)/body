@@ -1,0 +1,4 @@
+{
+  int i=((Integer)tab.getTag()).intValue();
+  ft.replace(android.R.id.content,EditorFragment.newInstance(i,models[i]));
+}

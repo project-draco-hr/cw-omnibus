@@ -1,0 +1,4 @@
+{
+  service=(IScript)binder;
+  btn.setEnabled(true);
+}

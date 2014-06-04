@@ -1,0 +1,8 @@
+{
+  View result=inflater.inflate(R.layout.main,container,false);
+  btn=(Button)result.findViewById(R.id.eval);
+  btn.setOnClickListener(this);
+  btn.setEnabled(service != null);
+  setRetainInstance(true);
+  return (result);
+}

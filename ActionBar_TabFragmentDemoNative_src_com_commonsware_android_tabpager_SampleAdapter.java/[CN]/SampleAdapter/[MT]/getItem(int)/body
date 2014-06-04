@@ -1,3 +1,0 @@
-{
-  return (EditorFragment.newInstance(position));
-}

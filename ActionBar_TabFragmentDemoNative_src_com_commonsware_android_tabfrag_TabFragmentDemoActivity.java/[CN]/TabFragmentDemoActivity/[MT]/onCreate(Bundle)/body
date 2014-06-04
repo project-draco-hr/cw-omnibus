@@ -1,0 +1,14 @@
+{
+  super.onCreate(state);
+  if (state != null) {
+    models=state.getCharSequenceArray(KEY_MODELS);
+  }
+  ActionBar bar=getActionBar();
+  bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+  for (int i=0; i < 10; i++) {
+    bar.addTab(bar.newTab().setText("Tab #" + String.valueOf(i + 1)).setTabListener(this).setTag(i));
+  }
+  if (state != null) {
+    bar.setSelectedNavigationItem(state.getInt(KEY_POSITION));
+  }
+}
