@@ -3,15 +3,12 @@
   if (readyToGo()) {
     getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
     setContentView(R.layout.activity_main);
-    SupportMapFragment mapFrag=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+    MapFragment mapFrag=(MapFragment)getFragmentManager().findFragmentById(R.id.map);
     initListNav();
     map=mapFrag.getMap();
     TypedValue tv=new TypedValue();
     int actionBarHeight=0;
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-      if (getTheme().resolveAttribute(android.R.attr.actionBarSize,tv,true))       actionBarHeight=TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
-    }
- else     if (getTheme().resolveAttribute(com.actionbarsherlock.R.attr.actionBarSize,tv,true)) {
+    if (getTheme().resolveAttribute(android.R.attr.actionBarSize,tv,true)) {
       actionBarHeight=TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
     }
     map.setPadding(0,actionBarHeight,0,actionBarHeight);

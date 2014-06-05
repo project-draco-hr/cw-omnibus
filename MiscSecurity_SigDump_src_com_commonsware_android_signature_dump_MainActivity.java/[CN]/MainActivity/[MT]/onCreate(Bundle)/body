@@ -2,7 +2,7 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
   mgr=getPackageManager();
-  sigDisplay=(SignatureFragment)getSupportFragmentManager().findFragmentById(R.id.log);
+  sigDisplay=(SignatureFragment)getFragmentManager().findFragmentById(R.id.log);
   panes=(SlidingPaneLayout)findViewById(R.id.panes);
   panes.openPane();
 }

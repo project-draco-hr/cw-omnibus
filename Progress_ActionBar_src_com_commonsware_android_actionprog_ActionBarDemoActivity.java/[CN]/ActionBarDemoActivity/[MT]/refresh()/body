@@ -1,9 +1,0 @@
-{
-  refresh.setActionView(R.layout.refresh);
-  getListView().postDelayed(new Runnable(){
-    public void run(){
-      refresh.setActionView(null);
-    }
-  }
-,5000);
-}

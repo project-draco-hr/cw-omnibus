@@ -2,7 +2,7 @@
   super.onCreate(savedInstanceState);
   if (readyToGo()) {
     setContentView(R.layout.activity_main);
-    SupportMapFragment mapFrag=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+    MapFragment mapFrag=(MapFragment)getFragmentManager().findFragmentById(R.id.map);
     initListNav();
     map=mapFrag.getMap();
     if (savedInstanceState == null) {

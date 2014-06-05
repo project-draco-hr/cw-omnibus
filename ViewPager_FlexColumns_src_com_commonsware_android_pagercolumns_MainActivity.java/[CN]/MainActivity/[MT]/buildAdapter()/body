@@ -3,5 +3,5 @@
   for (int i=0; i < 3; i++) {
     pages.add(new SimplePageDescriptor(buildTag(i),buildTitle(i)));
   }
-  return (new SamplePagerAdapter(getSupportFragmentManager(),pages));
+  return (new SamplePagerAdapter(getFragmentManager(),pages));
 }

@@ -3,12 +3,12 @@
   setContentView(R.layout.main);
   ViewPager pager=(ViewPager)findViewById(R.id.pager);
   if (pager == null) {
-    if (getSupportFragmentManager().findFragmentById(R.id.editor1) == null) {
+    if (getFragmentManager().findFragmentById(R.id.editor1) == null) {
       SamplePagerAdapter adapter=buildAdapter();
-      FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-      populateColumn(getSupportFragmentManager(),ft,adapter,0,R.id.editor1);
-      populateColumn(getSupportFragmentManager(),ft,adapter,1,R.id.editor2);
-      populateColumn(getSupportFragmentManager(),ft,adapter,2,R.id.editor3);
+      FragmentTransaction ft=getFragmentManager().beginTransaction();
+      populateColumn(getFragmentManager(),ft,adapter,0,R.id.editor1);
+      populateColumn(getFragmentManager(),ft,adapter,1,R.id.editor2);
+      populateColumn(getFragmentManager(),ft,adapter,2,R.id.editor3);
       ft.commit();
     }
   }

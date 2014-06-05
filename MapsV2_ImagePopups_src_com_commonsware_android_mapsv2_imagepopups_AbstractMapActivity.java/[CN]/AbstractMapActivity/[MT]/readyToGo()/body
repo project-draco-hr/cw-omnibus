@@ -10,7 +10,7 @@
     }
   }
  else   if (GooglePlayServicesUtil.isUserRecoverableError(status)) {
-    ErrorDialogFragment.newInstance(status).show(getSupportFragmentManager(),TAG_ERROR_DIALOG_FRAGMENT);
+    ErrorDialogFragment.newInstance(status).show(getFragmentManager(),TAG_ERROR_DIALOG_FRAGMENT);
   }
  else {
     Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();

@@ -1,9 +1,9 @@
 {
   super.onCreate(savedInstanceState);
-  beamFragment=(BeamFragment)getSupportFragmentManager().findFragmentById(android.R.id.content);
+  beamFragment=(BeamFragment)getFragmentManager().findFragmentById(android.R.id.content);
   if (beamFragment == null) {
     beamFragment=new BeamFragment();
-    getSupportFragmentManager().beginTransaction().add(android.R.id.content,beamFragment).commit();
+    getFragmentManager().beginTransaction().add(android.R.id.content,beamFragment).commit();
   }
   adapter=NfcAdapter.getDefaultAdapter(this);
   findViewById(android.R.id.content).post(new Runnable(){

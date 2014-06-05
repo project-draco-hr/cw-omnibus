@@ -2,7 +2,7 @@
   super.onCreate(savedInstanceState);
   if (readyToGo()) {
     setContentView(R.layout.activity_main);
-    SupportMapFragment mapFrag=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+    MapFragment mapFrag=(MapFragment)getFragmentManager().findFragmentById(R.id.map);
     initListNav();
     map=mapFrag.getMap();
     addMarker(map,40.748963847316034,-73.96807193756104,R.string.un,R.string.united_nations);

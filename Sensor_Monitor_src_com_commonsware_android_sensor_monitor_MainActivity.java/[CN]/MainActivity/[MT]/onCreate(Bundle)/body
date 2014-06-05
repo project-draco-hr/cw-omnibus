@@ -2,7 +2,7 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
   mgr=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
-  log=(SensorLogFragment)getSupportFragmentManager().findFragmentById(R.id.log);
+  log=(SensorLogFragment)getFragmentManager().findFragmentById(R.id.log);
   panes=(SlidingPaneLayout)findViewById(R.id.panes);
   panes.openPane();
 }
