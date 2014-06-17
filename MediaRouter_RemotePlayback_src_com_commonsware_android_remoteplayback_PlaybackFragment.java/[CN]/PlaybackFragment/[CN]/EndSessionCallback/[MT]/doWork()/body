@@ -1,5 +1,4 @@
 {
-  super.run();
   client.release();
   client=null;
   if (getActivity() != null) {

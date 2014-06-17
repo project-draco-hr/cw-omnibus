@@ -4,7 +4,9 @@
   if (client != null) {
     logToTranscript(getActivity().getString(R.string.session_ending));
     EndSessionCallback endCB=new EndSessionCallback();
-    client.endSession(null,endCB);
+    if (client.isSessionManagementSupported()) {
+      client.endSession(null,endCB);
+    }
     transcript.postDelayed(endCB,1000);
   }
 }

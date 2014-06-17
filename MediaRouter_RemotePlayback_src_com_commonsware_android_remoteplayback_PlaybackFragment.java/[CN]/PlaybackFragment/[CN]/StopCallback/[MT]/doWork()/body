@@ -1,5 +1,4 @@
 {
-  super.run();
   isPlaying=false;
   isPaused=false;
   getActivity().supportInvalidateOptionsMenu();
