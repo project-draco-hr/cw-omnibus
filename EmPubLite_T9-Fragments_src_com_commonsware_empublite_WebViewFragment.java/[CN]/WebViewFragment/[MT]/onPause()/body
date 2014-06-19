@@ -1,6 +1,0 @@
-{
-  super.onPause();
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-    mWebView.onPause();
-  }
-}
