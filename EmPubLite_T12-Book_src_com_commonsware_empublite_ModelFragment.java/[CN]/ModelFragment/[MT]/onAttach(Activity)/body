@@ -1,0 +1,6 @@
+{
+  super.onAttach(host);
+  if (contents == null) {
+    new LoadThread(host.getAssets()).start();
+  }
+}
