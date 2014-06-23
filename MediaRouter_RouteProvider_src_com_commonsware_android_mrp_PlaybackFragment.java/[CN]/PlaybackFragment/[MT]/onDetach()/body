@@ -1,0 +1,4 @@
+{
+  router.removeProvider(provider);
+  super.onDetach();
+}
