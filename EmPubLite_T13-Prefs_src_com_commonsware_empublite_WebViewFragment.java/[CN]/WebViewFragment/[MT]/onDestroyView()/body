@@ -1,4 +1,0 @@
-{
-  mIsWebViewAvailable=false;
-  super.onDestroyView();
-}

@@ -1,4 +1,3 @@
 {
-  JSONObject chapter=chapters.optJSONObject(position);
-  return (chapter.optString("file"));
+  return (chapters.get(position).file);
 }
