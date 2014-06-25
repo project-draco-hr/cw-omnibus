@@ -1,3 +1,0 @@
-{
-  ModelFragment.executeAsyncTask(new GetNoteTask(listener),position);
-}

@@ -1,7 +1,8 @@
 {
-  if (prefs != null) {
+  EventBus.getDefault().unregister(this);
+  if (mfrag.getPrefs() != null) {
     int position=pager.getCurrentItem();
-    prefs.edit().putInt(PREF_LAST_POSITION,position).apply();
+    mfrag.getPrefs().edit().putInt(PREF_LAST_POSITION,position).apply();
   }
   super.onPause();
 }
