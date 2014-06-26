@@ -1,5 +1,0 @@
-{
-  ModelFragment.this.prefs=localPrefs;
-  ModelFragment.this.prefsTask=null;
-  deliverModel();
-}

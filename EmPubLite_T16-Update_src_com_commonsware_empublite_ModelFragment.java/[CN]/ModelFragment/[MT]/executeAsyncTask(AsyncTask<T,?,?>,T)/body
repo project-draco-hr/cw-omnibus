@@ -1,8 +1,0 @@
-{
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-    task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,params);
-  }
- else {
-    task.execute(params);
-  }
-}

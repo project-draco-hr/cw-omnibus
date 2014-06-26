@@ -1,6 +1,0 @@
-{
-  File update=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),DownloadCheckService.UPDATE_FILENAME);
-  if (update.exists()) {
-    ctxt.startService(new Intent(ctxt,DownloadInstallService.class));
-  }
-}

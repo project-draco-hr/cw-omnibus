@@ -1,9 +1,7 @@
 {
   super.onResume();
-  if (prefs != null) {
-    pager.setKeepScreenOn(prefs.getBoolean(PREF_KEEP_SCREEN_ON,false));
+  EventBus.getDefault().register(this);
+  if (mfrag.getPrefs() != null) {
+    pager.setKeepScreenOn(mfrag.getPrefs().getBoolean(PREF_KEEP_SCREEN_ON,false));
   }
-  IntentFilter f=new IntentFilter(DownloadInstallService.ACTION_UPDATE_READY);
-  f.setPriority(1000);
-  registerReceiver(onUpdate,f);
 }

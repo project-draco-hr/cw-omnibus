@@ -1,5 +1,0 @@
-{
-  String[] args={String.valueOf(position),note};
-  getWritableDatabase().execSQL("INSERT OR REPLACE INTO notes (position, prose) VALUES (?, ?)",args);
-  return (null);
-}
