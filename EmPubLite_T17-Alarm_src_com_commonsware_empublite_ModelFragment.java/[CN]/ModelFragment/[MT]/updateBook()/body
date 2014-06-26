@@ -1,4 +1,0 @@
-{
-  contentsTask=new ContentsLoadTask();
-  executeAsyncTask(contentsTask,getActivity().getApplicationContext());
-}

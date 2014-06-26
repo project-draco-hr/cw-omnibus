@@ -1,8 +1,6 @@
 {
   View result=inflater.inflate(R.layout.editor,container,false);
-  int position=getArguments().getInt(KEY_POSITION,-1);
   editor=(EditText)result.findViewById(R.id.editor);
-  DatabaseHelper.getInstance(getActivity()).getNoteAsync(position,this);
-  setHasOptionsMenu(true);
+  editor.addTextChangedListener(this);
   return (result);
 }

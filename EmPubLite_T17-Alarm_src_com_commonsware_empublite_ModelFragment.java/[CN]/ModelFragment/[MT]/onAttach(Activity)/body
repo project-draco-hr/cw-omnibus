@@ -1,0 +1,7 @@
+{
+  super.onAttach(host);
+  EventBus.getDefault().register(this);
+  if (contents == null) {
+    new LoadThread(host).start();
+  }
+}
