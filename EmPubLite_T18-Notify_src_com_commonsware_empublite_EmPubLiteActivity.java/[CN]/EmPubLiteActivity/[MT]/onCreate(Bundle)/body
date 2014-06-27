@@ -1,14 +1,15 @@
 {
   super.onCreate(savedInstanceState);
-  if (getSupportFragmentManager().findFragmentByTag(MODEL) == null) {
-    model=new ModelFragment();
-    getSupportFragmentManager().beginTransaction().add(model,MODEL).commit();
-  }
- else {
-    model=(ModelFragment)getSupportFragmentManager().findFragmentByTag(MODEL);
-  }
   setContentView(R.layout.main);
   pager=(ViewPager)findViewById(R.id.pager);
-  getSupportActionBar().setHomeButtonEnabled(true);
+  mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
+  if (mfrag == null) {
+    mfrag=new ModelFragment();
+    getFragmentManager().beginTransaction().add(mfrag,MODEL).commit();
+  }
+ else   if (mfrag.getBook() != null) {
+    setupPager(mfrag.getBook());
+  }
+  getActionBar().setHomeButtonEnabled(true);
   UpdateReceiver.scheduleAlarm(this);
 }
