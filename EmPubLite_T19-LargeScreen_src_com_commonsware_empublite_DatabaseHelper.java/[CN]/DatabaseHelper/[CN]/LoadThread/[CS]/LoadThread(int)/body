@@ -1,0 +1,5 @@
+{
+  super();
+  this.position=position;
+  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+}

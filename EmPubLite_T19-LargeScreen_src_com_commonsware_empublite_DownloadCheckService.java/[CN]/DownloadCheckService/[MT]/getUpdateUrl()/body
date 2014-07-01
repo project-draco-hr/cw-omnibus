@@ -1,0 +1,9 @@
+{
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("http://commonsware.com").build();
+  BookUpdateInterface updateInterface=restAdapter.create(BookUpdateInterface.class);
+  BookUpdateInfo info=updateInterface.update();
+  if (info.updatedOn.compareTo(OUR_BOOK_DATE) > 0) {
+    return (info.updateUrl);
+  }
+  return (null);
+}

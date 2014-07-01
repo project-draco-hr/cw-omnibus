@@ -1,22 +1,23 @@
 {
   super.onCreate(savedInstanceState);
-  if (getSupportFragmentManager().findFragmentByTag(MODEL) == null) {
-    model=new ModelFragment();
-    getSupportFragmentManager().beginTransaction().add(model,MODEL).commit();
-  }
- else {
-    model=(ModelFragment)getSupportFragmentManager().findFragmentByTag(MODEL);
-  }
-  help=(SimpleContentFragment)getSupportFragmentManager().findFragmentByTag(HELP);
-  about=(SimpleContentFragment)getSupportFragmentManager().findFragmentByTag(ABOUT);
   setContentView(R.layout.main);
   sidebar=findViewById(R.id.sidebar);
   divider=findViewById(R.id.divider);
-  getSupportFragmentManager().addOnBackStackChangedListener(this);
-  if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+  pager=(ViewPager)findViewById(R.id.pager);
+  getFragmentManager().addOnBackStackChangedListener(this);
+  if (getFragmentManager().getBackStackEntryCount() > 0) {
     openSidebar();
   }
-  pager=(ViewPager)findViewById(R.id.pager);
-  getSupportActionBar().setHomeButtonEnabled(true);
+  mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
+  if (mfrag == null) {
+    mfrag=new ModelFragment();
+    getFragmentManager().beginTransaction().add(mfrag,MODEL).commit();
+  }
+ else   if (mfrag.getBook() != null) {
+    setupPager(mfrag.getBook());
+  }
+  help=(SimpleContentFragment)getFragmentManager().findFragmentByTag(HELP);
+  about=(SimpleContentFragment)getFragmentManager().findFragmentByTag(ABOUT);
+  getActionBar().setHomeButtonEnabled(true);
   UpdateReceiver.scheduleAlarm(this);
 }

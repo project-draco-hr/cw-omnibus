@@ -1,8 +1,8 @@
 {
-  if (i.getAction() != null) {
-    scheduleAlarm(ctxt);
+  if (intent.getAction() != null) {
+    scheduleAlarm(context);
   }
  else {
-    WakefulIntentService.sendWakefulWork(ctxt,DownloadCheckService.class);
+    WakefulIntentService.sendWakefulWork(context,DownloadCheckService.class);
   }
 }
