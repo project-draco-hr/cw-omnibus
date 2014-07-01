@@ -2,7 +2,7 @@
   client.release();
   client=null;
   if (getActivity() != null) {
-    getActivity().supportInvalidateOptionsMenu();
+    updateMenu();
     logToTranscript(getActivity().getString(R.string.session_ended));
   }
 }

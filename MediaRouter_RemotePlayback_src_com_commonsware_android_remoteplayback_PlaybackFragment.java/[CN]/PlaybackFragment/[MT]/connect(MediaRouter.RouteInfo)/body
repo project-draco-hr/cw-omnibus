@@ -6,7 +6,7 @@
       client.startSession(null,new SessionActionCallback(){
         @Override public void onResult(        Bundle data,        String sessionId,        MediaSessionStatus sessionStatus){
           logToTranscript(getActivity().getString(R.string.session_started));
-          getActivity().supportInvalidateOptionsMenu();
+          updateMenu();
         }
         @Override public void onError(        String error,        int code,        Bundle data){
           logToTranscript(getActivity().getString(R.string.session_failed));

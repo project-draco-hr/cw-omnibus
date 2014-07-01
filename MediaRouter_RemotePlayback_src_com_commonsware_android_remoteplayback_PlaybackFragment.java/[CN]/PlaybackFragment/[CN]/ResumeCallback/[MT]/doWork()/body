@@ -1,5 +1,5 @@
 {
   isPaused=false;
-  getActivity().supportInvalidateOptionsMenu();
+  updateMenu();
   logToTranscript(getActivity().getString(R.string.resumed));
 }

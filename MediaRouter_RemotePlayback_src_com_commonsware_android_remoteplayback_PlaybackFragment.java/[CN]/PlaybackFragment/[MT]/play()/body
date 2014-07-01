@@ -4,7 +4,7 @@
     @Override public void onResult(    Bundle data,    String sessionId,    MediaSessionStatus sessionStatus,    String itemId,    MediaItemStatus itemStatus){
       logToTranscript(getActivity().getString(R.string.playing));
       isPlaying=true;
-      getActivity().supportInvalidateOptionsMenu();
+      updateMenu();
     }
     @Override public void onError(    String error,    int code,    Bundle data){
       logToTranscript(getActivity().getString(R.string.play_error) + error);

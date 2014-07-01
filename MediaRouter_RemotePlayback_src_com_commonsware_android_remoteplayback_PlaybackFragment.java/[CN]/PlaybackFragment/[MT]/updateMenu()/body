@@ -1,0 +1,7 @@
+{
+  if (menu != null) {
+    menu.findItem(R.id.stop).setVisible(client != null && isPlaying);
+    menu.findItem(R.id.pause).setVisible(client != null && isPlaying && !isPaused);
+    menu.findItem(R.id.play).setVisible(client != null && (!isPlaying || isPaused));
+  }
+}
