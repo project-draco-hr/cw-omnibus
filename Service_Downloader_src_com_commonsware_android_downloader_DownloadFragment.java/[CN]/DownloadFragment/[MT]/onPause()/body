@@ -1,4 +1,4 @@
 {
-  getActivity().unregisterReceiver(onEvent);
+  LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(onEvent);
   super.onPause();
 }

@@ -24,7 +24,7 @@
       out.close();
       c.disconnect();
     }
-    sendBroadcast(new Intent(ACTION_COMPLETE));
+    LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(ACTION_COMPLETE));
   }
  catch (  IOException e2) {
     Log.e(getClass().getName(),"Exception in download",e2);
