@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  mFrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL_TAG);
+  if (mFrag == null) {
+    mFrag=new ModelFragment();
+    getFragmentManager().beginTransaction().add(mFrag,MODEL_TAG).commit();
+  }
+  AsyncDemoFragment demo=(AsyncDemoFragment)getFragmentManager().findFragmentById(android.R.id.content);
+  if (demo == null) {
+    demo=new AsyncDemoFragment();
+    getFragmentManager().beginTransaction().add(android.R.id.content,demo).commit();
+  }
+  demo.setModel(mFrag.getModel());
+}

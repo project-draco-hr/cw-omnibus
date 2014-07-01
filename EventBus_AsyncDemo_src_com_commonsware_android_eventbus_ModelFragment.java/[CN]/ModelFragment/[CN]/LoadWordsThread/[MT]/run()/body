@@ -1,0 +1,9 @@
+{
+  for (  String item : items) {
+    if (!isInterrupted()) {
+      model.add(item);
+      EventBus.getDefault().post(new WordReadyEvent());
+      SystemClock.sleep(400);
+    }
+  }
+}
