@@ -1,8 +1,9 @@
 {
-  View popup=contentsCache.get(marker.getId());
   if (popup == null) {
     popup=inflater.inflate(R.layout.popup,null);
-    contentsCache.put(marker.getId(),popup);
+  }
+  if (lastMarker == null || !lastMarker.getId().equals(marker.getId())) {
+    lastMarker=marker;
     TextView tv=(TextView)popup.findViewById(R.id.title);
     tv.setText(marker.getTitle());
     tv=(TextView)popup.findViewById(R.id.snippet);
