@@ -1,9 +1,9 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
-  details=(DetailsFragment)getSupportFragmentManager().findFragmentById(R.id.details);
+  details=(DetailsFragment)getFragmentManager().findFragmentById(R.id.details);
   if (details == null && findViewById(R.id.details) != null) {
     details=new DetailsFragment();
-    getSupportFragmentManager().beginTransaction().add(R.id.details,details).commit();
+    getFragmentManager().beginTransaction().add(R.id.details,details).commit();
   }
 }

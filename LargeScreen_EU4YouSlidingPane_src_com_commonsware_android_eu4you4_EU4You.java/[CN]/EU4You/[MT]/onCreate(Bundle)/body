@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
-  details=(DetailsFragment)getSupportFragmentManager().findFragmentById(R.id.details);
+  details=(DetailsFragment)getFragmentManager().findFragmentById(R.id.details);
   panes=(SlidingPaneLayout)findViewById(R.id.panes);
   panes.openPane();
 }

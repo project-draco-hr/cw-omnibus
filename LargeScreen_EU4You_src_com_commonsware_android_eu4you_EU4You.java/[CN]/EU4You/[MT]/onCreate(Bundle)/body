@@ -1,14 +1,14 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
-  countries=(CountriesFragment)getSupportFragmentManager().findFragmentById(R.id.countries);
+  countries=(CountriesFragment)getFragmentManager().findFragmentById(R.id.countries);
   if (countries == null) {
     countries=new CountriesFragment();
-    getSupportFragmentManager().beginTransaction().add(R.id.countries,countries).commit();
+    getFragmentManager().beginTransaction().add(R.id.countries,countries).commit();
   }
-  details=(DetailsFragment)getSupportFragmentManager().findFragmentById(R.id.details);
+  details=(DetailsFragment)getFragmentManager().findFragmentById(R.id.details);
   if (details == null && findViewById(R.id.details) != null) {
     details=new DetailsFragment();
-    getSupportFragmentManager().beginTransaction().add(R.id.details,details).commit();
+    getFragmentManager().beginTransaction().add(R.id.details,details).commit();
   }
 }
