@@ -2,7 +2,7 @@
   for (  String item : items) {
     if (!isInterrupted()) {
       model.add(item);
-      EventBus.getDefault().post(new WordReadyEvent());
+      EventBus.getDefault().post(new WordReadyEvent(item));
       SystemClock.sleep(400);
     }
   }
