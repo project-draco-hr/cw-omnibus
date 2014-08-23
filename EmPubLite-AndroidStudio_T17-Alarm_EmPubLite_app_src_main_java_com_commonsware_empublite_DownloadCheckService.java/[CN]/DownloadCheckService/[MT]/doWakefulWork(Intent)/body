@@ -1,0 +1,16 @@
+{
+  String url=getUpdateUrl();
+  if (url != null) {
+    try {
+      File book=download(url);
+      File updateDir=new File(getFilesDir(),UPDATE_BASEDIR);
+      updateDir.mkdirs();
+      unzip(book,updateDir);
+      book.delete();
+      EventBus.getDefault().post(new BookUpdatedEvent());
+    }
+ catch (    Exception e) {
+      Log.e(getClass().getSimpleName(),"Exception downloading update",e);
+    }
+  }
+}

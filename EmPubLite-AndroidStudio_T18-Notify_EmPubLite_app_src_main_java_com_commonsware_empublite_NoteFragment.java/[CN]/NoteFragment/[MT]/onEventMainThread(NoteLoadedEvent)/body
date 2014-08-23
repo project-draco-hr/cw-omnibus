@@ -1,0 +1,5 @@
+{
+  if (event.getPosition() == getPosition()) {
+    editor.setText(event.getProse());
+  }
+}

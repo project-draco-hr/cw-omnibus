@@ -1,0 +1,14 @@
+{
+  if (sidebar != null) {
+    openSidebar();
+    if (help == null) {
+      help=SimpleContentFragment.newInstance(FILE_HELP);
+    }
+    getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.sidebar,help).commit();
+  }
+ else {
+    Intent i=new Intent(this,SimpleContentActivity.class);
+    i.putExtra(SimpleContentActivity.EXTRA_FILE,FILE_HELP);
+    startActivity(i);
+  }
+}

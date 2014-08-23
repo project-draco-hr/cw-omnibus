@@ -1,0 +1,29 @@
+{
+switch (item.getItemId()) {
+case android.R.id.home:
+    pager.setCurrentItem(0,false);
+  return (true);
+case R.id.about:
+Intent i=new Intent(this,SimpleContentActivity.class);
+i.putExtra(SimpleContentActivity.EXTRA_FILE,"file:///android_asset/misc/about.html");
+startActivity(i);
+return (true);
+case R.id.help:
+i=new Intent(this,SimpleContentActivity.class);
+i.putExtra(SimpleContentActivity.EXTRA_FILE,"file:///android_asset/misc/help.html");
+startActivity(i);
+return (true);
+case R.id.settings:
+startActivity(new Intent(this,Preferences.class));
+return (true);
+case R.id.notes:
+i=new Intent(this,NoteActivity.class);
+i.putExtra(NoteActivity.EXTRA_POSITION,pager.getCurrentItem());
+startActivity(i);
+return (true);
+case R.id.update:
+startService(new Intent(this,DownloadCheckService.class));
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

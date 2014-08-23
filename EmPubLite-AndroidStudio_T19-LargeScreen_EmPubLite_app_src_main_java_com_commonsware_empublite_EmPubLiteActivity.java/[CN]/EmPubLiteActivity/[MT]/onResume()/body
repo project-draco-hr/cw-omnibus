@@ -1,0 +1,7 @@
+{
+  super.onResume();
+  EventBus.getDefault().register(this);
+  if (mfrag.getPrefs() != null) {
+    pager.setKeepScreenOn(mfrag.getPrefs().getBoolean(PREF_KEEP_SCREEN_ON,false));
+  }
+}

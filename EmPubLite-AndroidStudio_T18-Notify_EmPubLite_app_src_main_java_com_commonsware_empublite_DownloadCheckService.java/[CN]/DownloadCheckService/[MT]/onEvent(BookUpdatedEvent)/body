@@ -1,0 +1,8 @@
+{
+  NotificationCompat.Builder builder=new NotificationCompat.Builder(this);
+  Intent toLaunch=new Intent(this,EmPubLiteActivity.class);
+  PendingIntent pi=PendingIntent.getActivity(this,0,toLaunch,0);
+  builder.setAutoCancel(true).setContentIntent(pi).setContentTitle(getString(R.string.update_complete)).setContentText(getString(R.string.update_desc)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.update_complete));
+  NotificationManager mgr=((NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE));
+  mgr.notify(NOTIFY_ID,builder.build());
+}

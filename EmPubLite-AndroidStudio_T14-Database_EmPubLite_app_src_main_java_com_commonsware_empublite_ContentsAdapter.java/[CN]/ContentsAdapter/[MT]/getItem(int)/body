@@ -1,0 +1,4 @@
+{
+  String path=contents.getChapterFile(position);
+  return (SimpleContentFragment.newInstance("file:///android_asset/book/" + path));
+}

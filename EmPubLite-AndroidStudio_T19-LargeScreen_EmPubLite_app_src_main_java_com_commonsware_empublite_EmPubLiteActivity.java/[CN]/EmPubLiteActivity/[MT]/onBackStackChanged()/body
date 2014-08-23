@@ -1,0 +1,10 @@
+{
+  if (getFragmentManager().getBackStackEntryCount() == 0) {
+    LinearLayout.LayoutParams p=(LinearLayout.LayoutParams)sidebar.getLayoutParams();
+    if (p.weight > 0) {
+      p.weight=0;
+      sidebar.setLayoutParams(p);
+      divider.setVisibility(View.GONE);
+    }
+  }
+}

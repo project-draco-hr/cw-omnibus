@@ -1,0 +1,5 @@
+{
+  DatabaseHelper.getInstance(getActivity()).updateNote(getPosition(),editor.getText().toString());
+  EventBus.getDefault().unregister(this);
+  super.onPause();
+}
