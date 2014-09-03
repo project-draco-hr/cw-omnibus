@@ -1,11 +1,8 @@
 {
   Intent i=new Intent(this,EditPreferences.class);
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && getResources().getBoolean(R.bool.suppressHeader)) {
-    i.putExtra(PreferenceActivity.EXTRA_NO_HEADERS,true);
-    i.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT,StockPreferenceFragment.class.getName());
-    Bundle b=new Bundle();
-    b.putString("resource","preferences");
-    i.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT_ARGUMENTS,b);
-  }
+  i.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT,StockPreferenceFragment.class.getName());
+  Bundle b=new Bundle();
+  b.putString("resource","preferences");
+  i.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT_ARGUMENTS,b);
   startActivity(i);
 }
