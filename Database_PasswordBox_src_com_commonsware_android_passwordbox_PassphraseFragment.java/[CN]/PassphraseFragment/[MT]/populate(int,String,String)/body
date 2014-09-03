@@ -1,5 +1,0 @@
-{
-  this.id=id;
-  title.setText(_title);
-  passphrase.setText(_passphrase);
-}

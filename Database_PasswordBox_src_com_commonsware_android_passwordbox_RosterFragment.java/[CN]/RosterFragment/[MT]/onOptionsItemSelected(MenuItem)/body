@@ -1,7 +1,0 @@
-{
-  if (item.getItemId() == R.id.add) {
-    getActivityContract().showPassphrase();
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
-}

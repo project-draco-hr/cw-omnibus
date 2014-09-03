@@ -1,4 +1,0 @@
-{
-  loader=db.buildSelectAllLoader(getActivity());
-  return (loader);
-}

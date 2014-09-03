@@ -1,9 +1,0 @@
-{
-  showPassphrase();
-  findViewById(android.R.id.content).post(new Runnable(){
-    public void run(){
-      passphrase.populate(id,_title,_passphrase);
-    }
-  }
-);
-}

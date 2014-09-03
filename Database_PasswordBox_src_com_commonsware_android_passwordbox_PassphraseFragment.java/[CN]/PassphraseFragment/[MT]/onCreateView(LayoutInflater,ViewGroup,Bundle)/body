@@ -1,9 +1,0 @@
-{
-  View result=inflater.inflate(R.layout.passphrase,container,false);
-  result.findViewById(R.id.save).setOnClickListener(this);
-  title=(EditText)result.findViewById(R.id.title);
-  passphrase=(EditText)result.findViewById(R.id.passphrase);
-  CompoundButton cb=(CompoundButton)result.findViewById(R.id.show_passphrase);
-  cb.setOnCheckedChangeListener(this);
-  return (result);
-}

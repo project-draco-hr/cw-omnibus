@@ -1,9 +1,0 @@
-{
-  super.onActivityCreated(savedInstanceState);
-  setListAdapter(new SimpleCursorAdapter(getActivity(),android.R.layout.simple_list_item_1,null,new String[]{DatabaseHelper.TITLE},new int[]{android.R.id.text1},0));
-  db=new DatabaseHelper(getActivity());
-  getLoaderManager().initLoader(0,null,this);
-  Loader<Cursor> genericCastsSuck=getLoaderManager().getLoader(0);
-  loader=(SQLiteCursorLoader)genericCastsSuck;
-  setHasOptionsMenu(true);
-}

@@ -1,3 +1,0 @@
-{
-  return (SQLCipherUtils.getDatabaseState(context,DATABASE_NAME));
-}
