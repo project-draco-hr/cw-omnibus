@@ -1,0 +1,21 @@
+{
+  try {
+    HttpURLConnection c=(HttpURLConnection)new URL(SO_URL).openConnection();
+    try {
+      InputStream in=c.getInputStream();
+      BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+      SOQuestions questions=new Gson().fromJson(reader,SOQuestions.class);
+      reader.close();
+      EventBus.getDefault().post(new QuestionsLoadedEvent(questions));
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+    }
+ finally {
+      c.disconnect();
+    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+  }
+}
