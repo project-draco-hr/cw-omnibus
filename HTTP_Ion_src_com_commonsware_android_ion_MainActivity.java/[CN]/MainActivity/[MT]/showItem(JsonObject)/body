@@ -1,4 +1,0 @@
-{
-  Intent iCanHazBrowser=new Intent(Intent.ACTION_VIEW,Uri.parse(item.get("link").getAsString()));
-  startActivity(iCanHazBrowser);
-}
