@@ -1,8 +1,5 @@
 {
   super.onRestoreInstanceState(state);
-  String contactUri=state.getString("contact");
-  if (contactUri != null) {
-    contact=Uri.parse(contactUri);
-    viewButton.setEnabled(true);
-  }
+  contact=state.getParcelable("contact");
+  viewButton.setEnabled(contact != null);
 }
