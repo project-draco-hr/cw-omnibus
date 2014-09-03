@@ -1,4 +1,0 @@
-{
-  Log.e("QRCodeKeeper","Exception loading JSON",ex);
-  goBlooey(ex);
-}

@@ -1,5 +1,0 @@
-{
-  long now=System.currentTimeMillis();
-  long lastSyncTime=prefs.getLong(KEY_SYNC_TIME,0);
-  return (lastSyncTime == 0 || (now - lastSyncTime) >= SYNC_PERIOD || !iCanHasData(ctxt));
-}

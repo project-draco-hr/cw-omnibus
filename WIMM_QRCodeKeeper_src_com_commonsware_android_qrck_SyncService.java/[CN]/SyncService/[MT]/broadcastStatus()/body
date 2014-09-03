@@ -1,6 +1,0 @@
-{
-  Intent i=new Intent(ACTION_SYNC_STATUS);
-  i.setPackage(getPackageName());
-  i.putExtra(KEY_STATUS,inProgress.get());
-  sendBroadcast(i);
-}

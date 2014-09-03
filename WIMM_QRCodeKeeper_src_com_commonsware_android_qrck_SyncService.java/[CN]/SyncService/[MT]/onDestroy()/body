@@ -1,4 +1,0 @@
-{
-  unregisterReceiver(takedownReceiver);
-  super.onDestroy();
-}

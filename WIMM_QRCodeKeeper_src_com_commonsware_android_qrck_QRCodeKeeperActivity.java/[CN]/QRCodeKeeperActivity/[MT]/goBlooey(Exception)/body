@@ -1,6 +1,0 @@
-{
-  AlertDialog dlg=new AlertDialog(this);
-  dlg.setButton(getText(R.string.close),this);
-  dlg.setMessage(ex.getMessage());
-  dlg.show();
-}

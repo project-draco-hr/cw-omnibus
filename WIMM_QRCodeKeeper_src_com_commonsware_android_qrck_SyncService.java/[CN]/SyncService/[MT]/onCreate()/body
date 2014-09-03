@@ -1,7 +1,0 @@
-{
-  super.onCreate();
-  prefs=PreferenceManager.getDefaultSharedPreferences(this);
-  network=new NetworkService(this);
-  IntentFilter filter=new IntentFilter(NetworkService.ACTION_NETWORK_TAKEDOWN);
-  registerReceiver(takedownReceiver,filter);
-}

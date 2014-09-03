@@ -1,3 +1,0 @@
-{
-  super(QRCodeKeeperActivity.this,R.layout.entry,R.id.title,entries);
-}

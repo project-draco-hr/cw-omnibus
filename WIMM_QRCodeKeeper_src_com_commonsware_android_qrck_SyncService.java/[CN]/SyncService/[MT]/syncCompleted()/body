@@ -1,3 +1,0 @@
-{
-  AppUtils.persist(prefs.edit().putLong(KEY_SYNC_TIME,System.currentTimeMillis()));
-}
