@@ -1,4 +1,3 @@
 {
-  model.add(event.getWord());
-  adapter.notifyDataSetChanged();
+  adapter.add(event.getWord());
 }
