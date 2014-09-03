@@ -1,0 +1,5 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  db=new DatabaseHelper(getActivity());
+  new LoadCursorTask().execute();
+}
