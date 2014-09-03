@@ -1,0 +1,3 @@
+{
+  return (MATCHER.match(url) == CONSTANTS);
+}
