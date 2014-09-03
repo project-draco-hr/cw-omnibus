@@ -1,3 +1,3 @@
 {
-  return (new SampleAdapter(this,getSupportFragmentManager()));
+  return (new SampleAdapter(this,getFragmentManager()));
 }
