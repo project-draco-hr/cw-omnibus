@@ -1,6 +1,6 @@
 {
   NotificationCompat.Builder b=new NotificationCompat.Builder(this);
-  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setWhen(System.currentTimeMillis());
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL);
   if (e == null) {
     b.setContentTitle(getString(R.string.download_complete)).setContentText(getString(R.string.fun)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.download_complete));
     Intent outbound=new Intent(Intent.ACTION_VIEW);
