@@ -1,0 +1,10 @@
+{
+  StrictMode.ThreadPolicy.Builder builder=new StrictMode.ThreadPolicy.Builder().detectDiskWrites().detectNetwork();
+  if (BuildConfig.DEBUG) {
+    builder.penaltyDeath();
+  }
+ else {
+    builder.penaltyLog();
+  }
+  StrictMode.setThreadPolicy(builder.build());
+}

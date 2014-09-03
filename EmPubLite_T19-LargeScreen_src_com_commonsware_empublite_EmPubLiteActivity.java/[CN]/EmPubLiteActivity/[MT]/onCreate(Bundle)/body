@@ -1,5 +1,6 @@
 {
   super.onCreate(savedInstanceState);
+  setupStrictMode();
   setContentView(R.layout.main);
   sidebar=findViewById(R.id.sidebar);
   divider=findViewById(R.id.divider);

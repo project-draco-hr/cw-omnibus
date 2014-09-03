@@ -1,5 +1,6 @@
 {
   super.onCreate(savedInstanceState);
+  setupStrictMode();
   setContentView(R.layout.main);
   pager=(ViewPager)findViewById(R.id.pager);
   ModelFragment mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
