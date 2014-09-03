@@ -1,8 +1,0 @@
-{
-  super.onActivityCreated(savedInstanceState);
-  setRetainInstance(true);
-  setHasOptionsMenu(true);
-  if (adapter == null) {
-    initAdapter();
-  }
-}
