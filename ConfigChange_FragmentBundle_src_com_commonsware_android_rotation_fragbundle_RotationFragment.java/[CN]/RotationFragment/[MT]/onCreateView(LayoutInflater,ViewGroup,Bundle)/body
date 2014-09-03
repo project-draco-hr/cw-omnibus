@@ -4,10 +4,7 @@
   View v=result.findViewById(R.id.view);
   v.setOnClickListener(this);
   if (state != null) {
-    String contactUri=state.getString("contact");
-    if (contactUri != null) {
-      contact=Uri.parse(contactUri);
-    }
+    contact=(Uri)state.getParcelable("contact");
   }
   v.setEnabled(contact != null);
   return (result);

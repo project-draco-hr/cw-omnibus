@@ -1,6 +1,6 @@
 {
   super.onSaveInstanceState(outState);
   if (contact != null) {
-    outState.putString("contact",contact.toString());
+    outState.putParcelable("contact",contact);
   }
 }
