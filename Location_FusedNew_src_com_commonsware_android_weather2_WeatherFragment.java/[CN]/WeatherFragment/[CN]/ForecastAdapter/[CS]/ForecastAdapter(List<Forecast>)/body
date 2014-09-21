@@ -1,0 +1,4 @@
+{
+  super(getActivity(),R.layout.row,R.id.date,items);
+  size=getActivity().getResources().getDimensionPixelSize(R.dimen.icon);
+}

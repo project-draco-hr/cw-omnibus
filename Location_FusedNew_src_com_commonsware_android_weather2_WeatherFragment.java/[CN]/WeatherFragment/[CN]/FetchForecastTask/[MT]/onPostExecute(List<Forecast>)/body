@@ -1,0 +1,9 @@
+{
+  if (e == null) {
+    setListAdapter(new ForecastAdapter(forecasts));
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"Exception fetching data",e);
+    Toast.makeText(getActivity(),String.format(getString(R.string.error),e.toString()),Toast.LENGTH_LONG).show();
+  }
+}
