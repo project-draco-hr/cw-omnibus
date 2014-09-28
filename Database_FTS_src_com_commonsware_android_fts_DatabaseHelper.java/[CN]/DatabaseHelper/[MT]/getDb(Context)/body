@@ -1,0 +1,6 @@
+{
+  if (db == null) {
+    db=getInstance(app).getWritableDatabase();
+  }
+  return (db);
+}

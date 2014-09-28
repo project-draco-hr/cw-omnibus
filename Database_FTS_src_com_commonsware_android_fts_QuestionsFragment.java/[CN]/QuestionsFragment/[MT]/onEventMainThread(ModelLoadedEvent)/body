@@ -1,0 +1,6 @@
+{
+  ((SimpleCursorAdapter)getListAdapter()).changeCursor(event.model);
+  if (sv != null) {
+    sv.setEnabled(true);
+  }
+}

@@ -1,0 +1,11 @@
+{
+switch (view.getId()) {
+case R.id.title:
+    ((TextView)view).setText(Html.fromHtml(cursor.getString(columnIndex)));
+  return (true);
+case R.id.icon:
+Picasso.with(getActivity()).load(cursor.getString(columnIndex)).resize(size,size).centerCrop().placeholder(R.drawable.owner_placeholder).error(R.drawable.owner_error).into((ImageView)view);
+return (true);
+}
+return (false);
+}

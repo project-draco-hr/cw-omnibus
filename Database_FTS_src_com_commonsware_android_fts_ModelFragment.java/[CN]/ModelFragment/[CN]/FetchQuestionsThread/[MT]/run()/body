@@ -1,0 +1,18 @@
+{
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("https://api.stackexchange.com").build();
+  StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+  SOQuestions questions=so.questions("android");
+  try {
+    DatabaseHelper.getInstance(app).insertQuestions(app,questions.items);
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception populating database",e);
+  }
+  try {
+    Cursor results=DatabaseHelper.getInstance(app).loadQuestions(app,null);
+    EventBus.getDefault().postSticky(new ModelLoadedEvent(results));
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception populating database",e);
+  }
+}

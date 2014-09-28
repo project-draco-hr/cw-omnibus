@@ -1,0 +1,3 @@
+{
+  db.execSQL("CREATE VIRTUAL TABLE questions USING fts4(" + "_id INTEGER PRIMARY KEY, title TEXT, " + "link TEXT, profileImage TEXT, creationDate INTEGER, "+ "order=DESC);");
+}

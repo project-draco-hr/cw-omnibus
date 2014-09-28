@@ -1,0 +1,7 @@
+{
+  if (lastQuery != null) {
+    lastQuery=null;
+    sv.setEnabled(false);
+    EventBus.getDefault().post(new SearchRequestedEvent(null));
+  }
+}

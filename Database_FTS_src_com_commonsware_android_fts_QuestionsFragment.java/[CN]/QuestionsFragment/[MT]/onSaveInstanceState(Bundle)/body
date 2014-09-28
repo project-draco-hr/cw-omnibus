@@ -1,0 +1,6 @@
+{
+  super.onSaveInstanceState(state);
+  if (!sv.isIconified()) {
+    state.putString(STATE_QUERY,sv.getQuery().toString());
+  }
+}

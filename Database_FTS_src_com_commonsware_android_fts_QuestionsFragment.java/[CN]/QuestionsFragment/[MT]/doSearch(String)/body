@@ -1,0 +1,9 @@
+{
+  if (!match.equals(lastQuery)) {
+    lastQuery=match;
+    if (sv != null) {
+      sv.setEnabled(false);
+    }
+    EventBus.getDefault().post(new SearchRequestedEvent(match));
+  }
+}

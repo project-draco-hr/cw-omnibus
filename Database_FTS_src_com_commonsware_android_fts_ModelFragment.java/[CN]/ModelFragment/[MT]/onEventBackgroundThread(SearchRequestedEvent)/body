@@ -1,0 +1,9 @@
+{
+  try {
+    Cursor results=DatabaseHelper.getInstance(app).loadQuestions(app,event.match);
+    EventBus.getDefault().postSticky(new ModelLoadedEvent(results));
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception searching database",e);
+  }
+}

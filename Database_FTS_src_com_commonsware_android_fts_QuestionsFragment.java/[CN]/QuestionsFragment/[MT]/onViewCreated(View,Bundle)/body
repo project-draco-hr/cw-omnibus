@@ -1,0 +1,6 @@
+{
+  super.onViewCreated(view,state);
+  SimpleCursorAdapter adapter=new SimpleCursorAdapter(getActivity(),R.layout.row,null,new String[]{DatabaseHelper.TITLE,DatabaseHelper.PROFILE_IMAGE},new int[]{R.id.title,R.id.icon},0);
+  adapter.setViewBinder(new QuestionBinder());
+  setListAdapter(adapter);
+}

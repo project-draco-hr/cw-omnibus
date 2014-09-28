@@ -1,0 +1,4 @@
+{
+  clearSearch();
+  return (true);
+}

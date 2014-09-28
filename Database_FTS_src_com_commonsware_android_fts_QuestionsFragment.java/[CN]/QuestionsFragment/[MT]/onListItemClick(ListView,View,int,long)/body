@@ -1,0 +1,6 @@
+{
+  SimpleCursorAdapter adapter=(SimpleCursorAdapter)getListAdapter();
+  Cursor row=(Cursor)adapter.getItem(position);
+  int link=row.getColumnIndex(DatabaseHelper.LINK);
+  EventBus.getDefault().post(new QuestionClickedEvent(row.getString(link)));
+}

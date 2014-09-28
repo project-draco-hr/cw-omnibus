@@ -1,0 +1,8 @@
+{
+  super.onAttach(host);
+  EventBus.getDefault().register(this);
+  if (app == null) {
+    app=host.getApplicationContext();
+    new FetchQuestionsThread().start();
+  }
+}

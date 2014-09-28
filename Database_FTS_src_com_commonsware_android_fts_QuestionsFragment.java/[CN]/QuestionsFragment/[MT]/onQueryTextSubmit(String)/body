@@ -1,0 +1,4 @@
+{
+  doSearch(query);
+  return (true);
+}

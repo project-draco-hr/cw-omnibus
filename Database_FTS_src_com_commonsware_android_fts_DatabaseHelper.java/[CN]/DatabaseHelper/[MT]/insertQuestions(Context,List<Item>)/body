@@ -1,0 +1,15 @@
+{
+  SQLiteDatabase db=getDb(app);
+  db.beginTransaction();
+  db.delete("questions",null,null);
+  try {
+    for (    Item item : items) {
+      Object[] args={item.id,item.title,item.link,item.owner.profileImage,item.creationDate};
+      db.execSQL("INSERT INTO questions (_id, title, " + "link, profileImage, creationDate) " + "VALUES (?, ?, ?, ?, ?)",args);
+    }
+    db.setTransactionSuccessful();
+  }
+  finally {
+    db.endTransaction();
+  }
+}

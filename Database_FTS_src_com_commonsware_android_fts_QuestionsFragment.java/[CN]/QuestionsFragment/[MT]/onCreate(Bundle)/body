@@ -1,0 +1,8 @@
+{
+  super.onCreate(state);
+  setHasOptionsMenu(true);
+  if (state != null) {
+    initialQuery=state.getString(STATE_QUERY);
+    lastQuery=initialQuery;
+  }
+}

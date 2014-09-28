@@ -1,0 +1,8 @@
+{
+  SQLiteDatabase db=getDb(app);
+  if (TextUtils.isEmpty(match)) {
+    return (db.rawQuery("SELECT * FROM questions ORDER BY creationDate DESC",null));
+  }
+  String[] args={match};
+  return (db.rawQuery("SELECT * FROM questions WHERE title " + "MATCH ? ORDER BY creationDate DESC",args));
+}
