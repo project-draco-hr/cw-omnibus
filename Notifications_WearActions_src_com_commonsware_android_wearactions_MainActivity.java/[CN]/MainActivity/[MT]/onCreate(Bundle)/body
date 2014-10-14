@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  NotificationManagerCompat mgr=NotificationManagerCompat.from(this);
+  NotificationCompat.Builder normal=buildNormal();
+  NotificationCompat.Action.Builder wearActionBuilder=new NotificationCompat.Action.Builder(android.R.drawable.ic_media_pause,getString(R.string.pause),buildPendingIntent(Settings.ACTION_DATE_SETTINGS));
+  NotificationCompat.Builder extended=new NotificationCompat.WearableExtender().addAction(wearActionBuilder.build()).extend(normal);
+  mgr.notify(NOTIFY_ID,extended.build());
+  finish();
+}

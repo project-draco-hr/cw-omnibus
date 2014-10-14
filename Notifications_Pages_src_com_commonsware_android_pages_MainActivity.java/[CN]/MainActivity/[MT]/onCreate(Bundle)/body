@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  NotificationManagerCompat mgr=NotificationManagerCompat.from(this);
+  NotificationCompat.Builder normal=buildNormal();
+  NotificationCompat.InboxStyle big=new NotificationCompat.InboxStyle();
+  big.setSummaryText(getString(R.string.summary)).addLine(getString(R.string.entry)).addLine(getString(R.string.another_entry)).addLine(getString(R.string.third_entry)).addLine(getString(R.string.yet_another_entry)).addLine(getString(R.string.low));
+  NotificationCompat.Builder bigPage=new NotificationCompat.Builder(this).setStyle(big);
+  NotificationCompat.Builder twoPages=new NotificationCompat.WearableExtender().addPage(bigPage.build()).extend(normal);
+  mgr.notify(NOTIFY_ID,twoPages.build());
+  finish();
+}

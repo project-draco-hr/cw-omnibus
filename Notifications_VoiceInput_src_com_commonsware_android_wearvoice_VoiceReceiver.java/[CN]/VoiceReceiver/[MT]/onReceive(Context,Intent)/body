@@ -1,0 +1,15 @@
+{
+  Bundle input=RemoteInput.getResultsFromIntent(i);
+  if (input != null) {
+    CharSequence speech=input.getCharSequence(EXTRA_SPEECH);
+    if (speech != null) {
+      Log.d(getClass().getSimpleName(),speech.toString());
+    }
+ else {
+      Log.e(getClass().getSimpleName(),"No voice response speech");
+    }
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"No voice response Bundle");
+  }
+}

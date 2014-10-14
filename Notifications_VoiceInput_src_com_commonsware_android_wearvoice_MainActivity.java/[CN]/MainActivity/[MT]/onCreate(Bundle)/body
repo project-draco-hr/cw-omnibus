@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  Intent i=new Intent(this,VoiceReceiver.class);
+  PendingIntent pi=PendingIntent.getBroadcast(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
+  RemoteInput remoteInput=new RemoteInput.Builder(VoiceReceiver.EXTRA_SPEECH).setLabel(getString(R.string.talk)).setChoices(getResources().getStringArray(R.array.replies)).build();
+  NotificationCompat.Action wearAction=new NotificationCompat.Action.Builder(android.R.drawable.ic_btn_speak_now,getString(R.string.talk),pi).addRemoteInput(remoteInput).build();
+  NotificationCompat.WearableExtender wearExtender=new NotificationCompat.WearableExtender().addAction(wearAction);
+  NotificationCompat.Builder builder=new NotificationCompat.Builder(this).setSmallIcon(android.R.drawable.stat_sys_download_done).setContentTitle(getString(R.string.title)).setContentText(getString(R.string.talk)).extend(wearExtender);
+  NotificationManagerCompat.from(this).notify(NOTIFY_ID,builder.build());
+  finish();
+}

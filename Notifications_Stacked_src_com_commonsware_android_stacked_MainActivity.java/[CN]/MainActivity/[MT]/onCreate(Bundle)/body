@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  mgr=NotificationManagerCompat.from(this);
+  showWearOne();
+  showWearTwo();
+  showSummary();
+  finish();
+}

@@ -1,0 +1,6 @@
+{
+  NotificationCompat.Builder normal=buildNormal();
+  NotificationCompat.InboxStyle big=new NotificationCompat.InboxStyle();
+  big.setSummaryText(getString(R.string.summary)).addLine(getString(R.string.entry)).addLine(getString(R.string.another_entry));
+  mgr.notify(NOTIFY_ID,normal.setStyle(big).build());
+}
