@@ -1,7 +1,7 @@
 {
-  String url=getUpdateUrl();
-  if (url != null) {
-    try {
+  try {
+    String url=getUpdateUrl();
+    if (url != null) {
       File book=download(url);
       File updateDir=new File(getFilesDir(),UPDATE_BASEDIR);
       updateDir.mkdirs();
@@ -9,8 +9,8 @@
       book.delete();
       EventBus.getDefault().post(new BookUpdatedEvent());
     }
- catch (    Exception e) {
-      Log.e(getClass().getSimpleName(),"Exception downloading update",e);
-    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception downloading update",e);
   }
 }
