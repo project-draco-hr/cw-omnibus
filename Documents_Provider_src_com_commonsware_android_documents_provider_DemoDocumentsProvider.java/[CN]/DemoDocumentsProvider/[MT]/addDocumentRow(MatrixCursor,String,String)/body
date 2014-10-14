@@ -1,0 +1,14 @@
+{
+  MatrixCursor.RowBuilder row=result.newRow();
+  row.add(Document.COLUMN_DOCUMENT_ID,assetPath);
+  if (isDirectory(assetPath)) {
+    row.add(Document.COLUMN_MIME_TYPE,Document.MIME_TYPE_DIR);
+  }
+ else {
+    String ext=MimeTypeMap.getFileExtensionFromUrl(assetPath);
+    row.add(Document.COLUMN_MIME_TYPE,MimeTypeMap.getSingleton().getMimeTypeFromExtension(ext));
+    row.add(Document.COLUMN_SIZE,getAssetLength(assetPath));
+  }
+  row.add(Document.COLUMN_DISPLAY_NAME,child);
+  row.add(Document.COLUMN_FLAGS,0);
+}

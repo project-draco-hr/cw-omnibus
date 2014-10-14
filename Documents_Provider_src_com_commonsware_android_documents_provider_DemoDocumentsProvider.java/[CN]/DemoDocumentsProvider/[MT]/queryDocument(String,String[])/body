@@ -1,0 +1,11 @@
+{
+  String[] netProjection=netProjection(projection,SUPPORTED_DOCUMENT_PROJECTION);
+  MatrixCursor result=new MatrixCursor(netProjection);
+  try {
+    addDocumentRow(result,Uri.parse(documentId).getLastPathSegment(),documentId);
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception reading asset dir",e);
+  }
+  return (result);
+}

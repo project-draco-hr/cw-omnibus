@@ -1,0 +1,14 @@
+{
+  String[] netProjection=netProjection(projection,SUPPORTED_DOCUMENT_PROJECTION);
+  MatrixCursor result=new MatrixCursor(netProjection);
+  try {
+    String[] children=assets.list(parentDocId);
+    for (    String child : children) {
+      addDocumentRow(result,child,parentDocId + File.separator + child);
+    }
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception reading asset dir",e);
+  }
+  return (result);
+}

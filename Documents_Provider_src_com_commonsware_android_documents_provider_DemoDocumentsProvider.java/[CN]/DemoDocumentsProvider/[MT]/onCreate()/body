@@ -1,0 +1,4 @@
+{
+  assets=getContext().getAssets();
+  return (true);
+}

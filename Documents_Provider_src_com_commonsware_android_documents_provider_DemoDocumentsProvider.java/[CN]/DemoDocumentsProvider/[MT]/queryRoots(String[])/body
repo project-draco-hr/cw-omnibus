@@ -1,0 +1,11 @@
+{
+  String[] netProjection=netProjection(projection,SUPPORTED_ROOT_PROJECTION);
+  MatrixCursor result=new MatrixCursor(netProjection);
+  MatrixCursor.RowBuilder row=result.newRow();
+  row.add(Root.COLUMN_ROOT_ID,ROOT_ID);
+  row.add(Root.COLUMN_ICON,R.drawable.ic_launcher);
+  row.add(Root.COLUMN_FLAGS,Root.FLAG_LOCAL_ONLY);
+  row.add(Root.COLUMN_TITLE,getContext().getString(R.string.root));
+  row.add(Root.COLUMN_DOCUMENT_ID,ROOT_DOCUMENT_ID);
+  return (result);
+}
