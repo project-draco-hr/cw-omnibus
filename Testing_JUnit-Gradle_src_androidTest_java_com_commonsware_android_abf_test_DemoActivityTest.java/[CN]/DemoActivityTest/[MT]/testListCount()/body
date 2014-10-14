@@ -1,3 +1,3 @@
 {
-  assertEquals(list.getAdapter().getCount(),25);
+  assertEquals(25,list.getAdapter().getCount());
 }
