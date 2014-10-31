@@ -1,0 +1,14 @@
+{
+  toggleWidgets(!isChecked);
+switch (type.getSelectedItemPosition()) {
+case 0:
+    manageExact(isChecked);
+  break;
+case 1:
+manageInexact(isChecked);
+break;
+case 2:
+manageJobScheduler(isChecked);
+break;
+}
+}

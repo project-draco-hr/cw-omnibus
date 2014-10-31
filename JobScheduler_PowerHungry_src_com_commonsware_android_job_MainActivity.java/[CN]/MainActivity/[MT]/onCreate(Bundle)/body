@@ -1,0 +1,17 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  type=(Spinner)findViewById(R.id.type);
+  ArrayAdapter<String> types=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.types));
+  types.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  type.setAdapter(types);
+  period=(Spinner)findViewById(R.id.period);
+  ArrayAdapter<String> periods=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.periods));
+  periods.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  period.setAdapter(periods);
+  download=(Switch)findViewById(R.id.download);
+  scheduled=(Switch)findViewById(R.id.scheduled);
+  scheduled.setOnCheckedChangeListener(this);
+  alarms=(AlarmManager)getSystemService(ALARM_SERVICE);
+  jobs=(JobScheduler)getSystemService(JOB_SCHEDULER_SERVICE);
+}

@@ -1,0 +1,10 @@
+{
+  PersistableBundle pb=params.getExtras();
+  if (pb.getInt(MainActivity.KEY_DOWNLOAD_AS_AN_INT,0) == 1) {
+    job=new DownloadThread(params);
+    job.start();
+    return (true);
+  }
+  Log.d(getClass().getSimpleName(),"job invoked");
+  return (false);
+}

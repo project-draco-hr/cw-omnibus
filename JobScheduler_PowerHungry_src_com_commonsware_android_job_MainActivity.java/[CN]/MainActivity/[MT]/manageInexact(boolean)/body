@@ -1,0 +1,9 @@
+{
+  if (start) {
+    long period=getPeriod();
+    PollReceiver.scheduleInexactAlarm(this,alarms,period,download.isChecked());
+  }
+ else {
+    PollReceiver.cancelAlarm(this,alarms);
+  }
+}
