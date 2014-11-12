@@ -2,6 +2,6 @@
   Log.d(getClass().getSimpleName(),"job begins");
   new DownloadJob().run();
   Log.d(getClass().getSimpleName(),"job ends");
-  job=null;
+  clearJob();
   jobFinished(params,false);
 }
