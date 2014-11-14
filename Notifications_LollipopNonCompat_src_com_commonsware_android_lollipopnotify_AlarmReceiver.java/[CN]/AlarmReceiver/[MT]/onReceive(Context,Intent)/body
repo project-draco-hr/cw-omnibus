@@ -1,0 +1,17 @@
+{
+  NotificationManager mgr=(NotificationManager)ctxt.getSystemService(Context.NOTIFICATION_SERVICE);
+switch (i.getIntExtra(EXTRA_TYPE,-1)) {
+case 0:
+    notifyPrivate(ctxt,mgr);
+  break;
+case 1:
+notifyPublic(ctxt,mgr);
+break;
+case 2:
+notifySecret(ctxt,mgr);
+break;
+case 3:
+notifyHeadsUp(ctxt,mgr);
+break;
+}
+}

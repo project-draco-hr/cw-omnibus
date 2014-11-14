@@ -1,0 +1,3 @@
+{
+  mgr.notify(NOTIFY_ID,buildNormal(ctxt).setPriority(Notification.PRIORITY_HIGH).build());
+}

@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+  mgr.notify(NOTIFY_ID,buildNormal().build());
+  finish();
+}

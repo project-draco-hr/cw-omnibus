@@ -1,0 +1,3 @@
+{
+  mgr.notify(NOTIFY_ID,buildNormal(ctxt).setVisibility(NotificationCompat.VISIBILITY_SECRET).build());
+}

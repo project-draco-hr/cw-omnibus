@@ -1,0 +1,6 @@
+{
+  Intent i=new Intent(this,AlarmReceiver.class).putExtra(AlarmReceiver.EXTRA_TYPE,type.getSelectedItemPosition());
+  PendingIntent pi=PendingIntent.getBroadcast(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
+  AlarmManager mgr=(AlarmManager)getSystemService(ALARM_SERVICE);
+  mgr.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + (1000 * delay.getProgress()),pi);
+}

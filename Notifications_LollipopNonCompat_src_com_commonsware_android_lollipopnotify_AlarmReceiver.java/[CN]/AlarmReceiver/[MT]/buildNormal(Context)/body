@@ -1,0 +1,5 @@
+{
+  Notification.Builder b=new Notification.Builder(ctxt);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setContentTitle(ctxt.getString(R.string.download_complete)).setContentText(ctxt.getString(R.string.fun)).setContentIntent(buildPendingIntent(ctxt,Settings.ACTION_SECURITY_SETTINGS)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(ctxt.getString(R.string.download_complete)).addAction(android.R.drawable.ic_media_play,ctxt.getString(R.string.play),buildPendingIntent(ctxt,Settings.ACTION_SETTINGS));
+  return (b);
+}
