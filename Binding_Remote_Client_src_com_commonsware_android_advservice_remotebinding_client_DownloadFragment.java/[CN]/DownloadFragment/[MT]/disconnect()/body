@@ -1,0 +1,4 @@
+{
+  binding=null;
+  btn.setEnabled(false);
+}

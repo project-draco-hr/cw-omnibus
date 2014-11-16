@@ -1,0 +1,6 @@
+{
+  appContext.unbindService(this);
+  disconnect();
+  EventBus.getDefault().unregister(this);
+  super.onDestroy();
+}

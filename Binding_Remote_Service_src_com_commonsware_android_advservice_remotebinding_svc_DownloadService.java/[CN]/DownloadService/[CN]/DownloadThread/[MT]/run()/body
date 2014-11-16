@@ -1,0 +1,30 @@
+{
+  try {
+    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    root.mkdirs();
+    File output=new File(root,Uri.parse(url).getLastPathSegment());
+    if (output.exists()) {
+      output.delete();
+    }
+    HttpURLConnection c=(HttpURLConnection)new URL(url).openConnection();
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    BufferedOutputStream out=new BufferedOutputStream(fos);
+    try {
+      InputStream in=c.getInputStream();
+      byte[] buffer=new byte[8192];
+      int len=0;
+      while ((len=in.read(buffer)) >= 0) {
+        out.write(buffer,0,len);
+      }
+      out.flush();
+    }
+  finally {
+      fos.getFD().sync();
+      out.close();
+      c.disconnect();
+    }
+  }
+ catch (  IOException e2) {
+    Log.e("DownloadJob","Exception in download",e2);
+  }
+}
