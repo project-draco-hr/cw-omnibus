@@ -1,0 +1,10 @@
+{
+  Log.d(getClass().getSimpleName(),"play: " + i.getData().toString());
+  MediaItemStatus.Builder statusBuilder=new MediaItemStatus.Builder(MediaItemStatus.PLAYBACK_STATE_PLAYING);
+  Bundle b=new Bundle();
+  b.putString(MediaControlIntent.EXTRA_SESSION_ID,DemoRouteProvider.DEMO_SESSION_ID);
+  b.putString(MediaControlIntent.EXTRA_ITEM_ID,DemoRouteProvider.DEMO_ITEM_ID);
+  b.putBundle(MediaControlIntent.EXTRA_ITEM_STATUS,statusBuilder.build().asBundle());
+  cb.onResult(b);
+  return (true);
+}

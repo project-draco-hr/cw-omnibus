@@ -1,0 +1,5 @@
+{
+  Log.d(getClass().getSimpleName(),"pause");
+  cb.onResult(new Bundle());
+  return (true);
+}

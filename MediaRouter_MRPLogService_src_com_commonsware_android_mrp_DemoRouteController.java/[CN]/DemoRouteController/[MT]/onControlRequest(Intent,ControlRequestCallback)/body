@@ -1,0 +1,24 @@
+{
+  if (i.hasCategory(MediaControlIntent.CATEGORY_REMOTE_PLAYBACK)) {
+    if (MediaControlIntent.ACTION_PLAY.equals(i.getAction())) {
+      return (onPlayRequest(i,cb));
+    }
+ else     if (MediaControlIntent.ACTION_PAUSE.equals(i.getAction())) {
+      return (onPauseRequest(i,cb));
+    }
+ else     if (MediaControlIntent.ACTION_RESUME.equals(i.getAction())) {
+      return (onResumeRequest(i,cb));
+    }
+ else     if (MediaControlIntent.ACTION_STOP.equals(i.getAction())) {
+      return (onStopRequest(i,cb));
+    }
+ else     if (MediaControlIntent.ACTION_GET_STATUS.equals(i.getAction())) {
+      return (onGetStatusRequest(i,cb));
+    }
+ else     if (MediaControlIntent.ACTION_SEEK.equals(i.getAction())) {
+      return (onSeekRequest(i,cb));
+    }
+  }
+  Log.w(getClass().getSimpleName(),"unexpected control request" + i.toString());
+  return (false);
+}
