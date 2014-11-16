@@ -1,0 +1,3 @@
+{
+  return (slides.get(position).title);
+}

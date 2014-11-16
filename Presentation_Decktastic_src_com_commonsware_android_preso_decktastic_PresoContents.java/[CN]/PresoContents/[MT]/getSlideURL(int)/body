@@ -1,0 +1,3 @@
+{
+  return (baseURL + slides.get(position).image);
+}

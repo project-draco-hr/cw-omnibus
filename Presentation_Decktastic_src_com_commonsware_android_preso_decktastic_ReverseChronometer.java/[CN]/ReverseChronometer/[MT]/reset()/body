@@ -1,0 +1,5 @@
+{
+  startTime=SystemClock.elapsedRealtime();
+  setText("--:--");
+  setTextColor(Color.WHITE);
+}

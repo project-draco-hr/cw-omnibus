@@ -1,0 +1,5 @@
+{
+  ReverseChronometer rc=(ReverseChronometer)v;
+  rc.reset();
+  return (true);
+}

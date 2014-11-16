@@ -1,0 +1,17 @@
+{
+  base.mkdirs();
+  String[] presoDirs=base.list(new FilenameFilter(){
+    @Override public boolean accept(    File orig,    String name){
+      return (new File(orig,name).isDirectory());
+    }
+  }
+);
+  Gson gson=new Gson();
+  for (  String presoDir : presoDirs) {
+    PresoContents c=loadPreso(gson,new File(base,presoDir));
+    if (c != null) {
+      c.id=presos.size();
+      presos.add(c);
+    }
+  }
+}

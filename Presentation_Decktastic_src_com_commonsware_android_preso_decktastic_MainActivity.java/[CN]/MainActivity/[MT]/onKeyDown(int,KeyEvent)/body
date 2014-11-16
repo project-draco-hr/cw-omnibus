@@ -1,0 +1,22 @@
+{
+switch (keyCode) {
+case KeyEvent.KEYCODE_SPACE:
+case KeyEvent.KEYCODE_DPAD_RIGHT:
+case KeyEvent.KEYCODE_DPAD_DOWN:
+case KeyEvent.KEYCODE_PAGE_DOWN:
+case KeyEvent.KEYCODE_MEDIA_NEXT:
+    if (pager.canScrollHorizontally(1)) {
+      pager.setCurrentItem(pager.getCurrentItem() + 1,true);
+    }
+  return (true);
+case KeyEvent.KEYCODE_DPAD_LEFT:
+case KeyEvent.KEYCODE_DPAD_UP:
+case KeyEvent.KEYCODE_PAGE_UP:
+case KeyEvent.KEYCODE_MEDIA_PREVIOUS:
+if (pager.canScrollHorizontally(-1)) {
+  pager.setCurrentItem(pager.getCurrentItem() - 1,true);
+}
+return (true);
+}
+return (super.onKeyDown(keyCode,event));
+}

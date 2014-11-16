@@ -1,0 +1,6 @@
+{
+  if (presoFrag != null) {
+    presoFrag.dismiss();
+    presoFrag=null;
+  }
+}

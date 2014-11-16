@@ -1,0 +1,3 @@
+{
+  return (getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEVISION) || getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK));
+}

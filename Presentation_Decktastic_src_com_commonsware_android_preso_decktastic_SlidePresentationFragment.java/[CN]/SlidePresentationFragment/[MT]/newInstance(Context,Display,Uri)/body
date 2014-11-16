@@ -1,0 +1,8 @@
+{
+  SlidePresentationFragment frag=new SlidePresentationFragment();
+  frag.setDisplay(ctxt,display);
+  Bundle b=new Bundle();
+  b.putParcelable(KEY_URI,slideUri);
+  frag.setArguments(b);
+  return (frag);
+}

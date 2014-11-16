@@ -1,0 +1,14 @@
+{
+  PresoContents result=null;
+  try {
+    InputStream is=new FileInputStream(new File(base,"preso.json"));
+    BufferedReader reader=new BufferedReader(new InputStreamReader(is));
+    result=gson.fromJson(reader,PresoContents.class);
+    result.baseDir=base;
+    is.close();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+  }
+  return (result);
+}

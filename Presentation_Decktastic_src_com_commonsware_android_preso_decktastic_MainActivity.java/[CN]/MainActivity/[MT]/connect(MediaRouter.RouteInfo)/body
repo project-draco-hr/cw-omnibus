@@ -1,0 +1,10 @@
+{
+  client=new RemotePlaybackClient(getApplicationContext(),route);
+  if (client.isRemotePlaybackSupported()) {
+    String url=preso.getSlideURL(pager.getCurrentItem());
+    client.play(Uri.parse(url),"image/png",null,0,null,playCB);
+  }
+ else {
+    client=null;
+  }
+}

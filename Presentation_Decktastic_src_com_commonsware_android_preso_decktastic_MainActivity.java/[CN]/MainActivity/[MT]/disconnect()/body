@@ -1,0 +1,7 @@
+{
+  if (client != null) {
+    client.release();
+    client=null;
+  }
+  router.getDefaultRoute().select();
+}

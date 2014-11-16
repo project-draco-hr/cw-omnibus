@@ -1,0 +1,3 @@
+{
+  Picasso.with(ctxt).load("file://" + path).resize(convertDpToPixel(ctxt,CARD_WIDTH),convertDpToPixel(ctxt,CARD_HEIGHT)).into(viewTarget);
+}

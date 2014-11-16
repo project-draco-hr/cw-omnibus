@@ -1,0 +1,4 @@
+{
+  PresoRoster.getInstance().load(ctxt.getExternalFilesDir(null));
+  EventBus.getDefault().postSticky(new RosterLoadedEvent());
+}

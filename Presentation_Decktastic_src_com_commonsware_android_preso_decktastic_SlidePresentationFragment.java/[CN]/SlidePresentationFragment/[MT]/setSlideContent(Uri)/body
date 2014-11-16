@@ -1,0 +1,3 @@
+{
+  Picasso.with(getContext()).load(slideUri).into(slide);
+}

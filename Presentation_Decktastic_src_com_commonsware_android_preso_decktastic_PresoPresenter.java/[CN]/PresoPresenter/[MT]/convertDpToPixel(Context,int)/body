@@ -1,0 +1,4 @@
+{
+  float density=ctxt.getResources().getDisplayMetrics().density;
+  return (Math.round((float)dp * density));
+}

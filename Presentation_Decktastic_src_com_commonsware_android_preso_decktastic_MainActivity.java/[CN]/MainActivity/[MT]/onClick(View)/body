@@ -1,0 +1,13 @@
+{
+  ReverseChronometer rc=(ReverseChronometer)v;
+  if (rc.isRunning()) {
+    rc.stop();
+  }
+ else {
+    if (isFirstRCClick) {
+      isFirstRCClick=false;
+      rc.reset();
+    }
+    rc.run();
+  }
+}

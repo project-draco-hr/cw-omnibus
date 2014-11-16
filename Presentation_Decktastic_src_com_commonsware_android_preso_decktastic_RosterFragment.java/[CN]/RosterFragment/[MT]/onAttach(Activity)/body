@@ -1,0 +1,6 @@
+{
+  super.onAttach(host);
+  if (PresoRoster.getInstance().getPresoCount() == 0) {
+    new LoadThread(host).start();
+  }
+}

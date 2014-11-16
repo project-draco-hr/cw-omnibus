@@ -1,0 +1,21 @@
+{
+switch (item.getItemId()) {
+case R.id.present:
+    boolean original=item.isChecked();
+  item.setChecked(!original);
+if (original) {
+  helper.disable();
+}
+ else {
+  helper.enable();
+}
+break;
+case R.id.first:
+pager.setCurrentItem(0);
+break;
+case R.id.last:
+pager.setCurrentItem(adapter.getCount() - 1);
+break;
+}
+return (super.onOptionsItemSelected(item));
+}

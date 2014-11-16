@@ -1,0 +1,5 @@
+{
+  slide=new ImageView(getContext());
+  setSlideContent((Uri)getArguments().getParcelable(KEY_URI));
+  return (slide);
+}

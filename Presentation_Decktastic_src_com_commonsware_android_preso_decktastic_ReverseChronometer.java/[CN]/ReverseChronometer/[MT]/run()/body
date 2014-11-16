@@ -1,0 +1,22 @@
+{
+  isRunning=true;
+  long elapsedSeconds=(SystemClock.elapsedRealtime() - startTime) / 1000;
+  if (elapsedSeconds < overallDuration) {
+    long remainingSeconds=overallDuration - elapsedSeconds;
+    long minutes=remainingSeconds / 60;
+    long seconds=remainingSeconds - (60 * minutes);
+    setText(String.format("%d:%02d",minutes,seconds));
+    if (warningDuration > 0 && remainingSeconds < warningDuration) {
+      setTextColor(0xFFFF6600);
+    }
+ else {
+      setTextColor(Color.WHITE);
+    }
+    postDelayed(this,1000);
+  }
+ else {
+    setText("0:00");
+    setTextColor(Color.RED);
+    isRunning=false;
+  }
+}

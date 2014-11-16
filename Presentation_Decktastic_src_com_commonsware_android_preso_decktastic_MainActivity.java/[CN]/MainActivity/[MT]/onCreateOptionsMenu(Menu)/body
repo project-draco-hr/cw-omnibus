@@ -1,0 +1,16 @@
+{
+  getMenuInflater().inflate(R.menu.activity_actions,menu);
+  rc=(ReverseChronometer)menu.findItem(R.id.countdown).getActionView();
+  rc.setWarningDuration(5 * 60);
+  rc.setOnClickListener(this);
+  rc.setOnLongClickListener(this);
+  rc.setTextSize(TypedValue.COMPLEX_UNIT_SP,24);
+  rc.setTextColor(Color.WHITE);
+  if (durationInSeconds > 0) {
+    rc.setOverallDuration(durationInSeconds);
+  }
+  MenuItem item=menu.findItem(R.id.route_provider);
+  MediaRouteActionProvider provider=(MediaRouteActionProvider)item.getActionProvider();
+  provider.setRouteSelector(selector);
+  return (super.onCreateOptionsMenu(menu));
+}
