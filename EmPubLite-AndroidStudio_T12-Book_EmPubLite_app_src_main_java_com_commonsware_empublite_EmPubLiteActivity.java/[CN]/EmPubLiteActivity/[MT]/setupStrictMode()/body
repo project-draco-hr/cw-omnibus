@@ -1,5 +1,5 @@
 {
-  StrictMode.ThreadPolicy.Builder builder=new StrictMode.ThreadPolicy.Builder().detectDiskWrites().detectNetwork();
+  StrictMode.ThreadPolicy.Builder builder=new StrictMode.ThreadPolicy.Builder().detectNetwork();
   if (BuildConfig.DEBUG) {
     builder.penaltyDeath();
   }
