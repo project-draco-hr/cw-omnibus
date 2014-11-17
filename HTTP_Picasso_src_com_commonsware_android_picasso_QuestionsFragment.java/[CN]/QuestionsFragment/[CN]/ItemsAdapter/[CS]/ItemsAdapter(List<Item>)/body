@@ -1,4 +1,3 @@
 {
   super(getActivity(),R.layout.row,R.id.title,items);
-  size=getActivity().getResources().getDimensionPixelSize(R.dimen.icon);
 }
