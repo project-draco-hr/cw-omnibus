@@ -1,3 +1,5 @@
 {
-  picker.setCalendarViewShown(isChecked);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    picker.setCalendarViewShown(isChecked);
+  }
 }
