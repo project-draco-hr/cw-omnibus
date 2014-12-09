@@ -1,7 +1,0 @@
-{
-  super.onCreate(icicle);
-  initAdapter();
-  getListView().setLongClickable(true);
-  getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-  getListView().setOnItemLongClickListener(new ActionModeHelper(this,getListView()));
-}

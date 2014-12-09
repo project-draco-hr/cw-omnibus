@@ -1,5 +1,4 @@
 {
-  ArrayAdapter<String> adapter=(ArrayAdapter<String>)getListAdapter();
 switch (itemId) {
 case R.id.cap:
     String word=words.get(position);

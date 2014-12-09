@@ -1,7 +1,0 @@
-{
-  boolean result=host.performAction(item.getItemId(),modeView.getCheckedItemPosition());
-  if (item.getItemId() == R.id.remove) {
-    activeMode.finish();
-  }
-  return (result);
-}

@@ -1,5 +1,4 @@
 {
-  ArrayAdapter<String> adapter=(ArrayAdapter<String>)getListAdapter();
   SparseBooleanArray checked=getListView().getCheckedItemPositions();
 switch (item.getItemId()) {
 case R.id.cap:

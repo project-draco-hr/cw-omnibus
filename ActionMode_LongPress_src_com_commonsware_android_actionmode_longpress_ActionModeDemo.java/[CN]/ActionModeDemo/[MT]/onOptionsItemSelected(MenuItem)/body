@@ -1,14 +1,13 @@
 {
 switch (item.getItemId()) {
 case R.id.add:
-    add();
+    addWord();
   return (true);
 case R.id.reset:
 initAdapter(null);
 return (true);
 case R.id.about:
-case android.R.id.home:
-Toast.makeText(this,"Action Bar Sample App",Toast.LENGTH_LONG).show();
+Toast.makeText(this,R.string.about_toast,Toast.LENGTH_LONG).show();
 return (true);
 }
 return (super.onOptionsItemSelected(item));

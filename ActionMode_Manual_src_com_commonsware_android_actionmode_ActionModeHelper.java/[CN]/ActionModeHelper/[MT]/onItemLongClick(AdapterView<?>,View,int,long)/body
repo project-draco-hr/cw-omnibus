@@ -1,8 +1,0 @@
-{
-  modeView.clearChoices();
-  modeView.setItemChecked(position,true);
-  if (activeMode == null) {
-    activeMode=host.startActionMode(this);
-  }
-  return (true);
-}

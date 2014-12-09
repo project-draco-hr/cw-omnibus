@@ -1,9 +1,0 @@
-{
-  final View addView=getLayoutInflater().inflate(R.layout.add,null);
-  new AlertDialog.Builder(this).setTitle("Add a Word").setView(addView).setPositiveButton("OK",new DialogInterface.OnClickListener(){
-    public void onClick(    DialogInterface dialog,    int whichButton){
-      addWord((TextView)addView.findViewById(R.id.title));
-    }
-  }
-).setNegativeButton("Cancel",null).show();
-}

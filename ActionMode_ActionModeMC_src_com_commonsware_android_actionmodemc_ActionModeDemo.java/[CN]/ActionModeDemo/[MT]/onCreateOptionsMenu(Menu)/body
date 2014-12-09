@@ -1,14 +1,4 @@
 {
-  getMenuInflater().inflate(R.menu.option,menu);
-  EditText add=null;
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-    View v=menu.findItem(R.id.add).getActionView();
-    if (v != null) {
-      add=(EditText)v.findViewById(R.id.title);
-    }
-  }
-  if (add != null) {
-    add.setOnEditorActionListener(onSearch);
-  }
+  getMenuInflater().inflate(R.menu.actions,menu);
   return (super.onCreateOptionsMenu(menu));
 }

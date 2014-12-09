@@ -1,5 +1,3 @@
 {
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-    l.setItemChecked(position,true);
-  }
+  l.setItemChecked(position,true);
 }
