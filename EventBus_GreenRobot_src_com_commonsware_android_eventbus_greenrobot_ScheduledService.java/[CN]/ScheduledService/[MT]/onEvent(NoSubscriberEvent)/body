@@ -1,0 +1,8 @@
+{
+  RandomEvent randomEvent=(RandomEvent)event.originalEvent;
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  Intent ui=new Intent(this,EventDemoActivity.class);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_SOUND).setContentTitle(getString(R.string.notif_title)).setContentText(Integer.toHexString(randomEvent.value)).setSmallIcon(android.R.drawable.stat_notify_more).setTicker(getString(R.string.notif_title)).setContentIntent(PendingIntent.getActivity(this,0,ui,0));
+  NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+  mgr.notify(NOTIFY_ID,b.build());
+}
