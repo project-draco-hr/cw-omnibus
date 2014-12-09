@@ -1,0 +1,3 @@
+{
+  getListView().setItemChecked(position,true);
+}

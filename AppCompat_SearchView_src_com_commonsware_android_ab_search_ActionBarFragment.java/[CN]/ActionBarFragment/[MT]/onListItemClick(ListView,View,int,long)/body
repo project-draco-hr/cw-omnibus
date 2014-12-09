@@ -1,0 +1,3 @@
+{
+  Toast.makeText(getActivity(),adapter.getItem(position),Toast.LENGTH_LONG).show();
+}
