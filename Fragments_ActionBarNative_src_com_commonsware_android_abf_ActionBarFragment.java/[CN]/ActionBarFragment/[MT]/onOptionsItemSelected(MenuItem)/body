@@ -1,7 +1,11 @@
 {
-  if (item.getItemId() == R.id.reset) {
-    initAdapter();
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
+switch (item.getItemId()) {
+case R.id.add:
+    addWord();
+  return (true);
+case R.id.reset:
+initAdapter();
+return (true);
+}
+return (super.onOptionsItemSelected(item));
 }

@@ -1,7 +1,0 @@
-{
-  if (item.getItemId() == R.id.reset) {
-    initAdapter();
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
-}
