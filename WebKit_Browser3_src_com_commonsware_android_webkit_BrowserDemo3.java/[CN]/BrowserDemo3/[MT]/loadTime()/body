@@ -1,4 +1,4 @@
 {
-  String page="<html><body><a href=\"clock\">" + DateUtils.formatDateTime(this,new Date().getTime(),DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_TIME) + "</a></body></html>";
+  String page="<html><body><a href=\"http://webview.used.to.be.less.annoying/clock\">" + DateUtils.formatDateTime(this,new Date().getTime(),DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_TIME) + "</a></body></html>";
   browser.loadData(page,"text/html","UTF-8");
 }
