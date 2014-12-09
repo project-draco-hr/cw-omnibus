@@ -1,7 +1,14 @@
 {
-  if (item.getItemId() == R.id.reset) {
-    initAdapter();
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
+switch (item.getItemId()) {
+case R.id.add:
+    addWord();
+  return (true);
+case R.id.reset:
+initAdapter();
+return (true);
+case R.id.about:
+Toast.makeText(this,R.string.about_toast,Toast.LENGTH_LONG).show();
+return (true);
+}
+return (super.onOptionsItemSelected(item));
 }
