@@ -1,4 +1,0 @@
-{
-  super.onRestoreInstanceState(state);
-  getActionBar().setSelectedNavigationItem(state.getInt(STATE_NAV));
-}

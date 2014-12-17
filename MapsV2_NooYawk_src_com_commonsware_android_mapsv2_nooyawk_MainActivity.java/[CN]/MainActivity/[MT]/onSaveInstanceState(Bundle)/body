@@ -1,4 +1,0 @@
-{
-  super.onSaveInstanceState(state);
-  state.putInt(STATE_NAV,getActionBar().getSelectedNavigationIndex());
-}
