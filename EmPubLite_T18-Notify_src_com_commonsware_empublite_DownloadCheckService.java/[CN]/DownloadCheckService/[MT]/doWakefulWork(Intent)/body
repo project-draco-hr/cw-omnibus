@@ -7,7 +7,7 @@
       updateDir.mkdirs();
       unzip(book,updateDir);
       book.delete();
-      EventBus.getDefault().register(this,0);
+      EventBus.getDefault().register(this);
       EventBus.getDefault().post(new BookUpdatedEvent());
       EventBus.getDefault().unregister(this);
     }

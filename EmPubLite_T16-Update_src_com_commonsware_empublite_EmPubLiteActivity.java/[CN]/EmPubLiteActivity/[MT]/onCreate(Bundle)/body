@@ -3,13 +3,5 @@
   setupStrictMode();
   setContentView(R.layout.main);
   pager=(ViewPager)findViewById(R.id.pager);
-  mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
-  if (mfrag == null) {
-    mfrag=new ModelFragment();
-    getFragmentManager().beginTransaction().add(mfrag,MODEL).commit();
-  }
- else   if (mfrag.getBook() != null) {
-    setupPager(mfrag.getBook());
-  }
   getActionBar().setHomeButtonEnabled(true);
 }

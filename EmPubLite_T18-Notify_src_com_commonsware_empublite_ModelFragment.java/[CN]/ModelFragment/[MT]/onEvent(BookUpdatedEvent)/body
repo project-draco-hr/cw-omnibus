@@ -1,6 +1,5 @@
 {
   if (getActivity() != null) {
     new LoadThread(getActivity()).start();
-    EventBus.getDefault().cancelEventDelivery(event);
   }
 }

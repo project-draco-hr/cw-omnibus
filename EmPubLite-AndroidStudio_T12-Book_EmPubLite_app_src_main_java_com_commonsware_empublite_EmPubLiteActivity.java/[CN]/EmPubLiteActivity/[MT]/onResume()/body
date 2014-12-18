@@ -1,4 +1,13 @@
 {
   super.onResume();
   EventBus.getDefault().register(this);
+  if (adapter == null) {
+    ModelFragment mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
+    if (mfrag == null) {
+      getFragmentManager().beginTransaction().add(new ModelFragment(),MODEL).commit();
+    }
+ else     if (mfrag.getBook() != null) {
+      setupPager(mfrag.getBook());
+    }
+  }
 }

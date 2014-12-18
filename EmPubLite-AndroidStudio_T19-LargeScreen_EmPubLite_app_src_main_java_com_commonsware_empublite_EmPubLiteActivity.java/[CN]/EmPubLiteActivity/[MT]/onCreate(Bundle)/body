@@ -6,14 +6,6 @@
   sidebar=findViewById(R.id.sidebar);
   divider=findViewById(R.id.divider);
   getFragmentManager().addOnBackStackChangedListener(this);
-  mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
-  if (mfrag == null) {
-    mfrag=new ModelFragment();
-    getFragmentManager().beginTransaction().add(mfrag,MODEL).commit();
-  }
- else   if (mfrag.getBook() != null) {
-    setupPager(mfrag.getBook());
-  }
   help=(SimpleContentFragment)getFragmentManager().findFragmentByTag(HELP);
   about=(SimpleContentFragment)getFragmentManager().findFragmentByTag(ABOUT);
   getActionBar().setHomeButtonEnabled(true);
