@@ -1,1 +1,1 @@
-AsyncTask<ContentValues,Void,Void>
+BaseTask<ContentValues>

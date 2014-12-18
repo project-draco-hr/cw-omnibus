@@ -1,0 +1,5 @@
+{
+  Cursor result=db.getReadableDatabase().query(DatabaseHelper.TABLE,new String[]{"ROWID AS _id",DatabaseHelper.TITLE,DatabaseHelper.VALUE},null,null,null,null,DatabaseHelper.TITLE);
+  result.getCount();
+  return (result);
+}

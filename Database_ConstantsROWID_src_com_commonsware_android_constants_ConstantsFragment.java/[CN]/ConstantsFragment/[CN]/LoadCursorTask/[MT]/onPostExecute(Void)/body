@@ -1,4 +1,0 @@
-{
-  SimpleCursorAdapter adapter=new SimpleCursorAdapter(getActivity(),R.layout.row,constantsCursor,new String[]{DatabaseHelper.TITLE,DatabaseHelper.VALUE},new int[]{R.id.title,R.id.value},0);
-  setListAdapter(adapter);
-}
