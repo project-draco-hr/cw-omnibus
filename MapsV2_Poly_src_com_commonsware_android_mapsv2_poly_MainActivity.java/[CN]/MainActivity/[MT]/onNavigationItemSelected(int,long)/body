@@ -1,4 +1,0 @@
-{
-  map.setMapType(MAP_TYPES[itemPosition]);
-  return (true);
-}

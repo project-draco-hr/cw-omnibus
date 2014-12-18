@@ -1,0 +1,11 @@
+{
+  if (needsInit) {
+    CameraUpdate center=CameraUpdateFactory.newLatLng(new LatLng(40.76793169992044,-73.98180484771729));
+    CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+    map.moveCamera(center);
+    map.animateCamera(zoom);
+  }
+  addMarkers(map);
+  map.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater(),models));
+  map.setOnInfoWindowClickListener(this);
+}
