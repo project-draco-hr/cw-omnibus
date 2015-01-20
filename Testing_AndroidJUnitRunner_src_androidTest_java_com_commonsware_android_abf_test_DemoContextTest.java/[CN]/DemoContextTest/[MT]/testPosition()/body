@@ -1,0 +1,4 @@
+{
+  assertEquals(0,field.getTop());
+  assertEquals(0,field.getLeft());
+}

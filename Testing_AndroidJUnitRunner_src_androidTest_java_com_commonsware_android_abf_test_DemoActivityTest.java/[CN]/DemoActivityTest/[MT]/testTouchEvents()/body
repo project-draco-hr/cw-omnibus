@@ -1,0 +1,5 @@
+{
+  TouchUtils.scrollToBottom(this,getActivity(),list);
+  getInstrumentation().waitForIdleSync();
+  assertEquals(24,list.getLastVisiblePosition());
+}
