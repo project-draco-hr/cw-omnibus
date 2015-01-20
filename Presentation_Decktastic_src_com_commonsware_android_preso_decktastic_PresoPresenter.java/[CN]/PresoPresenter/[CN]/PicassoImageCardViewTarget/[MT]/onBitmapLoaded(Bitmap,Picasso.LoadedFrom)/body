@@ -1,4 +1,4 @@
 {
-  Drawable bmpDrawable=new BitmapDrawable(ctxt.getResources(),bmp);
+  Drawable bmpDrawable=new BitmapDrawable(imageCardView.getContext().getResources(),bmp);
   imageCardView.setMainImage(bmpDrawable);
 }

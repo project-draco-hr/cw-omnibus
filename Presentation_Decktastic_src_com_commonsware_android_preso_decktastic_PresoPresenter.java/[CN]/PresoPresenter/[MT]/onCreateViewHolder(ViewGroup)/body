@@ -1,6 +1,5 @@
 {
-  ctxt=parent.getContext();
-  ImageCardView cardView=new ImageCardView(ctxt);
+  ImageCardView cardView=new ImageCardView(parent.getContext());
   cardView.setFocusable(true);
   cardView.setFocusableInTouchMode(true);
   return (new Holder(cardView));
