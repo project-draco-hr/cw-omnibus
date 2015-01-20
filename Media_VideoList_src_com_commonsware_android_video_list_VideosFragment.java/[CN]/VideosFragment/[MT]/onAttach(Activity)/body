@@ -1,0 +1,6 @@
+{
+  super.onAttach(host);
+  ImageLoaderConfiguration ilConfig=new ImageLoaderConfiguration.Builder(getActivity()).build();
+  imageLoader=ImageLoader.getInstance();
+  imageLoader.init(ilConfig);
+}

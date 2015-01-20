@@ -1,8 +1,0 @@
-{
-  if (column == c.getColumnIndex(MediaStore.Video.Media._ID)) {
-    VideoThumbnailImage thumb=new VideoThumbnailImage(c.getInt(column),MediaStore.Video.Thumbnails.MICRO_KIND);
-    ((SmartImageView)v).setImage(thumb,R.drawable.ic_media_video_poster);
-    return (true);
-  }
-  return (false);
-}

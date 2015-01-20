@@ -1,3 +1,0 @@
-{
-  return (MediaStore.Video.Thumbnails.getThumbnail(ctxt.getContentResolver(),videoId,thumbnailKind,null));
-}
