@@ -1,4 +1,0 @@
-{
-  db=new DatabaseHelper(getContext());
-  return ((db == null) ? false : true);
-}

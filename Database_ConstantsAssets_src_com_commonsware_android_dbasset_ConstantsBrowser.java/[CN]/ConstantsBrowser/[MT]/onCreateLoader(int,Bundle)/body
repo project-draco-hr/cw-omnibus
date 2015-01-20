@@ -1,3 +1,0 @@
-{
-  return (new CursorLoader(this,Provider.Constants.CONTENT_URI,PROJECTION,null,null,null));
-}
