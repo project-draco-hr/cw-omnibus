@@ -1,0 +1,11 @@
+{
+  videos.clear();
+  int idColumn=c.getColumnIndex(MediaStore.Video.Media._ID);
+  int uriColumn=c.getColumnIndex(MediaStore.Video.Media.DATA);
+  int mimeTypeColumn=c.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
+  int titleColumn=c.getColumnIndex(MediaStore.Video.Media.TITLE);
+  for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
+    videos.add(new Video(c.getInt(idColumn),c.getString(uriColumn),c.getString(mimeTypeColumn),c.getString(titleColumn)));
+  }
+  c.close();
+}

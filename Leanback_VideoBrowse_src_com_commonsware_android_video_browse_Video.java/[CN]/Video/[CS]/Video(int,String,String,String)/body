@@ -1,0 +1,6 @@
+{
+  this.id=id;
+  this.uri=uri;
+  this.mimeType=mimeType;
+  this.title=title;
+}

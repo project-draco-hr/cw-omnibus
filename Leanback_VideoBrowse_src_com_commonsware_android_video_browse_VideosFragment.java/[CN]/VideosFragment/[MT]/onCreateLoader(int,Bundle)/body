@@ -1,0 +1,3 @@
+{
+  return (new CursorLoader(getActivity(),MediaStore.Video.Media.EXTERNAL_CONTENT_URI,null,null,null,MediaStore.Video.Media.TITLE));
+}

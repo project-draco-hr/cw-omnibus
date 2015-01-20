@@ -1,0 +1,7 @@
+{
+  super();
+  this.ctxt=ctxt;
+  ImageLoaderConfiguration ilConfig=new ImageLoaderConfiguration.Builder(ctxt).build();
+  imageLoader=ImageLoader.getInstance();
+  imageLoader.init(ilConfig);
+}

@@ -1,0 +1,13 @@
+{
+  mapCursorToModels(c);
+  setHeadersState(BrowseFragment.HEADERS_ENABLED);
+  setTitle(getString(R.string.app_name));
+  ArrayObjectAdapter rows=new ArrayObjectAdapter(new ListRowPresenter());
+  ArrayObjectAdapter listRowAdapter=new ArrayObjectAdapter(new VideoPresenter(getActivity()));
+  for (  Video v : videos) {
+    listRowAdapter.add(v);
+  }
+  HeaderItem header=new HeaderItem(0,"Videos",null);
+  rows.add(new ListRow(header,listRowAdapter));
+  setAdapter(rows);
+}
