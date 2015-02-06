@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  setLayoutManager(new LinearLayoutManager(this));
+  RecyclerView.ItemDecoration decor=new HorizontalDividerItemDecoration.Builder(this).color(getResources().getColor(R.color.primary)).build();
+  getRecyclerView().addItemDecoration(decor);
+  setAdapter(new IconicAdapter());
+}

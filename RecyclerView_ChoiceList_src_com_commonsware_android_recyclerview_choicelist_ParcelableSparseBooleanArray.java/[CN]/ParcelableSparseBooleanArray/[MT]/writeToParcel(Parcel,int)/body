@@ -1,0 +1,7 @@
+{
+  dest.writeInt(size());
+  for (int i=0; i < size(); i++) {
+    dest.writeInt(keyAt(i));
+    dest.writeValue(valueAt(i));
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (viewType == R.id.detail) {
+    return (new RowController(getLayoutInflater().inflate(R.layout.row,parent,false)));
+  }
+  return (new HeaderController(getLayoutInflater().inflate(R.layout.header,parent,false)));
+}

@@ -1,0 +1,6 @@
+{
+  if (getItem(position) instanceof Integer) {
+    return (R.id.header);
+  }
+  return (R.id.detail);
+}

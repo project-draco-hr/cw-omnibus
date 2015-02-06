@@ -1,0 +1,8 @@
+{
+  if (holder instanceof RowController) {
+    ((RowController)holder).bindModel((String)getItem(position));
+  }
+ else {
+    ((HeaderController)holder).bindModel((Integer)getItem(position));
+  }
+}

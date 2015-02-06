@@ -1,0 +1,8 @@
+{
+  if (rv == null) {
+    rv=new RecyclerView(this);
+    rv.setHasFixedSize(true);
+    setContentView(rv);
+  }
+  return (rv);
+}

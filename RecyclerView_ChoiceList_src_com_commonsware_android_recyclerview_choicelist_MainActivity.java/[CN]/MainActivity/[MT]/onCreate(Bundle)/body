@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  setLayoutManager(new LinearLayoutManager(this));
+  adapter=new IconicAdapter();
+  setAdapter(adapter);
+}

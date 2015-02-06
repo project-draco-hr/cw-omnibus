@@ -1,0 +1,5 @@
+{
+  super(row);
+  label=(TextView)row.findViewById(R.id.label);
+  template=label.getContext().getString(R.string.header_template);
+}
