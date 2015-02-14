@@ -1,0 +1,5 @@
+{
+  boolean isCheckedNow=adapter.isChecked(getPosition());
+  adapter.onChecked(getPosition(),!isCheckedNow);
+  row.setActivated(!isCheckedNow);
+}

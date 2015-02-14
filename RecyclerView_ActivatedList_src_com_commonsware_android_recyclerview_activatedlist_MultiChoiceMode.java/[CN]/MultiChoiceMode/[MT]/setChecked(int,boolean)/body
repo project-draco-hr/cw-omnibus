@@ -1,0 +1,3 @@
+{
+  checkStates.put(position,isChecked);
+}
