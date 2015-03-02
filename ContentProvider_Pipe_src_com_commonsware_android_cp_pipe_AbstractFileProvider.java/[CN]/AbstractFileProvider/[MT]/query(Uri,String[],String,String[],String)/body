@@ -15,5 +15,5 @@
       b.add(null);
     }
   }
-  return (cursor);
+  return (new LegacyCompatCursorWrapper(cursor));
 }
