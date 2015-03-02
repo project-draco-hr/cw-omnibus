@@ -1,0 +1,8 @@
+{
+  MenuInflater inflater=getMenuInflater();
+  inflater.inflate(R.menu.context,menu);
+  mode.setTitle(R.string.context_title);
+  activeMode=mode;
+  updateSubtitle(activeMode);
+  return (true);
+}

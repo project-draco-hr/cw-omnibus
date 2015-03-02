@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  setLayoutManager(new GridLayoutManager(this,2));
+  setAdapter(new IconicAdapter());
+}

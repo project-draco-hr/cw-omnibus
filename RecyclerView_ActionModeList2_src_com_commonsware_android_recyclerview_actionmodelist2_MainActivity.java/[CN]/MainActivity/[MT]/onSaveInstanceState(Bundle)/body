@@ -1,0 +1,4 @@
+{
+  adapter.onSaveInstanceState(state);
+  state.putStringArrayList(STATE_ITEMS,items);
+}

@@ -1,0 +1,17 @@
+{
+  BaseVideoController result=null;
+switch (viewType) {
+case 0:
+    result=new VideoThumbnailController(getLayoutInflater().inflate(R.layout.thumbnail,parent,false),imageLoader);
+  break;
+case 1:
+int cursorColumn=videos.getColumnIndex(MediaStore.Video.VideoColumns.DISPLAY_NAME);
+result=new VideoTextController(getLayoutInflater().inflate(R.layout.label,parent,false),android.R.id.text1,cursorColumn);
+break;
+case 2:
+cursorColumn=videos.getColumnIndex(MediaStore.Video.VideoColumns.DURATION);
+result=new VideoTextController(getLayoutInflater().inflate(R.layout.label,parent,false),android.R.id.text1,cursorColumn);
+break;
+}
+return (result);
+}

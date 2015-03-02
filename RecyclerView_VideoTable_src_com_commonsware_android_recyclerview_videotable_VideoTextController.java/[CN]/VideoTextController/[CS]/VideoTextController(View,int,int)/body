@@ -1,0 +1,5 @@
+{
+  super(cell);
+  this.cursorColumn=cursorColumn;
+  label=(TextView)cell.findViewById(labelId);
+}

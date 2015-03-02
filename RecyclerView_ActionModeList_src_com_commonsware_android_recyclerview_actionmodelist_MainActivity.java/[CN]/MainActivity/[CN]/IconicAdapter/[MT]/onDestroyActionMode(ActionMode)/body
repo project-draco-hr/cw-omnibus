@@ -1,0 +1,7 @@
+{
+  if (activeMode != null) {
+    activeMode=null;
+    clearChecks();
+    notifyDataSetChanged();
+  }
+}

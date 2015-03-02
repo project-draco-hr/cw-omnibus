@@ -1,0 +1,3 @@
+{
+  return (columnWeights[position % columnWeights.length]);
+}

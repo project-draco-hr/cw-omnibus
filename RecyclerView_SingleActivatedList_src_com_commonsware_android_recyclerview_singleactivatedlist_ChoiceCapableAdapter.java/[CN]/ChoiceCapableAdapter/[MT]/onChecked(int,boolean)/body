@@ -1,0 +1,12 @@
+{
+  if (choiceMode.isSingleChoice()) {
+    int checked=choiceMode.getCheckedPosition();
+    if (checked >= 0) {
+      RowController row=(RowController)rv.findViewHolderForPosition(checked);
+      if (row != null) {
+        row.setChecked(false);
+      }
+    }
+  }
+  choiceMode.setChecked(position,isChecked);
+}

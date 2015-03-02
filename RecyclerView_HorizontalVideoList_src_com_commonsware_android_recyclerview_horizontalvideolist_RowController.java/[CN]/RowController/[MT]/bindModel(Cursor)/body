@@ -1,0 +1,10 @@
+{
+  title.setText(row.getString(row.getColumnIndex(MediaStore.Video.Media.TITLE)));
+  Uri video=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,row.getInt(row.getColumnIndex(MediaStore.Video.Media._ID)));
+  DisplayImageOptions opts=new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_media_video_poster).build();
+  imageLoader.displayImage(video.toString(),thumbnail,opts);
+  int uriColumn=row.getColumnIndex(MediaStore.Video.Media.DATA);
+  int mimeTypeColumn=row.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
+  videoUri=row.getString(uriColumn);
+  videoMimeType=row.getString(mimeTypeColumn);
+}

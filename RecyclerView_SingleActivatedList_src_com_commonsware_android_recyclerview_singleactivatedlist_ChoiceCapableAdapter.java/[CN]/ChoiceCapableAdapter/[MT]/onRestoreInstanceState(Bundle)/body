@@ -1,0 +1,3 @@
+{
+  choiceMode.onRestoreInstanceState(state);
+}

@@ -1,0 +1,6 @@
+{
+  int size=source.readInt();
+  for (int i=0; i < size; i++) {
+    put(source.readInt(),(Boolean)source.readValue(null));
+  }
+}

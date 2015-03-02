@@ -1,0 +1,9 @@
+{
+  if (items == null) {
+    items=new ArrayList<String>();
+    for (    String s : ORIGINAL_ITEMS) {
+      items.add(s);
+    }
+  }
+  return (items);
+}

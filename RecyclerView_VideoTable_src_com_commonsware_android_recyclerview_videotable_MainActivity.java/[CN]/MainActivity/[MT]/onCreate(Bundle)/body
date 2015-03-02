@@ -1,0 +1,12 @@
+{
+  super.onCreate(icicle);
+  ImageLoaderConfiguration ilConfig=new ImageLoaderConfiguration.Builder(this).build();
+  imageLoader=ImageLoader.getInstance();
+  imageLoader.init(ilConfig);
+  getLoaderManager().initLoader(0,null,this);
+  ColumnWeightSpanSizeLookup spanSizer=new ColumnWeightSpanSizeLookup(COLUMN_WEIGHTS);
+  GridLayoutManager mgr=new GridLayoutManager(this,spanSizer.getTotalSpans());
+  mgr.setSpanSizeLookup(spanSizer);
+  setLayoutManager(mgr);
+  setAdapter(new VideoAdapter());
+}

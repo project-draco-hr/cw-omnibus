@@ -1,0 +1,8 @@
+{
+  if (isChecked) {
+    checkStates.put(position,isChecked);
+  }
+ else {
+    checkStates.delete(position);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  if (activeMode != null) {
+    activeMode=null;
+    visitChecks(new ChoiceMode.Visitor(){
+      @Override public void onCheckedPosition(      int position){
+        onChecked(position,false);
+        notifyItemChanged(position);
+      }
+    }
+);
+  }
+}

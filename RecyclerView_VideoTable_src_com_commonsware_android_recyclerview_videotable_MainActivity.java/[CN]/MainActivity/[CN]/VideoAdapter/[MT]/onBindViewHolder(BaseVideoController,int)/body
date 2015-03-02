@@ -1,0 +1,4 @@
+{
+  videos.moveToPosition(position / 3);
+  holder.bindModel(videos);
+}

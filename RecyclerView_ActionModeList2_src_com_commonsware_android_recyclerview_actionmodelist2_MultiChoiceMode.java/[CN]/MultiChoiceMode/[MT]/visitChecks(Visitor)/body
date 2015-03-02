@@ -1,0 +1,6 @@
+{
+  SparseBooleanArray copy=checkStates.clone();
+  for (int i=0; i < copy.size(); i++) {
+    v.onCheckedPosition(copy.keyAt(i));
+  }
+}

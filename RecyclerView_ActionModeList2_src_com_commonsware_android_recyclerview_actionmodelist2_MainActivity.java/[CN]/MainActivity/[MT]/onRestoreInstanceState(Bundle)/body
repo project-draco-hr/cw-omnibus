@@ -1,0 +1,4 @@
+{
+  adapter.onRestoreInstanceState(state);
+  items=state.getStringArrayList(STATE_ITEMS);
+}

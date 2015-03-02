@@ -1,0 +1,7 @@
+{
+  if (rv == null) {
+    rv=new RecyclerView(this);
+    setContentView(rv);
+  }
+  return (rv);
+}

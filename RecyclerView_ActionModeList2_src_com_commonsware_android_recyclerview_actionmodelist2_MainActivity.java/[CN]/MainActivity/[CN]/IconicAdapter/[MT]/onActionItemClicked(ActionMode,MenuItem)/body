@@ -1,0 +1,37 @@
+{
+switch (item.getItemId()) {
+case R.id.cap:
+    visitChecks(new ChoiceMode.Visitor(){
+      @Override public void onCheckedPosition(      int position){
+        String word=getItems().get(position);
+        word=word.toUpperCase(Locale.ENGLISH);
+        getItems().set(position,word);
+        notifyItemChanged(position);
+      }
+    }
+);
+  break;
+case R.id.remove:
+final ArrayList<Integer> positions=new ArrayList<Integer>();
+visitChecks(new ChoiceMode.Visitor(){
+@Override public void onCheckedPosition(int position){
+  positions.add(position);
+}
+}
+);
+Collections.sort(positions,Collections.reverseOrder());
+for (int position : positions) {
+getItems().remove(position);
+notifyItemRemoved(position);
+}
+clearChecks();
+activeMode.finish();
+break;
+default :
+return (false);
+}
+if (activeMode != null) {
+updateSubtitle(activeMode);
+}
+return (true);
+}

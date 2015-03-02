@@ -1,0 +1,3 @@
+{
+  state.putInt(STATE_CHECKED,checkedPosition);
+}

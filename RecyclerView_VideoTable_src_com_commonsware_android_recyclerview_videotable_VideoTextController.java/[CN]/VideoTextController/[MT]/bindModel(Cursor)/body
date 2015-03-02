@@ -1,0 +1,4 @@
+{
+  super.bindModel(row);
+  label.setText(row.getString(cursorColumn));
+}

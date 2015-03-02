@@ -1,0 +1,11 @@
+{
+  label.setText(item);
+  size.setText(String.format(template,item.length()));
+  if (item.length() > 4) {
+    icon.setImageResource(R.drawable.delete);
+  }
+ else {
+    icon.setImageResource(R.drawable.ok);
+  }
+  setChecked(adapter.isChecked(getPosition()));
+}

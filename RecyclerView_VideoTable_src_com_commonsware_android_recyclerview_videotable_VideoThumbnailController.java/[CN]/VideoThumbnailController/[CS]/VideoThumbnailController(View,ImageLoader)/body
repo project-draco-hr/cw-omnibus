@@ -1,0 +1,5 @@
+{
+  super(cell);
+  this.imageLoader=imageLoader;
+  thumbnail=(ImageView)cell.findViewById(R.id.thumbnail);
+}
