@@ -4,7 +4,7 @@
     if (about == null) {
       about=SimpleContentFragment.newInstance(FILE_ABOUT);
     }
-    getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.sidebar,about).commit();
+    getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.sidebar,about,ABOUT).commit();
   }
  else {
     Intent i=new Intent(this,SimpleContentActivity.class);
