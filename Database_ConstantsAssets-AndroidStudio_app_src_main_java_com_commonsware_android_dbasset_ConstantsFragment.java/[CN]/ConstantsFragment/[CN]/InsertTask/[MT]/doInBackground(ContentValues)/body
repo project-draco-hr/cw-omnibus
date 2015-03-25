@@ -1,0 +1,4 @@
+{
+  db.getWritableDatabase().insert(DatabaseHelper.TABLE,DatabaseHelper.TITLE,values[0]);
+  return (doQuery());
+}
