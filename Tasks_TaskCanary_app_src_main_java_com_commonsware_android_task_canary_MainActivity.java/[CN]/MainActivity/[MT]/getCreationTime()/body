@@ -1,0 +1,6 @@
+{
+  if (creationTime == -1L) {
+    creationTime=System.currentTimeMillis();
+  }
+  return (creationTime);
+}

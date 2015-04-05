@@ -1,0 +1,6 @@
+{
+  Log.d(getClass().getSimpleName(),String.format("Task ID #%d",getTaskId()));
+  for (  String key : b.keySet()) {
+    Log.d(getClass().getSimpleName(),String.format("(%s) %s: %s",msg,key,b.get(key)));
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.onRestoreInstanceState(savedInstanceState);
+  dumpBundleToLog("restore",savedInstanceState);
+  creationTime=savedInstanceState.getLong(STATE_CREATION_TIME,-1L);
+}

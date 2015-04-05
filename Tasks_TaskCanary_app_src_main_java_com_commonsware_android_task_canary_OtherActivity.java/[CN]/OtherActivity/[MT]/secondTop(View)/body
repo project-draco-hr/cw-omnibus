@@ -1,0 +1,3 @@
+{
+  startActivity(new Intent(this,OtherActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+}

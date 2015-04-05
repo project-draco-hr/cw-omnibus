@@ -1,0 +1,9 @@
+{
+  if (item.getItemId() == R.id.settings) {
+    startActivity(new Intent(Settings.ACTION_DATE_SETTINGS));
+  }
+ else   if (item.getItemId() == R.id.other) {
+    startActivity(new Intent(this,OtherActivity.class));
+  }
+  return (super.onOptionsItemSelected(item));
+}

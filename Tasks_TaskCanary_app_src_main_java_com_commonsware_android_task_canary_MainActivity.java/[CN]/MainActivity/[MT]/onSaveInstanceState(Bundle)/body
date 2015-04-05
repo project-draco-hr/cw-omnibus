@@ -1,0 +1,5 @@
+{
+  super.onSaveInstanceState(outState);
+  outState.putLong(STATE_CREATION_TIME,getCreationTime());
+  dumpBundleToLog("save",outState);
+}
