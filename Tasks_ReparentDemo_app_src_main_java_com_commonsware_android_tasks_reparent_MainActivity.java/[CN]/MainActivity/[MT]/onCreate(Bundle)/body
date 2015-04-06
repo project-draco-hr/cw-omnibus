@@ -1,0 +1,5 @@
+{
+  super.onCreate(state);
+  setContentView(R.layout.main);
+  Log.d(getApplicationInfo().loadLabel(getPackageManager()).toString(),String.format("Process ID %d, Task ID %d",android.os.Process.myPid(),getTaskId()));
+}

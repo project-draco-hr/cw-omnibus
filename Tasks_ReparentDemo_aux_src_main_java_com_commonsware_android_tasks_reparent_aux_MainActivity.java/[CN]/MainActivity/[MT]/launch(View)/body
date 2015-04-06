@@ -1,0 +1,3 @@
+{
+  startActivity(new Intent("com.commonsware.android.tasks.reparent.WHEEEEE"));
+}

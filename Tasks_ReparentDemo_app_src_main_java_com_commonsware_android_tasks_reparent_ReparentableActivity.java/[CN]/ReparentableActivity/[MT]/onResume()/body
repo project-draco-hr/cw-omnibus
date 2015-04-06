@@ -1,0 +1,4 @@
+{
+  super.onResume();
+  Log.d(getClass().getSimpleName(),String.format("Process ID %d, Task ID %d",android.os.Process.myPid(),getTaskId()));
+}
