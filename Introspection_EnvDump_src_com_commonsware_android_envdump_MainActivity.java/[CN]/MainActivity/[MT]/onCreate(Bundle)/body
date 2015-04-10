@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  logBuildValues();
+  logSystemFeatures();
+  logActivityManagerStuff();
+  logDisplayMetrics();
+  logConfiguration();
+}

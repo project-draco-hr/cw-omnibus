@@ -1,0 +1,5 @@
+{
+  ActivityManager mgr=(ActivityManager)getSystemService(ACTIVITY_SERVICE);
+  Log.d(TAG,"heap limit=" + mgr.getMemoryClass());
+  Log.d(TAG,"large-heap limit=" + mgr.getLargeMemoryClass());
+}

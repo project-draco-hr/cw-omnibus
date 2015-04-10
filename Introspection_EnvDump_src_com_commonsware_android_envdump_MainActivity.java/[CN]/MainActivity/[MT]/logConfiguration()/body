@@ -1,0 +1,17 @@
+{
+  Configuration cfg=getResources().getConfiguration();
+  Log.d(TAG,"Configuration.densityDpi=" + cfg.densityDpi);
+  Log.d(TAG,"Configuration.fontScale=" + cfg.fontScale);
+  Log.d(TAG,"Configuration.hardKeyboardHidden=" + cfg.hardKeyboardHidden);
+  Log.d(TAG,"Configuration.keyboard=" + cfg.keyboard);
+  Log.d(TAG,"Configuration.keyboardHidden=" + cfg.keyboardHidden);
+  Log.d(TAG,"Configuration.locale=" + cfg.locale);
+  Log.d(TAG,"Configuration.mcc=" + cfg.mcc);
+  Log.d(TAG,"Configuration.mnc=" + cfg.mnc);
+  Log.d(TAG,"Configuration.navigation=" + cfg.navigation);
+  Log.d(TAG,"Configuration.navigationHidden=" + cfg.navigationHidden);
+  Log.d(TAG,"Configuration.orientation=" + cfg.orientation);
+  Log.d(TAG,"Configuration.screenHeightDp=" + cfg.screenHeightDp);
+  Log.d(TAG,"Configuration.screenWidthDp=" + cfg.screenWidthDp);
+  Log.d(TAG,"Configuration.touchscreen=" + cfg.touchscreen);
+}

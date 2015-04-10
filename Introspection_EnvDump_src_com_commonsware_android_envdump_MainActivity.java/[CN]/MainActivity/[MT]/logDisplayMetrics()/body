@@ -1,0 +1,10 @@
+{
+  DisplayMetrics dm=new DisplayMetrics();
+  getWindowManager().getDefaultDisplay().getMetrics(dm);
+  Log.d(TAG,"DisplayMetrics.densityDpi=" + dm.densityDpi);
+  Log.d(TAG,"DisplayMetrics.xdpi=" + dm.xdpi);
+  Log.d(TAG,"DisplayMetrics.ydpi=" + dm.ydpi);
+  Log.d(TAG,"DisplayMetrics.scaledDensity=" + dm.scaledDensity);
+  Log.d(TAG,"DisplayMetrics.widthPixels=" + dm.widthPixels);
+  Log.d(TAG,"DisplayMetrics.heightPixels=" + dm.heightPixels);
+}
