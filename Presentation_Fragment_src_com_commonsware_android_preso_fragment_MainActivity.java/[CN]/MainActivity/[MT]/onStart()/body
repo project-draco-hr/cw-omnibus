@@ -1,5 +1,5 @@
 {
-  super.onResume();
+  super.onStart();
   if (cb == null) {
     cb=new RouteCallback();
     router=(MediaRouter)getSystemService(MEDIA_ROUTER_SERVICE);

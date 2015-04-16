@@ -1,4 +1,4 @@
 {
-  super.onResume();
+  super.onStart();
   router.addCallback(selector,cb,MediaRouter.CALLBACK_FLAG_REQUEST_DISCOVERY);
 }

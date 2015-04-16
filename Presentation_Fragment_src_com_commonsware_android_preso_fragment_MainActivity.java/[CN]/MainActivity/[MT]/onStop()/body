@@ -3,5 +3,5 @@
   if (router != null) {
     router.removeCallback(cb);
   }
-  super.onPause();
+  super.onStop();
 }
