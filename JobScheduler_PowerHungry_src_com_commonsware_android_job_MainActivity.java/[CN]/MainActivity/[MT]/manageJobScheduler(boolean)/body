@@ -3,7 +3,7 @@
     JobInfo.Builder b=new JobInfo.Builder(JOB_ID,new ComponentName(this,DemoJobService.class));
     PersistableBundle pb=new PersistableBundle();
     if (download.isChecked()) {
-      pb.putInt(KEY_DOWNLOAD_AS_AN_INT,1);
+      pb.putBoolean(KEY_DOWNLOAD,true);
       b.setExtras(pb).setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
     }
  else {
