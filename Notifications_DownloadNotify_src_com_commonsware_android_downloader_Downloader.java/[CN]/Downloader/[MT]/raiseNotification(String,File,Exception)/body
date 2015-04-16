@@ -4,7 +4,7 @@
   if (e == null) {
     b.setContentTitle(getString(R.string.download_complete)).setContentText(getString(R.string.fun)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.download_complete));
     Intent outbound=new Intent(Intent.ACTION_VIEW);
-    outbound.setDataAndType(Uri.fromFile(output),inbound.getType());
+    outbound.setDataAndType(Uri.fromFile(output),mimeType);
     b.setContentIntent(PendingIntent.getActivity(this,0,outbound,0));
   }
  else {

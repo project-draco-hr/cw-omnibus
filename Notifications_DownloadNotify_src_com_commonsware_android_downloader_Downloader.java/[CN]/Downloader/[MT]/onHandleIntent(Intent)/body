@@ -10,6 +10,7 @@
     HttpURLConnection c=(HttpURLConnection)url.openConnection();
     FileOutputStream fos=new FileOutputStream(output.getPath());
     BufferedOutputStream out=new BufferedOutputStream(fos);
+    String mimeType=c.getHeaderField("Content-type");
     try {
       InputStream in=c.getInputStream();
       byte[] buffer=new byte[8192];
@@ -24,9 +25,9 @@
       out.close();
       c.disconnect();
     }
-    raiseNotification(i,output,null);
+    raiseNotification(mimeType,output,null);
   }
  catch (  IOException e2) {
-    raiseNotification(i,null,e2);
+    raiseNotification(null,null,e2);
   }
 }
