@@ -1,0 +1,17 @@
+{
+  HashSet<String> runningPackages=new HashSet<String>();
+  for (  ActivityManager.RunningAppProcessInfo proc : am.getRunningAppProcesses()) {
+    for (    String pkg : proc.pkgList) {
+      runningPackages.add(pkg);
+    }
+  }
+  PackageManager pm=getPackageManager();
+  List<ApplicationInfo> apps=new ArrayList<ApplicationInfo>();
+  for (  ApplicationInfo app : pm.getInstalledApplications(0)) {
+    if (runningPackages.contains(app.packageName)) {
+      apps.add(app);
+    }
+  }
+  Collections.sort(apps,new ApplicationInfo.DisplayNameComparator(pm));
+  return (new AppAdapter(pm,apps));
+}

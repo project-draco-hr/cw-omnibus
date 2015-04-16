@@ -1,0 +1,3 @@
+{
+  return ("editor" + String.valueOf(pageNumber++));
+}

@@ -1,0 +1,4 @@
+{
+  super(Nukesalot.this,R.layout.row,apps);
+  this.pm=pm;
+}

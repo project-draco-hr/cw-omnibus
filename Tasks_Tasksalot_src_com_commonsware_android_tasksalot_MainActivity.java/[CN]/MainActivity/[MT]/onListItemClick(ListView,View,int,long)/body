@@ -1,0 +1,10 @@
+{
+  ResolveInfo launchable=adapter.getItem(position);
+  ActivityInfo activity=launchable.activityInfo;
+  ComponentName name=new ComponentName(activity.applicationInfo.packageName,activity.name);
+  Intent i=new Intent(Intent.ACTION_MAIN);
+  i.addCategory(Intent.CATEGORY_LAUNCHER);
+  i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+  i.setComponent(name);
+  startActivity(i);
+}

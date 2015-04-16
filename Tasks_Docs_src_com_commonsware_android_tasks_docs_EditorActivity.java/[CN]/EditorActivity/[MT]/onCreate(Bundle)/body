@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
+    String title=getIntent().getStringExtra(EXTRA_TITLE);
+    CharSequence text=getIntent().getCharSequenceExtra(EXTRA_TEXT);
+    EditorFragment f=EditorFragment.newInstance(title,text);
+    getFragmentManager().beginTransaction().add(android.R.id.content,f).commit();
+    String appTitle=getString(R.string.editor_activity_title_prefix) + title;
+    setTitle(appTitle);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      setTaskDescription(buildTaskDesc(appTitle));
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  startActivity(new Intent(this,FirstActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+}

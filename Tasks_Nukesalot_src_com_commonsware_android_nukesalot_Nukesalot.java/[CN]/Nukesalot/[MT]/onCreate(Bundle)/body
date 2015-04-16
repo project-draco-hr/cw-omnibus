@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  am=(ActivityManager)getSystemService(ACTIVITY_SERVICE);
+}

@@ -1,0 +1,6 @@
+{
+  ApplicationInfo app=adapter.getItem(position);
+  am.killBackgroundProcesses(app.packageName);
+  adapter=buildAdapter();
+  setListAdapter(adapter);
+}

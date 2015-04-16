@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState,persistentState);
+  setContentView(R.layout.activity_main);
+  Log.d(getClass().getSimpleName(),"persistable onCreate() called");
+}

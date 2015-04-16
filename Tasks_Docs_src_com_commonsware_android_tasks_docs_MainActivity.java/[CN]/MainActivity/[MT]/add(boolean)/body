@@ -1,0 +1,15 @@
+{
+  int current=pager.getCurrentItem();
+  SimplePageDescriptor desc=new SimplePageDescriptor(buildTag(adapter.getCount()),buildTitle(adapter.getCount()));
+  if (before) {
+    adapter.insert(desc,current);
+  }
+ else {
+    if (current < adapter.getCount() - 1) {
+      adapter.insert(desc,current + 1);
+    }
+ else {
+      adapter.add(desc);
+    }
+  }
+}

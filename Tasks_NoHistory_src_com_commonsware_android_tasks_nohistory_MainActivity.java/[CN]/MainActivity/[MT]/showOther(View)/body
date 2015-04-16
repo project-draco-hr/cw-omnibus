@@ -1,0 +1,6 @@
+{
+  Intent other=new Intent(this,OtherActivity.class);
+  other.putExtra(OtherActivity.EXTRA_MESSAGE,getString(R.string.other));
+  other.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+  startActivity(other);
+}

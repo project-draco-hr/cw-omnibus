@@ -1,0 +1,9 @@
+{
+  int current=pager.getCurrentItem();
+  if (current < adapter.getCount() - 1) {
+    adapter.move(current,current + 1);
+  }
+ else {
+    adapter.move(current,current - 1);
+  }
+}

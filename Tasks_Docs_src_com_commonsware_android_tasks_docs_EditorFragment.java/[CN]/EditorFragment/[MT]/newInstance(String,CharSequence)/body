@@ -1,0 +1,8 @@
+{
+  EditorFragment frag=new EditorFragment();
+  Bundle args=new Bundle();
+  args.putString(KEY_TITLE,title);
+  args.putCharSequence(KEY_TEXT,text);
+  frag.setArguments(args);
+  return (frag);
+}

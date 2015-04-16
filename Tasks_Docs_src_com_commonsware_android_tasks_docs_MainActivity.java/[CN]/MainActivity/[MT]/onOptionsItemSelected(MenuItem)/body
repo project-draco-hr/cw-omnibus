@@ -1,0 +1,20 @@
+{
+switch (item.getItemId()) {
+case R.id.add:
+    add(true);
+  break;
+case R.id.split:
+add(false);
+break;
+case R.id.remove:
+remove();
+break;
+case R.id.swap:
+swap();
+break;
+case R.id.launch:
+launch();
+break;
+}
+return (super.onOptionsItemSelected(item));
+}

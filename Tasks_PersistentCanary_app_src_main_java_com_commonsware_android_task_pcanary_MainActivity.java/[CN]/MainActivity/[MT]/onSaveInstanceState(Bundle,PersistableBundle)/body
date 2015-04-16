@@ -1,0 +1,4 @@
+{
+  super.onSaveInstanceState(outState,outPersistentState);
+  Log.d(getClass().getSimpleName(),"persistable onSaveInstanceState() called");
+}

@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.first);
+  findViewById(R.id.button).setOnClickListener(this);
+  Log.d(getClass().getSimpleName(),String.format("onCreate for %x",hashCode()));
+}

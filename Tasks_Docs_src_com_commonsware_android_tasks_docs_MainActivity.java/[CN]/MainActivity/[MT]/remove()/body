@@ -1,0 +1,5 @@
+{
+  if (adapter.getCount() > 1) {
+    adapter.remove(pager.getCurrentItem());
+  }
+}

@@ -1,0 +1,5 @@
+{
+  EditorFragment f=adapter.getCurrentFragment();
+  startActivity(new Intent(this,EditorActivity.class).putExtra(EditorActivity.EXTRA_TITLE,adapter.getPageTitle(pager.getCurrentItem())).putExtra(EditorActivity.EXTRA_TEXT,f.getText()));
+  remove();
+}

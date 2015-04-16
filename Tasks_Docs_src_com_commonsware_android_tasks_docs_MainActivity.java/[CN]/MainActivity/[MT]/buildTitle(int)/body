@@ -1,0 +1,3 @@
+{
+  return (String.format(getString(R.string.hint),position + 1));
+}
