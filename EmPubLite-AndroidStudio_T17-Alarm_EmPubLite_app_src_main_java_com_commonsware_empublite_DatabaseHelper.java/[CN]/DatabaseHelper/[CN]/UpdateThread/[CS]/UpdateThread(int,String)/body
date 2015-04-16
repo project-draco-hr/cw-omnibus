@@ -2,5 +2,4 @@
   super();
   this.position=position;
   this.prose=prose;
-  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
 }

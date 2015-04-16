@@ -1,4 +1,5 @@
 {
+  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
   prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
   Gson gson=new Gson();
   File baseDir=new File(ctxt.getFilesDir(),DownloadCheckService.UPDATE_BASEDIR);

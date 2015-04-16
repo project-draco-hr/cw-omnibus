@@ -1,5 +1,6 @@
 {
   prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
+  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
   Gson gson=new Gson();
   try {
     InputStream is=ctxt.getAssets().open("book/contents.json");
