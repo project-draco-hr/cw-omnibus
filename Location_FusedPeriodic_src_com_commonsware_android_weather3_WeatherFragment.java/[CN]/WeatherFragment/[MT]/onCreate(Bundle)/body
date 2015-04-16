@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setRetainInstance(true);
+  template=getActivity().getString(R.string.url);
+  request=new LocationRequest().setNumUpdates(1).setExpirationDuration(60000).setInterval(1000).setPriority(LocationRequest.PRIORITY_LOW_POWER);
+}

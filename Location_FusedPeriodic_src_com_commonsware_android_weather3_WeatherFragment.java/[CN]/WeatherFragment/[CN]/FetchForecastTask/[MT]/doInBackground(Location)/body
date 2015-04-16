@@ -1,0 +1,11 @@
+{
+  try {
+    Location loc=locs[0];
+    String url=String.format(template,loc.getLatitude(),loc.getLongitude());
+    return (buildForecasts(getForecastXML(url)));
+  }
+ catch (  Exception e) {
+    this.e=e;
+  }
+  return (null);
+}

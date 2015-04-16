@@ -1,0 +1,23 @@
+{
+  boolean thingsPlumbBusted=true;
+switch (result.getStatus().getStatusCode()) {
+case LocationSettingsStatusCodes.SUCCESS:
+    requestLocations();
+  thingsPlumbBusted=false;
+break;
+case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+try {
+result.getStatus().startResolutionForResult(getActivity(),SETTINGS_REQUEST_ID);
+thingsPlumbBusted=false;
+}
+ catch (IntentSender.SendIntentException e) {
+}
+break;
+case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+break;
+}
+if (thingsPlumbBusted) {
+Toast.makeText(getActivity(),R.string.settings_resolution_fail_msg,Toast.LENGTH_LONG).show();
+getActivity().finish();
+}
+}

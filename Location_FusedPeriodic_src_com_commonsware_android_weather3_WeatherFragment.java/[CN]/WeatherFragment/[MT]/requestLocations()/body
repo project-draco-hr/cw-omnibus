@@ -1,0 +1,15 @@
+{
+  PendingResult<Status> result=LocationServices.FusedLocationApi.requestLocationUpdates(client,request,this);
+  result.setResultCallback(new ResultCallback<Status>(){
+    @Override public void onResult(    Status status){
+      if (status.isSuccess()) {
+        Toast.makeText(getActivity(),R.string.location_req_success_msg,Toast.LENGTH_LONG).show();
+      }
+ else {
+        Toast.makeText(getActivity(),status.getStatusMessage(),Toast.LENGTH_LONG).show();
+        getActivity().finish();
+      }
+    }
+  }
+);
+}

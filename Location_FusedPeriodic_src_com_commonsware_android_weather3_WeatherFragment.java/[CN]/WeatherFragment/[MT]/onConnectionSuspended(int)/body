@@ -1,0 +1,3 @@
+{
+  Log.w(getClass().getSimpleName(),"onConnectionSuspended() called, whatever that means");
+}

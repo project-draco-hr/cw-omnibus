@@ -1,0 +1,5 @@
+{
+  LocationSettingsRequest.Builder b=new LocationSettingsRequest.Builder().addLocationRequest(request);
+  PendingResult<LocationSettingsResult> result=LocationServices.SettingsApi.checkLocationSettings(client,b.build());
+  result.setResultCallback(this);
+}

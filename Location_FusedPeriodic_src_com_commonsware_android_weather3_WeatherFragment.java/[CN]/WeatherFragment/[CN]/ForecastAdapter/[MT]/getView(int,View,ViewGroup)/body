@@ -1,0 +1,11 @@
+{
+  View row=super.getView(position,convertView,parent);
+  Forecast item=getItem(position);
+  ImageView icon=(ImageView)row.findViewById(R.id.icon);
+  Picasso.with(getActivity()).load(item.getIcon()).resize(size,size).centerCrop().into(icon);
+  TextView title=(TextView)row.findViewById(R.id.date);
+  title.setText(item.getTime());
+  TextView temp=(TextView)row.findViewById(R.id.temp);
+  temp.setText("Temperature: " + String.valueOf(item.getTemp()) + "F");
+  return (row);
+}
