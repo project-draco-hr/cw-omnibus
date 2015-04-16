@@ -1,0 +1,4 @@
+{
+  device=UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+  openActivity();
+}

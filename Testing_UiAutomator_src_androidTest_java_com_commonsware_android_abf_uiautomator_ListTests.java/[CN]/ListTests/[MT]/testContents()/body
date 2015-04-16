@@ -1,0 +1,7 @@
+{
+  UiScrollable words=new UiScrollable(new UiSelector().className("android.widget.ListView"));
+  words.setAsVerticalList();
+  for (  String s : items) {
+    Assert.assertNotNull("Could not find " + s,words.getChildByText(new UiSelector().className("android.widget.TextView"),s));
+  }
+}

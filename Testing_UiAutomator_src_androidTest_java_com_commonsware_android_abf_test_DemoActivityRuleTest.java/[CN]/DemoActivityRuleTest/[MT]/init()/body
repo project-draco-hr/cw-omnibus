@@ -1,0 +1,4 @@
+{
+  list=(ListView)main.get().findViewById(android.R.id.list);
+  main.instrumentation().setInTouchMode(true);
+}

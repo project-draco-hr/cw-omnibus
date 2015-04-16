@@ -1,0 +1,2 @@
+String targetPackage
+Class<T> activityClass

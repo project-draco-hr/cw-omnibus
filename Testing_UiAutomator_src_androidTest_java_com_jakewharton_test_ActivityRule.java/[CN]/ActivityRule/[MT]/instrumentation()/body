@@ -1,0 +1,4 @@
+{
+  launchActivity();
+  return instrumentation;
+}

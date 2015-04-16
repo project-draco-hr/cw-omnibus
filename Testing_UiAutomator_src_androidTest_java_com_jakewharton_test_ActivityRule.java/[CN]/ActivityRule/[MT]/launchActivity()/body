@@ -1,0 +1,8 @@
+{
+  if (activity != null)   return;
+  Instrumentation instrumentation=fetchInstrumentation();
+  String targetPackage=instrumentation.getTargetContext().getPackageName();
+  Intent intent=getLaunchIntent(targetPackage,activityClass);
+  activity=(T)instrumentation.startActivitySync(intent);
+  instrumentation.waitForIdleSync();
+}
