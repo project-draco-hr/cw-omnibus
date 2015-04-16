@@ -1,6 +1,6 @@
 {
   super.onChecked(position,isChecked);
-  if (getCheckedCount() > 0) {
+  if (isChecked) {
     if (activeMode == null) {
       activeMode=startActionMode(this);
     }
