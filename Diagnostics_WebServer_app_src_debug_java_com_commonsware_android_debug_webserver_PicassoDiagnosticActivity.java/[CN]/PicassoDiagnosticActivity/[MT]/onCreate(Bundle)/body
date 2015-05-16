@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  startService(new Intent(this,PicassoDiagnosticService.class));
+  Toast.makeText(this,"Service running!",Toast.LENGTH_LONG).show();
+  finish();
+}

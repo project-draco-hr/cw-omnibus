@@ -1,0 +1,4 @@
+{
+  response.send("Goodbye, cruel world!");
+  stopSelf();
+}

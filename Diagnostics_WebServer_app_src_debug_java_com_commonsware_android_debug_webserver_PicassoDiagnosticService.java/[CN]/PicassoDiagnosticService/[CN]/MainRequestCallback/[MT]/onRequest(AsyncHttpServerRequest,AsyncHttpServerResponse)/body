@@ -1,0 +1,12 @@
+{
+  try {
+    StatsSnapshot ss=Picasso.with(PicassoDiagnosticService.this).getSnapshot();
+    String formattedTime=DateUtils.formatDateTime(PicassoDiagnosticService.this,ss.timeStamp,DateUtils.FORMAT_SHOW_TIME);
+    Context ctxt=Context.newBuilder(ss).combine("formattedTime",formattedTime).resolver(FieldValueResolver.INSTANCE).build();
+    response.send(t.apply(ctxt));
+    ctxt.destroy();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception serving Web page",e);
+  }
+}
