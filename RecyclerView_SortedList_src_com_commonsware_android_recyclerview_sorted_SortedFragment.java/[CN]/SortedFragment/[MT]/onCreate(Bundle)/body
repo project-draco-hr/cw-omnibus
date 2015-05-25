@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setRetainInstance(true);
+  model=new SortedList<String>(String.class,sortCallback);
+  task=new AddStringTask();
+  task.execute();
+}

@@ -1,0 +1,3 @@
+{
+  return (new RowController(getActivity().getLayoutInflater().inflate(R.layout.row,parent,false)));
+}
