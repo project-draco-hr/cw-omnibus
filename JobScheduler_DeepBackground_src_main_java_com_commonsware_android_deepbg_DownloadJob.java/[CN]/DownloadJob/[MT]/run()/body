@@ -1,0 +1,45 @@
+{
+  prefs=PreferenceManager.getDefaultSharedPreferences(app);
+  int crashFreq=prefs.getInt(MainActivity.PREF_CRASH_FREQ,-1);
+  if (crashFreq > 0) {
+    int countdown=prefs.getInt(MainActivity.PREF_CRASH_COUNTDOWN,25);
+    if (countdown == 1) {
+      prefs.edit().putInt(MainActivity.PREF_CRASH_COUNTDOWN,crashFreq).commit();
+      DownloadJob.log(app,"Intentional crash");
+      throw new RuntimeException("App done blow'd up");
+    }
+ else {
+      prefs.edit().putInt(MainActivity.PREF_CRASH_COUNTDOWN,countdown - 1).commit();
+    }
+  }
+  try {
+    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    root.mkdirs();
+    File output=new File(root,TO_DOWNLOAD.getLastPathSegment());
+    if (output.exists()) {
+      output.delete();
+    }
+    URL url=new URL(TO_DOWNLOAD.toString());
+    HttpURLConnection c=(HttpURLConnection)url.openConnection();
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    BufferedOutputStream out=new BufferedOutputStream(fos);
+    try {
+      InputStream in=c.getInputStream();
+      byte[] buffer=new byte[8192];
+      int len=0;
+      while ((len=in.read(buffer)) >= 0) {
+        out.write(buffer,0,len);
+      }
+      out.flush();
+    }
+  finally {
+      fos.getFD().sync();
+      out.close();
+      c.disconnect();
+    }
+  }
+ catch (  IOException e2) {
+    DownloadJob.log(app,"Exception in download");
+    Log.e("DownloadJob","Exception in download",e2);
+  }
+}

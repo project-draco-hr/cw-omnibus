@@ -1,0 +1,7 @@
+{
+  DownloadJob.log(app,"job begins");
+  new DownloadJob(app).run();
+  DownloadJob.log(app,"job ends");
+  clearJob();
+  jobFinished(params,false);
+}

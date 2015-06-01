@@ -1,0 +1,10 @@
+{
+  Intent i=buildBaseIntent(ctxt).putExtra(EXTRA_PERIOD,period).putExtra(EXTRA_IS_DOWNLOAD,isDownload);
+  PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,0);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+    alarms.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + period,pi);
+  }
+ else {
+    alarms.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + period,pi);
+  }
+}

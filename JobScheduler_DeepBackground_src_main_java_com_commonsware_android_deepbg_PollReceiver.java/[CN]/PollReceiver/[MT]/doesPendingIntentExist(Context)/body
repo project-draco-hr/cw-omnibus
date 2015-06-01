@@ -1,0 +1,3 @@
+{
+  return (PendingIntent.getBroadcast(ctxt,0,buildBaseIntent(ctxt),PendingIntent.FLAG_NO_CREATE) != null);
+}

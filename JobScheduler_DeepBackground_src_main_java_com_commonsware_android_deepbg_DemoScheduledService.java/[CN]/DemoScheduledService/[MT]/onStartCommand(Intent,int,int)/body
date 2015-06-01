@@ -1,0 +1,4 @@
+{
+  Log.d(getClass().getSimpleName(),"onStartCommand");
+  return super.onStartCommand(intent,flags,startId);
+}
