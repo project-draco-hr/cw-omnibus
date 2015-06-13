@@ -1,0 +1,16 @@
+{
+  boolean result=false;
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+    try {
+      Field f=Build.VERSION.class.getField("PREVIEW_SDK_INT");
+      if (f.getInt(null) > 0) {
+        result=true;
+      }
+    }
+ catch (    NoSuchFieldException e) {
+    }
+catch (    IllegalAccessException e) {
+    }
+  }
+  return (result);
+}
