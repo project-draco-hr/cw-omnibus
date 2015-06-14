@@ -1,6 +1,6 @@
 {
   View result=super.onCreateView(inflater,container,savedInstanceState);
   setRetainInstance(true);
-  Ion.with(getActivity(),"https://api.stackexchange.com/2.1/questions?" + "order=desc&sort=creation&site=stackoverflow&" + "tagged=android").asJsonObject().setCallback(this);
+  Ion.with(getActivity()).load("https://api.stackexchange.com/2.1/questions?" + "order=desc&sort=creation&site=stackoverflow&" + "tagged=android").asJsonObject().setCallback(this);
   return (result);
 }
