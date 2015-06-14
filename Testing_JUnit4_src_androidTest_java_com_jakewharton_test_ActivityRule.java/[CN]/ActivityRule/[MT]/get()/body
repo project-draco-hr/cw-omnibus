@@ -1,4 +1,0 @@
-{
-  launchActivity();
-  return activity;
-}

@@ -1,4 +1,0 @@
-{
-  Instrumentation result=instrumentation;
-  return result != null ? result : (instrumentation=InstrumentationRegistry.getInstrumentation());
-}

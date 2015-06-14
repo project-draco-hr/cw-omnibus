@@ -1,4 +1,3 @@
 {
-  list=(ListView)main.get().findViewById(android.R.id.list);
-  main.instrumentation().setInTouchMode(true);
+  list=(ListView)main.getActivity().findViewById(android.R.id.list);
 }

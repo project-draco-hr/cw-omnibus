@@ -1,6 +1,0 @@
-{
-  Intent intent=new Intent(Intent.ACTION_MAIN);
-  intent.setClassName(targetPackage,activityClass.getName());
-  intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-  return intent;
-}
