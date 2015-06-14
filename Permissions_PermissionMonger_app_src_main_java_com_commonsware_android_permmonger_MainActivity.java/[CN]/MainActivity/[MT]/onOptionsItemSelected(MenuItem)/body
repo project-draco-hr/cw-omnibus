@@ -1,0 +1,29 @@
+{
+switch (item.getItemId()) {
+case R.id.camera:
+    if (canAccessCamera()) {
+      doCameraThing();
+    }
+ else {
+      requestPermissions(CAMERA_PERMS,CAMERA_REQUEST);
+    }
+  return (true);
+case R.id.contacts:
+if (canAccessContacts()) {
+  doContactsThing();
+}
+ else {
+  requestPermissions(CONTACTS_PERMS,CONTACTS_REQUEST);
+}
+return (true);
+case R.id.location:
+if (canAccessLocation()) {
+doLocationThing();
+}
+ else {
+requestPermissions(LOCATION_PERMS,LOCATION_REQUEST);
+}
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

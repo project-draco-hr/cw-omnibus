@@ -1,0 +1,29 @@
+{
+  updateTable();
+switch (requestCode) {
+case CAMERA_REQUEST:
+    if (canAccessCamera()) {
+      doCameraThing();
+    }
+ else {
+      bzzzt();
+    }
+  break;
+case CONTACTS_REQUEST:
+if (canAccessContacts()) {
+  doContactsThing();
+}
+ else {
+  bzzzt();
+}
+break;
+case LOCATION_REQUEST:
+if (canAccessLocation()) {
+doLocationThing();
+}
+ else {
+bzzzt();
+}
+break;
+}
+}

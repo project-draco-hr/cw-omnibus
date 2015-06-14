@@ -1,0 +1,7 @@
+{
+  location.setText(String.valueOf(canAccessLocation()));
+  camera.setText(String.valueOf(canAccessCamera()));
+  internet.setText(String.valueOf(hasPermission(Manifest.permission.INTERNET)));
+  contacts.setText(String.valueOf(canAccessContacts()));
+  storage.setText(String.valueOf(hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)));
+}

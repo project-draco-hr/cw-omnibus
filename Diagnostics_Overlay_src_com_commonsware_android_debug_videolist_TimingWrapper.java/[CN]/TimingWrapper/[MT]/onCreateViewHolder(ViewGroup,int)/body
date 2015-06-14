@@ -1,0 +1,6 @@
+{
+  long start=SystemClock.uptimeMillis();
+  T result=super.onCreateViewHolder(parent,viewType);
+  warn(SystemClock.uptimeMillis() - start);
+  return (result);
+}

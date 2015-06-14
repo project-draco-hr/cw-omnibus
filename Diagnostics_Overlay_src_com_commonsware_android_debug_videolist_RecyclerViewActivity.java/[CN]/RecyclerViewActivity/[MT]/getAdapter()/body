@@ -1,0 +1,7 @@
+{
+  RecyclerView.Adapter result=getRecyclerView().getAdapter();
+  if (result instanceof RVAdapterWrapper) {
+    result=((RVAdapterWrapper)result).getWrappedAdapter();
+  }
+  return (result);
+}

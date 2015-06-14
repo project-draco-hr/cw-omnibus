@@ -1,0 +1,9 @@
+{
+  try {
+    binding.download(TO_DOWNLOAD);
+  }
+ catch (  RemoteException e) {
+    Log.e(getClass().getSimpleName(),"Exception requesting download",e);
+    Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_LONG).show();
+  }
+}

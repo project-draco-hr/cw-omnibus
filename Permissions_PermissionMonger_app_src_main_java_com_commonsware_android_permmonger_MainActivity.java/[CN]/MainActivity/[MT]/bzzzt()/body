@@ -1,0 +1,3 @@
+{
+  Toast.makeText(this,R.string.toast_bzzzt,Toast.LENGTH_LONG).show();
+}

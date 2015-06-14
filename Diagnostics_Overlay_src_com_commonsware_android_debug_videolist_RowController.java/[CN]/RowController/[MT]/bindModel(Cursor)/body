@@ -1,0 +1,19 @@
+{
+  title.setText(row.getString(row.getColumnIndex(MediaStore.Video.Media.TITLE)));
+  int uriColumn=row.getColumnIndex(MediaStore.Video.Media.DATA);
+  int mimeTypeColumn=row.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
+  int videoId=row.getInt(row.getColumnIndex(MediaStore.Video.Media._ID));
+  videoUri=row.getString(uriColumn);
+  videoMimeType=row.getString(mimeTypeColumn);
+  if (BuildConfig.BE_STUPID) {
+    ContentResolver cr=thumbnail.getContext().getContentResolver();
+    BitmapFactory.Options options=new BitmapFactory.Options();
+    options.inSampleSize=1;
+    Bitmap thumb=MediaStore.Video.Thumbnails.getThumbnail(cr,videoId,MediaStore.Video.Thumbnails.MICRO_KIND,options);
+    thumbnail.setImageBitmap(thumb);
+  }
+ else {
+    Uri video=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,videoId);
+    imageLoader.displayImage(video.toString(),thumbnail,opts);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super(wrapped);
+  this.host=host;
+  wm=(WindowManager)host.getSystemService(Context.WINDOW_SERVICE);
+}

@@ -1,0 +1,5 @@
+{
+  long start=SystemClock.uptimeMillis();
+  super.onBindViewHolder(holder,position);
+  warn(SystemClock.uptimeMillis() - start);
+}

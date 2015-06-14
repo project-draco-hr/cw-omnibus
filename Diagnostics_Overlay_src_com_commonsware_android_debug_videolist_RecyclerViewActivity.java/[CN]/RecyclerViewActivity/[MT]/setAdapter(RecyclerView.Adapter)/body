@@ -1,0 +1,6 @@
+{
+  if (BuildConfig.DEBUG) {
+    adapter=new TimingWrapper(adapter,this);
+  }
+  getRecyclerView().setAdapter(adapter);
+}

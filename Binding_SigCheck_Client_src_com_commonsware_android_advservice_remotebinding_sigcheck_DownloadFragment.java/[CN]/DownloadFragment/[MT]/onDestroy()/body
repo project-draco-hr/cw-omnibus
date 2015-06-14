@@ -1,0 +1,7 @@
+{
+  if (binding != null) {
+    appContext.unbindService(this);
+  }
+  disconnect();
+  super.onDestroy();
+}
