@@ -4,6 +4,7 @@
   setListAdapter(adapter);
   if (current == null) {
     db=new DatabaseHelper(getActivity());
-    new LoadCursorTask().execute();
+    task=new LoadCursorTask();
+    task.execute();
   }
 }

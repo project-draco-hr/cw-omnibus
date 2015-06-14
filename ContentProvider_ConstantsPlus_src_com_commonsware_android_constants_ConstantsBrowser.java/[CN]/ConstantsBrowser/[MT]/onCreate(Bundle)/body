@@ -1,4 +1,5 @@
 {
   super.onCreate(savedInstanceState);
-  new LoadCursorTask().execute();
+  task=new LoadCursorTask();
+  task.execute();
 }

@@ -1,7 +1,8 @@
 {
   final String regId=GCMRegistrarCompat.getRegistrationId(this);
   if (regId.length() == 0) {
-    new RegisterTask(this).execute(SENDER_ID);
+    task=new RegisterTask(this);
+    task.execute(SENDER_ID);
   }
  else {
     Log.d(getClass().getSimpleName(),"Existing registration: " + regId);

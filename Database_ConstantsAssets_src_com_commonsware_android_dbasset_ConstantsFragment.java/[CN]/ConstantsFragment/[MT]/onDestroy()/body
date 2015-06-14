@@ -1,5 +1,8 @@
 {
-  super.onDestroy();
+  if (task != null) {
+    task.cancel(false);
+  }
   ((CursorAdapter)getListAdapter()).getCursor().close();
   db.close();
+  super.onDestroy();
 }
