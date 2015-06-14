@@ -7,5 +7,5 @@
  else {
     icon.setImageResource(R.drawable.ok);
   }
-  cb.setChecked(adapter.isChecked(getPosition()));
+  cb.setChecked(adapter.isChecked(getAdapterPosition()));
 }
