@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   PackageManager mgr=getPackageManager();
-  Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("http://commonsware.com"));
+  Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("https://commonsware.com"));
   ResolveInfo ri=mgr.resolveActivity(i,PackageManager.MATCH_DEFAULT_ONLY);
   Toast.makeText(this,ri.loadLabel(mgr),Toast.LENGTH_LONG).show();
   startActivity(i);

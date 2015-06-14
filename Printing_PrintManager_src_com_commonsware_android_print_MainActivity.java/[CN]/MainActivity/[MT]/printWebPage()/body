@@ -1,4 +1,4 @@
 {
   WebView print=prepPrintWebView(getString(R.string.web_page));
-  print.loadUrl("http://commonsware.com/Android");
+  print.loadUrl("https://commonsware.com/Android");
 }

@@ -3,7 +3,7 @@
   setContentView(R.layout.main);
   TextView status=(TextView)findViewById(R.id.status);
   PackageManager mgr=getPackageManager();
-  Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("http://commonsware.com"));
+  Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("https://commonsware.com"));
   ResolveInfo test=mgr.resolveActivity(i,PackageManager.MATCH_DEFAULT_ONLY);
   if (test == null) {
     status.setText(R.string.no_default);

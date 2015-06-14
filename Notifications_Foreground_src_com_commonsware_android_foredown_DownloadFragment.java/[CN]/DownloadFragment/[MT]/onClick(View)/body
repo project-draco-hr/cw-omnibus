@@ -1,6 +1,6 @@
 {
   Intent i=new Intent(getActivity(),Downloader.class);
-  i.setDataAndType(Uri.parse("http://commonsware.com/Android/excerpt.pdf"),"application/pdf");
+  i.setDataAndType(Uri.parse("https://commonsware.com/Android/excerpt.pdf"),"application/pdf");
   getActivity().startService(i);
   getActivity().finish();
 }

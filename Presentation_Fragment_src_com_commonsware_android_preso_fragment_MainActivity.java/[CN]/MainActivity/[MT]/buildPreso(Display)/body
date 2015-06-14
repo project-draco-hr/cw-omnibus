@@ -1,3 +1,3 @@
 {
-  return (SamplePresentationFragment.newInstance(this,display,"http://commonsware.com"));
+  return (SamplePresentationFragment.newInstance(this,display,"https://commonsware.com"));
 }

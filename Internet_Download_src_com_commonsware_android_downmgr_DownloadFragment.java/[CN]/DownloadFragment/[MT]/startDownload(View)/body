@@ -1,5 +1,5 @@
 {
-  Uri uri=Uri.parse("http://commonsware.com/misc/test.mp4");
+  Uri uri=Uri.parse("https://commonsware.com/misc/test.mp4");
   Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).mkdirs();
   DownloadManager.Request req=new DownloadManager.Request(uri);
   req.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE).setAllowedOverRoaming(false).setTitle("Demo").setDescription("Something useful. No, really.").setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"test.mp4");

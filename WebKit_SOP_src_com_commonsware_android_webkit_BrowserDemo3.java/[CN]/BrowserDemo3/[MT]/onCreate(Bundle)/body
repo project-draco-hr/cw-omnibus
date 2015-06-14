@@ -12,5 +12,5 @@
     }
   }
 );
-  browser.loadUrl("http://commonsware.com/misc/sop-demo.html");
+  browser.loadUrl("https://commonsware.com/misc/sop-demo.html");
 }

@@ -1,6 +1,6 @@
 {
   super.onCreate(savedInstanceState);
   WebView wv=new WebView(getContext());
-  wv.loadUrl("http://commonsware.com");
+  wv.loadUrl("https://commonsware.com");
   setContentView(wv);
 }
