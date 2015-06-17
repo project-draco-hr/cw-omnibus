@@ -5,6 +5,5 @@
   EditText value=(EditText)dlg.findViewById(R.id.value);
   values.put(DatabaseHelper.TITLE,title.getText().toString());
   values.put(DatabaseHelper.VALUE,value.getText().toString());
-  task=new InsertTask();
-  task.execute(values);
+  task=new InsertTask().execute(values);
 }

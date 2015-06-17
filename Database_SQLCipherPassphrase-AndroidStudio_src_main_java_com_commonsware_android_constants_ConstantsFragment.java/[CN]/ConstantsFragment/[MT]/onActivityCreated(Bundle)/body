@@ -3,6 +3,5 @@
   setHasOptionsMenu(true);
   setRetainInstance(true);
   db=new DatabaseHelper(getActivity());
-  task=new LoadCursorTask(getActivity().getApplicationContext());
-  task.execute();
+  task=new LoadCursorTask(getActivity().getApplicationContext()).execute();
 }
