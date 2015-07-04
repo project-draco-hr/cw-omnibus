@@ -1,0 +1,4 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  getWebView().setWebViewClient(new URLHandler());
+}
