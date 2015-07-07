@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  if (Intent.ACTION_VIEW.equals(getIntent().getAction())) {
+    findViewById(R.id.visit).setEnabled(false);
+  }
+}
