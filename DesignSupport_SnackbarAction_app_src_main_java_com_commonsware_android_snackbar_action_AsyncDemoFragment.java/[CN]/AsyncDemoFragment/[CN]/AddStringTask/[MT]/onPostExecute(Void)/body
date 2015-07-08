@@ -1,0 +1,12 @@
+{
+  Snackbar munchie=Snackbar.make(getListView(),R.string.done,Snackbar.LENGTH_LONG);
+  munchie.setAction(R.string.snackbar_action_restart,new View.OnClickListener(){
+    @Override public void onClick(    View view){
+      adapter.clear();
+      loadModel();
+    }
+  }
+);
+  munchie.show();
+  task=null;
+}
