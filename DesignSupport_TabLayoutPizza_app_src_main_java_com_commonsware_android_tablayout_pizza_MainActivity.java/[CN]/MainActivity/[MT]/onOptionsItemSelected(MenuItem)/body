@@ -1,0 +1,23 @@
+{
+  if (item.getItemId() == R.id.fixed) {
+    item.setChecked(!item.isChecked());
+    if (item.isChecked()) {
+      if (pager.getCurrentItem() > 2) {
+        pager.setCurrentItem(2);
+      }
+      pager.postDelayed(new Runnable(){
+        @Override public void run(){
+          adapter.setPageCount(3);
+          adapter.notifyDataSetChanged();
+        }
+      }
+,100);
+    }
+ else {
+      adapter.setPageCount(10);
+      adapter.notifyDataSetChanged();
+    }
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

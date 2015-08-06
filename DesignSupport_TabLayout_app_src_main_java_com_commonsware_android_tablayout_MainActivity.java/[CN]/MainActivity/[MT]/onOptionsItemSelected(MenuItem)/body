@@ -1,0 +1,17 @@
+{
+  if (item.getItemId() == R.id.fixed) {
+    item.setChecked(!item.isChecked());
+    if (item.isChecked()) {
+      adapter.setPageCount(3);
+      tabs.setTabMode(TabLayout.MODE_FIXED);
+    }
+ else {
+      adapter.setPageCount(10);
+      tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
+    }
+    adapter.notifyDataSetChanged();
+    tabs.setTabsFromPagerAdapter(adapter);
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}
