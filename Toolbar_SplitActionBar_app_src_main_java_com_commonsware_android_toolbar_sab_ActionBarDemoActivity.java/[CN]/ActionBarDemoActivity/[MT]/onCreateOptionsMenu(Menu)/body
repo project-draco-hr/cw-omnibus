@@ -1,0 +1,16 @@
+{
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    Toolbar tb=(Toolbar)findViewById(R.id.toolbar);
+    tb.inflateMenu(R.menu.actions);
+    tb.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
+      @Override public boolean onMenuItemClick(      MenuItem item){
+        return (onOptionsItemSelected(item));
+      }
+    }
+);
+  }
+ else {
+    getMenuInflater().inflate(R.menu.actions,menu);
+  }
+  return (super.onCreateOptionsMenu(menu));
+}

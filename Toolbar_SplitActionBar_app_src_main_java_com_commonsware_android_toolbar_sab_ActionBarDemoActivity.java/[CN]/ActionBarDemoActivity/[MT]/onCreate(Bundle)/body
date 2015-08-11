@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    setContentView(R.layout.main);
+  }
+  initAdapter();
+}
