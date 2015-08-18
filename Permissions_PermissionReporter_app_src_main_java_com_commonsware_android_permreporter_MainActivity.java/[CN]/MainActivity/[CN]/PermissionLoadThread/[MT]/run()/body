@@ -1,0 +1,8 @@
+{
+  PackageManager pm=ctxt.getPackageManager();
+  addPermissionsFromGroup(pm,null);
+  for (  PermissionGroupInfo group : pm.getAllPermissionGroups(0)) {
+    addPermissionsFromGroup(pm,group.name);
+  }
+  EventBus.getDefault().postSticky(result);
+}

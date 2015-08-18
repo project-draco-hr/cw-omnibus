@@ -1,0 +1,24 @@
+{
+  try {
+    for (    PermissionInfo info : pm.queryPermissionsByGroup(groupName,0)) {
+      int coreBits=info.protectionLevel & PermissionInfo.PROTECTION_MASK_BASE;
+switch (coreBits) {
+case PermissionInfo.PROTECTION_NORMAL:
+        result.add(PermissionType.NORMAL,info);
+      break;
+case PermissionInfo.PROTECTION_DANGEROUS:
+    result.add(PermissionType.DANGEROUS,info);
+  break;
+case PermissionInfo.PROTECTION_SIGNATURE:
+result.add(PermissionType.SIGNATURE,info);
+break;
+default :
+result.add(PermissionType.OTHER,info);
+break;
+}
+}
+}
+ catch (PackageManager.NameNotFoundException e) {
+throw new IllegalStateException("And you may ask yourself... how did I get here?");
+}
+}

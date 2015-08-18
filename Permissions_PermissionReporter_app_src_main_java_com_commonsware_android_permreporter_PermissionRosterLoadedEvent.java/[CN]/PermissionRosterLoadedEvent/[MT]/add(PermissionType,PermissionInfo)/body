@@ -1,0 +1,8 @@
+{
+  ArrayList<PermissionInfo> list=roster.get(type);
+  if (list == null) {
+    list=new ArrayList<PermissionInfo>();
+    roster.put(type,list);
+  }
+  list.add(info);
+}

@@ -1,0 +1,7 @@
+{
+  PermissionListFragment frag=new PermissionListFragment();
+  Bundle args=new Bundle();
+  args.putSerializable(KEY_TYPE,type);
+  frag.setArguments(args);
+  return (frag);
+}

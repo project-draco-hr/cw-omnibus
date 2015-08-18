@@ -1,0 +1,3 @@
+{
+  return (PermissionListFragment.newInstance(PermissionType.forValue(position)));
+}

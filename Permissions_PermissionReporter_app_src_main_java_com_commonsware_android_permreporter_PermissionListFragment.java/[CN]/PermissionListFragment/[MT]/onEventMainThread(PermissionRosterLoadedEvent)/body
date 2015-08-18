@@ -1,0 +1,17 @@
+{
+  PermissionType type=(PermissionType)getArguments().getSerializable(KEY_TYPE);
+  ArrayList<PermissionInfo> perms=event.getListForType(type);
+  if (perms != null && perms.size() > 0) {
+    Collections.sort(perms,new Comparator<PermissionInfo>(){
+      @Override public int compare(      PermissionInfo one,      PermissionInfo two){
+        return (one.name.compareTo(two.name));
+      }
+    }
+);
+    setListAdapter(new PermissionAdapter(perms));
+  }
+ else {
+    setListAdapter(new PermissionAdapter(new ArrayList<PermissionInfo>()));
+    setEmptyText(getActivity().getString(R.string.msg_no_perms));
+  }
+}
