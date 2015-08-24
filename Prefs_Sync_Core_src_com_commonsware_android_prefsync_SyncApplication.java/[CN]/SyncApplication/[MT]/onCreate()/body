@@ -1,5 +1,0 @@
-{
-  super.onCreate();
-  prefs=PreferenceManager.getDefaultSharedPreferences(this);
-  prefs.registerOnSharedPreferenceChangeListener(this);
-}

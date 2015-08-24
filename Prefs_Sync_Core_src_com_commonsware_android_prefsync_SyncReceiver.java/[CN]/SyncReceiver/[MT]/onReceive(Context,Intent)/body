@@ -1,4 +1,0 @@
-{
-  SyncApplication app=(SyncApplication)ctxt.getApplicationContext();
-  app.applySync(i);
-}

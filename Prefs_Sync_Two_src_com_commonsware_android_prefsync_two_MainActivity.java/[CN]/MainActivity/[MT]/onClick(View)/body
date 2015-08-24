@@ -1,3 +1,0 @@
-{
-  prefs.edit().putInt(KEY,prefs.getInt("test",0) + 1).apply();
-}
