@@ -1,5 +1,0 @@
-{
-  if (getActivity() != null) {
-    new LoadThread(getActivity()).start();
-  }
-}

@@ -3,5 +3,4 @@
   setupStrictMode();
   setContentView(R.layout.main);
   pager=(ViewPager)findViewById(R.id.pager);
-  getActionBar().setHomeButtonEnabled(true);
 }

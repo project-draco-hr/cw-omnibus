@@ -1,3 +1,0 @@
-{
-  db.execSQL("CREATE TABLE notes (position INTEGER PRIMARY KEY, prose TEXT);");
-}

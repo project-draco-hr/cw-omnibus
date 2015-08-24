@@ -1,7 +1,0 @@
-{
-  NoteFragment frag=new NoteFragment();
-  Bundle args=new Bundle();
-  args.putInt(KEY_POSITION,position);
-  frag.setArguments(args);
-  return (frag);
-}

@@ -4,7 +4,9 @@
   try {
     InputStream is=assets.open("book/contents.json");
     BufferedReader reader=new BufferedReader(new InputStreamReader(is));
-    contents=gson.fromJson(reader,BookContents.class);
+synchronized (this) {
+      contents=gson.fromJson(reader,BookContents.class);
+    }
     EventBus.getDefault().post(new BookLoadedEvent(contents));
   }
  catch (  IOException e) {

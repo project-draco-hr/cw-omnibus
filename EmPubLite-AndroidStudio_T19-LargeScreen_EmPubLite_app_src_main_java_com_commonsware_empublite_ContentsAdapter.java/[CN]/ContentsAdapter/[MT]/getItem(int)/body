@@ -1,3 +1,0 @@
-{
-  return (SimpleContentFragment.newInstance(contents.getChapterPath(position)));
-}

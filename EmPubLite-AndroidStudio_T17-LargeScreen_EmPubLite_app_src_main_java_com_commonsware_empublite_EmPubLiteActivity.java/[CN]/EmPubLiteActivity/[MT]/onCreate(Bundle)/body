@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  setupStrictMode();
+  setContentView(R.layout.main);
+  pager=(ViewPager)findViewById(R.id.pager);
+  sidebar=findViewById(R.id.sidebar);
+  divider=findViewById(R.id.divider);
+  getFragmentManager().addOnBackStackChangedListener(this);
+  help=(SimpleContentFragment)getFragmentManager().findFragmentByTag(HELP);
+  about=(SimpleContentFragment)getFragmentManager().findFragmentByTag(ABOUT);
+}

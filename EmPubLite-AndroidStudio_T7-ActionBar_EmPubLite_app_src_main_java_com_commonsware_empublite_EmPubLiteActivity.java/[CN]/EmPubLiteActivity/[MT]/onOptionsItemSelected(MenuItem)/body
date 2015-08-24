@@ -1,11 +1,9 @@
 {
 switch (item.getItemId()) {
-case android.R.id.home:
-    return (true);
 case R.id.about:
-  return (true);
+    return (true);
 case R.id.help:
-return (true);
+  return (true);
 }
 return (super.onOptionsItemSelected(item));
 }

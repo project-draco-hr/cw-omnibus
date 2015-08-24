@@ -4,7 +4,8 @@
   if (adapter == null) {
     ModelFragment mfrag=(ModelFragment)getFragmentManager().findFragmentByTag(MODEL);
     if (mfrag == null) {
-      getFragmentManager().beginTransaction().add(new ModelFragment(),MODEL).commit();
+      mfrag=new ModelFragment();
+      getFragmentManager().beginTransaction().add(mfrag,MODEL).commit();
     }
  else     if (mfrag.getBook() != null) {
       setupPager(mfrag.getBook());

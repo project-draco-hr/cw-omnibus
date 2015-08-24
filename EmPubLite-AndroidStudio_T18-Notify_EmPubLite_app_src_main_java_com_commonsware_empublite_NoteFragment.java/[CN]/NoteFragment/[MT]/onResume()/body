@@ -1,8 +1,0 @@
-{
-  super.onResume();
-  EventBus.getDefault().register(this);
-  if (TextUtils.isEmpty(editor.getText())) {
-    DatabaseHelper db=DatabaseHelper.getInstance(getActivity());
-    db.loadNote(getPosition());
-  }
-}

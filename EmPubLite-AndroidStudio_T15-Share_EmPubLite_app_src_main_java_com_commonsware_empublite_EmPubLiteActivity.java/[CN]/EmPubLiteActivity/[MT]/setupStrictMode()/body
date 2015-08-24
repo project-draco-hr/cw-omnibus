@@ -1,10 +1,7 @@
 {
-  StrictMode.ThreadPolicy.Builder builder=new StrictMode.ThreadPolicy.Builder().detectNetwork();
+  StrictMode.ThreadPolicy.Builder builder=new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog();
   if (BuildConfig.DEBUG) {
-    builder.penaltyDeath();
-  }
- else {
-    builder.penaltyLog();
+    builder.penaltyFlashScreen();
   }
   StrictMode.setThreadPolicy(builder.build());
 }
