@@ -1,0 +1,4 @@
+{
+  ((CursorAdapter)getListAdapter()).changeCursor(result);
+  task=null;
+}

@@ -1,3 +1,0 @@
-{
-  ((CursorAdapter)getListAdapter()).changeCursor(constantsCursor);
-}

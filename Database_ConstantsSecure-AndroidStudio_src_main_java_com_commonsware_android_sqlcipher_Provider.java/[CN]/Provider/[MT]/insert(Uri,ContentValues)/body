@@ -1,9 +1,0 @@
-{
-  long rowID=db.insert(TABLE,Constants.TITLE,initialValues);
-  if (rowID > 0) {
-    Uri uri=ContentUris.withAppendedId(Provider.Constants.CONTENT_URI,rowID);
-    getContext().getContentResolver().notifyChange(uri,null);
-    return (uri);
-  }
-  throw new SQLException("Failed to insert row into " + url);
-}

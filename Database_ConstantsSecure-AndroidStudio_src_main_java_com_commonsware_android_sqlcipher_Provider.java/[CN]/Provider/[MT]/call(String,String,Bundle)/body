@@ -1,6 +1,0 @@
-{
-  if (SET_KEY_METHOD.equals(method) && arg != null) {
-    db=dbHelper.getWritableDatabase(arg);
-  }
-  return (null);
-}

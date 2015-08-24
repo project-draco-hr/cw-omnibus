@@ -1,0 +1,3 @@
+{
+  this.ctxt=getActivity().getApplicationContext();
+}

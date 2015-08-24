@@ -1,5 +1,0 @@
-{
-  int count=db.update(TABLE,values,where,whereArgs);
-  getContext().getContentResolver().notifyChange(url,null);
-  return (count);
-}

@@ -1,9 +1,0 @@
-{
-  ContentValues values=new ContentValues(2);
-  AlertDialog dlg=(AlertDialog)di;
-  EditText title=(EditText)dlg.findViewById(R.id.title);
-  EditText value=(EditText)dlg.findViewById(R.id.value);
-  values.put(DatabaseHelper.TITLE,title.getText().toString());
-  values.put(DatabaseHelper.VALUE,value.getText().toString());
-  new InsertTask().execute(values);
-}

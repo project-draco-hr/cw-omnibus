@@ -1,6 +1,0 @@
-{
-  ContentValues values=new ContentValues(2);
-  values.put(Provider.Constants.TITLE,wrapper.getTitle());
-  values.put(Provider.Constants.VALUE,wrapper.getValue());
-  getContentResolver().insert(Provider.Constants.CONTENT_URI,values);
-}

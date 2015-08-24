@@ -1,0 +1,4 @@
+{
+  super(context,DATABASE_NAME,null,SCHEMA);
+  SQLiteDatabase.loadLibs(context);
+}

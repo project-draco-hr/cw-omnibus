@@ -1,3 +1,0 @@
-{
-  menu.add(Menu.NONE,DELETE_ID,Menu.NONE,"Delete").setIcon(R.drawable.delete).setAlphabeticShortcut('d');
-}

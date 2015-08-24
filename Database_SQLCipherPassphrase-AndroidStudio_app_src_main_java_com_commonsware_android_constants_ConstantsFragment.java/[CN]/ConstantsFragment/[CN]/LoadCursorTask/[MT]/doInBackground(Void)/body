@@ -1,0 +1,4 @@
+{
+  DatabaseHelper.encrypt(ctxt);
+  return (doQuery());
+}

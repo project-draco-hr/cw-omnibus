@@ -1,6 +1,0 @@
-{
-  if (isCollectionUri(url)) {
-    return ("vnd.commonsware.cursor.dir/constant");
-  }
-  return ("vnd.commonsware.cursor.item/constant");
-}
