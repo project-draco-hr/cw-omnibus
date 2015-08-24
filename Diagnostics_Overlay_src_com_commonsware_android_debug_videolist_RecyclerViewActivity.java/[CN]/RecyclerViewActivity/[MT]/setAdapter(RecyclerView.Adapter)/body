@@ -1,5 +1,9 @@
 {
-  if (BuildConfig.DEBUG) {
+  boolean canDrawOverlays=(Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1);
+  if (!canDrawOverlays) {
+    canDrawOverlays=Settings.canDrawOverlays(this);
+  }
+  if (BuildConfig.DEBUG && canDrawOverlays) {
     adapter=new TimingWrapper(adapter,this);
   }
   getRecyclerView().setAdapter(adapter);
