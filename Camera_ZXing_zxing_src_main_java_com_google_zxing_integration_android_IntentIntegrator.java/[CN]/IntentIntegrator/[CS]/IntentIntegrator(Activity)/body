@@ -1,0 +1,5 @@
+{
+  this.activity=activity;
+  this.fragment=null;
+  initializeConfiguration();
+}

@@ -1,0 +1,3 @@
+{
+  this.targetApplications=Collections.singletonList(targetApplication);
+}
