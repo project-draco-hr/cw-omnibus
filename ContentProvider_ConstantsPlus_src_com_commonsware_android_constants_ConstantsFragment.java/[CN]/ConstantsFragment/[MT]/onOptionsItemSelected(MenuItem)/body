@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.add) {
+    add();
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

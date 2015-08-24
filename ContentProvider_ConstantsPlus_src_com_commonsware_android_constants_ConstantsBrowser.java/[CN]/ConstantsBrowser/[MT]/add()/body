@@ -1,5 +1,0 @@
-{
-  View addView=getLayoutInflater().inflate(R.layout.add_edit,null);
-  AlertDialog.Builder builder=new AlertDialog.Builder(this);
-  builder.setTitle(R.string.add_title).setView(addView).setPositiveButton(R.string.ok,this).setNegativeButton(R.string.cancel,null).show();
-}

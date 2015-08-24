@@ -1,6 +1,0 @@
-{
-  getContentResolver().insert(Provider.Constants.CONTENT_URI,values[0]);
-  constantsCursor=doQuery();
-  constantsCursor.getCount();
-  return (null);
-}

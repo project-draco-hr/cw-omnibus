@@ -1,4 +1,6 @@
 {
   super.onCreate(savedInstanceState);
-  task=new LoadCursorTask().execute();
+  if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
+    getFragmentManager().beginTransaction().add(android.R.id.content,new ConstantsFragment()).commit();
+  }
 }

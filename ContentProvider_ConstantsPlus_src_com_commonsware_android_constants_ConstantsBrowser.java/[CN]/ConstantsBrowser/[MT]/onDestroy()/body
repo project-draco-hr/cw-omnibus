@@ -1,6 +1,0 @@
-{
-  if (task != null) {
-    task.cancel(false);
-  }
-  super.onDestroy();
-}
