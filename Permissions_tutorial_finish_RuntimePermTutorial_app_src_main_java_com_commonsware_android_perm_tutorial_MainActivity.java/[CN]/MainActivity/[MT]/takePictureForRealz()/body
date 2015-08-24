@@ -1,0 +1,4 @@
+{
+  Intent i=new CameraActivity.IntentBuilder(MainActivity.this).to(new File(rootDir,"test.jpg")).updateMediaStore().build();
+  startActivityForResult(i,RESULT_PICTURE_TAKEN);
+}

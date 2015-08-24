@@ -1,0 +1,6 @@
+{
+  navBack=menu.findItem(R.id.back);
+  navForward=menu.findItem(R.id.fwd);
+  navReload=menu.findItem(R.id.reload);
+  updateNav();
+}

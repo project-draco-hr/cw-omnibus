@@ -1,0 +1,5 @@
+{
+  name=in.readInt();
+  flag=in.readInt();
+  url=in.readInt();
+}

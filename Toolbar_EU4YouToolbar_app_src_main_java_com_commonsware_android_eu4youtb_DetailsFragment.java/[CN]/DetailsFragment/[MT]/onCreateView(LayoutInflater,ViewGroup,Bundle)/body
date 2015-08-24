@@ -1,0 +1,15 @@
+{
+  View result=inflater.inflate(R.layout.details,container,false);
+  webView=(WebView)result.findViewById(R.id.webview);
+  flag=(ImageView)result.findViewById(R.id.flag);
+  toolbar=(Toolbar)result.findViewById(R.id.toolbar);
+  if (toolbar == null) {
+    setHasOptionsMenu(true);
+  }
+ else {
+    toolbar.inflateMenu(R.menu.webview);
+    getNavItems(toolbar.getMenu());
+    toolbar.setOnMenuItemClickListener(this);
+  }
+  return (result);
+}

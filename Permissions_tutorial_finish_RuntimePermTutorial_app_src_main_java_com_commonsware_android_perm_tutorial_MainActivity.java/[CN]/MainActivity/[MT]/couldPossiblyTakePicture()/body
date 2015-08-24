@@ -1,0 +1,3 @@
+{
+  return (!wasPermissionRejected(CAMERA) && !wasPermissionRejected(WRITE_EXTERNAL_STORAGE));
+}

@@ -1,0 +1,5 @@
+{
+  EditText urlField=(EditText)findViewById(R.id.url);
+  String url=urlField.getText().toString();
+  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
+}

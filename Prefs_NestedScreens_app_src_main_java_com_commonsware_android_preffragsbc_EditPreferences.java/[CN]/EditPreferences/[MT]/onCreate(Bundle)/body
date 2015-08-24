@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  if (getIntent().getStringExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT) == null) {
+    if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
+      getFragmentManager().beginTransaction().add(android.R.id.content,new First()).commit();
+    }
+  }
+}

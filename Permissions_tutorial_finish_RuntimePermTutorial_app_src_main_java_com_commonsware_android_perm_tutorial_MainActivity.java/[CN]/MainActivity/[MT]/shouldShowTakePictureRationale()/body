@@ -1,0 +1,3 @@
+{
+  return (shouldShowRationale(CAMERA) || shouldShowRationale(WRITE_EXTERNAL_STORAGE));
+}

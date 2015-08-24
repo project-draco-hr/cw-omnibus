@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  countries=(CountriesFragment)getFragmentManager().findFragmentById(R.id.countries);
+  if (countries == null) {
+    countries=new CountriesFragment();
+    getFragmentManager().beginTransaction().add(R.id.countries,countries).commit();
+  }
+  details=(DetailsFragment)getFragmentManager().findFragmentById(R.id.details);
+  if (details == null && findViewById(R.id.details) != null) {
+    details=new DetailsFragment();
+    getFragmentManager().beginTransaction().add(R.id.details,details).commit();
+  }
+}

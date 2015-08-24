@@ -1,0 +1,3 @@
+{
+  return (!hasPermission(RECORD_AUDIO) && !shouldShowRationale(RECORD_AUDIO) && haveRequestedAudioPermission());
+}

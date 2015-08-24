@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  if (BuildConfig.APPLY_STRICT_MODE) {
+    StrictMode.VmPolicy.Builder b=new StrictMode.VmPolicy.Builder();
+    b.detectCleartextNetwork().penaltyLog();
+    StrictMode.setVmPolicy(b.build());
+  }
+  if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
+    getFragmentManager().beginTransaction().add(android.R.id.content,new DownloadFragment()).commit();
+  }
+}

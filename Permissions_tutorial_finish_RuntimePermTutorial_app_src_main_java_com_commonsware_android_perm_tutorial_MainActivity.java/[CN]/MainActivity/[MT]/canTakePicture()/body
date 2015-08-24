@@ -1,0 +1,3 @@
+{
+  return (hasPermission(CAMERA) && hasPermission(WRITE_EXTERNAL_STORAGE));
+}

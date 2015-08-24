@@ -1,0 +1,4 @@
+{
+  super.onCreate();
+  titleTemplate=getString(R.string.title_template);
+}

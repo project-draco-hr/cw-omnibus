@@ -1,0 +1,4 @@
+{
+  name=(TextView)row.findViewById(R.id.name);
+  flag=(ImageView)row.findViewById(R.id.flag);
+}

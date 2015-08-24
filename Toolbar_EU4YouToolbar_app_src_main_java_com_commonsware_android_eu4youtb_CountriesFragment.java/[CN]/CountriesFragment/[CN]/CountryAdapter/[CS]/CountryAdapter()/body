@@ -1,0 +1,3 @@
+{
+  super(getActivity(),R.layout.row,R.id.name,Country.EU);
+}

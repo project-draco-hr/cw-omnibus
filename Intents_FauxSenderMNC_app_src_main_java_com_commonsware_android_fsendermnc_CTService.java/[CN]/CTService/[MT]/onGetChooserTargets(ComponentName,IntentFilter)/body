@@ -1,0 +1,7 @@
+{
+  ArrayList<ChooserTarget> result=new ArrayList<ChooserTarget>();
+  for (int i=1; i <= 6; i++) {
+    result.add(buildTarget(i));
+  }
+  return (result);
+}

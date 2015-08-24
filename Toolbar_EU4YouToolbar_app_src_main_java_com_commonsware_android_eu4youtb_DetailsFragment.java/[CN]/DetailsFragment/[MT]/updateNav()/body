@@ -1,0 +1,5 @@
+{
+  navBack.setEnabled(webView.canGoBack());
+  navForward.setEnabled(webView.canGoForward());
+  navReload.setEnabled(webView.getUrl() != null);
+}

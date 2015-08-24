@@ -1,0 +1,8 @@
+{
+  super.onRestoreInstanceState(savedInstanceState);
+  CharSequence cs=savedInstanceState.getCharSequence(STATE_BREADCRUST);
+  if (cs != null) {
+    breadcrust.setVisibility(View.VISIBLE);
+    breadcrust.setText(cs);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  addPreferencesFromResource(R.xml.preferences);
+  Preference pref=findPreference("text");
+  updateSummary(pref,pref.getSharedPreferences().getString(pref.getKey(),null));
+  pref.setOnPreferenceChangeListener(this);
+}

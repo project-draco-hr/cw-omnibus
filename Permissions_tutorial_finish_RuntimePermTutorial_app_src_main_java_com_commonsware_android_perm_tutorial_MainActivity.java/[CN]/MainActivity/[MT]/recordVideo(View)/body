@@ -1,0 +1,17 @@
+{
+  if (canRecordVideo()) {
+    recordVideoForRealz();
+  }
+ else   if (!haveRequestedAudioPermission() || breadcrust.getVisibility() == View.VISIBLE) {
+    breadcrust.setVisibility(View.GONE);
+    markRequestedAudioPermission();
+    requestPermissions(netPermissions(PERMS_ALL),RESULT_PERMS_RECORD_VIDEO);
+  }
+ else   if (shouldShowRecordVideoRationale()) {
+    breadcrust.setText(R.string.msg_record_video);
+    breadcrust.setVisibility(View.VISIBLE);
+  }
+ else {
+    throw new IllegalStateException(getString(R.string.msg_state));
+  }
+}

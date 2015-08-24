@@ -1,0 +1,6 @@
+{
+  if (useRuntimePermissions()) {
+    return (checkSelfPermission(perm) == PackageManager.PERMISSION_GRANTED);
+  }
+  return (true);
+}

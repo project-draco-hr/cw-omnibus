@@ -1,0 +1,6 @@
+{
+  b.setEnabled(false);
+  Intent i=new Intent(getActivity(),Downloader.class);
+  i.setData(Uri.parse(BuildConfig.DOWNLOAD_URL));
+  getActivity().startService(i);
+}

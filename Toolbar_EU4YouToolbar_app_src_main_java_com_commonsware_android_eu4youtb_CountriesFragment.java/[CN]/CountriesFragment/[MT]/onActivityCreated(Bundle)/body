@@ -1,0 +1,10 @@
+{
+  super.onActivityCreated(state);
+  setListAdapter(new CountryAdapter());
+  if (state != null) {
+    int position=state.getInt(STATE_CHECKED,-1);
+    if (position > -1) {
+      getListView().setItemChecked(position,true);
+    }
+  }
+}

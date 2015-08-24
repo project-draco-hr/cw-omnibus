@@ -1,3 +1,3 @@
 {
-  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://misc.commonsware.com/molecule.png")));
+  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://commonsware.com/Android/")));
 }

@@ -1,0 +1,20 @@
+{
+switch (item.getItemId()) {
+case R.id.back:
+    if (webView.canGoBack()) {
+      webView.goBack();
+    }
+  break;
+case R.id.fwd:
+if (webView.canGoForward()) {
+  webView.goForward();
+}
+break;
+case R.id.reload:
+webView.reload();
+break;
+default :
+return (super.onOptionsItemSelected(item));
+}
+return (true);
+}

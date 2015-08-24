@@ -1,0 +1,11 @@
+{
+  Toolbar tb=(Toolbar)findViewById(R.id.toolbar);
+  tb.inflateMenu(R.menu.actions);
+  tb.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
+    @Override public boolean onMenuItemClick(    MenuItem item){
+      return (onOptionsItemSelected(item));
+    }
+  }
+);
+  return (super.onCreateOptionsMenu(menu));
+}

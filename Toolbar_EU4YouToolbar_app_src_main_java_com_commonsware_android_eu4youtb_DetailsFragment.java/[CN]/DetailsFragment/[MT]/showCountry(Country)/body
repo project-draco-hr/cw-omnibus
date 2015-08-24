@@ -1,0 +1,6 @@
+{
+  webView.loadUrl(getActivity().getString(c.url));
+  if (flag != null) {
+    flag.setImageResource(c.flag);
+  }
+}

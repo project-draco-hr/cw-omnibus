@@ -1,0 +1,8 @@
+{
+  if (task != null) {
+    task.cancel(false);
+  }
+  adapter.clear();
+  task=new AddStringTask();
+  task.execute();
+}

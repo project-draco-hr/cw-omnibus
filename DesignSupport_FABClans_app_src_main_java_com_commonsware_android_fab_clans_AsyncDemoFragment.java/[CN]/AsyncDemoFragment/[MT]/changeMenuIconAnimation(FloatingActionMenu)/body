@@ -1,0 +1,22 @@
+{
+  AnimatorSet set=new AnimatorSet();
+  final ImageView v=menu.getMenuIconView();
+  ObjectAnimator scaleOutX=ObjectAnimator.ofFloat(v,"scaleX",1.0f,0.2f);
+  ObjectAnimator scaleOutY=ObjectAnimator.ofFloat(v,"scaleY",1.0f,0.2f);
+  ObjectAnimator scaleInX=ObjectAnimator.ofFloat(v,"scaleX",0.2f,1.0f);
+  ObjectAnimator scaleInY=ObjectAnimator.ofFloat(v,"scaleY",0.2f,1.0f);
+  scaleOutX.setDuration(50);
+  scaleOutY.setDuration(50);
+  scaleInX.setDuration(150);
+  scaleInY.setDuration(150);
+  scaleInX.addListener(new AnimatorListenerAdapter(){
+    @Override public void onAnimationStart(    Animator animation){
+      v.setImageResource(menu.isOpened() ? R.drawable.ic_action_settings : R.drawable.ic_close);
+    }
+  }
+);
+  set.play(scaleOutX).with(scaleOutY);
+  set.play(scaleInX).with(scaleInY).after(scaleOutX);
+  set.setInterpolator(new OvershootInterpolator(2));
+  menu.setIconToggleAnimatorSet(set);
+}

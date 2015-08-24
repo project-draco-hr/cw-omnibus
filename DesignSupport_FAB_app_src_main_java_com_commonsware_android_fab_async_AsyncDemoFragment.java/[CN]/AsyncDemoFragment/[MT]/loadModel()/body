@@ -1,0 +1,4 @@
+{
+  task=new AddStringTask();
+  task.execute();
+}

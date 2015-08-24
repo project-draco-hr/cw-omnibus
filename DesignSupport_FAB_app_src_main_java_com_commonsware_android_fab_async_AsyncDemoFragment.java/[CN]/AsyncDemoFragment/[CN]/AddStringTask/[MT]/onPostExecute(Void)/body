@@ -1,0 +1,4 @@
+{
+  Snackbar.make(getListView(),R.string.done,Snackbar.LENGTH_LONG).show();
+  task=null;
+}

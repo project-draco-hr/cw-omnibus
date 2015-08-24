@@ -1,10 +1,7 @@
 {
   Intent i=buildBaseIntent(ctxt).putExtra(EXTRA_PERIOD,period).putExtra(EXTRA_IS_DOWNLOAD,isDownload);
   PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,0);
-  Log.e("PollReceiver",String.valueOf(Build.VERSION.SDK_INT));
-  Log.e("PollReceiver",String.valueOf(Build.VERSION_CODES.LOLLIPOP_MR1));
-  Log.e("PollReceiver",String.valueOf(putMarzipanInYourPiePlateBingo()));
-  if (putMarzipanInYourPiePlateBingo()) {
+  if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1) {
     Log.e("PollReceiver","allow while idle");
     alarms.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + period,pi);
   }

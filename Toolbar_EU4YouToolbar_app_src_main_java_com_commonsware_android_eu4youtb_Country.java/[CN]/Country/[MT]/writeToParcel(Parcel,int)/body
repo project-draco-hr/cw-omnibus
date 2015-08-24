@@ -1,0 +1,5 @@
+{
+  dest.writeInt(name);
+  dest.writeInt(flag);
+  dest.writeInt(url);
+}

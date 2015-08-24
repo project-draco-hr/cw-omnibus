@@ -1,0 +1,4 @@
+{
+  Intent i=new VideoRecorderActivity.IntentBuilder(MainActivity.this).quality(VideoRecorderActivity.Quality.HIGH).sizeLimit(5000000).to(new File(rootDir,"test.mp4")).updateMediaStore().forceClassic().build();
+  startActivityForResult(i,RESULT_VIDEO_RECORDED);
+}

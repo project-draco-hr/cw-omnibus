@@ -1,0 +1,10 @@
+{
+  if (getContract().isPersistentSelection()) {
+    getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+    l.setItemChecked(position,true);
+  }
+ else {
+    getListView().setChoiceMode(ListView.CHOICE_MODE_NONE);
+  }
+  getContract().onCountrySelected(Country.EU.get(position));
+}

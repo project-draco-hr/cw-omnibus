@@ -1,0 +1,12 @@
+{
+  Toast t=null;
+  if (resultCode == RESULT_OK) {
+    if (requestCode == RESULT_PICTURE_TAKEN) {
+      t=Toast.makeText(this,R.string.msg_pic_taken,Toast.LENGTH_LONG);
+    }
+ else     if (requestCode == RESULT_VIDEO_RECORDED) {
+      t=Toast.makeText(this,R.string.msg_vid_recorded,Toast.LENGTH_LONG);
+    }
+    t.show();
+  }
+}

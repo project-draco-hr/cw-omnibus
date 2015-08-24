@@ -1,0 +1,17 @@
+{
+  String epilogue="";
+  super.onCreate(savedInstanceState);
+  int targetId=getIntent().getIntExtra(EXTRA_TARGET_ID,-1);
+  if (targetId > 0) {
+    epilogue=" for target ID #" + targetId;
+  }
+  String msg=getIntent().getStringExtra(Intent.EXTRA_TEXT);
+  if (TextUtils.isEmpty(msg)) {
+    msg=getIntent().getStringExtra(Intent.EXTRA_SUBJECT);
+  }
+  if (TextUtils.isEmpty(msg)) {
+    msg=getString(R.string.no_message_supplied);
+  }
+  Toast.makeText(this,msg + epilogue,Toast.LENGTH_LONG).show();
+  finish();
+}

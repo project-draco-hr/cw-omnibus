@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  til=(TextInputLayout)findViewById(R.id.til);
+  til.setErrorEnabled(true);
+}

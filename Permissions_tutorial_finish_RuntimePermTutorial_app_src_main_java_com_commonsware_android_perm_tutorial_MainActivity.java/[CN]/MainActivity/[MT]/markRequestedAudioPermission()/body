@@ -1,0 +1,3 @@
+{
+  prefs.edit().putBoolean(PREF_HAVE_REQUESTED_AUDIO,true).apply();
+}

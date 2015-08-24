@@ -1,0 +1,10 @@
+{
+  if (details != null && details.isVisible()) {
+    details.showCountry(c);
+  }
+ else {
+    Intent i=new Intent(this,DetailsActivity.class);
+    i.putExtra(DetailsActivity.EXTRA_COUNTRY,c);
+    startActivity(i);
+  }
+}

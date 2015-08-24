@@ -1,0 +1,7 @@
+{
+  boolean result=prefs.getBoolean(PREF_IS_FIRST_RUN,true);
+  if (result) {
+    prefs.edit().putBoolean(PREF_IS_FIRST_RUN,false).apply();
+  }
+  return (result);
+}

@@ -1,0 +1,8 @@
+{
+  if (value == null || value.length() == 0) {
+    pref.setSummary(R.string.msg_missing_text);
+  }
+ else {
+    pref.setSummary(value);
+  }
+}

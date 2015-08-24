@@ -1,0 +1,7 @@
+{
+  super.onViewCreated(v,savedInstanceState);
+  getListView().setScrollbarFadingEnabled(false);
+  setListAdapter(adapter);
+  FloatingActionButton fab=(FloatingActionButton)v.findViewById(R.id.refresh);
+  fab.setOnClickListener(this);
+}

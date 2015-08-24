@@ -1,0 +1,5 @@
+{
+  inflater.inflate(R.menu.webview,menu);
+  getNavItems(menu);
+  super.onCreateOptionsMenu(menu,inflater);
+}

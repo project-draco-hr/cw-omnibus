@@ -1,0 +1,5 @@
+{
+  View result=inflater.inflate(R.layout.editor,container,false);
+  editor=(EditText)result.findViewById(R.id.editor);
+  return (result);
+}

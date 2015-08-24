@@ -1,0 +1,3 @@
+{
+  return (shouldShowTakePictureRationale() || shouldShowRationale(RECORD_AUDIO));
+}
