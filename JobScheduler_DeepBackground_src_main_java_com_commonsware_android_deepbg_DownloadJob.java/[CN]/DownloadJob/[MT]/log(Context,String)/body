@@ -1,17 +1,4 @@
 {
-  File log=new File(ctxt.getExternalCacheDir(),"deep_background.log");
-  Log.d("DownloadLog","Logging to " + log.getAbsolutePath());
-  log.getParentFile().mkdirs();
-  try {
-    FileOutputStream fos=new FileOutputStream(log,true);
-    PrintWriter out=new PrintWriter(new OutputStreamWriter(fos));
-    out.print(new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ ").format(new Date()));
-    out.println(msg);
-    out.flush();
-    fos.getFD().sync();
-    out.close();
-  }
- catch (  Exception e) {
-    Log.e("DeepBackground","Exception writing to log: " + msg,e);
-  }
+  log(new File(ctxt.getCacheDir(),"deep_background_internal.log"),msg);
+  log(new File(ctxt.getExternalCacheDir(),"deep_background_external.log"),msg);
 }

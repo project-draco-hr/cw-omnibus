@@ -1,0 +1,16 @@
+{
+  Log.d("DownloadLog","Logging to " + log.getAbsolutePath());
+  log.getParentFile().mkdirs();
+  try {
+    FileOutputStream fos=new FileOutputStream(log,true);
+    PrintWriter out=new PrintWriter(new OutputStreamWriter(fos));
+    out.print(new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ ").format(new Date()));
+    out.println(msg);
+    out.flush();
+    fos.getFD().sync();
+    out.close();
+  }
+ catch (  Exception e) {
+    Log.e("DeepBackground","Exception writing to log: " + msg,e);
+  }
+}

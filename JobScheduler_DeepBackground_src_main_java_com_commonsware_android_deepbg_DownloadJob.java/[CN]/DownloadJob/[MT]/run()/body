@@ -31,6 +31,7 @@
         out.write(buffer,0,len);
       }
       out.flush();
+      DownloadJob.log(app,"Download completed");
     }
   finally {
       fos.getFD().sync();
