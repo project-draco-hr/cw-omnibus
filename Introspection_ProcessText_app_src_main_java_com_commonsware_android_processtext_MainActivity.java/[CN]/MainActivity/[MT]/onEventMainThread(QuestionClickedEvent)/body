@@ -1,0 +1,9 @@
+{
+  if (Intent.ACTION_PROCESS_TEXT.equals(getIntent().getAction()) && getIntent().getStringExtra(Intent.EXTRA_PROCESS_TEXT) != null) {
+    setResult(Activity.RESULT_OK,new Intent().putExtra(Intent.EXTRA_PROCESS_TEXT,event.item.link));
+    finish();
+  }
+ else {
+    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(event.item.link)));
+  }
+}

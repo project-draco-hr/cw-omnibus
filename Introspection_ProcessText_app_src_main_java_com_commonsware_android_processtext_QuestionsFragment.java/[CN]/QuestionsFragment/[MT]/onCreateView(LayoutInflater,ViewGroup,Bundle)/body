@@ -1,0 +1,14 @@
+{
+  View result=super.onCreateView(inflater,container,savedInstanceState);
+  setRetainInstance(true);
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("https://api.stackexchange.com").build();
+  StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+  String search=getArguments().getString(ARG_SEARCH);
+  if (search == null) {
+    so.questions("android",this);
+  }
+ else {
+    so.search(search,this);
+  }
+  return (result);
+}

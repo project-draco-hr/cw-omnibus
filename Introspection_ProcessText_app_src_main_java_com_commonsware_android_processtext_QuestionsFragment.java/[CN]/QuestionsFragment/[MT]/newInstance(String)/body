@@ -1,0 +1,7 @@
+{
+  QuestionsFragment result=new QuestionsFragment();
+  Bundle args=new Bundle();
+  args.putString(ARG_SEARCH,search);
+  result.setArguments(args);
+  return (result);
+}
