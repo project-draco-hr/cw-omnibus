@@ -1,0 +1,3 @@
+{
+  ctxt.startService(new Intent(ctxt,ScheduledService.class));
+}

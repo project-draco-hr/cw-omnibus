@@ -1,0 +1,9 @@
+{
+  super.onActivityCreated(state);
+  setRetainInstance(true);
+  getListView().setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+  if (adapter == null) {
+    adapter=new EventLogAdapter();
+  }
+  setListAdapter(adapter);
+}

@@ -1,0 +1,6 @@
+{
+  sched.shutdownNow();
+  wakeLock.release();
+  stopForeground(true);
+  super.onDestroy();
+}

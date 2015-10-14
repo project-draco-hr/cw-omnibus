@@ -1,0 +1,18 @@
+{
+  try {
+    FileOutputStream fos=new FileOutputStream(f,true);
+    Writer osw=new OutputStreamWriter(fos);
+    osw.write(event.when.toString());
+    osw.write(" : ");
+    osw.write(Integer.toHexString(event.value));
+    osw.write('\n');
+    osw.flush();
+    fos.flush();
+    fos.getFD().sync();
+    fos.close();
+    Log.d(getClass().getSimpleName(),"logged to " + f.getAbsolutePath());
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception writing to file",e);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  RandomEvent event=new RandomEvent(rng.nextInt());
+  EventBus.getDefault().post(event);
+  append(log,event);
+}
