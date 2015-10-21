@@ -1,0 +1,6 @@
+{
+  if (thingy instanceof CharSequence) {
+    return (JSONObject.wrap(thingy.toString()));
+  }
+  return (JSONObject.wrap(thingy));
+}

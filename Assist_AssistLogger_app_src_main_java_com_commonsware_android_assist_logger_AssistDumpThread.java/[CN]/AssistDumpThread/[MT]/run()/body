@@ -1,0 +1,40 @@
+{
+  if (logDir != null) {
+    JSONObject json=new JSONObject();
+    try {
+      json.put("data",dumpBundle(data,new JSONObject()));
+    }
+ catch (    JSONException e) {
+      Log.e(getClass().getSimpleName(),"Exception saving data",e);
+    }
+    try {
+      json.put("content",dumpContent(new JSONObject()));
+    }
+ catch (    JSONException e) {
+      Log.e(getClass().getSimpleName(),"Exception saving content",e);
+    }
+    try {
+      json.put("structure",dumpStructure(new JSONObject()));
+    }
+ catch (    JSONException e) {
+      Log.e(getClass().getSimpleName(),"Exception saving structure",e);
+    }
+    File f=new File(logDir,"assist.json");
+    try {
+      FileOutputStream fos=new FileOutputStream(f);
+      OutputStreamWriter osw=new OutputStreamWriter(fos);
+      PrintWriter pw=new PrintWriter(osw);
+      pw.print(json.toString(2));
+      pw.flush();
+      fos.getFD().sync();
+      fos.close();
+      Log.d(getClass().getSimpleName(),"assist data written to: " + f.getAbsolutePath());
+    }
+ catch (    Exception e) {
+      Log.e(getClass().getSimpleName(),"Exception writing out assist data",e);
+    }
+  }
+ else {
+    Log.d(getClass().getSimpleName(),"onHandleAssist");
+  }
+}

@@ -1,0 +1,4 @@
+{
+  super.onHandleAssist(data,structure,content);
+  new AssistDumpThread(logDir,data,structure,content).start();
+}

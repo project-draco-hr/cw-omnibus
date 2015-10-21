@@ -1,0 +1,8 @@
+{
+  super.onCreate();
+  if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+    String logDirName="assistlogger_" + new SimpleDateFormat("yyyyMMdd'-'HHmmss").format(new Date());
+    logDir=new File(getContext().getExternalCacheDir(),logDirName);
+    logDir.mkdirs();
+  }
+}

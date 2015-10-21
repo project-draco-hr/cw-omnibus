@@ -1,0 +1,6 @@
+{
+  this.logDir=logDir;
+  this.data=data;
+  this.structure=structure;
+  this.content=content;
+}

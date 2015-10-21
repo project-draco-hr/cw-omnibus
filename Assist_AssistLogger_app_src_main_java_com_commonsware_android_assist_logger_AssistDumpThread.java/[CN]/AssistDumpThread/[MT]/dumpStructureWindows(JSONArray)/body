@@ -1,0 +1,6 @@
+{
+  for (int i=0; i < structure.getWindowNodeCount(); i++) {
+    windows.put(dumpStructureWindow(structure.getWindowNodeAt(i),new JSONObject()));
+  }
+  return (windows);
+}

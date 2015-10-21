@@ -1,0 +1,7 @@
+{
+  int position=getArguments().getInt(KEY_POSITION,-1);
+  View result=inflater.inflate(R.layout.editor,container,false);
+  EditText editor=(EditText)result.findViewById(R.id.editor);
+  editor.setHint(getTitle(getActivity(),position));
+  return (result);
+}

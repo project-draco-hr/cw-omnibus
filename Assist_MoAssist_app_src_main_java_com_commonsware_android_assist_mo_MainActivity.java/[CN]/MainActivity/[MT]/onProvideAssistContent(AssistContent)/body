@@ -1,0 +1,11 @@
+{
+  super.onProvideAssistContent(outContent);
+  outContent.setWebUri(Uri.parse("https://commonsware.com"));
+  try {
+    JSONObject json=new JSONObject().put("@type","Book").put("author","https://commonsware.com/mmurphy").put("publisher","CommonsWare, LLC").put("name","The Busy Coder's Guide to Android Development");
+    outContent.setStructuredData(json.toString());
+  }
+ catch (  JSONException e) {
+    Log.e(getClass().getSimpleName(),"Um, what happened here?",e);
+  }
+}

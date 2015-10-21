@@ -1,0 +1,4 @@
+{
+  super.onProvideAssistData(data);
+  data.putInt("random-value",new SecureRandom().nextInt());
+}

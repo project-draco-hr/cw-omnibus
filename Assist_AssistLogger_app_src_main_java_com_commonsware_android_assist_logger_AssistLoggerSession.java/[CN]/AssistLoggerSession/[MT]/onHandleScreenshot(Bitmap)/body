@@ -1,0 +1,6 @@
+{
+  super.onHandleScreenshot(screenshot);
+  if (screenshot != null) {
+    new ScreenshotThread(logDir,screenshot).start();
+  }
+}

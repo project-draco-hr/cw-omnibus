@@ -1,0 +1,3 @@
+{
+  return (EditorFragment.getTitle(ctxt,position));
+}

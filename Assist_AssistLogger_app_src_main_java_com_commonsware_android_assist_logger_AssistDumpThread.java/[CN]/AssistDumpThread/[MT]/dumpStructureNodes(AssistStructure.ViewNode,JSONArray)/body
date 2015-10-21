@@ -1,0 +1,6 @@
+{
+  for (int i=0; i < node.getChildCount(); i++) {
+    children.put(dumpStructureNode(node.getChildAt(i),new JSONObject()));
+  }
+  return (children);
+}

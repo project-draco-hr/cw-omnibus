@@ -1,0 +1,4 @@
+{
+  super.onAssistStructureFailure(failure);
+  Log.e(getClass().getSimpleName(),"onAssistStructureFailure",failure);
+}

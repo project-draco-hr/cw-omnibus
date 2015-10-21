@@ -1,0 +1,18 @@
+{
+  int position=getArguments().getInt(KEY_POSITION,-1);
+  View result;
+  if (position == 2) {
+    ViewGroup doctorNo=new NoAssistFrameLayout(getActivity());
+    inflater.inflate(R.layout.editor,doctorNo);
+    result=doctorNo;
+  }
+ else {
+    result=inflater.inflate(R.layout.editor,container,false);
+  }
+  EditText editor=(EditText)result.findViewById(R.id.editor);
+  editor.setHint(getTitle(getActivity(),position));
+  if (position == 1) {
+    editor.setTransformationMethod(PasswordTransformationMethod.getInstance());
+  }
+  return (result);
+}

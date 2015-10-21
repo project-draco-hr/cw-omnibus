@@ -1,0 +1,19 @@
+{
+  if (logDir != null) {
+    try {
+      File f=new File(logDir,"screenshot.png");
+      FileOutputStream fos=new FileOutputStream(f);
+      screenshot.compress(Bitmap.CompressFormat.PNG,100,fos);
+      fos.flush();
+      fos.getFD().sync();
+      fos.close();
+      Log.d(getClass().getSimpleName(),"screenshot written to: " + f.getAbsolutePath());
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception writing out screenshot",e);
+    }
+  }
+ else {
+    Log.d(getClass().getSimpleName(),String.format("onHandleScreenshot: %dx%d",screenshot.getWidth(),screenshot.getHeight()));
+  }
+}

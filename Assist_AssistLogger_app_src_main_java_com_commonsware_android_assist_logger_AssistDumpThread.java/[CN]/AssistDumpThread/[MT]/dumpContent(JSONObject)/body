@@ -1,0 +1,13 @@
+{
+  JSONObject extras=new JSONObject();
+  if (content.getExtras() != null) {
+    json.put("extras",extras);
+    dumpBundle(content.getExtras(),extras);
+  }
+  if (content.getIntent() != null) {
+    json.put("intent",content.getIntent().toUri(Intent.URI_INTENT_SCHEME));
+  }
+  json.put("structuredData",wrap(content.getStructuredData()));
+  json.put("webUri",wrap(content.getWebUri()));
+  return (json);
+}

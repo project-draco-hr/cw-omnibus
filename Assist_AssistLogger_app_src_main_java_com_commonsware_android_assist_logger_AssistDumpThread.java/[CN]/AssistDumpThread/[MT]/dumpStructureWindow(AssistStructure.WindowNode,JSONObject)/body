@@ -1,0 +1,10 @@
+{
+  json.put("displayId",wrap(window.getDisplayId()));
+  json.put("height",wrap(window.getHeight()));
+  json.put("left",wrap(window.getLeft()));
+  json.put("title",wrap(window.getTitle()));
+  json.put("top",wrap(window.getTop()));
+  json.put("width",wrap(window.getWidth()));
+  json.put("root",dumpStructureNode(window.getRootViewNode(),new JSONObject()));
+  return (json);
+}
