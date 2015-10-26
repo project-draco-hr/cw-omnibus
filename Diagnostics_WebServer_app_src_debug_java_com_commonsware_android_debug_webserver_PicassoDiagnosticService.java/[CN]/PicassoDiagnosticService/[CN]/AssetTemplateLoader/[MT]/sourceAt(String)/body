@@ -1,3 +1,0 @@
-{
-  return (new StringTemplateSource(s,slurp(mgr.open(s))));
-}

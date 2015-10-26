@@ -1,0 +1,11 @@
+{
+  if (record != null) {
+    record.setVisible(false);
+    stop.setVisible(true);
+    ArrayList<String> diagUrls=new ArrayList<String>();
+    for (    String url : event.getUrls()) {
+      diagUrls.add(url + "picasso.hbs");
+    }
+    setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,diagUrls));
+  }
+}

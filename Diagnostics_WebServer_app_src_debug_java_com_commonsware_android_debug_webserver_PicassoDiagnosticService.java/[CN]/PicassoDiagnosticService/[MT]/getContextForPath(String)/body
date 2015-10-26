@@ -1,0 +1,8 @@
+{
+  if ("picasso.hbs".equals(relpath)) {
+    StatsSnapshot ss=Picasso.with(PicassoDiagnosticService.this).getSnapshot();
+    String formattedTime=DateUtils.formatDateTime(PicassoDiagnosticService.this,ss.timeStamp,DateUtils.FORMAT_SHOW_TIME);
+    return (Context.newBuilder(ss).combine("formattedTime",formattedTime).resolver(FieldValueResolver.INSTANCE).build());
+  }
+  throw new IllegalStateException("Did not recognize " + relpath);
+}

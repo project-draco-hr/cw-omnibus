@@ -1,5 +1,0 @@
-{
-  server.stop();
-  AsyncServer.getDefault().stop();
-  super.onDestroy();
-}

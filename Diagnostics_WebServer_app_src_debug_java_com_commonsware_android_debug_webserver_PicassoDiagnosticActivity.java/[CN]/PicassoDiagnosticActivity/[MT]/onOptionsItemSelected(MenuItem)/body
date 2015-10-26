@@ -1,0 +1,10 @@
+{
+  Intent i=new Intent(this,PicassoDiagnosticService.class);
+  if (item.getItemId() == R.id.record) {
+    startService(i);
+  }
+ else {
+    stopService(i);
+  }
+  return super.onOptionsItemSelected(item);
+}

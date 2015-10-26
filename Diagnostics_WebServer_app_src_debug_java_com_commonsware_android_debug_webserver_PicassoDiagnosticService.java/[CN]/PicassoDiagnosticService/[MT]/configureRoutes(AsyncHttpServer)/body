@@ -1,0 +1,4 @@
+{
+  server.get("/stop",new StopRequestCallback());
+  return (true);
+}
