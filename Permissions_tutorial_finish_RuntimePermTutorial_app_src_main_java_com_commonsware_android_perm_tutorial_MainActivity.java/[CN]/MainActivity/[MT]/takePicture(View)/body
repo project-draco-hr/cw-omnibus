@@ -2,15 +2,12 @@
   if (canTakePicture()) {
     takePictureForRealz();
   }
- else   if (breadcrust.getVisibility() == View.VISIBLE) {
-    breadcrust.setVisibility(View.GONE);
-    requestPermissions(netPermissions(PERMS_TAKE_PICTURE),RESULT_PERMS_TAKE_PICTURE);
-  }
- else   if (shouldShowTakePictureRationale()) {
+ else   if (breadcrust.getVisibility() == View.GONE && shouldShowTakePictureRationale()) {
     breadcrust.setText(R.string.msg_take_picture);
     breadcrust.setVisibility(View.VISIBLE);
   }
  else {
-    throw new IllegalStateException(getString(R.string.msg_state));
+    breadcrust.setVisibility(View.GONE);
+    ActivityCompat.requestPermissions(this,netPermissions(PERMS_TAKE_PICTURE),RESULT_PERMS_TAKE_PICTURE);
   }
 }

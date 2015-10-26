@@ -1,8 +1,6 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
-  takePicture=findViewById(R.id.take_picture);
-  recordVideo=findViewById(R.id.record_video);
   File downloads=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
   rootDir=new File(downloads,"RuntimePermTutorial");
   rootDir.mkdirs();

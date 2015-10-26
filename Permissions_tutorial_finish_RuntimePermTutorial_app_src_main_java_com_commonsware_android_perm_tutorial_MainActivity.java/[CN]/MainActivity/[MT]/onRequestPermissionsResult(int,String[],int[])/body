@@ -1,13 +1,23 @@
 {
-  updateButtons();
+  boolean sadTrombone=false;
+  isInPermission=false;
   if (requestCode == RESULT_PERMS_TAKE_PICTURE) {
     if (canTakePicture()) {
       takePictureForRealz();
+    }
+ else     if (!shouldShowTakePictureRationale()) {
+      sadTrombone=true;
     }
   }
  else   if (requestCode == RESULT_PERMS_RECORD_VIDEO) {
     if (canRecordVideo()) {
       recordVideoForRealz();
     }
+ else     if (!shouldShowRecordVideoRationale()) {
+      sadTrombone=true;
+    }
+  }
+  if (sadTrombone) {
+    Toast.makeText(this,R.string.msg_no_perm,Toast.LENGTH_LONG).show();
   }
 }

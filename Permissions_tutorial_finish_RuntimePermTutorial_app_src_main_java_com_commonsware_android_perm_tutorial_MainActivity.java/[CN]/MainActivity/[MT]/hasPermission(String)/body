@@ -1,6 +1,3 @@
 {
-  if (useRuntimePermissions()) {
-    return (checkSelfPermission(perm) == PackageManager.PERMISSION_GRANTED);
-  }
-  return (true);
+  return (ContextCompat.checkSelfPermission(this,perm) == PackageManager.PERMISSION_GRANTED);
 }

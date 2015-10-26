@@ -1,4 +1,0 @@
-{
-  takePicture.setEnabled(couldPossiblyTakePicture());
-  recordVideo.setEnabled(couldPossiblyRecordVideo());
-}

@@ -1,6 +1,7 @@
 {
   super.onSaveInstanceState(outState);
   if (breadcrust.getVisibility() == View.VISIBLE) {
+    outState.putBoolean(STATE_IN_PERMISSION,isInPermission);
     outState.putCharSequence(STATE_BREADCRUST,breadcrust.getText());
   }
 }

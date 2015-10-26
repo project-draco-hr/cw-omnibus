@@ -1,14 +1,16 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
+  if (savedInstanceState != null) {
+    isInPermission=savedInstanceState.getBoolean(STATE_IN_PERMISSION,false);
+  }
   prefs=PreferenceManager.getDefaultSharedPreferences(this);
-  takePicture=findViewById(R.id.take_picture);
-  recordVideo=findViewById(R.id.record_video);
   breadcrust=(TextView)findViewById(R.id.breadcrust);
   File downloads=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
   rootDir=new File(downloads,"RuntimePermTutorial");
   rootDir.mkdirs();
-  if (isFirstRun() && useRuntimePermissions()) {
-    requestPermissions(PERMS_TAKE_PICTURE,RESULT_PERMS_INITIAL);
+  if (isFirstRun() && !isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,PERMS_TAKE_PICTURE,RESULT_PERMS_INITIAL);
   }
 }

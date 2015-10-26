@@ -1,3 +1,0 @@
-{
-  return (prefs.getBoolean(PREF_HAVE_REQUESTED_AUDIO,false));
-}

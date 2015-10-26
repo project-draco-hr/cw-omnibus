@@ -1,6 +1,0 @@
-{
-  if (useRuntimePermissions()) {
-    return (!hasPermission(perm) && shouldShowRequestPermissionRationale(perm));
-  }
-  return (false);
-}
