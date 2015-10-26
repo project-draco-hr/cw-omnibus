@@ -1,5 +1,0 @@
-{
-  if (getActivity() != null) {
-    getActivity().finish();
-  }
-}

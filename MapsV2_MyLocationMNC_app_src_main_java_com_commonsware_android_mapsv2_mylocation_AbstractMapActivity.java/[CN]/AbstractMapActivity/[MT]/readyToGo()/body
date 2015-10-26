@@ -1,0 +1,21 @@
+{
+  GoogleApiAvailability checker=GoogleApiAvailability.getInstance();
+  int errorCode=checker.isGooglePlayServicesAvailable(this);
+  if (errorCode == ConnectionResult.SUCCESS) {
+    if (getVersionFromPackageManager(this) >= 2) {
+      return (true);
+    }
+ else {
+      Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();
+      finish();
+    }
+  }
+ else   if (checker.isUserResolvableError(errorCode)) {
+    ErrorDialogFragment.newInstance(errorCode).show(getFragmentManager(),TAG_ERROR_DIALOG_FRAGMENT);
+  }
+ else {
+    Toast.makeText(this,R.string.no_maps,Toast.LENGTH_LONG).show();
+    finish();
+  }
+  return (false);
+}

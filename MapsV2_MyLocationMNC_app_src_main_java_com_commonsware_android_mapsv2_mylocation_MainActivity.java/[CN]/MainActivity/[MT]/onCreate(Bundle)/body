@@ -1,0 +1,10 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState == null) {
+    needsInit=true;
+  }
+ else {
+    isInPermission=savedInstanceState.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  onCreateForRealz(canGetLocation());
+}

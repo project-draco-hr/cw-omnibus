@@ -1,0 +1,7 @@
+{
+  Bundle args=new Bundle();
+  ErrorDialogFragment result=new ErrorDialogFragment();
+  args.putInt(ARG_ERROR_CODE,errorCode);
+  result.setArguments(args);
+  return (result);
+}

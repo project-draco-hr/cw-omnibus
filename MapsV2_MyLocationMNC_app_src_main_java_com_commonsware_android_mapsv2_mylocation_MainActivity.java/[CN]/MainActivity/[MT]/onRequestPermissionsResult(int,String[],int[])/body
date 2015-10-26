@@ -1,0 +1,11 @@
+{
+  isInPermission=false;
+  if (requestCode == REQUEST_PERMS) {
+    if (canGetLocation()) {
+      onCreateForRealz(true);
+    }
+ else {
+      finish();
+    }
+  }
+}

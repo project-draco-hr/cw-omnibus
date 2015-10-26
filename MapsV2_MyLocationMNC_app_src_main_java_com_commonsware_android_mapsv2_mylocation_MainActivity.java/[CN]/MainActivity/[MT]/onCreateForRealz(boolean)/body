@@ -1,0 +1,13 @@
+{
+  if (canGetLocation) {
+    if (readyToGo()) {
+      setContentView(R.layout.activity_main);
+      MapFragment mapFrag=(MapFragment)getFragmentManager().findFragmentById(R.id.map);
+      mapFrag.getMapAsync(this);
+    }
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_PERMS);
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return ((glEsVersion & 0xffff0000) >> 16);
-}

@@ -1,0 +1,5 @@
+{
+  Bundle args=getArguments();
+  GoogleApiAvailability checker=GoogleApiAvailability.getInstance();
+  return (checker.getErrorDialog(getActivity(),args.getInt(ARG_ERROR_CODE),0));
+}
