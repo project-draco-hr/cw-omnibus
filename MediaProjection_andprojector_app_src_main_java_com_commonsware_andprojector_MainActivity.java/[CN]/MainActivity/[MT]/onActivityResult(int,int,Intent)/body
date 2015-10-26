@@ -1,0 +1,8 @@
+{
+  if (requestCode == REQUEST_SCREENSHOT) {
+    if (resultCode == RESULT_OK) {
+      Intent i=new Intent(this,ProjectorService.class).putExtra(ProjectorService.EXTRA_RESULT_CODE,resultCode).putExtra(ProjectorService.EXTRA_RESULT_INTENT,data);
+      startService(i);
+    }
+  }
+}

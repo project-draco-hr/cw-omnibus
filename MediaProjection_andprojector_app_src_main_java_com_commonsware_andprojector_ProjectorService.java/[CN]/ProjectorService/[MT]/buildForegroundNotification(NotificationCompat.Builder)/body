@@ -1,0 +1,5 @@
+{
+  Intent iActivity=new Intent(this,MainActivity.class);
+  PendingIntent piActivity=PendingIntent.getActivity(this,0,iActivity,0);
+  b.setContentTitle(getString(R.string.app_name)).setContentIntent(piActivity).setSmallIcon(R.mipmap.ic_launcher).setTicker(getString(R.string.app_name));
+}

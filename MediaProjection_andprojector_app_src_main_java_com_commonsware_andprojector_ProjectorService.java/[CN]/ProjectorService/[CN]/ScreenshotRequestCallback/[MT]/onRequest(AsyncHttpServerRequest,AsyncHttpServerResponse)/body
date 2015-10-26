@@ -1,0 +1,6 @@
+{
+  response.setContentType("image/png");
+  byte[] png=latestPng.get();
+  ByteArrayInputStream bais=new ByteArrayInputStream(png);
+  response.sendStream(bais,png.length);
+}

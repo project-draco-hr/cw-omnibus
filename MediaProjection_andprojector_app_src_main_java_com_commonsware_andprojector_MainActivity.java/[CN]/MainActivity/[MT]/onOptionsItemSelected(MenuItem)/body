@@ -1,0 +1,9 @@
+{
+  if (item.getItemId() == R.id.start) {
+    startActivityForResult(mgr.createScreenCaptureIntent(),REQUEST_SCREENSHOT);
+  }
+ else {
+    stopService(new Intent(this,ProjectorService.class));
+  }
+  return super.onOptionsItemSelected(item);
+}

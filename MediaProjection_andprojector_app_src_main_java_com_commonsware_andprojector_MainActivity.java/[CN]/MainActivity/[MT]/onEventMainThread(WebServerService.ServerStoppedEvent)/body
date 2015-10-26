@@ -1,0 +1,7 @@
+{
+  if (start != null) {
+    start.setVisible(true);
+    stop.setVisible(false);
+    setListAdapter(null);
+  }
+}

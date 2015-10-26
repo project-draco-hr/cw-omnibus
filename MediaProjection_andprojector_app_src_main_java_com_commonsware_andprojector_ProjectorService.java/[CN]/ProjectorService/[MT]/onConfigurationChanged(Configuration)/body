@@ -1,0 +1,11 @@
+{
+  super.onConfigurationChanged(newConfig);
+  ImageTransmogrifier newIt=new ImageTransmogrifier(this);
+  if (newIt.getWidth() != it.getWidth() || newIt.getHeight() != it.getHeight()) {
+    ImageTransmogrifier oldIt=it;
+    it=newIt;
+    vdisplay.resize(it.getWidth(),it.getHeight(),getResources().getDisplayMetrics().densityDpi);
+    vdisplay.setSurface(it.getSurface());
+    oldIt.close();
+  }
+}

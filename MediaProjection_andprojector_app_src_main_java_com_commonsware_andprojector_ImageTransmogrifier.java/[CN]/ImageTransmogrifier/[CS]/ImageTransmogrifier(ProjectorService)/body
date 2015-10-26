@@ -1,0 +1,16 @@
+{
+  this.svc=svc;
+  Display display=svc.getWindowManager().getDefaultDisplay();
+  Point size=new Point();
+  display.getSize(size);
+  int width=size.x;
+  int height=size.y;
+  while (width * height > (2 << 19)) {
+    width=width >> 1;
+    height=height >> 1;
+  }
+  this.width=width;
+  this.height=height;
+  imageReader=ImageReader.newInstance(width,height,PixelFormat.RGBA_8888,2);
+  imageReader.setOnImageAvailableListener(this,svc.getHandler());
+}

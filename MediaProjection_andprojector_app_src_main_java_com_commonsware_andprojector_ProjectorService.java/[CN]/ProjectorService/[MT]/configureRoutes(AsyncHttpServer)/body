@@ -1,0 +1,5 @@
+{
+  serveWebSockets("/ss",null);
+  server.get(getRootPath() + "/screen/.*",new ScreenshotRequestCallback());
+  return (true);
+}

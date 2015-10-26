@@ -1,0 +1,13 @@
+{
+  projection=mgr.getMediaProjection(i.getIntExtra(EXTRA_RESULT_CODE,-1),(Intent)i.getParcelableExtra(EXTRA_RESULT_INTENT));
+  it=new ImageTransmogrifier(this);
+  MediaProjection.Callback cb=new MediaProjection.Callback(){
+    @Override public void onStop(){
+      vdisplay.release();
+    }
+  }
+;
+  vdisplay=projection.createVirtualDisplay("andprojector",it.getWidth(),it.getHeight(),getResources().getDisplayMetrics().densityDpi,VIRT_DISPLAY_FLAGS,it.getSurface(),null,handler);
+  projection.registerCallback(cb,handler);
+  return (START_NOT_STICKY);
+}

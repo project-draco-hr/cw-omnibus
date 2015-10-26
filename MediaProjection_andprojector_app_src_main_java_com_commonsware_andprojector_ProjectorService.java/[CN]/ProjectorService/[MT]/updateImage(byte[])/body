@@ -1,0 +1,6 @@
+{
+  latestPng.set(newPng);
+  for (  WebSocket socket : getWebSockets()) {
+    socket.send("screen/" + Long.toString(SystemClock.uptimeMillis()));
+  }
+}
