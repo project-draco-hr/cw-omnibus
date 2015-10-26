@@ -1,0 +1,14 @@
+{
+  SQLiteQueryBuilder qb=new SQLiteQueryBuilder();
+  qb.setTables(TABLE);
+  String orderBy;
+  if (TextUtils.isEmpty(sort)) {
+    orderBy=Constants.DEFAULT_SORT_ORDER;
+  }
+ else {
+    orderBy=sort;
+  }
+  Cursor c=qb.query(db.getReadableDatabase(),projection,selection,selectionArgs,null,null,orderBy);
+  c.setNotificationUri(getContext().getContentResolver(),url);
+  return (c);
+}

@@ -1,0 +1,4 @@
+{
+  super();
+  resolver=ctxt.getContentResolver();
+}

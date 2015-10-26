@@ -1,0 +1,6 @@
+{
+  if (requestCode == ALARM_ID) {
+    Toast.makeText(this,R.string.toast,Toast.LENGTH_SHORT).show();
+    Log.d(getClass().getSimpleName(),"I ran!");
+  }
+}

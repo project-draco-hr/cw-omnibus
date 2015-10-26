@@ -1,0 +1,4 @@
+{
+  resolver.insert(Provider.Constants.CONTENT_URI,values[0]);
+  return (doQuery());
+}

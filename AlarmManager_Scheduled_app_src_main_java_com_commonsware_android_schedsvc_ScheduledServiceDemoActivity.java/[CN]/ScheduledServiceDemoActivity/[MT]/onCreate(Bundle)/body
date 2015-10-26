@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  PollReceiver.scheduleAlarms(this);
+  Toast.makeText(this,R.string.alarms_scheduled,Toast.LENGTH_LONG).show();
+  finish();
+}

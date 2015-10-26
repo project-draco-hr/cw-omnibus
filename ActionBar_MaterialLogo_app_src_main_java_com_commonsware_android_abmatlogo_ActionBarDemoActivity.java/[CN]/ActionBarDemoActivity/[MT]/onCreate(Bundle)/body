@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  getActionBar().setDisplayShowHomeEnabled(true);
+  initAdapter();
+}

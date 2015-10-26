@@ -1,0 +1,13 @@
+{
+  MenuItem search=menu.findItem(R.id.search);
+  sv=(SearchView)MenuItemCompat.getActionView(search);
+  sv.setOnQueryTextListener(this);
+  sv.setOnCloseListener(this);
+  sv.setSubmitButtonEnabled(false);
+  sv.setIconifiedByDefault(true);
+  if (initialQuery != null) {
+    sv.setIconified(false);
+    search.expandActionView();
+    sv.setQuery(initialQuery,true);
+  }
+}

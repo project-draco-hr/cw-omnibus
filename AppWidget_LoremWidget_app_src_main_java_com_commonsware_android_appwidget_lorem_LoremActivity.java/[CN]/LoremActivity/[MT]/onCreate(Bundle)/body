@@ -1,0 +1,9 @@
+{
+  super.onCreate(state);
+  String word=getIntent().getStringExtra(WidgetProvider.EXTRA_WORD);
+  if (word == null) {
+    word="We did not get a word!";
+  }
+  Toast.makeText(this,String.format("#%d: %s",getIntent().getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,AppWidgetManager.INVALID_APPWIDGET_ID),word),Toast.LENGTH_LONG).show();
+  finish();
+}

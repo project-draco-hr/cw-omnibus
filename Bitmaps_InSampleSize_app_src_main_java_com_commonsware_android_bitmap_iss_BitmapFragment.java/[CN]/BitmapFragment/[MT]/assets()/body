@@ -1,0 +1,6 @@
+{
+  if (assets == null) {
+    assets=getActivity().getResources().getAssets();
+  }
+  return (assets);
+}

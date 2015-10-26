@@ -1,0 +1,9 @@
+{
+  if (!isLeftShowing) {
+    root.showLeft();
+    isLeftShowing=true;
+  }
+ else {
+    super.onBackPressed();
+  }
+}

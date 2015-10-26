@@ -1,0 +1,6 @@
+{
+  super(ctxt,attrs);
+  TypedArray a=ctxt.obtainStyledAttributes(attrs,R.styleable.SlidingPanel,0,0);
+  speed=a.getInt(R.styleable.SlidingPanel_speed,300);
+  a.recycle();
+}

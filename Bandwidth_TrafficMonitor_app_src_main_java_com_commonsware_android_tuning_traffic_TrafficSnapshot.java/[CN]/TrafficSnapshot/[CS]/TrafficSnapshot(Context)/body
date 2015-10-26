@@ -1,0 +1,10 @@
+{
+  device=new TrafficRecord();
+  HashMap<Integer,String> appNames=new HashMap<Integer,String>();
+  for (  ApplicationInfo app : ctxt.getPackageManager().getInstalledApplications(0)) {
+    appNames.put(app.uid,app.packageName);
+  }
+  for (  Integer uid : appNames.keySet()) {
+    apps.put(uid,new TrafficRecord(uid,appNames.get(uid)));
+  }
+}

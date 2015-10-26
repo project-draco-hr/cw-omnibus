@@ -1,0 +1,4 @@
+{
+  mgr.cancel(pi);
+  super.onDestroy();
+}

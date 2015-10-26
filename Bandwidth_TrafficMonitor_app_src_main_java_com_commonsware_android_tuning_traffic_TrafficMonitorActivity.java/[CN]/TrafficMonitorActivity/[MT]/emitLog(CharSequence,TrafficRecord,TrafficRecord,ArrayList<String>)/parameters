@@ -1,0 +1,4 @@
+CharSequence name
+TrafficRecord latest_rec
+TrafficRecord previous_rec
+ArrayList<String> rows

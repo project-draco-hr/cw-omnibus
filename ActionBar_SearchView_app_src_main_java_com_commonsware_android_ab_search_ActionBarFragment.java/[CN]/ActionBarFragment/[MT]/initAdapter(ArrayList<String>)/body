@@ -1,0 +1,13 @@
+{
+  if (startingPoint == null) {
+    words=new ArrayList<String>();
+    for (    String s : items) {
+      words.add(s);
+    }
+  }
+ else {
+    words=startingPoint;
+  }
+  adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,words);
+  setListAdapter(adapter);
+}

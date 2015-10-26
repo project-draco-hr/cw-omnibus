@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  Spinner spin=(Spinner)findViewById(R.id.spinner);
+  spin.setOnItemSelectedListener(this);
+  ArrayAdapter<String> aa=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.options));
+  aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  spin.setAdapter(aa);
+}

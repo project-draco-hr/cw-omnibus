@@ -1,0 +1,3 @@
+{
+  middleContents=inState.getStringArrayList(KEY_MIDDLE_CONTENTS);
+}

@@ -1,0 +1,9 @@
+{
+  if (columnIndex == 2) {
+    long time=cursor.getLong(columnIndex);
+    String formattedTime=DateUtils.formatDateTime(this,time,DateUtils.FORMAT_ABBREV_RELATIVE);
+    ((TextView)view).setText(formattedTime);
+    return (true);
+  }
+  return (false);
+}

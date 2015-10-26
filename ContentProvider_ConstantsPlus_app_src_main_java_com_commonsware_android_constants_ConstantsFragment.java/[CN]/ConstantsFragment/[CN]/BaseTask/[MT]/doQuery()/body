@@ -1,0 +1,5 @@
+{
+  Cursor result=resolver.query(Provider.Constants.CONTENT_URI,PROJECTION,null,null,null);
+  result.getCount();
+  return (result);
+}

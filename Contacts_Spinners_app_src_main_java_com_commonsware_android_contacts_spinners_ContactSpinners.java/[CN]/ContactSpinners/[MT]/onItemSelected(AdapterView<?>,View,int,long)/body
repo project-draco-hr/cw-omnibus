@@ -1,0 +1,3 @@
+{
+  getLoaderManager().initLoader(position,null,this);
+}

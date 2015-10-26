@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(PipeProvider.CONTENT_URI + "test.pdf")));
+  finish();
+}

@@ -1,0 +1,4 @@
+{
+  Log.d(getClass().getSimpleName(),"I ran!");
+  PollReceiver.completeWakefulIntent(intent);
+}

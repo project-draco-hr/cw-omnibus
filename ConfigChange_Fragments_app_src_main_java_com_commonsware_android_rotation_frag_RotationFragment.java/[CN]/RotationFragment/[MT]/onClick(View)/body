@@ -1,0 +1,8 @@
+{
+  if (v.getId() == R.id.pick) {
+    pickContact(v);
+  }
+ else {
+    viewContact(v);
+  }
+}

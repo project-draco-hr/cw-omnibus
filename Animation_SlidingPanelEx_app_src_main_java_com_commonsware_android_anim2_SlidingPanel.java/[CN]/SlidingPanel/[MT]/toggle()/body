@@ -1,0 +1,18 @@
+{
+  TranslateAnimation anim=null;
+  AnimationSet set=new AnimationSet(true);
+  isOpen=!isOpen;
+  if (isOpen) {
+    setVisibility(View.VISIBLE);
+    anim=new TranslateAnimation(0.0f,0.0f,getHeight(),0.0f);
+  }
+ else {
+    anim=new TranslateAnimation(0.0f,0.0f,0.0f,getHeight());
+    anim.setAnimationListener(collapseListener);
+    set.addAnimation(fadeOut);
+  }
+  set.addAnimation(anim);
+  set.setDuration(speed);
+  set.setInterpolator(new AccelerateInterpolator(1.0f));
+  startAnimation(set);
+}

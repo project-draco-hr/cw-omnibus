@@ -1,0 +1,22 @@
+{
+  if (fragment == middleFragment) {
+    ((Button)root.getRightView()).setText(middleContents.get(position));
+    if (isLeftShowing) {
+      root.hideLeft();
+      isLeftShowing=false;
+    }
+  }
+ else {
+    middleContents=new ArrayList<String>();
+    for (int i=0; i < 20; i++) {
+      middleContents.add(items[position] + " #" + i);
+    }
+    if (getFragmentManager().findFragmentById(R.id.middle) == null) {
+      middleFragment=SimpleListFragment.newInstance(middleContents);
+      getFragmentManager().beginTransaction().add(R.id.middle,middleFragment).commit();
+    }
+ else {
+      middleFragment.setContents(middleContents);
+    }
+  }
+}

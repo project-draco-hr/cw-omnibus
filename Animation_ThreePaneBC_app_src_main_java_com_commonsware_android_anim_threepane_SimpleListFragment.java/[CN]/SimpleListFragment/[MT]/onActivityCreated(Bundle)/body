@@ -1,0 +1,5 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+  setContents(getArguments().getStringArrayList(KEY_CONTENTS));
+}

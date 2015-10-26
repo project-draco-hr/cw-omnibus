@@ -1,0 +1,9 @@
+{
+  if (TextUtils.isEmpty(newText)) {
+    adapter.getFilter().filter("");
+  }
+ else {
+    adapter.getFilter().filter(newText.toString());
+  }
+  return (true);
+}

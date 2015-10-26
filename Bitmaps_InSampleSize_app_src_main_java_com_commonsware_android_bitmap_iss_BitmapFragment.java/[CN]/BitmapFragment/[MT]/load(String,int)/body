@@ -1,0 +1,5 @@
+{
+  BitmapFactory.Options opts=new BitmapFactory.Options();
+  opts.inSampleSize=inSampleSize;
+  return (BitmapFactory.decodeStream(assets().open(path),null,opts));
+}

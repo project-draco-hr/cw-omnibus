@@ -1,0 +1,7 @@
+{
+  File f=new File(getContext().getFilesDir(),uri.getPath());
+  if (f.exists()) {
+    return (ParcelFileDescriptor.open(f,parseMode(mode)));
+  }
+  throw new FileNotFoundException(uri.getPath());
+}

@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  Button btn=(Button)findViewById(R.id.insert);
+  btn.setOnClickListener(onInsert);
+}

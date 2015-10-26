@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  android.util.Log.e(getClass().getSimpleName(),Integer.toHexString(hashCode()));
+  if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
+    getFragmentManager().beginTransaction().add(android.R.id.content,new EventLogFragment()).commit();
+    PollReceiver.scheduleAlarms(this);
+  }
+}

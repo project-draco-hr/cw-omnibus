@@ -1,0 +1,3 @@
+{
+  ((ListView)findViewById(android.R.id.list)).setAdapter(la);
+}

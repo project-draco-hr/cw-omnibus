@@ -1,0 +1,6 @@
+{
+  TextView row=(TextView)super.getView(position,convertView,parent);
+  RandomEvent event=getItem(position);
+  row.setText(String.format("%s = %x",fmt.format(event.when),event.value));
+  return (row);
+}

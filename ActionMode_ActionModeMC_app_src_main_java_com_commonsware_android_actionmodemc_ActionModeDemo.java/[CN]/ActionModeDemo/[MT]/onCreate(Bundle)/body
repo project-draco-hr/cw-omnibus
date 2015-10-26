@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  initAdapter();
+  getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+  getListView().setMultiChoiceModeListener(new HCMultiChoiceModeListener(this,getListView()));
+}

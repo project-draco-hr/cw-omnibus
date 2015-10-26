@@ -1,0 +1,10 @@
+{
+  super.onConfigurationChanged(newConfig);
+  LinearLayout container=(LinearLayout)findViewById(R.id.container);
+  if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+    container.setOrientation(LinearLayout.HORIZONTAL);
+  }
+ else {
+    container.setOrientation(LinearLayout.VERTICAL);
+  }
+}

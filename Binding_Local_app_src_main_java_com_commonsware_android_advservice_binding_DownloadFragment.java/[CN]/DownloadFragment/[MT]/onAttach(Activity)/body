@@ -1,0 +1,7 @@
+{
+  super.onAttach(host);
+  if (appContext == null) {
+    appContext=(Application)host.getApplicationContext();
+    appContext.bindService(new Intent(getActivity(),DownloadService.class),this,Context.BIND_AUTO_CREATE);
+  }
+}

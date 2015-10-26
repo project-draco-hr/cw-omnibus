@@ -1,0 +1,7 @@
+{
+  RandomEvent event=new RandomEvent(rng.nextInt());
+  File log=new File(getExternalFilesDir(null),"alarmclock-log.txt");
+  log.getParentFile().mkdirs();
+  EventBus.getDefault().post(event);
+  append(log,event);
+}

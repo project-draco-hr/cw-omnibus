@@ -1,0 +1,8 @@
+{
+  if (i.getAction() == null) {
+    startWakefulService(ctxt,new Intent(ctxt,ScheduledService.class));
+  }
+ else {
+    scheduleAlarms(ctxt);
+  }
+}

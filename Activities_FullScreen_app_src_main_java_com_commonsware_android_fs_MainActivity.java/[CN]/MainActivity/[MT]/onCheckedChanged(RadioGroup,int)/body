@@ -1,0 +1,3 @@
+{
+  updateUI(group,screenStyleGroup.getCheckedRadioButtonId());
+}
