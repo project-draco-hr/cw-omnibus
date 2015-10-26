@@ -1,0 +1,4 @@
+{
+  LocationServices.FusedLocationApi.removeLocationUpdates(getPlayServices(),this);
+  super.onPause();
+}

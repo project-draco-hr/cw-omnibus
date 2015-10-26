@@ -1,0 +1,11 @@
+{
+  if (requestCode == WeatherFragment.SETTINGS_REQUEST_ID) {
+    if (resultCode == Activity.RESULT_CANCELED) {
+      finish();
+    }
+ else {
+      WeatherFragment f=(WeatherFragment)getFragmentManager().findFragmentById(android.R.id.content);
+      f.requestLocations();
+    }
+  }
+}

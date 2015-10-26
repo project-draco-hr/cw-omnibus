@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
-  CompoundButton cb=(CompoundButton)findViewById(R.id.enabled);
-  cb.setOnCheckedChangeListener(this);
-}

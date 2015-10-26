@@ -1,4 +1,0 @@
-{
-  super.onAttach(host);
-  client=new GoogleApiClient.Builder(host).addApi(LocationServices.API).addConnectionCallbacks(this).addOnConnectionFailedListener(this).build();
-}

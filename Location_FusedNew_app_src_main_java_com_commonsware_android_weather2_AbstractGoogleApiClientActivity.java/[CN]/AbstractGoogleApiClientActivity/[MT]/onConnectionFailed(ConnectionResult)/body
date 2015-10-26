@@ -1,0 +1,17 @@
+{
+  if (!isResolvingPlayServicesError) {
+    if (result.hasResolution()) {
+      try {
+        isResolvingPlayServicesError=true;
+        result.startResolutionForResult(this,REQUEST_RESOLUTION);
+      }
+ catch (      IntentSender.SendIntentException e) {
+        playServices.connect();
+      }
+    }
+ else {
+      ErrorDialogFragment.newInstance(result.getErrorCode()).show(getFragmentManager(),TAG_ERROR_DIALOG_FRAGMENT);
+      isResolvingPlayServicesError=true;
+    }
+  }
+}

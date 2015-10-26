@@ -1,0 +1,12 @@
+{
+  isInPermission=false;
+  if (requestCode == REQUEST_PERMISSION) {
+    if (hasAllPermissions(getDesiredPermissions())) {
+      initPlayServices();
+      playServices.connect();
+    }
+ else {
+      handlePermissionDenied();
+    }
+  }
+}

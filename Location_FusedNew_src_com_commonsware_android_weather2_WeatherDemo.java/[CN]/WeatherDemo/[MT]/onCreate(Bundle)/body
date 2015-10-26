@@ -1,8 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  if (readyToGo()) {
-    if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
-      getFragmentManager().beginTransaction().add(android.R.id.content,new WeatherFragment()).commit();
-    }
-  }
-}

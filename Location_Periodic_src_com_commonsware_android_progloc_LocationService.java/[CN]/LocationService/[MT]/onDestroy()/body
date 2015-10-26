@@ -1,4 +1,0 @@
-{
-  mgr.removeUpdates(this);
-  super.onDestroy();
-}

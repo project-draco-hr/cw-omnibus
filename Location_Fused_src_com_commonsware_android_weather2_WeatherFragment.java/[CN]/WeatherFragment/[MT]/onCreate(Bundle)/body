@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  setRetainInstance(true);
-  template=getActivity().getString(R.string.url);
-  client=new LocationClient(getActivity(),this,this);
-}

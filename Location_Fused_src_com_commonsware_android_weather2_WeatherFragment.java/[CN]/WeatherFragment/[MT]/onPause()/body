@@ -1,5 +1,0 @@
-{
-  getWebView().removeCallbacks(this);
-  client.disconnect();
-  super.onPause();
-}

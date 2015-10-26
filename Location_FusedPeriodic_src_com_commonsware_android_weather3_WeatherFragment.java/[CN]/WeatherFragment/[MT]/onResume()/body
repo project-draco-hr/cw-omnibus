@@ -1,6 +1,0 @@
-{
-  super.onResume();
-  if (client != null && !client.isConnected()) {
-    client.connect();
-  }
-}

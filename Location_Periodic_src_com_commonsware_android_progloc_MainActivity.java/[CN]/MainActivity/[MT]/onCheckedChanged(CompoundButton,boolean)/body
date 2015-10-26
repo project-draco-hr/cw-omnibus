@@ -1,9 +1,0 @@
-{
-  Intent i=new Intent(this,LocationService.class);
-  if (isChecked) {
-    startService(i);
-  }
- else {
-    stopService(i);
-  }
-}

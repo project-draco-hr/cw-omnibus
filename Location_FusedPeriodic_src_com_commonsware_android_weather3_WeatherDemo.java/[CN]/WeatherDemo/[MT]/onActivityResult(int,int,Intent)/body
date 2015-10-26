@@ -1,5 +1,0 @@
-{
-  if (requestCode == WeatherFragment.SETTINGS_REQUEST_ID && resultCode == Activity.RESULT_CANCELED) {
-    finish();
-  }
-}

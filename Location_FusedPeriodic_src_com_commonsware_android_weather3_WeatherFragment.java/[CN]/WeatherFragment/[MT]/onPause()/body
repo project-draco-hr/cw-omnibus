@@ -1,7 +1,0 @@
-{
-  LocationServices.FusedLocationApi.removeLocationUpdates(client,this);
-  if (client != null && client.isConnected()) {
-    client.disconnect();
-  }
-  super.onPause();
-}

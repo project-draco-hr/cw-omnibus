@@ -1,0 +1,6 @@
+{
+  super.onStart();
+  if (!isResolvingPlayServicesError && playServices != null) {
+    playServices.connect();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  getListView().removeCallbacks(this);
+  super.onPause();
+}

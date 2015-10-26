@@ -1,0 +1,3 @@
+{
+  return (GoogleApiAvailability.getInstance().getErrorDialog(getActivity(),getArguments().getInt(ARG_ERROR_CODE),REQUEST_RESOLUTION));
+}

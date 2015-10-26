@@ -1,0 +1,6 @@
+{
+  if (getActivity() != null) {
+    ((AbstractGoogleApiClientActivity)getActivity()).isResolvingPlayServicesError=false;
+  }
+  super.onDismiss(dlg);
+}

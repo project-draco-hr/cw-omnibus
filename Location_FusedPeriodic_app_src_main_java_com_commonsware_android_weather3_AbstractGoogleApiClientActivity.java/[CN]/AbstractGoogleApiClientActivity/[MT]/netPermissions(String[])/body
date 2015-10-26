@@ -1,0 +1,9 @@
+{
+  ArrayList<String> result=new ArrayList<String>();
+  for (  String perm : wanted) {
+    if (!hasPermission(perm)) {
+      result.add(perm);
+    }
+  }
+  return (result.toArray(new String[result.size()]));
+}

@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState != null) {
+    isInPermission=savedInstanceState.getBoolean(STATE_IN_PERMISSION,false);
+    isResolvingPlayServicesError=savedInstanceState.getBoolean(STATE_IN_RESOLUTION,false);
+  }
+  if (hasAllPermissions(getDesiredPermissions())) {
+    initPlayServices();
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,netPermissions(getDesiredPermissions()),REQUEST_PERMISSION);
+  }
+}

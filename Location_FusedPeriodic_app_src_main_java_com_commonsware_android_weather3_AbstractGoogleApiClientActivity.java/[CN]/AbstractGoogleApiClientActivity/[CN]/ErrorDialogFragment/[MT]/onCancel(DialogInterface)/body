@@ -1,0 +1,6 @@
+{
+  if (getActivity() != null) {
+    getActivity().finish();
+  }
+  super.onCancel(dlg);
+}

@@ -1,0 +1,6 @@
+{
+  if (playServices != null) {
+    playServices.disconnect();
+  }
+  super.onStop();
+}
