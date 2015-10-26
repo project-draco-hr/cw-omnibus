@@ -1,6 +1,6 @@
 {
   super.onCreate(savedInstanceState);
-  StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDeath().build());
+  StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectNetwork().penaltyDeath().build());
   if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
     getFragmentManager().beginTransaction().add(android.R.id.content,new DownloadFragment()).commit();
   }
