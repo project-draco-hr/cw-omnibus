@@ -1,0 +1,15 @@
+{
+  File fileToEdit;
+switch (position) {
+case TAB_INTERNAL:
+    fileToEdit=new File(ctxt.getFilesDir(),FILENAME);
+  break;
+case TAB_EXTERNAL:
+fileToEdit=new File(ctxt.getExternalFilesDir(null),FILENAME);
+break;
+default :
+fileToEdit=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),FILENAME);
+break;
+}
+return (EditorFragment.newInstance(fileToEdit));
+}

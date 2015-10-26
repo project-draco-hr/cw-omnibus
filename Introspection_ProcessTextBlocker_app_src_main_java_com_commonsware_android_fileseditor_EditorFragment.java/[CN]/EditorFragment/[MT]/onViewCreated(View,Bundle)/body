@@ -1,0 +1,7 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  if (!loaded) {
+    loadTask=new LoadTextTask();
+    loadTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,(File)getArguments().getSerializable(KEY_FILE));
+  }
+}

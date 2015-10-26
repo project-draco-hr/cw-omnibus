@@ -1,0 +1,5 @@
+{
+  editor.setText(s);
+  loadTask=null;
+  loaded=true;
+}

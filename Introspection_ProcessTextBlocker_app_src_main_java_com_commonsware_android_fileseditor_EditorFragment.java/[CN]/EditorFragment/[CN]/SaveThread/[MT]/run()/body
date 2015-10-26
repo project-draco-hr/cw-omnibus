@@ -1,0 +1,18 @@
+{
+  try {
+    fileToEdit.getParentFile().mkdirs();
+    FileOutputStream fos=new FileOutputStream(fileToEdit);
+    Writer w=new BufferedWriter(new OutputStreamWriter(fos));
+    try {
+      w.write(text);
+      w.flush();
+      fos.getFD().sync();
+    }
+  finally {
+      w.close();
+    }
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception writing file",e);
+  }
+}
