@@ -1,0 +1,19 @@
+{
+  ServerStartedEvent event=new ServerStartedEvent();
+  try {
+    for (Enumeration<NetworkInterface> enInterfaces=NetworkInterface.getNetworkInterfaces(); enInterfaces.hasMoreElements(); ) {
+      NetworkInterface ni=enInterfaces.nextElement();
+      for (Enumeration<InetAddress> enAddresses=ni.getInetAddresses(); enAddresses.hasMoreElements(); ) {
+        InetAddress addr=enAddresses.nextElement();
+        if (addr instanceof Inet4Address) {
+          event.addUrl("http://" + addr.getHostAddress() + ":4999");
+        }
+      }
+    }
+  }
+ catch (  SocketException e) {
+    Log.e(getClass().getSimpleName(),"Exception in IP addresses",e);
+  }
+  EventBus.getDefault().removeAllStickyEvents();
+  EventBus.getDefault().postSticky(event);
+}

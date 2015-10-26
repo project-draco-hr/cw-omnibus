@@ -1,0 +1,5 @@
+{
+  start.setVisible(false);
+  stop.setVisible(true);
+  setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,event.getUrls()));
+}

@@ -1,0 +1,16 @@
+{
+  super.onCreate();
+  handlebars=new Handlebars(new AssetTemplateLoader(getAssets()));
+  try {
+    t=handlebars.compile("demo.hbs");
+    server=new AsyncHttpServer();
+    server.get("/demo",new TemplateRequestCallback());
+    server.get("/.*",new AssetRequestCallback());
+    server.listen(4999);
+    raiseReadyEvent();
+    foregroundify();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception starting Web server",e);
+  }
+}

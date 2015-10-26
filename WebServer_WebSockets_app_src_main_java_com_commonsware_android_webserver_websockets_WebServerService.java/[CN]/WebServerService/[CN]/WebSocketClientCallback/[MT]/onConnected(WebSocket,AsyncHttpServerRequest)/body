@@ -1,0 +1,12 @@
+{
+  sockets.add(ws);
+  ws.setClosedCallback(new CompletedCallback(){
+    @Override public void onCompleted(    Exception ex){
+      if (ex != null) {
+        Log.e(getClass().getSimpleName(),"Exception with WebSocket",ex);
+      }
+      sockets.remove(ws);
+    }
+  }
+);
+}

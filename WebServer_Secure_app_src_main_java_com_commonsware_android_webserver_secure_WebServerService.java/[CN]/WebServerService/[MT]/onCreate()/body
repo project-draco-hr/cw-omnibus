@@ -1,0 +1,18 @@
+{
+  super.onCreate();
+  ConnectivityManager mgr=(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+  NetworkInfo ni=mgr.getActiveNetworkInfo();
+  if (ni == null || ni.getType() == ConnectivityManager.TYPE_MOBILE) {
+    EventBus.getDefault().post(new ServerStartRejectedEvent());
+    stopSelf();
+  }
+ else {
+    rootPath="/" + new BigInteger(20,rng).toString(24).toUpperCase();
+    server=new AsyncHttpServer();
+    server.get("/.*",new AssetRequestCallback());
+    server.listen(4999);
+    raiseReadyEvent();
+    foregroundify();
+    timeoutFuture=timer.schedule(onTimeout,MAX_IDLE_TIME_SECONDS,TimeUnit.SECONDS);
+  }
+}

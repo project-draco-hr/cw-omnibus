@@ -1,0 +1,3 @@
+AsyncHttpServerResponse response
+String path
+Exception e

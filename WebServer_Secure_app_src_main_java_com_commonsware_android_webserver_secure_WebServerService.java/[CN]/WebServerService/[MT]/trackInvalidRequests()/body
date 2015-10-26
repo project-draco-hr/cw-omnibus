@@ -1,0 +1,6 @@
+{
+  invalidRequestCount++;
+  if (invalidRequestCount > MAX_SEQUENTIAL_INVALID_REQUESTS) {
+    stopSelf();
+  }
+}

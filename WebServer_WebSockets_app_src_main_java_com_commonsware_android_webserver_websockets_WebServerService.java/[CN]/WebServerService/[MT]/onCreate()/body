@@ -1,0 +1,10 @@
+{
+  super.onCreate();
+  server=new AsyncHttpServer();
+  server.websocket("/ss",new WebSocketClientCallback());
+  server.get("/.*",new AssetRequestCallback());
+  server.listen(4999);
+  raiseStartedEvent();
+  foregroundify();
+  timer.scheduleAtFixedRate(this,3000,3000,TimeUnit.MILLISECONDS);
+}

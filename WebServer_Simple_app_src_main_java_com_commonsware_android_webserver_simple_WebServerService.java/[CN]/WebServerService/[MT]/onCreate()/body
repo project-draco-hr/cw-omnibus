@@ -1,0 +1,8 @@
+{
+  super.onCreate();
+  server=new AsyncHttpServer();
+  server.get("/.*",new AssetRequestCallback());
+  server.listen(4999);
+  raiseStartedEvent();
+  foregroundify();
+}

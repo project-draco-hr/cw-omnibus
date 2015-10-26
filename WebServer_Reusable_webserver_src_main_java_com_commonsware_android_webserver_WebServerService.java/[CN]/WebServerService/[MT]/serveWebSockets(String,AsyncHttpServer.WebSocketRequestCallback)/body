@@ -1,0 +1,11 @@
+{
+  StringBuilder route=new StringBuilder(rootPath);
+  if (!relpath.startsWith("/")) {
+    route.append('/');
+  }
+  route.append(relpath);
+  if (cb == null) {
+    cb=new WebSocketClientCallback();
+  }
+  server.websocket(route.toString(),cb);
+}

@@ -1,0 +1,13 @@
+{
+  try {
+    DisplayMetrics metrics=new DisplayMetrics();
+    WindowManager wmgr=(WindowManager)getSystemService(WINDOW_SERVICE);
+    wmgr.getDefaultDisplay().getMetrics(metrics);
+    Context ctxt=Context.newBuilder(metrics).resolver(FieldValueResolver.INSTANCE).build();
+    response.send(t.apply(ctxt));
+    ctxt.destroy();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception serving Web page",e);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  for (  WebSocket socket : sockets) {
+    socket.send(new Date().toString());
+  }
+}

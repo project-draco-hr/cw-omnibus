@@ -1,0 +1,4 @@
+{
+  timeoutFuture.cancel(false);
+  timeoutFuture=timer.schedule(onTimeout,getMaxIdleTimeSeconds(),TimeUnit.SECONDS);
+}

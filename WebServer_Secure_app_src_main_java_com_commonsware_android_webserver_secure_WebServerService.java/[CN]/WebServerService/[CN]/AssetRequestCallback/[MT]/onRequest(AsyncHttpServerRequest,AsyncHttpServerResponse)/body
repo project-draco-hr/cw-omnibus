@@ -1,0 +1,26 @@
+{
+  String path=request.getPath();
+  try {
+    if (path.startsWith(rootPath)) {
+      path=path.substring(rootPath.length() + 1);
+    }
+ else {
+      handle404(response,path,null);
+      return;
+    }
+    if (path.length() == 0 || "/".equals(path)) {
+      path="index.html";
+    }
+ else     if (path.startsWith("/")) {
+      path=path.substring(1);
+    }
+    AssetFileDescriptor afd=getAssets().openFd(path);
+    response.sendStream(afd.createInputStream(),afd.getLength());
+    timeoutFuture.cancel(false);
+    timeoutFuture=timer.schedule(onTimeout,MAX_IDLE_TIME_SECONDS,TimeUnit.SECONDS);
+    invalidRequestCount=0;
+  }
+ catch (  IOException e) {
+    handle404(response,path,e);
+  }
+}

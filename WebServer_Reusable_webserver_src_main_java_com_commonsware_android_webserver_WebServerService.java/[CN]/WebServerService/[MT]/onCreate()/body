@@ -1,0 +1,21 @@
+{
+  super.onCreate();
+  ConnectivityManager mgr=(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+  NetworkInfo ni=mgr.getActiveNetworkInfo();
+  if (ni == null || ni.getType() == ConnectivityManager.TYPE_MOBILE) {
+    EventBus.getDefault().post(new ServerStartRejectedEvent());
+    stopSelf();
+  }
+ else {
+    handlebars=new Handlebars(new AssetTemplateLoader(getAssets()));
+    rootPath="/" + new BigInteger(20,rng).toString(24).toUpperCase();
+    server=new AsyncHttpServer();
+    if (configureRoutes(server)) {
+      server.get("/.*",new AssetRequestCallback());
+    }
+    server.listen(getPort());
+    raiseReadyEvent();
+    foregroundify();
+    timeoutFuture=timer.schedule(onTimeout,getMaxIdleTimeSeconds(),TimeUnit.SECONDS);
+  }
+}

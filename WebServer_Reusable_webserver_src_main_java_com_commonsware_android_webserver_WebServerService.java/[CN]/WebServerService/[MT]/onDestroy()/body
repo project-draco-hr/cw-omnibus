@@ -1,0 +1,9 @@
+{
+  EventBus.getDefault().removeAllStickyEvents();
+  EventBus.getDefault().postSticky(new ServerStoppedEvent());
+  if (server != null) {
+    server.stop();
+    AsyncServer.getDefault().stop();
+  }
+  super.onDestroy();
+}

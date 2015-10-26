@@ -1,0 +1,9 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  Intent iReceiver=new Intent(this,StopReceiver.class);
+  PendingIntent piReceiver=PendingIntent.getBroadcast(this,0,iReceiver,0);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL);
+  buildForegroundNotification(b);
+  b.addAction(R.drawable.ic_stop_white_24dp,getString(R.string.notify_stop),piReceiver);
+  startForeground(NOTIFY_ID,b.build());
+}

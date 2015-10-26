@@ -1,0 +1,10 @@
+{
+  Intent i=new Intent(this,WebServerService.class);
+  if (item.getItemId() == R.id.start) {
+    startService(i);
+  }
+ else {
+    stopService(i);
+  }
+  return (super.onOptionsItemSelected(item));
+}

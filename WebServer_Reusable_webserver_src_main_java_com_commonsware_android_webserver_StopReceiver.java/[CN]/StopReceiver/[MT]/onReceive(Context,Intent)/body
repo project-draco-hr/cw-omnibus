@@ -1,0 +1,9 @@
+{
+  Intent i=new Intent(context.getString(R.string.service_action)).setPackage(context.getPackageName());
+  PackageManager mgr=context.getPackageManager();
+  for (  ResolveInfo ri : mgr.queryIntentServices(i,0)) {
+    ComponentName cn=new ComponentName(ri.serviceInfo.applicationInfo.packageName,ri.serviceInfo.name);
+    Intent stop=new Intent().setComponent(cn);
+    context.stopService(stop);
+  }
+}

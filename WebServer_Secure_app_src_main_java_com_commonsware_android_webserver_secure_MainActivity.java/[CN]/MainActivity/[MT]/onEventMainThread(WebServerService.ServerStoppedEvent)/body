@@ -1,0 +1,7 @@
+{
+  if (record != null) {
+    record.setVisible(true);
+    stop.setVisible(false);
+    setListAdapter(null);
+  }
+}

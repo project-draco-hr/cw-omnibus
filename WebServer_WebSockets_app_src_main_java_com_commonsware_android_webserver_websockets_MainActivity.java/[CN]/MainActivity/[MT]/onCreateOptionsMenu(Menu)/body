@@ -1,0 +1,10 @@
+{
+  getMenuInflater().inflate(R.menu.actions,menu);
+  start=menu.findItem(R.id.start);
+  stop=menu.findItem(R.id.stop);
+  WebServerService.ServerStartedEvent event=EventBus.getDefault().getStickyEvent(WebServerService.ServerStartedEvent.class);
+  if (event != null) {
+    handleStartEvent(event);
+  }
+  return (super.onCreateOptionsMenu(menu));
+}

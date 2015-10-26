@@ -1,0 +1,5 @@
+{
+  Log.e(getClass().getSimpleName(),"Invalid URL: " + path);
+  response.code(404);
+  response.end();
+}

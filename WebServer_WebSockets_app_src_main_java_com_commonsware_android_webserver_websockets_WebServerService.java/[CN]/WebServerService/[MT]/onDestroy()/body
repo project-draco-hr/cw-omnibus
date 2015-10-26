@@ -1,0 +1,8 @@
+{
+  timer.shutdownNow();
+  EventBus.getDefault().removeAllStickyEvents();
+  EventBus.getDefault().postSticky(new ServerStoppedEvent());
+  server.stop();
+  AsyncServer.getDefault().stop();
+  super.onDestroy();
+}

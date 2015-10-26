@@ -1,0 +1,16 @@
+{
+  String path=request.getPath();
+  try {
+    if (path.length() == 0 || "/".equals(path)) {
+      path="index.html";
+    }
+ else     if (path.startsWith("/")) {
+      path=path.substring(1);
+    }
+    AssetFileDescriptor afd=getAssets().openFd(path);
+    response.sendStream(afd.createInputStream(),afd.getLength());
+  }
+ catch (  IOException e) {
+    handle404(response,path);
+  }
+}
