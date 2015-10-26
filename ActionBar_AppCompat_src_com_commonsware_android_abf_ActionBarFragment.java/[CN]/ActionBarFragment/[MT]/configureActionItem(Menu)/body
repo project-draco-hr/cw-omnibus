@@ -1,4 +1,0 @@
-{
-  EditText add=(EditText)MenuItemCompat.getActionView(menu.findItem(R.id.add)).findViewById(R.id.title);
-  add.setOnEditorActionListener(this);
-}

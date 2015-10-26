@@ -1,8 +1,0 @@
-{
-  words=new ArrayList<String>();
-  for (int i=0; i < 5; i++) {
-    words.add(items[i]);
-  }
-  adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,words);
-  setListAdapter(adapter);
-}

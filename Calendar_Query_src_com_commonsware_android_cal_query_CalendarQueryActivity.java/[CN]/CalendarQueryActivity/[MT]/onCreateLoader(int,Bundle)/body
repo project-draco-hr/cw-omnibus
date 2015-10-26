@@ -1,3 +1,0 @@
-{
-  return (new CursorLoader(this,CalendarContract.Events.CONTENT_URI,PROJECTION,null,null,CalendarContract.Events.DTSTART));
-}

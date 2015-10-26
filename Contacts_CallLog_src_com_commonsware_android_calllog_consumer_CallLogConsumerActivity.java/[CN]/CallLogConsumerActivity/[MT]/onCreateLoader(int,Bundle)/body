@@ -1,3 +1,0 @@
-{
-  return (new CursorLoader(this,CallLog.Calls.CONTENT_URI,PROJECTION,null,null,CallLog.Calls.DATE + " DESC"));
-}

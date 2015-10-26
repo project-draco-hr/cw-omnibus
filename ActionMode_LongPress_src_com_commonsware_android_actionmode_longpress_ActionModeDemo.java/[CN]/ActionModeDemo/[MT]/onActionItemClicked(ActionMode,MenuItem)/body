@@ -1,5 +1,0 @@
-{
-  boolean result=performActions(item);
-  updateSubtitle(activeMode);
-  return (result);
-}

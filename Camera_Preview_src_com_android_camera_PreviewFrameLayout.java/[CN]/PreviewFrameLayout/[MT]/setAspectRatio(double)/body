@@ -1,7 +1,0 @@
-{
-  if (ratio <= 0.0)   throw new IllegalArgumentException();
-  if (mAspectRatio != ratio) {
-    mAspectRatio=ratio;
-    requestLayout();
-  }
-}

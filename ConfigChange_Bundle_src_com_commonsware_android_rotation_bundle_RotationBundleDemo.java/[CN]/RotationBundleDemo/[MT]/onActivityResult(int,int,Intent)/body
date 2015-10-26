@@ -1,8 +1,0 @@
-{
-  if (requestCode == PICK_REQUEST) {
-    if (resultCode == RESULT_OK) {
-      contact=data.getData();
-      viewButton.setEnabled(true);
-    }
-  }
-}

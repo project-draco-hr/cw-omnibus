@@ -1,3 +1,0 @@
-{
-  return (String.format(ctxt.getString(R.string.title),inSampleSize));
-}

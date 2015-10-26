@@ -1,3 +1,0 @@
-{
-  getFragmentManager().beginTransaction().add(android.R.id.content,ButtonFragment.newInstance(count++)).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-}

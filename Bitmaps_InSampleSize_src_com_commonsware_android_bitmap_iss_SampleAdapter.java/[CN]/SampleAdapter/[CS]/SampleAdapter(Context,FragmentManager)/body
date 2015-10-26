@@ -1,4 +1,0 @@
-{
-  super(mgr);
-  this.ctxt=ctxt;
-}

@@ -1,7 +1,0 @@
-{
-  Intent i=new Intent("com.commonsware.android.advservice.IScript");
-  i.putExtra(SCRIPT,script.getText().toString());
-  i.putExtra(BROADCAST_ACTION,PRIVATE_ACTION);
-  i.putExtra(BROADCAST_PACKAGE,"com.commonsware.android.advservice.client");
-  startService(i);
-}

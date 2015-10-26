@@ -1,5 +1,0 @@
-{
-  tx=TrafficStats.getUidTxBytes(uid);
-  rx=TrafficStats.getUidRxBytes(uid);
-  this.tag=tag;
-}

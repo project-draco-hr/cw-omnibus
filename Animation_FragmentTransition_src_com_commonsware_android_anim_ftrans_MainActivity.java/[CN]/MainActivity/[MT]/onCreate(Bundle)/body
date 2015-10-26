@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
-    findViewById(android.R.id.content).postDelayed(this,1000);
-  }
-}

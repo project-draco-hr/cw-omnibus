@@ -1,7 +1,0 @@
-{
-  if (item.getItemId() == R.id.toggle) {
-    panel.toggle();
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
-}

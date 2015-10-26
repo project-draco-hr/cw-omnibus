@@ -1,3 +1,0 @@
-{
-  return (new LegacyCompatCursorWrapper(super.query(uri,projection,selection,selectionArgs,sortOrder)));
-}

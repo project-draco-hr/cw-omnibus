@@ -1,7 +1,0 @@
-{
-  View result=inflater.inflate(R.layout.main,container,false);
-  btn=(Button)result.findViewById(R.id.go);
-  btn.setOnClickListener(this);
-  btn.setEnabled(binding != null);
-  return (result);
-}

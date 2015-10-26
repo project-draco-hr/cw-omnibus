@@ -1,4 +1,0 @@
-{
-  super.onResume();
-  Log.d(getClass().getSimpleName(),"onResume()");
-}

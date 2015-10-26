@@ -1,3 +1,0 @@
-{
-  getListView().setAdapter(la);
-}

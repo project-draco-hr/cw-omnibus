@@ -1,5 +1,0 @@
-{
-  this.activity=fragment.getActivity();
-  this.fragment=fragment;
-  initializeConfiguration();
-}

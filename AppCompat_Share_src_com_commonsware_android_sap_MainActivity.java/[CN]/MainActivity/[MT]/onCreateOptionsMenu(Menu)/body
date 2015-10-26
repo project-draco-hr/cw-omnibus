@@ -1,7 +1,0 @@
-{
-  getMenuInflater().inflate(R.menu.actions,menu);
-  MenuItem item=menu.findItem(R.id.share);
-  share=(ShareActionProvider)MenuItemCompat.getActionProvider(item);
-  share.setOnShareTargetSelectedListener(this);
-  return (super.onCreateOptionsMenu(menu));
-}

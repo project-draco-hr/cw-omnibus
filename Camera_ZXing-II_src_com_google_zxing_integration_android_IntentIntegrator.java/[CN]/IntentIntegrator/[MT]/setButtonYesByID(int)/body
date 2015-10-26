@@ -1,3 +1,0 @@
-{
-  buttonYes=activity.getString(buttonYesID);
-}

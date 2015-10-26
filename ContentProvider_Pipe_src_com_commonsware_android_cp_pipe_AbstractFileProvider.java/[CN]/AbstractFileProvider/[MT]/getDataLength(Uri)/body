@@ -1,3 +1,0 @@
-{
-  return (AssetFileDescriptor.UNKNOWN_LENGTH);
-}

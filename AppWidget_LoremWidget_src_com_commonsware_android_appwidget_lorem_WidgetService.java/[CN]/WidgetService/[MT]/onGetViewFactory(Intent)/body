@@ -1,3 +1,0 @@
-{
-  return (new LoremViewsFactory(this.getApplicationContext(),intent));
-}

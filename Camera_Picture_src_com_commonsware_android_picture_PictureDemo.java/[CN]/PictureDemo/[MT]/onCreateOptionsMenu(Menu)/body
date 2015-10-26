@@ -1,4 +1,0 @@
-{
-  new MenuInflater(this).inflate(R.menu.options,menu);
-  return (super.onCreateOptionsMenu(menu));
-}

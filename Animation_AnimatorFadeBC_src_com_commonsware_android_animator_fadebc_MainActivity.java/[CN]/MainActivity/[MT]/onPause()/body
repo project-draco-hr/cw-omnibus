@@ -1,4 +1,0 @@
-{
-  fadee.removeCallbacks(this);
-  super.onPause();
-}

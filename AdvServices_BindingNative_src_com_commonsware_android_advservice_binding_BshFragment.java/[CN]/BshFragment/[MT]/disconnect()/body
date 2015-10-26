@@ -1,4 +1,0 @@
-{
-  service=null;
-  btn.setEnabled(false);
-}

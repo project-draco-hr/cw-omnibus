@@ -1,3 +1,0 @@
-{
-  Toast.makeText(BshServiceDemo.this,result,Toast.LENGTH_LONG).show();
-}

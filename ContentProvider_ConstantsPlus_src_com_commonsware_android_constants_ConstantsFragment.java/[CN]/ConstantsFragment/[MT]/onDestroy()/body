@@ -1,7 +1,0 @@
-{
-  if (task != null) {
-    task.cancel(false);
-  }
-  ((CursorAdapter)getListAdapter()).getCursor().close();
-  super.onDestroy();
-}

@@ -1,4 +1,0 @@
-{
-  getActivity().getApplicationContext().unbindService(this);
-  super.onDestroy();
-}

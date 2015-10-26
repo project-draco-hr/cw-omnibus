@@ -1,6 +1,0 @@
-{
-  AlarmManager mgr=(AlarmManager)ctxt.getSystemService(Context.ALARM_SERVICE);
-  Intent i=new Intent(ctxt,PollReceiver.class);
-  PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,0);
-  mgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + INITIAL_DELAY,PERIOD,pi);
-}

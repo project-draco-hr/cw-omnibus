@@ -1,4 +1,0 @@
-{
-  EditText url=(EditText)findViewById(R.id.url);
-  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url.getText().toString())));
-}

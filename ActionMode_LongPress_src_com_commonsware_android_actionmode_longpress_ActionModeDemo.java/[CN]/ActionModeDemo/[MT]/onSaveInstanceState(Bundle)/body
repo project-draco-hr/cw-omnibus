@@ -1,5 +1,0 @@
-{
-  super.onSaveInstanceState(state);
-  state.putInt(STATE_CHOICE_MODE,getListView().getChoiceMode());
-  state.putStringArrayList(STATE_MODEL,words);
-}

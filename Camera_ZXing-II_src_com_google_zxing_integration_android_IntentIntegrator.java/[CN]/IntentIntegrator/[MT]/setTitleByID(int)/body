@@ -1,3 +1,0 @@
-{
-  title=activity.getString(titleID);
-}

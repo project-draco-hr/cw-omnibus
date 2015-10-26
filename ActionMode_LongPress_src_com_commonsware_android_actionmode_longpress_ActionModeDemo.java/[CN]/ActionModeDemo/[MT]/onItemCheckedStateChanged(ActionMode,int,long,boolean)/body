@@ -1,5 +1,0 @@
-{
-  if (activeMode != null) {
-    updateSubtitle(mode);
-  }
-}

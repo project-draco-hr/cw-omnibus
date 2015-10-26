@@ -1,4 +1,0 @@
-{
-  binding=(IDownload)binder;
-  btn.setEnabled(true);
-}

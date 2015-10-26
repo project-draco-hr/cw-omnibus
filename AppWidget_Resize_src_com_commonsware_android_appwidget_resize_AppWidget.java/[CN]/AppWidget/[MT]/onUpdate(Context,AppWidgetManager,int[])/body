@@ -1,7 +1,0 @@
-{
-  super.onUpdate(context,appWidgetManager,appWidgetIds);
-  for (  int appWidgetId : appWidgetIds) {
-    Bundle options=appWidgetManager.getAppWidgetOptions(appWidgetId);
-    onAppWidgetOptionsChanged(context,appWidgetManager,appWidgetId,options);
-  }
-}

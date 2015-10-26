@@ -1,4 +1,0 @@
-{
-  translateWidgets(leftWidth,left,middle,right);
-  ObjectAnimator.ofInt(this,"middleWidth",leftWidth,middleWidthNormal).setDuration(ANIM_DURATION).start();
-}

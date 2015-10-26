@@ -1,4 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  Log.d(getClass().getSimpleName(),"onCreate()");
-}

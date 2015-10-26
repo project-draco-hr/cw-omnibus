@@ -1,3 +1,0 @@
-{
-  return (BitmapFragment.getTitle(ctxt,1 << position));
-}

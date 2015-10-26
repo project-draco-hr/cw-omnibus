@@ -1,3 +1,0 @@
-{
-  mode.setSubtitle("(" + lv.getCheckedItemCount() + ")");
-}

@@ -1,5 +1,0 @@
-{
-  super.onRestoreInstanceState(state);
-  contact=state.getParcelable("contact");
-  viewButton.setEnabled(contact != null);
-}

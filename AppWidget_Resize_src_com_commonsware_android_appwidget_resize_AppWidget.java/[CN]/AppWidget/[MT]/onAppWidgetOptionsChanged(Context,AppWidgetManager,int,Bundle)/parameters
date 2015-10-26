@@ -1,4 +1,0 @@
-Context ctxt
-AppWidgetManager mgr
-int appWidgetId
-Bundle newOptions

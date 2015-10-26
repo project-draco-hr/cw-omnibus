@@ -1,9 +1,0 @@
-{
-  if (item.getItemId() == R.id.camera) {
-    if (inPreview) {
-      camera.takePicture(null,null,photoCallback);
-      inPreview=false;
-    }
-  }
-  return (super.onOptionsItemSelected(item));
-}

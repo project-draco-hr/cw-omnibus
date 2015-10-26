@@ -1,3 +1,0 @@
-{
-  return (BitmapFragment.newInstance(1 << position));
-}

@@ -1,4 +1,0 @@
-{
-  super.onRestart();
-  Log.d(getClass().getSimpleName(),"onRestart()");
-}

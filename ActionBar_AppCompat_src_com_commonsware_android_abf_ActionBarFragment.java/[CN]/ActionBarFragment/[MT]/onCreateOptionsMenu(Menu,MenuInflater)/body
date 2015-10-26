@@ -1,5 +1,0 @@
-{
-  inflater.inflate(R.menu.actions,menu);
-  configureActionItem(menu);
-  super.onCreateOptionsMenu(menu,inflater);
-}

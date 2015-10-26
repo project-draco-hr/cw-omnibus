@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.main);
-  screenStyleGroup=(RadioGroup)findViewById(R.id.screenStyle);
-  screenStyleGroup.setOnCheckedChangeListener(this);
-}

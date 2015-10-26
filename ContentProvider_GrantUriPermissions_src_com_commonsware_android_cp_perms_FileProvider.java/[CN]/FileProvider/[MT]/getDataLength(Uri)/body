@@ -1,4 +1,0 @@
-{
-  File f=new File(getContext().getFilesDir(),uri.getPath());
-  return (f.length());
-}

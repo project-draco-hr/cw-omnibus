@@ -1,4 +1,0 @@
-{
-  this.succeeded=succeeded;
-  this.msg=msg;
-}

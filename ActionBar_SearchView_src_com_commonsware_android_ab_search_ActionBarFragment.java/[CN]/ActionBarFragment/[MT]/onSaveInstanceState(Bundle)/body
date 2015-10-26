@@ -1,7 +1,0 @@
-{
-  super.onSaveInstanceState(state);
-  if (!sv.isIconified()) {
-    state.putCharSequence(STATE_QUERY,sv.getQuery());
-  }
-  state.putStringArrayList(STATE_MODEL,words);
-}

@@ -1,7 +1,0 @@
-{
-  if (activeMode != null) {
-    activeMode=null;
-    getListView().setChoiceMode(ListView.CHOICE_MODE_NONE);
-    getListView().setAdapter(getListView().getAdapter());
-  }
-}

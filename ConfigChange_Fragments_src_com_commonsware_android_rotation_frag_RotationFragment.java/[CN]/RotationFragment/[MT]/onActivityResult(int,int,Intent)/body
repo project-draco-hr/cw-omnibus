@@ -1,8 +1,0 @@
-{
-  if (requestCode == PICK_REQUEST) {
-    if (resultCode == Activity.RESULT_OK) {
-      contact=data.getData();
-      getView().findViewById(R.id.view).setEnabled(true);
-    }
-  }
-}

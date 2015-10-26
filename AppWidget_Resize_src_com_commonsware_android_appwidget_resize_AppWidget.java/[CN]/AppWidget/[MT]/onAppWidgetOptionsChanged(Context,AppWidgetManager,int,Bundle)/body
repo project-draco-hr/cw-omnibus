@@ -1,6 +1,0 @@
-{
-  RemoteViews updateViews=new RemoteViews(ctxt.getPackageName(),R.layout.widget);
-  String msg=String.format(Locale.getDefault(),"[%d-%d] x [%d-%d]",newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH),newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH),newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT),newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT));
-  updateViews.setTextViewText(R.id.size,msg);
-  mgr.updateAppWidget(appWidgetId,updateViews);
-}

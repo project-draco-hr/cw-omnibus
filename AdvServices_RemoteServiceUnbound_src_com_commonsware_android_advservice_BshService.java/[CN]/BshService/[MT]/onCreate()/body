@@ -1,9 +1,0 @@
-{
-  super.onCreate();
-  try {
-    i.set("context",this);
-  }
- catch (  bsh.EvalError e) {
-    Log.e("BshService","Error executing script",e);
-  }
-}

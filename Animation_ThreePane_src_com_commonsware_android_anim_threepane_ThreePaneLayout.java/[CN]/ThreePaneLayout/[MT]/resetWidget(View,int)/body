@@ -1,5 +1,0 @@
-{
-  LinearLayout.LayoutParams p=(LinearLayout.LayoutParams)v.getLayoutParams();
-  p.width=width;
-  p.weight=0;
-}

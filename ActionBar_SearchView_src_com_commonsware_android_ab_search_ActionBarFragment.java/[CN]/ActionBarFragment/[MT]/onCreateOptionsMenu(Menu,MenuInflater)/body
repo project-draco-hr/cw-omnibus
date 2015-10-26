@@ -1,5 +1,0 @@
-{
-  inflater.inflate(R.menu.actions,menu);
-  configureSearchView(menu);
-  super.onCreateOptionsMenu(menu,inflater);
-}

@@ -1,7 +1,0 @@
-{
-  if (requestCode == PICK_REQUEST) {
-    if (resultCode == RESULT_OK) {
-      startActivity(new Intent(Intent.ACTION_VIEW,data.getData()));
-    }
-  }
-}

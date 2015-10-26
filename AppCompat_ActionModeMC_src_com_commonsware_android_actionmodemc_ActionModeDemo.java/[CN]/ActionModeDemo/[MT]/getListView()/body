@@ -1,3 +1,0 @@
-{
-  return ((ListView)findViewById(android.R.id.list));
-}

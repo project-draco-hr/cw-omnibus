@@ -1,4 +1,0 @@
-{
-  service=IScript.Stub.asInterface(binder);
-  btn.setEnabled(true);
-}

@@ -1,7 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  adapter=new SimpleCursorAdapter(this,R.layout.row,null,new String[]{CallLog.Calls.NUMBER,CallLog.Calls.DATE},new int[]{R.id.number,R.id.date},0);
-  adapter.setViewBinder(this);
-  setListAdapter(adapter);
-  getLoaderManager().initLoader(0,null,this);
-}

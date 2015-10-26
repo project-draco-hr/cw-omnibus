@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
-  editor=(EditText)findViewById(R.id.editor);
-  editor.setOnKeyListener(this);
-}

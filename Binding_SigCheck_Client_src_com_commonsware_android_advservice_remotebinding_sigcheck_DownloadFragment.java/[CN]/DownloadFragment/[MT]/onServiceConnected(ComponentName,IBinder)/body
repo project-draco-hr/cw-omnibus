@@ -1,4 +1,0 @@
-{
-  binding=IDownload.Stub.asInterface(binder);
-  btn.setEnabled(true);
-}

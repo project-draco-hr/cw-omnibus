@@ -1,7 +1,0 @@
-{
-  Bundle args=new Bundle();
-  args.putInt(KEY_INDEX,index);
-  ButtonFragment result=new ButtonFragment();
-  result.setArguments(args);
-  return (result);
-}

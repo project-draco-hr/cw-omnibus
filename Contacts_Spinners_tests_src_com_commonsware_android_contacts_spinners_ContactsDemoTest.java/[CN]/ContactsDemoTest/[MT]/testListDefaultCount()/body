@@ -1,3 +1,0 @@
-{
-  assertTrue(list.getAdapter().getCount() > 0);
-}

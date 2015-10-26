@@ -1,5 +1,0 @@
-{
-  appContext.unbindService(this);
-  disconnect();
-  super.onDestroy();
-}

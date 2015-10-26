@@ -1,7 +1,0 @@
-{
-  if (item.getItemId() == R.id.add) {
-    startActivity(new Intent(this,this.getClass()));
-    return (true);
-  }
-  return (super.onOptionsItemSelected(item));
-}

@@ -1,4 +1,0 @@
-{
-  ComponentName me=new ComponentName(ctxt,AppWidget.class);
-  mgr.updateAppWidget(me,buildUpdate(ctxt,appWidgetIds));
-}

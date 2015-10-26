@@ -1,7 +1,0 @@
-{
-  SimpleListFragment result=new SimpleListFragment();
-  Bundle args=new Bundle();
-  args.putStringArrayList(KEY_CONTENTS,contents);
-  result.setArguments(args);
-  return (result);
-}

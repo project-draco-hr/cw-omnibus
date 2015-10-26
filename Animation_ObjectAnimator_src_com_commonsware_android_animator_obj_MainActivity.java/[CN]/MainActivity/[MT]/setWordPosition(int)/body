@@ -1,4 +1,0 @@
-{
-  this.position=position;
-  word.setText(items[position]);
-}

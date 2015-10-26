@@ -1,9 +1,0 @@
-{
-  super.onCreate(icicle);
-  supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
-  setContentView(R.layout.list_content_simple);
-  initAdapter();
-  Drawable d=getResources().getDrawable(R.drawable.action_bar_background);
-  getSupportActionBar().setBackgroundDrawable(d);
-  getSupportActionBar().setSplitBackgroundDrawable(d);
-}

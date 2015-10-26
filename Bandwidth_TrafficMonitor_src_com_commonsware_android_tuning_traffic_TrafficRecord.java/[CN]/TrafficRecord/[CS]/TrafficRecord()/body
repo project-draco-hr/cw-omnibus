@@ -1,4 +1,0 @@
-{
-  tx=TrafficStats.getTotalTxBytes();
-  rx=TrafficStats.getTotalRxBytes();
-}

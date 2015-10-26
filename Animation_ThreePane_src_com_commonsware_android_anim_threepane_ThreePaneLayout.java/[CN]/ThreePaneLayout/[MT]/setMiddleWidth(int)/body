@@ -1,4 +1,0 @@
-{
-  middle.getLayoutParams().width=value;
-  requestLayout();
-}
