@@ -1,0 +1,19 @@
+{
+  recorder=new MediaRecorder();
+  recorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+  recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+  recorder.setVideoFrameRate(config.frameRate);
+  recorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+  recorder.setVideoSize(config.width,config.height);
+  recorder.setVideoEncodingBitRate(config.bitRate);
+  recorder.setOutputFile(output.getAbsolutePath());
+  try {
+    recorder.prepare();
+    vdisplay=projection.createVirtualDisplay("andcorder",config.width,config.height,config.density,VIRT_DISPLAY_FLAGS,recorder.getSurface(),null,null);
+    beeper.startTone(ToneGenerator.TONE_PROP_ACK);
+    recorder.start();
+  }
+ catch (  IOException e) {
+    throw new RuntimeException("Exception preparing recorder",e);
+  }
+}

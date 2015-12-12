@@ -1,0 +1,8 @@
+{
+  this.ctxt=ctxt.getApplicationContext();
+  this.config=config;
+  this.projection=projection;
+  this.beeper=new ToneGenerator(AudioManager.STREAM_NOTIFICATION,100);
+  output=new File(ctxt.getExternalFilesDir(null),"andcorder.mp4");
+  output.getParentFile().mkdirs();
+}

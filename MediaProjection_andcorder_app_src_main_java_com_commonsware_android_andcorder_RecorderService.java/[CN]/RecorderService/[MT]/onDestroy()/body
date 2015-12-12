@@ -1,0 +1,5 @@
+{
+  stopRecorder();
+  stopForeground(true);
+  super.onDestroy();
+}

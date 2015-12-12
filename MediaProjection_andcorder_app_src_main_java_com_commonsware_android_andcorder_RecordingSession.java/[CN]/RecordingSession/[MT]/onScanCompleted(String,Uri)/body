@@ -1,0 +1,3 @@
+{
+  beeper.startTone(ToneGenerator.TONE_PROP_NACK);
+}

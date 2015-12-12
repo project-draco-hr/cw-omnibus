@@ -1,0 +1,20 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL);
+  b.setContentTitle(getString(R.string.app_name)).setSmallIcon(R.mipmap.ic_launcher).setTicker(getString(R.string.app_name));
+  if (showRecord) {
+    b.addAction(R.drawable.ic_videocam_white_24dp,getString(R.string.notify_record),buildPendingIntent(ACTION_RECORD));
+  }
+ else {
+    b.addAction(R.drawable.ic_stop_white_24dp,getString(R.string.notify_stop),buildPendingIntent(ACTION_STOP));
+  }
+  b.addAction(R.drawable.ic_eject_white_24dp,getString(R.string.notify_shutdown),buildPendingIntent(ACTION_SHUTDOWN));
+  if (isForeground) {
+    NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+    mgr.notify(NOTIFY_ID,b.build());
+  }
+ else {
+    startForeground(NOTIFY_ID,b.build());
+    isForeground=true;
+  }
+}

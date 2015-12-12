@@ -1,0 +1,9 @@
+{
+  if (requestCode == REQUEST_SCREENCAST) {
+    if (resultCode == RESULT_OK) {
+      Intent i=new Intent(this,RecorderService.class).putExtra(RecorderService.EXTRA_RESULT_CODE,resultCode).putExtra(RecorderService.EXTRA_RESULT_INTENT,data);
+      startService(i);
+    }
+  }
+  finish();
+}

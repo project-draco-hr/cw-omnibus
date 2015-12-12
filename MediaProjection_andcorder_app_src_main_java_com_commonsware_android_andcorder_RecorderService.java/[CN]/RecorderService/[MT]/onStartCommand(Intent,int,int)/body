@@ -1,0 +1,30 @@
+{
+  if (i.getAction() == null) {
+    resultCode=i.getIntExtra(EXTRA_RESULT_CODE,1337);
+    resultData=i.getParcelableExtra(EXTRA_RESULT_INTENT);
+    if (recordOnNextStart) {
+      startRecorder();
+    }
+    foregroundify(!recordOnNextStart);
+    recordOnNextStart=false;
+  }
+ else   if (ACTION_RECORD.equals(i.getAction())) {
+    if (resultData != null) {
+      foregroundify(false);
+      startRecorder();
+    }
+ else {
+      Intent ui=new Intent(this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(ui);
+      recordOnNextStart=true;
+    }
+  }
+ else   if (ACTION_STOP.equals(i.getAction())) {
+    foregroundify(true);
+    stopRecorder();
+  }
+ else   if (ACTION_SHUTDOWN.equals(i.getAction())) {
+    stopSelf();
+  }
+  return (START_NOT_STICKY);
+}

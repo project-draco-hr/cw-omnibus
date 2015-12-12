@@ -1,0 +1,7 @@
+{
+  projection.stop();
+  recorder.stop();
+  recorder.release();
+  vdisplay.release();
+  MediaScannerConnection.scanFile(ctxt,new String[]{output.getAbsolutePath()},null,this);
+}

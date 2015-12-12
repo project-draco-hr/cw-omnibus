@@ -1,0 +1,8 @@
+{
+  if (session == null) {
+    MediaProjectionManager mgr=(MediaProjectionManager)getSystemService(MEDIA_PROJECTION_SERVICE);
+    MediaProjection projection=mgr.getMediaProjection(resultCode,resultData);
+    session=new RecordingSession(this,new RecordingConfig(this),projection);
+    session.start();
+  }
+}
