@@ -1,0 +1,19 @@
+{
+  super.onCreate(savedInstanceState);
+  String assistant=Settings.Secure.getString(getContentResolver(),"voice_interaction_service");
+  boolean areWeGood=false;
+  if (assistant != null) {
+    ComponentName cn=ComponentName.unflattenFromString(assistant);
+    if (cn.getPackageName().equals(getPackageName())) {
+      areWeGood=true;
+    }
+  }
+  if (areWeGood) {
+    Toast.makeText(this,R.string.msg_active,Toast.LENGTH_LONG).show();
+  }
+ else {
+    Toast.makeText(this,R.string.msg_activate,Toast.LENGTH_LONG).show();
+    startActivity(new Intent(Settings.ACTION_VOICE_INPUT_SETTINGS));
+  }
+  finish();
+}

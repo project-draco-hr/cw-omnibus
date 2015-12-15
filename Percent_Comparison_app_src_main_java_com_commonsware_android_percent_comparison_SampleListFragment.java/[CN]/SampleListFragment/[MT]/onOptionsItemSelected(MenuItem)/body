@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.perftest) {
+    View test=getActivity().getLayoutInflater().inflate(getLayoutId(),null);
+    new TestTask(getActivity()).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,test);
+  }
+  return (super.onOptionsItemSelected(item));
+}

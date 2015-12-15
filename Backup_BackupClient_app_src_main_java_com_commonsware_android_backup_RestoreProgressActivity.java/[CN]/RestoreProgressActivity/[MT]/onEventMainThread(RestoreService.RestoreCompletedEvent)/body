@@ -1,0 +1,4 @@
+{
+  startActivity(new Intent(this,MainActivity.class));
+  finish();
+}

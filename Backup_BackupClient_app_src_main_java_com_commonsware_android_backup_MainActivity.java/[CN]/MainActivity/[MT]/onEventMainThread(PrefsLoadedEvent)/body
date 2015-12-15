@@ -1,0 +1,7 @@
+{
+  this.prefs=event.prefs;
+  int lastVisited=prefs.getInt(PREF_LAST_VISITED,-1);
+  if (lastVisited > -1) {
+    pager.setCurrentItem(lastVisited);
+  }
+}

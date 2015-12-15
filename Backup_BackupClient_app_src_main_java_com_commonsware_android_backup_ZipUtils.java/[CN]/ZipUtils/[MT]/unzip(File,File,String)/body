@@ -1,0 +1,55 @@
+{
+  if (destDir.exists()) {
+    deleteContents(destDir);
+  }
+ else {
+    destDir.mkdirs();
+  }
+  try {
+    final FileInputStream fis=new FileInputStream(zipFile);
+    final ZipInputStream zis=new ZipInputStream(new BufferedInputStream(fis));
+    ZipEntry entry;
+    int entries=0;
+    long total=0;
+    try {
+      while ((entry=zis.getNextEntry()) != null) {
+        if (subtreeInZip == null || entry.getName().startsWith(subtreeInZip)) {
+          int bytesRead;
+          final byte data[]=new byte[BUFFER_SIZE];
+          final String zipCanonicalPath=validateZipEntry(entry.getName().substring(subtreeInZip.length()),destDir);
+          if (entry.isDirectory()) {
+            new File(zipCanonicalPath).mkdir();
+          }
+ else {
+            final FileOutputStream fos=new FileOutputStream(zipCanonicalPath);
+            final BufferedOutputStream dest=new BufferedOutputStream(fos,BUFFER_SIZE);
+            while (total + BUFFER_SIZE <= DEFAULT_MAX_SIZE && (bytesRead=zis.read(data,0,BUFFER_SIZE)) != -1) {
+              dest.write(data,0,bytesRead);
+              total+=bytesRead;
+            }
+            dest.flush();
+            fos.getFD().sync();
+            dest.close();
+            if (total + BUFFER_SIZE > DEFAULT_MAX_SIZE) {
+              throw new IllegalStateException("Too much output from ZIP");
+            }
+          }
+          zis.closeEntry();
+          entries++;
+          if (entries > DEFAULT_MAX_ENTRIES) {
+            throw new IllegalStateException("Too many entries in ZIP");
+          }
+        }
+      }
+    }
+  finally {
+      zis.close();
+    }
+  }
+ catch (  Throwable t) {
+    if (destDir.exists()) {
+      delete(destDir);
+    }
+    throw new UnzipException("Problem in unzip operation, rolling back",t);
+  }
+}

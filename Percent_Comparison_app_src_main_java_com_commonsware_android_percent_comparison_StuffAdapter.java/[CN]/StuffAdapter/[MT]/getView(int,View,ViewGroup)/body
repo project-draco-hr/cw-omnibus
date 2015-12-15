@@ -1,0 +1,13 @@
+{
+  if (convertView == null) {
+    convertView=inflater.inflate(layoutId,parent,false);
+  }
+  String prefix=Integer.toString(position + 1);
+  TextView tv=(TextView)convertView.findViewById(R.id.start);
+  tv.setText(prefix + "A");
+  tv=(TextView)convertView.findViewById(R.id.center);
+  tv.setText(prefix + "B");
+  tv=(TextView)convertView.findViewById(R.id.end);
+  tv.setText(prefix + "C");
+  return (convertView);
+}

@@ -1,0 +1,10 @@
+{
+  if (f.isDirectory()) {
+    for (    File child : f.listFiles()) {
+      if (!delete(child)) {
+        return (false);
+      }
+    }
+  }
+  return (f.delete());
+}

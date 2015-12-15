@@ -1,0 +1,21 @@
+{
+  Request request=new Request.Builder().url(i.getData().toString()).build();
+  try {
+    Response response=BackupService.OKHTTP_CLIENT.newCall(request).execute();
+    File toRestore=new File(getCacheDir(),"backup.zip");
+    if (toRestore.exists()) {
+      toRestore.delete();
+    }
+    BufferedSink sink=Okio.buffer(Okio.sink(toRestore));
+    sink.writeAll(response.body().source());
+    sink.close();
+    ZipUtils.unzip(toRestore,getFilesDir(),BackupService.ZIP_PREFIX_FILES);
+    ZipUtils.unzip(toRestore,BackupService.getSharedPrefsDir(this),BackupService.ZIP_PREFIX_PREFS);
+    ZipUtils.unzip(toRestore,getExternalFilesDir(null),BackupService.ZIP_PREFIX_EXTERNAL);
+    EventBus.getDefault().post(new RestoreCompletedEvent());
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception restoring backup",e);
+    EventBus.getDefault().post(new RestoreFailedEvent());
+  }
+}

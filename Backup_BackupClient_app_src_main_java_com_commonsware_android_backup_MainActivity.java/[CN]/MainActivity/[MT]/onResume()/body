@@ -1,0 +1,7 @@
+{
+  super.onResume();
+  EventBus.getDefault().register(this);
+  if (prefs == null) {
+    new PrefsLoadThread(this).start();
+  }
+}

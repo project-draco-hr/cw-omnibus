@@ -1,0 +1,4 @@
+{
+  Toast.makeText(getActivity(),R.string.msg_roster_failure,Toast.LENGTH_LONG).show();
+  Log.e(getClass().getSimpleName(),"Exception retrieving backup roster",e);
+}

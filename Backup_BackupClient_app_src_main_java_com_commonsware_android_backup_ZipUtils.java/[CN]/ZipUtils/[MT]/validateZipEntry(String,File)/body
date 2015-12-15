@@ -1,0 +1,8 @@
+{
+  File zipEntryTarget=new File(destDir,zipEntryRelativePath);
+  String zipCanonicalPath=zipEntryTarget.getCanonicalPath();
+  if (zipCanonicalPath.startsWith(destDir.getCanonicalPath())) {
+    return (zipCanonicalPath);
+  }
+  throw new IllegalStateException("ZIP entry tried to write outside destination directory");
+}

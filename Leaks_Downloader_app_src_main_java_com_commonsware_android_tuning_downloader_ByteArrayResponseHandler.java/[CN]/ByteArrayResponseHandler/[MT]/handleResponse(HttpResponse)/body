@@ -1,0 +1,11 @@
+{
+  StatusLine statusLine=response.getStatusLine();
+  if (statusLine.getStatusCode() >= 300) {
+    throw new HttpResponseException(statusLine.getStatusCode(),statusLine.getReasonPhrase());
+  }
+  HttpEntity entity=response.getEntity();
+  if (entity == null) {
+    return (null);
+  }
+  return (EntityUtils.toByteArray(entity));
+}

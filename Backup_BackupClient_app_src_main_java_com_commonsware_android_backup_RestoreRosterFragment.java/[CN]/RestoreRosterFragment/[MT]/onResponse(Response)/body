@@ -1,0 +1,7 @@
+{
+  Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ").create();
+  Type listType=new TypeToken<List<BackupMetadata>>(){
+  }
+.getType();
+  EventBus.getDefault().post(gson.fromJson(response.body().charStream(),listType));
+}

@@ -1,0 +1,6 @@
+{
+  if (loadTask != null) {
+    loadTask.cancel(false);
+  }
+  super.onDestroy();
+}

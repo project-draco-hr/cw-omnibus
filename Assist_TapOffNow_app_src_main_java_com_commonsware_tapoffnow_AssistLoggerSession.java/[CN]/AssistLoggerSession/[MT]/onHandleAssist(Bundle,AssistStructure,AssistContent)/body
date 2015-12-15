@@ -1,0 +1,4 @@
+{
+  super.onHandleAssist(data,structure,content);
+  Toast.makeText(getContext(),R.string.msg_blocked,Toast.LENGTH_LONG).show();
+}

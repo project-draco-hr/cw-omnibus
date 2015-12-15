@@ -1,0 +1,4 @@
+{
+  adapter=new ArrayAdapter<BackupMetadata>(getActivity(),android.R.layout.simple_list_item_1,roster);
+  setListAdapter(adapter);
+}

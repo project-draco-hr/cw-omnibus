@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  pleaseDoNotDoThis=(Button)findViewById(R.id.button1);
+}

@@ -1,0 +1,12 @@
+{
+  try {
+    File backup=buildBackup();
+    uploadBackup(backup);
+    backup.delete();
+    EventBus.getDefault().post(new BackupCompletedEvent());
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception creating ZIP file",e);
+    EventBus.getDefault().post(new BackupFailedEvent());
+  }
+}

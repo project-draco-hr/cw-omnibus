@@ -1,0 +1,3 @@
+String basePath
+File dir
+ZipOutputStream zos

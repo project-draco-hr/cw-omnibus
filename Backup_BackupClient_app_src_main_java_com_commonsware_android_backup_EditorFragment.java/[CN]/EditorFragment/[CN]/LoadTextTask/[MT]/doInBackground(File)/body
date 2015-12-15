@@ -1,0 +1,26 @@
+{
+  String result=null;
+  if (files[0].exists()) {
+    BufferedReader br;
+    try {
+      br=new BufferedReader(new FileReader(files[0]));
+      try {
+        StringBuilder sb=new StringBuilder();
+        String line=br.readLine();
+        while (line != null) {
+          sb.append(line);
+          sb.append("\n");
+          line=br.readLine();
+        }
+        result=sb.toString();
+      }
+  finally {
+        br.close();
+      }
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception reading file",e);
+    }
+  }
+  return (result);
+}

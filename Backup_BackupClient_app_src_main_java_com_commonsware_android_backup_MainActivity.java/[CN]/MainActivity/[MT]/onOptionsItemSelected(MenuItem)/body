@@ -1,0 +1,11 @@
+{
+  if (item.getItemId() == R.id.backup) {
+    startService(new Intent(this,BackupService.class));
+    return (true);
+  }
+ else   if (item.getItemId() == R.id.restore) {
+    startActivity(new Intent(this,RestoreRosterActivity.class));
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

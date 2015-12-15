@@ -1,0 +1,5 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  Request request=new Request.Builder().url(URL_BACKUPS).build();
+  BackupService.OKHTTP_CLIENT.newCall(request).enqueue(this);
+}

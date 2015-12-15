@@ -1,0 +1,6 @@
+{
+  super.onCreate();
+  if (BuildConfig.ACRA_INSTALL) {
+    ACRA.init(this);
+  }
+}

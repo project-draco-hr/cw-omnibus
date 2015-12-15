@@ -1,0 +1,16 @@
+{
+  View test=params[0];
+  test.measure(480,800);
+  long start=SystemClock.uptimeMillis();
+  for (int i=0; i < PASSES; i++) {
+    test.layout(0,0,480,800);
+  }
+  long split=SystemClock.uptimeMillis();
+  Log.d("PerfTest",String.format("%d layout passes in %d ms",PASSES,split - start));
+  for (int i=0; i < PASSES; i++) {
+    test.measure(480,800);
+    test.layout(0,0,480,800);
+  }
+  Log.d("PerfTest",String.format("%d measure & layout passes in %d ms",PASSES,SystemClock.uptimeMillis() - split));
+  return (null);
+}

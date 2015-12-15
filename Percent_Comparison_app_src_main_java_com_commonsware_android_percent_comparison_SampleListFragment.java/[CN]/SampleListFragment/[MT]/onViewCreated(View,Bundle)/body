@@ -1,0 +1,5 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  StuffAdapter adapter=new StuffAdapter(getActivity().getLayoutInflater(),getLayoutId());
+  setListAdapter(adapter);
+}

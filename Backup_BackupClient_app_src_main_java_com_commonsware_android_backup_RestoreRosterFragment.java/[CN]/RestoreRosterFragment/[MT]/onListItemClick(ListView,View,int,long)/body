@@ -1,0 +1,5 @@
+{
+  String url=BuildConfig.URL_SERVER + adapter.getItem(position).dataset;
+  Intent i=new Intent(getActivity(),RestoreProgressActivity.class).setData(Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+  startActivity(i);
+}

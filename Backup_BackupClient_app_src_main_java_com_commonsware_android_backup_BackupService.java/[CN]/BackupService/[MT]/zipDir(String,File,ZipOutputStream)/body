@@ -1,0 +1,23 @@
+{
+  byte[] buf=new byte[16384];
+  if (dir.listFiles() != null) {
+    for (    File file : dir.listFiles()) {
+      if (file.isDirectory()) {
+        String path=basePath + file.getName() + "/";
+        zos.putNextEntry(new ZipEntry(path));
+        zipDir(path,file,zos);
+        zos.closeEntry();
+      }
+ else       if (!file.getName().equals(BACKUP_PREFS_FILENAME)) {
+        FileInputStream fin=new FileInputStream(file);
+        int length;
+        zos.putNextEntry(new ZipEntry(basePath + file.getName()));
+        while ((length=fin.read(buf)) > 0) {
+          zos.write(buf,0,length);
+        }
+        zos.closeEntry();
+        fin.close();
+      }
+    }
+  }
+}

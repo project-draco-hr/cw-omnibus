@@ -1,0 +1,7 @@
+{
+  EventBus.getDefault().unregister(this);
+  if (prefs != null) {
+    prefs.edit().putInt(PREF_LAST_VISITED,pager.getCurrentItem()).apply();
+  }
+  super.onPause();
+}

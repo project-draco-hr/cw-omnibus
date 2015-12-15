@@ -1,0 +1,20 @@
+{
+  Request request=new Request.Builder().url(URL_CREATE_BACKUP).post(RequestBody.create(JSON,"{}")).build();
+  Response response=OKHTTP_CLIENT.newCall(request).execute();
+  if (response.code() == 201) {
+    String backupURL=response.header("Location");
+    request=new Request.Builder().url(backupURL + RESOURCE_DATASET).put(RequestBody.create(ZIP,backup)).build();
+    response=OKHTTP_CLIENT.newCall(request).execute();
+    if (response.code() == 201) {
+      String datasetURL=response.header("Location");
+      SharedPreferences prefs=getSharedPreferences(getClass().getName(),Context.MODE_PRIVATE);
+      prefs.edit().putString(PREF_LAST_BACKUP_DATASET,datasetURL).commit();
+    }
+ else {
+      Log.e(getClass().getSimpleName(),"Unsuccessful request to upload backup");
+    }
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"Unsuccessful request to create backup");
+  }
+}

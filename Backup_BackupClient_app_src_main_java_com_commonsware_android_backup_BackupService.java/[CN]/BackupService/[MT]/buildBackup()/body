@@ -1,0 +1,15 @@
+{
+  File zipFile=new File(getCacheDir(),BACKUP_FILENAME);
+  if (zipFile.exists()) {
+    zipFile.delete();
+  }
+  FileOutputStream fos=new FileOutputStream(zipFile);
+  ZipOutputStream zos=new ZipOutputStream(fos);
+  zipDir(ZIP_PREFIX_FILES,getFilesDir(),zos);
+  zipDir(ZIP_PREFIX_PREFS,getSharedPrefsDir(this),zos);
+  zipDir(ZIP_PREFIX_EXTERNAL,getExternalFilesDir(null),zos);
+  zos.flush();
+  fos.getFD().sync();
+  zos.close();
+  return (zipFile);
+}

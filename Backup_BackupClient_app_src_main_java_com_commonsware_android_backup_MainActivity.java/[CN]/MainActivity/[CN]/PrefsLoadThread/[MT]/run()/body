@@ -1,0 +1,5 @@
+{
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
+  PrefsLoadedEvent event=new PrefsLoadedEvent(prefs);
+  EventBus.getDefault().post(event);
+}
