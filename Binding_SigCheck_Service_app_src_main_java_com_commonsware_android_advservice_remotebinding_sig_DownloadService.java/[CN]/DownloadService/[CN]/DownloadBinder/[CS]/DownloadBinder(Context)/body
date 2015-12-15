@@ -1,0 +1,5 @@
+{
+  this.ctxt=ctxt.getApplicationContext();
+  this.pm=this.ctxt.getPackageManager();
+  this.expectedHash=this.ctxt.getString(R.string.expected_sig_hash);
+}

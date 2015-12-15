@@ -1,3 +1,21 @@
 {
-  new DownloadThread(url).start();
+  boolean ok=false;
+  for (  String pkg : pm.getPackagesForUid(Binder.getCallingUid())) {
+    try {
+      String otherHash=SignatureUtils.getSignatureHash(ctxt,pkg);
+      if (expectedHash.equals(otherHash)) {
+        ok=true;
+        break;
+      }
+    }
+ catch (    Exception e) {
+      Log.e(getClass().getSimpleName(),"Exception finding signature hash",e);
+    }
+  }
+  if (ok) {
+    new DownloadThread(url).start();
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"Could not validate client signature");
+  }
 }

@@ -1,4 +1,6 @@
 {
   super.onCreate(savedInstanceState);
   setRetainInstance(true);
+  appContext=(Application)getActivity().getApplicationContext();
+  appContext.bindService(new Intent(getActivity(),DownloadService.class),this,Context.BIND_AUTO_CREATE);
 }
