@@ -1,5 +1,0 @@
-{
-  super.onDestroy();
-  ((CursorAdapter)getListAdapter()).getCursor().close();
-  db.close();
-}

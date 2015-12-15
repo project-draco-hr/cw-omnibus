@@ -1,6 +1,0 @@
-{
-  db.getWritableDatabase().insert(DatabaseHelper.TABLE,DatabaseHelper.TITLE,values[0]);
-  constantsCursor=doQuery();
-  constantsCursor.getCount();
-  return (null);
-}
