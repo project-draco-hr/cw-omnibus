@@ -1,7 +1,4 @@
 {
-  Intent trepn=new Intent("com.quicinc.Trepn.UpdateAppState");
-  trepn.putExtra("com.quicinc.Trepn.UpdateAppState.Value",1337);
-  sendBroadcast(trepn);
   HttpGet getMethod=new HttpGet(i.getData().toString());
   int result=Activity.RESULT_CANCELED;
   try {
