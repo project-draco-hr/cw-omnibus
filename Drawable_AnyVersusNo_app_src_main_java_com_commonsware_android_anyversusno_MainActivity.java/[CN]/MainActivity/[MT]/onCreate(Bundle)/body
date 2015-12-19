@@ -1,0 +1,6 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  TextView density=(TextView)findViewById(R.id.density);
+  density.setText(Integer.toString(getResources().getConfiguration().densityDpi));
+}
