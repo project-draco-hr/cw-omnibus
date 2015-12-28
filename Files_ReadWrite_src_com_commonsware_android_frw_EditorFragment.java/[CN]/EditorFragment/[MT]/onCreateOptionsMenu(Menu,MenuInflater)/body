@@ -1,4 +1,0 @@
-{
-  inflater.inflate(R.menu.actions,menu);
-  external=(CheckBox)menu.findItem(R.id.location).getActionView();
-}

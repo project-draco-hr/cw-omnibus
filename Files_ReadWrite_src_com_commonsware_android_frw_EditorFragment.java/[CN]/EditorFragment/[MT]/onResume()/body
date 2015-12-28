@@ -1,4 +1,0 @@
-{
-  super.onResume();
-  new LoadTask().execute(getTarget());
-}

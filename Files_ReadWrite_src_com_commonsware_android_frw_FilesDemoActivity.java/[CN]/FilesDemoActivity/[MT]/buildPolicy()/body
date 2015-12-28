@@ -1,3 +1,0 @@
-{
-  return (new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-}

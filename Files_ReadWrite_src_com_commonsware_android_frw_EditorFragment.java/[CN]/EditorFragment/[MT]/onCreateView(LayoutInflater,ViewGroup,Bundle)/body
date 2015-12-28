@@ -1,6 +1,0 @@
-{
-  setHasOptionsMenu(true);
-  View result=inflater.inflate(R.layout.editor,parent,false);
-  editor=(EditText)result.findViewById(R.id.editor);
-  return (result);
-}

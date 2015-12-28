@@ -1,4 +1,0 @@
-{
-  Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_LONG).show();
-  Log.e(getClass().getSimpleName(),"Exception saving file",e);
-}
