@@ -1,9 +1,0 @@
-{
-  View row=super.getView(position,convertView,parent);
-  JsonObject item=getItem(position);
-  ImageView icon=(ImageView)row.findViewById(R.id.icon);
-  Ion.with(icon).placeholder(R.drawable.owner_placeholder).resize(size,size).centerCrop().error(R.drawable.owner_error).load(item.getAsJsonObject("owner").get("profile_image").getAsString());
-  TextView title=(TextView)row.findViewById(R.id.title);
-  title.setText(Html.fromHtml(item.get("title").getAsString()));
-  return (row);
-}

@@ -1,3 +1,0 @@
-{
-  startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(event.item.link)));
-}

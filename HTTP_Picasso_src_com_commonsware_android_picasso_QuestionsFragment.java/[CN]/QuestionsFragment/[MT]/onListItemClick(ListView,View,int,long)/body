@@ -1,4 +1,0 @@
-{
-  Item item=((ItemsAdapter)getListAdapter()).getItem(position);
-  EventBus.getDefault().post(new QuestionClickedEvent(item));
-}

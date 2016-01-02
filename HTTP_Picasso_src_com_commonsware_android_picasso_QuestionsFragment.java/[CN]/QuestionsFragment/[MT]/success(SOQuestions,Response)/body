@@ -1,3 +1,0 @@
-{
-  setListAdapter(new ItemsAdapter(questions.items));
-}

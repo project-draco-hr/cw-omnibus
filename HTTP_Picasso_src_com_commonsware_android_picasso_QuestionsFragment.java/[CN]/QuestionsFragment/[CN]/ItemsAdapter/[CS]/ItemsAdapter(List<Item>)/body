@@ -1,3 +1,0 @@
-{
-  super(getActivity(),R.layout.row,R.id.title,items);
-}
