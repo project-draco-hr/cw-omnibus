@@ -1,3 +1,0 @@
-{
-  return (new GeoPoint((int)(lat * 1000000.0),(int)(lon * 1000000.0)));
-}

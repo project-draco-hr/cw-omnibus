@@ -1,6 +1,0 @@
-{
-  if (isVisible) {
-    isVisible=false;
-    ((ViewGroup)popup.getParent()).removeView(popup);
-  }
-}

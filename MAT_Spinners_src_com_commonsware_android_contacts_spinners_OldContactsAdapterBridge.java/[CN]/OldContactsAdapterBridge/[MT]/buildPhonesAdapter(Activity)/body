@@ -1,5 +1,0 @@
-{
-  String[] PROJECTION=new String[]{Contacts.Phones._ID,Contacts.Phones.NAME,Contacts.Phones.NUMBER};
-  Cursor c=a.managedQuery(Contacts.Phones.CONTENT_URI,PROJECTION,null,null,Contacts.Phones.DEFAULT_SORT_ORDER);
-  return (new SimpleCursorAdapter(a,android.R.layout.simple_list_item_2,c,new String[]{Contacts.Phones.NAME,Contacts.Phones.NUMBER},new int[]{android.R.id.text1,android.R.id.text2}));
-}

@@ -1,5 +1,0 @@
-GeoPoint pt
-String name
-String snippet
-Drawable marker
-Drawable heart

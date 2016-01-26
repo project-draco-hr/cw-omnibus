@@ -1,3 +1,0 @@
-{
-  browser.loadDataWithBaseURL(null,state.lastForecast,"text/html","UTF-8",null);
-}

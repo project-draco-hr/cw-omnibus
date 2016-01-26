@@ -1,7 +1,0 @@
-{
-  CustomItem focus=getFocus();
-  if (focus != null) {
-    focus.toggleHeart();
-  }
-  map.invalidate();
-}

@@ -1,5 +1,0 @@
-{
-  String[] PROJECTION=new String[]{Contacts.ContactMethods._ID,Contacts.ContactMethods.DATA,Contacts.PeopleColumns.NAME};
-  Cursor c=a.managedQuery(Contacts.ContactMethods.CONTENT_EMAIL_URI,PROJECTION,null,null,Contacts.ContactMethods.DEFAULT_SORT_ORDER);
-  return (new SimpleCursorAdapter(a,android.R.layout.simple_list_item_2,c,new String[]{Contacts.PeopleColumns.NAME,Contacts.ContactMethods.DATA},new int[]{android.R.id.text1,android.R.id.text2}));
-}

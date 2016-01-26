@@ -1,5 +1,0 @@
-{
-  SystemClock.sleep(5000);
-  sites=new SitesOverlay();
-  return (null);
-}

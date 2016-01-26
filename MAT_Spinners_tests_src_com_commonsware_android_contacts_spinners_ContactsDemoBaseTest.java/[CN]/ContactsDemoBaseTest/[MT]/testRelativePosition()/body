@@ -1,5 +1,0 @@
-{
-  assertTrue(list.getTop() >= spinner.getBottom());
-  assertTrue(list.getLeft() == spinner.getLeft());
-  assertTrue(list.getRight() == spinner.getRight());
-}

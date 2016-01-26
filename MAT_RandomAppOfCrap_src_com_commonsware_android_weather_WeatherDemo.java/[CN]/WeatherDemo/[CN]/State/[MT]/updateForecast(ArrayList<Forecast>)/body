@@ -1,4 +1,0 @@
-{
-  lastForecast=generatePage(forecast);
-  activity.showForecast();
-}

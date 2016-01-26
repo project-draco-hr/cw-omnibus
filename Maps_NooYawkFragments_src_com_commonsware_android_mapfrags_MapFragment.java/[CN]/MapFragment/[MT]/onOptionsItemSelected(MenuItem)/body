@@ -1,7 +1,0 @@
-{
-  if (item.getItemId() == R.id.tiles) {
-    map.setSatellite(!map.isSatellite());
-    return (true);
-  }
-  return super.onOptionsItemSelected(item);
-}

@@ -1,5 +1,0 @@
-{
-  super(pt,name,snippet);
-  this.marker=marker;
-  this.heart=heart;
-}

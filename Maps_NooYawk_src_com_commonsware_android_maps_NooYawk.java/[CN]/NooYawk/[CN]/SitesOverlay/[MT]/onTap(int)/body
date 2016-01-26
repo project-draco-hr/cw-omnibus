@@ -1,4 +1,0 @@
-{
-  Toast.makeText(NooYawk.this,items.get(i).getSnippet(),Toast.LENGTH_SHORT).show();
-  return (true);
-}

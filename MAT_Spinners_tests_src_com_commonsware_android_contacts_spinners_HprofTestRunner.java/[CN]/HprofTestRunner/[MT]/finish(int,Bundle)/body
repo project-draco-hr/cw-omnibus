@@ -1,9 +1,0 @@
-{
-  try {
-    Debug.dumpHprofData(new File(Environment.getExternalStorageDirectory(),"hprof.dmp").getAbsolutePath());
-  }
- catch (  IOException e) {
-    e.printStackTrace();
-  }
-  super.finish(resultCode,results);
-}

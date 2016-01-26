@@ -1,3 +1,0 @@
-{
-  this.time=time.substring(0,16).replace('T',' ');
-}

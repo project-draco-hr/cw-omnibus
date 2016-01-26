@@ -1,7 +1,0 @@
-{
-  if (sites != null) {
-    map.getOverlays().remove(sites);
-    map.invalidate();
-    sites=null;
-  }
-}

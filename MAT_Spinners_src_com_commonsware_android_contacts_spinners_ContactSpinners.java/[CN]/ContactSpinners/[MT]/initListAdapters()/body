@@ -1,5 +1,0 @@
-{
-  listAdapters[0]=ContactsAdapterBridge.INSTANCE.buildNameAdapter(this);
-  listAdapters[1]=ContactsAdapterBridge.INSTANCE.buildPhonesAdapter(this);
-  listAdapters[2]=ContactsAdapterBridge.INSTANCE.buildEmailAdapter(this);
-}

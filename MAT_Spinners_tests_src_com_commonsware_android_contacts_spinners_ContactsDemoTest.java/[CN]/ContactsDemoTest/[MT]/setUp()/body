@@ -1,6 +1,0 @@
-{
-  super.setUp();
-  ContactSpinners activity=getActivity();
-  list=(ListView)activity.findViewById(android.R.id.list);
-  spinner=(Spinner)activity.findViewById(R.id.spinner);
-}
