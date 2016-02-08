@@ -1,0 +1,10 @@
+{
+  byte[] data=jsonObjectString().getBytes(Charset.forName("UTF-8"));
+  NetworkResponse network=new NetworkResponse(data);
+  JsonObjectRequest objectRequest=new JsonObjectRequest("",null,null,null);
+  Response<JSONObject> objectResponse=objectRequest.parseNetworkResponse(network);
+  assertNotNull(objectResponse);
+  assertTrue(objectResponse.isSuccess());
+  assertEquals(TEXT_VALUE,objectResponse.result.getString(TEXT_NAME));
+  assertEquals(COPY_VALUE,objectResponse.result.getString(COPY_NAME));
+}

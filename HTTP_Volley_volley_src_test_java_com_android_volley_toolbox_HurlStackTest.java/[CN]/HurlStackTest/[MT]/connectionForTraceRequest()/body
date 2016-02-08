@@ -1,0 +1,7 @@
+{
+  TestRequest.Trace request=new TestRequest.Trace();
+  assertEquals(request.getMethod(),Method.TRACE);
+  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
+  assertEquals("TRACE",mMockConnection.getRequestMethod());
+  assertFalse(mMockConnection.getDoOutput());
+}

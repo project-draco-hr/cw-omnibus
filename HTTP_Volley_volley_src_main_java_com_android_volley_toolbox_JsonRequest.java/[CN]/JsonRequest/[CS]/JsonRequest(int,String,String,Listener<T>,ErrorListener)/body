@@ -1,0 +1,5 @@
+{
+  super(method,url,errorListener);
+  mListener=listener;
+  mRequestBody=requestBody;
+}

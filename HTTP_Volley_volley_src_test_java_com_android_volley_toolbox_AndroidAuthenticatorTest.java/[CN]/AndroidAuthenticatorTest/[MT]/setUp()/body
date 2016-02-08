@@ -1,0 +1,6 @@
+{
+  mAccountManager=mock(AccountManager.class);
+  mFuture=mock(AccountManagerFuture.class);
+  mAccount=new Account("coolperson","cooltype");
+  mAuthenticator=new AndroidAuthenticator(mAccountManager,mAccount,"cooltype",false);
+}

@@ -1,0 +1,4 @@
+long requestLifetime
+Request<?> request
+byte[] responseContents
+StatusLine statusLine

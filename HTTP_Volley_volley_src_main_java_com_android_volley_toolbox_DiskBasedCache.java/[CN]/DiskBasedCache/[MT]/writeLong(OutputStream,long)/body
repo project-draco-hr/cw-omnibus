@@ -1,0 +1,10 @@
+{
+  os.write((byte)(n >>> 0));
+  os.write((byte)(n >>> 8));
+  os.write((byte)(n >>> 16));
+  os.write((byte)(n >>> 24));
+  os.write((byte)(n >>> 32));
+  os.write((byte)(n >>> 40));
+  os.write((byte)(n >>> 48));
+  os.write((byte)(n >>> 56));
+}

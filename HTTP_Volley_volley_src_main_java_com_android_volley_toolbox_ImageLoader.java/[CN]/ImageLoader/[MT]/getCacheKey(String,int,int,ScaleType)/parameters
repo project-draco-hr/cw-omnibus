@@ -1,0 +1,4 @@
+String url
+int maxWidth
+int maxHeight
+ScaleType scaleType

@@ -1,0 +1,9 @@
+{
+  Bundle bundle=new Bundle();
+  bundle.putString(AccountManager.KEY_AUTHTOKEN,"monkey");
+  when(mAccountManager.getAuthToken(mAccount,"cooltype",false,null,null)).thenReturn(mFuture);
+  when(mFuture.getResult()).thenReturn(bundle);
+  when(mFuture.isDone()).thenReturn(true);
+  when(mFuture.isCancelled()).thenReturn(false);
+  Assert.assertEquals("monkey",mAuthenticator.getAuthToken());
+}

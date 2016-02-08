@@ -1,0 +1,6 @@
+{
+  add(mStopRequest);
+  if (!mStopEvent.tryAcquire(timeoutMillis,TimeUnit.MILLISECONDS)) {
+    throw new TimeoutException();
+  }
+}

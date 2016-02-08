@@ -1,0 +1,10 @@
+{
+  this.key=key;
+  this.size=entry.data.length;
+  this.etag=entry.etag;
+  this.serverDate=entry.serverDate;
+  this.lastModified=entry.lastModified;
+  this.ttl=entry.ttl;
+  this.softTtl=entry.softTtl;
+  this.responseHeaders=entry.responseHeaders;
+}

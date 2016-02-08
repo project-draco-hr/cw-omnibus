@@ -1,0 +1,6 @@
+{
+  if (!mFinished) {
+    finish("Request on the loose");
+    e("Marker log finalized without finish() - uncaught exit point for request");
+  }
+}

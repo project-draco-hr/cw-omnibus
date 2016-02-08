@@ -1,0 +1,5 @@
+{
+  mResultReceived=true;
+  mResult=response;
+  notifyAll();
+}

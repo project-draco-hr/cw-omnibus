@@ -1,0 +1,3 @@
+{
+  mAccountManager.invalidateAuthToken(mAccount.type,authToken);
+}

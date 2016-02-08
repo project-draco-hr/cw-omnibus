@@ -1,0 +1,21 @@
+{
+  if (mListener == null) {
+    return;
+  }
+  BatchedImageRequest request=mInFlightRequests.get(mCacheKey);
+  if (request != null) {
+    boolean canceled=request.removeContainerAndCancelIfNecessary(this);
+    if (canceled) {
+      mInFlightRequests.remove(mCacheKey);
+    }
+  }
+ else {
+    request=mBatchedResponses.get(mCacheKey);
+    if (request != null) {
+      request.removeContainerAndCancelIfNecessary(this);
+      if (request.mContainers.size() == 0) {
+        mBatchedResponses.remove(mCacheKey);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  if (mNumExceptionsToThrow > 0 || mNumExceptionsToThrow == ALWAYS_THROW_EXCEPTIONS) {
+    if (mNumExceptionsToThrow != ALWAYS_THROW_EXCEPTIONS) {
+      mNumExceptionsToThrow--;
+    }
+    throw new ServerError();
+  }
+  requestHandled=request;
+  return new NetworkResponse(mDataToReturn);
+}

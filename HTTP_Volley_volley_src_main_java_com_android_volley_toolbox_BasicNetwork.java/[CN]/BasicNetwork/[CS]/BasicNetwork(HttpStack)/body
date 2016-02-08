@@ -1,0 +1,3 @@
+{
+  this(httpStack,new ByteArrayPool(DEFAULT_POOL_SIZE));
+}

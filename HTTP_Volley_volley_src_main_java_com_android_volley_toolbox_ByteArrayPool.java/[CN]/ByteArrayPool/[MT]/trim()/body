@@ -1,0 +1,7 @@
+{
+  while (mCurrentSize > mSizeLimit) {
+    byte[] buf=mBuffersByLastUse.remove(0);
+    mBuffersBySize.remove(buf);
+    mCurrentSize-=buf.length;
+  }
+}

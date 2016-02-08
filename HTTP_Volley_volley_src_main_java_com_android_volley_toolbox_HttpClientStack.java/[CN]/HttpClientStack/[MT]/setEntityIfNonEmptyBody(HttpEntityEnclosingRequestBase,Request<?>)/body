@@ -1,0 +1,7 @@
+{
+  byte[] body=request.getBody();
+  if (body != null) {
+    HttpEntity entity=new ByteArrayEntity(body);
+    httpRequest.setEntity(entity);
+  }
+}

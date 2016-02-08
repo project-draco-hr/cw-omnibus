@@ -1,0 +1,5 @@
+{
+  this.result=result;
+  this.cacheEntry=cacheEntry;
+  this.error=null;
+}

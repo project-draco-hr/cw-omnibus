@@ -1,0 +1,6 @@
+{
+  Response<byte[]> errorResponse=Response.error(new ServerError());
+  mDelivery.postResponse(mRequest,errorResponse);
+  assertTrue(mRequest.deliverError_called);
+  assertFalse(mRequest.deliverResponse_called);
+}

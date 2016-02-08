@@ -1,0 +1,8 @@
+{
+  mCacheQueue.add(mRequest);
+  mCacheQueue.waitUntilEmpty(TIMEOUT_MILLIS);
+  assertFalse(mDelivery.wasEitherResponseCalled());
+  assertTrue(mNetworkQueue.size() > 0);
+  Request request=mNetworkQueue.take();
+  assertNull(request.getCacheEntry());
+}

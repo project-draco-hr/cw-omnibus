@@ -1,0 +1,26 @@
+{
+  PoolingByteArrayOutputStream bytes=new PoolingByteArrayOutputStream(mPool,(int)entity.getContentLength());
+  byte[] buffer=null;
+  try {
+    InputStream in=entity.getContent();
+    if (in == null) {
+      throw new ServerError();
+    }
+    buffer=mPool.getBuf(1024);
+    int count;
+    while ((count=in.read(buffer)) != -1) {
+      bytes.write(buffer,0,count);
+    }
+    return bytes.toByteArray();
+  }
+  finally {
+    try {
+      entity.consumeContent();
+    }
+ catch (    IOException e) {
+      VolleyLog.v("Error occured when calling consumingContent");
+    }
+    mPool.returnBuf(buffer);
+    bytes.close();
+  }
+}

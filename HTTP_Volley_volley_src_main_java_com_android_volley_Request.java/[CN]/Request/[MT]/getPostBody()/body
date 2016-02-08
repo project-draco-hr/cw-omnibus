@@ -1,0 +1,7 @@
+{
+  Map<String,String> postParams=getPostParams();
+  if (postParams != null && postParams.size() > 0) {
+    return encodeParameters(postParams,getPostParamsEncoding());
+  }
+  return null;
+}

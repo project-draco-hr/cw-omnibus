@@ -1,0 +1,12 @@
+{
+  mNetwork.setDataToReturn(CANNED_DATA);
+  mNetwork.setNumExceptionsToThrow(0);
+  mNetworkQueue.add(mRequest);
+  mNetworkQueue.waitUntilEmpty(TIMEOUT_MILLIS);
+  assertFalse(mDelivery.postError_called);
+  assertTrue(mDelivery.postResponse_called);
+  Response<?> response=mDelivery.responsePosted;
+  assertNotNull(response);
+  assertTrue(response.isSuccess());
+  assertTrue(Arrays.equals((byte[])response.result,CANNED_DATA));
+}

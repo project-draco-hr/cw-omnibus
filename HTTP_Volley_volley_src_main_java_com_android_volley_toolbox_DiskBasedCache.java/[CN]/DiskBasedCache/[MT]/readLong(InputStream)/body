@@ -1,0 +1,12 @@
+{
+  long n=0;
+  n|=((read(is) & 0xFFL) << 0);
+  n|=((read(is) & 0xFFL) << 8);
+  n|=((read(is) & 0xFFL) << 16);
+  n|=((read(is) & 0xFFL) << 24);
+  n|=((read(is) & 0xFFL) << 32);
+  n|=((read(is) & 0xFFL) << 40);
+  n|=((read(is) & 0xFFL) << 48);
+  n|=((read(is) & 0xFFL) << 56);
+  return n;
+}

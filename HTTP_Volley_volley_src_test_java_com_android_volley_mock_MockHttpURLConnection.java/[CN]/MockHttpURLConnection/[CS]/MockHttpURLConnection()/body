@@ -1,0 +1,6 @@
+{
+  super(new URL("http://foo.com"));
+  mDoOutput=false;
+  mRequestMethod="GET";
+  mOutputStream=new ByteArrayOutputStream();
+}

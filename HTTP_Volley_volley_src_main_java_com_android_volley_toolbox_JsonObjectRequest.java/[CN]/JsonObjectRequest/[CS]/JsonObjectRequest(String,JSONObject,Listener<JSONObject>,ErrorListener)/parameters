@@ -1,0 +1,4 @@
+String url
+JSONObject jsonRequest
+Listener<JSONObject> listener
+ErrorListener errorListener

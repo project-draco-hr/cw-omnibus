@@ -1,0 +1,6 @@
+{
+  if (mResolutionIntent != null) {
+    return "User needs to (re)enter credentials.";
+  }
+  return super.getMessage();
+}

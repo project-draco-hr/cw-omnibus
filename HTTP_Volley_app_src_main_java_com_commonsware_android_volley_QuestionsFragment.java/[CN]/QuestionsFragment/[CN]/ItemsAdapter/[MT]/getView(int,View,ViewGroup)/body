@@ -1,0 +1,9 @@
+{
+  View row=super.getView(position,convertView,parent);
+  Item item=getItem(position);
+  ImageView icon=(ImageView)row.findViewById(R.id.icon);
+  VolleyManager.get(getActivity()).loadImage(item.owner.profileImage,icon,R.drawable.owner_placeholder,R.drawable.owner_error);
+  TextView title=(TextView)row.findViewById(R.id.title);
+  title.setText(Html.fromHtml(getItem(position).title));
+  return (row);
+}

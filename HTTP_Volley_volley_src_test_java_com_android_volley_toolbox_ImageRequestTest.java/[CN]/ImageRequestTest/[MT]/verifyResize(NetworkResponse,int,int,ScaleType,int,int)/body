@@ -1,0 +1,10 @@
+{
+  ImageRequest request=new ImageRequest("",null,maxWidth,maxHeight,scaleType,Config.RGB_565,null);
+  Response<Bitmap> response=request.parseNetworkResponse(networkResponse);
+  assertNotNull(response);
+  assertTrue(response.isSuccess());
+  Bitmap bitmap=response.result;
+  assertNotNull(bitmap);
+  assertEquals(expectedWidth,bitmap.getWidth());
+  assertEquals(expectedHeight,bitmap.getHeight());
+}

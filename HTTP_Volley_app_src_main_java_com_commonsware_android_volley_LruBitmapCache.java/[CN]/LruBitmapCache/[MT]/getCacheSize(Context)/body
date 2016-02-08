@@ -1,0 +1,7 @@
+{
+  final DisplayMetrics displayMetrics=ctx.getResources().getDisplayMetrics();
+  final int screenWidth=displayMetrics.widthPixels;
+  final int screenHeight=displayMetrics.heightPixels;
+  final int screenBytes=screenWidth * screenHeight * 4;
+  return screenBytes * 3;
+}

@@ -1,0 +1,3 @@
+HttpHost arg0
+HttpRequest arg1
+ResponseHandler<? extends T> arg2

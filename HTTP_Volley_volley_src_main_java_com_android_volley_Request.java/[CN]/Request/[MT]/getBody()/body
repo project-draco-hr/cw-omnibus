@@ -1,0 +1,7 @@
+{
+  Map<String,String> params=getParams();
+  if (params != null && params.size() > 0) {
+    return encodeParameters(params,getParamsEncoding());
+  }
+  return null;
+}

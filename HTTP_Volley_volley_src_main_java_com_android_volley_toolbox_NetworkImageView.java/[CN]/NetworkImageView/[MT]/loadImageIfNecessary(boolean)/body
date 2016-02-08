@@ -1,0 +1,59 @@
+{
+  int width=getWidth();
+  int height=getHeight();
+  ScaleType scaleType=getScaleType();
+  boolean wrapWidth=false, wrapHeight=false;
+  if (getLayoutParams() != null) {
+    wrapWidth=getLayoutParams().width == LayoutParams.WRAP_CONTENT;
+    wrapHeight=getLayoutParams().height == LayoutParams.WRAP_CONTENT;
+  }
+  boolean isFullyWrapContent=wrapWidth && wrapHeight;
+  if (width == 0 && height == 0 && !isFullyWrapContent) {
+    return;
+  }
+  if (TextUtils.isEmpty(mUrl)) {
+    if (mImageContainer != null) {
+      mImageContainer.cancelRequest();
+      mImageContainer=null;
+    }
+    setDefaultImageOrNull();
+    return;
+  }
+  if (mImageContainer != null && mImageContainer.getRequestUrl() != null) {
+    if (mImageContainer.getRequestUrl().equals(mUrl)) {
+      return;
+    }
+ else {
+      mImageContainer.cancelRequest();
+      setDefaultImageOrNull();
+    }
+  }
+  int maxWidth=wrapWidth ? 0 : width;
+  int maxHeight=wrapHeight ? 0 : height;
+  ImageContainer newContainer=mImageLoader.get(mUrl,new ImageListener(){
+    @Override public void onErrorResponse(    VolleyError error){
+      if (mErrorImageId != 0) {
+        setImageResource(mErrorImageId);
+      }
+    }
+    @Override public void onResponse(    final ImageContainer response,    boolean isImmediate){
+      if (isImmediate && isInLayoutPass) {
+        post(new Runnable(){
+          @Override public void run(){
+            onResponse(response,false);
+          }
+        }
+);
+        return;
+      }
+      if (response.getBitmap() != null) {
+        setImageBitmap(response.getBitmap());
+      }
+ else       if (mDefaultImageId != 0) {
+        setImageResource(mDefaultImageId);
+      }
+    }
+  }
+,maxWidth,maxHeight,scaleType);
+  mImageContainer=newContainer;
+}

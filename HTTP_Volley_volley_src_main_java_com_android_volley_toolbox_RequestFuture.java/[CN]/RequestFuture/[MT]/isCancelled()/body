@@ -1,0 +1,6 @@
+{
+  if (mRequest == null) {
+    return false;
+  }
+  return mRequest.isCanceled();
+}

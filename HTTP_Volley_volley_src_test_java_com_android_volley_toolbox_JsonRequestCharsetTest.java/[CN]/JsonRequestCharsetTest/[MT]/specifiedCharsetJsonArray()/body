@@ -1,0 +1,11 @@
+{
+  byte[] data=jsonArrayString().getBytes(Charset.forName("ISO-8859-2"));
+  Map<String,String> headers=new HashMap<String,String>();
+  headers.put("Content-Type","application/json; charset=iso-8859-2");
+  NetworkResponse network=new NetworkResponse(data,headers);
+  JsonArrayRequest arrayRequest=new JsonArrayRequest("",null,null);
+  Response<JSONArray> arrayResponse=arrayRequest.parseNetworkResponse(network);
+  assertNotNull(arrayResponse);
+  assertTrue(arrayResponse.isSuccess());
+  assertEquals(TEXT_VALUE,arrayResponse.result.getString(TEXT_INDEX));
+}

@@ -1,0 +1,7 @@
+String url
+Response.Listener<Bitmap> listener
+int maxWidth
+int maxHeight
+ScaleType scaleType
+Config decodeConfig
+Response.ErrorListener errorListener

@@ -1,0 +1,12 @@
+{
+  RetryPolicy retryPolicy=request.getRetryPolicy();
+  int oldTimeout=request.getTimeoutMs();
+  try {
+    retryPolicy.retry(exception);
+  }
+ catch (  VolleyError e) {
+    request.addMarker(String.format("%s-timeout-giveup [timeout=%s]",logPrefix,oldTimeout));
+    throw e;
+  }
+  request.addMarker(String.format("%s-retry [timeout=%s]",logPrefix,oldTimeout));
+}

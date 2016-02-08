@@ -1,0 +1,3 @@
+{
+  super(method,url,(jsonRequest == null) ? null : jsonRequest.toString(),listener,errorListener);
+}

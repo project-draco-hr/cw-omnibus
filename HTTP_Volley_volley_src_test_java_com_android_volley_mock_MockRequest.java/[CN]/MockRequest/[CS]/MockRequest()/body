@@ -1,0 +1,3 @@
+{
+  super(Request.Method.GET,"http://foo.com",null);
+}

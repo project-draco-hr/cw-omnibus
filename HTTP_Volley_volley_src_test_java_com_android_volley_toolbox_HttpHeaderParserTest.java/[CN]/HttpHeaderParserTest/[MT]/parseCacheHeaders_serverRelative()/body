@@ -1,0 +1,8 @@
+{
+  long now=System.currentTimeMillis();
+  headers.put("Date",rfc1123Date(now + ONE_HOUR_MILLIS));
+  headers.put("Expires",rfc1123Date(now + 4 * ONE_HOUR_MILLIS));
+  Cache.Entry entry=HttpHeaderParser.parseCacheHeaders(response);
+  assertEqualsWithin(now + 3 * ONE_HOUR_MILLIS,entry.ttl,ONE_MINUTE_MILLIS);
+  assertEquals(entry.softTtl,entry.ttl);
+}

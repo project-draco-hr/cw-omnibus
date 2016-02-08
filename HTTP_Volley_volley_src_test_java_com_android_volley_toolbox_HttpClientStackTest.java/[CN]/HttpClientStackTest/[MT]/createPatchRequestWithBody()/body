@@ -1,0 +1,6 @@
+{
+  TestRequest.PatchWithBody request=new TestRequest.PatchWithBody();
+  assertEquals(request.getMethod(),Method.PATCH);
+  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
+  assertTrue(httpRequest instanceof HttpPatch);
+}

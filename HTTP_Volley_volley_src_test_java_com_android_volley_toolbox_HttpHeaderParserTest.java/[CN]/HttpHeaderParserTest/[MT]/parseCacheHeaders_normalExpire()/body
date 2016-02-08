@@ -1,0 +1,13 @@
+{
+  long now=System.currentTimeMillis();
+  headers.put("Date",rfc1123Date(now));
+  headers.put("Last-Modified",rfc1123Date(now - ONE_DAY_MILLIS));
+  headers.put("Expires",rfc1123Date(now + ONE_HOUR_MILLIS));
+  Cache.Entry entry=HttpHeaderParser.parseCacheHeaders(response);
+  assertNotNull(entry);
+  assertNull(entry.etag);
+  assertEqualsWithin(entry.serverDate,now,ONE_MINUTE_MILLIS);
+  assertEqualsWithin(entry.lastModified,(now - ONE_DAY_MILLIS),ONE_MINUTE_MILLIS);
+  assertTrue(entry.softTtl >= (now + ONE_HOUR_MILLIS));
+  assertTrue(entry.ttl == entry.softTtl);
+}

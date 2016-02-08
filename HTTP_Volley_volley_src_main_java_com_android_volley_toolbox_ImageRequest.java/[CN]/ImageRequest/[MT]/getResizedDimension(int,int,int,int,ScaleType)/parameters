@@ -1,0 +1,5 @@
+int maxPrimary
+int maxSecondary
+int actualPrimary
+int actualSecondary
+ScaleType scaleType

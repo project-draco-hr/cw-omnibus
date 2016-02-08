@@ -1,0 +1,4 @@
+{
+  expand(1);
+  super.write(oneByte);
+}

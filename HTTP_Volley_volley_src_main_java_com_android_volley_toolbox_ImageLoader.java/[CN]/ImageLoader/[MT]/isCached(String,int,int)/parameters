@@ -1,0 +1,3 @@
+String requestUrl
+int maxWidth
+int maxHeight

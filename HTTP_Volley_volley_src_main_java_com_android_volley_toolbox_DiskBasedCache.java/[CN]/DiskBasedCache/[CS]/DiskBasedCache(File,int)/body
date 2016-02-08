@@ -1,0 +1,4 @@
+{
+  mRootDirectory=rootDirectory;
+  mMaxCacheSizeInBytes=maxCacheSizeInBytes;
+}

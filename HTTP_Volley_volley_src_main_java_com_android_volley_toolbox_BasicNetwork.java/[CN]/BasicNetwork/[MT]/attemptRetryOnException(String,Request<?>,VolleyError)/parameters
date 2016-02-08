@@ -1,0 +1,3 @@
+String logPrefix
+Request<?> request
+VolleyError exception

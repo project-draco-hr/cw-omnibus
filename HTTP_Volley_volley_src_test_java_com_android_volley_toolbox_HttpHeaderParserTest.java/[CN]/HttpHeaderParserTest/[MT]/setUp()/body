@@ -1,0 +1,4 @@
+{
+  headers=new HashMap<String,String>();
+  response=new NetworkResponse(0,null,headers,false);
+}

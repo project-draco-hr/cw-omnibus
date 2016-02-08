@@ -1,0 +1,7 @@
+{
+  mRequest.cancel();
+  mCacheQueue.add(mRequest);
+  mCacheQueue.waitUntilEmpty(TIMEOUT_MILLIS);
+  assertFalse(mCache.getCalled);
+  assertFalse(mDelivery.wasEitherResponseCalled());
+}

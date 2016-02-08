@@ -1,0 +1,5 @@
+{
+  mCurrentTimeoutMs=initialTimeoutMs;
+  mMaxNumRetries=maxNumRetries;
+  mBackoffMultiplier=backoffMultiplier;
+}

@@ -1,0 +1,4 @@
+{
+  String trafficStatsTag="0x" + Integer.toHexString(getTrafficStatsTag());
+  return (mCanceled ? "[X] " : "[ ] ") + getUrl() + " "+ trafficStatsTag+ " "+ getPriority()+ " "+ mSequence;
+}

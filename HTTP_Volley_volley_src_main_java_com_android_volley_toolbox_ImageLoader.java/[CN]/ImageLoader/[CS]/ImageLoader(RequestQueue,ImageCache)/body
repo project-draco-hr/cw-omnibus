@@ -1,0 +1,4 @@
+{
+  mRequestQueue=queue;
+  mCache=imageCache;
+}

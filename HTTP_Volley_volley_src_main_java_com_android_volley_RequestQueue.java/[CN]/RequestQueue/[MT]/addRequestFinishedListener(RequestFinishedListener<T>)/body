@@ -1,0 +1,5 @@
+{
+synchronized (mFinishedListeners) {
+    mFinishedListeners.add(listener);
+  }
+}

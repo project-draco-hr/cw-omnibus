@@ -1,0 +1,2 @@
+HttpEntityEnclosingRequestBase httpRequest
+Request<?> request

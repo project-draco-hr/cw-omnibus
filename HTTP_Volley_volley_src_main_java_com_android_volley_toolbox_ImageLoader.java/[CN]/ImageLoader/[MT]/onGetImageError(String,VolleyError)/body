@@ -1,0 +1,7 @@
+{
+  BatchedImageRequest request=mInFlightRequests.remove(cacheKey);
+  if (request != null) {
+    request.setError(error);
+    batchResponse(cacheKey,request);
+  }
+}

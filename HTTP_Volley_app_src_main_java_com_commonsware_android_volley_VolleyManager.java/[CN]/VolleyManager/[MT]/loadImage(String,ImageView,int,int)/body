@@ -1,0 +1,3 @@
+{
+  imageLoader.get(url,ImageLoader.getImageListener(iv,placeholderDrawable,errorDrawable));
+}

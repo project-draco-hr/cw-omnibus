@@ -1,0 +1,7 @@
+{
+  this.statusCode=statusCode;
+  this.data=data;
+  this.headers=headers;
+  this.notModified=notModified;
+  this.networkTimeMs=networkTimeMs;
+}

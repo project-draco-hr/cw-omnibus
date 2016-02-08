@@ -1,0 +1,31 @@
+{
+  if ((mTotalSize + neededSpace) < mMaxCacheSizeInBytes) {
+    return;
+  }
+  if (VolleyLog.DEBUG) {
+    VolleyLog.v("Pruning old cache entries.");
+  }
+  long before=mTotalSize;
+  int prunedFiles=0;
+  long startTime=SystemClock.elapsedRealtime();
+  Iterator<Map.Entry<String,CacheHeader>> iterator=mEntries.entrySet().iterator();
+  while (iterator.hasNext()) {
+    Map.Entry<String,CacheHeader> entry=iterator.next();
+    CacheHeader e=entry.getValue();
+    boolean deleted=getFileForKey(e.key).delete();
+    if (deleted) {
+      mTotalSize-=e.size;
+    }
+ else {
+      VolleyLog.d("Could not delete cache entry for key=%s, filename=%s",e.key,getFilenameForKey(e.key));
+    }
+    iterator.remove();
+    prunedFiles++;
+    if ((mTotalSize + neededSpace) < mMaxCacheSizeInBytes * HYSTERESIS_FACTOR) {
+      break;
+    }
+  }
+  if (VolleyLog.DEBUG) {
+    VolleyLog.v("pruned %d files, %d bytes, %d ms",prunedFiles,(mTotalSize - before),SystemClock.elapsedRealtime() - startTime);
+  }
+}

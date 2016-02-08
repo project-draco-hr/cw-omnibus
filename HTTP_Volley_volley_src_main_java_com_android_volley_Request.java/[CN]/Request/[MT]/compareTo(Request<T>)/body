@@ -1,0 +1,5 @@
+{
+  Priority left=this.getPriority();
+  Priority right=other.getPriority();
+  return left == right ? this.mSequence - other.mSequence : right.ordinal() - left.ordinal();
+}

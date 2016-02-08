@@ -1,0 +1,11 @@
+{
+  byte[] data=jsonObjectString().getBytes(Charset.forName("ISO-8859-1"));
+  Map<String,String> headers=new HashMap<String,String>();
+  headers.put("Content-Type","application/json; charset=iso-8859-1");
+  NetworkResponse network=new NetworkResponse(data,headers);
+  JsonObjectRequest objectRequest=new JsonObjectRequest("",null,null,null);
+  Response<JSONObject> objectResponse=objectRequest.parseNetworkResponse(network);
+  assertNotNull(objectResponse);
+  assertTrue(objectResponse.isSuccess());
+  assertEquals(COPY_VALUE,objectResponse.result.getString(COPY_NAME));
+}

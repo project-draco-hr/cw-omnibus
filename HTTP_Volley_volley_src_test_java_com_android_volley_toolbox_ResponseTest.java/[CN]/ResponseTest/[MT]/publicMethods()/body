@@ -1,0 +1,11 @@
+{
+  assertNotNull(Response.class.getMethod("success",Object.class,Cache.Entry.class));
+  assertNotNull(Response.class.getMethod("error",VolleyError.class));
+  assertNotNull(Response.class.getMethod("isSuccess"));
+  assertNotNull(Response.Listener.class.getDeclaredMethod("onResponse",Object.class));
+  assertNotNull(Response.ErrorListener.class.getDeclaredMethod("onErrorResponse",VolleyError.class));
+  assertNotNull(NetworkResponse.class.getConstructor(int.class,byte[].class,Map.class,boolean.class,long.class));
+  assertNotNull(NetworkResponse.class.getConstructor(int.class,byte[].class,Map.class,boolean.class));
+  assertNotNull(NetworkResponse.class.getConstructor(byte[].class));
+  assertNotNull(NetworkResponse.class.getConstructor(byte[].class,Map.class));
+}

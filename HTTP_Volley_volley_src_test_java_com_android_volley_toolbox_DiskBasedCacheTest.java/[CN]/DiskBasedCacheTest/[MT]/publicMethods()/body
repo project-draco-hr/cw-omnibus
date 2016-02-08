@@ -1,0 +1,5 @@
+{
+  assertNotNull(DiskBasedCache.class.getConstructor(File.class,int.class));
+  assertNotNull(DiskBasedCache.class.getConstructor(File.class));
+  assertNotNull(DiskBasedCache.class.getMethod("getFileForKey",String.class));
+}

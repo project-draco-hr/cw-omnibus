@@ -1,0 +1,3 @@
+{
+  Log.wtf(TAG,buildMessage(format,args));
+}

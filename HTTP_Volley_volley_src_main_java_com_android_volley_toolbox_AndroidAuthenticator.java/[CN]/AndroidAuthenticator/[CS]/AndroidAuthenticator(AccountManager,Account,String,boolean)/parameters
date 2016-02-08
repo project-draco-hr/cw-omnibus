@@ -1,0 +1,4 @@
+AccountManager accountManager
+Account account
+String authTokenType
+boolean notifyAuthFailure

@@ -1,0 +1,5 @@
+{
+  request.addMarker("post-error");
+  Response<?> response=Response.error(error);
+  mResponsePoster.execute(new ResponseDeliveryRunnable(request,response,null));
+}

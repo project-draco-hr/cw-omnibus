@@ -1,0 +1,23 @@
+{
+  Cache.Entry e=new Cache.Entry();
+  e.data=new byte[8];
+  e.serverDate=1234567L;
+  e.lastModified=13572468L;
+  e.ttl=9876543L;
+  e.softTtl=8765432L;
+  e.etag="etag";
+  e.responseHeaders=new HashMap<String,String>();
+  e.responseHeaders.put("fruit","banana");
+  CacheHeader first=new CacheHeader("my-magical-key",e);
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  first.writeHeader(baos);
+  ByteArrayInputStream bais=new ByteArrayInputStream(baos.toByteArray());
+  CacheHeader second=CacheHeader.readHeader(bais);
+  assertEquals(first.key,second.key);
+  assertEquals(first.serverDate,second.serverDate);
+  assertEquals(first.lastModified,second.lastModified);
+  assertEquals(first.ttl,second.ttl);
+  assertEquals(first.softTtl,second.softTtl);
+  assertEquals(first.etag,second.etag);
+  assertEquals(first.responseHeaders,second.responseHeaders);
+}

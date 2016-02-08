@@ -1,0 +1,10 @@
+{
+  int size=readInt(is);
+  Map<String,String> result=(size == 0) ? Collections.<String,String>emptyMap() : new HashMap<String,String>(size);
+  for (int i=0; i < size; i++) {
+    String key=readString(is).intern();
+    String value=readString(is).intern();
+    result.put(key,value);
+  }
+  return result;
+}

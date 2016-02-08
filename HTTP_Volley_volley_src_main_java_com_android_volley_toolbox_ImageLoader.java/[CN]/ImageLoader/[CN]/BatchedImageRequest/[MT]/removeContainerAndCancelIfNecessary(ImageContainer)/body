@@ -1,0 +1,8 @@
+{
+  mContainers.remove(container);
+  if (mContainers.size() == 0) {
+    mRequest.cancel();
+    return true;
+  }
+  return false;
+}

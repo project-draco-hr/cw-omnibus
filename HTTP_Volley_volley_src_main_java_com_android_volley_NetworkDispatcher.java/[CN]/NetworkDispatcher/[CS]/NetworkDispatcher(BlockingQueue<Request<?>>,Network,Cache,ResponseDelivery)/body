@@ -1,0 +1,6 @@
+{
+  mQueue=queue;
+  mNetwork=network;
+  mCache=cache;
+  mDelivery=delivery;
+}

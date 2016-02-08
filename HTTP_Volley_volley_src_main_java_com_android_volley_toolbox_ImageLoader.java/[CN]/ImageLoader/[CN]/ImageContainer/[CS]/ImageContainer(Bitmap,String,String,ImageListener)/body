@@ -1,0 +1,6 @@
+{
+  mBitmap=bitmap;
+  mRequestUrl=requestUrl;
+  mCacheKey=cacheKey;
+  mListener=listener;
+}

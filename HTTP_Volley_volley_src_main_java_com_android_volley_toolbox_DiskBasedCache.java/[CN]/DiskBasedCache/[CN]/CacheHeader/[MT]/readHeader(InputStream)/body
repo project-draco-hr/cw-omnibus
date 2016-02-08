@@ -1,0 +1,18 @@
+{
+  CacheHeader entry=new CacheHeader();
+  int magic=readInt(is);
+  if (magic != CACHE_MAGIC) {
+    throw new IOException();
+  }
+  entry.key=readString(is);
+  entry.etag=readString(is);
+  if (entry.etag.equals("")) {
+    entry.etag=null;
+  }
+  entry.serverDate=readLong(is);
+  entry.lastModified=readLong(is);
+  entry.ttl=readLong(is);
+  entry.softTtl=readLong(is);
+  entry.responseHeaders=readStringStringMap(is);
+  return entry;
+}

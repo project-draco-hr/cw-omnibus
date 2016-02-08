@@ -1,0 +1,21 @@
+{
+  if (mRequestQueue != null) {
+    mRequestQueue.finish(this);
+  }
+  if (MarkerLog.ENABLED) {
+    final long threadId=Thread.currentThread().getId();
+    if (Looper.myLooper() != Looper.getMainLooper()) {
+      Handler mainThread=new Handler(Looper.getMainLooper());
+      mainThread.post(new Runnable(){
+        @Override public void run(){
+          mEventLog.add(tag,threadId);
+          mEventLog.finish(this.toString());
+        }
+      }
+);
+      return;
+    }
+    mEventLog.add(tag,threadId);
+    mEventLog.finish(this.toString());
+  }
+}

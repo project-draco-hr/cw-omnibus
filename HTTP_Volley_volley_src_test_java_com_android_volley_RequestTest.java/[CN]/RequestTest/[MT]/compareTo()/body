@@ -1,0 +1,16 @@
+{
+  int sequence=0;
+  TestRequest low=new TestRequest(Priority.LOW);
+  low.setSequence(sequence++);
+  TestRequest low2=new TestRequest(Priority.LOW);
+  low2.setSequence(sequence++);
+  TestRequest high=new TestRequest(Priority.HIGH);
+  high.setSequence(sequence++);
+  TestRequest immediate=new TestRequest(Priority.IMMEDIATE);
+  immediate.setSequence(sequence++);
+  assertTrue(low.compareTo(high) > 0);
+  assertTrue(high.compareTo(low) < 0);
+  assertTrue(low.compareTo(low2) < 0);
+  assertTrue(low.compareTo(immediate) > 0);
+  assertTrue(immediate.compareTo(high) < 0);
+}

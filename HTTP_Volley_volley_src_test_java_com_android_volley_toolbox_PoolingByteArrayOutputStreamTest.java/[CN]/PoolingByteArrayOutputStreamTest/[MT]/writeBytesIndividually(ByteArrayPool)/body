@@ -1,0 +1,11 @@
+{
+  byte[] data=new byte[16384];
+  for (int i=0; i < data.length; i++) {
+    data[i]=(byte)(i & 0xff);
+  }
+  PoolingByteArrayOutputStream os=new PoolingByteArrayOutputStream(pool);
+  for (int i=0; i < data.length; i++) {
+    os.write(data[i]);
+  }
+  assertTrue(Arrays.equals(data,os.toByteArray()));
+}

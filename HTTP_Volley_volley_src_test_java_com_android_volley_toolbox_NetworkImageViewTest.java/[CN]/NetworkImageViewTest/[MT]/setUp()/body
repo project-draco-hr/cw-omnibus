@@ -1,0 +1,4 @@
+{
+  mMockImageLoader=new MockImageLoader();
+  mNIV=new NetworkImageView(RuntimeEnvironment.application);
+}

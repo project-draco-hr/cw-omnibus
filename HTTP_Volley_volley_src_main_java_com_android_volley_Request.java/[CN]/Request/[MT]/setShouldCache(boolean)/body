@@ -1,0 +1,4 @@
+{
+  mShouldCache=shouldCache;
+  return this;
+}

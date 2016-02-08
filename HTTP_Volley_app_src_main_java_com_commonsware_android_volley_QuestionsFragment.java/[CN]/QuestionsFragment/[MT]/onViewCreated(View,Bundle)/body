@@ -1,0 +1,5 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  GsonRequest<SOQuestions> request=new GsonRequest<SOQuestions>(getString(R.string.url),SOQuestions.class,null,this,this);
+  VolleyManager.get(getActivity()).enqueue(request);
+}

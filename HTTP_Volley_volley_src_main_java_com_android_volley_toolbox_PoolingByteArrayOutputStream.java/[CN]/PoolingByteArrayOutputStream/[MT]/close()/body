@@ -1,0 +1,5 @@
+{
+  mPool.returnBuf(buf);
+  buf=null;
+  super.close();
+}

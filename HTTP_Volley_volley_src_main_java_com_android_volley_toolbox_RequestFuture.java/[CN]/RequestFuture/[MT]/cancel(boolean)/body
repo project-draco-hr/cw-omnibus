@@ -1,0 +1,12 @@
+{
+  if (mRequest == null) {
+    return false;
+  }
+  if (!isDone()) {
+    mRequest.cancel();
+    return true;
+  }
+ else {
+    return false;
+  }
+}

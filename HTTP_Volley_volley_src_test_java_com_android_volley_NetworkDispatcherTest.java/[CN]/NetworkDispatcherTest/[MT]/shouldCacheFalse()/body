@@ -1,0 +1,6 @@
+{
+  mRequest.setShouldCache(false);
+  mNetworkQueue.add(mRequest);
+  mNetworkQueue.waitUntilEmpty(TIMEOUT_MILLIS);
+  assertFalse(mCache.putCalled);
+}

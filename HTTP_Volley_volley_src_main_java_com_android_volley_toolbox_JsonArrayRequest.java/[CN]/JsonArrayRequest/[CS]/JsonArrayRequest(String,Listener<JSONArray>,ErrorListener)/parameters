@@ -1,0 +1,3 @@
+String url
+Listener<JSONArray> listener
+ErrorListener errorListener

@@ -1,0 +1,8 @@
+{
+  Cache.Entry entry=CacheTestUtils.makeRandomCacheEntry(null,false,false);
+  mCache.setEntryToReturn(entry);
+  mCacheQueue.add(mRequest);
+  mCacheQueue.waitUntilEmpty(TIMEOUT_MILLIS);
+  assertTrue(mDelivery.postResponse_called);
+  assertFalse(mDelivery.postError_called);
+}

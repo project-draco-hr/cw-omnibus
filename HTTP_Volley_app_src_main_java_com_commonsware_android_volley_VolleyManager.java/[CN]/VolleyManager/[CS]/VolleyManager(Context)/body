@@ -1,0 +1,4 @@
+{
+  queue=Volley.newRequestQueue(ctxt);
+  imageLoader=new ImageLoader(queue,new LruBitmapCache(ctxt));
+}

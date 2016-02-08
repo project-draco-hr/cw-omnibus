@@ -1,0 +1,4 @@
+{
+  error=request.parseNetworkError(error);
+  mDelivery.postError(request,error);
+}

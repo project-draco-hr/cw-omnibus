@@ -1,0 +1,4 @@
+{
+  assertNotNull(RequestFuture.class.getMethod("newFuture"));
+  assertNotNull(RequestFuture.class.getMethod("setRequest",Request.class));
+}

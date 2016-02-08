@@ -1,0 +1,4 @@
+{
+  super(exceptionMessage);
+  networkResponse=null;
+}

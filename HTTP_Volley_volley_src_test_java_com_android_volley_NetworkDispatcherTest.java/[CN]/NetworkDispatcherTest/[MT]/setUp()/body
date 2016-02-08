@@ -1,0 +1,9 @@
+{
+  mDelivery=new MockResponseDelivery();
+  mNetworkQueue=new WaitableQueue();
+  mNetwork=new MockNetwork();
+  mCache=new MockCache();
+  mRequest=new MockRequest();
+  mDispatcher=new NetworkDispatcher(mNetworkQueue,mNetwork,mCache,mDelivery);
+  mDispatcher.start();
+}

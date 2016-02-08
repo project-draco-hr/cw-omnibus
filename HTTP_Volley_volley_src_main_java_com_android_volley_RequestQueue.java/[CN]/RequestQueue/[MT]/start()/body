@@ -1,0 +1,10 @@
+{
+  stop();
+  mCacheDispatcher=new CacheDispatcher(mCacheQueue,mNetworkQueue,mCache,mDelivery);
+  mCacheDispatcher.start();
+  for (int i=0; i < mDispatchers.length; i++) {
+    NetworkDispatcher networkDispatcher=new NetworkDispatcher(mNetworkQueue,mNetwork,mCache,mDelivery);
+    mDispatchers[i]=networkDispatcher;
+    networkDispatcher.start();
+  }
+}

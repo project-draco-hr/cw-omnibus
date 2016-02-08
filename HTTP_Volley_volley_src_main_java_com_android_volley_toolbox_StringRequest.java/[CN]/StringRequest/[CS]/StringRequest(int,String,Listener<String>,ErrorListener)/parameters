@@ -1,0 +1,4 @@
+int method
+String url
+Listener<String> listener
+ErrorListener errorListener

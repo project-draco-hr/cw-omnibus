@@ -1,0 +1,8 @@
+{
+  Request<?> item=super.take();
+  if (item == mStopRequest) {
+    mStopEvent.release();
+    return take();
+  }
+  return item;
+}

@@ -1,0 +1,4 @@
+{
+  mSequence=sequence;
+  return this;
+}

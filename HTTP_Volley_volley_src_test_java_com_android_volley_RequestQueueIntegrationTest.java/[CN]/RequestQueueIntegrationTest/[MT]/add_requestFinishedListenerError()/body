@@ -1,0 +1,11 @@
+{
+  RequestFinishedListener listener=mock(RequestFinishedListener.class);
+  Request request=new MockRequest();
+  RequestQueue queue=new RequestQueue(new NoCache(),mMockNetwork,1,mDelivery);
+  when(mMockNetwork.performRequest(request)).thenThrow(new VolleyError());
+  queue.addRequestFinishedListener(listener);
+  queue.start();
+  queue.add(request);
+  verify(listener,timeout(100)).onRequestFinished(request);
+  queue.stop();
+}

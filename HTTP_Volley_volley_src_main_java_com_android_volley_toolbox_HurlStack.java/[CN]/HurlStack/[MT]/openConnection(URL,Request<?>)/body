@@ -1,0 +1,12 @@
+{
+  HttpURLConnection connection=createConnection(url);
+  int timeoutMs=request.getTimeoutMs();
+  connection.setConnectTimeout(timeoutMs);
+  connection.setReadTimeout(timeoutMs);
+  connection.setUseCaches(false);
+  connection.setDoInput(true);
+  if ("https".equals(url.getProtocol()) && mSslSocketFactory != null) {
+    ((HttpsURLConnection)connection).setSSLSocketFactory(mSslSocketFactory);
+  }
+  return connection;
+}

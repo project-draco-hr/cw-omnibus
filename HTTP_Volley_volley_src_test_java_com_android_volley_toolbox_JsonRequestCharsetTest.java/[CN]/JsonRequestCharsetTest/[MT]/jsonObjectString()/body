@@ -1,0 +1,4 @@
+{
+  JSONObject json=new JSONObject().put(TEXT_NAME,TEXT_VALUE).put(COPY_NAME,COPY_VALUE);
+  return json.toString();
+}

@@ -1,0 +1,4 @@
+String requestUrl
+ImageListener imageListener
+int maxWidth
+int maxHeight

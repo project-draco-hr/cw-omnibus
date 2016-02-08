@@ -1,0 +1,4 @@
+Bitmap bitmap
+String requestUrl
+String cacheKey
+ImageListener listener

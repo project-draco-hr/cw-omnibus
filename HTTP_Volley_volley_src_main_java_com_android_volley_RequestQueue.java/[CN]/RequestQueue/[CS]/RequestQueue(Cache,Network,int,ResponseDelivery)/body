@@ -1,0 +1,6 @@
+{
+  mCache=cache;
+  mNetwork=network;
+  mDispatchers=new NetworkDispatcher[threadPoolSize];
+  mDelivery=delivery;
+}

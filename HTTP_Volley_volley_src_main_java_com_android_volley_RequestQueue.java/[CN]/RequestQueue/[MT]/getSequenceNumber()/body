@@ -1,0 +1,3 @@
+{
+  return mSequenceGenerator.incrementAndGet();
+}

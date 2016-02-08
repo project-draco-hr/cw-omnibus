@@ -1,0 +1,5 @@
+String requestUrl
+int maxWidth
+int maxHeight
+ScaleType scaleType
+String cacheKey

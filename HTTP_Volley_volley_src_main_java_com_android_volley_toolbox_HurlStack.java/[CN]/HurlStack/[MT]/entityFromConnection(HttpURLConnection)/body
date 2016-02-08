@@ -1,0 +1,15 @@
+{
+  BasicHttpEntity entity=new BasicHttpEntity();
+  InputStream inputStream;
+  try {
+    inputStream=connection.getInputStream();
+  }
+ catch (  IOException ioe) {
+    inputStream=connection.getErrorStream();
+  }
+  entity.setContent(inputStream);
+  entity.setContentLength(connection.getContentLength());
+  entity.setContentEncoding(connection.getContentEncoding());
+  entity.setContentType(connection.getContentType());
+  return entity;
+}

@@ -1,0 +1,5 @@
+String url
+Class<T> clazz
+Map<String,String> headers
+Listener<T> listener
+ErrorListener errorListener

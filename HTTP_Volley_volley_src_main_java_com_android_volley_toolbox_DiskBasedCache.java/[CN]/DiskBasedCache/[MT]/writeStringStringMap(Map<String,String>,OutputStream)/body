@@ -1,0 +1,12 @@
+{
+  if (map != null) {
+    writeInt(os,map.size());
+    for (    Map.Entry<String,String> entry : map.entrySet()) {
+      writeString(os,entry.getKey());
+      writeString(os,entry.getValue());
+    }
+  }
+ else {
+    writeInt(os,0);
+  }
+}

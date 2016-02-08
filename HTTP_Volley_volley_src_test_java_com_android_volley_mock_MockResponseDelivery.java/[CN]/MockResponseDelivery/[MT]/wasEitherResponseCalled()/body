@@ -1,0 +1,3 @@
+{
+  return postResponse_called || postError_called;
+}

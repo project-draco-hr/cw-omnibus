@@ -1,0 +1,3 @@
+{
+  this(AccountManager.get(context),account,authTokenType,notifyAuthFailure);
+}

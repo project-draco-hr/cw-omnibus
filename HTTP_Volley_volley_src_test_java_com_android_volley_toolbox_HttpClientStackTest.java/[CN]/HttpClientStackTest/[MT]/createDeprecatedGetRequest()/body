@@ -1,0 +1,6 @@
+{
+  TestRequest.DeprecatedGet request=new TestRequest.DeprecatedGet();
+  assertEquals(request.getMethod(),Method.DEPRECATED_GET_OR_POST);
+  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
+  assertTrue(httpRequest instanceof HttpGet);
+}

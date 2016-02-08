@@ -1,0 +1,10 @@
+{
+  if (!mEntries.containsKey(key)) {
+    mTotalSize+=entry.size;
+  }
+ else {
+    CacheHeader oldEntry=mEntries.get(key);
+    mTotalSize+=(entry.size - oldEntry.size);
+  }
+  mEntries.put(key,entry);
+}

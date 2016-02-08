@@ -1,0 +1,4 @@
+{
+  mCacheEntry=entry;
+  return this;
+}

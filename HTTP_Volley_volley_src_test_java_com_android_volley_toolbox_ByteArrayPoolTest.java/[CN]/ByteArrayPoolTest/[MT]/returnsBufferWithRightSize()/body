@@ -1,0 +1,9 @@
+{
+  ByteArrayPool pool=new ByteArrayPool(32);
+  byte[] buf1=pool.getBuf(16);
+  pool.returnBuf(buf1);
+  byte[] buf2=pool.getBuf(17);
+  assertNotSame(buf2,buf1);
+  byte[] buf3=pool.getBuf(15);
+  assertSame(buf3,buf1);
+}

@@ -1,0 +1,5 @@
+{
+  mRequest=request;
+  mResponse=response;
+  mRunnable=runnable;
+}

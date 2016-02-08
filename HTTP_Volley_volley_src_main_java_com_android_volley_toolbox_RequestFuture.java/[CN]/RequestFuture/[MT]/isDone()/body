@@ -1,0 +1,3 @@
+{
+  return mResultReceived || mException != null || isCancelled();
+}

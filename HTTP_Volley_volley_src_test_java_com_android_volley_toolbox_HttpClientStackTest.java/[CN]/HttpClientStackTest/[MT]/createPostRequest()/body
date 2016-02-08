@@ -1,0 +1,6 @@
+{
+  TestRequest.Post request=new TestRequest.Post();
+  assertEquals(request.getMethod(),Method.POST);
+  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
+  assertTrue(httpRequest instanceof HttpPost);
+}

@@ -1,0 +1,10 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  DiskBasedCache.writeString(baos,"");
+  DiskBasedCache.writeString(baos,"This is a string.");
+  DiskBasedCache.writeString(baos,"???????????????");
+  ByteArrayInputStream bais=new ByteArrayInputStream(baos.toByteArray());
+  assertEquals(DiskBasedCache.readString(bais),"");
+  assertEquals(DiskBasedCache.readString(bais),"This is a string.");
+  assertEquals(DiskBasedCache.readString(bais),"???????????????");
+}

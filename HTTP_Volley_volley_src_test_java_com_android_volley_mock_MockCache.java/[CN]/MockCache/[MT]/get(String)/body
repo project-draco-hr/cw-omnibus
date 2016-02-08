@@ -1,0 +1,4 @@
+{
+  getCalled=true;
+  return mFakeEntry;
+}

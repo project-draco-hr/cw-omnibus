@@ -1,0 +1,8 @@
+{
+  assertNotNull(NetworkImageView.class.getConstructor(Context.class));
+  assertNotNull(NetworkImageView.class.getConstructor(Context.class,AttributeSet.class));
+  assertNotNull(NetworkImageView.class.getConstructor(Context.class,AttributeSet.class,int.class));
+  assertNotNull(NetworkImageView.class.getMethod("setImageUrl",String.class,ImageLoader.class));
+  assertNotNull(NetworkImageView.class.getMethod("setDefaultImageResId",int.class));
+  assertNotNull(NetworkImageView.class.getMethod("setErrorImageResId",int.class));
+}

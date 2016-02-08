@@ -1,0 +1,2 @@
+HttpUriRequest arg0
+ResponseHandler<? extends T> arg1

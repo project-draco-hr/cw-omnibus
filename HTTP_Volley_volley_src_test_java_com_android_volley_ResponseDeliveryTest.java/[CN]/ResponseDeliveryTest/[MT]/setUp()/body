@@ -1,0 +1,8 @@
+{
+  mDelivery=new ImmediateResponseDelivery();
+  mRequest=new MockRequest();
+  mRequest.setSequence(1);
+  byte[] data=new byte[16];
+  Cache.Entry cacheEntry=CacheTestUtils.makeRandomCacheEntry(data);
+  mSuccessResponse=Response.success(data,cacheEntry);
+}

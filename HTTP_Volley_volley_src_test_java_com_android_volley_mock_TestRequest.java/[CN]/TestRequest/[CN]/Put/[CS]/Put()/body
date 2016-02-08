@@ -1,0 +1,3 @@
+{
+  super(Method.PUT,TEST_URL,null);
+}

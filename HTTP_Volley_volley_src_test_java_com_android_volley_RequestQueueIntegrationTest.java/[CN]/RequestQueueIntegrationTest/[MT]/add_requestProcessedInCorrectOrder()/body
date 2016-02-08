@@ -1,0 +1,27 @@
+{
+  MockRequest lowerPriorityReq=new MockRequest();
+  MockRequest higherPriorityReq=new MockRequest();
+  lowerPriorityReq.setCacheKey("1");
+  higherPriorityReq.setCacheKey("2");
+  lowerPriorityReq.setPriority(Priority.LOW);
+  higherPriorityReq.setPriority(Priority.HIGH);
+  RequestFinishedListener listener=mock(RequestFinishedListener.class);
+  Answer<NetworkResponse> delayAnswer=new Answer<NetworkResponse>(){
+    @Override public NetworkResponse answer(    InvocationOnMock invocationOnMock) throws Throwable {
+      Thread.sleep(20);
+      return mock(NetworkResponse.class);
+    }
+  }
+;
+  when(mMockNetwork.performRequest(higherPriorityReq)).thenAnswer(delayAnswer);
+  when(mMockNetwork.performRequest(lowerPriorityReq)).thenReturn(mock(NetworkResponse.class));
+  RequestQueue queue=new RequestQueue(new NoCache(),mMockNetwork,1,mDelivery);
+  queue.addRequestFinishedListener(listener);
+  queue.add(lowerPriorityReq);
+  queue.add(higherPriorityReq);
+  queue.start();
+  verifyNoMoreInteractions(listener);
+  verify(listener,timeout(100)).onRequestFinished(higherPriorityReq);
+  verify(listener,timeout(10)).onRequestFinished(lowerPriorityReq);
+  queue.stop();
+}

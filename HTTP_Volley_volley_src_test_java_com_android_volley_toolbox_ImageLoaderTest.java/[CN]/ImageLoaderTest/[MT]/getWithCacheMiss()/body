@@ -1,0 +1,8 @@
+{
+  when(mImageCache.getBitmap(anyString())).thenReturn(null);
+  ImageLoader.ImageListener listener=mock(ImageLoader.ImageListener.class);
+  mImageLoader.get("http://foo",listener);
+  mImageLoader.get("http://foo",listener);
+  verify(listener,times(2)).onResponse(any(ImageLoader.ImageContainer.class),eq(true));
+  verify(mRequestQueue,times(1)).add(any(Request.class));
+}

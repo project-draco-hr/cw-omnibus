@@ -1,0 +1,3 @@
+{
+  return makeRandomCacheEntry(data,false,false);
+}
