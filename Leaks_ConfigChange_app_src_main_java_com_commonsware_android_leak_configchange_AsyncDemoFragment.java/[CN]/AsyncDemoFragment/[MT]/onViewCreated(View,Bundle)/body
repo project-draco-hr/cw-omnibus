@@ -1,0 +1,9 @@
+{
+  super.onViewCreated(v,savedInstanceState);
+  getListView().setScrollbarFadingEnabled(false);
+  setListAdapter(adapter);
+  getAgain().setOnClickListener(this);
+  if (task != null) {
+    getAgain().setEnabled(false);
+  }
+}

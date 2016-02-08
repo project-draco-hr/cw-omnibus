@@ -1,0 +1,6 @@
+{
+  getAgain().setEnabled(false);
+  adapter.clear();
+  task=new AddStringTask();
+  task.execute();
+}

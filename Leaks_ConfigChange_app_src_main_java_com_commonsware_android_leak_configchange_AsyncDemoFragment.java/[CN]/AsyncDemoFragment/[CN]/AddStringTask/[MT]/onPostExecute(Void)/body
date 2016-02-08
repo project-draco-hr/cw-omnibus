@@ -1,0 +1,4 @@
+{
+  task=null;
+  getAgain().setEnabled(true);
+}

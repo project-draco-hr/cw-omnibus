@@ -1,0 +1,6 @@
+{
+  if (btnAgain == null) {
+    btnAgain=(Button)getView().findViewById(R.id.again);
+  }
+  return (btnAgain);
+}
