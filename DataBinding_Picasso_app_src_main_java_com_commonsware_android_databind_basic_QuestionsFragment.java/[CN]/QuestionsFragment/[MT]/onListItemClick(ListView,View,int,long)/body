@@ -1,0 +1,4 @@
+{
+  Question question=((QuestionsAdapter)getListAdapter()).getItem(position);
+  EventBus.getDefault().post(new QuestionClickedEvent(question));
+}

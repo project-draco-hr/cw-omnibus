@@ -1,0 +1,5 @@
+{
+  this.title=item.title;
+  this.score=item.score;
+  notifyChange();
+}

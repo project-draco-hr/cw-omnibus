@@ -1,0 +1,5 @@
+{
+  RecyclerView rv=new RecyclerView(getActivity());
+  rv.setHasFixedSize(true);
+  return (rv);
+}

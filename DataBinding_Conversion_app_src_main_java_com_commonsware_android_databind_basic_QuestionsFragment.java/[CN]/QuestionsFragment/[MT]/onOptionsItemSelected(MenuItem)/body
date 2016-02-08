@@ -1,0 +1,6 @@
+{
+  if (item.getItemId() == R.id.refresh) {
+    updateQuestions();
+  }
+  return (super.onOptionsItemSelected(item));
+}

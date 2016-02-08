@@ -1,0 +1,4 @@
+{
+  Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
+  Log.e(getClass().getSimpleName(),"Exception from Retrofit request to StackOverflow",error);
+}

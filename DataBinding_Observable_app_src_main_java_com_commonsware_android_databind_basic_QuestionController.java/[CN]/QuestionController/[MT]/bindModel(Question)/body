@@ -1,0 +1,4 @@
+{
+  rowBinding.setQuestion(question);
+  rowBinding.setController(this);
+}

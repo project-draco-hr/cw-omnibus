@@ -1,0 +1,8 @@
+{
+  RowBinding rowBinding=DataBindingUtil.getBinding(convertView);
+  if (rowBinding == null) {
+    rowBinding=RowBinding.inflate(getActivity().getLayoutInflater(),parent,false);
+  }
+  rowBinding.setQuestion(getItem(position));
+  return (rowBinding.getRoot());
+}

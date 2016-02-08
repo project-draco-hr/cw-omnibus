@@ -1,0 +1,11 @@
+{
+  RowBinding rowBinding=DataBindingUtil.getBinding(convertView);
+  if (rowBinding == null) {
+    rowBinding=RowBinding.inflate(getActivity().getLayoutInflater(),parent,false);
+  }
+  Question question=getItem(position);
+  ImageView icon=rowBinding.icon;
+  rowBinding.setQuestion(question);
+  Picasso.with(getActivity()).load(question.owner.profileImage).fit().centerCrop().placeholder(R.drawable.owner_placeholder).error(R.drawable.owner_error).into(icon);
+  return (rowBinding.getRoot());
+}

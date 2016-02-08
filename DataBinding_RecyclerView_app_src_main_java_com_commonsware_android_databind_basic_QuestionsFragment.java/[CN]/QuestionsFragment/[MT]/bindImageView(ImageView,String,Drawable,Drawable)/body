@@ -1,0 +1,3 @@
+{
+  Picasso.with(iv.getContext()).load(url).fit().centerCrop().placeholder(placeholder).error(error).into(iv);
+}

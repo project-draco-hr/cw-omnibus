@@ -1,0 +1,6 @@
+{
+  updateFromItem(item);
+  owner=item.owner;
+  link=item.link;
+  id=item.id;
+}
