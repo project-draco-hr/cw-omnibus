@@ -1,7 +1,0 @@
-{
-  PackageManager mgr=getPackageManager();
-  PackageInfo pkgInfo=mgr.getPackageInfo(pkg,PackageManager.GET_SIGNATURES);
-  Signature[] signatures=pkgInfo.signatures;
-  byte[] local=signatures[0].toByteArray();
-  return (isEqual(new ByteArrayInputStream(local),getResources().openRawResource(raw)));
-}

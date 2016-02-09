@@ -1,3 +1,0 @@
-{
-  Log.d(getClass().getSimpleName(),"It's all good");
-}

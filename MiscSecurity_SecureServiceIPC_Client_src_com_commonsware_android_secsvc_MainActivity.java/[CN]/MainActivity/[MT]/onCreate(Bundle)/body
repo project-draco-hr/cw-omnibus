@@ -1,9 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
-  verify=(CompoundButton)findViewById(R.id.verify);
-  verify.setOnCheckedChangeListener(this);
-  command=findViewById(R.id.command);
-  binding=findViewById(R.id.binding);
-  serviceIntent=buildServiceIntent();
-}
