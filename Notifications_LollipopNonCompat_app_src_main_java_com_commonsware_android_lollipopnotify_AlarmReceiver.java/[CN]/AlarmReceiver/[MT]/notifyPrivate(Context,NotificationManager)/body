@@ -1,4 +1,0 @@
-{
-  Notification pub=buildPublic(ctxt).build();
-  mgr.notify(NOTIFY_ID,buildNormal(ctxt).setPublicVersion(pub).build());
-}

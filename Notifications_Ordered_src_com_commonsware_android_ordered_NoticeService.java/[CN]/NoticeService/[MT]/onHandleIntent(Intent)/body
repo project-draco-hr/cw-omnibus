@@ -1,3 +1,0 @@
-{
-  sendOrderedBroadcast(broadcast,null);
-}
