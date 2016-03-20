@@ -1,0 +1,14 @@
+{
+  builder.build(new StrongBuilderCallbackBase<RequestQueue>(){
+    @Override public void onConnected(    RequestQueue queue){
+      GsonRequest<SOQuestions> request=new GsonRequest<SOQuestions>(SO_URL,SOQuestions.class,null,new Response.Listener<SOQuestions>(){
+        @Override public void onResponse(        SOQuestions response){
+          callback.onLoaded(response);
+        }
+      }
+,VolleyQuestionStrategy.this);
+      queue.add(request);
+    }
+  }
+);
+}

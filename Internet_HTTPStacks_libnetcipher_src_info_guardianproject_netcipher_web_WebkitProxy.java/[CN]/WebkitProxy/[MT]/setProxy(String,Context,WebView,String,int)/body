@@ -1,0 +1,18 @@
+{
+  setSystemProperties(host,port);
+  boolean worked=false;
+  if (Build.VERSION.SDK_INT < 13) {
+    setProxyUpToHC(wView,host,port);
+  }
+ else   if (Build.VERSION.SDK_INT < 19) {
+    worked=setWebkitProxyICS(ctx,host,port);
+  }
+ else   if (Build.VERSION.SDK_INT < 20) {
+    worked=setKitKatProxy(appClass,ctx,host,port);
+    if (!worked)     worked=setWebkitProxyICS(ctx,host,port);
+  }
+ else   if (Build.VERSION.SDK_INT >= 21) {
+    worked=setWebkitProxyLollipop(ctx,host,port);
+  }
+  return worked;
+}

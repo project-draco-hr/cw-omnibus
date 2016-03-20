@@ -1,0 +1,6 @@
+{
+  if (builder == null) {
+    builder=StrongOkHttpClientBuilder.forMaxSecurity(getActivity());
+  }
+  return (builder);
+}

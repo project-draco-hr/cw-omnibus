@@ -1,0 +1,9 @@
+{
+  try {
+    buildStrategy().load(this);
+  }
+ catch (  Exception e) {
+    Toast.makeText(getActivity(),"Exception loading questions",Toast.LENGTH_LONG).show();
+    Log.e(getClass().getSimpleName(),"Exception loading questions",e);
+  }
+}

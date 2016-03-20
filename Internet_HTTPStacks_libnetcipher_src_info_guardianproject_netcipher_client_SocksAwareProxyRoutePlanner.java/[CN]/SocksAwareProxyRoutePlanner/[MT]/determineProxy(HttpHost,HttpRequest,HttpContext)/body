@@ -1,0 +1,5 @@
+{
+  HttpHost proxy=determineRequiredProxy(target,request,context);
+  if (isSocksProxy(proxy))   proxy=null;
+  return proxy;
+}

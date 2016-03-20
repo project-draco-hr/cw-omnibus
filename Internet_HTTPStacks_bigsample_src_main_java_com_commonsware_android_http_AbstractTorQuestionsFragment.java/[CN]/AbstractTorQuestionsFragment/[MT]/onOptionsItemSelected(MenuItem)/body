@@ -1,0 +1,7 @@
+{
+  if (item.getItemId() == R.id.orbot) {
+    OrbotInitializer.get(getActivity()).installOrbot(getActivity());
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

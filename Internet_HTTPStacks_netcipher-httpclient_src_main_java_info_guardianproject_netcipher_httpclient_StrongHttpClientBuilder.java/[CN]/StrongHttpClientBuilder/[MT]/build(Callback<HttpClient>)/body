@@ -1,0 +1,18 @@
+{
+  OrbotInitializer.get(ctxt).addStatusCallback(new OrbotInitializer.SimpleStatusCallback(){
+    @Override public void onEnabled(    Intent statusIntent){
+      OrbotInitializer.get(ctxt).removeStatusCallback(this);
+      try {
+        callback.onConnected(build(statusIntent));
+      }
+ catch (      IOException e) {
+        callback.onConnectionException(e);
+      }
+    }
+    @Override public void onStatusTimeout(){
+      OrbotInitializer.get(ctxt).removeStatusCallback(this);
+      callback.onTimeout();
+    }
+  }
+);
+}

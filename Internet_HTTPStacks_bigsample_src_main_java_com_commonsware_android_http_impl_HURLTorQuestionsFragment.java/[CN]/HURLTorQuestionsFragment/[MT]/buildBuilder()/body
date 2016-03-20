@@ -1,0 +1,6 @@
+{
+  if (builder == null) {
+    builder=StrongConnectionBuilder.forMaxSecurity(getActivity());
+  }
+  return (builder);
+}

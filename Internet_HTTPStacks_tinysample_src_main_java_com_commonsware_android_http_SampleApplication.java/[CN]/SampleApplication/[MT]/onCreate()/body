@@ -1,0 +1,5 @@
+{
+  super.onCreate();
+  LeakCanary.install(this);
+  OrbotInitializer.get(this).init();
+}

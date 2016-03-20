@@ -1,0 +1,4 @@
+{
+  installCallbacks.add(cb);
+  return (this);
+}

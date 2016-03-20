@@ -1,0 +1,20 @@
+{
+  final Intent intent=new Intent(Intent.ACTION_VIEW);
+  intent.setData(Uri.parse(MARKET_URI));
+  PackageManager pm=context.getPackageManager();
+  List<ResolveInfo> resInfos=pm.queryIntentActivities(intent,0);
+  String foundPackageName=null;
+  for (  ResolveInfo r : resInfos) {
+    if (TextUtils.equals(r.activityInfo.packageName,FDROID_PACKAGE_NAME) || TextUtils.equals(r.activityInfo.packageName,PLAY_PACKAGE_NAME)) {
+      foundPackageName=r.activityInfo.packageName;
+      break;
+    }
+  }
+  if (foundPackageName == null) {
+    intent.setData(Uri.parse(FDROID_URI));
+  }
+ else {
+    intent.setPackage(foundPackageName);
+  }
+  return intent;
+}

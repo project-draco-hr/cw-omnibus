@@ -1,0 +1,36 @@
+{
+  Fragment result=null;
+switch (position) {
+case 0:
+    result=new HURLQuestionsFragment();
+  break;
+case 1:
+result=new HURLTorQuestionsFragment();
+break;
+case 2:
+result=new HttpClientQuestionsFragment();
+break;
+case 3:
+result=new HttpClientTorQuestionsFragment();
+break;
+case 4:
+result=new VolleyQuestionsFragment();
+break;
+case 5:
+result=new VolleyTorQuestionsFragment();
+break;
+case 6:
+result=new OkHttp3QuestionsFragment();
+break;
+case 7:
+result=new OkHttp3TorQuestionsFragment();
+break;
+case 8:
+result=new RetrofitQuestionsFragment();
+break;
+case 9:
+result=new RetrofitTorQuestionsFragment();
+break;
+}
+return (result);
+}

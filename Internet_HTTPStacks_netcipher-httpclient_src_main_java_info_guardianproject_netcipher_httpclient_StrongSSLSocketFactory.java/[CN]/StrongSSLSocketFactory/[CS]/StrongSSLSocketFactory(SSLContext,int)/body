@@ -1,0 +1,5 @@
+{
+  super(sslContext);
+  InetSocketAddress socksAddr=new InetSocketAddress(StrongHttpClientBuilder.PROXY_HOST,socksPort);
+  socksProxy=new Proxy(Proxy.Type.SOCKS,socksAddr);
+}

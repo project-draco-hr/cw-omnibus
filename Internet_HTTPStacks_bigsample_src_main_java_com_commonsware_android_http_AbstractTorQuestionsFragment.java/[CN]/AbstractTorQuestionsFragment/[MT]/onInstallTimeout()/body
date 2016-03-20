@@ -1,0 +1,4 @@
+{
+  Toast.makeText(getActivity(),R.string.msg_orbot_not_installed,Toast.LENGTH_LONG).show();
+  cleanUpAfterInstall();
+}

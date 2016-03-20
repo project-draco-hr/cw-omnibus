@@ -1,0 +1,6 @@
+{
+  if (TextUtils.isBlank(s)) {
+    return null;
+  }
+  return s.split(" *, *");
+}

@@ -1,0 +1,31 @@
+{
+  Args.notNull(host,"HTTP host");
+  Args.notNull(remoteAddress,"Remote address");
+  final Socket sock=socket != null ? socket : createSocket(context);
+  if (localAddress != null) {
+    sock.bind(localAddress);
+  }
+  try {
+    if (connectTimeout > 0 && sock.getSoTimeout() == 0) {
+      sock.setSoTimeout(connectTimeout);
+    }
+    sock.connect(remoteAddress,connectTimeout);
+  }
+ catch (  final IOException ex) {
+    try {
+      sock.close();
+    }
+ catch (    final IOException ignore) {
+    }
+    throw ex;
+  }
+  if (sock instanceof SSLSocket) {
+    final SSLSocket sslsock=(SSLSocket)sock;
+    sslsock.startHandshake();
+    verifyHostname(sslsock,host.getHostName());
+    return sock;
+  }
+ else {
+    return createLayeredSocket(sock,host.getHostName(),remoteAddress.getPort(),context);
+  }
+}

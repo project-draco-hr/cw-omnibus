@@ -1,0 +1,20 @@
+{
+  try {
+    OkHttpClient client=new OkHttpClient();
+    Request request=new Request.Builder().url(SO_URL).build();
+    Response response=client.newCall(request).execute();
+    if (response.isSuccessful()) {
+      Reader in=response.body().charStream();
+      BufferedReader reader=new BufferedReader(in);
+      SOQuestions questions=new Gson().fromJson(reader,SOQuestions.class);
+      reader.close();
+      EventBus.getDefault().post(new QuestionsLoadedEvent(questions));
+    }
+ else {
+      Log.e(getClass().getSimpleName(),response.toString());
+    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+  }
+}

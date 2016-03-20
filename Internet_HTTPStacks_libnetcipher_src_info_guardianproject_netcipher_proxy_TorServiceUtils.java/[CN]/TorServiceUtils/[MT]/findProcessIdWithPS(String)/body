@@ -1,0 +1,17 @@
+{
+  int procId=-1;
+  Runtime r=Runtime.getRuntime();
+  Process procPs=null;
+  procPs=r.exec(SHELL_CMD_PS);
+  BufferedReader reader=new BufferedReader(new InputStreamReader(procPs.getInputStream()));
+  String line=null;
+  while ((line=reader.readLine()) != null) {
+    if (line.indexOf(' ' + command) != -1) {
+      StringTokenizer st=new StringTokenizer(line," ");
+      st.nextToken();
+      procId=Integer.parseInt(st.nextToken().trim());
+      break;
+    }
+  }
+  return procId;
+}

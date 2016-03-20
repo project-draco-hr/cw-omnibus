@@ -1,0 +1,4 @@
+{
+  this.netCipher=new Simple(original.netCipher);
+  this.ctxt=original.ctxt;
+}

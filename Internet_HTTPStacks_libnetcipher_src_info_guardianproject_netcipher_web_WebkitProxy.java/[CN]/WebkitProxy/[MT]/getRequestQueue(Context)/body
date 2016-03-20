@@ -1,0 +1,11 @@
+{
+  Object ret=null;
+  Class networkClass=Class.forName("android.webkit.Network");
+  if (networkClass != null) {
+    Object networkObj=invokeMethod(networkClass,"getInstance",new Object[]{ctx},Context.class);
+    if (networkObj != null) {
+      ret=getDeclaredField(networkObj,"mRequestQueue");
+    }
+  }
+  return ret;
+}

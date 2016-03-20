@@ -1,0 +1,6 @@
+{
+  if (status.getStringExtra(OrbotHelper.EXTRA_STATUS).equals(OrbotHelper.STATUS_ON)) {
+    return (status.getIntExtra(OrbotHelper.EXTRA_PROXY_PORT_HTTP,8118));
+  }
+  return (-1);
+}

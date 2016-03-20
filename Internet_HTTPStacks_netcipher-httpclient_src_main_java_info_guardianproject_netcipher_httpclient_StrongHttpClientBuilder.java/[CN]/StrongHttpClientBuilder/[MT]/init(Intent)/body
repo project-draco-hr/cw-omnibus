@@ -1,0 +1,18 @@
+{
+  StrongSSLSocketFactory sFactory;
+  int socksPort=netCipher.getSocksPort(status);
+  if (socksPort == -1) {
+    int httpPort=netCipher.getHttpPort(status);
+    if (httpPort != -1) {
+      setProxy(new HttpHost(PROXY_HOST,httpPort));
+    }
+    sFactory=new StrongSSLSocketFactory(netCipher.getSSLContext());
+  }
+ else {
+    sFactory=new StrongSSLSocketFactory(netCipher.getSSLContext(),socksPort);
+  }
+  setSSLSocketFactory(sFactory);
+  Registry<ConnectionSocketFactory> registry=RegistryBuilder.<ConnectionSocketFactory>create().register("http",PlainConnectionSocketFactory.getSocketFactory()).register("https",sFactory).build();
+  HttpClientConnectionManager ccm=new PoolingHttpClientConnectionManager(registry);
+  setConnectionManager(ccm);
+}

@@ -1,0 +1,23 @@
+{
+  SSLContext sslcontext;
+  try {
+    sslcontext=SSLContext.getInstance("TLSv1");
+    sslcontext.init(null,null,null);
+  }
+ catch (  NoSuchAlgorithmException e) {
+    throw new IllegalArgumentException(e);
+  }
+catch (  KeyManagementException e) {
+    throw new IllegalArgumentException(e);
+  }
+  SSLSocketFactory tlsOnly=new TlsOnlySocketFactory(sslcontext.getSocketFactory(),compatible);
+  HttpsURLConnection.setDefaultSSLSocketFactory(tlsOnly);
+  Proxy proxy=NetCipher.proxy;
+  if (OrbotHelper.isOnionAddress(url))   proxy=ORBOT_HTTP_PROXY;
+  if (proxy != null) {
+    return (HttpURLConnection)url.openConnection(proxy);
+  }
+ else {
+    return (HttpURLConnection)url.openConnection();
+  }
+}

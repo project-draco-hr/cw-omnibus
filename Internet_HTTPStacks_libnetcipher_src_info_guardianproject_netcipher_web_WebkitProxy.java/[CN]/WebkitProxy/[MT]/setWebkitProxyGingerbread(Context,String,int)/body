@@ -1,0 +1,10 @@
+{
+  boolean ret=false;
+  Object requestQueueObject=getRequestQueue(ctx);
+  if (requestQueueObject != null) {
+    HttpHost httpHost=new HttpHost(host,port,"http");
+    setDeclaredField(requestQueueObject,"mProxyHost",httpHost);
+    return true;
+  }
+  return false;
+}

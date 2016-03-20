@@ -1,0 +1,9 @@
+{
+  HttpURLConnection connection=getHttpURLConnection(url,compatible);
+  if (connection instanceof HttpsURLConnection) {
+    return (HttpsURLConnection)connection;
+  }
+ else {
+    throw new IllegalArgumentException("not an HTTPS connection!");
+  }
+}

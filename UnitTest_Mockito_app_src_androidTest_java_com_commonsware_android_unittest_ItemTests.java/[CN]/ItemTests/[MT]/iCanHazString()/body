@@ -1,0 +1,6 @@
+{
+  Item item=new Item();
+  item.title=TITLE;
+  item.link=URL;
+  Assert.assertEquals(TITLE,item.toString());
+}

@@ -1,0 +1,4 @@
+{
+  sendKeys("4*DPAD_DOWN");
+  Assert.assertEquals(4,list.getSelectedItemPosition());
+}

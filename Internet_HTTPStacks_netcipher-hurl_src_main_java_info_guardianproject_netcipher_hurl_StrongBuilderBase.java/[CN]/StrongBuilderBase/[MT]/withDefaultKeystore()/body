@@ -1,0 +1,6 @@
+{
+  InputStream in=ctxt.getResources().getAssets().open("debiancacerts.bks");
+  KeyStore trustStore=KeyStore.getInstance(TRUSTSTORE_TYPE);
+  trustStore.load(in,TRUSTSTORE_PASSWORD.toCharArray());
+  return (withKeystore(trustStore));
+}

@@ -1,0 +1,9 @@
+{
+  if (OrbotHelper.isOrbotInstalled(context)) {
+    Log.i("OrbotHelper","requestStartTor " + context.getPackageName());
+    Intent intent=getOrbotStartIntent(context);
+    context.sendBroadcast(intent);
+    return true;
+  }
+  return false;
+}

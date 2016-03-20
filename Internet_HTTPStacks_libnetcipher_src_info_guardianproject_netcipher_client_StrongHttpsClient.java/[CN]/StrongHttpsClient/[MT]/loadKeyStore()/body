@@ -1,0 +1,6 @@
+{
+  KeyStore trustStore=KeyStore.getInstance(TRUSTSTORE_TYPE);
+  InputStream in=context.getResources().openRawResource(R.raw.debiancacerts);
+  trustStore.load(in,TRUSTSTORE_PASSWORD.toCharArray());
+  return trustStore;
+}

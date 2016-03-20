@@ -1,0 +1,5 @@
+{
+  Intent intent=new Intent();
+  intent.setComponent(new ComponentName(PACKAGE_NAME,COMPONENT_NAME));
+  return intent;
+}

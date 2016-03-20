@@ -1,0 +1,4 @@
+{
+  statusCallbacks.remove(cb);
+  return (this);
+}

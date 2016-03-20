@@ -1,0 +1,4 @@
+{
+  if (mProxyHost != null && mProxyType.equalsIgnoreCase("socks"))   throw new RuntimeException("operation not supported");
+ else   return super.resolveHostname(host);
+}

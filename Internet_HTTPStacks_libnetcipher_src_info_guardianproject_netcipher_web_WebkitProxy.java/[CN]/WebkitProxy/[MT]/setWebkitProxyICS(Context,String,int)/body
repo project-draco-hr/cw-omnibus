@@ -1,0 +1,24 @@
+{
+  try {
+    Class webViewCoreClass=Class.forName("android.webkit.WebViewCore");
+    Class proxyPropertiesClass=Class.forName("android.net.ProxyProperties");
+    if (webViewCoreClass != null && proxyPropertiesClass != null) {
+      Method m=webViewCoreClass.getDeclaredMethod("sendStaticMessage",Integer.TYPE,Object.class);
+      Constructor c=proxyPropertiesClass.getConstructor(String.class,Integer.TYPE,String.class);
+      if (m != null && c != null) {
+        m.setAccessible(true);
+        c.setAccessible(true);
+        Object properties=c.newInstance(host,port,null);
+        m.invoke(null,193,properties);
+        return true;
+      }
+    }
+  }
+ catch (  Exception e) {
+    Log.e("ProxySettings","Exception setting WebKit proxy through android.net.ProxyProperties: " + e.toString());
+  }
+catch (  Error e) {
+    Log.e("ProxySettings","Exception setting WebKit proxy through android.webkit.Network: " + e.toString());
+  }
+  return false;
+}

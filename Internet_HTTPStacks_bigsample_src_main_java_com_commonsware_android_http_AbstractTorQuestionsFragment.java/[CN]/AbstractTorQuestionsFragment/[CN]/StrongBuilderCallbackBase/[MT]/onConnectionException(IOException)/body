@@ -1,0 +1,3 @@
+{
+  Log.e(getClass().getSimpleName(),"Exception communicating through Orbot",e);
+}

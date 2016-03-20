@@ -1,0 +1,4 @@
+{
+  super(null,sslSocketFactory);
+  this.proxy=proxy;
+}

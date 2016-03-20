@@ -1,0 +1,4 @@
+{
+  super.onDestroy();
+  adapter.add(new Event("onDestroy()"));
+}

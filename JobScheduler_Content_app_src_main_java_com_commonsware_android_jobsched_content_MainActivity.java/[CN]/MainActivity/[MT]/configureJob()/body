@@ -1,0 +1,5 @@
+{
+  Toast.makeText(this,R.string.msg_add,Toast.LENGTH_LONG).show();
+  DemoJobService.schedule(this);
+  finish();
+}

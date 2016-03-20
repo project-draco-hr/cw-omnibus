@@ -1,0 +1,10 @@
+{
+  if (OrbotHelper.isOrbotInstalled(activity)) {
+    if (!OrbotHelper.isOrbotRunning(activity)) {
+      Intent intent=getShowOrbotStartIntent();
+      activity.startActivityForResult(intent,START_TOR_RESULT);
+      return true;
+    }
+  }
+  return false;
+}

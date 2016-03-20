@@ -1,0 +1,87 @@
+{
+  if (host != null) {
+    System.setProperty("http.proxyHost",host);
+    System.setProperty("http.proxyPort",port + "");
+    System.setProperty("https.proxyHost",host);
+    System.setProperty("https.proxyPort",port + "");
+  }
+  try {
+    Class applictionCls=Class.forName(appClass);
+    Field loadedApkField=applictionCls.getField("mLoadedApk");
+    loadedApkField.setAccessible(true);
+    Object loadedApk=loadedApkField.get(appContext);
+    Class loadedApkCls=Class.forName("android.app.LoadedApk");
+    Field receiversField=loadedApkCls.getDeclaredField("mReceivers");
+    receiversField.setAccessible(true);
+    ArrayMap receivers=(ArrayMap)receiversField.get(loadedApk);
+    for (    Object receiverMap : receivers.values()) {
+      for (      Object rec : ((ArrayMap)receiverMap).keySet()) {
+        Class clazz=rec.getClass();
+        if (clazz.getName().contains("ProxyChangeListener")) {
+          Method onReceiveMethod=clazz.getDeclaredMethod("onReceive",Context.class,Intent.class);
+          Intent intent=new Intent(Proxy.PROXY_CHANGE_ACTION);
+          if (host != null) {
+            final String CLASS_NAME="android.net.ProxyProperties";
+            Class cls=Class.forName(CLASS_NAME);
+            Constructor constructor=cls.getConstructor(String.class,Integer.TYPE,String.class);
+            constructor.setAccessible(true);
+            Object proxyProperties=constructor.newInstance(host,port,null);
+            intent.putExtra("proxy",(Parcelable)proxyProperties);
+          }
+          onReceiveMethod.invoke(rec,appContext,intent);
+        }
+      }
+    }
+    return true;
+  }
+ catch (  ClassNotFoundException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  NoSuchFieldException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  IllegalAccessException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  IllegalArgumentException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  NoSuchMethodException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  InvocationTargetException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+catch (  InstantiationException e) {
+    StringWriter sw=new StringWriter();
+    e.printStackTrace(new PrintWriter(sw));
+    String exceptionAsString=sw.toString();
+    Log.v(TAG,e.getMessage());
+    Log.v(TAG,exceptionAsString);
+  }
+  return false;
+}

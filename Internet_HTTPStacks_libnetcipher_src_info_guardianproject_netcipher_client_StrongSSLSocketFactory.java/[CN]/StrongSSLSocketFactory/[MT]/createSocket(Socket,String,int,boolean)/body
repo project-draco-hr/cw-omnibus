@@ -1,0 +1,5 @@
+{
+  Socket newSocket=mFactory.createSocket(socket,host,port,autoClose);
+  enableStrongerDefaults(newSocket);
+  return newSocket;
+}

@@ -1,0 +1,4 @@
+{
+  netCipher.withKeystore(keystore);
+  return (this);
+}

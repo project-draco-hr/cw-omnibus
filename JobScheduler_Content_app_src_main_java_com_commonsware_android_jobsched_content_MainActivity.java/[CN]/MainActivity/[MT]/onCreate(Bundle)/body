@@ -1,0 +1,15 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState != null) {
+    isInPermission=savedInstanceState.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  if (!isInPermission) {
+    if (hasPermission(READ_CONTACTS)) {
+      configureJob();
+    }
+ else {
+      isInPermission=true;
+      ActivityCompat.requestPermissions(this,PERMS_ALL,RESULT_PERMS_INITIAL);
+    }
+  }
+}

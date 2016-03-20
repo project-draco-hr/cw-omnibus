@@ -1,0 +1,8 @@
+{
+  if (supportsSocksProxy()) {
+    return (withSocksProxy());
+  }
+ else {
+    return (withHttpProxy());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  URL url=new URL(urlString.replaceFirst("^[Hh][Tt][Tt][Pp]:","https:"));
+  return getHttpsURLConnection(url,false);
+}

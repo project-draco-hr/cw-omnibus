@@ -1,0 +1,10 @@
+{
+  try {
+    PackageManager pm=context.getPackageManager();
+    pm.getPackageInfo(uri,PackageManager.GET_ACTIVITIES);
+    return true;
+  }
+ catch (  PackageManager.NameNotFoundException e) {
+    return false;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  Socket sock=new Socket();
+  sock.connect(new InetSocketAddress(proxyHost,proxyPort),10000);
+  return sock;
+}

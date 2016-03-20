@@ -1,0 +1,6 @@
+{
+  this.socketfactory=Args.notNull(socketfactory,"SSL socket factory");
+  this.supportedProtocols=supportedProtocols;
+  this.supportedCipherSuites=supportedCipherSuites;
+  this.hostnameVerifier=hostnameVerifier != null ? hostnameVerifier : getDefaultHostnameVerifier();
+}

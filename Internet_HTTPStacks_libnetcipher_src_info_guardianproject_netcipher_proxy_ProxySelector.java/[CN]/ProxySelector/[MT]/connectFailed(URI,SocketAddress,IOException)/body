@@ -1,0 +1,3 @@
+{
+  Log.w("ProxySelector","could not connect to " + address.toString() + ": "+ failure.getMessage());
+}

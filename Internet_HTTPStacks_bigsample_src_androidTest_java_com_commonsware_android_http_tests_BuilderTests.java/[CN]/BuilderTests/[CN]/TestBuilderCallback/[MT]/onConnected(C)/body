@@ -1,0 +1,10 @@
+{
+  try {
+    loadResult(connection);
+    responseLatch.countDown();
+  }
+ catch (  Exception e) {
+    innerException=e;
+    responseLatch.countDown();
+  }
+}

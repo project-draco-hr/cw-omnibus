@@ -1,0 +1,3 @@
+{
+  return (new StrongHttpClientBuilder(ctxt).withDefaultKeystore());
+}

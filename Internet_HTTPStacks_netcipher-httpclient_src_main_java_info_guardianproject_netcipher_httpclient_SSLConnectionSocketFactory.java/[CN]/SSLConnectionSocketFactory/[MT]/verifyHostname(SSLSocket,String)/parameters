@@ -1,0 +1,2 @@
+SSLSocket sslsock
+String hostname

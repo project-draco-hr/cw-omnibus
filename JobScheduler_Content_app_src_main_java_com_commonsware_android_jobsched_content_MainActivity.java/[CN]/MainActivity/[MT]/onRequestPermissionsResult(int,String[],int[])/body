@@ -1,0 +1,13 @@
+{
+  boolean sadTrombone=true;
+  isInPermission=false;
+  if (requestCode == RESULT_PERMS_INITIAL) {
+    if (hasPermission(READ_CONTACTS)) {
+      configureJob();
+      sadTrombone=false;
+    }
+  }
+  if (sadTrombone) {
+    Toast.makeText(this,R.string.msg_no_perm,Toast.LENGTH_LONG).show();
+  }
+}

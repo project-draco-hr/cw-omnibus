@@ -1,0 +1,7 @@
+{
+  builder.build(callback);
+  if (innerException != null) {
+    throw innerException;
+  }
+  Assert.assertEquals(EXPECTED,testResult);
+}

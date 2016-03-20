@@ -1,0 +1,4 @@
+{
+  Drawable d=VectorDrawableCompat.create(getResources(),resourceId,null);
+  icon.setImageDrawable(d);
+}

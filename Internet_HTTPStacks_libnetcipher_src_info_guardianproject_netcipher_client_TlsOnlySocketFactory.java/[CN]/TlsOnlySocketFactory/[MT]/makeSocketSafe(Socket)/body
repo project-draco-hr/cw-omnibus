@@ -1,0 +1,6 @@
+{
+  if (socket instanceof SSLSocket) {
+    socket=new TlsOnlySSLSocket((SSLSocket)socket,compatible);
+  }
+  return socket;
+}

@@ -1,0 +1,18 @@
+{
+  new StrongConnectionBuilder(builder).connectTo(SO_URL).build(new StrongBuilderCallbackBase<HttpURLConnection>(){
+    @Override public void onConnected(    HttpURLConnection c){
+      try {
+        InputStream in=c.getInputStream();
+        BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+        parser.parse(reader);
+      }
+ catch (      IOException e) {
+        onConnectionException(e);
+      }
+ finally {
+        c.disconnect();
+      }
+    }
+  }
+);
+}

@@ -1,0 +1,5 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  setEmptyText(getString(R.string.msg_orbot_not_installed));
+  checkTor();
+}

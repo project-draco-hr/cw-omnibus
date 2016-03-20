@@ -1,0 +1,14 @@
+{
+  builder.build(new StrongBuilderCallbackBase<RequestQueue>(){
+    @Override public void onConnected(    RequestQueue queue){
+      GsonRequest<TorStatus> request=new GsonRequest<TorStatus>(TOR_CHECK_URL,TorStatus.class,null,new Response.Listener<TorStatus>(){
+        @Override public void onResponse(        TorStatus response){
+          callback.onLoaded(response);
+        }
+      }
+,VolleyTorStatusStrategy.this);
+      queue.add(request);
+    }
+  }
+);
+}

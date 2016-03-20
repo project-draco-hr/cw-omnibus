@@ -1,0 +1,3 @@
+{
+  return isAppInstalled(context,PACKAGE_NAME);
+}

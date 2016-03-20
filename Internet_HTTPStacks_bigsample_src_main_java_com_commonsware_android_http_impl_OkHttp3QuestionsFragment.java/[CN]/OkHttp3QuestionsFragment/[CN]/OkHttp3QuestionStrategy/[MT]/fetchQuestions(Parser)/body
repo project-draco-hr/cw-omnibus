@@ -1,0 +1,10 @@
+{
+  OkHttpClient client=new OkHttpClient();
+  Request request=new Request.Builder().url(SO_URL).build();
+  Response response=client.newCall(request).execute();
+  if (response.isSuccessful()) {
+    Reader in=response.body().charStream();
+    BufferedReader reader=new BufferedReader(in);
+    parser.parse(reader);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  pager=(ViewPager)findViewById(R.id.pager);
+  adapter=new SampleAdapter(this,getFragmentManager());
+  pager.setAdapter(adapter);
+  MaterialTabs tabs=(MaterialTabs)findViewById(R.id.tabs);
+  tabs.setViewPager(pager);
+}

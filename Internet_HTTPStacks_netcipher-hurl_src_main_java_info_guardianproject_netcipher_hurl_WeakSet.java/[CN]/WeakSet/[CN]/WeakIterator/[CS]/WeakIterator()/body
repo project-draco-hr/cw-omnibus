@@ -1,0 +1,4 @@
+{
+  itemIterator=items.iterator();
+  moveToNext();
+}

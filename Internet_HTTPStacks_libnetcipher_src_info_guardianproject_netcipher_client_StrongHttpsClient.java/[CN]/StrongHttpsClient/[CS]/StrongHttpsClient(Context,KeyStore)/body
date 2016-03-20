@@ -1,0 +1,13 @@
+{
+  this.context=context;
+  mRegistry=new SchemeRegistry();
+  mRegistry.register(new Scheme(TYPE_HTTP,80,PlainSocketFactory.getSocketFactory()));
+  try {
+    TrustManagerFactory trustManagerFactory=TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    sFactory=new StrongSSLSocketFactory(context,trustManagerFactory.getTrustManagers(),keystore,TRUSTSTORE_PASSWORD);
+    mRegistry.register(new Scheme("https",443,sFactory));
+  }
+ catch (  Exception e) {
+    throw new AssertionError(e);
+  }
+}

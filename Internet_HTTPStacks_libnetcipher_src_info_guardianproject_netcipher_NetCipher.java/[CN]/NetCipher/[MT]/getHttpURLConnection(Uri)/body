@@ -1,0 +1,3 @@
+{
+  return getHttpURLConnection(uri.toString());
+}

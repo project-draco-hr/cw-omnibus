@@ -1,0 +1,36 @@
+{
+  if (mProxyHost != null) {
+    if (mProxyType != null && mProxyType.equalsIgnoreCase("socks")) {
+      Log.d("StrongHTTPS","proxying using SOCKS");
+      openSocksConnection(mProxyHost,conn,target,local,context,params);
+    }
+ else {
+      Log.d("StrongHTTPS","proxying with: " + mProxyType);
+      openNonSocksConnection(conn,target,local,context,params);
+    }
+  }
+ else   if (mRoutePlanner != null) {
+    if (mRoutePlanner.isProxy(target)) {
+      Log.d("StrongHTTPS","proxying using non-SOCKS");
+      openNonSocksConnection(conn,target,local,context,params);
+    }
+ else {
+      HttpHost proxy=mRoutePlanner.determineRequiredProxy(target,null,context);
+      if (proxy == null) {
+        Log.d("StrongHTTPS","not proxying");
+        openNonSocksConnection(conn,target,local,context,params);
+      }
+ else       if (mRoutePlanner.isSocksProxy(proxy)) {
+        Log.d("StrongHTTPS","proxying using SOCKS");
+        openSocksConnection(proxy,conn,target,local,context,params);
+      }
+ else {
+        throw new IllegalStateException("Non-SOCKS proxy returned");
+      }
+    }
+  }
+ else {
+    Log.d("StrongHTTPS","not proxying");
+    openNonSocksConnection(conn,target,local,context,params);
+  }
+}

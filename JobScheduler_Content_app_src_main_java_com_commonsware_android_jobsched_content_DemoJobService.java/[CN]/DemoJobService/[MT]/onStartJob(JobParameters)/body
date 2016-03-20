@@ -1,0 +1,6 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this).setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setContentTitle("You added a contact!").setSmallIcon(android.R.drawable.stat_notify_more);
+  NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+  mgr.notify(NOTIFY_ID,b.build());
+  return (false);
+}

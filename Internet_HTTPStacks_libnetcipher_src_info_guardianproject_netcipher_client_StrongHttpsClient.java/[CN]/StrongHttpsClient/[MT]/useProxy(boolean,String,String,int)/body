@@ -1,0 +1,16 @@
+{
+  if (enableTor) {
+    this.proxyType=type;
+    if (type.equalsIgnoreCase(TYPE_SOCKS)) {
+      proxyHost=new HttpHost(host,port);
+    }
+ else {
+      proxyHost=new HttpHost(host,port,type);
+      getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,proxyHost);
+    }
+  }
+ else {
+    getParams().removeParameter(ConnRoutePNames.DEFAULT_PROXY);
+    proxyHost=null;
+  }
+}

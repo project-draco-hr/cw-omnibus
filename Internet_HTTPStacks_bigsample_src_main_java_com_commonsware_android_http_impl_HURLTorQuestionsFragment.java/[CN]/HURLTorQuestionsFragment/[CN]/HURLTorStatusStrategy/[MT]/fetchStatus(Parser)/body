@@ -1,0 +1,18 @@
+{
+  new StrongConnectionBuilder(builder).connectTo(TOR_CHECK_URL).build(new StrongBuilderCallbackBase<HttpURLConnection>(){
+    @Override public void onConnected(    HttpURLConnection c){
+      try {
+        InputStream in=c.getInputStream();
+        BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+        parser.parse(reader);
+      }
+ catch (      IOException e) {
+        e.printStackTrace();
+      }
+ finally {
+        c.disconnect();
+      }
+    }
+  }
+);
+}

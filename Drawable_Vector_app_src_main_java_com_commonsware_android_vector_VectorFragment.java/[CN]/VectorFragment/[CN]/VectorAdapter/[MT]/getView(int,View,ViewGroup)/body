@@ -1,0 +1,8 @@
+{
+  View row=super.getView(position,convertView,parent);
+  ImageView icon=(ImageView)row.findViewById(R.id.icon);
+  TextView title=(TextView)row.findViewById(R.id.title);
+  applyIcon(icon,getItem(position));
+  title.setText(getResources().getResourceName(getItem(position)));
+  return (row);
+}

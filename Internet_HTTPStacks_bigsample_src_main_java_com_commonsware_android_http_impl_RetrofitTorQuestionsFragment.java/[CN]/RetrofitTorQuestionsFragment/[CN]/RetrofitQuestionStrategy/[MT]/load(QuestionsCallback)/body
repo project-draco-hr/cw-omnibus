@@ -1,0 +1,18 @@
+{
+  builder.build(new StrongBuilderCallbackBase<OkHttpClient>(){
+    @Override public void onConnected(    OkHttpClient client){
+      RestAdapter restAdapter=new RestAdapter.Builder().setClient(new Ok3Client(client)).setEndpoint("https://api.stackexchange.com").build();
+      StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+      so.questions(new Callback<SOQuestions>(){
+        @Override public void success(        SOQuestions soQuestions,        Response response){
+          callback.onLoaded(soQuestions);
+        }
+        @Override public void failure(        RetrofitError error){
+          Log.e(getClass().getSimpleName(),"Error trying to load questions",error);
+        }
+      }
+);
+    }
+  }
+);
+}

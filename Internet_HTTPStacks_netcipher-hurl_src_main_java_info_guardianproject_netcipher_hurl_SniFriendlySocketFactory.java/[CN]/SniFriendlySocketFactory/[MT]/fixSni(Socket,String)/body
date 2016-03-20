@@ -1,0 +1,14 @@
+{
+  if (socket instanceof DelegateSSLSocket) {
+    ((DelegateSSLSocket)socket)._setHostname(host);
+  }
+ else   if (socket instanceof SSLSocket) {
+    try {
+      socket.getClass().getMethod("setHostname",String.class).invoke(socket,host);
+    }
+ catch (    Exception e) {
+      throw new IllegalStateException("Could not enable SNI",e);
+    }
+  }
+  return (socket);
+}

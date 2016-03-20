@@ -1,0 +1,4 @@
+{
+  Toast.makeText(this,R.string.msg_timeout,Toast.LENGTH_LONG).show();
+  finish();
+}

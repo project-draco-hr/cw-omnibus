@@ -1,0 +1,4 @@
+{
+  this.ctxt=ctxt.getApplicationContext();
+  this.handler=new Handler(Looper.getMainLooper());
+}

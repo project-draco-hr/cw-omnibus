@@ -1,0 +1,25 @@
+{
+  Thread thread=new Thread(){
+    public void run(){
+      boolean isSocksOpen=false;
+      boolean isHttpOpen=false;
+      int socksPort=DEFAULT_SOCKS_PORT;
+      int httpPort=DEFAULT_HTTP_PORT;
+      for (int i=0; i < 10 && (!isSocksOpen); i++)       isSocksOpen=isPortOpen("127.0.0.1",socksPort++,100);
+      for (int i=0; i < 10 && (!isHttpOpen); i++)       isHttpOpen=isPortOpen("127.0.0.1",httpPort++,100);
+      Intent intent=new Intent(ProxyHelper.ACTION_STATUS);
+      intent.putExtra(EXTRA_PACKAGE_NAME,PACKAGE_NAME);
+      if (isSocksOpen && isHttpOpen) {
+        intent.putExtra(EXTRA_STATUS,STATUS_ON);
+        intent.putExtra(EXTRA_PROXY_PORT_HTTP,httpPort - 1);
+        intent.putExtra(EXTRA_PROXY_PORT_SOCKS,socksPort - 1);
+      }
+ else {
+        intent.putExtra(EXTRA_STATUS,STATUS_OFF);
+      }
+      context.sendBroadcast(intent);
+    }
+  }
+;
+  thread.start();
+}

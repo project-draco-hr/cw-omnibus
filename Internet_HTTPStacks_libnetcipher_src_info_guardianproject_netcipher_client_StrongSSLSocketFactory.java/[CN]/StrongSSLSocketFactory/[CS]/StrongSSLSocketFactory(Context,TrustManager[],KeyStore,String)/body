@@ -1,0 +1,7 @@
+{
+  super(keyStore);
+  SSLContext sslContext=SSLContext.getInstance("TLS");
+  KeyManager[] km=createKeyManagers(keyStore,keyStorePassword);
+  sslContext.init(km,trustManagers,new SecureRandom());
+  mFactory=sslContext.getSocketFactory();
+}

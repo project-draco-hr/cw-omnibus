@@ -1,0 +1,12 @@
+{
+  Proxy result=null;
+  if (status.getStringExtra(OrbotHelper.EXTRA_STATUS).equals(OrbotHelper.STATUS_ON)) {
+    if (proxyType == Proxy.Type.SOCKS) {
+      result=new Proxy(Proxy.Type.SOCKS,new InetSocketAddress(PROXY_HOST,getSocksPort(status)));
+    }
+ else     if (proxyType == Proxy.Type.HTTP) {
+      result=new Proxy(Proxy.Type.HTTP,new InetSocketAddress(PROXY_HOST,getHttpPort(status)));
+    }
+  }
+  return (result);
+}

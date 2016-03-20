@@ -1,0 +1,15 @@
+{
+  Context ctxt=InstrumentationRegistry.getTargetContext();
+  StrongConnectionBuilder builder=StrongConnectionBuilder.forMaxSecurity(ctxt);
+  testStrongBuilder(builder.connectTo(TEST_URL),new TestBuilderCallback<HttpURLConnection>(){
+    @Override protected void loadResult(    HttpURLConnection c) throws Exception {
+      try {
+        testResult=slurp(c.getInputStream());
+      }
+  finally {
+        c.disconnect();
+      }
+    }
+  }
+);
+}

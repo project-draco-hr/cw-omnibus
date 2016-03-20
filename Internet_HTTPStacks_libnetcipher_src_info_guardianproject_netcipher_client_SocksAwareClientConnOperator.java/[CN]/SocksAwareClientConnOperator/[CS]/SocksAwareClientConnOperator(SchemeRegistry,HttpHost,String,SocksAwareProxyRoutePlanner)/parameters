@@ -1,0 +1,4 @@
+SchemeRegistry registry
+HttpHost proxyHost
+String proxyType
+SocksAwareProxyRoutePlanner proxyRoutePlanner

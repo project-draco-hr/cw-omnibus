@@ -1,0 +1,3 @@
+{
+  client=HttpClientBuilder.create().setConnectionManager(new PoolingHttpClientConnectionManager()).build();
+}

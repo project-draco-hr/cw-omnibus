@@ -1,0 +1,7 @@
+{
+  handler.postDelayed(onInstallTimeout,installTimeoutMs);
+  IntentFilter filter=new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
+  filter.addDataScheme("package");
+  ctxt.registerReceiver(orbotInstallReceiver,filter);
+  host.startActivity(OrbotHelper.getOrbotInstallIntent(ctxt));
+}

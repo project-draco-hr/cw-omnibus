@@ -1,0 +1,7 @@
+{
+  boolean oldAccessibleValue=field.isAccessible();
+  field.setAccessible(true);
+  Object result=field.get(classInstance);
+  field.setAccessible(oldAccessibleValue);
+  return result;
+}

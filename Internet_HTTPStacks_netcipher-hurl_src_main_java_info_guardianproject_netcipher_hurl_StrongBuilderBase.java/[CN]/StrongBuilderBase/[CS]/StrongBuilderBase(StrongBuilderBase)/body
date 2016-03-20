@@ -1,0 +1,6 @@
+{
+  this.ctxt=original.ctxt;
+  this.proxyType=original.proxyType;
+  this.sslContext=original.sslContext;
+  this.useWeakCiphers=original.useWeakCiphers;
+}

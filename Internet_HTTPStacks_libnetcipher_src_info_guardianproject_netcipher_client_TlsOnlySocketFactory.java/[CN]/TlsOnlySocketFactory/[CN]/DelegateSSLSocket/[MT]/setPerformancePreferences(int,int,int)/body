@@ -1,0 +1,3 @@
+{
+  delegate.setPerformancePreferences(connectionTime,latency,bandwidth);
+}

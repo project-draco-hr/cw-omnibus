@@ -1,0 +1,19 @@
+{
+  builder.build(new StrongBuilderCallbackBase<OkHttpClient>(){
+    @Override public void onConnected(    OkHttpClient client){
+      Request request=new Request.Builder().url(SO_URL).build();
+      try {
+        Response response=client.newCall(request).execute();
+        if (response.isSuccessful()) {
+          Reader in=response.body().charStream();
+          BufferedReader reader=new BufferedReader(in);
+          parser.parse(reader);
+        }
+      }
+ catch (      IOException e) {
+        onConnectionException(e);
+      }
+    }
+  }
+);
+}

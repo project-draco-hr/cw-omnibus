@@ -1,0 +1,4 @@
+{
+  getParams().removeParameter(ConnRoutePNames.DEFAULT_PROXY);
+  proxyHost=null;
+}

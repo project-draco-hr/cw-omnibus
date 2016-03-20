@@ -1,0 +1,4 @@
+{
+  this.ctxt=ctxt.getApplicationContext();
+  netCipher=new Simple(ctxt);
+}

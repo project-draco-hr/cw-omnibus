@@ -1,0 +1,9 @@
+{
+  GsonRequest<SOQuestions> request=new GsonRequest<SOQuestions>(SO_URL,SOQuestions.class,null,new Response.Listener<SOQuestions>(){
+    @Override public void onResponse(    SOQuestions response){
+      callback.onLoaded(response);
+    }
+  }
+,this);
+  queue.add(request);
+}

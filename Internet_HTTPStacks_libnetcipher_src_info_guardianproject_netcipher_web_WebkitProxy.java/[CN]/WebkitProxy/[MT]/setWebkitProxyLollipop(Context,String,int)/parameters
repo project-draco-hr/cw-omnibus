@@ -1,0 +1,3 @@
+Context appContext
+String host
+int port

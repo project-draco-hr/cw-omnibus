@@ -1,0 +1,11 @@
+{
+  HttpURLConnection c=(HttpURLConnection)new URL(SO_URL).openConnection();
+  try {
+    InputStream in=c.getInputStream();
+    BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+    parser.parse(reader);
+  }
+  finally {
+    c.disconnect();
+  }
+}

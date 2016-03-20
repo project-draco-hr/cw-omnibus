@@ -1,0 +1,11 @@
+{
+  HttpURLConnection result;
+  if (proxy == null) {
+    result=(HttpURLConnection)url.openConnection();
+  }
+ else {
+    result=(HttpURLConnection)url.openConnection(proxy);
+  }
+  result.setInstanceFollowRedirects(HttpURLConnection.getFollowRedirects());
+  return (result);
+}

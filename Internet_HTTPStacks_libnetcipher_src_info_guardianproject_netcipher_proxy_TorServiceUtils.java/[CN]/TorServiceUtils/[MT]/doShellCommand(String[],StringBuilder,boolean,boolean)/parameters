@@ -1,0 +1,4 @@
+String[] cmds
+StringBuilder log
+boolean runAsRoot
+boolean waitFor

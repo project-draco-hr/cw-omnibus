@@ -1,0 +1,12 @@
+{
+  if (orbot.isInstalled()) {
+    try {
+      strategy=buildStatusStrategy();
+      strategy.checkStatus(this);
+    }
+ catch (    Exception e) {
+      Toast.makeText(getActivity(),"Exception trying to build strategy",Toast.LENGTH_LONG).show();
+      e.printStackTrace();
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  proxyType=Proxy.Type.SOCKS;
+  return ((T)this);
+}

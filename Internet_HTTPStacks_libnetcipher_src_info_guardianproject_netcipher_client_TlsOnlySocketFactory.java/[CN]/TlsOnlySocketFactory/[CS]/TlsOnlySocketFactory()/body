@@ -1,0 +1,4 @@
+{
+  this.delegate=HttpsURLConnection.getDefaultSSLSocketFactory();
+  this.compatible=false;
+}

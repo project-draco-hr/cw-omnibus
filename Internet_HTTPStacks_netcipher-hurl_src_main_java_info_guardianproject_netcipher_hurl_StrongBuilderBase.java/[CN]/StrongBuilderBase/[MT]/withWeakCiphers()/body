@@ -1,0 +1,4 @@
+{
+  useWeakCiphers=true;
+  return ((T)this);
+}

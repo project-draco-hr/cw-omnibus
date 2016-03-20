@@ -1,0 +1,16 @@
+{
+  URLConnection result;
+  Proxy proxy=buildProxy(status);
+  if (proxy == null) {
+    result=url.openConnection();
+  }
+ else {
+    result=url.openConnection(proxy);
+  }
+  if (result instanceof HttpsURLConnection && sslContext != null) {
+    SSLSocketFactory tlsOnly=buildSocketFactory();
+    HttpsURLConnection https=(HttpsURLConnection)result;
+    https.setSSLSocketFactory(tlsOnly);
+  }
+  return ((HttpURLConnection)result);
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    return isOnionAddress(new URL(urlString));
+  }
+ catch (  MalformedURLException e) {
+    return false;
+  }
+}

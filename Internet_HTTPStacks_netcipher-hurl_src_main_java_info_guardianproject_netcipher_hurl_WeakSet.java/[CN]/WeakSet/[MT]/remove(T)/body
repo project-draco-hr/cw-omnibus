@@ -1,0 +1,10 @@
+{
+  final Iterator<T> iterator=iterator();
+  while (iterator.hasNext()) {
+    if (iterator.next() == item) {
+      iterator.remove();
+      return (true);
+    }
+  }
+  return (false);
+}

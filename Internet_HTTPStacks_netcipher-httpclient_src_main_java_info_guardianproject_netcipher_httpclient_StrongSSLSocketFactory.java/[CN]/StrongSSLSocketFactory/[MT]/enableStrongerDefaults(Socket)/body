@@ -1,0 +1,12 @@
+{
+  if (isSecure(socket)) {
+    SSLSocket sslSocket=(SSLSocket)socket;
+    readSSLParameters(sslSocket);
+    if (mEnableStongerDefaultProtocalVersion && mProtocols != null) {
+      sslSocket.setEnabledProtocols(mProtocols);
+    }
+    if (mEnableStongerDefaultSSLCipherSuite && mCipherSuites != null) {
+      sslSocket.setEnabledCipherSuites(mCipherSuites);
+    }
+  }
+}

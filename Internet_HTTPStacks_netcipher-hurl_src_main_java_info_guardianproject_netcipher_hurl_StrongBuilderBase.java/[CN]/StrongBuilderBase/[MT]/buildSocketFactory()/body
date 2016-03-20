@@ -1,0 +1,4 @@
+{
+  SSLSocketFactory result=new SniFriendlySocketFactory(sslContext.getSocketFactory(),useWeakCiphers);
+  return (result);
+}

@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  try {
+    StrongConnectionBuilder.forMaxSecurity(this).connectTo(SO_URL).build(this);
+  }
+ catch (  Exception e) {
+    Toast.makeText(this,R.string.msg_crash,Toast.LENGTH_LONG).show();
+    Log.e(getClass().getSimpleName(),"Exception loading SO questions",e);
+    finish();
+  }
+}

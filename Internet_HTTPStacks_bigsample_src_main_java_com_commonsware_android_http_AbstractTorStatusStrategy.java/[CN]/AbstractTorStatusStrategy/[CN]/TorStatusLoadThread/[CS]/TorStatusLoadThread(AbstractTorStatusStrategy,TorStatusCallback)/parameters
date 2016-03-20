@@ -1,0 +1,2 @@
+AbstractTorStatusStrategy strategy
+TorStatusCallback callback

@@ -1,0 +1,22 @@
+{
+  try {
+    Class proxyPropertiesClass=Class.forName("android.net.ProxyProperties");
+    if (proxyPropertiesClass != null) {
+      Constructor c=proxyPropertiesClass.getConstructor(String.class,Integer.TYPE,String.class);
+      if (c != null) {
+        c.setAccessible(true);
+        Object properties=c.newInstance(host,port,null);
+        Intent intent=new Intent(android.net.Proxy.PROXY_CHANGE_ACTION);
+        intent.putExtra("proxy",(Parcelable)properties);
+        ctx.sendBroadcast(intent);
+      }
+    }
+  }
+ catch (  Exception e) {
+    Log.e("ProxySettings","Exception sending Intent ",e);
+  }
+catch (  Error e) {
+    Log.e("ProxySettings","Exception sending Intent ",e);
+  }
+  return false;
+}

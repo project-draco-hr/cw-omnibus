@@ -1,0 +1,4 @@
+{
+  if (mProxyHost != null && mProxyType.equalsIgnoreCase("socks"))   throw new RuntimeException("operation not supported");
+ else   super.updateSecureConnection(conn,target,context,params);
+}

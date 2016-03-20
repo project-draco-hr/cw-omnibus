@@ -1,0 +1,7 @@
+{
+  ComponentName cn=new ComponentName(ctxt,DemoJobService.class);
+  JobInfo.TriggerContentUri trigger=new JobInfo.TriggerContentUri(CONTENT_URI,JobInfo.TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS);
+  JobInfo.Builder b=new JobInfo.Builder(ME_MYSELF_AND_I,cn).addTriggerContentUri(trigger);
+  JobScheduler jobScheduler=(JobScheduler)ctxt.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+  jobScheduler.schedule(b.build());
+}

@@ -1,0 +1,6 @@
+{
+  super(Method.GET,url,errorListener);
+  this.clazz=clazz;
+  this.headers=headers;
+  this.listener=listener;
+}

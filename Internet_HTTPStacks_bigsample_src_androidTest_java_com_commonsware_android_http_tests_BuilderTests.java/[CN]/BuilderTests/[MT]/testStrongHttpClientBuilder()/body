@@ -1,0 +1,11 @@
+{
+  Context ctxt=InstrumentationRegistry.getTargetContext();
+  StrongHttpClientBuilder builder=StrongHttpClientBuilder.forMaxSecurity(ctxt);
+  testStrongBuilder(builder,new TestBuilderCallback<HttpClient>(){
+    @Override protected void loadResult(    HttpClient client) throws Exception {
+      HttpGet get=new HttpGet(TEST_URL);
+      testResult=client.execute(get,new BasicResponseHandler());
+    }
+  }
+);
+}

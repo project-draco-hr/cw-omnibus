@@ -1,0 +1,4 @@
+{
+  installTimeoutMs=timeoutMs;
+  return (this);
+}

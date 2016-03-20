@@ -1,0 +1,6 @@
+{
+  Socket result;
+  result=super.createLayeredSocket(socket,target,port,context);
+  enableStrongerDefaults(result);
+  return (result);
+}

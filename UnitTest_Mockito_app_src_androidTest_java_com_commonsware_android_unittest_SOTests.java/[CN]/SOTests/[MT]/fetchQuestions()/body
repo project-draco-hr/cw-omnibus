@@ -1,0 +1,21 @@
+{
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("https://api.stackexchange.com").build();
+  StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+  so.questions("android",new Callback<SOQuestions>(){
+    @Override public void success(    SOQuestions soQuestions,    Response response){
+      questions=soQuestions;
+      responseLatch.countDown();
+    }
+    @Override public void failure(    RetrofitError error){
+      responseLatch.countDown();
+    }
+  }
+);
+  responseLatch.await();
+  Assert.assertNotNull(questions);
+  Assert.assertEquals(30,questions.items.size());
+  for (  Item item : questions.items) {
+    Assert.assertNotNull(item.title);
+    Assert.assertNotNull(item.link);
+  }
+}

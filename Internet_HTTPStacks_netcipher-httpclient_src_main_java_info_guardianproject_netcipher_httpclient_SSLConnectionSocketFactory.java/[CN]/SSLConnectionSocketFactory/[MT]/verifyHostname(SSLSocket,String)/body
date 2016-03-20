@@ -1,0 +1,31 @@
+{
+  try {
+    SSLSession session=sslsock.getSession();
+    if (session == null) {
+      final InputStream in=sslsock.getInputStream();
+      in.available();
+      session=sslsock.getSession();
+      if (session == null) {
+        sslsock.startHandshake();
+        session=sslsock.getSession();
+      }
+    }
+    if (session == null) {
+      throw new SSLHandshakeException("SSL session not available");
+    }
+    if (!this.hostnameVerifier.verify(hostname,session)) {
+      final Certificate[] certs=session.getPeerCertificates();
+      final X509Certificate x509=(X509Certificate)certs[0];
+      final X500Principal x500Principal=x509.getSubjectX500Principal();
+      throw new SSLPeerUnverifiedException("Host name '" + hostname + "' does not match "+ "the certificate subject provided by the peer ("+ x500Principal.toString()+ ")");
+    }
+  }
+ catch (  final IOException iox) {
+    try {
+      sslsock.close();
+    }
+ catch (    final Exception x) {
+    }
+    throw iox;
+  }
+}

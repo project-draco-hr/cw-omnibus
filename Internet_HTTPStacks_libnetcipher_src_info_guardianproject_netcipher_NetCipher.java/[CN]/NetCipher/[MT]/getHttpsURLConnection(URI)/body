@@ -1,0 +1,4 @@
+{
+  if (TextUtils.equals(uri.getScheme(),"https"))   return getHttpsURLConnection(uri.toURL(),false);
+ else   return getHttpsURLConnection(uri.toString());
+}

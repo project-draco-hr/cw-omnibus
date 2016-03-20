@@ -1,0 +1,4 @@
+{
+  routePlanner=proxyRoutePlanner;
+  setRoutePlanner(proxyRoutePlanner);
+}

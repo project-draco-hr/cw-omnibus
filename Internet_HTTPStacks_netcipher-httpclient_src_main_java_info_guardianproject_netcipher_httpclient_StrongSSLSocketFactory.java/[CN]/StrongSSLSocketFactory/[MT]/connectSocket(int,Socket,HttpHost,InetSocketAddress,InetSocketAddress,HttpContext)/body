@@ -1,0 +1,3 @@
+{
+  return (super.connectSocket(connectTimeout,socket,host,remoteAddress,localAddress,context));
+}

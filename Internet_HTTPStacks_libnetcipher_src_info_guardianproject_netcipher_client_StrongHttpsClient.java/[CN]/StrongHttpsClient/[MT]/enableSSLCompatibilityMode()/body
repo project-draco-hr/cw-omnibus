@@ -1,0 +1,4 @@
+{
+  sFactory.setEnableStongerDefaultProtocalVersion(false);
+  sFactory.setEnableStongerDefaultSSLCipherSuite(false);
+}

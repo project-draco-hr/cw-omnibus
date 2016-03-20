@@ -1,0 +1,4 @@
+Context context
+TrustManager[] trustManagers
+KeyStore keyStore
+String keyStorePassword

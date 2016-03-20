@@ -1,0 +1,3 @@
+{
+  return (fixSni(super.createSocket(s,host,port,autoClose),host));
+}

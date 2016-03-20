@@ -1,0 +1,6 @@
+{
+  super.onCreateOptionsMenu(menu,inflater);
+  inflater.inflate(R.menu.actions,menu);
+  orbotItem=menu.findItem(R.id.orbot);
+  orbotItem.setVisible(!orbot.isInstalled());
+}

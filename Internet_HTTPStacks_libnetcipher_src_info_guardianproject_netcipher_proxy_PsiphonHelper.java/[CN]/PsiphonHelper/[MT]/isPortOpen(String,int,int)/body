@@ -1,0 +1,16 @@
+{
+  try {
+    Socket socket=new Socket();
+    socket.connect(new InetSocketAddress(ip,port),timeout);
+    socket.close();
+    return true;
+  }
+ catch (  ConnectException ce) {
+    ce.printStackTrace();
+    return false;
+  }
+catch (  Exception ex) {
+    ex.printStackTrace();
+    return false;
+  }
+}

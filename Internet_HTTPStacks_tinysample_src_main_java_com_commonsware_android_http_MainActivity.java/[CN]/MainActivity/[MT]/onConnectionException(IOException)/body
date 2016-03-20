@@ -1,0 +1,5 @@
+{
+  Toast.makeText(this,R.string.msg_crash,Toast.LENGTH_LONG).show();
+  Log.e(getClass().getSimpleName(),"Exception loading SO questions",e);
+  finish();
+}

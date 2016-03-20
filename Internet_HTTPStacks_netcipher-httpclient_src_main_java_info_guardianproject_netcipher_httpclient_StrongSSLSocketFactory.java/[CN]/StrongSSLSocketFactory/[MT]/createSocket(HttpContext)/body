@@ -1,0 +1,11 @@
+{
+  Socket result;
+  if (socksProxy == null) {
+    result=super.createSocket(context);
+  }
+ else {
+    result=new Socket(socksProxy);
+  }
+  enableStrongerDefaults(result);
+  return (result);
+}

@@ -1,0 +1,3 @@
+{
+  return (Volley.newRequestQueue(ctxt,new StrongHurlStack(buildSocketFactory(),buildProxy(status))));
+}

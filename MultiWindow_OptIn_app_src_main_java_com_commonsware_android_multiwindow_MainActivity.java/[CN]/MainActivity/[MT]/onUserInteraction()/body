@@ -1,0 +1,4 @@
+{
+  super.onUserInteraction();
+  adapter.add(new Event("onUserInteraction()"));
+}

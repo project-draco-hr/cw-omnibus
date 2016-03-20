@@ -1,0 +1,4 @@
+{
+  netCipher.withSocksProxy();
+  return (this);
+}

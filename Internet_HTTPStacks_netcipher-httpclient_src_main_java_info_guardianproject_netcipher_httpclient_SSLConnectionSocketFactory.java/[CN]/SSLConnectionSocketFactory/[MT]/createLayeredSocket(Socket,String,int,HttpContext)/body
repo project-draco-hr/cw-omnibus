@@ -1,0 +1,39 @@
+{
+  final SSLSocket sslsock=(SSLSocket)this.socketfactory.createSocket(socket,target,port,true);
+  if (supportedProtocols != null) {
+    sslsock.setEnabledProtocols(supportedProtocols);
+  }
+ else {
+    final String[] allProtocols=sslsock.getEnabledProtocols();
+    final List<String> enabledProtocols=new ArrayList<String>(allProtocols.length);
+    for (    String protocol : allProtocols) {
+      if (!protocol.startsWith("SSL")) {
+        enabledProtocols.add(protocol);
+      }
+    }
+    if (!enabledProtocols.isEmpty()) {
+      sslsock.setEnabledProtocols(enabledProtocols.toArray(new String[enabledProtocols.size()]));
+    }
+  }
+  if (supportedCipherSuites != null) {
+    sslsock.setEnabledCipherSuites(supportedCipherSuites);
+  }
+  prepareSocket(sslsock);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+    if (Log.isLoggable(TAG,Log.DEBUG)) {
+      Log.d(TAG,"Enabling SNI for " + target);
+    }
+    try {
+      Method method=sslsock.getClass().getMethod("setHostname",String.class);
+      method.invoke(sslsock,target);
+    }
+ catch (    Exception ex) {
+      if (Log.isLoggable(TAG,Log.DEBUG)) {
+        Log.d(TAG,"SNI configuration failed",ex);
+      }
+    }
+  }
+  sslsock.startHandshake();
+  verifyHostname(sslsock,target);
+  return sslsock;
+}

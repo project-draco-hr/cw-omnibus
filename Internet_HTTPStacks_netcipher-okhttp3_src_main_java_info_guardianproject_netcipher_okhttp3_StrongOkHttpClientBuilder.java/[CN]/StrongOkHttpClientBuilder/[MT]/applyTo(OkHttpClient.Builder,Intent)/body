@@ -1,0 +1,3 @@
+{
+  return (builder.sslSocketFactory(buildSocketFactory()).proxy(buildProxy(status)));
+}

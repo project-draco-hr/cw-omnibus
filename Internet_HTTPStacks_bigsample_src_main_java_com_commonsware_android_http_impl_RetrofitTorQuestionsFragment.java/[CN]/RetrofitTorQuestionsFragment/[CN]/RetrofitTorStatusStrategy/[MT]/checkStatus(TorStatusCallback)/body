@@ -1,0 +1,18 @@
+{
+  builder.build(new StrongBuilderCallbackBase<OkHttpClient>(){
+    @Override public void onConnected(    OkHttpClient client){
+      RestAdapter restAdapter=new RestAdapter.Builder().setClient(new Ok3Client(client)).setEndpoint("https://check.torproject.org").build();
+      TorStatusInterface tor=restAdapter.create(TorStatusInterface.class);
+      tor.status(new Callback<TorStatus>(){
+        @Override public void success(        TorStatus torStatus,        Response response){
+          callback.onLoaded(torStatus);
+        }
+        @Override public void failure(        RetrofitError error){
+          Log.e(getClass().getSimpleName(),"Error trying to load Tor status",error);
+        }
+      }
+);
+    }
+  }
+);
+}

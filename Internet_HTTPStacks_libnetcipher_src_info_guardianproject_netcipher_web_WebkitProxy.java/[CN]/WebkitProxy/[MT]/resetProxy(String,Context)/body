@@ -1,0 +1,12 @@
+{
+  resetSystemProperties();
+  if (Build.VERSION.SDK_INT < 14) {
+    resetProxyForGingerBread(ctx);
+  }
+ else   if (Build.VERSION.SDK_INT < 19) {
+    resetProxyForICS();
+  }
+ else {
+    resetKitKatProxy(appClass,ctx);
+  }
+}

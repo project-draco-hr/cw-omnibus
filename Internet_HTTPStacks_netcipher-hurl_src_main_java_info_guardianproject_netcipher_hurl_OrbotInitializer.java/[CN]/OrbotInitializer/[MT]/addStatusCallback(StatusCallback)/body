@@ -1,0 +1,10 @@
+{
+  statusCallbacks.add(cb);
+  if (lastStatusIntent != null) {
+    String status=lastStatusIntent.getStringExtra(OrbotHelper.EXTRA_STATUS);
+    if (status.equals(OrbotHelper.STATUS_ON)) {
+      cb.onEnabled(lastStatusIntent);
+    }
+  }
+  return (this);
+}

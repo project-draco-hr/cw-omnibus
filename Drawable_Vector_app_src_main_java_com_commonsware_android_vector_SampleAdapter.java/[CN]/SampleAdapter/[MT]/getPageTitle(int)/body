@@ -1,0 +1,6 @@
+{
+  if (position == 0) {
+    return (ctxt.getString(R.string.tab_native));
+  }
+  return (ctxt.getString(R.string.tab_compat));
+}

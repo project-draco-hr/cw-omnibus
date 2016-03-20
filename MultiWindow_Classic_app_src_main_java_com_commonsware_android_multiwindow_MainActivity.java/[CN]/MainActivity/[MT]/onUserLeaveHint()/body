@@ -1,0 +1,4 @@
+{
+  super.onUserLeaveHint();
+  adapter.add(new Event("onUserLeaveHint()"));
+}

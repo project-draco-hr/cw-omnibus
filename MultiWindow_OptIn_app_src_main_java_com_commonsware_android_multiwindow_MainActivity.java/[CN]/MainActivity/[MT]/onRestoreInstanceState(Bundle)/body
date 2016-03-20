@@ -1,0 +1,4 @@
+{
+  super.onRestoreInstanceState(savedInstanceState);
+  adapter.add(new Event("onRestoreInstanceState()"));
+}

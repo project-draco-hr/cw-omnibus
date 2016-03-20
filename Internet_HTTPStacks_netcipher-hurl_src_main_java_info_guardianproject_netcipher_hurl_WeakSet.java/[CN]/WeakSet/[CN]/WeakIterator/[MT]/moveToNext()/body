@@ -1,0 +1,9 @@
+{
+  nextItem=null;
+  while (nextItem == null && itemIterator.hasNext()) {
+    nextItem=itemIterator.next().get();
+    if (nextItem == null) {
+      remove();
+    }
+  }
+}

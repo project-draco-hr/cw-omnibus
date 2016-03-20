@@ -1,0 +1,33 @@
+{
+  doAnswer(new Answer(){
+    @Override public Object answer(    InvocationOnMock invocation) throws Throwable {
+      SOQuestions fakeQuestions=new SOQuestions();
+      fakeQuestions.items=new ArrayList<Item>();
+      Item fakeItem=new Item();
+      fakeItem.link="https://commonsware.com";
+      fakeItem.title="How Do I Fake It to Make It?";
+      fakeQuestions.items.add(fakeItem);
+      Callback<SOQuestions> realCB=(Callback<SOQuestions>)invocation.getArguments()[1];
+      realCB.success(fakeQuestions,null);
+      return (null);
+    }
+  }
+).when(mockSO).questions(eq("android"),any(Callback.class));
+  mockSO.questions("android",new Callback<SOQuestions>(){
+    @Override public void success(    SOQuestions soQuestions,    Response response){
+      questions=soQuestions;
+      responseLatch.countDown();
+    }
+    @Override public void failure(    RetrofitError error){
+      responseLatch.countDown();
+    }
+  }
+);
+  responseLatch.await();
+  Assert.assertNotNull(questions);
+  Assert.assertEquals(1,questions.items.size());
+  for (  Item item : questions.items) {
+    Assert.assertNotNull(item.title);
+    Assert.assertNotNull(item.link);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  Field f=obj.getClass().getDeclaredField(name);
+  f.setAccessible(true);
+  Object out=f.get(obj);
+  return out;
+}

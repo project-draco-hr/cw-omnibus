@@ -1,0 +1,30 @@
+{
+  StringBuilder log=new StringBuilder();
+  try {
+    File fileSU=new File("/system/app/Superuser.apk");
+    if (fileSU.exists())     return true;
+    fileSU=new File("/system/app/superuser.apk");
+    if (fileSU.exists())     return true;
+    fileSU=new File("/system/bin/su");
+    if (fileSU.exists()) {
+      String[] cmd={"su"};
+      int exitCode=TorServiceUtils.doShellCommand(cmd,log,false,true);
+      if (exitCode != 0)       return false;
+ else       return true;
+    }
+    String[] cmd={"which su"};
+    int exitCode=TorServiceUtils.doShellCommand(cmd,log,false,true);
+    if (exitCode == 0) {
+      Log.d(TAG,"root exists, but not sure about permissions");
+      return true;
+    }
+  }
+ catch (  IOException e) {
+    Log.e(TAG,"Error checking for root access",e);
+  }
+catch (  Exception e) {
+    Log.e(TAG,"Error checking for root access",e);
+  }
+  Log.e(TAG,"Could not acquire root permissions");
+  return false;
+}

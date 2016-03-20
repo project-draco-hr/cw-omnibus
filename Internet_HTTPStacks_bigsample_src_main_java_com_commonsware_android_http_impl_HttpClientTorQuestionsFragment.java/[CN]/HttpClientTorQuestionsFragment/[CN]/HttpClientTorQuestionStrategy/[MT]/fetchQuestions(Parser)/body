@@ -1,0 +1,15 @@
+{
+  builder.build(new StrongBuilderCallbackBase<HttpClient>(){
+    @Override public void onConnected(    HttpClient client){
+      HttpGet get=new HttpGet(SO_URL);
+      try {
+        String result=client.execute(get,new BasicResponseHandler());
+        parser.parse(new StringReader(result));
+      }
+ catch (      IOException e) {
+        onConnectionException(e);
+      }
+    }
+  }
+);
+}

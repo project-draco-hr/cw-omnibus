@@ -1,0 +1,4 @@
+{
+  proxyType=Proxy.Type.HTTP;
+  return ((T)this);
+}

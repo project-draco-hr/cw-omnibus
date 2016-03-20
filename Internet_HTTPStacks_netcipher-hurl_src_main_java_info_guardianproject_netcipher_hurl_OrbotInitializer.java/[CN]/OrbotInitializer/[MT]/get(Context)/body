@@ -1,0 +1,6 @@
+{
+  if (INSTANCE == null) {
+    INSTANCE=new OrbotInitializer(ctxt);
+  }
+  return (INSTANCE);
+}

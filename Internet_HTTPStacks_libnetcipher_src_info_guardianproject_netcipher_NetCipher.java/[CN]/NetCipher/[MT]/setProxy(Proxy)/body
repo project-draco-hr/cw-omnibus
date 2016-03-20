@@ -1,0 +1,8 @@
+{
+  if (proxy != null && NetCipher.proxy == ORBOT_HTTP_PROXY) {
+    Log.w(TAG,"useTor is enabled, ignoring new proxy settings!");
+  }
+ else {
+    NetCipher.proxy=proxy;
+  }
+}

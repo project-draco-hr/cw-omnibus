@@ -1,0 +1,5 @@
+{
+  TorStatus result=new Gson().fromJson(reader,TorStatus.class);
+  reader.close();
+  callback.onLoaded(result);
+}

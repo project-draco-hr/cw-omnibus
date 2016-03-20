@@ -1,0 +1,8 @@
+{
+  return new ThreadSafeClientConnManager(getParams(),mRegistry){
+    @Override protected ClientConnectionOperator createConnectionOperator(    SchemeRegistry schreg){
+      return new SocksAwareClientConnOperator(schreg,proxyHost,proxyType,routePlanner);
+    }
+  }
+;
+}

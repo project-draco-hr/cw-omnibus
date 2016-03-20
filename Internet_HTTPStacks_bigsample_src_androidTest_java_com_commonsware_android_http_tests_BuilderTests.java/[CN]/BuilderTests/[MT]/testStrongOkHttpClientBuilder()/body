@@ -1,0 +1,11 @@
+{
+  Context ctxt=InstrumentationRegistry.getTargetContext();
+  StrongOkHttpClientBuilder builder=StrongOkHttpClientBuilder.forMaxSecurity(ctxt);
+  testStrongBuilder(builder,new TestBuilderCallback<OkHttpClient>(){
+    @Override protected void loadResult(    OkHttpClient client) throws Exception {
+      Request request=new Request.Builder().url(TEST_URL).build();
+      testResult=client.newCall(request).execute().body().string();
+    }
+  }
+);
+}

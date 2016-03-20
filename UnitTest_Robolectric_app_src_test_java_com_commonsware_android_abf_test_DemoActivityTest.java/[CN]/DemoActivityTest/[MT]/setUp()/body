@@ -1,0 +1,4 @@
+{
+  ActionBarFragmentActivity activity=Robolectric.setupActivity(ActionBarFragmentActivity.class);
+  list=(ListView)activity.findViewById(android.R.id.list);
+}

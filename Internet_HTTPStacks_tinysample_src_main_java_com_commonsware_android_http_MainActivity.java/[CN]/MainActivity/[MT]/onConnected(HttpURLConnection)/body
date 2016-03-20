@@ -1,0 +1,25 @@
+{
+  new Thread(){
+    @Override public void run(){
+      try {
+        InputStream in=conn.getInputStream();
+        BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+        final SOQuestions result=new Gson().fromJson(reader,SOQuestions.class);
+        runOnUiThread(new Runnable(){
+          @Override public void run(){
+            setListAdapter(new ItemsAdapter(result.items));
+          }
+        }
+);
+        reader.close();
+      }
+ catch (      IOException e) {
+        onConnectionException(e);
+      }
+ finally {
+        conn.disconnect();
+      }
+    }
+  }
+.start();
+}

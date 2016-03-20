@@ -1,0 +1,5 @@
+{
+  Field f=obj.getClass().getDeclaredField(name);
+  f.setAccessible(true);
+  f.set(obj,value);
+}

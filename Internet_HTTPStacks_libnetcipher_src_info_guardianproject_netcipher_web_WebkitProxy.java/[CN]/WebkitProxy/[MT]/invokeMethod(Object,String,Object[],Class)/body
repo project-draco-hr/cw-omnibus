@@ -1,0 +1,13 @@
+{
+  Object out=null;
+  Class c=object instanceof Class ? (Class)object : object.getClass();
+  if (types != null) {
+    Method method=c.getMethod(methodName,types);
+    out=method.invoke(object,params);
+  }
+ else {
+    Method method=c.getMethod(methodName);
+    out=method.invoke(object);
+  }
+  return out;
+}

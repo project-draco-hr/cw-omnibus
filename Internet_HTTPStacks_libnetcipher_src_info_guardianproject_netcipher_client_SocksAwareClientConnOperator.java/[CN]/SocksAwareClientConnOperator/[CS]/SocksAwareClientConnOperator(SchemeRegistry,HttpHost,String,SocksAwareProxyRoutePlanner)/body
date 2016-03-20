@@ -1,0 +1,6 @@
+{
+  super(registry);
+  mProxyHost=proxyHost;
+  mProxyType=proxyType;
+  mRoutePlanner=proxyRoutePlanner;
+}

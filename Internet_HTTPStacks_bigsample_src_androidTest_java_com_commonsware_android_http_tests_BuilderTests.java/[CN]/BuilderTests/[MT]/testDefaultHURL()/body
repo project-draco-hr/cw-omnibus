@@ -1,0 +1,3 @@
+{
+  testHURL((HttpURLConnection)new URL(TEST_URL).openConnection());
+}

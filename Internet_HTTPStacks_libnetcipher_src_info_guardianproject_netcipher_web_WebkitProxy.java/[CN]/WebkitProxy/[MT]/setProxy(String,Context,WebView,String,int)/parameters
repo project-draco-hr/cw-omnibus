@@ -1,0 +1,5 @@
+String appClass
+Context ctx
+WebView wView
+String host
+int port

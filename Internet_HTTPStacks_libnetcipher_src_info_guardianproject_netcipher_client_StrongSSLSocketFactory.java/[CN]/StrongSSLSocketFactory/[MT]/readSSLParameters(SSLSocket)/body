@@ -1,0 +1,18 @@
+{
+  List<String> protocolsToEnable=new ArrayList<String>();
+  List<String> supportedProtocols=Arrays.asList(sslSocket.getSupportedProtocols());
+  for (  String enabledProtocol : StrongConstants.ENABLED_PROTOCOLS) {
+    if (supportedProtocols.contains(enabledProtocol)) {
+      protocolsToEnable.add(enabledProtocol);
+    }
+  }
+  this.mProtocols=protocolsToEnable.toArray(new String[protocolsToEnable.size()]);
+  List<String> cipherSuitesToEnable=new ArrayList<String>();
+  List<String> supportedCipherSuites=Arrays.asList(sslSocket.getSupportedCipherSuites());
+  for (  String enabledCipherSuite : StrongConstants.ENABLED_CIPHERS) {
+    if (supportedCipherSuites.contains(enabledCipherSuite)) {
+      cipherSuitesToEnable.add(enabledCipherSuite);
+    }
+  }
+  this.mCipherSuites=cipherSuitesToEnable.toArray(new String[cipherSuitesToEnable.size()]);
+}

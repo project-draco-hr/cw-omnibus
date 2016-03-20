@@ -1,0 +1,6 @@
+{
+  Object requestQueueObject=getRequestQueue(ctx);
+  if (requestQueueObject != null) {
+    setDeclaredField(requestQueueObject,"mProxyHost",null);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  Intent intentScan=new Intent("org.torproject.android.START_TOR");
+  intentScan.addCategory(Intent.CATEGORY_DEFAULT);
+  try {
+    activity.startActivityForResult(intentScan,REQUEST_CODE);
+    return null;
+  }
+ catch (  ActivityNotFoundException e) {
+    return showDownloadDialog(activity,stringTitle,stringMessage,stringButtonYes,stringButtonNo);
+  }
+}

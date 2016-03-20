@@ -1,0 +1,5 @@
+{
+  if (orbotItem != null) {
+    orbotItem.setVisible(false);
+  }
+}

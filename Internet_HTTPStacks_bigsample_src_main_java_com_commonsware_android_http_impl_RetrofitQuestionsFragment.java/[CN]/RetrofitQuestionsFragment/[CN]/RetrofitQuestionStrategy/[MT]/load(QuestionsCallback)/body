@@ -1,0 +1,13 @@
+{
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("https://api.stackexchange.com").build();
+  StackOverflowInterface so=restAdapter.create(StackOverflowInterface.class);
+  so.questions(new Callback<SOQuestions>(){
+    @Override public void success(    SOQuestions soQuestions,    Response response){
+      callback.onLoaded(soQuestions);
+    }
+    @Override public void failure(    RetrofitError error){
+      Log.e(getClass().getSimpleName(),"Error trying to load questions",error);
+    }
+  }
+);
+}

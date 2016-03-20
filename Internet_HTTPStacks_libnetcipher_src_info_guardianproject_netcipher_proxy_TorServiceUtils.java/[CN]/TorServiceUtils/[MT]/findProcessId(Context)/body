@@ -1,0 +1,18 @@
+{
+  String dataPath=context.getFilesDir().getParentFile().getParentFile().getAbsolutePath();
+  String command=dataPath + "/" + OrbotHelper.ORBOT_PACKAGE_NAME+ "/app_bin/tor";
+  int procId=-1;
+  try {
+    procId=findProcessIdWithPidOf(command);
+    if (procId == -1)     procId=findProcessIdWithPS(command);
+  }
+ catch (  Exception e) {
+    try {
+      procId=findProcessIdWithPS(command);
+    }
+ catch (    Exception e2) {
+      Log.e(TAG,"Unable to get proc id for command: " + URLEncoder.encode(command),e2);
+    }
+  }
+  return procId;
+}

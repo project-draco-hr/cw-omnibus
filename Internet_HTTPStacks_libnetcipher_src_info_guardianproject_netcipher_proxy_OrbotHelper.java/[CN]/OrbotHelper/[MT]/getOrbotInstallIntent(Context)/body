@@ -1,0 +1,21 @@
+{
+  final Intent intent=new Intent(Intent.ACTION_VIEW);
+  intent.setData(Uri.parse(ORBOT_MARKET_URI));
+  PackageManager pm=context.getPackageManager();
+  List<ResolveInfo> resInfos=pm.queryIntentActivities(intent,0);
+  String foundPackageName=null;
+  for (  ResolveInfo r : resInfos) {
+    Log.i("OrbotHelper","market: " + r.activityInfo.packageName);
+    if (TextUtils.equals(r.activityInfo.packageName,FDROID_PACKAGE_NAME) || TextUtils.equals(r.activityInfo.packageName,PLAY_PACKAGE_NAME)) {
+      foundPackageName=r.activityInfo.packageName;
+      break;
+    }
+  }
+  if (foundPackageName == null) {
+    intent.setData(Uri.parse(ORBOT_FDROID_URI));
+  }
+ else {
+    intent.setPackage(foundPackageName);
+  }
+  return intent;
+}

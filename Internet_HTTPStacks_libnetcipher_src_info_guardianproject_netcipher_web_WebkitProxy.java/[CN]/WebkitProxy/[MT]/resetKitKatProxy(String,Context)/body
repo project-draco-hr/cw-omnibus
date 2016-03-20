@@ -1,0 +1,3 @@
+{
+  return setKitKatProxy(appClass,appContext,null,0);
+}

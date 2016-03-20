@@ -1,0 +1,4 @@
+{
+  int procId=TorServiceUtils.findProcessId(context);
+  return (procId != -1);
+}

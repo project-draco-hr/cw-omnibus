@@ -1,0 +1,8 @@
+{
+  if (status.wasCallThroughTor) {
+    loadQuestions();
+  }
+ else {
+    Toast.makeText(getActivity(),"HTTP not going through Tor!",Toast.LENGTH_LONG).show();
+  }
+}

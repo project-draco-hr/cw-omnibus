@@ -1,0 +1,17 @@
+{
+  try {
+    HttpClient client=HttpClientBuilder.create().setConnectionManager(new PoolingHttpClientConnectionManager()).build();
+    HttpGet get=new HttpGet(SO_URL);
+    try {
+      String result=client.execute(get,new BasicResponseHandler());
+      SOQuestions questions=new Gson().fromJson(result,SOQuestions.class);
+      EventBus.getDefault().post(new QuestionsLoadedEvent(questions));
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception parsing JSON",e);
+  }
+}

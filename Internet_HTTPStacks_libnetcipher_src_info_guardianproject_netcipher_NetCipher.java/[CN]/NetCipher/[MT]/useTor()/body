@@ -1,0 +1,3 @@
+{
+  setProxy(ORBOT_HTTP_PROXY);
+}

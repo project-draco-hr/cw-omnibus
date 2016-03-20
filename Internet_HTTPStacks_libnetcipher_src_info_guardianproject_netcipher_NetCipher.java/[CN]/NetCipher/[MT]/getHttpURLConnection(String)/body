@@ -1,0 +1,3 @@
+{
+  return getHttpURLConnection(new URL(urlString));
+}

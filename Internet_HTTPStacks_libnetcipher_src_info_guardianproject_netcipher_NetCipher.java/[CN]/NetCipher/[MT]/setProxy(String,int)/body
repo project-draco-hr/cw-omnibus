@@ -1,0 +1,9 @@
+{
+  if (!TextUtils.isEmpty(host) && port > 0) {
+    InetSocketAddress isa=new InetSocketAddress(host,port);
+    setProxy(new Proxy(Proxy.Type.HTTP,isa));
+  }
+ else   if (NetCipher.proxy != ORBOT_HTTP_PROXY) {
+    setProxy(null);
+  }
+}

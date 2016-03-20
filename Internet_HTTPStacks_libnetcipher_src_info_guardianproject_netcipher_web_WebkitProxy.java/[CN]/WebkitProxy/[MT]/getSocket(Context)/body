@@ -1,0 +1,3 @@
+{
+  return getSocket(context,DEFAULT_HOST,DEFAULT_SOCKS_PORT);
+}

@@ -1,0 +1,6 @@
+{
+  View row=super.getView(position,convertView,parent);
+  TextView title=(TextView)row.findViewById(android.R.id.text1);
+  title.setText(Html.fromHtml(getItem(position).title));
+  return (row);
+}

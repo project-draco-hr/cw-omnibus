@@ -1,0 +1,31 @@
+{
+  super(delegate);
+  this.compatible=compatible;
+  if (compatible) {
+    ArrayList<String> protocols=new ArrayList<String>(Arrays.asList(delegate.getEnabledProtocols()));
+    protocols.remove("SSLv2");
+    protocols.remove("SSLv3");
+    super.setEnabledProtocols(protocols.toArray(new String[protocols.size()]));
+    ArrayList<String> enabled=new ArrayList<String>(10);
+    Pattern exclude=Pattern.compile(".*(EXPORT|NULL).*");
+    for (    String cipher : delegate.getEnabledCipherSuites()) {
+      if (!exclude.matcher(cipher).matches()) {
+        enabled.add(cipher);
+      }
+    }
+    super.setEnabledCipherSuites(enabled.toArray(new String[enabled.size()]));
+    return;
+  }
+  ArrayList<String> protocols=new ArrayList<String>(Arrays.asList(delegate.getSupportedProtocols()));
+  protocols.remove("SSLv2");
+  protocols.remove("SSLv3");
+  super.setEnabledProtocols(protocols.toArray(new String[protocols.size()]));
+  ArrayList<String> enabledCiphers=new ArrayList<String>(10);
+  Pattern exclude=Pattern.compile(".*(_DES|DH_|DSS|EXPORT|MD5|NULL|RC4).*");
+  for (  String cipher : delegate.getSupportedCipherSuites()) {
+    if (!exclude.matcher(cipher).matches()) {
+      enabledCiphers.add(cipher);
+    }
+  }
+  super.setEnabledCipherSuites(enabledCiphers.toArray(new String[enabledCiphers.size()]));
+}
