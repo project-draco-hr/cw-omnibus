@@ -1,8 +1,5 @@
 {
   super.onCreate(icicle);
-  ImageLoaderConfiguration ilConfig=new ImageLoaderConfiguration.Builder(this).build();
-  imageLoader=ImageLoader.getInstance();
-  imageLoader.init(ilConfig);
   getLoaderManager().initLoader(0,null,this);
   setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
   setAdapter(new VideoAdapter());

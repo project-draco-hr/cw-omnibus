@@ -2,7 +2,7 @@
   BaseVideoController result=null;
 switch (viewType) {
 case 0:
-    result=new VideoThumbnailController(getLayoutInflater().inflate(R.layout.thumbnail,parent,false),imageLoader);
+    result=new VideoThumbnailController(getLayoutInflater().inflate(R.layout.thumbnail,parent,false));
   break;
 case 1:
 int cursorColumn=videos.getColumnIndex(MediaStore.Video.VideoColumns.DISPLAY_NAME);

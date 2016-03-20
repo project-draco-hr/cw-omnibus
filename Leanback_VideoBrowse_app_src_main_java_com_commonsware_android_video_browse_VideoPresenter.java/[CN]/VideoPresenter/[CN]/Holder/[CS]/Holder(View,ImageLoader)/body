@@ -1,7 +1,0 @@
-{
-  super(view);
-  cardView=(ImageCardView)view;
-  this.imageLoader=imageLoader;
-  Resources res=view.getContext().getResources();
-  targetSize=new ImageSize((int)res.getDimension(R.dimen.card_width),(int)res.getDimension(R.dimen.card_height));
-}

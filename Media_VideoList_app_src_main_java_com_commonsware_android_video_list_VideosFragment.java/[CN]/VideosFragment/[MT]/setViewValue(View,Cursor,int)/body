@@ -1,8 +1,7 @@
 {
   if (column == c.getColumnIndex(MediaStore.Video.Media._ID)) {
     Uri video=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,c.getInt(column));
-    DisplayImageOptions opts=new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_media_video_poster).build();
-    imageLoader.displayImage(video.toString(),(ImageView)v,opts);
+    Picasso.with(getActivity()).load(video.toString()).fit().centerCrop().placeholder(R.drawable.ic_media_video_poster).into((ImageView)v);
     return (true);
   }
   return (false);

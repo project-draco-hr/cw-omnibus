@@ -1,5 +1,5 @@
 {
-  super.onActivityCreated(state);
+  super.onViewCreated(view,savedInstanceState);
   String[] from={MediaStore.Video.Media.TITLE,MediaStore.Video.Media._ID};
   int[] to={android.R.id.text1,R.id.thumbnail};
   SimpleCursorAdapter adapter=new SimpleCursorAdapter(getActivity(),R.layout.row,null,from,to,0);

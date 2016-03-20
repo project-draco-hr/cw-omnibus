@@ -5,5 +5,5 @@
   h.cardView.setTitleText(video.toString());
   h.cardView.setMainImageDimensions((int)res.getDimension(R.dimen.card_width),(int)res.getDimension(R.dimen.card_height));
   Uri thumbnailUri=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,video.id);
-  h.updateCardViewImage(thumbnailUri.toString());
+  h.updateCardViewImage(thumbnailUri);
 }

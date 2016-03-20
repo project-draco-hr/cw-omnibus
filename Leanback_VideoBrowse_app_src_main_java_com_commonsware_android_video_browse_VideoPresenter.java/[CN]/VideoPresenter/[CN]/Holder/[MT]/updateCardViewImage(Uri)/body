@@ -1,0 +1,15 @@
+{
+  Picasso.with(cardView.getContext()).load(uri).resize(targetWidth,targetHeight).centerCrop().onlyScaleDown().placeholder(R.drawable.ic_media_video_poster).into(new Target(){
+    @Override public void onBitmapLoaded(    Bitmap bitmap,    Picasso.LoadedFrom from){
+      Drawable bmpDrawable=new BitmapDrawable(cardView.getContext().getResources(),bitmap);
+      cardView.setMainImage(bmpDrawable);
+    }
+    @Override public void onBitmapFailed(    Drawable errorDrawable){
+      cardView.setMainImage(errorDrawable);
+    }
+    @Override public void onPrepareLoad(    Drawable placeHolderDrawable){
+      cardView.setMainImage(placeHolderDrawable);
+    }
+  }
+);
+}
