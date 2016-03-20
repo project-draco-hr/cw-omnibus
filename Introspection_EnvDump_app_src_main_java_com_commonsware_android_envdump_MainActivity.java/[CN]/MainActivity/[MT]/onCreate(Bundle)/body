@@ -6,4 +6,6 @@
   logActivityManagerStuff();
   logDisplayMetrics();
   logConfiguration();
+  TextView tv=(TextView)findViewById(R.id.text);
+  tv.setText(buf.toString());
 }

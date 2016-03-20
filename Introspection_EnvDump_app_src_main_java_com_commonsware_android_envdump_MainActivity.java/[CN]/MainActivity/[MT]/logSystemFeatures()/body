@@ -1,5 +1,5 @@
 {
   for (  FeatureInfo feature : getPackageManager().getSystemAvailableFeatures()) {
-    Log.d(TAG,"System Feature: " + feature.name);
+    log("System Feature: " + feature.name);
   }
 }

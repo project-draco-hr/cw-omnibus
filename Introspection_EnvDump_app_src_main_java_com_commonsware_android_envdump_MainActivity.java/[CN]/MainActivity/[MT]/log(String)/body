@@ -1,0 +1,5 @@
+{
+  Log.d(TAG,msg);
+  buf.append(msg);
+  buf.append('\n');
+}
