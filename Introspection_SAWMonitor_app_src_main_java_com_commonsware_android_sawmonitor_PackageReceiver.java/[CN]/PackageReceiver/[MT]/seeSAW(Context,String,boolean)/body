@@ -1,0 +1,16 @@
+{
+  if (hasSAW(ctxt,pkg)) {
+    Uri pkgUri=Uri.parse("package:" + pkg);
+    Intent manage=new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+    manage.setData(pkgUri);
+    Intent whitelist=new Intent(ctxt,WhitelistReceiver.class);
+    whitelist.setData(pkgUri);
+    Intent main=new Intent(ctxt,MainActivity.class);
+    main.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+    NotificationCompat.Builder b=new NotificationCompat.Builder(ctxt);
+    String text=String.format(ctxt.getString(R.string.msg_requested),isReplace ? ctxt.getString(R.string.msg_upgraded) : ctxt.getString(R.string.msg_installed),pkg);
+    b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL).setWhen(System.currentTimeMillis()).setContentTitle(ctxt.getString(R.string.msg_detected)).setContentText(text).setSmallIcon(android.R.drawable.stat_notify_error).setTicker(ctxt.getString(R.string.msg_detected)).setContentIntent(PendingIntent.getActivity(ctxt,0,manage,PendingIntent.FLAG_UPDATE_CURRENT)).addAction(R.drawable.ic_verified_user_24dp,ctxt.getString(R.string.msg_whitelist),PendingIntent.getBroadcast(ctxt,0,whitelist,0)).addAction(R.drawable.ic_settings_24dp,ctxt.getString(R.string.msg_settings),PendingIntent.getActivity(ctxt,0,main,0));
+    NotificationManager mgr=(NotificationManager)ctxt.getSystemService(Context.NOTIFICATION_SERVICE);
+    mgr.notify(NOTIFY_ID,b.build());
+  }
+}

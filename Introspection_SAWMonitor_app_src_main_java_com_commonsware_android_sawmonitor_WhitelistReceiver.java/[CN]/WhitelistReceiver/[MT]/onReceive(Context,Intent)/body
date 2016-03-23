@@ -1,0 +1,9 @@
+{
+  String pkg=intent.getData().getSchemeSpecificPart();
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
+  Set<String> whitelist=prefs.getStringSet(PREF_WHITELIST,new HashSet<String>());
+  whitelist.add(pkg);
+  prefs.edit().putStringSet(PREF_WHITELIST,whitelist).apply();
+  NotificationManager mgr=(NotificationManager)ctxt.getSystemService(Context.NOTIFICATION_SERVICE);
+  mgr.cancel(PackageReceiver.NOTIFY_ID);
+}

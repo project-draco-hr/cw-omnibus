@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  addPreferencesFromResource(R.xml.settings);
+  pm=getActivity().getPackageManager();
+  SwitchPreference enabled=(SwitchPreference)findPreference("enabled");
+  enabled.setOnPreferenceChangeListener(this);
+  populateWhitelist((MultiSelectListPreference)findPreference("whitelist"));
+}

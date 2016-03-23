@@ -1,0 +1,24 @@
+{
+  List<ApplicationInfo> apps=pm.getInstalledApplications(PackageManager.GET_PERMISSIONS);
+  Collections.sort(apps,new ApplicationInfo.DisplayNameComparator(pm));
+  ArrayList<CharSequence> displayNames=new ArrayList<CharSequence>();
+  ArrayList<String> packageNames=new ArrayList<String>();
+  for (  ApplicationInfo app : apps) {
+    try {
+      PackageInfo pkgInfo=pm.getPackageInfo(app.packageName,PackageManager.GET_PERMISSIONS);
+      if (pkgInfo.requestedPermissions != null) {
+        for (        String perm : pkgInfo.requestedPermissions) {
+          if (SYSTEM_ALERT_WINDOW.equals(perm)) {
+            displayNames.add(app.loadLabel(pm));
+            packageNames.add(app.packageName);
+            break;
+          }
+        }
+      }
+    }
+ catch (    PackageManager.NameNotFoundException e) {
+    }
+  }
+  whitelist.setEntries(displayNames.toArray(new CharSequence[displayNames.size()]));
+  whitelist.setEntryValues(packageNames.toArray(new String[packageNames.size()]));
+}
