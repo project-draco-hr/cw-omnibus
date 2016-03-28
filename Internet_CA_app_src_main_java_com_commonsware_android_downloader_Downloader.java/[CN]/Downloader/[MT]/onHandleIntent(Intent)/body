@@ -1,0 +1,36 @@
+{
+  File output=new File(getFilesDir(),i.getData().getLastPathSegment());
+  startForeground(FOREGROUND_ID,buildForegroundNotification(output.getName()));
+  try {
+    if (output.exists()) {
+      output.delete();
+    }
+    URL url=new URL(i.getData().toString());
+    HttpURLConnection c=(HttpURLConnection)url.openConnection();
+    FileOutputStream fos=new FileOutputStream(output.getPath());
+    BufferedOutputStream out=new BufferedOutputStream(fos);
+    String mimeType=c.getHeaderField("Content-type");
+    try {
+      InputStream in=c.getInputStream();
+      byte[] buffer=new byte[8192];
+      int len=0;
+      while ((len=in.read(buffer)) >= 0) {
+        out.write(buffer,0,len);
+      }
+      out.flush();
+    }
+  finally {
+      fos.getFD().sync();
+      out.close();
+      c.disconnect();
+    }
+    raiseNotification(mimeType,output,null);
+  }
+ catch (  IOException e2) {
+    Log.e(getClass().getSimpleName(),"Exception downloading file",e2);
+    raiseNotification(null,null,e2);
+  }
+ finally {
+    stopForeground(true);
+  }
+}

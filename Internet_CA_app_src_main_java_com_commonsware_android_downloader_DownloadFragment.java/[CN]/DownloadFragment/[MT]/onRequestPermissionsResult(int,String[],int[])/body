@@ -1,0 +1,7 @@
+{
+  if (requestCode == REQUEST_ALL) {
+    if (hasPermission(WRITE_EXTERNAL_STORAGE)) {
+      doTheDownload();
+    }
+  }
+}

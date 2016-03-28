@@ -1,0 +1,8 @@
+{
+  if (hasPermission(WRITE_EXTERNAL_STORAGE)) {
+    doTheDownload();
+  }
+ else {
+    FragmentCompat.requestPermissions(this,PERMS_ALL,REQUEST_ALL);
+  }
+}
