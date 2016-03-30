@@ -1,0 +1,6 @@
+{
+  Cursor c=managedQuery(photoUri,PROJECTION,null,null,null);
+  int dataColumn=c.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+  c.moveToFirst();
+  return (c.getString(dataColumn));
+}

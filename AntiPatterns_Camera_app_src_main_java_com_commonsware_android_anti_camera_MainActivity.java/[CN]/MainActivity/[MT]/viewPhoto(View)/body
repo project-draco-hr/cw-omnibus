@@ -1,0 +1,5 @@
+{
+  Intent i=new Intent(Intent.ACTION_VIEW);
+  i.setDataAndType(Uri.fromFile(photoCopy),"image/jpeg");
+  startActivity(i);
+}

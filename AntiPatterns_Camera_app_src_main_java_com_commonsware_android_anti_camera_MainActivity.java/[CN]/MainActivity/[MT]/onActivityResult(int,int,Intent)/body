@@ -1,0 +1,19 @@
+{
+  if (requestCode == RESULT_CAPTURE) {
+    if (resultCode == RESULT_OK) {
+      Uri photoUri=data.getData();
+      photo.setImageURI(photoUri);
+      savePhotoInfoToDatabase(photoUri);
+      File photoPath=new File(getPath(photoUri));
+      photoCopy=new File(getExternalCacheDir(),FILENAME);
+      try {
+        copy(photoPath,photoCopy);
+      }
+ catch (      IOException e) {
+        Toast.makeText(this,R.string.msg_failure,Toast.LENGTH_LONG).show();
+        Log.e(getClass().getSimpleName(),getString(R.string.msg_failure),e);
+      }
+      btnView.setEnabled(true);
+    }
+  }
+}

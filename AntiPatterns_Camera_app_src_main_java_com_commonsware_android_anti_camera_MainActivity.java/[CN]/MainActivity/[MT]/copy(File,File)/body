@@ -1,0 +1,18 @@
+{
+  dest.getParentFile().mkdirs();
+  FileChannel srcChannel=null;
+  FileChannel destChannel=null;
+  try {
+    srcChannel=new FileInputStream(src).getChannel();
+    destChannel=new FileOutputStream(dest).getChannel();
+    destChannel.transferFrom(srcChannel,0,srcChannel.size());
+  }
+  finally {
+    if (srcChannel != null) {
+      srcChannel.close();
+    }
+    if (destChannel != null) {
+      destChannel.close();
+    }
+  }
+}

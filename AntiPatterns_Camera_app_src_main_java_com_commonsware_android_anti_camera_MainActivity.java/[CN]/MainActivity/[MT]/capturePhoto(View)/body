@@ -1,0 +1,3 @@
+{
+  startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE),RESULT_CAPTURE);
+}

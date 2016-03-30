@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  photo=(ImageView)findViewById(R.id.photo);
+  btnView=(Button)findViewById(R.id.view);
+}
