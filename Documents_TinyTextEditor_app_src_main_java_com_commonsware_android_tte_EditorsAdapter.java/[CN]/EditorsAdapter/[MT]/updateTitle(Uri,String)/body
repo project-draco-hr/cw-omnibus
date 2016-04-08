@@ -1,0 +1,7 @@
+{
+  int position=getPositionForDocument(document);
+  if (position >= 0) {
+    SimplePageDescriptor desc=(SimplePageDescriptor)getPageDescriptor(position);
+    desc.setTitle(title);
+  }
+}

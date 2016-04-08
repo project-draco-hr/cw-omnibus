@@ -1,0 +1,6 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  if (editor.getText().length() == 0) {
+    DocumentStorageService.loadDocument(getActivity(),getDocumentUri());
+  }
+}

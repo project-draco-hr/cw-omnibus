@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setHasOptionsMenu(true);
+  setRetainInstance(true);
+  EventBus.getDefault().register(this);
+}

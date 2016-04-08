@@ -1,0 +1,22 @@
+{
+switch (requestCode) {
+case REQUEST_OPEN:
+    if (resultCode == Activity.RESULT_OK) {
+      if (data.getData() == null) {
+        ClipData clip=data.getClipData();
+        for (int i=0; i < clip.getItemCount(); i++) {
+          openEditor(clip.getItemAt(i).getUri());
+        }
+      }
+ else {
+        openEditor(data.getData());
+      }
+    }
+  break;
+case REQUEST_CREATE:
+if (resultCode == Activity.RESULT_OK) {
+  openEditor(data.getData());
+}
+break;
+}
+}

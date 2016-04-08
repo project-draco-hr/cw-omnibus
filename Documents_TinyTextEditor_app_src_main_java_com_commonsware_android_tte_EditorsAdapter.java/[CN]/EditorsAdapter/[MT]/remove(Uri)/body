@@ -1,0 +1,6 @@
+{
+  int position=getPositionForDocument(document);
+  if (position >= 0) {
+    remove(position);
+  }
+}

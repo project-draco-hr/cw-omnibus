@@ -1,0 +1,12 @@
+{
+  if (mustRestoreHistory) {
+    List<Uri> openEditors=editHistory.getOpenEditors();
+    for (    Uri uri : openEditors) {
+      openEditor(uri);
+    }
+    mustRestoreHistory=false;
+  }
+ else   if (getIntent().getData() != null) {
+    openEditor(getIntent().getData());
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return (getPositionForTag(document.toString()));
+}

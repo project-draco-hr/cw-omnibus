@@ -1,0 +1,4 @@
+{
+  Toast.makeText(this,R.string.msg_load_error,Toast.LENGTH_LONG).show();
+  closeDocument(event.document);
+}

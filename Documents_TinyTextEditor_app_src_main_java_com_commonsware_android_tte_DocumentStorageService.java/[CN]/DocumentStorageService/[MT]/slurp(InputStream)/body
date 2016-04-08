@@ -1,0 +1,11 @@
+{
+  final char[] buffer=new char[8192];
+  final StringBuilder out=new StringBuilder();
+  final Reader in=new InputStreamReader(is,"UTF-8");
+  int rsz=in.read(buffer,0,buffer.length);
+  while (rsz > 0) {
+    out.append(buffer,0,rsz);
+    rsz=in.read(buffer,0,buffer.length);
+  }
+  return (out.toString());
+}

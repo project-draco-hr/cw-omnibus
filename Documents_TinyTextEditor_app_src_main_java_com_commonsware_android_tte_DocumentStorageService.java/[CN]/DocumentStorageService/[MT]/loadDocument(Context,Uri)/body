@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_OPEN_DOCUMENT).setData(document);
+  ctxt.startService(i);
+}

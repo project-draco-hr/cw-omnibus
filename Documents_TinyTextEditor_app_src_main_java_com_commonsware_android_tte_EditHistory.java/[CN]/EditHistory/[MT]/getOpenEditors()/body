@@ -1,0 +1,20 @@
+{
+  String editors=prefsRef.get().getString(PREF_OPEN_EDITORS,null);
+  ArrayList<Uri> result=new ArrayList<Uri>();
+  if (editors != null) {
+    StringReader sr=new StringReader(editors);
+    JsonReader json=new JsonReader(sr);
+    try {
+      json.beginArray();
+      while (json.hasNext()) {
+        result.add(Uri.parse(json.nextString()));
+      }
+      json.endArray();
+      json.close();
+    }
+ catch (    IOException e) {
+      Log.e(getClass().getSimpleName(),"Exception reading JSON",e);
+    }
+  }
+  return (result);
+}

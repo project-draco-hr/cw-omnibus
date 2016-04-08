@@ -1,0 +1,13 @@
+{
+  int position=adapter.getPositionForDocument(document);
+  if (position == -1) {
+    adapter.addDocument(document);
+    pager.setCurrentItem(adapter.getCount() - 1);
+    if (!editHistory.addOpenEditor(document)) {
+      Toast.makeText(this,R.string.msg_save_history,Toast.LENGTH_LONG).show();
+    }
+  }
+ else {
+    pager.setCurrentItem(position);
+  }
+}

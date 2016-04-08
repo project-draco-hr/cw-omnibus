@@ -1,0 +1,6 @@
+{
+  if (isLoaded && canWrite) {
+    editor.setEnabled(false);
+    DocumentStorageService.saveDocument(getActivity(),getDocumentUri(),editor.getText().toString(),isClosing);
+  }
+}

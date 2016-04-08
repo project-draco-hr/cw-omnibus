@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_EDIT).setData(document).putExtra(Intent.EXTRA_TEXT,text).putExtra(EXTRA_CLOSING,isClosing);
+  ctxt.startService(i);
+}

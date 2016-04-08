@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent().setType("text/*").setAction(Intent.ACTION_OPEN_DOCUMENT).putExtra(Intent.EXTRA_ALLOW_MULTIPLE,allowMultiple).addCategory(Intent.CATEGORY_OPENABLE);
+  startActivityForResult(i,REQUEST_OPEN);
+}

@@ -1,0 +1,22 @@
+{
+  try {
+    OutputStream os=getContentResolver().openOutputStream(document,"w");
+    OutputStreamWriter osw=new OutputStreamWriter(os);
+    try {
+      osw.write(text);
+      osw.flush();
+      if (isClosing) {
+        int perms=Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+        getContentResolver().releasePersistableUriPermission(document,perms);
+      }
+      EventBus.getDefault().post(new DocumentSavedEvent(document));
+    }
+  finally {
+      osw.close();
+    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception saving " + document.toString(),e);
+    EventBus.getDefault().post(new DocumentSaveErrorEvent(document,e));
+  }
+}

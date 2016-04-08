@@ -1,0 +1,4 @@
+Uri document
+String text
+String displayName
+boolean canWrite

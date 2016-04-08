@@ -1,0 +1,7 @@
+{
+  if (prefsRef.get() == null) {
+    new LoadThread(ctxt).start();
+    return (false);
+  }
+  return (true);
+}

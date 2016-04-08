@@ -1,0 +1,4 @@
+{
+  prefsRef.set(PreferenceManager.getDefaultSharedPreferences(ctxt));
+  EventBus.getDefault().post(new InitializedEvent());
+}

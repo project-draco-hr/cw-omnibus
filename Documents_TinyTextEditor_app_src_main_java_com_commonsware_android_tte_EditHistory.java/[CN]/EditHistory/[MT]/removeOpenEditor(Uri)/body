@@ -1,0 +1,5 @@
+{
+  List<Uri> current=getOpenEditors();
+  current.remove(document);
+  return (saveHistory(current));
+}

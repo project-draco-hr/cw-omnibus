@@ -1,0 +1,4 @@
+{
+  Uri document=Uri.parse(desc.getFragmentTag());
+  return (EditorFragment.newInstance(document));
+}

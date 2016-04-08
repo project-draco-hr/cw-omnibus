@@ -1,0 +1,6 @@
+{
+  super(document);
+  this.text=text;
+  this.displayName=displayName;
+  this.canWrite=canWrite;
+}

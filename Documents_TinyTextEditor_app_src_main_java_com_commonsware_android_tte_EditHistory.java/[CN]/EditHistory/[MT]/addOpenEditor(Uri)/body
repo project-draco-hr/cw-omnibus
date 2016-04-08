@@ -1,0 +1,11 @@
+{
+  List<Uri> current=getOpenEditors();
+  if (!current.contains(document)) {
+    if (current.size() > 9) {
+      current.remove(0);
+    }
+    current.add(document);
+    return (saveHistory(current));
+  }
+  return (true);
+}

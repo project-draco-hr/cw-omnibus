@@ -1,0 +1,7 @@
+{
+  super.onStart();
+  EventBus.getDefault().register(this);
+  if (editHistory.initialize(this)) {
+    loadEditors();
+  }
+}

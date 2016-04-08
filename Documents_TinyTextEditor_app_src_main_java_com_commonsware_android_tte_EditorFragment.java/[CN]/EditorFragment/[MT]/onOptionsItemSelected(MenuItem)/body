@@ -1,0 +1,14 @@
+{
+switch (item.getItemId()) {
+case R.id.save:
+    save();
+  return (true);
+case R.id.close:
+((Contract)getActivity()).close(getDocumentUri());
+return (true);
+case R.id.launch:
+((Contract)getActivity()).launchInNewWindow(getDocumentUri());
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

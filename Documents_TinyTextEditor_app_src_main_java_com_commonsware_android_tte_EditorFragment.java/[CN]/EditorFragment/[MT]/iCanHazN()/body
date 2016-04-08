@@ -1,0 +1,3 @@
+{
+  return ("N".equals(Build.VERSION.CODENAME));
+}

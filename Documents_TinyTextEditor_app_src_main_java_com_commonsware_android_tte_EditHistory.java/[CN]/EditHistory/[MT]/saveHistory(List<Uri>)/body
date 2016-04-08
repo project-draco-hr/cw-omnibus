@@ -1,0 +1,18 @@
+{
+  StringWriter sw=new StringWriter();
+  JsonWriter json=new JsonWriter(sw);
+  try {
+    json.beginArray();
+    for (    Uri uri : history) {
+      json.value(uri.toString());
+    }
+    json.endArray();
+    json.close();
+    prefsRef.get().edit().putString(PREF_OPEN_EDITORS,sw.toString()).apply();
+  }
+ catch (  IOException e) {
+    Log.e(getClass().getSimpleName(),"Exception saving JSON",e);
+    return (false);
+  }
+  return (true);
+}

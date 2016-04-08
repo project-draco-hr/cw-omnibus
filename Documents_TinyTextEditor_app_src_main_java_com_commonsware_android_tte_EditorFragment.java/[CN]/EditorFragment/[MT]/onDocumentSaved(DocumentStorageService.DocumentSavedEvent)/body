@@ -1,0 +1,5 @@
+{
+  if (event.document.equals(getDocumentUri())) {
+    editor.setEnabled(true);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  adapter.updateTitle(document,displayName);
+  tabs.notifyDataSetChanged();
+}

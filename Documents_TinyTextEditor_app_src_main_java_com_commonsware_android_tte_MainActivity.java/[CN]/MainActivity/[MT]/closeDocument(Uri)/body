@@ -1,0 +1,6 @@
+{
+  if (!editHistory.removeOpenEditor(document)) {
+    Toast.makeText(this,R.string.msg_save_history,Toast.LENGTH_LONG).show();
+  }
+  adapter.remove(document);
+}

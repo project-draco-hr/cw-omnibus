@@ -1,0 +1,13 @@
+{
+  if (event.document.equals(getDocumentUri())) {
+    editor.setText(event.text);
+    editor.setVisibility(View.VISIBLE);
+    progress.setVisibility(View.GONE);
+    ((Contract)getActivity()).applyDisplayName(getDocumentUri(),event.displayName);
+    isLoaded=true;
+    canWrite=event.canWrite;
+    if (!canWrite) {
+      editor.setEnabled(false);
+    }
+  }
+}

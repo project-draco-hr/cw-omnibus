@@ -1,0 +1,8 @@
+{
+  if (Intent.ACTION_OPEN_DOCUMENT.equals(intent.getAction())) {
+    load(intent.getData());
+  }
+ else   if (Intent.ACTION_EDIT.equals(intent.getAction())) {
+    save(intent.getData(),intent.getStringExtra(Intent.EXTRA_TEXT),intent.getBooleanExtra(EXTRA_CLOSING,false));
+  }
+}

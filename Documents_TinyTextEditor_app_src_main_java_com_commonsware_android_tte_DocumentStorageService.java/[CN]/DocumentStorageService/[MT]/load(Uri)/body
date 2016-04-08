@@ -1,0 +1,37 @@
+{
+  int perms=Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+  try {
+    getContentResolver().takePersistableUriPermission(document,perms);
+    boolean weHavePermission=false;
+    for (    UriPermission perm : getContentResolver().getPersistedUriPermissions()) {
+      if (perm.getUri().equals(document)) {
+        weHavePermission=true;
+      }
+    }
+    if (weHavePermission) {
+      try {
+        InputStream is=getContentResolver().openInputStream(document);
+        try {
+          String text=slurp(is);
+          DocumentFile docFile=DocumentFile.fromSingleUri(this,document);
+          EventBus.getDefault().post(new DocumentLoadedEvent(document,text,docFile.getName(),docFile.canWrite()));
+        }
+  finally {
+          is.close();
+        }
+      }
+ catch (      Exception e) {
+        Log.e(getClass().getSimpleName(),"Exception loading " + document.toString(),e);
+        EventBus.getDefault().post(new DocumentLoadErrorEvent(document,e));
+      }
+    }
+ else {
+      Log.e(getClass().getSimpleName(),"We failed to get permissions for " + document.toString());
+      EventBus.getDefault().post(new DocumentPermissionFailureEvent(document));
+    }
+  }
+ catch (  SecurityException e) {
+    Log.e(getClass().getSimpleName(),"Exception getting permissions for " + document.toString(),e);
+    EventBus.getDefault().post(new DocumentPermissionFailureEvent(document));
+  }
+}

@@ -1,0 +1,6 @@
+{
+  super.onMultiWindowChanged(inMultiWindow);
+  if (launchItem != null) {
+    launchItem.setVisible(inMultiWindow);
+  }
+}

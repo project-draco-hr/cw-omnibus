@@ -1,0 +1,3 @@
+{
+  add(new SimplePageDescriptor(document.toString(),document.getLastPathSegment()));
+}

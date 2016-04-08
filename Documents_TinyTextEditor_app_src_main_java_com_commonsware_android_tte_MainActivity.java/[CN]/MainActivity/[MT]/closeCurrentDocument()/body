@@ -1,0 +1,5 @@
+{
+  EditorFragment frag=adapter.getCurrentFragment();
+  frag.markAsClosing();
+  closeDocument(frag.getDocumentUri());
+}

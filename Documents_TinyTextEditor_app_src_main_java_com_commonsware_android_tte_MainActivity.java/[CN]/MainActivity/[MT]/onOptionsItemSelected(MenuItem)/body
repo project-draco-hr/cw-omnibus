@@ -1,0 +1,17 @@
+{
+switch (item.getItemId()) {
+case R.id.create:
+    createDocument();
+  return (true);
+case R.id.open:
+openDocument(false);
+return (true);
+case R.id.open_multiple:
+openDocument(true);
+return (true);
+case R.id.close:
+closeCurrentDocument();
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

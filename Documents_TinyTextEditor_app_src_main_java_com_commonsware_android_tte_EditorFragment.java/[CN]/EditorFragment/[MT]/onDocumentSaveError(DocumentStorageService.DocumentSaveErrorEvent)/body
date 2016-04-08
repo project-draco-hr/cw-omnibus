@@ -1,0 +1,6 @@
+{
+  if (event.document.equals(getDocumentUri())) {
+    editor.setEnabled(true);
+    Toast.makeText(getActivity(),R.string.msg_save_error,Toast.LENGTH_LONG).show();
+  }
+}
