@@ -1,0 +1,6 @@
+{
+  if (buffer == null) {
+    buffer=Okio.buffer(wrapSource(wrapped.source()));
+  }
+  return (buffer);
+}
