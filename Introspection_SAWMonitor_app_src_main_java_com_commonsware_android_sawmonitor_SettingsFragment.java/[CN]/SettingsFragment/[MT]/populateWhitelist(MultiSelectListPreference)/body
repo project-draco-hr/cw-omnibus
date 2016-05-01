@@ -1,5 +1,5 @@
 {
-  List<ApplicationInfo> apps=pm.getInstalledApplications(PackageManager.GET_PERMISSIONS);
+  List<ApplicationInfo> apps=pm.getInstalledApplications(0);
   Collections.sort(apps,new ApplicationInfo.DisplayNameComparator(pm));
   ArrayList<CharSequence> displayNames=new ArrayList<CharSequence>();
   ArrayList<String> packageNames=new ArrayList<String>();
