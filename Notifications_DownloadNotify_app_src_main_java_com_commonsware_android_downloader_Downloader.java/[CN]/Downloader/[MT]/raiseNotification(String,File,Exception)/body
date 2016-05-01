@@ -4,8 +4,11 @@
   if (e == null) {
     b.setContentTitle(getString(R.string.download_complete)).setContentText(getString(R.string.fun)).setSmallIcon(android.R.drawable.stat_sys_download_done).setTicker(getString(R.string.download_complete));
     Intent outbound=new Intent(Intent.ACTION_VIEW);
-    outbound.setDataAndType(Uri.fromFile(output),mimeType);
-    b.setContentIntent(PendingIntent.getActivity(this,0,outbound,0));
+    Uri outputUri=FileProvider.getUriForFile(this,AUTHORITY,output);
+    outbound.setDataAndType(outputUri,mimeType);
+    outbound.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    PendingIntent pi=PendingIntent.getActivity(this,0,outbound,PendingIntent.FLAG_UPDATE_CURRENT);
+    b.setContentIntent(pi);
   }
  else {
     b.setContentTitle(getString(R.string.exception)).setContentText(e.getMessage()).setSmallIcon(android.R.drawable.stat_notify_error).setTicker(getString(R.string.exception));

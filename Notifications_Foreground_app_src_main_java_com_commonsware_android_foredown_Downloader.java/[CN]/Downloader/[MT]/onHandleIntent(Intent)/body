@@ -1,10 +1,8 @@
 {
+  String filename=i.getData().getLastPathSegment();
+  startForeground(FOREGROUND_ID,buildForegroundNotification(filename));
   try {
-    String filename=i.getData().getLastPathSegment();
-    startForeground(FOREGROUND_ID,buildForegroundNotification(filename));
-    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-    root.mkdirs();
-    File output=new File(root,filename);
+    File output=new File(getFilesDir(),filename);
     if (output.exists()) {
       output.delete();
     }
@@ -26,11 +24,12 @@
       out.close();
       c.disconnect();
     }
-    stopForeground(true);
     raiseNotification(i,output,null);
   }
  catch (  IOException e2) {
-    stopForeground(true);
     raiseNotification(i,null,e2);
+  }
+ finally {
+    stopForeground(true);
   }
 }
