@@ -1,0 +1,4 @@
+{
+  Assert.assertTrue(view instanceof ListView);
+  Assert.assertEquals(position,((ListView)view).getSelectedItemPosition());
+}

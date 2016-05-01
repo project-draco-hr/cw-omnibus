@@ -1,0 +1,12 @@
+{
+  InstrumentationRegistry.getInstrumentation().runOnMainSync(new Runnable(){
+    @Override public void run(){
+      LayoutInflater inflater=LayoutInflater.from(InstrumentationRegistry.getTargetContext());
+      root=inflater.inflate(R.layout.add,null);
+    }
+  }
+);
+  root.measure(800,480);
+  root.layout(0,0,800,480);
+  field=root.findViewById(R.id.title);
+}

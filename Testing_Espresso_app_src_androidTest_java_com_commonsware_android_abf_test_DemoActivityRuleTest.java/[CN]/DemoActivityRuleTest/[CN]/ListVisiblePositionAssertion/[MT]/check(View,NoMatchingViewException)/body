@@ -1,0 +1,9 @@
+{
+  Assert.assertTrue(view instanceof ListView);
+  if (isFirst) {
+    Assert.assertEquals(position,((ListView)view).getFirstVisiblePosition());
+  }
+ else {
+    Assert.assertEquals(position,((ListView)view).getLastVisiblePosition());
+  }
+}

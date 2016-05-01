@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  ViewPager pager=(ViewPager)findViewById(R.id.pager);
+  if (pager == null) {
+    if (getFragmentManager().findFragmentById(R.id.editor1) == null) {
+      FragmentPagerAdapter adapter=buildAdapter();
+      getFragmentManager().beginTransaction().add(R.id.editor1,adapter.getItem(0)).add(R.id.editor2,adapter.getItem(1)).add(R.id.editor3,adapter.getItem(2)).commit();
+    }
+  }
+ else {
+    pager.setAdapter(buildAdapter());
+  }
+}
