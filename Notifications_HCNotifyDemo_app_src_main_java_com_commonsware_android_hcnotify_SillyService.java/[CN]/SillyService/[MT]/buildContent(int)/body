@@ -1,4 +1,0 @@
-{
-  RemoteViews content=new RemoteViews(this.getPackageName(),R.layout.content);
-  return (content);
-}
