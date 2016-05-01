@@ -1,0 +1,8 @@
+{
+  if (PREF_DOC_TREE.equals(key)) {
+    prefDocTree.setSummary(prefs.getString(key,"<no value>"));
+  }
+ else   if (PREF_STORAGE_URI.equals(key)) {
+    prefVolumes.setSummary(prefs.getString(key,"<no value>").replaceAll("%","%%"));
+  }
+}

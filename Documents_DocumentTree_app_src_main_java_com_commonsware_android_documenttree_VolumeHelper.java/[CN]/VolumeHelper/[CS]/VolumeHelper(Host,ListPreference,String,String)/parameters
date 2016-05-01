@@ -1,0 +1,4 @@
+Host host
+ListPreference pref
+String uriKey
+String dirName

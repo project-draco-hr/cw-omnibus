@@ -1,0 +1,48 @@
+{
+  mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+  try {
+    String filename=i.getData().getLastPathSegment();
+    NotificationCompat.Builder builder=buildForeground(filename);
+    final Notification notif=builder.build();
+    startForeground(FOREGROUND_ID,notif);
+    File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    root.mkdirs();
+    File output=new File(root,filename);
+    if (output.exists()) {
+      output.delete();
+    }
+    final ProgressResponseBody.Listener progressListener=new ProgressResponseBody.Listener(){
+      long lastUpdateTime=0L;
+      @Override public void onProgressChange(      long bytesRead,      long contentLength,      boolean done){
+        long now=SystemClock.uptimeMillis();
+        if (now - lastUpdateTime > 1000) {
+          notif.contentView.setProgressBar(android.R.id.progress,(int)contentLength,(int)bytesRead,false);
+          mgr.notify(FOREGROUND_ID,notif);
+          lastUpdateTime=now;
+        }
+      }
+    }
+;
+    Interceptor nightTrain=new Interceptor(){
+      @Override public Response intercept(      Chain chain) throws IOException {
+        Response original=chain.proceed(chain.request());
+        Response.Builder b=original.newBuilder().body(new ProgressResponseBody(original.body(),progressListener));
+        return (b.build());
+      }
+    }
+;
+    OkHttpClient client=new OkHttpClient.Builder().addNetworkInterceptor(nightTrain).build();
+    Request request=new Request.Builder().url(i.getData().toString()).build();
+    Response response=client.newCall(request).execute();
+    String contentType=response.header("Content-type");
+    BufferedSink sink=Okio.buffer(Okio.sink(new File(output.getPath())));
+    sink.writeAll(response.body().source());
+    sink.close();
+    stopForeground(true);
+    raiseNotification(contentType,output,null);
+  }
+ catch (  IOException e2) {
+    stopForeground(true);
+    raiseNotification(null,null,e2);
+  }
+}

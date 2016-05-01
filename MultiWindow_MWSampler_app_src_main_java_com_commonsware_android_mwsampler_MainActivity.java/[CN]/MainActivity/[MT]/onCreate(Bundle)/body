@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  getListView().setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+  adapter=new EventAdapter();
+  setListAdapter(adapter);
+  adapter.add(new Event("onCreate()"));
+}

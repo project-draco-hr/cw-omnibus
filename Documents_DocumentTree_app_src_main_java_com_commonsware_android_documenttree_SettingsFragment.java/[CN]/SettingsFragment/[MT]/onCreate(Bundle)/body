@@ -1,0 +1,13 @@
+{
+  super.onCreate(savedInstanceState);
+  addPreferencesFromResource(R.xml.settings);
+  prefDocTree=findPreference(PREF_DOC_TREE);
+  prefs=prefDocTree.getSharedPreferences();
+  prefs.registerOnSharedPreferenceChangeListener(this);
+  onSharedPreferenceChanged(prefs,PREF_DOC_TREE);
+  docTreeHelper=new DocumentHelper(this,prefDocTree);
+  prefVolumes=(ListPreference)findPreference(PREF_VOLUMES);
+  populateVolumes();
+  onSharedPreferenceChanged(prefs,PREF_STORAGE_URI);
+  volumeHelper=new VolumeHelper(this,prefVolumes,PREF_STORAGE_URI,Environment.DIRECTORY_DOCUMENTS);
+}

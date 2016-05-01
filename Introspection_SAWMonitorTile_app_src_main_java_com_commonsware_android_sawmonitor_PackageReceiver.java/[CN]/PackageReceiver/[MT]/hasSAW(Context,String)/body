@@ -1,0 +1,9 @@
+{
+  SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(ctxt);
+  Set<String> whitelist=prefs.getStringSet(WhitelistReceiver.PREF_WHITELIST,new HashSet<String>());
+  if (whitelist.contains(pkg)) {
+    return (false);
+  }
+  PackageManager pm=ctxt.getPackageManager();
+  return (pm.checkPermission(SYSTEM_ALERT_WINDOW,pkg) == PackageManager.PERMISSION_GRANTED);
+}

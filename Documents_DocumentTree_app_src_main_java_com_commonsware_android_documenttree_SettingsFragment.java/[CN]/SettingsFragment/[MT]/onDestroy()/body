@@ -1,0 +1,4 @@
+{
+  prefDocTree.getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+  super.onDestroy();
+}

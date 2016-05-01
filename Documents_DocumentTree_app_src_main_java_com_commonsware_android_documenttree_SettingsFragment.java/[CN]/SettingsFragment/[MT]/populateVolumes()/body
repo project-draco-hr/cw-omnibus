@@ -1,0 +1,21 @@
+{
+  StorageManager storage=getActivity().getSystemService(StorageManager.class);
+  List<StorageVolume> volumes=storage.getStorageVolumes();
+  Collections.sort(volumes,new Comparator<StorageVolume>(){
+    @Override public int compare(    StorageVolume lhs,    StorageVolume rhs){
+      return (lhs.getDescription(getActivity()).compareTo(rhs.getDescription(getActivity())));
+    }
+  }
+);
+  String[] displayNames=new String[volumes.size()];
+  String[] uuids=new String[volumes.size()];
+  for (int i=0; i < volumes.size(); i++) {
+    displayNames[i]=volumes.get(i).getDescription(getActivity());
+    uuids[i]=volumes.get(i).getUuid();
+    if (uuids[i] == null) {
+      uuids[i]=STORAGE_FAKE_UUID;
+    }
+  }
+  prefVolumes.setEntries(displayNames);
+  prefVolumes.setEntryValues(uuids);
+}

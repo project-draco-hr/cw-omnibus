@@ -1,0 +1,9 @@
+{
+  long bytesRead=super.read(sink,byteCount);
+  boolean done=(bytesRead == -1);
+  if (!done) {
+    totalRead+=bytesRead;
+  }
+  listener.onProgressChange(totalRead,ProgressResponseBody.this.contentLength(),done);
+  return (bytesRead);
+}

@@ -1,0 +1,5 @@
+{
+  if (PREF_ENABLED.equals(s)) {
+    syncEnabledStates();
+  }
+}

@@ -1,0 +1,7 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  RemoteViews content=new RemoteViews(getPackageName(),R.layout.notif_content);
+  content.setTextViewText(android.R.id.title,"Downloading: " + filename);
+  b.setOngoing(true).setContent(content).setSmallIcon(android.R.drawable.stat_sys_download);
+  return (b);
+}

@@ -1,0 +1,31 @@
+{
+  super.onCreate(savedInstanceState);
+  Intent i=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  if (savedInstanceState == null) {
+    output=new File(new File(getFilesDir(),PHOTOS),FILENAME);
+    if (output.exists()) {
+      output.delete();
+    }
+ else {
+      output.getParentFile().mkdirs();
+    }
+  }
+ else {
+    output=(File)savedInstanceState.getSerializable(EXTRA_FILENAME);
+  }
+  outputUri=FileProvider.getUriForFile(this,AUTHORITY,output);
+  if (savedInstanceState == null) {
+    i.putExtra(MediaStore.EXTRA_OUTPUT,outputUri);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      i.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+    }
+ else {
+      List<ResolveInfo> resInfoList=getPackageManager().queryIntentActivities(i,PackageManager.MATCH_DEFAULT_ONLY);
+      for (      ResolveInfo resolveInfo : resInfoList) {
+        String packageName=resolveInfo.activityInfo.packageName;
+        grantUriPermission(packageName,outputUri,Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+      }
+    }
+    startActivityForResult(i,CONTENT_REQUEST);
+  }
+}

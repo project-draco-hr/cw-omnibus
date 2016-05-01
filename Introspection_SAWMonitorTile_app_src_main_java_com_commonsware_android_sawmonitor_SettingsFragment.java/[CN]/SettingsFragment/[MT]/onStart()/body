@@ -1,0 +1,6 @@
+{
+  super.onStart();
+  prefs=PreferenceManager.getDefaultSharedPreferences(getActivity());
+  prefs.registerOnSharedPreferenceChangeListener(this);
+  syncEnabledStates();
+}

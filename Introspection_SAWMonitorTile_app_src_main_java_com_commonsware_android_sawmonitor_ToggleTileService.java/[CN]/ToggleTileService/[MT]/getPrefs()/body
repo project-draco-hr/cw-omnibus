@@ -1,0 +1,6 @@
+{
+  if (prefs == null) {
+    prefs=PreferenceManager.getDefaultSharedPreferences(this);
+  }
+  return (prefs);
+}

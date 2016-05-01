@@ -1,0 +1,10 @@
+{
+  if (resultCode == Activity.RESULT_OK) {
+    if (requestCode == REQUEST_DOC_TREE) {
+      docTreeHelper.onActivityResult(data);
+    }
+ else     if (requestCode == REQUEST_STORAGE_VOLUME) {
+      volumeHelper.onActivityResult(data);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  if (requestCode == CONTENT_REQUEST) {
+    if (resultCode == RESULT_OK) {
+      Intent i=new Intent(Intent.ACTION_VIEW);
+      i.setDataAndType(outputUri,"image/jpeg");
+      i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+      startActivity(i);
+      finish();
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  launch(OPT_OUT,Intent.FLAG_ACTIVITY_NEW_TASK);
+}

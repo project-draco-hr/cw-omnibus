@@ -1,0 +1,13 @@
+{
+  StorageManager storage=pref.getContext().getSystemService(StorageManager.class);
+  List<StorageVolume> volumes=storage.getStorageVolumes();
+  String uuid=o.toString();
+  for (  StorageVolume volume : volumes) {
+    if ((volume.getUuid() == null && uuid.equals(SettingsFragment.STORAGE_FAKE_UUID)) || (uuid.equals(volume.getUuid()))) {
+      Intent i=volume.createAccessIntent(dirName);
+      host.startActivityForHelper(i,this);
+      break;
+    }
+  }
+  return (true);
+}

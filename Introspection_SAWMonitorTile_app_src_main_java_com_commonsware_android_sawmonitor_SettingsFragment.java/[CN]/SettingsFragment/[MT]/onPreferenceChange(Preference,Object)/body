@@ -1,0 +1,7 @@
+{
+  Boolean state=(Boolean)newValue;
+  ComponentName cn=new ComponentName(getActivity(),PackageReceiver.class);
+  int componentState=state ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+  pm.setComponentEnabledSetting(cn,componentState,PackageManager.DONT_KILL_APP);
+  return (true);
+}

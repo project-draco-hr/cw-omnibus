@@ -1,0 +1,3 @@
+{
+  launch(PLAIN,Intent.FLAG_ACTIVITY_NEW_TASK);
+}

@@ -1,0 +1,11 @@
+{
+  Tile tile=getQsTile();
+  if (tile != null) {
+    boolean isEnabled=getPrefs().getBoolean(SettingsFragment.PREF_ENABLED,false);
+    int state=isEnabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
+    tile.setIcon(Icon.createWithResource(this,R.drawable.ic_new_releases_24dp));
+    tile.setLabel(getString(R.string.app_name_short));
+    tile.setState(state);
+    tile.updateTile();
+  }
+}

@@ -1,0 +1,6 @@
+{
+  super.onClick();
+  boolean isEnabled=getPrefs().getBoolean(SettingsFragment.PREF_ENABLED,false);
+  getPrefs().edit().putBoolean(SettingsFragment.PREF_ENABLED,!isEnabled).commit();
+  updateTile();
+}

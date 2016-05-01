@@ -1,0 +1,16 @@
+{
+  String pkg=intent.getData().getSchemeSpecificPart();
+  if (ACTION_PACKAGE_ADDED.equals(intent.getAction())) {
+    ADD_TIMESTAMPS.put(pkg,SystemClock.uptimeMillis());
+    seeSAW(ctxt,pkg,false);
+  }
+ else   if (ACTION_PACKAGE_REPLACED.equals(intent.getAction())) {
+    Long added=ADD_TIMESTAMPS.get(pkg);
+    if (added == null || (SystemClock.uptimeMillis() - added) > ADD_THEN_REPLACE_DELTA) {
+      seeSAW(ctxt,pkg,true);
+      if (added != null) {
+        ADD_TIMESTAMPS.remove(pkg);
+      }
+    }
+  }
+}

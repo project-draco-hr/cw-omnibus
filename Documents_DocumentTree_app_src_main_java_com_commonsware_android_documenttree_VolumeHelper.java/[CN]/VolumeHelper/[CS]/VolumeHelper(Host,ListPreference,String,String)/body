@@ -1,0 +1,6 @@
+{
+  super(host,pref);
+  this.uriKey=uriKey;
+  this.dirName=dirName;
+  pref.setOnPreferenceChangeListener(this);
+}
