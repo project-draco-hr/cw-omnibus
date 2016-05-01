@@ -14,9 +14,10 @@
       long lastUpdateTime=0L;
       @Override public void onProgressChange(      long bytesRead,      long contentLength,      boolean done){
         long now=SystemClock.uptimeMillis();
-        if (now - lastUpdateTime > 100) {
+        if (now - lastUpdateTime > 1000) {
           builder.setProgress((int)contentLength,(int)bytesRead,false);
           mgr.notify(FOREGROUND_ID,builder.build());
+          lastUpdateTime=now;
         }
       }
     }

@@ -1,6 +1,5 @@
 {
   NotificationCompat.Builder b=new NotificationCompat.Builder(this);
-  b.setOngoing(true);
   b.setContentTitle(getString(R.string.downloading)).setContentText(filename).setSmallIcon(android.R.drawable.stat_sys_download).setTicker(getString(R.string.downloading)).setOngoing(true);
   return (b);
 }
