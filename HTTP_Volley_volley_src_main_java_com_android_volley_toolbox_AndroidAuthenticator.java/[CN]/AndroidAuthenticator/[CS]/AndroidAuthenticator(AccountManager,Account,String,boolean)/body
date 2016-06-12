@@ -1,6 +1,0 @@
-{
-  mAccountManager=accountManager;
-  mAccount=account;
-  mAuthTokenType=authTokenType;
-  mNotifyAuthFailure=notifyAuthFailure;
-}

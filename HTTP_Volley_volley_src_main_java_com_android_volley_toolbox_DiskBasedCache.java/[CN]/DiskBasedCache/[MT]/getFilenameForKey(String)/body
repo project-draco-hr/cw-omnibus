@@ -1,6 +1,0 @@
-{
-  int firstHalfLength=key.length() / 2;
-  String localFilename=String.valueOf(key.substring(0,firstHalfLength).hashCode());
-  localFilename+=String.valueOf(key.substring(firstHalfLength).hashCode());
-  return localFilename;
-}

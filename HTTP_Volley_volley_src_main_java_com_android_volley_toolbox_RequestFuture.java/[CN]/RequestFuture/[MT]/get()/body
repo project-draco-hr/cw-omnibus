@@ -1,8 +1,0 @@
-{
-  try {
-    return doGet(null);
-  }
- catch (  TimeoutException e) {
-    throw new AssertionError(e);
-  }
-}

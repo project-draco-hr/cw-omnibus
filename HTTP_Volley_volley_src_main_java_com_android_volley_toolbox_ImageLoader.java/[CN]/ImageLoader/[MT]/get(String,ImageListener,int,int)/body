@@ -1,3 +1,0 @@
-{
-  return get(requestUrl,imageListener,maxWidth,maxHeight,ScaleType.CENTER_INSIDE);
-}

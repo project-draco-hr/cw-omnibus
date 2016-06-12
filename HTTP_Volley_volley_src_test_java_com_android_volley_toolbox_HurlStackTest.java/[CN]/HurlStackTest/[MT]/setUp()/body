@@ -1,3 +1,0 @@
-{
-  mMockConnection=new MockHttpURLConnection();
-}

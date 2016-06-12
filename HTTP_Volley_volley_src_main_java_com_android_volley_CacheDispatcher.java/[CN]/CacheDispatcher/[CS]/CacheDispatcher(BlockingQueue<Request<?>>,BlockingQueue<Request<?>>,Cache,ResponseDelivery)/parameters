@@ -1,4 +1,0 @@
-BlockingQueue<Request<?>> cacheQueue
-BlockingQueue<Request<?>> networkQueue
-Cache cache
-ResponseDelivery delivery

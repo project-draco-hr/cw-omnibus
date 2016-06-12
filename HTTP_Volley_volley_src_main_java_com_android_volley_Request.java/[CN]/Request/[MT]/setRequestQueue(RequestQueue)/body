@@ -1,4 +1,0 @@
-{
-  mRequestQueue=requestQueue;
-  return this;
-}

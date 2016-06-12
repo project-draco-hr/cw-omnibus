@@ -1,4 +1,0 @@
-{
-  JSONArray json=new JSONArray().put(TEXT_INDEX,TEXT_VALUE).put(COPY_INDEX,COPY_VALUE);
-  return json.toString();
-}

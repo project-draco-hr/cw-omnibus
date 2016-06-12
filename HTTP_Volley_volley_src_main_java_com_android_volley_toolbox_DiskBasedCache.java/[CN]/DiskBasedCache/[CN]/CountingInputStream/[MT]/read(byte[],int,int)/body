@@ -1,7 +1,0 @@
-{
-  int result=super.read(buffer,offset,count);
-  if (result != -1) {
-    bytesRead+=result;
-  }
-  return result;
-}

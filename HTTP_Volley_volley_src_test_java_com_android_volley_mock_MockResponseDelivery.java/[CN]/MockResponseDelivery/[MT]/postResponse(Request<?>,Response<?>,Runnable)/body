@@ -1,5 +1,0 @@
-{
-  postResponse_called=true;
-  responsePosted=response;
-  runnable.run();
-}

@@ -1,4 +1,0 @@
-{
-  mRetryPolicy=retryPolicy;
-  return this;
-}

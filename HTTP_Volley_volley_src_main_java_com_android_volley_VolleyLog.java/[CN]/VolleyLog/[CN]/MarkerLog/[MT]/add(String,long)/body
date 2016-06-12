@@ -1,6 +1,0 @@
-{
-  if (mFinished) {
-    throw new IllegalStateException("Marker added to finished log");
-  }
-  mMarkers.add(new Marker(name,threadId,SystemClock.elapsedRealtime()));
-}

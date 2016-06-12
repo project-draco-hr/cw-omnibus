@@ -1,7 +1,0 @@
-{
-  CacheHeader entry=mEntries.get(key);
-  if (entry != null) {
-    mTotalSize-=entry.size;
-    mEntries.remove(key);
-  }
-}

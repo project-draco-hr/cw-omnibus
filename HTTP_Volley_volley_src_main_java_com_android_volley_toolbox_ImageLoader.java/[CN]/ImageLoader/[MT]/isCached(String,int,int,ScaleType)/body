@@ -1,5 +1,0 @@
-{
-  throwIfNotOnMainThread();
-  String cacheKey=getCacheKey(requestUrl,maxWidth,maxHeight,scaleType);
-  return mCache.getBitmap(cacheKey) != null;
-}

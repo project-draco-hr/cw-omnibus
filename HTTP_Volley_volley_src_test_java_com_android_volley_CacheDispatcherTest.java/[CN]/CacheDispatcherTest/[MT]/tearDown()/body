@@ -1,4 +1,0 @@
-{
-  mDispatcher.quit();
-  mDispatcher.join();
-}

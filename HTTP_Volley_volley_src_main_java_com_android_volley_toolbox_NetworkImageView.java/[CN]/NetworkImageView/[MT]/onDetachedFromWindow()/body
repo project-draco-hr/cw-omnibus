@@ -1,8 +1,0 @@
-{
-  if (mImageContainer != null) {
-    mImageContainer.cancelRequest();
-    setImageBitmap(null);
-    mImageContainer=null;
-  }
-  super.onDetachedFromWindow();
-}

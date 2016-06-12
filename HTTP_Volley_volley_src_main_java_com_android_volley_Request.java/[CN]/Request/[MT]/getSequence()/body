@@ -1,6 +1,0 @@
-{
-  if (mSequence == null) {
-    throw new IllegalStateException("getSequence called before setSequence");
-  }
-  return mSequence;
-}

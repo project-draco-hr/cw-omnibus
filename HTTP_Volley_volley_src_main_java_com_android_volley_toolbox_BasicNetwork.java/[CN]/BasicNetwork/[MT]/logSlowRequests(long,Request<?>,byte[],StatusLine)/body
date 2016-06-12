@@ -1,5 +1,0 @@
-{
-  if (DEBUG || requestLifetime > SLOW_REQUEST_THRESHOLD_MS) {
-    VolleyLog.d("HTTP response for request=<%s> [lifetime=%d], [size=%s], " + "[rc=%d], [retryCount=%s]",request,requestLifetime,responseContents != null ? responseContents.length : "null",statusLine.getStatusCode(),request.getRetryPolicy().getCurrentRetryCount());
-  }
-}

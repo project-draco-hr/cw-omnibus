@@ -1,3 +1,0 @@
-{
-  this(Method.DEPRECATED_GET_OR_POST,url,requestBody,listener,errorListener);
-}

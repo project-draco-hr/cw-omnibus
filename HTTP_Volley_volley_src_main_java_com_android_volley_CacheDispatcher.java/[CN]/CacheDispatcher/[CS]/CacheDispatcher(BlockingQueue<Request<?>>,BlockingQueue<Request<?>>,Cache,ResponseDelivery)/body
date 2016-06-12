@@ -1,6 +1,0 @@
-{
-  mCacheQueue=cacheQueue;
-  mNetworkQueue=networkQueue;
-  mCache=cache;
-  mDelivery=delivery;
-}

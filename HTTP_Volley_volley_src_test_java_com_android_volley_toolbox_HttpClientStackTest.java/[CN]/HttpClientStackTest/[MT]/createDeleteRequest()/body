@@ -1,6 +1,0 @@
-{
-  TestRequest.Delete request=new TestRequest.Delete();
-  assertEquals(request.getMethod(),Method.DELETE);
-  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
-  assertTrue(httpRequest instanceof HttpDelete);
-}

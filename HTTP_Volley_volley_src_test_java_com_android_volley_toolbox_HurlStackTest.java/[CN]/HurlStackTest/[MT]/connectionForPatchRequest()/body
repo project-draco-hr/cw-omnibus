@@ -1,7 +1,0 @@
-{
-  TestRequest.Patch request=new TestRequest.Patch();
-  assertEquals(request.getMethod(),Method.PATCH);
-  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
-  assertEquals("PATCH",mMockConnection.getRequestMethod());
-  assertFalse(mMockConnection.getDoOutput());
-}

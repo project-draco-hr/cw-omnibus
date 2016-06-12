@@ -1,5 +1,0 @@
-int method
-String url
-JSONArray jsonRequest
-Listener<JSONArray> listener
-ErrorListener errorListener

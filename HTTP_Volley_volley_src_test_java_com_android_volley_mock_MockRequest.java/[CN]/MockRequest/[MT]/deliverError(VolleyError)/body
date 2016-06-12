@@ -1,4 +1,0 @@
-{
-  super.deliverError(error);
-  deliverError_called=true;
-}

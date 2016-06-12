@@ -1,4 +1,0 @@
-{
-  cancel_called=true;
-  super.cancel();
-}

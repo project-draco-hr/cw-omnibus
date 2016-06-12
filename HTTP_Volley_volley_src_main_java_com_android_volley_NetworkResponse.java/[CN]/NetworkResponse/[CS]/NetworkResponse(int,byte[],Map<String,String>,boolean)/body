@@ -1,3 +1,0 @@
-{
-  this(statusCode,data,headers,notModified,0);
-}

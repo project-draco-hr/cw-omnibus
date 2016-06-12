@@ -1,8 +1,0 @@
-{
-  mResponsePoster=new Executor(){
-    @Override public void execute(    Runnable command){
-      handler.post(command);
-    }
-  }
-;
-}

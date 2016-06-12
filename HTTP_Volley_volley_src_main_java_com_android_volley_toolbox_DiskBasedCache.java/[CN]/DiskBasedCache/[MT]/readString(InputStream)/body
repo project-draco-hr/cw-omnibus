@@ -1,5 +1,0 @@
-{
-  int n=(int)readLong(is);
-  byte[] b=streamToBytes(is,n);
-  return new String(b,"UTF-8");
-}

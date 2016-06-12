@@ -1,3 +1,0 @@
-{
-  return parseCharset(headers,HTTP.DEFAULT_CONTENT_CHARSET);
-}

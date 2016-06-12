@@ -1,3 +1,0 @@
-HttpUriRequest arg0
-ResponseHandler<? extends T> arg1
-HttpContext arg2

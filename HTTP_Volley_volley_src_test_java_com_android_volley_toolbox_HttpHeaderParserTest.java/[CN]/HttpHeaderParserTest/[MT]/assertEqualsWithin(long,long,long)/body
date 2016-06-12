@@ -1,4 +1,0 @@
-{
-  long diff=Math.abs(expected - value);
-  assertTrue(diff < fudgeFactor);
-}

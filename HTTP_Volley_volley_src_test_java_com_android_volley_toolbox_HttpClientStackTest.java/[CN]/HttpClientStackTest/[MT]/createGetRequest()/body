@@ -1,6 +1,0 @@
-{
-  TestRequest.Get request=new TestRequest.Get();
-  assertEquals(request.getMethod(),Method.GET);
-  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
-  assertTrue(httpRequest instanceof HttpGet);
-}

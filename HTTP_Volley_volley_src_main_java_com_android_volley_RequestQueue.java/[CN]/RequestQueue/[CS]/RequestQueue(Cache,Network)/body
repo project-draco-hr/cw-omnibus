@@ -1,3 +1,0 @@
-{
-  this(cache,network,DEFAULT_NETWORK_THREAD_POOL_SIZE);
-}

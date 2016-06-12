@@ -1,4 +1,0 @@
-{
-  mException=error;
-  notifyAll();
-}

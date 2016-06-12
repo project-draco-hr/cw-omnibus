@@ -1,7 +1,0 @@
-{
-  boolean deleted=getFileForKey(key).delete();
-  removeEntry(key);
-  if (!deleted) {
-    VolleyLog.d("Could not delete cache entry for key=%s, filename=%s",key,getFilenameForKey(key));
-  }
-}

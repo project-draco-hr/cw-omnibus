@@ -1,9 +1,0 @@
-{
-synchronized (mCurrentRequests) {
-    for (    Request<?> request : mCurrentRequests) {
-      if (filter.apply(request)) {
-        request.cancel();
-      }
-    }
-  }
-}

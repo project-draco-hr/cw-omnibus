@@ -1,8 +1,0 @@
-{
-  long now=System.currentTimeMillis();
-  headers.put("Date",rfc1123Date(now));
-  headers.put("Expires",rfc1123Date(now + ONE_HOUR_MILLIS));
-  headers.put("Cache-Control","no-cache");
-  Cache.Entry entry=HttpHeaderParser.parseCacheHeaders(response);
-  assertNull(entry);
-}

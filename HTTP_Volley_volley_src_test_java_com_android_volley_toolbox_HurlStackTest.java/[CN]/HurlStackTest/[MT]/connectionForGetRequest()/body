@@ -1,7 +1,0 @@
-{
-  TestRequest.Get request=new TestRequest.Get();
-  assertEquals(request.getMethod(),Method.GET);
-  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
-  assertEquals("GET",mMockConnection.getRequestMethod());
-  assertFalse(mMockConnection.getDoOutput());
-}

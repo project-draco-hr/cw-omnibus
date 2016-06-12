@@ -1,4 +1,0 @@
-{
-  super(Request.Method.GET,"",null);
-  mPriority=priority;
-}

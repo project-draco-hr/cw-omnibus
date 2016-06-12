@@ -1,7 +1,0 @@
-{
-  mCurrentRetryCount++;
-  mCurrentTimeoutMs+=(mCurrentTimeoutMs * mBackoffMultiplier);
-  if (!hasAttemptRemaining()) {
-    throw error;
-  }
-}

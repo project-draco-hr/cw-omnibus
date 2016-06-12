@@ -1,6 +1,0 @@
-{
-  headers.put("ETag","Yow!");
-  Cache.Entry entry=HttpHeaderParser.parseCacheHeaders(response);
-  assertNotNull(entry);
-  assertEquals("Yow!",entry.etag);
-}

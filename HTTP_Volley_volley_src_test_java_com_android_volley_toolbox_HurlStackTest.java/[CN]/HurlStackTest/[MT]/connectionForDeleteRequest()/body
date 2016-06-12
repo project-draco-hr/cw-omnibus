@@ -1,7 +1,0 @@
-{
-  TestRequest.Delete request=new TestRequest.Delete();
-  assertEquals(request.getMethod(),Method.DELETE);
-  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
-  assertEquals("DELETE",mMockConnection.getRequestMethod());
-  assertFalse(mMockConnection.getDoOutput());
-}

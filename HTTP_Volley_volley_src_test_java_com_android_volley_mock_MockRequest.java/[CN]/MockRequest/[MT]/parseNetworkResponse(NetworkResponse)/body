@@ -1,4 +1,0 @@
-{
-  parseResponse_called=true;
-  return Response.success(response.data,CacheTestUtils.makeRandomCacheEntry(response.data));
-}

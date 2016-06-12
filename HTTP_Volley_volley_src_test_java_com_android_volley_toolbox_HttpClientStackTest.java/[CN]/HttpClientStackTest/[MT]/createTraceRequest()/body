@@ -1,6 +1,0 @@
-{
-  TestRequest.Trace request=new TestRequest.Trace();
-  assertEquals(request.getMethod(),Method.TRACE);
-  HttpUriRequest httpRequest=HttpClientStack.createHttpRequest(request,null);
-  assertTrue(httpRequest instanceof HttpTrace);
-}

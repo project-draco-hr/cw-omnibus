@@ -1,6 +1,0 @@
-{
-  if (statusCode == HttpStatus.SC_OK) {
-    throw new IllegalArgumentException("statusCode cannot be 200 for an error");
-  }
-  mStatusCode=statusCode;
-}

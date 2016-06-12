@@ -1,8 +1,0 @@
-{
-  Bundle bundle=new Bundle();
-  when(mAccountManager.getAuthToken(mAccount,"cooltype",false,null,null)).thenReturn(mFuture);
-  when(mFuture.getResult()).thenReturn(bundle);
-  when(mFuture.isDone()).thenReturn(true);
-  when(mFuture.isCancelled()).thenReturn(false);
-  mAuthenticator.getAuthToken();
-}

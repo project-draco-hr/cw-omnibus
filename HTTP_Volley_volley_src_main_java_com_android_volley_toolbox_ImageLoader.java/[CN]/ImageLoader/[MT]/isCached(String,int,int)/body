@@ -1,3 +1,0 @@
-{
-  return isCached(requestUrl,maxWidth,maxHeight,ScaleType.CENTER_INSIDE);
-}

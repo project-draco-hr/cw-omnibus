@@ -1,3 +1,0 @@
-{
-  this(url,listener,maxWidth,maxHeight,ScaleType.CENTER_INSIDE,decodeConfig,errorListener);
-}

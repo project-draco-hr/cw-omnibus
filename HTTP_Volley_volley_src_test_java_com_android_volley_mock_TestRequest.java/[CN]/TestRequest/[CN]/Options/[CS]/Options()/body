@@ -1,3 +1,0 @@
-{
-  super(Method.OPTIONS,TEST_URL,null);
-}

@@ -1,3 +1,0 @@
-{
-  super(Method.POST,TEST_URL,null);
-}

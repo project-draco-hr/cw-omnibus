@@ -1,6 +1,0 @@
-NetworkResponse networkResponse
-int maxWidth
-int maxHeight
-ScaleType scaleType
-int expectedWidth
-int expectedHeight

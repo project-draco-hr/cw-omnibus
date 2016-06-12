@@ -1,3 +1,0 @@
-{
-  return doGet(TimeUnit.MILLISECONDS.convert(timeout,unit));
-}

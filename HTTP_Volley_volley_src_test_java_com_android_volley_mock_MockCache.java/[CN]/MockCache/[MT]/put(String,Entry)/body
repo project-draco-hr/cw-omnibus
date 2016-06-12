@@ -1,5 +1,0 @@
-{
-  putCalled=true;
-  keyPut=key;
-  entryPut=entry;
-}

@@ -1,5 +1,0 @@
-{
-  super(TEST_URL,null);
-  mPostParams=new HashMap<String,String>();
-  mPostParams.put("requestpost","foo");
-}

@@ -1,4 +1,0 @@
-{
-  mQuit=true;
-  interrupt();
-}

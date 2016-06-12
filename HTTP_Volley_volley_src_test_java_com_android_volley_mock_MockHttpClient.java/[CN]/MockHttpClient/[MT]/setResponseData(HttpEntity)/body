@@ -1,4 +1,0 @@
-{
-  mStatusCode=HttpStatus.SC_OK;
-  mResponseEntity=entity;
-}

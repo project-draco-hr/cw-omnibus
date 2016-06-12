@@ -1,4 +1,0 @@
-{
-  mAuthenticator.invalidateAuthToken("monkey");
-  verify(mAccountManager).invalidateAuthToken("cooltype","monkey");
-}

@@ -1,5 +1,0 @@
-{
-  mUrl=url;
-  mImageLoader=imageLoader;
-  loadImageIfNecessary(false);
-}

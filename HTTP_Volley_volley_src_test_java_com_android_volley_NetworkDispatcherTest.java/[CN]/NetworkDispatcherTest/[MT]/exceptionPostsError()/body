@@ -1,7 +1,0 @@
-{
-  mNetwork.setNumExceptionsToThrow(MockNetwork.ALWAYS_THROW_EXCEPTIONS);
-  mNetworkQueue.add(mRequest);
-  mNetworkQueue.waitUntilEmpty(TIMEOUT_MILLIS);
-  assertFalse(mDelivery.postResponse_called);
-  assertTrue(mDelivery.postError_called);
-}

@@ -1,3 +1,0 @@
-{
-  this(cache,network,threadPoolSize,new ExecutorDelivery(new Handler(Looper.getMainLooper())));
-}

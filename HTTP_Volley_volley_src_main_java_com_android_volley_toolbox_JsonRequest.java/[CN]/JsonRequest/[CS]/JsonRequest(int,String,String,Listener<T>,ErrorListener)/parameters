@@ -1,5 +1,0 @@
-int method
-String url
-String requestBody
-Listener<T> listener
-ErrorListener errorListener

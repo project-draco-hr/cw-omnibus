@@ -1,3 +1,0 @@
-{
-  this(pool,DEFAULT_SIZE);
-}

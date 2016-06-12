@@ -1,4 +1,0 @@
-{
-  when(mImageCache.getBitmap(anyString())).thenReturn(null);
-  Assert.assertFalse(mImageLoader.isCached("http://foo",0,0));
-}

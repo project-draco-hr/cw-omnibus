@@ -1,7 +1,0 @@
-{
-  requestExecuted=request;
-  StatusLine statusLine=new BasicStatusLine(new ProtocolVersion("HTTP",1,1),mStatusCode,"");
-  HttpResponse response=new BasicHttpResponse(statusLine);
-  response.setEntity(mResponseEntity);
-  return response;
-}

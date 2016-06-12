@@ -1,5 +1,0 @@
-{
-  d("Changing log tag to %s",tag);
-  TAG=tag;
-  DEBUG=Log.isLoggable(TAG,Log.VERBOSE);
-}

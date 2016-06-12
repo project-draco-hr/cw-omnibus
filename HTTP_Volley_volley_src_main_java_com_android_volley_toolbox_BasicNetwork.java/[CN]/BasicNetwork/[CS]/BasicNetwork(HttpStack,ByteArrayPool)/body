@@ -1,4 +1,0 @@
-{
-  mHttpStack=httpStack;
-  mPool=pool;
-}

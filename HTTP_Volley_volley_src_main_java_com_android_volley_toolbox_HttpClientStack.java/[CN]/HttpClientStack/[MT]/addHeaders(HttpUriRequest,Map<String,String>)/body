@@ -1,5 +1,0 @@
-{
-  for (  String key : headers.keySet()) {
-    httpRequest.setHeader(key,headers.get(key));
-  }
-}

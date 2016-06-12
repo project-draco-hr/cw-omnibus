@@ -1,5 +1,0 @@
-{
-  if (Looper.myLooper() != Looper.getMainLooper()) {
-    throw new IllegalStateException("ImageLoader must be invoked from the main thread.");
-  }
-}

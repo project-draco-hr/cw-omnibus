@@ -1,5 +1,0 @@
-{
-  mRequestQueue=mock(RequestQueue.class);
-  mImageCache=mock(ImageLoader.ImageCache.class);
-  mImageLoader=new ImageLoader(mRequestQueue,mImageCache);
-}

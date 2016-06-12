@@ -1,5 +1,0 @@
-{
-  super(Method.GET,null,null);
-  mCache=cache;
-  mCallback=callback;
-}

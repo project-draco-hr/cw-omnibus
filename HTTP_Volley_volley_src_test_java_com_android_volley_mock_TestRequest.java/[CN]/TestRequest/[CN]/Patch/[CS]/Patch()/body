@@ -1,3 +1,0 @@
-{
-  super(Method.PATCH,TEST_URL,null);
-}

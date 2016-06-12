@@ -1,5 +1,0 @@
-{
-  byte[] b=s.getBytes("UTF-8");
-  writeLong(os,b.length);
-  os.write(b,0,b.length);
-}

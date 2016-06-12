@@ -1,3 +1,0 @@
-{
-  this(HttpStatus.SC_OK,data,headers,false,0);
-}

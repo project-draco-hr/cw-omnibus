@@ -1,5 +1,0 @@
-{
-  when(mAccountManager.getAuthToken(mAccount,"cooltype",false,null,null)).thenReturn(mFuture);
-  when(mFuture.getResult()).thenThrow(new AuthenticatorException("sadness!"));
-  mAuthenticator.getAuthToken();
-}

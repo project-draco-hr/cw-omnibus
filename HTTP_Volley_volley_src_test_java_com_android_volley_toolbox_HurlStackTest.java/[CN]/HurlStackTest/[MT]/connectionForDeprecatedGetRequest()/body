@@ -1,7 +1,0 @@
-{
-  TestRequest.DeprecatedGet request=new TestRequest.DeprecatedGet();
-  assertEquals(request.getMethod(),Method.DEPRECATED_GET_OR_POST);
-  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
-  assertEquals("GET",mMockConnection.getRequestMethod());
-  assertFalse(mMockConnection.getDoOutput());
-}

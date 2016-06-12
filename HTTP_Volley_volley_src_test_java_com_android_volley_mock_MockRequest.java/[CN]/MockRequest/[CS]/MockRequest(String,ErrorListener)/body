@@ -1,3 +1,0 @@
-{
-  super(Request.Method.GET,url,listener);
-}

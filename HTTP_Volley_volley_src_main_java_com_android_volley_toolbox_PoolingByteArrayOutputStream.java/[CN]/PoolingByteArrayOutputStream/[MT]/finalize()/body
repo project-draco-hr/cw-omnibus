@@ -1,3 +1,0 @@
-{
-  mPool.returnBuf(buf);
-}

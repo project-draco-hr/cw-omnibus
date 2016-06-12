@@ -1,6 +1,0 @@
-{
-  ByteArrayPool pool=new ByteArrayPool(0);
-  writeBytesIndividually(pool);
-  writeBytesIndividually(pool);
-  writeBytesIndividually(pool);
-}

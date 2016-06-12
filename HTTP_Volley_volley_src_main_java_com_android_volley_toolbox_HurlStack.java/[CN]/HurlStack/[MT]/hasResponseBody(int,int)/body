@@ -1,3 +1,0 @@
-{
-  return requestMethod != Request.Method.HEAD && !(HttpStatus.SC_CONTINUE <= responseCode && responseCode < HttpStatus.SC_OK) && responseCode != HttpStatus.SC_NO_CONTENT && responseCode != HttpStatus.SC_NOT_MODIFIED;
-}

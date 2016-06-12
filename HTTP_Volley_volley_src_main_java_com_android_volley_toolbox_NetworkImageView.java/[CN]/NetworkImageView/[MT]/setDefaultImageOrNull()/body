@@ -1,8 +1,0 @@
-{
-  if (mDefaultImageId != 0) {
-    setImageResource(mDefaultImageId);
-  }
- else {
-    setImageBitmap(null);
-  }
-}

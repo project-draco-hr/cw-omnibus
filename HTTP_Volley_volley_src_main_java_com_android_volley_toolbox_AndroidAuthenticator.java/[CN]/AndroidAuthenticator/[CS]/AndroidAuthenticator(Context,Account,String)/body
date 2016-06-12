@@ -1,3 +1,0 @@
-{
-  this(context,account,authTokenType,false);
-}

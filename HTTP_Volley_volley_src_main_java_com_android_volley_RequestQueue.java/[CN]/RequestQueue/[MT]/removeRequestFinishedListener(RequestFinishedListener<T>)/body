@@ -1,5 +1,0 @@
-{
-synchronized (mFinishedListeners) {
-    mFinishedListeners.remove(listener);
-  }
-}

@@ -1,6 +1,0 @@
-{
-  Context context=mock(Context.class);
-  new AndroidAuthenticator(context,mAccount,"cooltype");
-  new AndroidAuthenticator(context,mAccount,"cooltype",true);
-  Assert.assertSame(mAccount,mAuthenticator.getAccount());
-}

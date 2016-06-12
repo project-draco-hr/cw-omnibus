@@ -1,4 +1,0 @@
-{
-  expand(len);
-  super.write(buffer,offset,len);
-}

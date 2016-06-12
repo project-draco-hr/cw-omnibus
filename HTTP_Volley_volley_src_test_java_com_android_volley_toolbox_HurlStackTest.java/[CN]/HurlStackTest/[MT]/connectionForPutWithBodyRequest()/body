@@ -1,7 +1,0 @@
-{
-  TestRequest.PutWithBody request=new TestRequest.PutWithBody();
-  assertEquals(request.getMethod(),Method.PUT);
-  HurlStack.setConnectionParametersForRequest(mMockConnection,request);
-  assertEquals("PUT",mMockConnection.getRequestMethod());
-  assertTrue(mMockConnection.getDoOutput());
-}

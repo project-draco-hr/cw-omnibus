@@ -1,3 +1,0 @@
-{
-  this(rootDirectory,DEFAULT_DISK_USAGE_BYTES);
-}

@@ -1,3 +1,0 @@
-{
-  Log.e(TAG,buildMessage(format,args),tr);
-}

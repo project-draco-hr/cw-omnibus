@@ -1,8 +1,0 @@
-{
-  mCache.putBitmap(cacheKey,response);
-  BatchedImageRequest request=mInFlightRequests.remove(cacheKey);
-  if (request != null) {
-    request.mResponseBitmap=response;
-    batchResponse(cacheKey,request);
-  }
-}

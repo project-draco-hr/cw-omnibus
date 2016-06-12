@@ -1,6 +1,0 @@
-{
-  os.write((n >> 0) & 0xff);
-  os.write((n >> 8) & 0xff);
-  os.write((n >> 16) & 0xff);
-  os.write((n >> 24) & 0xff);
-}

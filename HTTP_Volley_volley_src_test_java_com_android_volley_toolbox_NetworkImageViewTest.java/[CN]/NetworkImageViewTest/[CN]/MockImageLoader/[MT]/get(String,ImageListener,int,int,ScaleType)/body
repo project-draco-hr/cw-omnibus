@@ -1,6 +1,0 @@
-{
-  lastRequestUrl=requestUrl;
-  lastMaxWidth=maxWidth;
-  lastMaxHeight=maxHeight;
-  return null;
-}

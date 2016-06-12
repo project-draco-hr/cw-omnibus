@@ -1,3 +1,0 @@
-{
-  this(jsonRequest == null ? Method.GET : Method.POST,url,jsonRequest,listener,errorListener);
-}

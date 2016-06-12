@@ -1,3 +1,0 @@
-{
-  super(Method.DELETE,TEST_URL,null);
-}
