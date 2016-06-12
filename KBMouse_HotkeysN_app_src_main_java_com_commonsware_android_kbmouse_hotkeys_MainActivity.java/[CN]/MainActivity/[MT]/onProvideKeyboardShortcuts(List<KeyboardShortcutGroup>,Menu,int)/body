@@ -1,0 +1,9 @@
+{
+  super.onProvideKeyboardShortcuts(data,menu,deviceId);
+  List<KeyboardShortcutInfo> shortcuts=new ArrayList<>();
+  String caption=getString(R.string.menu_video);
+  shortcuts.add(new KeyboardShortcutInfo(caption,KeyEvent.KEYCODE_DPAD_RIGHT,KeyEvent.META_ALT_ON));
+  caption=getString(R.string.menu_thumbnail);
+  shortcuts.add(new KeyboardShortcutInfo(caption,KeyEvent.KEYCODE_DPAD_RIGHT,KeyEvent.META_CTRL_ON));
+  data.add(new KeyboardShortcutGroup(getString(R.string.msg_custom),shortcuts));
+}

@@ -1,0 +1,4 @@
+{
+  videos.moveToPosition(position);
+  return (ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,videos.getInt(videos.getColumnIndex(MediaStore.Video.Media._ID))));
+}

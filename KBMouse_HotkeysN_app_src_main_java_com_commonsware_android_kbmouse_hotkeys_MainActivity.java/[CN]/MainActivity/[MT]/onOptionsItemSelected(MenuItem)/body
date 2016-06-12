@@ -1,0 +1,22 @@
+{
+  int position=adapter.getCheckedPosition();
+  if (item.getItemId() == R.id.play_video) {
+    if (position >= 0) {
+      playVideo(adapter.getVideoUri(position));
+    }
+ else {
+      Toast.makeText(this,R.string.msg_choose,Toast.LENGTH_LONG).show();
+    }
+    return (true);
+  }
+ else   if (item.getItemId() == R.id.show_thumbnail) {
+    if (position >= 0) {
+      showLargeThumbnail(adapter.getVideoUri(position));
+    }
+ else {
+      Toast.makeText(this,R.string.msg_choose,Toast.LENGTH_LONG).show();
+    }
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

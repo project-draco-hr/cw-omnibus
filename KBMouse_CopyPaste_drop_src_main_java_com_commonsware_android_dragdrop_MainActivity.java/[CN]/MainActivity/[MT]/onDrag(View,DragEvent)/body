@@ -1,0 +1,29 @@
+{
+  boolean result=true;
+switch (event.getAction()) {
+case DragEvent.ACTION_DRAG_STARTED:
+    if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_URILIST)) {
+      applyDropHint(v,R.drawable.droppable);
+    }
+ else {
+      result=false;
+    }
+  break;
+case DragEvent.ACTION_DRAG_ENTERED:
+applyDropHint(v,R.drawable.drop);
+break;
+case DragEvent.ACTION_DRAG_EXITED:
+applyDropHint(v,R.drawable.droppable);
+break;
+case DragEvent.ACTION_DRAG_ENDED:
+applyDropHint(v,-1);
+break;
+case DragEvent.ACTION_DROP:
+requestDragAndDropPermissions(event);
+ClipData.Item clip=event.getClipData().getItemAt(0);
+imageUri=clip.getUri();
+showThumbnail();
+break;
+}
+return (result);
+}

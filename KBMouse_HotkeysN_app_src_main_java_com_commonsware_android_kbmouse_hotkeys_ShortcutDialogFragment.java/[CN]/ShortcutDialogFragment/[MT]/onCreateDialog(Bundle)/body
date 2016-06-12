@@ -1,0 +1,5 @@
+{
+  AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+  Dialog dlg=builder.setTitle(R.string.title_shortcuts).setMessage(R.string.msg_shortcuts).setPositiveButton(android.R.string.ok,null).create();
+  return (dlg);
+}

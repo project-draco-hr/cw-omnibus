@@ -1,0 +1,22 @@
+{
+  if (event.getRepeatCount() == 0) {
+    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+      int position=adapter.getCheckedPosition();
+      if (position >= 0) {
+        Uri videoUri=adapter.getVideoUri(position);
+        if (event.isAltPressed()) {
+          playVideo(videoUri);
+        }
+ else         if (event.isCtrlPressed()) {
+          showLargeThumbnail(videoUri);
+        }
+        return (true);
+      }
+    }
+ else     if (keyCode == KeyEvent.KEYCODE_SLASH && event.isAltPressed() && Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+      new ShortcutDialogFragment().show(getFragmentManager(),"shortcuts");
+      return (true);
+    }
+  }
+  return (super.onKeyDown(keyCode,event));
+}

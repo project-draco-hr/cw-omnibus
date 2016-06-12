@@ -1,0 +1,7 @@
+{
+  if (keyCode == KeyEvent.KEYCODE_SLASH && event.isAltPressed() && event.getRepeatCount() == 0 && Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+    new ShortcutDialogFragment().show(getFragmentManager(),"shortcuts");
+    return (true);
+  }
+  return (super.onKeyDown(keyCode,event));
+}

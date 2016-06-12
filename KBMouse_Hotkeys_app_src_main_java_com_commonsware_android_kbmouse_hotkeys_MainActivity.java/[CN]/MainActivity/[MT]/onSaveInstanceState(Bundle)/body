@@ -1,0 +1,5 @@
+{
+  super.onSaveInstanceState(outState);
+  outState.putBoolean(STATE_IN_PERMISSION,isInPermission);
+  adapter.onSaveInstanceState(outState);
+}

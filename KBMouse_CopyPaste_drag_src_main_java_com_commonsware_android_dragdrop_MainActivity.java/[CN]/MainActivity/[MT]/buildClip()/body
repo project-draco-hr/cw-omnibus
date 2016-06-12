@@ -1,0 +1,4 @@
+{
+  Uri uri=PROVIDER.buildUpon().appendPath(StreamProvider.getUriPrefix(AUTHORITY)).appendPath("assets/FreedomTower-Morning.jpg").build();
+  return (ClipData.newRawUri(getString(R.string.msg_photo),uri));
+}

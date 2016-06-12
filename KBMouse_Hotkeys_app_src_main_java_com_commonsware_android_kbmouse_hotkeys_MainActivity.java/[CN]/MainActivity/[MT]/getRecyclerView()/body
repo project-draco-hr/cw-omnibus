@@ -1,0 +1,6 @@
+{
+  if (videoList == null) {
+    videoList=(RecyclerView)findViewById(R.id.video_list);
+  }
+  return (videoList);
+}

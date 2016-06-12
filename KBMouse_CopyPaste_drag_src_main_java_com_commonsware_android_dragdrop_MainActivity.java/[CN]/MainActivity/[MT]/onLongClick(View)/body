@@ -1,0 +1,6 @@
+{
+  ClipData clip=buildClip();
+  View.DragShadowBuilder shadow=new ThumbDragShadow();
+  iv.startDragAndDrop(clip,shadow,null,View.DRAG_FLAG_GLOBAL | View.DRAG_FLAG_GLOBAL_URI_READ | View.DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION);
+  return (true);
+}

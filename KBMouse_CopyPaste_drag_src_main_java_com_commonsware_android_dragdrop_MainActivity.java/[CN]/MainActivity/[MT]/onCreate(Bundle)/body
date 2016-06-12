@@ -1,0 +1,13 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  iv=(ImageView)findViewById(R.id.asset);
+  Picasso.with(this).load("file:///android_asset/FreedomTower-Morning.jpg").fit().centerCrop().into(iv,new Callback(){
+    @Override public void onSuccess(){
+      iv.setOnLongClickListener(MainActivity.this);
+    }
+    @Override public void onError(){
+    }
+  }
+);
+}

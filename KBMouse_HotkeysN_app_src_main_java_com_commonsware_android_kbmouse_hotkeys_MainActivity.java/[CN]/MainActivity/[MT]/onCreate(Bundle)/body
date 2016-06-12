@@ -1,0 +1,26 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  player=(VideoView)findViewById(R.id.player);
+  if (player != null) {
+    player.setOnDragListener(this);
+  }
+  thumbnailLarge=(ImageView)findViewById(R.id.thumbnail_large);
+  if (thumbnailLarge != null) {
+    thumbnailLarge.setOnDragListener(this);
+  }
+  setLayoutManager(new LinearLayoutManager(this));
+  adapter=new VideoAdapter(getRecyclerView());
+  setAdapter(adapter);
+  getRecyclerView().requestFocus();
+  if (icicle != null) {
+    isInPermission=icicle.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  if (hasFilesPermission()) {
+    loadVideos();
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_PERMS);
+  }
+}
