@@ -1,7 +1,7 @@
 {
   if (requestCode == REQUEST_ID && resultCode == RESULT_OK) {
-    Intent view=new Intent(Intent.ACTION_VIEW).setDataAndType(result,"video/mp4");
+    Intent view=new Intent(Intent.ACTION_VIEW).setDataAndType(outputUri,"video/mp4").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
     startActivity(view);
+    finish();
   }
-  finish();
 }

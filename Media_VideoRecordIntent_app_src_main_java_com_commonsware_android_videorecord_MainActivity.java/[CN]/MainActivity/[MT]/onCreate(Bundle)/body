@@ -1,12 +1,32 @@
 {
   super.onCreate(savedInstanceState);
-  File video=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES),"sample.mp4");
-  if (video.exists()) {
-    video.delete();
+  if (savedInstanceState == null) {
+    output=new File(new File(getFilesDir(),VIDEOS),FILENAME);
+    if (output.exists()) {
+      output.delete();
+    }
+ else {
+      output.getParentFile().mkdirs();
+    }
   }
-  Intent i=new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-  result=Uri.fromFile(video);
-  i.putExtra(MediaStore.EXTRA_OUTPUT,result);
-  i.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,1);
-  startActivityForResult(i,REQUEST_ID);
+ else {
+    output=(File)savedInstanceState.getSerializable(EXTRA_FILENAME);
+  }
+  outputUri=FileProvider.getUriForFile(this,AUTHORITY,output);
+  if (savedInstanceState == null) {
+    Intent i=new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+    i.putExtra(MediaStore.EXTRA_OUTPUT,outputUri);
+    i.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,1);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      i.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    }
+ else {
+      List<ResolveInfo> resInfoList=getPackageManager().queryIntentActivities(i,PackageManager.MATCH_DEFAULT_ONLY);
+      for (      ResolveInfo resolveInfo : resInfoList) {
+        String packageName=resolveInfo.activityInfo.packageName;
+        grantUriPermission(packageName,outputUri,Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+      }
+    }
+    startActivityForResult(i,REQUEST_ID);
+  }
 }
