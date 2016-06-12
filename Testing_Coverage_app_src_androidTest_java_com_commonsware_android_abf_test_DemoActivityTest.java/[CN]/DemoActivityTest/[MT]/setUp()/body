@@ -1,0 +1,7 @@
+{
+  super.setUp();
+  injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+  setActivityInitialTouchMode(false);
+  ActionBarFragmentActivity activity=getActivity();
+  list=(ListView)activity.findViewById(android.R.id.list);
+}
