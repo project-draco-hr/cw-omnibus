@@ -1,0 +1,18 @@
+{
+  if (item.getItemId() == R.id.record) {
+    record.setVisible(false);
+    stop.setVisible(true);
+    afm=new AggregateFrameMetrics();
+    getWindow().addOnFrameMetricsAvailableListener(this,new Handler(handlerThread.getLooper()));
+    return (true);
+  }
+ else   if (item.getItemId() == R.id.stop) {
+    record.setVisible(true);
+    stop.setVisible(false);
+    getWindow().removeOnFrameMetricsAvailableListener(this);
+    afm.log(getClass().getSimpleName());
+    afm=null;
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

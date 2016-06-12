@@ -1,0 +1,4 @@
+{
+  handlerThread.quitSafely();
+  super.onDestroy();
+}

@@ -1,0 +1,12 @@
+{
+  Log.d(tag,String.format("animation: %dns",animationDuration));
+  Log.d(tag,String.format("command issue: %dns",commandIssueDuration));
+  Log.d(tag,String.format("draw: %dns",drawDuration));
+  Log.d(tag,String.format("input handling: %dns",inputHandlingDuration));
+  Log.d(tag,String.format("layout measure: %dns",layoutMeasureDuration));
+  Log.d(tag,String.format("swap buffers: %dns",swapBuffersDuration));
+  Log.d(tag,String.format("sync: %dns",syncDuration));
+  Log.d(tag,String.format("unknown: %dns",unknownDelayDuration));
+  Log.d(tag,String.format("total: %dns",totalDuration));
+  Log.d(tag,String.format("%d dropped reports",droppedReports));
+}

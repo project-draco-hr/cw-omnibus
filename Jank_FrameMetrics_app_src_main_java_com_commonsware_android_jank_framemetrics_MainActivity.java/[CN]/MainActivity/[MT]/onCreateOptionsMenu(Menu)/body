@@ -1,0 +1,6 @@
+{
+  getMenuInflater().inflate(R.menu.actions,menu);
+  record=menu.findItem(R.id.record);
+  stop=menu.findItem(R.id.stop);
+  return (super.onCreateOptionsMenu(menu));
+}

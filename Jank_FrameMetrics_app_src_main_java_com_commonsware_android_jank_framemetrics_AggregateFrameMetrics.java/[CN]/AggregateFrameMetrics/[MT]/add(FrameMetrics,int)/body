@@ -1,0 +1,12 @@
+{
+  this.droppedReports+=droppedReports;
+  animationDuration+=metrics.getMetric(FrameMetrics.ANIMATION_DURATION);
+  commandIssueDuration+=metrics.getMetric(FrameMetrics.COMMAND_ISSUE_DURATION);
+  drawDuration+=metrics.getMetric(FrameMetrics.DRAW_DURATION);
+  inputHandlingDuration+=metrics.getMetric(FrameMetrics.INPUT_HANDLING_DURATION);
+  layoutMeasureDuration+=metrics.getMetric(FrameMetrics.LAYOUT_MEASURE_DURATION);
+  swapBuffersDuration+=metrics.getMetric(FrameMetrics.SWAP_BUFFERS_DURATION);
+  syncDuration+=metrics.getMetric(FrameMetrics.SYNC_DURATION);
+  unknownDelayDuration+=metrics.getMetric(FrameMetrics.UNKNOWN_DELAY_DURATION);
+  totalDuration+=metrics.getMetric(FrameMetrics.TOTAL_DURATION);
+}
