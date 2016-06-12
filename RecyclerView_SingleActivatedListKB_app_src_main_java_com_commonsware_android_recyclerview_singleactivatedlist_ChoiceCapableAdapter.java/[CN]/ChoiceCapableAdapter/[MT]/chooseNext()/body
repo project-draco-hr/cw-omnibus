@@ -1,0 +1,18 @@
+{
+  long now=System.currentTimeMillis();
+  boolean result=false;
+  if (lastDownKeyTime == -1 || now - lastDownKeyTime > KEY_TIME_DELTA) {
+    lastDownKeyTime=now;
+    lastUpKeyTime=-1L;
+    int checked=choiceMode.getCheckedPosition();
+    if (checked < 0) {
+      onChecked(0,true,true);
+      result=true;
+    }
+ else     if (checked < getItemCount() - 1) {
+      onChecked(checked + 1,true,true);
+      result=true;
+    }
+  }
+  return (result);
+}
