@@ -1,0 +1,5 @@
+{
+  adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,model);
+  getListView().setScrollbarFadingEnabled(false);
+  setListAdapter(adapter);
+}

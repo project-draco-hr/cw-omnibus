@@ -1,0 +1,8 @@
+{
+  super.onCreate(savedInstanceState);
+  setRetainInstance(true);
+  if (!isStarted) {
+    isStarted=true;
+    new LoadWordsThread().start();
+  }
+}
