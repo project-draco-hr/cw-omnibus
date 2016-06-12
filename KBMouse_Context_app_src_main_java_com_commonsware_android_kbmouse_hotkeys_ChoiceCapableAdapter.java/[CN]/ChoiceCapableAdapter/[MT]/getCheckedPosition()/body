@@ -1,0 +1,6 @@
+{
+  if (choiceMode.isSingleChoice()) {
+    return (choiceMode.getCheckedPosition());
+  }
+  throw new IllegalStateException("Can only get checked position for single-choice");
+}

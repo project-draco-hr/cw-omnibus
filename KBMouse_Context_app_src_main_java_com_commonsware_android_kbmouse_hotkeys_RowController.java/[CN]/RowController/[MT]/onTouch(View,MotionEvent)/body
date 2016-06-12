@@ -1,0 +1,28 @@
+{
+  if ((event.getButtonState() & MotionEvent.BUTTON_SECONDARY) != 0 && event.getAction() == MotionEvent.ACTION_DOWN) {
+    adapter.onChecked(position,true,true);
+    String[] items=itemView.getContext().getResources().getStringArray(R.array.popup);
+    ArrayAdapter<String> adapter=new ArrayAdapter<>(itemView.getContext(),android.R.layout.simple_list_item_1,items);
+    final ListPopupWindow popup=new ListPopupWindow(itemView.getContext());
+    popup.setAnchorView(itemView);
+    popup.setHorizontalOffset((int)event.getX());
+    popup.setVerticalOffset((int)event.getY() - itemView.getHeight());
+    popup.setAdapter(adapter);
+    popup.setWidth(measureContentWidth(itemView.getContext(),adapter));
+    popup.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+      @Override public void onItemClick(      AdapterView<?> parent,      View view,      int position,      long id){
+        if (position == 0) {
+          ((MainActivity)itemView.getContext()).playVideo(videoUri);
+        }
+ else {
+          ((MainActivity)itemView.getContext()).showLargeThumbnail(videoUri);
+        }
+        popup.dismiss();
+      }
+    }
+);
+    popup.show();
+    return (true);
+  }
+  return (false);
+}

@@ -1,0 +1,6 @@
+{
+  super.onViewAttachedToWindow(holder);
+  if (holder.getAdapterPosition() != choiceMode.getCheckedPosition()) {
+    ((RowController)holder).setChecked(false);
+  }
+}

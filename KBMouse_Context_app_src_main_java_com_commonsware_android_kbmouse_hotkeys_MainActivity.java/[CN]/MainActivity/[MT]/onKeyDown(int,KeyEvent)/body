@@ -1,0 +1,16 @@
+{
+  if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT && event.getRepeatCount() == 0) {
+    int position=adapter.getCheckedPosition();
+    if (position >= 0) {
+      Uri videoUri=adapter.getVideoUri(position);
+      if (event.isAltPressed()) {
+        playVideo(videoUri);
+      }
+ else       if (event.isCtrlPressed()) {
+        showLargeThumbnail(videoUri);
+      }
+      return (true);
+    }
+  }
+  return (super.onKeyDown(keyCode,event));
+}

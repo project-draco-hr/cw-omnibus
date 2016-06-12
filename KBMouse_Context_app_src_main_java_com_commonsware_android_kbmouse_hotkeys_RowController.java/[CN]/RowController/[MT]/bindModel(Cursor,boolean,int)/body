@@ -1,0 +1,9 @@
+{
+  this.position=position;
+  title.setText(row.getString(row.getColumnIndex(MediaStore.Video.Media.TITLE)));
+  videoUri=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,row.getInt(row.getColumnIndex(MediaStore.Video.Media._ID)));
+  Picasso.with(thumbnail.getContext()).load(videoUri.toString()).fit().centerCrop().placeholder(R.drawable.ic_media_video_poster).into(thumbnail);
+  int mimeTypeColumn=row.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
+  videoMimeType=row.getString(mimeTypeColumn);
+  setChecked(isChecked);
+}

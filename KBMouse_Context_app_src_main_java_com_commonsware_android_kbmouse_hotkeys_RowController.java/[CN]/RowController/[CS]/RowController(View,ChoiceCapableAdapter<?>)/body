@@ -1,0 +1,9 @@
+{
+  super(row);
+  this.adapter=adapter;
+  title=(TextView)row.findViewById(android.R.id.text1);
+  thumbnail=(ImageView)row.findViewById(R.id.thumbnail);
+  row.setOnClickListener(this);
+  row.setOnLongClickListener(this);
+  row.setOnTouchListener(this);
+}

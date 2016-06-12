@@ -1,0 +1,8 @@
+{
+  if (isChecked) {
+    checkedPosition=position;
+  }
+ else   if (isChecked(position)) {
+    checkedPosition=-1;
+  }
+}
