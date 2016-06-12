@@ -1,0 +1,16 @@
+{
+  Bundle input=RemoteInput.getResultsFromIntent(i);
+  if (input != null) {
+    CharSequence text=input.getCharSequence(EXTRA_INPUT);
+    if (text != null) {
+      MESSAGES.push(new Message(text));
+    }
+ else {
+      Log.e(getClass().getSimpleName(),"No voice response speech");
+    }
+  }
+ else {
+    Log.e(getClass().getSimpleName(),"No voice response Bundle");
+  }
+  NotificationManagerCompat.from(ctxt).notify(RemoteInputReceiver.NOTIFY_ID,buildNotification(ctxt).build());
+}

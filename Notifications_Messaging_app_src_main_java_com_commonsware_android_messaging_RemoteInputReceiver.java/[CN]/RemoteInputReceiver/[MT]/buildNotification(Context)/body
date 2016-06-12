@@ -1,0 +1,13 @@
+{
+  Intent i=new Intent(ctxt,RemoteInputReceiver.class);
+  PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
+  RemoteInput remoteInput=new RemoteInput.Builder(RemoteInputReceiver.EXTRA_INPUT).setLabel(ctxt.getString(R.string.talk)).build();
+  NotificationCompat.Action remoteAction=new NotificationCompat.Action.Builder(android.R.drawable.ic_btn_speak_now,ctxt.getString(R.string.talk),pi).addRemoteInput(remoteInput).build();
+  NotificationCompat.MessagingStyle style=new NotificationCompat.MessagingStyle("Me").setConversationTitle("A Fake Chat");
+  style.addMessage("Want to chat?",INITIAL_TIMESTAMP,"Somebody");
+  for (  Message msg : MESSAGES) {
+    style.addMessage(msg.text,msg.timestamp,style.getUserDisplayName());
+  }
+  NotificationCompat.Builder builder=new NotificationCompat.Builder(ctxt).setSmallIcon(android.R.drawable.stat_sys_download_done).setContentTitle(ctxt.getString(R.string.title)).setStyle(style).addAction(remoteAction);
+  return (builder);
+}

@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  NotificationManagerCompat.from(this).notify(RemoteInputReceiver.NOTIFY_ID,RemoteInputReceiver.buildNotification(this).build());
+  finish();
+}
