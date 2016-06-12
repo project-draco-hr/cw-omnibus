@@ -1,0 +1,11 @@
+{
+  isInPermission=false;
+  if (requestCode == REQUEST_PERMS) {
+    if (hasFilesPermission()) {
+      loadVideos();
+    }
+ else {
+      finish();
+    }
+  }
+}

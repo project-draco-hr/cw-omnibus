@@ -1,9 +1,18 @@
 {
   super.onCreate(icicle);
-  getLoaderManager().initLoader(0,null,this);
   ColumnWeightSpanSizeLookup spanSizer=new ColumnWeightSpanSizeLookup(COLUMN_WEIGHTS);
   GridLayoutManager mgr=new GridLayoutManager(this,spanSizer.getTotalSpans());
   mgr.setSpanSizeLookup(spanSizer);
   setLayoutManager(mgr);
   setAdapter(new VideoAdapter());
+  if (icicle != null) {
+    isInPermission=icicle.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  if (hasFilesPermission()) {
+    loadVideos();
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_PERMS);
+  }
 }

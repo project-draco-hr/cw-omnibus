@@ -1,6 +1,15 @@
 {
   super.onCreate(icicle);
-  getLoaderManager().initLoader(0,null,this);
   setLayoutManager(new LinearLayoutManager(this));
   setAdapter(new VideoAdapter());
+  if (icicle != null) {
+    isInPermission=icicle.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  if (hasFilesPermission()) {
+    loadVideos();
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_PERMS);
+  }
 }

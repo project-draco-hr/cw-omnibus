@@ -1,6 +1,5 @@
 {
-  int uriColumn=row.getColumnIndex(MediaStore.Video.Media.DATA);
   int mimeTypeColumn=row.getColumnIndex(MediaStore.Video.Media.MIME_TYPE);
-  videoUri=row.getString(uriColumn);
+  videoUri=ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,row.getInt(row.getColumnIndex(MediaStore.Video.Media._ID)));
   videoMimeType=row.getString(mimeTypeColumn);
 }
