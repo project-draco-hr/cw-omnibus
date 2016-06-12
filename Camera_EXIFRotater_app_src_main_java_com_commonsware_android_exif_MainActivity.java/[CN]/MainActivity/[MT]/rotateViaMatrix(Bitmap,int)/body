@@ -1,0 +1,5 @@
+{
+  Matrix matrix=new Matrix();
+  matrix.setRotate(degreesForRotation(orientation));
+  return (Bitmap.createBitmap(original,0,0,original.getWidth(),original.getHeight(),matrix,true));
+}

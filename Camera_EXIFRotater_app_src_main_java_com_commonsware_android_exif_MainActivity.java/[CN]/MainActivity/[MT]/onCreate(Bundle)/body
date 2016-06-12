@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  original=(ImageView)findViewById(R.id.original_image);
+  oriented=(ImageView)findViewById(R.id.oriented_image);
+  new ImageLoadThread(this).start();
+}

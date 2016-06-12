@@ -1,0 +1,10 @@
+{
+  original.setImageBitmap(event.original);
+  if (BuildConfig.ROTATE_BITMAP) {
+    oriented.setImageBitmap(event.rotated);
+  }
+ else {
+    oriented.setImageBitmap(event.original);
+    oriented.setRotation(degreesForRotation(event.orientation));
+  }
+}

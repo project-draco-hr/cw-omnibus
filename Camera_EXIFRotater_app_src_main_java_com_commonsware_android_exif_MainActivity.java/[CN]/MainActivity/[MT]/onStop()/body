@@ -1,0 +1,4 @@
+{
+  EventBus.getDefault().unregister(this);
+  super.onStop();
+}

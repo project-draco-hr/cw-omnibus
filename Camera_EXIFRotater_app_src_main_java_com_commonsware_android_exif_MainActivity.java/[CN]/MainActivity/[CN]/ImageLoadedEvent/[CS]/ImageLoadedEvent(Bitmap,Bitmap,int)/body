@@ -1,0 +1,5 @@
+{
+  this.original=original;
+  this.rotated=rotated;
+  this.orientation=orientation;
+}

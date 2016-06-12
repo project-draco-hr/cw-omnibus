@@ -1,0 +1,27 @@
+{
+  AssetManager assets=ctxt.getAssets();
+  try {
+    InputStream is=assets.open(ASSET_NAME);
+    ExifInterface exif=new ExifInterface();
+    exif.readExif(is,ExifInterface.Options.OPTION_ALL);
+    ExifTag tag=exif.getTag(ExifInterface.TAG_ORIENTATION);
+    int orientation=(tag == null ? -1 : tag.getValueAsInt(-1));
+    if (orientation == 8 || orientation == 3 || orientation == 6) {
+      is=assets.open(ASSET_NAME);
+      Bitmap original=BitmapFactory.decodeStream(is);
+      Bitmap rotated=null;
+      if (BuildConfig.ROTATE_BITMAP) {
+        rotated=rotateViaMatrix(original,orientation);
+        exif.setTagValue(ExifInterface.TAG_ORIENTATION,1);
+        exif.removeCompressedThumbnail();
+        File output=new File(ctxt.getExternalFilesDir(null),"rotated.jpg");
+        exif.writeExif(rotated,output.getAbsolutePath(),100);
+        MediaScannerConnection.scanFile(ctxt,new String[]{output.getAbsolutePath()},null,null);
+      }
+      EventBus.getDefault().postSticky(new ImageLoadedEvent(original,rotated,orientation));
+    }
+  }
+ catch (  Exception e) {
+    Log.e(getClass().getSimpleName(),"Exception processing image",e);
+  }
+}
