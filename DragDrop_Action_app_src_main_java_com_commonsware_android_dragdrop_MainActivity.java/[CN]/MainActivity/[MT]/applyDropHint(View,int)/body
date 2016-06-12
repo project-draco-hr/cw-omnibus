@@ -1,0 +1,11 @@
+{
+  if (v != info) {
+    v=(View)v.getParent();
+  }
+  if (drawableId > -1) {
+    v.setBackgroundResource(drawableId);
+  }
+ else {
+    v.setBackground(null);
+  }
+}

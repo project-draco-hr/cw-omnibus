@@ -1,0 +1,33 @@
+{
+  boolean result=true;
+switch (event.getAction()) {
+case DragEvent.ACTION_DRAG_STARTED:
+    applyDropHint(v,R.drawable.droppable);
+  break;
+case DragEvent.ACTION_DRAG_ENTERED:
+applyDropHint(v,R.drawable.drop);
+break;
+case DragEvent.ACTION_DRAG_EXITED:
+applyDropHint(v,R.drawable.droppable);
+break;
+case DragEvent.ACTION_DRAG_ENDED:
+applyDropHint(v,-1);
+info.setVisibility(View.GONE);
+break;
+case DragEvent.ACTION_DROP:
+ClipData.Item clip=event.getClipData().getItemAt(0);
+Uri videoUri=clip.getUri();
+if (v == player) {
+player.setVideoURI(videoUri);
+player.start();
+}
+ else if (v == info) {
+Toast.makeText(this,videoUri.toString(),Toast.LENGTH_SHORT).show();
+}
+ else {
+Picasso.with(thumbnailLarge.getContext()).load(videoUri.toString()).fit().centerCrop().placeholder(R.drawable.ic_media_video_poster).into(thumbnailLarge);
+}
+break;
+}
+return (result);
+}

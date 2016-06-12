@@ -1,0 +1,9 @@
+{
+  View parent=(View)v.getParent();
+  if (drawableId > -1) {
+    parent.setBackgroundResource(drawableId);
+  }
+ else {
+    parent.setBackground(null);
+  }
+}
