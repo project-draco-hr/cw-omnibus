@@ -1,0 +1,6 @@
+{
+  super.onNewIntent(intent);
+  if (Intent.ACTION_EDIT.equals(intent.getAction())) {
+    openEditor(intent.getData());
+  }
+}

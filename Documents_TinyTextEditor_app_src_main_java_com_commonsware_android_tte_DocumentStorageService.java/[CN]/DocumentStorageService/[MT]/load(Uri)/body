@@ -1,19 +1,31 @@
 {
-  int perms=Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
   try {
-    getContentResolver().takePersistableUriPermission(document,perms);
     boolean weHavePermission=false;
-    for (    UriPermission perm : getContentResolver().getPersistedUriPermissions()) {
-      if (perm.getUri().equals(document)) {
-        weHavePermission=true;
+    boolean isContent=ContentResolver.SCHEME_CONTENT.equals(document.getScheme());
+    if (isContent) {
+      int perms=Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+      getContentResolver().takePersistableUriPermission(document,perms);
+      for (      UriPermission perm : getContentResolver().getPersistedUriPermissions()) {
+        if (perm.getUri().equals(document)) {
+          weHavePermission=true;
+        }
       }
+    }
+ else {
+      weHavePermission=true;
     }
     if (weHavePermission) {
       try {
         InputStream is=getContentResolver().openInputStream(document);
         try {
           String text=slurp(is);
-          DocumentFile docFile=DocumentFile.fromSingleUri(this,document);
+          DocumentFile docFile;
+          if (isContent) {
+            docFile=DocumentFile.fromSingleUri(this,document);
+          }
+ else {
+            docFile=DocumentFile.fromFile(new File(document.getPath()));
+          }
           EventBus.getDefault().post(new DocumentLoadedEvent(document,text,docFile.getName(),docFile.canWrite()));
         }
   finally {

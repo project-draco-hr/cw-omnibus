@@ -2,7 +2,7 @@
   inflater.inflate(R.menu.editor_actions,menu);
   if (iCanHazN()) {
     launchItem=menu.findItem(R.id.launch);
-    launchItem.setVisible(getActivity().inMultiWindow());
+    launchItem.setVisible(getActivity().isInMultiWindowMode());
   }
   super.onCreateOptionsMenu(menu,inflater);
 }

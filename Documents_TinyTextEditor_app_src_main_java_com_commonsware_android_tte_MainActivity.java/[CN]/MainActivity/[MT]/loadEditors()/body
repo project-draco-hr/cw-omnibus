@@ -6,7 +6,7 @@
     }
     mustRestoreHistory=false;
   }
- else   if (getIntent().getData() != null) {
+  if (getIntent().getData() != null) {
     openEditor(getIntent().getData());
   }
 }

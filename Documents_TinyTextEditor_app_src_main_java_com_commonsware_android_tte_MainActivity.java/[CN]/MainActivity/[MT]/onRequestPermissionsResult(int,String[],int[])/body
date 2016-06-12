@@ -1,0 +1,11 @@
+{
+  super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+  if (REQUEST_PERMS_FILE == requestCode) {
+    if (canWriteFiles()) {
+      for (      Uri document : pendingFiles) {
+        openEditor(document);
+      }
+      pendingFiles.clear();
+    }
+  }
+}

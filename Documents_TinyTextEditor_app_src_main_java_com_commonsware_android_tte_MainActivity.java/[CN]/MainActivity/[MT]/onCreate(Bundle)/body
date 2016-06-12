@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.main);
-  mustRestoreHistory=(savedInstanceState == null && getIntent().getData() == null);
+  mustRestoreHistory=(savedInstanceState == null && !ACTION_NEW_WINDOW.equals(getIntent().getAction()));
   pager=(ViewPager)findViewById(R.id.pager);
   adapter=new EditorsAdapter(getFragmentManager());
   pager.setAdapter(adapter);

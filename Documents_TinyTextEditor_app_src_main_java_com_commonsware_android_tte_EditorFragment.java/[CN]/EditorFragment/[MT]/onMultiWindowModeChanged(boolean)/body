@@ -1,5 +1,5 @@
 {
-  super.onMultiWindowChanged(inMultiWindow);
+  super.onMultiWindowModeChanged(inMultiWindow);
   if (launchItem != null) {
     launchItem.setVisible(inMultiWindow);
   }
