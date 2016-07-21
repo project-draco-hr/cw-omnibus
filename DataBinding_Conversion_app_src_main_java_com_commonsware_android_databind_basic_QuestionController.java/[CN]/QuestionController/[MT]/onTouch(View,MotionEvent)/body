@@ -1,0 +1,6 @@
+{
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    v.findViewById(R.id.row_content).getBackground().setHotspot(event.getX(),event.getY());
+  }
+  return (false);
+}

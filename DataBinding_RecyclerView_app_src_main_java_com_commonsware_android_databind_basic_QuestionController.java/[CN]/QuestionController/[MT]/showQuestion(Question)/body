@@ -1,4 +1,3 @@
 {
-  Question question=adapter.getItem(getAdapterPosition());
   EventBus.getDefault().post(new QuestionClickedEvent(question));
 }
