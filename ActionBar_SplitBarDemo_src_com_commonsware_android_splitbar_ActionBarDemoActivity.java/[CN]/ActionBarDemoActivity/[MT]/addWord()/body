@@ -1,5 +1,0 @@
-{
-  if (adapter.getCount() < items.length) {
-    adapter.add(items[adapter.getCount()]);
-  }
-}

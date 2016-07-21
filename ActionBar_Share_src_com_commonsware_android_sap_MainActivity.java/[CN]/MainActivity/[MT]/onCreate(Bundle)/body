@@ -1,7 +1,0 @@
-{
-  super.onCreate(icicle);
-  setContentView(R.layout.activity_main);
-  shareIntent.setType("text/plain");
-  editor=(EditText)findViewById(R.id.editor);
-  editor.addTextChangedListener(this);
-}

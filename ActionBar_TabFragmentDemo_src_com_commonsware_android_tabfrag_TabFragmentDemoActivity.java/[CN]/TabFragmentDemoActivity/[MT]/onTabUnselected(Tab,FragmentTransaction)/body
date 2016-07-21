@@ -1,7 +1,0 @@
-{
-  int i=((Integer)tab.getTag()).intValue();
-  EditorFragment frag=(EditorFragment)getSupportFragmentManager().findFragmentById(android.R.id.content);
-  if (frag != null) {
-    models[i]=frag.getText();
-  }
-}

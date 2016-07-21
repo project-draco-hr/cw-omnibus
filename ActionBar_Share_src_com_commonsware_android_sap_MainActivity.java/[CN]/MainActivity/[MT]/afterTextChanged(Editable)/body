@@ -1,4 +1,0 @@
-{
-  shareIntent.putExtra(Intent.EXTRA_TEXT,s.toString());
-  share.setShareIntent(shareIntent);
-}

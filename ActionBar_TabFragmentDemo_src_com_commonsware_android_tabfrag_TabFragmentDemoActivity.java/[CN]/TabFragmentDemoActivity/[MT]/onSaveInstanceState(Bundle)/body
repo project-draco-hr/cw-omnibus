@@ -1,4 +1,0 @@
-{
-  state.putCharSequenceArray(KEY_MODELS,models);
-  state.putInt(KEY_POSITION,getSupportActionBar().getSelectedNavigationIndex());
-}

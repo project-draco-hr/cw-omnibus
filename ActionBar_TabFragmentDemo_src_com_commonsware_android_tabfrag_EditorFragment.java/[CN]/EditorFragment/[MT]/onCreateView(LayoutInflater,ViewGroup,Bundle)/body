@@ -1,8 +1,0 @@
-{
-  View result=inflater.inflate(R.layout.editor,container,false);
-  editor=(EditText)result.findViewById(R.id.editor);
-  int position=getArguments().getInt(KEY_POSITION,-1);
-  editor.setHint(String.format(getString(R.string.hint),position + 1));
-  editor.setText(getArguments().getCharSequence(KEY_TEXT));
-  return (result);
-}
