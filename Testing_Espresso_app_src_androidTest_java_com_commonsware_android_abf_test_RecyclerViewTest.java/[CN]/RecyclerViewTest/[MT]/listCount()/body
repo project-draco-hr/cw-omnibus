@@ -1,0 +1,3 @@
+{
+  onView(Matchers.<View>instanceOf(RecyclerView.class)).check(new AdapterCountAssertion(25));
+}

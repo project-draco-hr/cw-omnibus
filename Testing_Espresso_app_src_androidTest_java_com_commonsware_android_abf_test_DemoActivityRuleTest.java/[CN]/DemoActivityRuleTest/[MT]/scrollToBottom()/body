@@ -1,3 +1,3 @@
 {
-  onData(anything()).inAdapterView(withId(android.R.id.list)).atPosition(24);
+  onData(anything()).inAdapterView(withId(android.R.id.list)).atPosition(24).check(matches(withText("purus")));
 }

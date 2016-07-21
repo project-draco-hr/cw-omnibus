@@ -1,0 +1,4 @@
+{
+  Assert.assertTrue(view instanceof RecyclerView);
+  Assert.assertEquals(count,((RecyclerView)view).getAdapter().getItemCount());
+}

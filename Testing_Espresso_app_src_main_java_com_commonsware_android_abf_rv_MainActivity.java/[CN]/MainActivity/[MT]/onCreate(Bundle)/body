@@ -1,0 +1,7 @@
+{
+  super.onCreate(icicle);
+  setLayoutManager(new LinearLayoutManager(this));
+  Drawable divider=getResources().getDrawable(R.drawable.item_divider);
+  getRecyclerView().addItemDecoration(new HorizontalDividerItemDecoration(divider));
+  setAdapter(new IconicAdapter());
+}

@@ -1,0 +1,3 @@
+{
+  onView(withClassName(is(RecyclerView.class.getCanonicalName()))).perform(scrollToPosition(24)).check(matches(anything()));
+}
