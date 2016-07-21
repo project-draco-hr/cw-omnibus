@@ -1,0 +1,7 @@
+{
+  onView(allOf(withParent(withTILHint("URL")),Matchers.<View>instanceOf(TextInputEditText.class))).perform(typeText(URL),closeSoftKeyboard());
+  Instrumentation.ActivityResult result=new Instrumentation.ActivityResult(Activity.RESULT_CANCELED,null);
+  intending(hasAction(Intent.ACTION_VIEW)).respondWith(result);
+  onView(withId(R.id.browse)).perform(click());
+  intended(allOf(hasAction(Intent.ACTION_VIEW),hasData(URL)));
+}

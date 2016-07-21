@@ -1,0 +1,10 @@
+{
+  EditText urlField=(EditText)findViewById(R.id.url);
+  String url=urlField.getText().toString();
+  if (Patterns.WEB_URL.matcher(url).matches()) {
+    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
+  }
+ else {
+    til.setError(getString(R.string.til_error));
+  }
+}

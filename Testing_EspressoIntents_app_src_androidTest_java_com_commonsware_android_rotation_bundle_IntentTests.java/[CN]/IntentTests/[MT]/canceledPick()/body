@@ -1,0 +1,7 @@
+{
+  Instrumentation.ActivityResult result=new Instrumentation.ActivityResult(Activity.RESULT_CANCELED,null);
+  intending(hasAction(Intent.ACTION_PICK)).respondWith(result);
+  onView(withId(R.id.pick)).perform(click());
+  intended(allOf(toPackage("com.google.android.contacts"),hasAction(Intent.ACTION_PICK),hasData(ContactsContract.Contacts.CONTENT_URI)));
+  onView(withId(R.id.view)).check(matches(not(isEnabled())));
+}

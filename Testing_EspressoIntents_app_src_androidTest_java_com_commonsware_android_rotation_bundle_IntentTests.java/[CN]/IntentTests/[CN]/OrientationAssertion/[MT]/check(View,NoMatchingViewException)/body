@@ -1,0 +1,4 @@
+{
+  Assert.assertTrue(view instanceof LinearLayout);
+  Assert.assertEquals(orientation,((LinearLayout)view).getOrientation());
+}

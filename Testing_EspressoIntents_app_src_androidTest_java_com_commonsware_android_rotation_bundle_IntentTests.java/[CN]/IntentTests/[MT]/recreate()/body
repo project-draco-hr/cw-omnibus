@@ -1,0 +1,10 @@
+{
+  stubPick();
+  InstrumentationRegistry.getInstrumentation().runOnMainSync(new Runnable(){
+    @Override public void run(){
+      main.getActivity().recreate();
+    }
+  }
+);
+  onView(withId(R.id.view)).check(matches(isEnabled()));
+}

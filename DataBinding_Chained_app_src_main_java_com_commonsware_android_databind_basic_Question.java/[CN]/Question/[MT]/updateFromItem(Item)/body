@@ -1,0 +1,4 @@
+{
+  title.set(item.title);
+  score.set(item.score);
+}

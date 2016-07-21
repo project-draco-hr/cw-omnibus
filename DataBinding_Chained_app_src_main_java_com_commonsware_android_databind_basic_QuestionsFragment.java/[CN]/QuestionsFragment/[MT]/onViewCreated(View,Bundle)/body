@@ -1,0 +1,18 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  setLayoutManager(new LinearLayoutManager(getActivity()));
+  so.questions("android",new Callback<SOQuestions>(){
+    @Override public void success(    SOQuestions results,    Response response){
+      for (      Item item : results.items) {
+        Question question=new Question(item);
+        questions.add(question);
+        questionMap.put(question.id,question);
+      }
+      setAdapter(new QuestionsAdapter(questions));
+    }
+    @Override public void failure(    RetrofitError error){
+      onError(error);
+    }
+  }
+);
+}

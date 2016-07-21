@@ -1,0 +1,10 @@
+{
+  int orientation=getOrientation();
+  if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+    onView(withId(R.id.content)).check(new OrientationAssertion(LinearLayout.HORIZONTAL));
+  }
+ else {
+    onView(withId(R.id.content)).check(new OrientationAssertion(LinearLayout.VERTICAL));
+  }
+  return (orientation);
+}

@@ -1,0 +1,4 @@
+{
+  int target=(getOrientation() == Configuration.ORIENTATION_LANDSCAPE ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+  main.getActivity().setRequestedOrientation(target);
+}

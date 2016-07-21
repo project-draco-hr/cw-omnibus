@@ -1,0 +1,3 @@
+{
+  holder.bindModel(getItem(position));
+}

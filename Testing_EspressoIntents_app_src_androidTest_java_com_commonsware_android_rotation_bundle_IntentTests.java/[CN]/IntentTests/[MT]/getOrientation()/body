@@ -1,0 +1,3 @@
+{
+  return (InstrumentationRegistry.getTargetContext().getResources().getConfiguration().orientation);
+}
