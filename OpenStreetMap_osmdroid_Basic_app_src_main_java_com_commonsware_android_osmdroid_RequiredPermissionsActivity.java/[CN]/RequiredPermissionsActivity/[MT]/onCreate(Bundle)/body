@@ -1,0 +1,13 @@
+{
+  super.onCreate(savedInstanceState);
+  if (savedInstanceState != null) {
+    isInPermission=savedInstanceState.getBoolean(STATE_IN_PERMISSION,false);
+  }
+  if (hasPermissions(getRequiredPermissions())) {
+    createForRealz();
+  }
+ else   if (!isInPermission) {
+    isInPermission=true;
+    ActivityCompat.requestPermissions(this,netPermissions(getRequiredPermissions()),REQUEST_PERMS);
+  }
+}

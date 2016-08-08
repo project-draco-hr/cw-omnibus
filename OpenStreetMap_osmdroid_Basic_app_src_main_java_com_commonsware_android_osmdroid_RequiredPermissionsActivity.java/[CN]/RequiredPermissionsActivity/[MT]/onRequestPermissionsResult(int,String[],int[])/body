@@ -1,0 +1,12 @@
+{
+  isInPermission=false;
+  if (requestCode == REQUEST_PERMS) {
+    if (hasPermissions(getRequiredPermissions())) {
+      createForRealz();
+    }
+ else {
+      Toast.makeText(this,R.string.msg_no_perm,Toast.LENGTH_LONG).show();
+      finish();
+    }
+  }
+}

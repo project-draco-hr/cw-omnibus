@@ -1,0 +1,7 @@
+{
+  boolean result=true;
+  for (  String perm : perms) {
+    result=result && hasPermission(perm);
+  }
+  return (result);
+}
