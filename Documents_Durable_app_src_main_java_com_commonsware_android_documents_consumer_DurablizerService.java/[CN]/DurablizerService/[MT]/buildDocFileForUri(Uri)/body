@@ -1,0 +1,10 @@
+{
+  DocumentFile docFile;
+  if (document.getScheme().equals(ContentResolver.SCHEME_CONTENT)) {
+    docFile=DocumentFile.fromSingleUri(this,document);
+  }
+ else {
+    docFile=DocumentFile.fromFile(new File(document.getPath()));
+  }
+  return (docFile);
+}

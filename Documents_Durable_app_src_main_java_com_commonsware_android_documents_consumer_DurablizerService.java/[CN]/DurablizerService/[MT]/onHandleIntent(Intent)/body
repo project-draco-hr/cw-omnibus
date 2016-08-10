@@ -1,0 +1,14 @@
+{
+  Uri document=intent.getData();
+  boolean weHaveDurablePermission=obtainDurablePermission(document);
+  if (!weHaveDurablePermission) {
+    document=makeLocalCopy(document);
+  }
+  if (weHaveDurablePermission || document != null) {
+    Log.d(getClass().getSimpleName(),document.toString());
+    DocumentFile docFile=buildDocFileForUri(document);
+    Log.d(getClass().getSimpleName(),"Display name: " + docFile.getName());
+    Log.d(getClass().getSimpleName(),"Size: " + Long.toString(docFile.length()));
+    EventBus.getDefault().post(new ContentReadyEvent(docFile));
+  }
+}

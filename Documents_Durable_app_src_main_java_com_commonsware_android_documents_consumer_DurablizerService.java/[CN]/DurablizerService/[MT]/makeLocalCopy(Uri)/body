@@ -1,0 +1,30 @@
+{
+  DocumentFile docFile=buildDocFileForUri(document);
+  Uri result=null;
+  if (docFile.getName() != null) {
+    File f=new File(getFilesDir(),docFile.getName());
+    try {
+      FileOutputStream fos=new FileOutputStream(f);
+      BufferedOutputStream out=new BufferedOutputStream(fos);
+      InputStream in=getContentResolver().openInputStream(document);
+      try {
+        byte[] buffer=new byte[8192];
+        int len=0;
+        while ((len=in.read(buffer)) >= 0) {
+          out.write(buffer,0,len);
+        }
+        out.flush();
+        result=Uri.fromFile(f);
+      }
+  finally {
+        fos.getFD().sync();
+        out.close();
+        in.close();
+      }
+    }
+ catch (    Exception e) {
+      Log.e(getClass().getSimpleName(),"Exception copying content to file",e);
+    }
+  }
+  return (result);
+}

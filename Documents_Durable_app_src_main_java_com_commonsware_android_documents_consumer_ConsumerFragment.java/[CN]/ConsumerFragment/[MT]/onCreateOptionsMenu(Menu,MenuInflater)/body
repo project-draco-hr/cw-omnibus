@@ -1,0 +1,7 @@
+{
+  inflater.inflate(R.menu.actions,menu);
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+    menu.findItem(R.id.open).setEnabled(true);
+  }
+  super.onCreateOptionsMenu(menu,inflater);
+}

@@ -1,0 +1,9 @@
+{
+  if (item.getItemId() == R.id.open) {
+    open();
+  }
+ else   if (item.getItemId() == R.id.get) {
+    get();
+  }
+  return (super.onOptionsItemSelected(item));
+}

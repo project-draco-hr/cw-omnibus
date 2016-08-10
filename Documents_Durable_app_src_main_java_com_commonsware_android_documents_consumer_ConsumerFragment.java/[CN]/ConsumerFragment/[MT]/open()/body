@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent().setType("*/*").setAction(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE);
+  startActivityForResult(i,REQUEST_OPEN);
+}

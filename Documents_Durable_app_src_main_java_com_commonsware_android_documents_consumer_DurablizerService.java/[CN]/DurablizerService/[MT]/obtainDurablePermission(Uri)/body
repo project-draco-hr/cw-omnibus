@@ -1,0 +1,17 @@
+{
+  boolean weHaveDurablePermission=false;
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+    int perms=Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+    try {
+      getContentResolver().takePersistableUriPermission(document,perms);
+      for (      UriPermission perm : getContentResolver().getPersistedUriPermissions()) {
+        if (perm.getUri().equals(document)) {
+          weHaveDurablePermission=true;
+        }
+      }
+    }
+ catch (    SecurityException e) {
+    }
+  }
+  return (weHaveDurablePermission);
+}

@@ -1,0 +1,5 @@
+{
+  logToTranscript(event.docFile.getUri().toString());
+  logToTranscript("Display name: " + event.docFile.getName());
+  logToTranscript("Size: " + Long.toString(event.docFile.length()));
+}
