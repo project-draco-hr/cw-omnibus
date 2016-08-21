@@ -1,4 +1,4 @@
 {
-  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_OPEN_DOCUMENT).setData(document);
+  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_OPEN_DOCUMENT).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION).setData(document);
   ctxt.startService(i);
 }

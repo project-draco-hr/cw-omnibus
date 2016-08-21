@@ -1,4 +1,4 @@
 {
-  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_EDIT).setData(document).putExtra(Intent.EXTRA_TEXT,text).putExtra(EXTRA_CLOSING,isClosing);
+  Intent i=new Intent(ctxt,DocumentStorageService.class).setAction(Intent.ACTION_EDIT).setData(document).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION).putExtra(Intent.EXTRA_TEXT,text).putExtra(EXTRA_CLOSING,isClosing);
   ctxt.startService(i);
 }
