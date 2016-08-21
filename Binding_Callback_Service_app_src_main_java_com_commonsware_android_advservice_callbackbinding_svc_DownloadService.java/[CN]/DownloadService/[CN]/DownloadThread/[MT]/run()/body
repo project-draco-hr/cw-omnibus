@@ -1,4 +1,5 @@
 {
+  boolean succeeded=false;
   try {
     File root=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
     root.mkdirs();
@@ -17,12 +18,7 @@
         out.write(buffer,0,len);
       }
       out.flush();
-      try {
-        cb.onSuccess();
-      }
- catch (      RemoteException e) {
-        Log.e("DownloadJob","Exception when calling onSuccess()",e);
-      }
+      succeeded=true;
     }
   finally {
       fos.getFD().sync();
@@ -37,6 +33,14 @@
     }
  catch (    RemoteException e) {
       Log.e("DownloadJob","Exception when calling onFailure()",e2);
+    }
+  }
+  if (succeeded) {
+    try {
+      cb.onSuccess();
+    }
+ catch (    RemoteException e) {
+      Log.e("DownloadJob","Exception when calling onSuccess()",e);
     }
   }
 }
