@@ -1,5 +1,0 @@
-{
-  if (!isCancelled()) {
-    adapter.add(item[0]);
-  }
-}

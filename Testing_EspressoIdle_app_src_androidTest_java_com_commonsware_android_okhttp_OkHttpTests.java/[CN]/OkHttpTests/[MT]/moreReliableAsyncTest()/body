@@ -1,0 +1,10 @@
+{
+  IdlingResource idleWild=OkHttp3IdlingResource.create("okhttp3",main.getActivity().getOkHttpClient());
+  Espresso.registerIdlingResources(idleWild);
+  try {
+    onView(withId(android.R.id.list)).check(new AdapterCountAssertion(100));
+  }
+  finally {
+    Espresso.unregisterIdlingResources(idleWild);
+  }
+}

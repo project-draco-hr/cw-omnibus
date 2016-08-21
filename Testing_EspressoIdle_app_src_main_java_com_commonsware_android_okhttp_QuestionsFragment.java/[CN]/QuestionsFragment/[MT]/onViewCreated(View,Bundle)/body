@@ -1,0 +1,28 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  OkHttpClient client=((MainActivity)getActivity()).getOkHttpClient();
+  Request request=new Request.Builder().url(SO_URL).build();
+  client.newCall(request).enqueue(new Callback(){
+    @Override public void onFailure(    Call call,    IOException e){
+      Log.e(getClass().getSimpleName(),"Exception loading JSON",e);
+    }
+    @Override public void onResponse(    Call call,    Response response) throws IOException {
+      if (response.isSuccessful()) {
+        Reader in=response.body().charStream();
+        BufferedReader reader=new BufferedReader(in);
+        final SOQuestions questions=new Gson().fromJson(reader,SOQuestions.class);
+        reader.close();
+        view.post(new Runnable(){
+          @Override public void run(){
+            setListAdapter(new ItemsAdapter(questions.items));
+          }
+        }
+);
+      }
+ else {
+        Log.e(getClass().getSimpleName(),response.toString());
+      }
+    }
+  }
+);
+}

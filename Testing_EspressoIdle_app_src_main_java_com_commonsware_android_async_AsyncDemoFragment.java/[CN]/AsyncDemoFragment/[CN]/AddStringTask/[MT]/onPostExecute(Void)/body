@@ -1,4 +1,0 @@
-{
-  Toast.makeText(getActivity(),R.string.done,Toast.LENGTH_SHORT).show();
-  task=null;
-}

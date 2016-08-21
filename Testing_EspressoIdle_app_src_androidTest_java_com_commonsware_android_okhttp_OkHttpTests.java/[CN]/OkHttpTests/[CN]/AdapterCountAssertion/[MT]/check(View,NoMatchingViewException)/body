@@ -1,0 +1,4 @@
+{
+  Assert.assertTrue(view instanceof AdapterView);
+  Assert.assertEquals(count,((AdapterView)view).getAdapter().getCount());
+}
