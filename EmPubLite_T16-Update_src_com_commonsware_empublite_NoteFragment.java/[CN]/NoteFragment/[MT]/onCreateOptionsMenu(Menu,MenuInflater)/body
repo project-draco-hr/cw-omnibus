@@ -1,6 +1,0 @@
-{
-  inflater.inflate(R.menu.notes,menu);
-  share=(ShareActionProvider)menu.findItem(R.id.share).getActionProvider();
-  share.setShareIntent(shareIntent);
-  super.onCreateOptionsMenu(menu,inflater);
-}

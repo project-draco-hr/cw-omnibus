@@ -1,4 +1,0 @@
-{
-  super("DemoScheduledService");
-  Log.d(getClass().getSimpleName(),"constructor");
-}

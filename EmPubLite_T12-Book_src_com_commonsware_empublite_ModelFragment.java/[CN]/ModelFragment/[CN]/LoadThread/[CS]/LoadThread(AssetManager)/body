@@ -1,5 +1,0 @@
-{
-  super();
-  this.assets=assets;
-  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-}

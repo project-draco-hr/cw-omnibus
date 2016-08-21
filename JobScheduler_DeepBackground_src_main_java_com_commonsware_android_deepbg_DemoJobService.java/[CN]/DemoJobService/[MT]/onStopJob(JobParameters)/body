@@ -1,7 +1,0 @@
-{
-  if (job != null) {
-    DownloadJob.log(this,"job interrupted");
-    job.interrupt();
-  }
-  return (false);
-}

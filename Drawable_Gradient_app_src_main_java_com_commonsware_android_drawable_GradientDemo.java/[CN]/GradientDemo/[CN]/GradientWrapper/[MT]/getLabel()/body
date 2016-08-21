@@ -1,6 +1,0 @@
-{
-  if (label == null) {
-    label=(TextView)row.findViewById(R.id.label);
-  }
-  return (label);
-}

@@ -1,7 +1,0 @@
-{
-  String file=getChapterFile(position);
-  if (baseDir == null) {
-    return ("file:///android_asset/book/" + file);
-  }
-  return (Uri.fromFile(new File(baseDir,file)).toString());
-}

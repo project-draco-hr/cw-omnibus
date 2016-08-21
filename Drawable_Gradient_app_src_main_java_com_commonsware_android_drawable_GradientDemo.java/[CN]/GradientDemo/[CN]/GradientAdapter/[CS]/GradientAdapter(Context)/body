@@ -1,3 +1,0 @@
-{
-  super(ctxt,R.layout.row,items);
-}

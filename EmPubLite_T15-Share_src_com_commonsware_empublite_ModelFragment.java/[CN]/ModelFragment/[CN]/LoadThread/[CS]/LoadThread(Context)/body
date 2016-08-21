@@ -1,5 +1,0 @@
-{
-  super();
-  this.ctxt=ctxt.getApplicationContext();
-  Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-}

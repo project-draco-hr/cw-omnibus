@@ -1,5 +1,0 @@
-{
-  Intent i=buildBaseIntent(ctxt).putExtra(EXTRA_IS_DOWNLOAD,isDownload);
-  PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,0);
-  alarms.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime() + period,period,pi);
-}

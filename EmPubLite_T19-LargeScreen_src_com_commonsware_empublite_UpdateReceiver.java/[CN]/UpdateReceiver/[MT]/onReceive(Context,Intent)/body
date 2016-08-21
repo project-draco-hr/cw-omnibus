@@ -1,8 +1,0 @@
-{
-  if (intent.getAction() != null) {
-    scheduleAlarm(context);
-  }
- else {
-    WakefulIntentService.sendWakefulWork(context,DownloadCheckService.class);
-  }
-}

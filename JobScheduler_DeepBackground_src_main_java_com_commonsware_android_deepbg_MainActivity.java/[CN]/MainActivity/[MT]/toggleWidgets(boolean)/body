@@ -1,6 +1,0 @@
-{
-  type.setEnabled(enable);
-  period.setEnabled(enable);
-  download.setEnabled(enable);
-  crashFreq.setEnabled(enable);
-}

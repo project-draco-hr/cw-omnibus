@@ -1,3 +1,0 @@
-{
-  new UpdateThread(position,prose).start();
-}

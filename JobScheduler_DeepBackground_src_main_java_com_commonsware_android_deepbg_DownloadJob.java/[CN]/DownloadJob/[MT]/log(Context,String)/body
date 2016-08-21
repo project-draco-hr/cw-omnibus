@@ -1,4 +1,0 @@
-{
-  log(new File(ctxt.getCacheDir(),"deep_background_internal.log"),msg);
-  log(new File(ctxt.getExternalCacheDir(),"deep_background_external.log"),msg);
-}

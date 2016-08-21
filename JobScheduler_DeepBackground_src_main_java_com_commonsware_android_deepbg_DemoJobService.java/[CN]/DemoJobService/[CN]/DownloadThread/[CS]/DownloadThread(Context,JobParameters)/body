@@ -1,4 +1,0 @@
-{
-  this.params=params;
-  this.app=ctxt.getApplicationContext();
-}

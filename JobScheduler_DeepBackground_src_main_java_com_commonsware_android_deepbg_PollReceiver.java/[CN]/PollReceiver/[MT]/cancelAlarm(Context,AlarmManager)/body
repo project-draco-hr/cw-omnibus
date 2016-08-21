@@ -1,5 +1,0 @@
-{
-  Intent i=buildBaseIntent(ctxt);
-  PendingIntent pi=PendingIntent.getBroadcast(ctxt,0,i,0);
-  alarms.cancel(pi);
-}

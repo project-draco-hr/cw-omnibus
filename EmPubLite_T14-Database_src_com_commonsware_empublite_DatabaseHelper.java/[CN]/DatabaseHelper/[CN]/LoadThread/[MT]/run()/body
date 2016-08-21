@@ -1,9 +1,0 @@
-{
-  String[] args={String.valueOf(position)};
-  Cursor c=getReadableDatabase().rawQuery("SELECT prose FROM notes WHERE position = ?",args);
-  if (c.getCount() > 0) {
-    c.moveToFirst();
-    EventBus.getDefault().post(new NoteLoadedEvent(position,c.getString(0)));
-  }
-  c.close();
-}

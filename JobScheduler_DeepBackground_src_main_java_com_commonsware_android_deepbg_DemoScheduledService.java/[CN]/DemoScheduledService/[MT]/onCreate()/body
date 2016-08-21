@@ -1,4 +1,0 @@
-{
-  super.onCreate();
-  Log.d(getClass().getSimpleName(),"onCreate");
-}

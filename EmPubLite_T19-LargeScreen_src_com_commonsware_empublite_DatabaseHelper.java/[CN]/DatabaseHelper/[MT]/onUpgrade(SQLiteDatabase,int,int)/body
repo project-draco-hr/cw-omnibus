@@ -1,3 +1,0 @@
-{
-  throw new RuntimeException("This should not be called");
-}

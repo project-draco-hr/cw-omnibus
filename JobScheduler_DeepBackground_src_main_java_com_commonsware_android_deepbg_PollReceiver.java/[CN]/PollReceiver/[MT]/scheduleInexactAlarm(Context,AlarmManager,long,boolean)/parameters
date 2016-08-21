@@ -1,4 +1,0 @@
-Context ctxt
-AlarmManager alarms
-long period
-boolean isDownload
