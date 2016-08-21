@@ -1,4 +1,5 @@
 {
+  this.ctxt=ctxt.getApplicationContext();
   this.logDir=logDir;
   this.screenshot=screenshot;
 }

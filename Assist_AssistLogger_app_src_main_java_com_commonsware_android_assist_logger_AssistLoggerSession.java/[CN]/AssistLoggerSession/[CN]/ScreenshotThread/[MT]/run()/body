@@ -7,6 +7,7 @@
       fos.flush();
       fos.getFD().sync();
       fos.close();
+      MediaScannerConnection.scanFile(ctxt,new String[]{f.getAbsolutePath()},new String[]{"image/png"},null);
       Log.d(getClass().getSimpleName(),"screenshot written to: " + f.getAbsolutePath());
     }
  catch (    IOException e) {

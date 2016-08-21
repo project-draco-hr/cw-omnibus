@@ -28,6 +28,7 @@
       pw.flush();
       fos.getFD().sync();
       fos.close();
+      MediaScannerConnection.scanFile(ctxt,new String[]{f.getAbsolutePath()},new String[]{"application/json"},null);
       Log.d(getClass().getSimpleName(),"assist data written to: " + f.getAbsolutePath());
     }
  catch (    Exception e) {

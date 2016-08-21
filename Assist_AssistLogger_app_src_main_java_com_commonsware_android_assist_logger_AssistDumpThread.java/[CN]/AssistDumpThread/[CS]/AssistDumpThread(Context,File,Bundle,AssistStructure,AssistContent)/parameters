@@ -1,3 +1,4 @@
+Context ctxt
 File logDir
 Bundle data
 AssistStructure structure
