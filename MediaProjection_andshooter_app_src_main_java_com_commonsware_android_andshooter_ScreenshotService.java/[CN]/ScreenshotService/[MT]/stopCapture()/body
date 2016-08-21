@@ -1,0 +1,7 @@
+{
+  if (projection != null) {
+    projection.stop();
+    vdisplay.release();
+    projection=null;
+  }
+}

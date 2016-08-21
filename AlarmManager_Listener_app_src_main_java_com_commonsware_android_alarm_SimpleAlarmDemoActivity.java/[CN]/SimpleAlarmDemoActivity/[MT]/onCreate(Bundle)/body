@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.main);
+  mgr=getSystemService(AlarmManager.class);
+  schedule();
+}

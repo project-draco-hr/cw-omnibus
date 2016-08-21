@@ -1,0 +1,7 @@
+{
+  if (tooltip != null) {
+    tooltip.cancel();
+  }
+  tooltip=Toast.makeText(this,message,Toast.LENGTH_LONG);
+  tooltip.show();
+}

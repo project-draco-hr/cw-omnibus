@@ -1,0 +1,4 @@
+{
+  mgr.cancel(this);
+  super.onDestroy();
+}

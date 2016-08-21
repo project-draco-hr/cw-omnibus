@@ -1,0 +1,5 @@
+{
+  Intent i=new Intent(Intent.ACTION_VIEW);
+  i.setDataAndType(videoUri,videoMimeType);
+  title.getContext().startActivity(i);
+}

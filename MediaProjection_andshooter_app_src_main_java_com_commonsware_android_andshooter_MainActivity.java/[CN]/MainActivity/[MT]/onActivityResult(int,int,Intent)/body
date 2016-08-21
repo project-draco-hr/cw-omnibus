@@ -1,0 +1,9 @@
+{
+  if (requestCode == REQUEST_SCREENSHOT) {
+    if (resultCode == RESULT_OK) {
+      Intent i=new Intent(this,ScreenshotService.class).putExtra(ScreenshotService.EXTRA_RESULT_CODE,resultCode).putExtra(ScreenshotService.EXTRA_RESULT_INTENT,data);
+      startService(i);
+    }
+  }
+  finish();
+}

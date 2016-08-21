@@ -1,0 +1,8 @@
+{
+  NotificationCompat.Builder b=new NotificationCompat.Builder(this);
+  b.setAutoCancel(true).setDefaults(Notification.DEFAULT_ALL);
+  b.setContentTitle(getString(R.string.app_name)).setSmallIcon(R.mipmap.ic_launcher).setTicker(getString(R.string.app_name));
+  b.addAction(R.drawable.ic_record_white_24dp,getString(R.string.notify_record),buildPendingIntent(ACTION_RECORD));
+  b.addAction(R.drawable.ic_eject_white_24dp,getString(R.string.notify_shutdown),buildPendingIntent(ACTION_SHUTDOWN));
+  startForeground(NOTIFY_ID,b.build());
+}

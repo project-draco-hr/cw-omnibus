@@ -1,0 +1,7 @@
+{
+  super.onCreate();
+  mgr=(MediaProjectionManager)getSystemService(MEDIA_PROJECTION_SERVICE);
+  wmgr=(WindowManager)getSystemService(WINDOW_SERVICE);
+  handlerThread.start();
+  handler=new Handler(handlerThread.getLooper());
+}

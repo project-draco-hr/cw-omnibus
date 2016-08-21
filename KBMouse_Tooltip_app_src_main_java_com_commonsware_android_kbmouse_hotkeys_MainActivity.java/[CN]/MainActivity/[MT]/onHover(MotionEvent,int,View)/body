@@ -1,0 +1,17 @@
+{
+  Runnable hover=hoverTimers.get(anchor.getId());
+  if (hover == null && (event.getAction() == MotionEvent.ACTION_HOVER_ENTER || event.getAction() == MotionEvent.ACTION_HOVER_MOVE)) {
+    hover=new Runnable(){
+      @Override public void run(){
+        showTooltip(message);
+      }
+    }
+;
+    hoverTimers.put(anchor.getId(),hover);
+    thumbnailLarge.postDelayed(hover,TOOLTIP_DELAY);
+  }
+ else   if (hover != null && event.getAction() == MotionEvent.ACTION_HOVER_EXIT) {
+    thumbnailLarge.removeCallbacks(hover);
+    hoverTimers.remove(anchor.getId());
+  }
+}

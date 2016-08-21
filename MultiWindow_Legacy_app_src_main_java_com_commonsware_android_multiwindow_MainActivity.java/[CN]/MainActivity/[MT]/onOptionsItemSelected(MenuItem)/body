@@ -1,0 +1,8 @@
+{
+  if (item.getItemId() == R.id.clone) {
+    Intent i=new Intent(this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+    startActivity(i);
+    return (true);
+  }
+  return (super.onOptionsItemSelected(item));
+}

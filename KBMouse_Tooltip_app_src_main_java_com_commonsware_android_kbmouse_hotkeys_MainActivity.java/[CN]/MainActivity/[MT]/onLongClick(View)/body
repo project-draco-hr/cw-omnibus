@@ -1,0 +1,12 @@
+{
+  if (v == thumbnailLarge) {
+    showTooltip(R.string.tooltip_thumbnail);
+  }
+ else   if (v == player) {
+    showTooltip(R.string.tooltip_player);
+  }
+ else {
+    return (false);
+  }
+  return (true);
+}

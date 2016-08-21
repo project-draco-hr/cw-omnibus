@@ -1,0 +1,4 @@
+{
+  this.something=something;
+  this.anotherThing=anotherThing;
+}

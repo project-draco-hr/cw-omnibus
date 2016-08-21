@@ -1,0 +1,22 @@
+{
+  if (i.getAction() == null) {
+    resultCode=i.getIntExtra(EXTRA_RESULT_CODE,1337);
+    resultData=i.getParcelableExtra(EXTRA_RESULT_INTENT);
+    foregroundify();
+  }
+ else   if (ACTION_RECORD.equals(i.getAction())) {
+    if (resultData != null) {
+      startCapture();
+    }
+ else {
+      Intent ui=new Intent(this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(ui);
+    }
+  }
+ else   if (ACTION_SHUTDOWN.equals(i.getAction())) {
+    beeper.startTone(ToneGenerator.TONE_PROP_NACK);
+    stopForeground(true);
+    stopSelf();
+  }
+  return (START_NOT_STICKY);
+}

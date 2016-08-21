@@ -1,0 +1,3 @@
+{
+  mgr.setWindow(AlarmManager.ELAPSED_REALTIME,SystemClock.elapsedRealtime() + PERIOD,WINDOW,getClass().getSimpleName(),this,null);
+}

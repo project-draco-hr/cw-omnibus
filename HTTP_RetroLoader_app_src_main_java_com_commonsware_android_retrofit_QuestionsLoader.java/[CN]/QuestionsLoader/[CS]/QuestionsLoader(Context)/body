@@ -1,0 +1,5 @@
+{
+  super(context);
+  RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint("https://api.stackexchange.com").build();
+  so=restAdapter.create(StackOverflowInterface.class);
+}

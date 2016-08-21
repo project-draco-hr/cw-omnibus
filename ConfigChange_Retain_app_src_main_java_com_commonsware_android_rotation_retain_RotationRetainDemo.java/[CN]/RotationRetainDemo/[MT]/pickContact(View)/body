@@ -1,0 +1,4 @@
+{
+  Intent i=new Intent(Intent.ACTION_PICK,ContactsContract.Contacts.CONTENT_URI);
+  startActivityForResult(i,PICK_REQUEST);
+}

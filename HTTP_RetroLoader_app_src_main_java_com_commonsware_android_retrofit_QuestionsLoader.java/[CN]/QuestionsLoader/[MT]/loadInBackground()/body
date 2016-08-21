@@ -1,0 +1,6 @@
+{
+  if (isLoadInBackgroundCanceled()) {
+    throw new OperationCanceledException();
+  }
+  return (so.questions("android"));
+}

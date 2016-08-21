@@ -1,0 +1,28 @@
+{
+  boolean result=true;
+switch (event.getAction()) {
+case DragEvent.ACTION_DRAG_STARTED:
+    applyDropHint(v,R.drawable.droppable);
+  break;
+case DragEvent.ACTION_DRAG_ENTERED:
+applyDropHint(v,R.drawable.drop);
+break;
+case DragEvent.ACTION_DRAG_EXITED:
+applyDropHint(v,R.drawable.droppable);
+break;
+case DragEvent.ACTION_DRAG_ENDED:
+applyDropHint(v,-1);
+break;
+case DragEvent.ACTION_DROP:
+ClipData.Item clip=event.getClipData().getItemAt(0);
+Uri videoUri=clip.getUri();
+if (v == player) {
+playVideo(videoUri);
+}
+ else {
+showLargeThumbnail(videoUri);
+}
+break;
+}
+return (result);
+}

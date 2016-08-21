@@ -1,0 +1,6 @@
+{
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+    getMenuInflater().inflate(R.menu.actions,menu);
+  }
+  return (super.onCreateOptionsMenu(menu));
+}

@@ -1,0 +1,3 @@
+{
+  Picasso.with(this).load(imageUri).fit().centerCrop().placeholder(R.drawable.ic_photo_size_select_actual_black_24dp).error(R.drawable.ic_error_black_24dp).into(image);
+}

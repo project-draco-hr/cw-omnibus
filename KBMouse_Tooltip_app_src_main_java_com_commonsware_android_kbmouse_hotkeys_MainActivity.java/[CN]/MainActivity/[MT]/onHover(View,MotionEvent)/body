@@ -1,0 +1,12 @@
+{
+  if (v == player) {
+    onHover(event,R.string.tooltip_player,player);
+  }
+ else   if (v == thumbnailLarge) {
+    onHover(event,R.string.tooltip_thumbnail,thumbnailLarge);
+  }
+ else {
+    return (false);
+  }
+  return (true);
+}

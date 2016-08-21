@@ -1,0 +1,8 @@
+{
+  if (isReset()) {
+  }
+  lastResult=data;
+  if (isStarted()) {
+    super.deliverResult(data);
+  }
+}

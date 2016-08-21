@@ -1,0 +1,9 @@
+{
+  Thingy thingy=Parcelables.toParcelable(i.getByteArrayExtra(EXTRA_THINGY),Thingy.CREATOR);
+  if (i.getAction() == null) {
+    WakefulIntentService.sendWakefulWork(ctxt,ScheduledService.class);
+  }
+ else {
+    scheduleAlarms(ctxt);
+  }
+}

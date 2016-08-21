@@ -1,0 +1,4 @@
+{
+  super.onSaveInstanceState(outState);
+  outState.putParcelable(STATE_IMAGE_URI,imageUri);
+}

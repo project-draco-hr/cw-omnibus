@@ -1,0 +1,7 @@
+{
+  Parcel parcel=Parcel.obtain();
+  parcelable.writeToParcel(parcel,0);
+  byte[] result=parcel.marshall();
+  parcel.recycle();
+  return (result);
+}

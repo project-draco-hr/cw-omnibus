@@ -1,0 +1,4 @@
+{
+  stopCapture();
+  super.onDestroy();
+}

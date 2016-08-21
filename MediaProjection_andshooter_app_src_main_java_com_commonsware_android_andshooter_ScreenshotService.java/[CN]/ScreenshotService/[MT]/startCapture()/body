@@ -1,0 +1,12 @@
+{
+  projection=mgr.getMediaProjection(resultCode,resultData);
+  it=new ImageTransmogrifier(this);
+  MediaProjection.Callback cb=new MediaProjection.Callback(){
+    @Override public void onStop(){
+      vdisplay.release();
+    }
+  }
+;
+  vdisplay=projection.createVirtualDisplay("andshooter",it.getWidth(),it.getHeight(),getResources().getDisplayMetrics().densityDpi,VIRT_DISPLAY_FLAGS,it.getSurface(),null,handler);
+  projection.registerCallback(cb,handler);
+}

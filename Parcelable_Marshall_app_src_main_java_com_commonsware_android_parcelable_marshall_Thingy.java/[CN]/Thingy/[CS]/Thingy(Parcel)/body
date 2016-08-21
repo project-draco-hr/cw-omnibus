@@ -1,0 +1,4 @@
+{
+  something=in.readString();
+  anotherThing=in.readInt();
+}

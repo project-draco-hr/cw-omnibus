@@ -1,0 +1,12 @@
+{
+  Uri uri=PROVIDER.buildUpon().appendPath(StreamProvider.getUriPrefix(AUTHORITY)).appendPath("assets/FreedomTower-Morning.jpg").build();
+  ClipData clip=ClipData.newRawUri(getString(R.string.msg_photo),uri);
+  View.DragShadowBuilder shadow=new ThumbDragShadow();
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+    iv.startDragAndDrop(clip,shadow,null,View.DRAG_FLAG_GLOBAL | View.DRAG_FLAG_GLOBAL_URI_READ | View.DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION);
+  }
+ else {
+    iv.startDrag(clip,shadow,null,0);
+  }
+  return (true);
+}

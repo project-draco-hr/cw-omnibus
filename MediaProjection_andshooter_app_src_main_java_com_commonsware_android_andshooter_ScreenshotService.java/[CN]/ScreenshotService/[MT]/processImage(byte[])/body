@@ -1,0 +1,21 @@
+{
+  new Thread(){
+    @Override public void run(){
+      File output=new File(getExternalFilesDir(null),"screenshot.png");
+      try {
+        FileOutputStream fos=new FileOutputStream(output);
+        fos.write(png);
+        fos.flush();
+        fos.getFD().sync();
+        fos.close();
+        MediaScannerConnection.scanFile(ScreenshotService.this,new String[]{output.getAbsolutePath()},new String[]{"image/png"},null);
+      }
+ catch (      Exception e) {
+        Log.e(getClass().getSimpleName(),"Exception writing out screenshot",e);
+      }
+    }
+  }
+.start();
+  beeper.startTone(ToneGenerator.TONE_PROP_ACK);
+  stopCapture();
+}

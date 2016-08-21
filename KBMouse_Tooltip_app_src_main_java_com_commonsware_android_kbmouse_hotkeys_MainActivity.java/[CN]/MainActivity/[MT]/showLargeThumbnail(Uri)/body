@@ -1,0 +1,3 @@
+{
+  Picasso.with(thumbnailLarge.getContext()).load(videoUri.toString()).fit().centerCrop().placeholder(R.drawable.ic_media_video_poster).into(thumbnailLarge);
+}
