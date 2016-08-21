@@ -1,0 +1,18 @@
+{
+  mp.stop();
+  pause.setVisible(false);
+  stop.setVisible(false);
+  findViewById(android.R.id.content).postDelayed(new Runnable(){
+    @Override public void run(){
+      try {
+        mp.prepare();
+        mp.seekTo(0);
+        play.setVisible(true);
+      }
+ catch (      Exception e) {
+        goBlooey(e);
+      }
+    }
+  }
+,100);
+}

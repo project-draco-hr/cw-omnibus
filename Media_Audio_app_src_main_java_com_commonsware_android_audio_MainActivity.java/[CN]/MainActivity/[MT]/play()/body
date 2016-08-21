@@ -1,0 +1,6 @@
+{
+  mp.start();
+  play.setVisible(false);
+  pause.setVisible(true);
+  stop.setVisible(true);
+}

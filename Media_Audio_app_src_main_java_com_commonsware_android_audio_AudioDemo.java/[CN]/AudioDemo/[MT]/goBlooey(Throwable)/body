@@ -1,4 +1,0 @@
-{
-  AlertDialog.Builder builder=new AlertDialog.Builder(this);
-  builder.setTitle("Exception!").setMessage(t.toString()).setPositiveButton("OK",null).show();
-}

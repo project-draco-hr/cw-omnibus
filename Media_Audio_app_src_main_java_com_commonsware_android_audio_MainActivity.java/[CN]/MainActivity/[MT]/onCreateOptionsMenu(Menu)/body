@@ -1,0 +1,7 @@
+{
+  getMenuInflater().inflate(R.menu.actions,menu);
+  play=menu.findItem(R.id.play);
+  pause=menu.findItem(R.id.pause);
+  stop=menu.findItem(R.id.stop);
+  return (super.onCreateOptionsMenu(menu));
+}

@@ -1,0 +1,6 @@
+{
+  super.onDestroy();
+  if (mp.isPlaying()) {
+    mp.stop();
+  }
+}

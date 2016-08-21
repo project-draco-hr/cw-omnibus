@@ -1,0 +1,14 @@
+{
+switch (item.getItemId()) {
+case R.id.play:
+    play();
+  return (true);
+case R.id.pause:
+pause();
+return (true);
+case R.id.stop:
+stop();
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}
