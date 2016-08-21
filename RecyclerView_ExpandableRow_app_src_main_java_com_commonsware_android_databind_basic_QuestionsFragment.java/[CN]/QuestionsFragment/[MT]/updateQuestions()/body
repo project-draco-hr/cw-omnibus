@@ -1,0 +1,21 @@
+{
+  ArrayList<String> idList=new ArrayList<String>();
+  for (  Question question : questions) {
+    idList.add(question.id);
+  }
+  String ids=TextUtils.join(";",idList);
+  so.update(ids,new Callback<SOQuestions>(){
+    @Override public void success(    SOQuestions soQuestions,    Response response){
+      for (      Item item : soQuestions.items) {
+        Question question=questionMap.get(item.id);
+        if (question != null) {
+          question.updateFromItem(item);
+        }
+      }
+    }
+    @Override public void failure(    RetrofitError error){
+      onError(error);
+    }
+  }
+);
+}

@@ -1,0 +1,4 @@
+{
+  RowBinding rowBinding=RowBinding.inflate(getActivity().getLayoutInflater(),parent,false);
+  return (new QuestionController(rowBinding));
+}

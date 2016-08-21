@@ -1,0 +1,10 @@
+{
+  title.set(item.title);
+  score.set(item.score);
+  viewCount.set(item.viewCount);
+  answerCount.set(item.answerCount);
+  tags.clear();
+  for (  String tag : item.tags) {
+    tags.add(tag);
+  }
+}
