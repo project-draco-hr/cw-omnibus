@@ -1,0 +1,14 @@
+{
+  durationInSeconds=preso.duration * 60;
+  if (rc != null) {
+    rc.setOverallDuration(durationInSeconds);
+  }
+  adapter=new SlidesAdapter(this,preso);
+  pager.setAdapter(adapter);
+  if (!isDirectToTV()) {
+    TabLayout tabs=(TabLayout)findViewById(R.id.tabs);
+    tabs.setVisibility(View.VISIBLE);
+    tabs.setupWithViewPager(pager);
+    tabs.addOnTabSelectedListener(this);
+  }
+}

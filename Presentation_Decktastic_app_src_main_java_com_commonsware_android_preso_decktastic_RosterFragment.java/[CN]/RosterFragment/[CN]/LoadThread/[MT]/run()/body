@@ -1,0 +1,4 @@
+{
+  PresoRoster.getInstance().load(ctxt);
+  EventBus.getDefault().postSticky(new RosterLoadedEvent());
+}

@@ -1,3 +1,0 @@
-{
-  return (Uri.fromFile(preso.getSlideImage(position)));
-}

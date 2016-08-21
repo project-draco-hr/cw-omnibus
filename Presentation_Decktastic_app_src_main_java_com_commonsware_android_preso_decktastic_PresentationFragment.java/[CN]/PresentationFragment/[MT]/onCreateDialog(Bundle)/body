@@ -1,0 +1,6 @@
+{
+  if (preso == null) {
+    return (super.onCreateDialog(savedInstanceState));
+  }
+  return (preso);
+}

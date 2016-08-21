@@ -1,0 +1,6 @@
+{
+  if (preso != null) {
+    return (preso.getContext());
+  }
+  return (getActivity());
+}

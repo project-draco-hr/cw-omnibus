@@ -1,0 +1,9 @@
+{
+  if (presoFrag != null) {
+    presoFrag.setSlideContent(adapter.getSlideImageUri(tab.getPosition()));
+  }
+  if (client != null) {
+    String url=preso.getSlideURL(tab.getPosition());
+    client.play(Uri.parse(url),"image/png",null,0,null,playCB);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  Gson gson=new Gson();
+  AssetManager assets=ctxt.getAssets();
+  for (  String presoDir : PRESO_ASSET_DIRS) {
+    PresoContents c=loadPreso(gson,assets,presoDir);
+    if (c != null) {
+      c.id=presos.size();
+      presos.add(c);
+    }
+  }
+}

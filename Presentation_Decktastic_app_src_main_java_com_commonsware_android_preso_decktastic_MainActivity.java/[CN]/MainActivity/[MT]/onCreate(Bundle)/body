@@ -1,0 +1,14 @@
+{
+  super.onCreate(savedInstanceState);
+  preso=PresoRoster.getInstance().getPresoById(getIntent().getIntExtra(EXTRA_PRESO_ID,0));
+  setContentView(R.layout.activity_main);
+  pager=(ViewPager)findViewById(R.id.pager);
+  helper=new PresentationHelper(this,this);
+  selector=new MediaRouteSelector.Builder().addControlCategory(MediaControlIntent.CATEGORY_REMOTE_PLAYBACK).build();
+  router=MediaRouter.getInstance(this);
+  router.addCallback(selector,routeCB,MediaRouter.CALLBACK_FLAG_REQUEST_DISCOVERY);
+  if (isDirectToTV()) {
+    getSupportActionBar().hide();
+  }
+  setupPager();
+}

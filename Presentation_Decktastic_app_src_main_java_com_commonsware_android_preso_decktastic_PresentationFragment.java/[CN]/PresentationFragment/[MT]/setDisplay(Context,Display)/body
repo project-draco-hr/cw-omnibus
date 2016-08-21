@@ -1,0 +1,9 @@
+{
+  if (display == null) {
+    preso=null;
+  }
+ else {
+    preso=new Presentation(ctxt,display,getTheme());
+  }
+  this.display=display;
+}

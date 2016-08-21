@@ -1,7 +1,0 @@
-{
-  PresoContents preso=(PresoContents)item;
-  Holder h=(Holder)viewHolder;
-  h.cardView.setTitleText(preso.toString());
-  h.cardView.setMainImageDimensions(CARD_WIDTH,CARD_HEIGHT);
-  h.updateCardViewImage(preso.getSlideImage(0).getAbsolutePath());
-}

@@ -1,0 +1,5 @@
+{
+  Uri slide=adapter.getSlideImageUri(pager.getCurrentItem());
+  presoFrag=SlidePresentationFragment.newInstance(this,display,slide);
+  presoFrag.show(getSupportFragmentManager(),"presoFrag");
+}

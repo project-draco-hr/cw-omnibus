@@ -1,0 +1,3 @@
+{
+  Picasso.with(cardView.getContext()).load("file:///android_asset/" + path).resize(convertDpToPixel(cardView.getContext(),CARD_WIDTH),convertDpToPixel(cardView.getContext(),CARD_HEIGHT)).into(viewTarget);
+}

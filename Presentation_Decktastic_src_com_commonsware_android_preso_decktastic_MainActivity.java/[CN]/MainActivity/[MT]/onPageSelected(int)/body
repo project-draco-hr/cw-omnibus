@@ -1,9 +1,0 @@
-{
-  if (presoFrag != null) {
-    presoFrag.setSlideContent(adapter.getSlideImageUri(position));
-  }
-  if (client != null) {
-    String url=preso.getSlideURL(position);
-    client.play(Uri.parse(url),"image/png",null,0,null,playCB);
-  }
-}

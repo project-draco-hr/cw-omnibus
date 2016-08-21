@@ -1,0 +1,7 @@
+{
+  ImageView page=new ImageView(ctxt);
+  ViewGroup.LayoutParams p=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+  container.addView(page,p);
+  Picasso.with(ctxt).load(getSlideImageUri(position)).into(page);
+  return (page);
+}
