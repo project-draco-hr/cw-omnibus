@@ -1,7 +1,8 @@
 {
   setContentView(R.layout.activity_main);
+  OpenStreetMapTileProviderConstants.setUserAgentValue(getPackageName());
   MapView map=(MapView)findViewById(R.id.map);
-  map.setTileSource(TileSourceFactory.USGS_TOPO);
+  map.setTileSource(TileSourceFactory.MAPNIK);
   map.setMultiTouchControls(true);
   map.getController().setZoom(18);
   map.getController().setCenter(new GeoPoint(40.76793169992044,-73.98180484771729));
