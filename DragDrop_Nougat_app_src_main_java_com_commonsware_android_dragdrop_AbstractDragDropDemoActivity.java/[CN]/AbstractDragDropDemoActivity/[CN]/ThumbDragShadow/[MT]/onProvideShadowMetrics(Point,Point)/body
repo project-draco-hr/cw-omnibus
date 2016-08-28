@@ -1,0 +1,4 @@
+{
+  shadowSize.set(iv.getWidth() / 8,iv.getHeight() / 8);
+  shadowTouchPoint.set(shadowSize.x / 2,shadowSize.y / 2);
+}

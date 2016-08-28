@@ -1,0 +1,19 @@
+{
+  Intent i=null;
+switch (item.getItemId()) {
+case R.id.main:
+    i=new Intent(this,MainActivity.class);
+  break;
+case R.id.bug:
+i=new Intent(this,BugActivity.class);
+break;
+case R.id.inclusive:
+i=new Intent(this,InclusiveActivity.class);
+break;
+}
+if (i != null) {
+startActivity(i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+return (true);
+}
+return (super.onOptionsItemSelected(item));
+}

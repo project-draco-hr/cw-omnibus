@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  image=(ImageView)findViewById(R.id.thumbnail_large);
+  image.setOnDragListener(this);
+}

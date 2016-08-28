@@ -1,0 +1,33 @@
+{
+  boolean result=true;
+switch (event.getAction()) {
+case DragEvent.ACTION_DRAG_STARTED:
+    if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_URILIST)) {
+    }
+ else {
+      result=false;
+    }
+  break;
+case DragEvent.ACTION_DRAG_ENTERED:
+v.setBackgroundColor(dropTargetReadyColor);
+break;
+case DragEvent.ACTION_DRAG_EXITED:
+v.setBackgroundColor(originalColors.get(v.getId()));
+break;
+case DragEvent.ACTION_DRAG_ENDED:
+v.setBackgroundColor(originalColors.get(v.getId()));
+break;
+case DragEvent.ACTION_DROP:
+v.setBackgroundColor(originalColors.get(v.getId()));
+if (v instanceof ImageView) {
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+requestDragAndDropPermissions(event);
+}
+ClipData.Item clip=event.getClipData().getItemAt(0);
+imageUri=clip.getUri();
+showThumbnail();
+}
+break;
+}
+return (result);
+}

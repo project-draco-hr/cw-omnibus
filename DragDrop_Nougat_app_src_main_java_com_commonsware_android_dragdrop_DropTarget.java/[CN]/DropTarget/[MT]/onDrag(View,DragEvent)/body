@@ -1,0 +1,15 @@
+{
+  if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+    return (listener.onDrag(view,dragEvent));
+  }
+  boolean result=listener.onDrag(view,dragEvent);
+  ViewParent parent=view.getParent();
+  while (parent != null && parent instanceof View) {
+    View parentView=(View)parent;
+    if (views.contains(parentView)) {
+      listener.onDrag(parentView,dragEvent);
+    }
+    parent=parentView.getParent();
+  }
+  return (result);
+}

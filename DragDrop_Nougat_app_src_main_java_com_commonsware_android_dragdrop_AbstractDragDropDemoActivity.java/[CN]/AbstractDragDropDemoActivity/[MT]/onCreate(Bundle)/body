@@ -1,0 +1,25 @@
+{
+  super.onCreate(icicle);
+  setContentView(R.layout.main);
+  originalColors.put(R.id.outer_container,getResources().getColor(R.color.outer_normal));
+  originalColors.put(R.id.inner_container,getResources().getColor(R.color.inner_normal));
+  originalColors.put(R.id.thumbnail_large,getResources().getColor(R.color.image_normal));
+  dropTargetReadyColor=getResources().getColor(R.color.drop_target_ready);
+  ViewGroup dropFrame=(ViewGroup)findViewById(R.id.drop_frame);
+  getLayoutInflater().inflate(getDropFrameContentId(),dropFrame,true);
+  iv=(ImageView)findViewById(R.id.asset);
+  Picasso.with(this).load("file:///android_asset/FreedomTower-Morning.jpg").fit().centerCrop().into(iv,new Callback(){
+    @Override public void onSuccess(){
+      iv.setOnLongClickListener(AbstractDragDropDemoActivity.this);
+    }
+    @Override public void onError(){
+    }
+  }
+);
+  if (icicle != null) {
+    imageUri=icicle.getParcelable(STATE_IMAGE_URI);
+    if (imageUri != null) {
+      showThumbnail();
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  new MenuInflater(this).inflate(R.menu.actions,menu);
+  MenuItem item=menu.findItem(getOwnMenuId());
+  if (item != null) {
+    item.setVisible(false);
+  }
+  return (super.onCreateOptionsMenu(menu));
+}

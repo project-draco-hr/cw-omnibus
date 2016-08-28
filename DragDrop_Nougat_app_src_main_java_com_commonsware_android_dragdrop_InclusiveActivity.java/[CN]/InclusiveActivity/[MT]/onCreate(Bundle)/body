@@ -1,0 +1,5 @@
+{
+  super.onCreate(icicle);
+  image=(ImageView)findViewById(R.id.thumbnail_large);
+  new DropTarget().on(image,findViewById(R.id.outer_container),findViewById(R.id.inner_container)).to(this);
+}

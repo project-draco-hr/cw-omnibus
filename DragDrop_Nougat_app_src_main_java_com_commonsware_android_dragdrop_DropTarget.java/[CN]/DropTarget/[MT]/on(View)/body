@@ -1,0 +1,7 @@
+{
+  for (  View v : views) {
+    this.views.add(v);
+    v.setOnDragListener(this);
+  }
+  return (this);
+}
