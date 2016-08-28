@@ -1,0 +1,8 @@
+{
+  boolean isDownload=i.getBooleanExtra(EXTRA_IS_DOWNLOAD,false);
+  startWakefulService(ctxt,new Intent(ctxt,DemoScheduledService.class).putExtra(EXTRA_IS_DOWNLOAD,isDownload));
+  long period=i.getLongExtra(EXTRA_PERIOD,-1);
+  if (period > 0) {
+    scheduleExactAlarm(ctxt,(AlarmManager)ctxt.getSystemService(Context.ALARM_SERVICE),period,isDownload);
+  }
+}

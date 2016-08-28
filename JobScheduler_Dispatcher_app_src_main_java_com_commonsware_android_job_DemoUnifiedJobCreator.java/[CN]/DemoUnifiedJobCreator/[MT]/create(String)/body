@@ -1,0 +1,6 @@
+{
+  if (DemoUnifiedJob.JOB_TAG.equals(tag)) {
+    return (new DemoUnifiedJob());
+  }
+  throw new IllegalArgumentException("Job tag not recognized: " + tag);
+}

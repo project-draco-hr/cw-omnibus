@@ -1,0 +1,18 @@
+{
+  if (start) {
+    final JobRequest.Builder b=new JobRequest.Builder(DemoUnifiedJob.JOB_TAG);
+    PersistableBundleCompat extras=new PersistableBundleCompat();
+    if (download.isChecked()) {
+      extras.putBoolean(KEY_DOWNLOAD,true);
+      b.setExtras(extras).setRequiredNetworkType(JobRequest.NetworkType.CONNECTED);
+    }
+ else {
+      b.setRequiredNetworkType(JobRequest.NetworkType.ANY);
+    }
+    b.setPeriodic(getPeriod()).setPersisted(false).setRequiresCharging(false).setRequiresDeviceIdle(true);
+    unifiedJobId=b.build().schedule();
+  }
+ else {
+    JobManager.instance().cancel(unifiedJobId);
+  }
+}

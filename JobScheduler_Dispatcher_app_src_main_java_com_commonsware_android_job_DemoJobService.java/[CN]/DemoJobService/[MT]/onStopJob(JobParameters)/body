@@ -1,0 +1,7 @@
+{
+  if (job != null) {
+    Log.d(getClass().getSimpleName(),"job interrupted");
+    job.interrupt();
+  }
+  return (false);
+}

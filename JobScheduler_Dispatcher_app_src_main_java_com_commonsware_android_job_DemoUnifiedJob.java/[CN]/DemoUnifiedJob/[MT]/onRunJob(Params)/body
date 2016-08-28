@@ -1,0 +1,8 @@
+{
+  Log.d(getClass().getSimpleName(),"scheduled unified work begins");
+  if (getParams().getExtras().getBoolean(PollReceiver.EXTRA_IS_DOWNLOAD,false)) {
+    new DownloadJob().run();
+  }
+  Log.d(getClass().getSimpleName(),"scheduled unified work ends");
+  return (Result.SUCCESS);
+}

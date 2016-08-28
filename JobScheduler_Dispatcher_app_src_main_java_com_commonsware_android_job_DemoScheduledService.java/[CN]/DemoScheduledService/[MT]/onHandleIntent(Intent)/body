@@ -1,0 +1,8 @@
+{
+  Log.d(getClass().getSimpleName(),"scheduled work begins");
+  if (i.getBooleanExtra(PollReceiver.EXTRA_IS_DOWNLOAD,false)) {
+    new DownloadJob().run();
+  }
+  Log.d(getClass().getSimpleName(),"scheduled work ends");
+  PollReceiver.completeWakefulIntent(i);
+}

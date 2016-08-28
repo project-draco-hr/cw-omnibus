@@ -1,0 +1,10 @@
+{
+  PersistableBundle pb=params.getExtras();
+  if (pb.getBoolean(MainActivity.KEY_DOWNLOAD,false)) {
+    job=new DownloadThread(params);
+    job.start();
+    return (true);
+  }
+  Log.d(getClass().getSimpleName(),"job invoked");
+  return (false);
+}
