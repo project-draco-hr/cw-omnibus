@@ -1,0 +1,5 @@
+{
+  Toast t=Toast.makeText(this,msg,Toast.LENGTH_LONG);
+  t.setGravity(Gravity.END | Gravity.BOTTOM,32,32);
+  t.show();
+}

@@ -1,0 +1,4 @@
+{
+  super(MainActivity.this,R.layout.row,apps);
+  this.pm=pm;
+}

@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  startActivity((Intent)getIntent().getParcelableExtra(Intent.EXTRA_INTENT));
+  finish();
+}

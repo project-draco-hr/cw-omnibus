@@ -1,0 +1,17 @@
+{
+  super.onCreate(savedInstanceState);
+  PackageManager pm=getPackageManager();
+  Intent main=new Intent(Intent.ACTION_MAIN,null);
+  main.addCategory(Intent.CATEGORY_LAUNCHER);
+  List<ResolveInfo> launchables=pm.queryIntentActivities(main,0);
+  List<ResolveInfo> filtered=new ArrayList<>();
+  for (  ResolveInfo launchable : launchables) {
+    int launchMode=launchable.activityInfo.launchMode;
+    if (launchMode != ActivityInfo.LAUNCH_SINGLE_INSTANCE && launchMode != ActivityInfo.LAUNCH_SINGLE_TASK) {
+      filtered.add(launchable);
+    }
+  }
+  Collections.sort(filtered,new ResolveInfo.DisplayNameComparator(pm));
+  adapter=new AppAdapter(pm,filtered);
+  setListAdapter(adapter);
+}

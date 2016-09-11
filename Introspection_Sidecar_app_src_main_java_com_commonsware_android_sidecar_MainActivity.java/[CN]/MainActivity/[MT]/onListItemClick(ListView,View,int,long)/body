@@ -1,0 +1,8 @@
+{
+  ResolveInfo launchable=adapter.getItem(position);
+  ActivityInfo activity=launchable.activityInfo;
+  ComponentName name=new ComponentName(activity.applicationInfo.packageName,activity.name);
+  PreferenceManager.getDefaultSharedPreferences(this).edit().putString(SidecarTileService.PREF_TO_LAUNCH,name.flattenToString()).apply();
+  Toast.makeText(this,R.string.msg_saved,Toast.LENGTH_LONG).show();
+  finish();
+}
